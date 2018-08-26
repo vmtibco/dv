@@ -1,0 +1,156 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="INIT_ITEM_ITEM_MASTER" path="/services/databases/Election/WSI/PROD/INIT_ITEM_ITEM_MASTER" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/INIT_ITEM_ITEM_MASTER" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="PRODUCTID" nullable="false">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="PRODUCTIDEXT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="ITEM_TYPE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="PARENT_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="ITEM_NAME">
+        <datatype type="STRING" maxLength="100"/>
+      </element>
+      <element name="ITEM_MEDIUM_NAME">
+        <datatype type="STRING" maxLength="35"/>
+      </element>
+      <element name="ITEM_SHORT_NAME">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="ITEM_LEVEL_NUMBER">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="ITEM_TRANSACTION_LEVEL_NUM">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="COLLECTION_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="ITEM_RMS_CREATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="ITEM_RMS_UPDATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CNCPT_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DEPT_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="SUBCLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="INVENTORY_COUNT_UOM_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="TAX_CATEGORY_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="IS_INVENTORIED">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_COMPONENT_SELLABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HAS_INFINITE_INVENTORY">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_CONVEYABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HAS_GIFT_WRAP_AVAILABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="ALLOWS_VAS_SETUP">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_SPLIT_ACROSS_DIST_CENTERS">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_FULFILLED_FROM_RETAIL">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_AVAILBL_FOR_DIRECT_SHIP">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HANDLING_SENSITIVITY_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="IS_PERISHABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HANDLING_TEMPERATURE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="SHIP_MODE_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="DC_CARRIER_SERVICE_LEVEL_CDE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DS_CARRIER_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DS_SERVICE_LEVEL_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DTC_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="13"/>
+      </element>
+      <element name="RTL_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="13"/>
+      </element>
+      <element name="BACK_ORDER_LEAD_DAYS">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="LINKED_TO_DUMMY">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="REPLACED_BY_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="LABOR_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="DUMMY_CLASSIFICATION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="REPLACEMENT_ACTION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="SHIP_RESTRICTIONS">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="ASSOC_DISC_CATEGORY_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="IN_HOME_DELIVERY_IND">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1533432907191</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907191</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432907191</attribute>
+  <attribute name="targetPath" type="STRING">/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/INIT_ITEM_ITEM_MASTER</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>

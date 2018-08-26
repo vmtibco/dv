@@ -1,0 +1,195 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="WS_ITEM_MASTER" path="/services/databases/Election/WSI/PROD/WS_ITEM_MASTER" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_MASTER" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="CPRODUCTID" nullable="false">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="CITEM_TYPE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="CPARENT_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="CITEM_NAME">
+        <datatype type="STRING" maxLength="100"/>
+      </element>
+      <element name="CITEM_MEDIUM_NAME">
+        <datatype type="STRING" maxLength="35"/>
+      </element>
+      <element name="CITEM_SHORT_NAME">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="CITEM_LEVEL_NUMBER">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CITEM_TRANSACTION_LEVEL_NUM">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CCOLLECTION_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="CITEM_RMS_CREATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CITEM_RMS_UPDATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CPRODUCTIDEXT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="CCNCPT_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CDEPT_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CCLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CSUBCLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CINVENTORY_COUNT_UOM_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CTAX_CATEGORY_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CIS_INVENTORIED">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_COMPONENT_SELLABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CHAS_INFINITE_INVENTORY">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_CONVEYABLE">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CHAS_GIFT_WRAP_AVAILABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_SPLIT_ACROSS_DIST_CENTERS">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_FULFILLED_FROM_RETAIL">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_AVAILBL_FOR_DIRECT_SHIP">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CIN_HOME_DELIVERY_IND">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CASSOC_DISC_CATEGORY_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CHANDLING_SENSITIVITY_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="CIS_PERISHABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CHANDLING_TEMPERATURE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="CSHIP_MODE_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CDC_CARRIER_SERVICE_LEVEL_CDE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CDS_CARRIER_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CDS_SERVICE_LEVEL_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CBACK_ORDER_LEAD_DAYS">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CDTC_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      </element>
+      <element name="CRTL_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      </element>
+      <element name="CDUMMY_CLASSIFICATION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CLABOR_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="CREPLACED_BY_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="CREPLACEMENT_ACTION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CECOM_LONG_DESC">
+        <datatype type="STRING" maxLength="500"/>
+      </element>
+      <element name="CSUMMARY_WCM">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CDIMS_MORE_INFO_WCM">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CUSE_CARE_INSTRUCTIONS_WCM">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CINGREDIENTS_LIST_WCM">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CIMAGE_TYPE">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="CIMAGE_URL">
+        <datatype type="STRING" maxLength="1000"/>
+      </element>
+      <element name="CMDM_ATTRB_CMP">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CALLOWS_VAS_SETUP">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CAMD_INDICATOR">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CRMS_UPDATE_TIMESTAMP">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CRMS_ADB_SEQUENCE">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="CCONTAINS">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CMODVERSION" nullable="false">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CPRODUCTKEYID" nullable="false">
+        <datatype type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      </element>
+      <element name="CIS_BOPIS_ELIGIBLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1533432907191</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907191</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432907191</attribute>
+  <attribute name="targetPath" type="STRING">/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_MASTER</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>

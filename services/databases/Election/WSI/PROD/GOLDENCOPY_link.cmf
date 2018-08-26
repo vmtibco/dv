@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="GOLDENCOPY" path="/services/databases/Election/WSI/PROD/GOLDENCOPY" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/GOLDENCOPY" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="PRODUCTKEY" nullable="false">
+        <datatype type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      </element>
+      <element name="CATALOGID" nullable="false">
+        <datatype type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      </element>
+      <element name="VERSION" nullable="false">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="MODDATE" nullable="false">
+        <datatype type="DATETIME"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1533432907175</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907175</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432907175</attribute>
+  <attribute name="targetPath" type="STRING">/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/GOLDENCOPY</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>

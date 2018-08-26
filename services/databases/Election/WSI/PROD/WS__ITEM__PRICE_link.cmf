@@ -1,0 +1,75 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="WS_ITEM_PRICE" path="/services/databases/Election/WSI/PROD/WS_ITEM_PRICE" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_PRICE" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="CPRODUCTID" nullable="false">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="CPRODUCTIDEXT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="CCHARGE_TYPE_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CEFFECTIVESTARTDATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CEFFECTIVEENDDATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CPRICE">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      </element>
+      <element name="CIS_FINAL_CLEARANCE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CEFFECTIVESTARTHOURS">
+        <datatype type="STRING" maxLength="256"/>
+      </element>
+      <element name="CEFFECTIVEENDHOURS">
+        <datatype type="STRING" maxLength="256"/>
+      </element>
+      <element name="CIS_PRICE_LOCKED">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_OVERRIDE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CIS_IMMEDIATE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CEFF_START_TIMESTAMP">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CEFF_END_TIMESTAMP">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CAMD_INDICATOR">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CCONTAINS">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="CMODVERSION" nullable="false">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CPRODUCTKEYID" nullable="false">
+        <datatype type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1533432907207</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907207</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432907207</attribute>
+  <attribute name="targetPath" type="STRING">/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_PRICE</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>
