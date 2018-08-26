@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getAllGroups" path="/users/composite/admin/Lockheed/COEUtilities/helpers/getAllGroups" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="groupName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="permType">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">/* getAllGroups:
+
+	Input:
+		N/A
+
+	Output:
+		CURSOR with columns groupName and permission type
+		
+
+	Author:				Venky Madireddi
+	Date:				05/15/2017
+	CIS Version:		7.0.5
+	Description:		Script returning a set of rows
+*/
+PROCEDURE getAllGroups
+(
+	OUT	result		PIPE
+					(
+						groupName		VARCHAR,
+						permType		INTEGER
+					)
+)
+BEGIN
+	INSERT INTO result VALUES (&apos;EntDataVirt.CoEAdmins.us.com&apos;, 0);
+	INSERT INTO result VALUES (&apos;EntDataVirt.AeroUsers.us.com&apos;, 1);
+	INSERT INTO result VALUES (&apos;EntDataVirt.AeroAdmins.us.com&apos;, 2);
+	INSERT INTO result VALUES (&apos;EntDataVirt.EOUsers.us.com&apos;, 1);
+	INSERT INTO result VALUES (&apos;EntDataVirt.EOAdmins.us.com&apos;, 2);
+	INSERT INTO result VALUES (&apos;EntDataVirt.MFCUsers.us.com&apos;, 1);
+	INSERT INTO result VALUES (&apos;EntDataVirt.MFCAdmins.us.com&apos;, 2);
+	INSERT INTO result VALUES (&apos;EntDataVirt.RMSUsers.us.com&apos;, 1);
+	INSERT INTO result VALUES (&apos;EntDataVirt.RMSAdmins.us.com&apos;, 2);
+	INSERT INTO result VALUES (&apos;EntDataVirt.SpaceUsers.us.com&apos;, 1);
+	INSERT INTO result VALUES (&apos;EntDataVirt.SpaceAdmins.us.com&apos;, 2);
+
+END</attribute>
+  <attribute name="creationDate" type="LONG">1494878739860</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">700</attribute>
+  <attribute name="creatorUserName" type="STRING">venky</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1494885170676</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">700</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1494878739860</attribute>
+</metadata>

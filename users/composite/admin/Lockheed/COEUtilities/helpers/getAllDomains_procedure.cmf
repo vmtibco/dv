@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getAllDomains" path="/users/composite/admin/Lockheed/COEUtilities/helpers/getAllDomains" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="domainName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">/* getAllDomains:
+
+	Input:
+		N/A
+
+	Output:
+		CURSOR with columns domainName
+		
+
+	Author:				Venky Madireddi
+	Date:				05/15/2017
+	CIS Version:		7.0.5
+	Description:		Script returning a set of rows
+*/
+PROCEDURE getAllDomains
+(
+	OUT	result		PIPE
+					(
+						domainName		VARCHAR
+					)
+)
+BEGIN
+	INSERT INTO result VALUES (&apos;acct01&apos;);
+	INSERT INTO result VALUES (&apos;acct02&apos;);
+	INSERT INTO result VALUES (&apos;acct03&apos;);
+	INSERT INTO result VALUES (&apos;acct04&apos;);
+	INSERT INTO result VALUES (&apos;acct05&apos;);
+	INSERT INTO result VALUES (&apos;ladc&apos;);
+	INSERT INTO result VALUES (&apos;lfwc&apos;);
+	INSERT INTO result VALUES (&apos;us&apos;);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1494878739860</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">700</attribute>
+  <attribute name="creatorUserName" type="STRING">venky</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1494887121832</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">700</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1494878739860</attribute>
+</metadata>

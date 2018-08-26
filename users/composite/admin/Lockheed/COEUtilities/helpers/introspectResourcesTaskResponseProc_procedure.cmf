@@ -1,0 +1,65 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="introspectResourcesTaskResponseProc" path="/users/composite/admin/Lockheed/COEUtilities/helpers/introspectResourcesTaskResponseProc" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="inXML" direction="IN" nullable="true">
+      <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+        <schemaDatatype>
+          <datatype name="XML" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+      <attribute name="Customized" type="STRING">datatype.changed;datatype.changed</attribute>
+    </parameter>
+    <parameter name="outXML" direction="OUT" nullable="true">
+      <datatype name="introspectResourcesTaskResponse" namespace="http://www.compositesw.com/services/system/admin/resource" referenceDefinitionSet="/users/composite/admin/Lockheed/COEUtilities/DefinitionSet/SystemResourceDefSet" referenceType="{http://www.compositesw.com/services/system/admin/resource}introspectResourcesTaskResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/admin/resource}introspectResourcesTaskResponse">
+        <schemaDatatype>
+          <datatype name="introspectResourcesTaskResponse" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="introspectResourcesTaskResponse" superTypeNamespace="http://www.compositesw.com/services/system/admin/resource" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="taskId" namespace="http://www.compositesw.com/services/system/util/common">
+              <datatype name="taskId" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+            </element>
+            <element name="totalResults" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+              <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+            </element>
+            <element name="completed" namespace="http://www.compositesw.com/services/system/util/common">
+              <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Lockheed/COEUtilities/DefinitionSet/SystemResourceDefSet" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* introspectResourcesTaskResponseProc:
+
+	Author:				Venky Madireddi
+	Date:				06/07/2017
+	CIS Version:		7.0.5
+	Description:		Helper to convert XML
+*/
+PROCEDURE introspectResourcesTaskResponseProc
+(
+	IN	inXML			XML,
+	OUT	outXML			/users/composite/admin/Lockheed/COEUtilities/DefinitionSet/SystemResourceDefSet.&quot;{http://www.compositesw.com/services/system/admin/resource}introspectResourcesTaskResponse&quot;
+)
+BEGIN
+	SET outXML = inXML;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1494875973413</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">700</attribute>
+  <attribute name="creatorUserName" type="STRING">venky</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1496851427241</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">700</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="p:0:Customized" type="STRING">datatype.changed;datatype.changed</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1494875973413</attribute>
+</metadata>

@@ -1,0 +1,161 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="setupAeroPrivileges" path="/users/composite/admin/Lockheed/COEUtilities/setupAeroPrivileges" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters></parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Print" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToPrint" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/ASAssets/BestPractices_v81/PrivilegeScripts/updatePrivilegesDriver" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="Datasource" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Batch_Privileges" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="Environment_Name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Organization" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Project" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="SubProject" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Sheet_Name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Resource_Path" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Resource_Type" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Name_" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Name_Type" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="Domain_Name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="preview" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="forceDomainAsComposite" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug1" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug1Console" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug1CISLog" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug1ReadOnly" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug1RevokeAll" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inDebug2" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="inBypassErrors" direction="IN">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="rowsProcessed" direction="OUT">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="logOutput" direction="OUT">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* setupAeroPrivileges:
+
+	Author:				Venky Madireddi
+	Date:				06/01/2017
+	CIS Version:		7.0.5
+	Description:		Wrapper script to configure privileges for Aeronautics
+*/
+PROCEDURE setupAeroPrivileges()
+BEGIN
+	DECLARE	ba		VARCHAR(1024) DEFAULT &apos;Aeronautics&apos;;
+	DECLARE rp		INTEGER;
+	DECLARE resp	LONGVARCHAR;
+
+	CALL Print(&apos;Started setupAeroPrivileges execution&apos;);
+	CALL Print(&apos;&apos;);
+	CALL /shared/ASAssets/BestPractices_v81/PrivilegeScripts/updatePrivilegesDriver(&apos;EXCEL&apos;, 1, &apos;DEV&apos;, &apos;LMCO&apos;, ba, null, null, null, null, null, null, null, null, null, &apos;Y&apos;, &apos;Y&apos;, &apos;N&apos;, &apos;Y&apos;, &apos;Y&apos;, &apos;N&apos;, &apos;Y&apos;, rp, resp);
+	CALL Print(&apos;&apos;);
+	CALL Print(&apos;End setupAeroPrivileges execution: &apos; || rp);
+	CALL Print(resp);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1494879803532</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">700</attribute>
+  <attribute name="creatorUserName" type="STRING">venky</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">700</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">7/14</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/15</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/18</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/17</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/19</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1494879803532</attribute>
+</metadata>

@@ -1,0 +1,242 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="createDomain" path="/users/composite/admin/Lockheed/COEUtilities/helpers/createDomain" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="domainName" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="svcacct" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="svcpasswd" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="ldapurl" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="4096"/>
+      <attribute name="Customized" type="STRING">datatype.changed;datatype.changed</attribute>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="4096"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/services/webservices/system/admin/user/operations/createDomain" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="createDomain" direction="IN">
+        <datatype name="createDomain" extendedName="{http://www.compositesw.com/services/system/admin/user}createDomain" namespace="http://www.compositesw.com/services/system/admin/user" referenceDefinitionSet="/services/webservices/system/admin/user/operations/UserSchema" referenceType="{http://www.compositesw.com/services/system/admin/user}createDomain" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/admin/user}createDomain">
+          <schemaDatatype>
+            <datatype name="createDomain" namespace="http://www.compositesw.com/services/system/admin/user" superTypeName="createDomainRequest" superTypeNamespace="http://www.compositesw.com/services/system/admin/user" subType="ELEMENT_DECL" type="TREE" refId="2">
+              <element name="domainName" namespace="http://www.compositesw.com/services/system/admin/user">
+                <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+              </element>
+              <element name="domainType" namespace="http://www.compositesw.com/services/system/admin/user">
+                <datatype name="domainTypeValue" namespace="http://www.compositesw.com/services/system/admin/user" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+              </element>
+              <element name="isBlocking" namespace="http://www.compositesw.com/services/system/admin/user">
+                <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+              </element>
+              <element name="annotation" namespace="http://www.compositesw.com/services/system/admin/user" minOccurs="0">
+                <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+              </element>
+              <element name="attributes" namespace="http://www.compositesw.com/services/system/admin/user" minOccurs="0">
+                <datatype name="attributeList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                  <element name="attribute" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                    <datatype name="attribute" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                      <element name="name" namespace="http://www.compositesw.com/services/system/util/common">
+                        <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                      </element>
+                      <element name="type" namespace="http://www.compositesw.com/services/system/util/common">
+                        <datatype name="attributeType" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                      </element>
+                      <element name="value" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                        <datatype name="attributeSimpleValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                      </element>
+                      <element name="valueList" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                        <datatype name="attributeTypeValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                          <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                            <datatype name="attributeTypeValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                              <element name="type" namespace="http://www.compositesw.com/services/system/util/common">
+                                <datatype name="attributeType" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                              </element>
+                              <element name="value" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                <datatype name="attributeSimpleValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                              </element>
+                              <element name="valueList" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                <reference refId="5"/>
+                              </element>
+                              <element name="valueMap" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                <datatype name="attributeTypeValueMap" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                                  <element name="entry" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                    <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="8">
+                                      <element name="key" namespace="http://www.compositesw.com/services/system/util/common">
+                                        <reference refId="6"/>
+                                      </element>
+                                      <element name="value" namespace="http://www.compositesw.com/services/system/util/common">
+                                        <reference refId="6"/>
+                                      </element>
+                                    </datatype>
+                                  </element>
+                                </datatype>
+                              </element>
+                              <element name="valueArray" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                <datatype name="attributeSimpleValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="9">
+                                  <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                    <datatype name="attributeSimpleValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                  </element>
+                                </datatype>
+                              </element>
+                            </datatype>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="valueMap" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                        <reference refId="7"/>
+                      </element>
+                      <element name="valueArray" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                        <reference refId="9"/>
+                      </element>
+                      <element name="unset" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                        <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+                      </element>
+                    </datatype>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="createDomainResponse" direction="OUT">
+        <datatype name="createDomainResponse" extendedName="{http://www.compositesw.com/services/system/admin/user}createDomainResponse" namespace="http://www.compositesw.com/services/system/admin/user" referenceDefinitionSet="/services/webservices/system/admin/user/operations/UserSchema" referenceType="{http://www.compositesw.com/services/system/admin/user}createDomainResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/admin/user}createDomainResponse">
+          <schemaDatatype>
+            <datatype name="createDomainResponse" namespace="http://www.compositesw.com/services/system/admin/user" superTypeName="createDomainResponse" superTypeNamespace="http://www.compositesw.com/services/system/admin/user" subType="ELEMENT_DECL" type="TREE" refId="10">
+              <element name="status" namespace="http://www.compositesw.com/services/system/admin/user">
+                <datatype name="operationStatus" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="fault" direction="OUT">
+        <datatype name="fault" extendedName="{http://www.compositesw.com/services/system/util/common}fault" namespace="http://www.compositesw.com/services/system/util/common" referenceDefinitionSet="/services/webservices/system/util/common/operations/CommonSchema" referenceType="{http://www.compositesw.com/services/system/util/common}fault" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/util/common}fault">
+          <schemaDatatype>
+            <datatype name="fault" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="fault" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="ELEMENT_DECL" type="TREE" refId="11">
+              <element name="errorEntry" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                <datatype name="messageEntry" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="12">
+                  <element name="code" namespace="http://www.compositesw.com/services/system/util/common">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="name" namespace="http://www.compositesw.com/services/system/util/common">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="message" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="detail" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="severity" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="messageSeverity" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* createDomain:
+
+	Input:
+		domainName:		LDAP Domain name
+		svcacct:		FQDN for Service Account
+		svcpasswd:		Password for service account
+		ldapurl:		LDAP URL
+	Output:
+		result:			Success or Failure message
+
+	Author:				Venky Madireddi
+	Date:				05/15/2017
+	CIS Version:		7.0.5
+	Description:		Script to create a LDAP domain
+*/
+PROCEDURE createDomain
+(
+	IN	domainName		VARCHAR,
+	IN	svcacct			VARCHAR(4096),
+	IN	svcpasswd		VARCHAR,
+	IN	ldapurl			VARCHAR(4096),
+	OUT	result			VARCHAR(4096)
+)
+BEGIN
+	DECLARE	response, fault		XML;
+	DECLARE illegal_input_ex	EXCEPTION;
+	
+	IF domainName IS NULL OR
+		domainName = &apos;&apos; OR
+		svcacct IS NULL OR
+		svcacct = &apos;&apos; OR
+		svcpasswd IS NULL OR
+		svcpasswd = &apos;&apos; OR
+		ldapurl IS NULL OR
+		ldapurl = &apos;&apos;
+	THEN
+		RAISE illegal_input_ex VALUE &apos;Invalid input domain(&apos; || NVL(domainName, &apos;INVALID_DOMAIN&apos;) || &apos;)&apos;;
+	END IF;
+	CALL /services/webservices/system/admin/&quot;user&quot;/operations/createDomain(&apos;
+&lt;user:createDomain xmlns:user=&quot;http://www.compositesw.com/services/system/admin/user&quot; xmlns:common=&quot;http://www.compositesw.com/services/system/util/common&quot;&gt;
+  &lt;user:domainName&gt;&apos; || domainName || &apos;&lt;/user:domainName&gt;
+  &lt;user:domainType&gt;LDAP&lt;/user:domainType&gt;
+  &lt;user:isBlocking&gt;true&lt;/user:isBlocking&gt;
+  &lt;user:annotation&gt;&apos; || domainName || &apos;&lt;/user:annotation&gt;
+  &lt;user:attributes&gt;
+    &lt;common:attribute&gt;
+      &lt;common:name&gt;a_domain_subtype&lt;/common:name&gt;
+      &lt;common:type&gt;STRING&lt;/common:type&gt;
+      &lt;common:value&gt;Active Directory&lt;/common:value&gt;
+    &lt;/common:attribute&gt;
+    &lt;common:attribute&gt;
+      &lt;common:name&gt;a_domain_url&lt;/common:name&gt;
+      &lt;common:type&gt;STRING&lt;/common:type&gt;
+      &lt;common:value&gt;&apos; || ldapurl || &apos;&lt;/common:value&gt;
+    &lt;/common:attribute&gt;
+    &lt;common:attribute&gt;
+      &lt;common:name&gt;a_domain_admin_name&lt;/common:name&gt;
+      &lt;common:type&gt;STRING&lt;/common:type&gt;
+      &lt;common:value&gt;&apos; || svcacct || &apos;&lt;/common:value&gt;
+    &lt;/common:attribute&gt;
+    &lt;common:attribute&gt;
+      &lt;common:name&gt;a_domain_admin_password&lt;/common:name&gt;
+      &lt;common:type&gt;PASSWORD_STRING&lt;/common:type&gt;
+      &lt;common:value&gt;&apos; || svcpasswd || &apos;&lt;/common:value&gt;
+    &lt;/common:attribute&gt;
+    &lt;common:attribute&gt;
+      &lt;common:name&gt;a_domain_authentication&lt;/common:name&gt;
+      &lt;common:type&gt;STRING&lt;/common:type&gt;
+      &lt;common:value&gt;Simple&lt;/common:value&gt;
+    &lt;/common:attribute&gt;
+  &lt;/user:attributes&gt;
+&lt;/user:createDomain&gt;
+	&apos;, response, fault);
+	SET result = &apos;SUCCESS&apos;;
+EXCEPTION
+	ELSE
+		SET result = CURRENT_EXCEPTION.MESSAGE;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1494875973413</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">700</attribute>
+  <attribute name="creatorUserName" type="STRING">venky</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1494884904311</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">700</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="p:3:Customized" type="STRING">datatype.changed;datatype.changed</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1494875973413</attribute>
+</metadata>
