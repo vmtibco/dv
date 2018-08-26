@@ -1,0 +1,194 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="vTwitterDemo" path="/shared/TwitterDemo/vTwitterDemo" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <annotation>Federated View representing join of unstructured data from Solr with products table in MySQL.
+Author:      Venky Madireddi
+
+Copyright (c) 2013-2014
+Cisco Systems, Inc.
+All Rights Reserved</annotation>
+  <columns>
+    <column name="productId" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="productName" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="productDesc" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="catId" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="serialNum" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="unitPrice" nullable="true">
+      <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="tweetId" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="userId" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="userName" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="tweet" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="postDate" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/TwitterDemo/Postgres_inventory/tutorial/product_query" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="productid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="searchquery" nullable="false">
+        <datatype type="STRING" maxLength="1024"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/TwitterDemo/Postgres_inventory/tutorial/products" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="productid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="productname">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="productdescription">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="categoryid">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="serialnumber">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="unitprice">
+        <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="reorderlevel">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="leadtime">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/TwitterDemo/pTweetSearch" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="query" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="product_id" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="tweets" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="product_id">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="id">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="user_id">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="user_name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="post_date">
+            <datatype type="DATETIME"/>
+          </element>
+          <element name="tweet">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">/*
+	Author:      Venky Madireddi
+
+    Copyright (c) 2013-2014
+    Cisco Systems, Inc.
+    All Rights Reserved
+*/
+SELECT 
+    products.ProductID productId, 
+    products.ProductName productName, 
+    products.ProductDescription productDesc, 
+    products.CategoryID catId, 
+    products.SerialNumber serialNum, 
+    products.UnitPrice unitPrice, 
+	tweets.id tweetId,
+	tweets.user_id userId,
+	tweets.user_name userName,
+	tweets.&quot;tweet&quot; tweet,
+	tweets.post_date postDate
+FROM      
+    /shared/TwitterDemo/Postgres_inventory/tutorial/products products INNER JOIN 
+	(SELECT 
+		product_query.ProductID, 
+		pTweetSearch.id,
+		pTweetSearch.user_id,
+		pTweetSearch.user_name,
+		pTweetSearch.&quot;tweet&quot;,
+		pTweetSearch.post_date,
+		product_query.SearchQuery
+	FROM      
+		/shared/TwitterDemo/Postgres_inventory/tutorial/product_query product_query INNER PROCEDURE JOIN
+			/shared/TwitterDemo/pTweetSearch(product_query.SearchQuery, product_query.ProductID) pTweetSearch
+		ON product_query.ProductID = pTweetSearch.product_id) tweets
+	ON products.ProductID = tweets.ProductID</attribute>
+  <attribute name="creationDate" type="LONG">1358547222797</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1436201428641</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+</metadata>

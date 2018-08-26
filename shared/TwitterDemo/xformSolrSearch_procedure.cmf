@@ -1,0 +1,353 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="xformSolrSearch" path="/shared/TwitterDemo/xformSolrSearch" type="PROCEDURE" subtype="XSLT_TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="query" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="outputs" direction="OUT" nullable="false">
+      <datatype name="outputs" type="TABLE" refId="1">
+        <element name="id">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="user_id">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="user_name">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="post_date">
+          <datatype name="TIMESTAMP" type="DATETIME"/>
+        </element>
+        <element name="desc">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+      <attribute name="Customized" type="STRING">datatype.changed</attribute>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/TwitterDemo/pqSolrSearch" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="query" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="responseBody" direction="OUT">
+        <datatype name="response" referenceDefinitionSet="/shared/TwitterDemo/Solr_Xml_Def" referenceType="response" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="response">
+          <schemaDatatype>
+            <datatype name="response" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="2">
+              <element name="lst">
+                <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                  <element name="name" category="1">
+                    <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="int" minOccurs="0">
+                    <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                      <element name="name" category="1">
+                        <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                      </element>
+                      <element name="value" category="5">
+                        <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                      </element>
+                    </datatype>
+                  </element>
+                  <element name="lst" minOccurs="0">
+                    <reference refId="3"/>
+                  </element>
+                  <element name="str" minOccurs="0">
+                    <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                      <element name="name" minOccurs="0" category="1">
+                        <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                      </element>
+                      <element name="value" minOccurs="0" category="3">
+                        <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                      </element>
+                    </datatype>
+                  </element>
+                </datatype>
+              </element>
+              <element name="result">
+                <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                  <element name="name" category="1">
+                    <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="numFound" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="start" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="doc" maxOccurs="2147483647">
+                    <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                      <element name="arr" maxOccurs="2147483647">
+                        <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="8">
+                          <element name="name" category="1">
+                            <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                          </element>
+                          <element name="str" maxOccurs="2147483647">
+                            <reference refId="5"/>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="int">
+                        <reference refId="4"/>
+                      </element>
+                      <element name="str">
+                        <reference refId="5"/>
+                      </element>
+                      <element name="bool">
+                        <datatype superTypeName="boolean" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="9">
+                          <element name="name" category="1">
+                            <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                          </element>
+                          <element name="value" category="5">
+                            <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="date">
+                        <datatype superTypeName="NMTOKEN" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="10">
+                          <element name="name" category="1">
+                            <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                          </element>
+                          <element name="value" category="5">
+                            <datatype name="NMTOKEN" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="token" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="float">
+                        <datatype superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="11">
+                          <element name="name" category="1">
+                            <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                          </element>
+                          <element name="value" category="5">
+                            <datatype name="decimal" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" minDigits="1" maxDigits="32" maxFractionalDigits="6" maxValue="-1"/>
+                          </element>
+                        </datatype>
+                      </element>
+                    </datatype>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1353114889185</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1398439506500</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="p:1:Customized" type="STRING">datatype.changed</attribute>
+  <attribute name="sourcePath" type="STRING">/shared/TwitterDemo/pqSolrSearch</attribute>
+  <attribute name="sourceType" type="SHORT">3</attribute>
+  <attribute name="transformModel" type="STRING">
+&lt;transformModel customized=&quot;true&quot;&gt;
+  &lt;signature&gt;
+    &lt;datatype type=&quot;TREE&quot; refId=&quot;1&quot;&gt;
+      &lt;element name=&quot;inputs&quot;&gt;
+        &lt;datatype name=&quot;inputs&quot; type=&quot;TREE&quot; refId=&quot;2&quot;&gt;
+          &lt;element name=&quot;response&quot; nullable=&quot;false&quot;&gt;
+            &lt;datatype name=&quot;response&quot; referenceDefinitionSet=&quot;/shared/TwitterDemo/Solr_Xml_Def&quot; referenceType=&quot;response&quot; subType=&quot;ELEMENT_DECL&quot; type=&quot;XML&quot; contentConstraint=&quot;SEQUENCE&quot; schemaConstraint=&quot;ANY&quot; componentType=&quot;ELEMENT&quot; componentName=&quot;response&quot;&gt;
+              &lt;schemaDatatype&gt;
+                &lt;datatype name=&quot;response&quot; superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;ELEMENT_DECL&quot; anonymous=&quot;true&quot; type=&quot;TREE&quot; refId=&quot;3&quot;&gt;
+                  &lt;element name=&quot;lst&quot;&gt;
+                    &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;4&quot;&gt;
+                      &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                        &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;int&quot; minOccurs=&quot;0&quot;&gt;
+                        &lt;datatype superTypeName=&quot;integer&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;5&quot;&gt;
+                          &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                            &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;value&quot; category=&quot;5&quot;&gt;
+                            &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                          &lt;/element&gt;
+                        &lt;/datatype&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;lst&quot; minOccurs=&quot;0&quot;&gt;
+                        &lt;reference refId=&quot;4&quot;/&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;str&quot; minOccurs=&quot;0&quot;&gt;
+                        &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;6&quot;&gt;
+                          &lt;element name=&quot;name&quot; minOccurs=&quot;0&quot; category=&quot;1&quot;&gt;
+                            &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;value&quot; minOccurs=&quot;0&quot; category=&quot;3&quot;&gt;
+                            &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                          &lt;/element&gt;
+                        &lt;/datatype&gt;
+                      &lt;/element&gt;
+                    &lt;/datatype&gt;
+                  &lt;/element&gt;
+                  &lt;element name=&quot;result&quot;&gt;
+                    &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;7&quot;&gt;
+                      &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                        &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;numFound&quot; category=&quot;1&quot;&gt;
+                        &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;start&quot; category=&quot;1&quot;&gt;
+                        &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                      &lt;/element&gt;
+                      &lt;element name=&quot;doc&quot; maxOccurs=&quot;2147483647&quot;&gt;
+                        &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;8&quot;&gt;
+                          &lt;element name=&quot;arr&quot; maxOccurs=&quot;2147483647&quot;&gt;
+                            &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;9&quot;&gt;
+                              &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                                &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                              &lt;/element&gt;
+                              &lt;element name=&quot;str&quot; maxOccurs=&quot;2147483647&quot;&gt;
+                                &lt;reference refId=&quot;6&quot;/&gt;
+                              &lt;/element&gt;
+                            &lt;/datatype&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;int&quot;&gt;
+                            &lt;reference refId=&quot;5&quot;/&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;str&quot;&gt;
+                            &lt;reference refId=&quot;6&quot;/&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;bool&quot;&gt;
+                            &lt;datatype superTypeName=&quot;boolean&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;10&quot;&gt;
+                              &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                                &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                              &lt;/element&gt;
+                              &lt;element name=&quot;value&quot; category=&quot;5&quot;&gt;
+                                &lt;datatype name=&quot;boolean&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;INTEGER&quot; minValue=&quot;0&quot; maxValue=&quot;1&quot;/&gt;
+                              &lt;/element&gt;
+                            &lt;/datatype&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;date&quot;&gt;
+                            &lt;datatype superTypeName=&quot;NMTOKEN&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;11&quot;&gt;
+                              &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                                &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                              &lt;/element&gt;
+                              &lt;element name=&quot;value&quot; category=&quot;5&quot;&gt;
+                                &lt;datatype name=&quot;NMTOKEN&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;token&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                              &lt;/element&gt;
+                            &lt;/datatype&gt;
+                          &lt;/element&gt;
+                          &lt;element name=&quot;float&quot;&gt;
+                            &lt;datatype superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;12&quot;&gt;
+                              &lt;element name=&quot;name&quot; category=&quot;1&quot;&gt;
+                                &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                              &lt;/element&gt;
+                              &lt;element name=&quot;value&quot; category=&quot;5&quot;&gt;
+                                &lt;datatype name=&quot;decimal&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; minDigits=&quot;1&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;6&quot; maxValue=&quot;-1&quot;/&gt;
+                              &lt;/element&gt;
+                            &lt;/datatype&gt;
+                          &lt;/element&gt;
+                        &lt;/datatype&gt;
+                      &lt;/element&gt;
+                    &lt;/datatype&gt;
+                  &lt;/element&gt;
+                &lt;/datatype&gt;
+              &lt;/schemaDatatype&gt;
+            &lt;/datatype&gt;
+          &lt;/element&gt;
+        &lt;/datatype&gt;
+      &lt;/element&gt;
+      &lt;element name=&quot;outputs&quot;&gt;
+        &lt;datatype type=&quot;PROCEDURE&quot; refId=&quot;13&quot;&gt;
+          &lt;element name=&quot;outputs&quot; direction=&quot;OUT&quot;&gt;
+            &lt;datatype name=&quot;outputs&quot; type=&quot;TABLE&quot; refId=&quot;14&quot;&gt;
+              &lt;element name=&quot;id&quot;&gt;
+                &lt;datatype name=&quot;VARCHAR&quot; type=&quot;STRING&quot; maxLength=&quot;255&quot;/&gt;
+              &lt;/element&gt;
+              &lt;element name=&quot;user_id&quot;&gt;
+                &lt;datatype name=&quot;VARCHAR&quot; type=&quot;STRING&quot; maxLength=&quot;255&quot;/&gt;
+              &lt;/element&gt;
+              &lt;element name=&quot;user_name&quot;&gt;
+                &lt;datatype name=&quot;VARCHAR&quot; type=&quot;STRING&quot; maxLength=&quot;255&quot;/&gt;
+              &lt;/element&gt;
+              &lt;element name=&quot;post_date&quot;&gt;
+                &lt;datatype name=&quot;TIMESTAMP&quot; type=&quot;DATETIME&quot;/&gt;
+              &lt;/element&gt;
+              &lt;element name=&quot;desc&quot;&gt;
+                &lt;datatype name=&quot;VARCHAR&quot; type=&quot;STRING&quot; maxLength=&quot;255&quot;/&gt;
+              &lt;/element&gt;
+            &lt;/datatype&gt;
+          &lt;/element&gt;
+        &lt;/datatype&gt;
+      &lt;/element&gt;
+    &lt;/datatype&gt;
+  &lt;/signature&gt;
+  &lt;xslt&gt;&amp;lt;xslt:stylesheet xmlns:xslt=&amp;quot;http://www.w3.org/1999/XSL/Transform&amp;quot; xmlns:csw-xform=&amp;quot;http://www.compositesw.com/2003/xform&amp;quot; xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; version=&amp;quot;2.0&amp;quot;&amp;gt;
+  &amp;lt;xslt:template match=&amp;quot;/&amp;quot;&amp;gt;
+    &amp;lt;xslt:variable name=&amp;quot;_numFound&amp;quot;/&amp;gt;
+    &amp;lt;xslt:element name=&amp;quot;results&amp;quot;&amp;gt;
+      &amp;lt;xslt:for-each select=&amp;quot;response&amp;quot;&amp;gt;
+        &amp;lt;xslt:for-each select=&amp;quot;result&amp;quot;&amp;gt;
+          &amp;lt;xslt:variable name=&amp;quot;_numFound&amp;quot; select=&amp;quot;@numFound&amp;quot;/&amp;gt;
+          &amp;lt;xslt:for-each select=&amp;quot;doc&amp;quot;&amp;gt;
+            &amp;lt;xslt:element name=&amp;quot;result&amp;quot;&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;numFound&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;$_numFound&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;id&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;./str[@name=&amp;apos;id&amp;apos;]&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;user_id&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;./str[@name=&amp;apos;user_id&amp;apos;]&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;user_name&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;./str[@name=&amp;apos;user_name&amp;apos;]&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;desc&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;./str[@name=&amp;apos;tweet_txt&amp;apos;]&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+              &amp;lt;xslt:element name=&amp;quot;post_date&amp;quot;&amp;gt;
+                &amp;lt;xslt:value-of select=&amp;quot;./date[@name=&amp;apos;post_date&amp;apos;]&amp;quot;/&amp;gt;
+              &amp;lt;/xslt:element&amp;gt;
+            &amp;lt;/xslt:element&amp;gt;
+          &amp;lt;/xslt:for-each&amp;gt;
+        &amp;lt;/xslt:for-each&amp;gt;
+      &amp;lt;/xslt:for-each&amp;gt;
+    &amp;lt;/xslt:element&amp;gt;
+  &amp;lt;/xslt:template&amp;gt;
+&amp;lt;/xslt:stylesheet&amp;gt;&lt;/xslt&gt;
+&lt;/transformModel&gt;</attribute>
+  <attribute name="xqueryModel" type="NULL"/>
+  <attribute name="xslt" type="STRING">&lt;xslt:stylesheet xmlns:xslt=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:csw-xform=&quot;http://www.compositesw.com/2003/xform&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;
+  &lt;xslt:template match=&quot;/&quot;&gt;
+    &lt;xslt:variable name=&quot;_numFound&quot;/&gt;
+    &lt;xslt:element name=&quot;results&quot;&gt;
+      &lt;xslt:for-each select=&quot;response&quot;&gt;
+        &lt;xslt:for-each select=&quot;result&quot;&gt;
+          &lt;xslt:variable name=&quot;_numFound&quot; select=&quot;@numFound&quot;/&gt;
+          &lt;xslt:for-each select=&quot;doc&quot;&gt;
+            &lt;xslt:element name=&quot;result&quot;&gt;
+              &lt;xslt:element name=&quot;numFound&quot;&gt;
+                &lt;xslt:value-of select=&quot;$_numFound&quot;/&gt;
+              &lt;/xslt:element&gt;
+              &lt;xslt:element name=&quot;id&quot;&gt;
+                &lt;xslt:value-of select=&quot;./str[@name=&apos;id&apos;]&quot;/&gt;
+              &lt;/xslt:element&gt;
+              &lt;xslt:element name=&quot;user_id&quot;&gt;
+                &lt;xslt:value-of select=&quot;./str[@name=&apos;user_id&apos;]&quot;/&gt;
+              &lt;/xslt:element&gt;
+              &lt;xslt:element name=&quot;user_name&quot;&gt;
+                &lt;xslt:value-of select=&quot;./str[@name=&apos;user_name&apos;]&quot;/&gt;
+              &lt;/xslt:element&gt;
+              &lt;xslt:element name=&quot;desc&quot;&gt;
+                &lt;xslt:value-of select=&quot;./str[@name=&apos;tweet_txt&apos;]&quot;/&gt;
+              &lt;/xslt:element&gt;
+              &lt;xslt:element name=&quot;post_date&quot;&gt;
+                &lt;xslt:value-of select=&quot;./date[@name=&apos;post_date&apos;]&quot;/&gt;
+              &lt;/xslt:element&gt;
+            &lt;/xslt:element&gt;
+          &lt;/xslt:for-each&gt;
+        &lt;/xslt:for-each&gt;
+      &lt;/xslt:for-each&gt;
+    &lt;/xslt:element&gt;
+  &lt;/xslt:template&gt;
+&lt;/xslt:stylesheet&gt;</attribute>
+</metadata>

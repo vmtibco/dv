@@ -1,0 +1,219 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getTweetsByUser" path="/shared/TwitterDemo/getTweetsByUser" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <annotation>Packaged query to find Tweets posted by a user.
+Author:      Venky Madireddi
+
+Copyright (c) 2013-2014
+Cisco Systems, Inc.
+All Rights Reserved</annotation>
+  <parameters>
+    <parameter name="inUserId" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="productId">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="productName">
+          <datatype name="VARCHAR" type="STRING" maxLength="50"/>
+        </element>
+        <element name="productDesc">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="catId">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="serialNum">
+          <datatype name="VARCHAR" type="STRING" maxLength="50"/>
+        </element>
+        <element name="unitPrice">
+          <datatype name="DECIMAL" type="DECIMAL" maxDigits="12" maxFractionalDigits="2"/>
+        </element>
+        <element name="tweetId">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="userId">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="userName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="tweet">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="postDate">
+          <datatype name="TIMESTAMP" type="DATETIME"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/TwitterDemo/vTwitterDemo" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="productId">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="productName">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="productDesc">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="catId">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="serialNum">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="unitPrice">
+        <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="tweetId">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="userId">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="userName">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="tweet">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="postDate">
+        <datatype type="DATETIME"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE getTweetsByUser(
+    IN inUserId VARCHAR(255), 
+    OUT result CURSOR (
+        productId INTEGER, 
+        productName VARCHAR(50), 
+        productDesc VARCHAR(255), 
+        catId INTEGER, 
+        serialNum VARCHAR(50), 
+        unitPrice DECIMAL(12,2), 
+        tweetId VARCHAR(255), 
+        userId VARCHAR(255), 
+        userName VARCHAR(255), 
+        tweet VARCHAR(255), 
+        postDate TIMESTAMP
+        )
+    )
+    BEGIN
+        OPEN result FOR 
+            SELECT 
+                vTwitterDemo.productId, 
+                vTwitterDemo.productName, 
+                vTwitterDemo.productDesc, 
+                vTwitterDemo.catId, 
+                vTwitterDemo.serialNum, 
+                vTwitterDemo.unitPrice, 
+                vTwitterDemo.tweetId, 
+                vTwitterDemo.userId, 
+                vTwitterDemo.userName, 
+                vTwitterDemo.tweet, 
+                vTwitterDemo.postDate
+            FROM      
+                /shared/TwitterDemo/vTwitterDemo vTwitterDemo
+            WHERE
+                vTwitterDemo.userId = inUserId;
+    END</attribute>
+  <attribute name="creationDate" type="LONG">1397863802943</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1436201428641</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIMGBwAPAGcAZQB0AFQAdwBlAGUAdABzAEIAeQBVAHMAZQByCQQAAAABEFEGAQAMAHYAVAB3AGkA
+dAB0AGUAcgBEAGUAbQBvBgIADAB2AFQAdwBpAHQAdABlAHIARABlAG0AbwML/////wMK/////wMM
+/////wsRAAMABgBzAGgAYQByAGUAZAALAFQAdwBpAHQAdABlAHIARABlAG0AbwAMAHYAVAB3AGkA
+dAB0AGUAcgBEAGUAbQBv//8DBQAAAAAIAhAxBgH//wECAQEGAAEDAAEEAAEFAAMHAAAAAAgIEGIG
+BwABAD0BBQAIAxBBBgEABgB1AHMAZQByAEkAZAYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEE
+BAAAAAAAAAD/ARMB//8DCwAAAAD//wgEEEsGAQAIAGkAbgBVAHMAZQByAEkAZAYCAAAIDBAbBgIA
+BwBWAEEAUgBDAEgAQQBSAxIAAAABBAQAAAAAAAAA/wETAf///////wcJAAAAAQAAAAAJCgAAAAsQ
+QQYBAAkAcAByAG8AZAB1AGMAdABJAGQGAgAABgP//wYE//8DCv////8IDBAZAxIAAAABBAf/////
+gAAAAAQGAAAAAH///////wMLAAAAAP//EEEGAQALAHAAcgBvAGQAdQBjAHQATgBhAG0AZQYCAAAG
+A///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAAyARMB//8DCwAAAAD//xBBBgEACwBwAHIA
+bwBkAHUAYwB0AEQAZQBzAGMGAgAABgP//wYE//8DCv////8IDBAbAxIAAAABBAQAAAAAAAAA/wET
+Af//AwsAAAAA//8QQQYBAAUAYwBhAHQASQBkBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAAAQQH
+/////4AAAAAEBgAAAAB///////8DCwAAAAD//xBBBgEACQBzAGUAcgBpAGEAbABOAHUAbQYCAAAG
+A///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAAyARMB//8DCwAAAAD//xBBBgEACQB1AG4A
+aQB0AFAAcgBpAGMAZQYCAAAGA///BgT//wMK/////wgMEBcDEgAAAAEDDgAAAAwDEAAAAAL//wML
+AAAAAP//EEEGAQAHAHQAdwBlAGUAdABJAGQGAgAABgP//wYE//8DCv////8IDBAbAxIAAAABBAQA
+AAAAAAAA/wETAf//AwsAAAAA//8QQQYBAAYAdQBzAGUAcgBJAGQGAgAABgP//wYE//8DCv////8I
+DBAbAxIAAAABBAQAAAAAAAAA/wETAf//AwsAAAAA//8QQQYBAAgAdQBzAGUAcgBOAGEAbQBlBgIA
+AAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAAP8BEwH//wMLAAAAAP//EEEGAQAFAHQA
+dwBlAGUAdAYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAD/ARMB//8DCwAAAAD/
+/xBBBgEACABwAG8AcwB0AEQAYQB0AGUGAgAABgP//wYE//8DCv////8IDBAWAxIAAAAB//8DCwAA
+AAD/////CQYAAAABEIIDCgAAAaUDCwAAAWYDDAAAAMgDDQAAAMj//wgDEHEDAQAAAAsDAgAAADIJ
+AwAAAiYQdAMGAAAAAP//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAB//8QcgYE/////xBzAwUAAAAA//8QdQEH
+Af//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAAL//xBy
+BgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdAMGAAAAA///EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAE//8QcgYE/////xBzAwUAAAAA//8Q
+dQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAAX/
+/xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdAMGAAAABv//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAH//8QcgYE/////xBzAwUAAAAA
+//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8QdgYIADUAdgBUAHcAaQB0AHQAZQBy
+AEQAZQBtAG8ALgB1AHMAZQByAEkAZAAgAD0AIAB7ACAAcABhAHIAYQBtACAAaQBuAFUAcwBlAHIA
+SQBkACAAVgBBAFIAQwBIAEEAUgAoADIANQA1ACkAIAB9//8Qdv//EHb//xB2//8QdAMGAAAACP//
+EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0AwYAAAAJ//8QcgYE/////xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAAr//xByBgT/////EHMDBQAAAAD/
+/xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3
+Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8Q
+dQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/
+////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8Q
+dP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Q
+dv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2////////</attribute>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>

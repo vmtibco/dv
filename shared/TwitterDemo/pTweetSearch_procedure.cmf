@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pTweetSearch" path="/shared/TwitterDemo/pTweetSearch" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="query" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="product_id" direction="IN" nullable="true">
+      <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+    </parameter>
+    <parameter name="tweets" direction="OUT" nullable="true">
+      <datatype name="tweets" type="TABLE" refId="1">
+        <element name="product_id">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="id">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="user_id">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="user_name">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="post_date">
+          <datatype name="TIMESTAMP" type="DATETIME"/>
+        </element>
+        <element name="tweet">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/TwitterDemo/xformSolrSearch" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="query" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="outputs" direction="OUT" nullable="false">
+        <datatype type="TABLE" refId="2">
+          <element name="id">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="user_id">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="user_name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="post_date">
+            <datatype type="DATETIME"/>
+          </element>
+          <element name="desc">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pTweetSearch(
+	IN query VARCHAR,
+	IN product_id INTEGER,
+    OUT tweets CURSOR (
+			product_id		INTEGER,
+			id				VARCHAR(255),
+			user_id			VARCHAR(255),
+			user_name		VARCHAR(255),
+			post_date		TIMESTAMP,
+			&quot;tweet&quot;			VARCHAR(255)
+		)
+    )
+    BEGIN
+        OPEN tweets FOR 
+			SELECT product_id, * FROM /shared/TwitterDemo/xformSolrSearch(query);
+    END</attribute>
+  <attribute name="creationDate" type="LONG">1353114495136</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1398439506500</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>
