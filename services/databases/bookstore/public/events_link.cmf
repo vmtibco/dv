@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="events" path="/services/databases/bookstore/public/events" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/BusinessWorks/events" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="summary">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+      <element name="description">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+      <element name="authorName">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+      <element name="bookisbn">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+      <element name="&quot;date&quot;">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+      <element name="id">
+        <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1515725827627</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1515725827627</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1515725827627</attribute>
+  <attribute name="targetPath" type="STRING">/shared/BusinessWorks/events</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>
