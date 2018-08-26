@@ -1,0 +1,189 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getDSTables" path="/shared/Common/DynamicViewFramework/Helper/getDSTables" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="dsPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="dsType" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="rPath">
+          <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+        </element>
+        <element name="tName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="vName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="fName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege group="all" domain="composite" privileges="READ EXECUTE"/>
+  </security>
+  <dependency target="/lib/resource/ResourceDefs" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/lib/util/GetProperty" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="property" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/ASAssets/Utilities/string/TextUtils/RegexPosition" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="Input Text" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Regular Expression" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Occurrence" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/getChildResourcesImpl" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="rPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="rType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="children" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="id">
+            <datatype type="INTEGER"/>
+          </element>
+          <element name="cid">
+            <datatype type="INTEGER"/>
+          </element>
+          <element name="name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="subType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="dsType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="tgtType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rPath">
+            <datatype type="STRING" maxLength="65535"/>
+          </element>
+          <element name="oDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="oName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="enabled">
+            <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+          </element>
+          <element name="annotation">
+            <datatype referenceDefinitionSet="/lib/util/System" referenceType="Text" type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="creatorDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="creatorName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="modifierDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="modifierName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* getDSTables:
+	Retrieves the set of tables introspected to the data source.
+ 
+	Input:
+   	 	Path to the datasource
+
+	Output:
+		Cursor representing set of tables
+
+	Author:      Venky Madireddi
+	Date:        11/05/2014
+	CIS Version: 6.2.6
+*/
+PROCEDURE getDSTables
+(
+	IN	dsPath			/lib/resource/ResourceDefs.ResourcePath,
+	IN	dsType			VARCHAR(255),
+	OUT	result			PIPE
+						(
+							rPath			/lib/resource/ResourceDefs.ResourcePath,
+							tName			VARCHAR(255),
+							vName			VARCHAR(255),
+							fName			VARCHAR(255)
+						)
+)
+BEGIN
+	DECLARE pos INTEGER;
+	DECLARE name, fname, vname, uname VARCHAR(255);
+
+	CALL /lib/util/GetProperty(&apos;CURRENT_USER_NAME&apos;, uname);
+	SET uname = LOWER(uname);
+	IF (dsType = &apos;File-Delimited&apos;) THEN
+		FOR r AS SELECT rPath FROM /shared/Common/DynamicViewFramework/Helper/getChildResourcesImpl(dsPath, &apos;DATA_SOURCE&apos;) DO
+			CALL /shared/ASAssets/Utilities/string/TextUtils/RegexPosition(r.rPath, &apos;/&apos;, -1, pos);
+			SET name = SUBSTRING(r.rPath, (pos+1), LENGTH(r.rPath));
+			SET vname = name;
+			IF (LOWER(SUBSTR(vname, 1, LENGTH(uname))) != uname) THEN
+				SET vname = uname || &apos;-&apos; || vname;
+			END IF;
+			INSERT INTO result (rPath, tName, vName, fName) VALUES (r.rPath, name, vname, name);
+		END FOR;
+	ELSEIF (dsType = &apos;Microsoft Excel (non-ODBC)&apos;) THEN
+		FOR c AS SELECT rPath,rType FROM /shared/Common/DynamicViewFramework/Helper/getChildResourcesImpl(dsPath, &apos;DATA_SOURCE&apos;) DO
+			CALL /shared/ASAssets/Utilities/string/TextUtils/RegexPosition(c.rPath, &apos;/&apos;, -1, pos);
+			SET fname = SUBSTRING(c.rPath, (pos+1), LENGTH(c.rPath));
+			FOR r AS SELECT rPath FROM /shared/Common/DynamicViewFramework/Helper/getChildResourcesImpl(c.rPath, c.rType) DO
+				CALL /shared/ASAssets/Utilities/string/TextUtils/RegexPosition(r.rPath, &apos;/&apos;, -2, pos);
+				SET name = REPLACE(SUBSTRING(r.rPath, (pos+1), LENGTH(r.rPath)), &apos;/&apos;, &apos;-&apos;);
+				SET vname = name;
+				IF (LOWER(SUBSTR(vname, 1, LENGTH(uname))) != uname) THEN
+					SET vname = uname || &apos;-&apos; || vname;
+				END IF;
+				INSERT INTO result (rPath, tName, vName, fName) VALUES (r.rPath, name, vname, fname);
+			END FOR;
+		END FOR;
+	END IF;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1415217224669</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510943125386</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>

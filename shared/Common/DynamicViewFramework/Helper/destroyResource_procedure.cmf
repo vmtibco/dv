@@ -1,0 +1,132 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="destroyResource" path="/shared/Common/DynamicViewFramework/Helper/destroyResource" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="resourcePath" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="32768"/>
+    </parameter>
+    <parameter name="resourceType" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege group="all" domain="composite" privileges="READ EXECUTE"/>
+  </security>
+  <dependency target="/lib/debug/Print" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToPrint" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/webservices/system/admin/resource/operations/destroyResource" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="destroyResource" direction="IN">
+        <datatype name="destroyResource" extendedName="{http://www.compositesw.com/services/system/admin/resource}destroyResource" namespace="http://www.compositesw.com/services/system/admin/resource" referenceDefinitionSet="/services/webservices/system/admin/resource/operations/ResourceSchema" referenceType="{http://www.compositesw.com/services/system/admin/resource}destroyResource" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/admin/resource}destroyResource">
+          <schemaDatatype>
+            <datatype name="destroyResource" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="destroyResourceRequest" superTypeNamespace="http://www.compositesw.com/services/system/admin/resource" subType="ELEMENT_DECL" type="TREE" refId="2">
+              <element name="path" namespace="http://www.compositesw.com/services/system/admin/resource">
+                <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+              </element>
+              <element name="type" namespace="http://www.compositesw.com/services/system/admin/resource">
+                <datatype name="resourceType" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+              </element>
+              <element name="force" namespace="http://www.compositesw.com/services/system/admin/resource">
+                <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="destroyResourceResponse" direction="OUT">
+        <datatype name="destroyResourceResponse" extendedName="{http://www.compositesw.com/services/system/admin/resource}destroyResourceResponse" namespace="http://www.compositesw.com/services/system/admin/resource" referenceDefinitionSet="/services/webservices/system/admin/resource/operations/ResourceSchema" referenceType="{http://www.compositesw.com/services/system/admin/resource}destroyResourceResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/admin/resource}destroyResourceResponse">
+          <schemaDatatype>
+            <datatype name="destroyResourceResponse" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="destroyResourceResponse" superTypeNamespace="http://www.compositesw.com/services/system/admin/resource" subType="ELEMENT_DECL" type="TREE" refId="3">
+              <element name="destroyedAll" namespace="http://www.compositesw.com/services/system/admin/resource">
+                <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="fault" direction="OUT">
+        <datatype name="fault" extendedName="{http://www.compositesw.com/services/system/util/common}fault" namespace="http://www.compositesw.com/services/system/util/common" referenceDefinitionSet="/services/webservices/system/util/common/operations/CommonSchema" referenceType="{http://www.compositesw.com/services/system/util/common}fault" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.compositesw.com/services/system/util/common}fault">
+          <schemaDatatype>
+            <datatype name="fault" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="fault" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="ELEMENT_DECL" type="TREE" refId="4">
+              <element name="errorEntry" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                <datatype name="messageEntry" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                  <element name="code" namespace="http://www.compositesw.com/services/system/util/common">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="name" namespace="http://www.compositesw.com/services/system/util/common">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="message" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="detail" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                  </element>
+                  <element name="severity" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                    <datatype name="messageSeverity" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* destroyResource:
+    Deletes a resource in CIS.
+ 
+	Input:
+   	 	resourcePath:	Path to a resource
+		resourceType:	Resource type
+
+	Output:
+		N/A
+
+	Author:      Venky Madireddi
+	Date:        11/05/2014
+	CIS Version: 6.2.6
+*/
+PROCEDURE destroyResource(
+	IN resourcePath 	VARCHAR(32768),
+	IN resourceType 	VARCHAR
+)
+BEGIN
+	DECLARE drResResp		XML;
+	DECLARE fault			XML;
+
+	CALL /services/webservices/system/admin/resource/operations/destroyResource(&apos;
+			&lt;resource:destroyResource xmlns:resource=&quot;http://www.compositesw.com/services/system/admin/resource&quot;&gt;
+			  &lt;resource:path&gt;&apos;  || CAST(XMLTEXT(resourcePath) AS LONGVARCHAR) ||  &apos;&lt;/resource:path&gt;
+			  &lt;resource:type&gt;&apos; || CAST(XMLTEXT(resourceType) AS VARCHAR) || &apos;&lt;/resource:type&gt;
+			  &lt;resource:force&gt;false&lt;/resource:force&gt;
+			&lt;/resource:destroyResource&gt;&apos;, drResResp, fault); 
+EXCEPTION
+	ELSE
+		CALL Print(&apos;DestroyResource error: &apos; || resourcePath || &apos; : &apos; || CURRENT_EXCEPTION.MESSAGE);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1398192594845</attribute>
+  <attribute name="creatorUserDomain" type="STRING">ldap</attribute>
+  <attribute name="creatorUserName" type="STRING">zk5tunx</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">8/31</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+  </attribute>
+</metadata>

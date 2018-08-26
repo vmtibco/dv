@@ -1,0 +1,410 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="manageDynamicViews" path="/shared/Common/DynamicViewFramework/manageDynamicViews" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="dsPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="formatLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="businessLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="appLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="publishPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="inDebug" direction="IN" nullable="true">
+      <datatype name="TINYINT" type="INTEGER" minValue="-128" maxValue="127"/>
+    </parameter>
+    <parameter name="message" direction="OUT" nullable="true">
+      <datatype name="message" type="TABLE" refId="1">
+        <element name="tableName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="tablePath">
+          <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+        </element>
+        <element name="status">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege group="all" domain="composite" privileges="READ EXECUTE"/>
+  </security>
+  <dependency target="/lib/resource/ResourceDefs" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/shared/ASAssets/Utilities/repository/destroyResource" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="resourcePath" direction="IN">
+        <datatype referenceDefinitionSet="/shared/ASAssets/Utilities/TypeDefinitions" referenceType="pathType" type="STRING" maxLength="1000"/>
+      </element>
+      <element name="resourceName" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="resourceType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="success" direction="OUT">
+        <datatype type="INTEGER" minValue="0" maxValue="1"/>
+      </element>
+      <element name="createResponse" direction="OUT">
+        <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+          <schemaDatatype>
+            <datatype name="XML" type="TREE" refId="2"></datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="faultResponse" direction="OUT">
+        <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+          <schemaDatatype>
+            <reference refId="2"/>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/canCreateResources" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="formatLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="businessLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="appLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="publishPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="state">
+            <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+          </element>
+          <element name="msg">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/copyResourcePrivileges" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="resParentPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="resName" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="resType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="dataSource" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+      <element name="inDebug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/createResourcePath" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="resourcePath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="inDebug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/getDSDetailsImpl" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="dsPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="resource" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="dsType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="subType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rPath">
+            <datatype type="STRING" maxLength="65535"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/getDSTables" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="dsPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="dsType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="rPath">
+            <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+          </element>
+          <element name="tName">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="vName">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="fName">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/logDebugMsg" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="msg" direction="IN">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="debug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/publishTable" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="sourcePath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="formatLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="businessLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="appLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="publishPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="inDebug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/removeTable" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="formatLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="businessLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="appLayerPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="publishPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="inDebug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/updateDS" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="dsPath" direction="IN">
+        <datatype type="STRING" maxLength="8192"/>
+      </element>
+      <element name="inDebug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* manageDynamicViews:
+    A custom script that manages views for Excel (non-ODBC) and File-Delimited data sources dynamically.
+	Assumption: Publish area (Virtual database, Catalog and Schema) and Datasources are already created.
+ 
+	Input:
+   	 	dsPath: 				Fully Qualified path to a data source
+		formatLayerPath:		Fully Qualified path to formatting layer folder
+		businessLayerPath:		Fully Qualified path to business layer folder
+		appLayerPath:			Fully Qualified path to application layer folder
+		publishPath:			Fully qualified path to the schema in publish area
+		inDebug:				1=debug on, 0=debug off, null=default is 0
+
+	Output:
+		Cursor with columns: Table Name, Table Path and Status
+
+	Author:      Venky Madireddi
+	Date:        11/05/2014
+	CIS Version: 6.2.6
+*/
+PROCEDURE manageDynamicViews
+(
+	IN	dsPath					/lib/resource/ResourceDefs.ResourcePath,
+	IN	formatLayerPath			/lib/resource/ResourceDefs.ResourcePath,
+	IN	businessLayerPath		/lib/resource/ResourceDefs.ResourcePath,
+	IN	appLayerPath			/lib/resource/ResourceDefs.ResourcePath,
+	IN	publishPath				/lib/resource/ResourceDefs.ResourcePath,
+	IN  inDebug					TINYINT,
+	OUT	message			PIPE
+						(
+							tableName			VARCHAR(255),
+							tablePath			/lib/resource/ResourceDefs.ResourcePath,
+							status				VARCHAR(255)
+						)
+)
+BEGIN
+	DECLARE dsname VARCHAR(255);
+	DECLARE dstype VARCHAR(255);
+	DECLARE msg, destroyResourceType VARCHAR(64);
+	DECLARE result VARCHAR(1024);
+	DECLARE isCreate TINYINT;
+	DECLARE success BIT;
+	DECLARE responseXml, faultXml XML;
+	DECLARE tblOld VECTOR(ROW (rPath /lib/resource/ResourceDefs.ResourcePath, tName VARCHAR(255), vName VARCHAR(255), fName VARCHAR(255))) DEFAULT VECTOR[(null)];
+	DECLARE tblNew VECTOR(ROW (rPath /lib/resource/ResourceDefs.ResourcePath, tName VARCHAR(255), vName VARCHAR(255), fName VARCHAR(255), state TINYINT)) DEFAULT VECTOR[(null)];
+	DECLARE tblPathsOld VECTOR(/lib/resource/ResourceDefs.ResourcePath) DEFAULT VECTOR[(null)];
+	DECLARE tblPathsNew VECTOR(/lib/resource/ResourceDefs.ResourcePath) DEFAULT VECTOR[(null)];
+	DECLARE tblCntOld, tblCntNew, indx, indx1, pos INTEGER DEFAULT 0;
+
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Entered manageDynamicViews&apos;, inDebug);
+
+-- The procedure is usable for File-Delimited and Microsoft Excel (non-ODBC) datasources only
+-- Check if the datasource is supported
+	SELECT dsType INTO dstype FROM /shared/Common/DynamicViewFramework/Helper/getDSDetailsImpl(dsPath);
+	IF (dstype = &apos;File-Delimited&apos;) OR (dstype = &apos;Microsoft Excel (non-ODBC)&apos;) THEN
+		IF (dstype = &apos;File-Delimited&apos;) THEN
+			SET destroyResourceType = &apos;TABLE&apos;;
+		ELSE
+			SET destroyResourceType = &apos;CONTAINER&apos;;
+		END IF;
+		SET tblCntOld = 0;
+		SET tblCntNew = 0;
+-- Create folders in the path if they don&apos;t exist
+		CALL /shared/Common/DynamicViewFramework/Helper/createResourcePath(formatLayerPath, inDebug);
+		CALL /shared/Common/DynamicViewFramework/Helper/createResourcePath(businessLayerPath, inDebug);
+		CALL /shared/Common/DynamicViewFramework/Helper/createResourcePath(appLayerPath, inDebug);
+
+-- Get the list of resources prior to reintrospection
+		FOR r AS SELECT rPath, tName, vName, fName FROM /shared/Common/DynamicViewFramework/Helper/getDSTables(dsPath, dstype) DO
+			SET tblOld = EXTEND(tblOld, 1);
+			SET tblPathsOld = EXTEND(tblPathsOld, 1);
+			SET tblCntOld = tblCntOld + 1;
+			SET tblOld[tblCntOld] = ROW(r.rPath, r.tName, r.vName, r.fName);
+			SET tblPathsOld[tblCntOld] = r.rPath;
+		END FOR;
+
+-- Reintrospect to add or remove resources
+		CALL /shared/Common/DynamicViewFramework/Helper/updateDS(dsPath, inDebug, result);
+
+-- Get the list of resources after reinstrospection
+		FOR r AS SELECT rPath, tName, vName, fName FROM /shared/Common/DynamicViewFramework/Helper/getDSTables(dsPath, dstype) DO
+			SET tblNew = EXTEND(tblNew, 1);
+			SET tblPathsNew = EXTEND(tblPathsNew, 1);
+			SET tblCntNew = tblCntNew + 1;
+			SET tblNew[tblCntNew] = ROW(r.rPath, r.tName, r.vName, r.fName, 1);
+			SET tblPathsNew[tblCntNew] = r.rPath;
+		END FOR;
+		SET indx = 1;
+-- Remove resources corresponding to a deleted file
+		WHILE (indx &lt;= tblCntOld) DO
+			SET pos = FIND_INDEX(tblPathsOld[indx], tblPathsNew);
+			IF ((pos IS NULL) OR (pos = 0)) THEN
+				CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;manageDynamicViews Destroying View: &apos; || tblOld[indx].tName || &apos; (&apos; || tblOld[indx].rPath || &apos;) - &apos; || tblOld[indx].vName, 1);
+				CALL /shared/Common/DynamicViewFramework/Helper/removeTable(tblOld[indx].vName, formatLayerPath, businessLayerPath, appLayerPath, publishPath, inDebug);
+				INSERT INTO message(tableName, tablePath, status) VALUES (tblOld[indx].vName, tblPathsOld[indx], &apos;removed&apos;);
+			ELSE
+				SET tblNew[pos].state = 2;
+			END IF;
+			SET indx = indx + 1;
+		END WHILE;
+
+-- Check if resources can be created
+		SET indx = 1;
+		WHILE (indx &lt;= tblCntNew) DO
+			SET pos = FIND_INDEX(tblPathsNew[indx], tblPathsOld);
+			IF ((tblNew[indx].state = 1) AND ((pos IS NULL) OR (pos = 0))) THEN
+				SELECT state, msg INTO isCreate, msg FROM /shared/Common/DynamicViewFramework/Helper/canCreateResources(tblNew[indx].vName, formatLayerPath, businessLayerPath, appLayerPath, publishPath);
+				IF (isCreate = 0) THEN
+					CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;manageDynamicViews Resource exists: &apos; || tblNew[indx].tName || &apos;(&apos; || tblNew[indx].rPath || &apos;) - &apos; || tblNew[indx].vName, 1);
+					SET indx1 = 1;
+					WHILE (indx1 &lt;= tblCntNew) DO
+						IF (tblNew[indx].fName = tblNew[indx1].fName) THEN
+							SET tblNew[indx1].state = 0;
+							INSERT INTO message(tableName, tablePath, status) VALUES (tblNew[indx1].vName, tblNew[indx1].rPath, &apos;ignored (already exists in &apos;||msg||&apos;)&apos;);
+						END IF;
+						SET indx1 = indx1 + 1;
+					END WHILE;
+					CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Destroying Resource: &apos; || dsPath || &apos;/&apos; || tblNew[indx].fName || &apos;(&apos; || tblNew[indx].rPath || &apos;)&apos;  , inDebug);
+					CALL /shared/ASAssets/Utilities/repository/destroyResource(dsPath||&apos;/&apos;||tblNew[indx].fName, NULL, destroyResourceType, success, responseXml, faultXml);
+				ELSE
+					CALL /shared/Common/DynamicViewFramework/Helper/copyResourcePrivileges(dsPath, tblNew[indx].fName, destroyResourceType, 1, inDebug);
+				END IF;
+			END IF;
+			SET indx = indx + 1;
+		END WHILE;
+
+-- Create resources corresponding to an added file
+		SET indx = 1;
+		WHILE (indx &lt;= tblCntNew) DO
+			SET pos = FIND_INDEX(tblPathsNew[indx], tblPathsOld);
+			IF ((tblNew[indx].state = 1) AND ((pos IS NULL) OR (pos = 0))) THEN
+				CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;manageDynamicViews Creating and publishing View: &apos; || tblNew[indx].tName || &apos; (&apos; || tblNew[indx].rPath || &apos;) - &apos; || tblNew[indx].vName, 1);
+				CALL /shared/Common/DynamicViewFramework/Helper/publishTable(tblNew[indx].vName, tblPathsNew[indx], formatLayerPath, businessLayerPath, appLayerPath, publishPath, inDebug);
+				INSERT INTO message(tableName, tablePath, status) VALUES (tblNew[indx].vName, tblPathsNew[indx], &apos;added&apos;);
+			END IF;
+			SET indx = indx + 1;
+		END WHILE;
+	ELSE
+		INSERT INTO message(status) VALUES (&apos;Data source type not supported: &apos; || dstype);
+		CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Data source type not supported: &apos; || dstype, inDebug);
+	END IF;
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Exiting manageDynamicViews&apos;, inDebug);
+EXCEPTION
+	ELSE
+		INSERT INTO message(status) VALUES (&apos;Failed to create dynamic view &apos; || CURRENT_EXCEPTION.MESSAGE);
+		CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Failed to create dynamic view: &apos; || CURRENT_EXCEPTION.MESSAGE, inDebug);
+		CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Exiting manageDynamicViews&apos;, inDebug);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1415210464360</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510943125386</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>

@@ -1,0 +1,144 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getDSTables" path="/shared/Common/MDMLogAnalysis/Helper/getDSTables" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="dsPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="rPath">
+          <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+        </element>
+        <element name="tName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/resource/ResourceDefs" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/shared/ASAssets/Utilities/string/TextUtils/RegexPosition" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="Input Text" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Regular Expression" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Occurrence" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/MDMLogAnalysis/Helper/getChildResourcesImpl" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="rPath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="rType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="children" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="id">
+            <datatype type="INTEGER"/>
+          </element>
+          <element name="cid">
+            <datatype type="INTEGER"/>
+          </element>
+          <element name="name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="subType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="dsType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="tgtType">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="rPath">
+            <datatype type="STRING" maxLength="65535"/>
+          </element>
+          <element name="oDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="oName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="enabled">
+            <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+          </element>
+          <element name="annotation">
+            <datatype referenceDefinitionSet="/lib/util/System" referenceType="Text" type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="creatorDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="creatorName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="modifierDomain">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+          <element name="modifierName">
+            <datatype type="STRING" maxLength="60"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* getDSTables:
+	Retrieves the set of tables introspected to the data source.
+ 
+	Input:
+   	 	Path to the datasource
+
+	Output:
+		Cursor representing set of tables
+
+	Author:      Venky Madireddi
+	Date:        03/29/2018
+	CIS Version: 7.0.6
+*/
+PROCEDURE getDSTables
+(
+	IN	dsPath			/lib/resource/ResourceDefs.ResourcePath,
+	OUT	result			PIPE
+						(
+							rPath			/lib/resource/ResourceDefs.ResourcePath,
+							tName			VARCHAR(255)
+						)
+)
+BEGIN
+	DECLARE pos INTEGER;
+	DECLARE name VARCHAR(255);
+
+	FOR r AS SELECT rPath FROM /shared/Common/MDMLogAnalysis/Helper/getChildResourcesImpl(dsPath, &apos;DATA_SOURCE&apos;) DO
+		CALL /shared/ASAssets/Utilities/string/TextUtils/RegexPosition(r.rPath, &apos;/&apos;, -1, pos);
+		SET name = SUBSTRING(r.rPath, (pos+1), LENGTH(r.rPath));
+		INSERT INTO result (rPath, tName) VALUES (r.rPath, name);
+	END FOR;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1415217224669</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1522346786044</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>

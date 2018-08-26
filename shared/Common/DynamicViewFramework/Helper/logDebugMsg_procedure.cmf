@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="logDebugMsg" path="/shared/Common/DynamicViewFramework/Helper/logDebugMsg" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="msg" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="65535"/>
+    </parameter>
+    <parameter name="debug" direction="IN" nullable="true">
+      <datatype name="TINYINT" type="INTEGER" minValue="-128" maxValue="127"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege group="all" domain="composite" privileges="READ EXECUTE"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/debug/Print" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToPrint" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE logDebugMsg(IN msg VARCHAR(65535), IN debug TINYINT)
+BEGIN
+	IF (debug IS NOT NULL) AND (debug = 1) THEN
+		CALL Log(msg);
+		CALL Print(msg);
+	END IF;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1415988300501</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">8/4</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Log</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">8/5</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+  </attribute>
+</metadata>

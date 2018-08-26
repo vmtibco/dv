@@ -1,0 +1,65 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="listOfResources" path="/shared/Common/MDMLogAnalysis/listOfResources" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="nodeName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="nodeHost">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="nodePort">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="nodeUser">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="nodeUserPswd">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="nodePath">
+          <datatype name="VARCHAR" type="STRING" maxLength="2048"/>
+        </element>
+        <element name="localPath">
+          <datatype name="VARCHAR" type="STRING" maxLength="2048"/>
+        </element>
+        <element name="filePattern">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">PROCEDURE listOfResources
+(
+	OUT	result PIPE (
+		nodeName			VARCHAR,
+		nodeHost			VARCHAR,
+		nodePort			INTEGER,
+		nodeUser			VARCHAR,
+		nodeUserPswd		VARCHAR,
+		nodePath			VARCHAR(2048),
+		localPath			VARCHAR(2048),
+		filePattern			VARCHAR
+	)
+)
+BEGIN
+	INSERT INTO result VALUES (&apos;node1&apos;, &apos;mdmsac-vdrh002.wsgc.com&apos;, 22, &apos;tibdev0&apos;, &apos;##T1Bd3v0##&apos;, &apos;/apps/tibco/tib_install_base/tibsw/2014/8.3.2/mdm/8.3/log&apos;, &apos;c:/temp/logs/node1&apos;, &apos;timing.log*&apos;);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1522292099532</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1522427082007</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1522292099532</attribute>
+</metadata>

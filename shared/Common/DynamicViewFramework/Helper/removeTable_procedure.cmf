@@ -1,0 +1,105 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="removeTable" path="/shared/Common/DynamicViewFramework/Helper/removeTable" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="name" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="formatLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="businessLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="appLayerPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="publishPath" direction="IN" nullable="true">
+      <datatype name="ResourcePath" referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+    </parameter>
+    <parameter name="inDebug" direction="IN" nullable="true">
+      <datatype name="TINYINT" type="INTEGER" minValue="-128" maxValue="127"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege group="all" domain="composite" privileges="READ EXECUTE"/>
+  </security>
+  <dependency target="/lib/resource/ResourceDefs" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/destroyResource" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="resourcePath" direction="IN">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="resourceType" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/DynamicViewFramework/Helper/logDebugMsg" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="msg" direction="IN">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="debug" direction="IN">
+        <datatype type="INTEGER" minValue="-128" maxValue="127"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">/* removeTable:
+    Delete dependents of a table created in layers and published area.
+ 
+	Input:
+   	 	name: 					View name corresponding to an introspected table
+		formatLayerPath:		Path to formatting layer folder
+		businessLayerPath:		Path to business layer folder
+		appLayerPath:			Path to application layer folder
+		publishPath:			Fully qualified path to the schema in publish area
+
+	Output:
+		N/A
+
+	Author:      Venky Madireddi
+	Date:        11/05/2014
+	CIS Version: 6.2.6
+*/
+PROCEDURE removeTable
+(
+	IN	name					VARCHAR(255),
+	IN	formatLayerPath			/lib/resource/ResourceDefs.ResourcePath,
+	IN	businessLayerPath		/lib/resource/ResourceDefs.ResourcePath,
+	IN	appLayerPath			/lib/resource/ResourceDefs.ResourcePath,
+	IN	publishPath				/lib/resource/ResourceDefs.ResourcePath,
+	IN	inDebug					TINYINT
+)
+BEGIN
+	DECLARE pos INTEGER;
+	DECLARE sqlScript VARCHAR(65535);
+	DECLARE createLinkResp XML;
+	DECLARE fault XML;
+
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Entered destroyTableDependents: &apos; || name, inDebug);
+
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Destroying link for view: &apos; || name, inDebug);
+	CALL /shared/Common/DynamicViewFramework/Helper/destroyResource(publishPath||&apos;/&apos;||name, &apos;LINK&apos;);
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Destroying view in application layer: &apos; || name, inDebug);
+	CALL /shared/Common/DynamicViewFramework/Helper/destroyResource(appLayerPath||&apos;/&apos;||name, &apos;TABLE&apos;);
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Destroying view in business layer: &apos; || name, inDebug);
+	CALL /shared/Common/DynamicViewFramework/Helper/destroyResource(businessLayerPath||&apos;/&apos;||name, &apos;TABLE&apos;);
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Destroying view in formatting layer: &apos; || name, inDebug);
+	CALL /shared/Common/DynamicViewFramework/Helper/destroyResource(formatLayerPath||&apos;/&apos;||name, &apos;TABLE&apos;);
+
+	CALL /shared/Common/DynamicViewFramework/Helper/logDebugMsg(&apos;Exiting destroyTableDependents: &apos; || name, inDebug);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1415232616383</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1495575019437</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+</metadata>
