@@ -1,0 +1,50 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="MathSquareOp" path="/services/webservices/CISTrainingMathDemo/MathSquareOp" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Application/Services/CISTrainingMathDemo/MathSquareOp" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="MathSquareOpRequest" direction="IN">
+        <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest">
+          <schemaDatatype>
+            <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="2">
+              <element name="ipSquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="MathSquareOpResponse" direction="OUT">
+        <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse">
+          <schemaDatatype>
+            <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="3">
+              <element name="SquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                  <element name="inTerm1" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1431454893028</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431455413019</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431454893028</attribute>
+  <attribute name="targetPath" type="STRING">/users/composite/admin/CISTraining/Application/Services/CISTrainingMathDemo/MathSquareOp</attribute>
+  <attribute name="targetType" type="SHORT">3</attribute>
+</metadata>

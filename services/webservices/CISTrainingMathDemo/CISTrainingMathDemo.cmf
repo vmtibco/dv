@@ -1,0 +1,177 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CISTrainingMathDemo" path="/services/webservices/CISTrainingMathDemo" type="DATA_SOURCE" subtype="COMPOSITE_WEB_SERVICE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/policy/security/system/Http-Basic-Authentication.xml" type="POLICY">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/services/webservices/CISTrainingMathDemo/MathAddOp" type="LINK">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="MathAddOpRequest" direction="IN">
+        <datatype name="MathAddOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpRequest" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpRequest">
+          <schemaDatatype>
+            <datatype name="MathAddOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="2">
+              <element name="ipAddInt1" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+              <element name="ipAddInt2" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="MathAddOpResponse" direction="OUT">
+        <datatype name="MathAddOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpResponse">
+          <schemaDatatype>
+            <datatype name="MathAddOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="3">
+              <element name="AddInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                  <element name="inTerm1" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="interm2" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/webservices/CISTrainingMathDemo/MathDemoOp" type="LINK">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="MathDemoOp" direction="IN">
+        <datatype name="MathDemoOp" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOp" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOp">
+          <schemaDatatype>
+            <datatype name="MathDemoOp" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="2">
+              <element name="ipTimesTableInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+              <element name="ipSquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+              <element name="ipAddInt1" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+              <element name="ipAddInt2" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="MathDemoOpResponse" direction="OUT">
+        <datatype name="MathDemoOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOpResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOpResponse">
+          <schemaDatatype>
+            <datatype name="MathDemoOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="3">
+              <element name="MathDemo" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                  <element name="MathExpression" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" maxOccurs="2147483647">
+                    <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                      <element name="AddInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                        <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                          <element name="inTerm1" category="1">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                          <element name="interm2" category="1">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                          <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="SquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                        <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                          <element name="inTerm1" category="1">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                          <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                        </datatype>
+                      </element>
+                      <element name="TimesTable" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                        <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="8">
+                          <element name="tableNum" category="1">
+                            <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                          </element>
+                          <element name="TableEntry" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" maxOccurs="2147483647">
+                            <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="9">
+                              <element name="TableExpression" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                                <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                              </element>
+                              <element name="TableValue" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                                <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                              </element>
+                            </datatype>
+                          </element>
+                        </datatype>
+                      </element>
+                    </datatype>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/webservices/CISTrainingMathDemo/MathSquareOp" type="LINK">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="MathSquareOpRequest" direction="IN">
+        <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest">
+          <schemaDatatype>
+            <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="2">
+              <element name="ipSquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+      <element name="MathSquareOpResponse" direction="OUT">
+        <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse">
+          <schemaDatatype>
+            <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="3">
+              <element name="SquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+                <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                  <element name="inTerm1" category="1">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                  <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                    <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                  </element>
+                </datatype>
+              </element>
+            </datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;soapPortBinding&quot; timeout=&quot;0&quot; targetNamespace=&quot;http://www.cisco.com/cis/basictraining/MathDemoService&quot; serviceName=&quot;CISTrainingMathDemo&quot; portTypeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortType&quot; portName=&quot;CISTrainingMathDemoPort&quot; policyName=&quot;/policy/security/system/Http-Basic-Authentication.xml&quot; implementationFolder=&quot;/users/composite/admin/CISTraining/Application/Services/CISTrainingMathDemo&quot; enableMTOM=&quot;false&quot; enableCustomEndpoint=&quot;false&quot; contractStyle=&quot;ABSTRACT&quot; contractFirst=&quot;true&quot; contract=&quot;/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo&quot; bindingName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}CISTrainingMathDemoBinding&quot; soap12ContextUrlPath=&quot;/soap12&quot; soap11ContextUrlPath=&quot;/soap11&quot; endpointUrlPath=&quot;/CISTrainingMathDemo&quot; enabled=&quot;true&quot; bindingStyles=&quot;WSDL11_SOAP11_HTTP WSDL11_SOAP12_HTTP&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;MathDemoOp&quot;&gt;&lt;inputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;outputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;inputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathDemoOpSoapIn&quot; location=&quot;body&quot; name=&quot;MathDemoOp&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOp&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;outputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathDemoOpSoapOut&quot; location=&quot;body&quot; name=&quot;MathDemoOpResponse&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOpResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;MathSquareOp&quot;&gt;&lt;inputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;outputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;inputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathSquareOpSoapIn&quot; location=&quot;body&quot; name=&quot;MathSquareOpRequest&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;outputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathSquareOpSoapOut&quot; location=&quot;body&quot; name=&quot;MathSquareOpResponse&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;MathAddOp&quot;&gt;&lt;inputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;outputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;BARE&quot;/&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;inputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathAddOpSoapIn&quot; location=&quot;body&quot; name=&quot;MathAddOpRequest&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;outputParameters&quot; messageName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoSvcPortMathAddOpSoapOut&quot; location=&quot;body&quot; name=&quot;MathAddOpResponse&quot; elementName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;portBinding xsi:type=&quot;restfulPortBinding&quot; targetNamespace=&quot;http://tempuri.org/&quot; serviceName=&quot;CISTrainingMathDemo&quot; jsonWrappedTable=&quot;true&quot; jsonWrappedCursor=&quot;true&quot; jsonUseProcParamName=&quot;false&quot; jsonPackageName=&quot;CISTrainingMathDemo&quot; xmlContextUrlPath=&quot;/xml&quot; jsonContextUrlPath=&quot;/json&quot; endpointUrlPath=&quot;/CISTrainingMathDemo&quot; enabled=&quot;true&quot; bindingStyles=&quot;REST_XML REST_JSON&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; operationPathTemplate=&quot;/MathSquareOp&quot; httpMethod=&quot;GET&quot; resourceName=&quot;MathSquareOp&quot;&gt;&lt;inputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathSquareOpType&quot; elementName=&quot;{http://tempuri.org/}MathSquareOp&quot;/&gt;&lt;/inputBinding&gt;&lt;outputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathSquareOpResponseType&quot; elementName=&quot;{http://tempuri.org/}MathSquareOpResponse&quot;/&gt;&lt;/outputBinding&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; queryName=&quot;MathSquareOpRequest&quot; nulLable=&quot;true&quot; bindingLocation=&quot;query&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest&quot; name=&quot;MathSquareOpRequest&quot; elementName=&quot;{http://tempuri.org/}MathSquareOpMathsquareoprequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;true&quot; nulLable=&quot;false&quot; bindingLocation=&quot;entity&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse&quot; name=&quot;MathSquareOpResponse&quot; elementName=&quot;{http://tempuri.org/}MathSquareOpMathsquareopresponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; operationPathTemplate=&quot;/MathDemoOp&quot; httpMethod=&quot;GET&quot; resourceName=&quot;MathDemoOp&quot;&gt;&lt;inputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathDemoOpType&quot; elementName=&quot;{http://tempuri.org/}MathDemoOp&quot;/&gt;&lt;/inputBinding&gt;&lt;outputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathDemoOpResponseType&quot; elementName=&quot;{http://tempuri.org/}MathDemoOpResponse&quot;/&gt;&lt;/outputBinding&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; queryName=&quot;MathDemoOp&quot; nulLable=&quot;true&quot; bindingLocation=&quot;query&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOp&quot; name=&quot;MathDemoOp&quot; elementName=&quot;{http://tempuri.org/}MathDemoOpMathdemoop&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;true&quot; nulLable=&quot;false&quot; bindingLocation=&quot;entity&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathDemoOpResponse&quot; name=&quot;MathDemoOpResponse&quot; elementName=&quot;{http://tempuri.org/}MathDemoOpMathdemoopresponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; operationPathTemplate=&quot;/MathAddOp&quot; httpMethod=&quot;GET&quot; resourceName=&quot;MathAddOp&quot;&gt;&lt;inputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathAddOpType&quot; elementName=&quot;{http://tempuri.org/}MathAddOp&quot;/&gt;&lt;/inputBinding&gt;&lt;outputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}MathAddOpResponseType&quot; elementName=&quot;{http://tempuri.org/}MathAddOpResponse&quot;/&gt;&lt;/outputBinding&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; queryName=&quot;MathAddOpRequest&quot; nulLable=&quot;true&quot; bindingLocation=&quot;query&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpRequest&quot; name=&quot;MathAddOpRequest&quot; elementName=&quot;{http://tempuri.org/}MathAddOpMathaddoprequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;true&quot; nulLable=&quot;false&quot; bindingLocation=&quot;entity&quot; typeName=&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathAddOpResponse&quot; name=&quot;MathAddOpResponse&quot; elementName=&quot;{http://tempuri.org/}MathAddOpMathaddopresponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;httpSecurityModel transportSecurity=&quot;ENABLED&quot; authSchemes=&quot;BASIC&quot;/&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1431454008485</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="driverName" type="STRING">COMPOSITE_WEB_SERVICE</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431455413019</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="name" type="STRING">CISTrainingMathDemo</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431454008485</attribute>
+  <attribute name="type" type="STRING">CompositeWebService</attribute>
+</metadata>
