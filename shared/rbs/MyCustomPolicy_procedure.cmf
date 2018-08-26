@@ -1,0 +1,97 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="MyCustomPolicy" path="/shared/rbs/MyCustomPolicy" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="alias" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="predicate" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/users/TestUserIdentity" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="type" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="name" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="domain" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="BOOLEAN"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE MyCustomPolicy (IN alias VARCHAR, OUT predicate VARCHAR)
+BEGIN
+-- add code here
+-- Note: do not change the name or parameter list or a malfunction may result
+	DECLARE temp VARCHAR;
+	DECLARE identityTest BOOLEAN;
+	SET predicate = &apos;&apos;;
+
+	CALL /lib/users/TestUserIdentity(&apos;USER&apos;, &apos;admin&apos;, &apos;composite&apos;, identityTest);
+CALL Log(&apos;admin: &apos; || CAST(identityTest AS VARCHAR));
+	IF identityTest THEN
+		SET predicate = &apos;(&apos; || alias || &apos;.OrderID = 20) &apos;;
+	END IF;
+
+	CALL /lib/users/TestUserIdentity(&apos;GROUP&apos;, &apos;test_rls_group&apos;, &apos;composite&apos;, identityTest);
+CALL Log(&apos;test_rls_group: &apos; || CAST(identityTest AS VARCHAR));
+
+	IF identityTest THEN
+		set temp = &apos;(&apos; || alias || &apos;.OrderID &lt; 20) &apos;;
+		IF (predicate = &apos;&apos;) THEN 
+			SET predicate = temp;
+		ELSE
+			SET predicate = predicate || &apos; OR &apos; || temp;
+		END IF;
+	END IF; 
+
+	IF (predicate = &apos;&apos;) THEN
+		SET predicate = &apos;FALSE&apos;;
+	END IF;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1501122254361</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">6/10</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Log</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">6/16</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Log</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501122254361</attribute>
+</metadata>
