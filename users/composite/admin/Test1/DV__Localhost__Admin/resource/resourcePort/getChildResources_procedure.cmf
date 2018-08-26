@@ -1,0 +1,528 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getChildResources" path="/users/composite/admin/Test1/DV_Localhost_Admin/resource/resourcePort/getChildResources" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="inputMessage" direction="IN" nullable="false">
+      <datatype name="Envelope" namespace="http://schemas.xmlsoap.org/soap/envelope/" referenceType="{http://schemas.xmlsoap.org/soap/envelope/}Envelope" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope">
+        <schemaDatatype>
+          <datatype name="Envelope" namespace="http://schemas.xmlsoap.org/soap/envelope/" type="TREE" refId="1">
+            <element name="Body" namespace="http://schemas.xmlsoap.org/soap/envelope/">
+              <datatype name="Body" namespace="http://schemas.xmlsoap.org/soap/envelope/" type="TREE" refId="2">
+                <element name="getChildResources" namespace="http://www.compositesw.com/services/system/admin/resource" nullable="false">
+                  <datatype name="getChildResources" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="getChildResourcesRequest" superTypeNamespace="http://www.compositesw.com/services/system/admin/resource" subType="ELEMENT_DECL" type="TREE" refId="3">
+                    <element name="path" namespace="http://www.compositesw.com/services/system/admin/resource">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="type" namespace="http://www.compositesw.com/services/system/admin/resource">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="detail" namespace="http://www.compositesw.com/services/system/admin/resource">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="outputMessage" direction="OUT" nullable="false">
+      <datatype name="Envelope" namespace="http://schemas.xmlsoap.org/soap/envelope/" referenceType="{http://schemas.xmlsoap.org/soap/envelope/}Envelope" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope">
+        <schemaDatatype>
+          <datatype name="Envelope" namespace="http://schemas.xmlsoap.org/soap/envelope/" type="TREE" refId="1">
+            <element name="Body" namespace="http://schemas.xmlsoap.org/soap/envelope/">
+              <datatype name="Body" namespace="http://schemas.xmlsoap.org/soap/envelope/" type="TREE" refId="2">
+                <element name="getChildResourcesResponse" namespace="http://www.compositesw.com/services/system/admin/resource" nullable="false">
+                  <datatype name="getChildResourcesResponse" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="getChildResourcesResponse" superTypeNamespace="http://www.compositesw.com/services/system/admin/resource" subType="ELEMENT_DECL" type="TREE" refId="3">
+                    <element name="resources" namespace="http://www.compositesw.com/services/system/admin/resource">
+                      <datatype name="resourceList" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                        <element name="resource" namespace="http://www.compositesw.com/services/system/admin/resource" maxOccurs="2147483647" minOccurs="0">
+                          <datatype name="resource" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                            <element name="name" namespace="http://www.compositesw.com/services/system/admin/resource">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="path" namespace="http://www.compositesw.com/services/system/admin/resource">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="type" namespace="http://www.compositesw.com/services/system/admin/resource">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="subtype" namespace="http://www.compositesw.com/services/system/admin/resource">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="id" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="changeId" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+                            </element>
+                            <element name="version" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="introspectState" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="ownerDomain" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="ownerName" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="impactLevel" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="impactMessage" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="enabled" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+                            </element>
+                            <element name="lockState" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="lockState" namespace="http://www.compositesw.com/services/system/admin/resource" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                                <element name="lockOwnerDomain" namespace="http://www.compositesw.com/services/system/admin/resource">
+                                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                </element>
+                                <element name="lockOwnerName" namespace="http://www.compositesw.com/services/system/admin/resource">
+                                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                </element>
+                                <element name="lockCreateTime" namespace="http://www.compositesw.com/services/system/admin/resource">
+                                  <datatype name="dateTime" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DATETIME"/>
+                                </element>
+                                <element name="lockParentPath" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                </element>
+                              </datatype>
+                            </element>
+                            <element name="hints" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                                <element name="hint" namespace="http://www.compositesw.com/services/system/admin/resource" maxOccurs="2147483647" minOccurs="0">
+                                  <datatype name="attribute" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="8">
+                                    <element name="name" namespace="http://www.compositesw.com/services/system/util/common">
+                                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                    </element>
+                                    <element name="type" namespace="http://www.compositesw.com/services/system/util/common">
+                                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                    </element>
+                                    <element name="value" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                    </element>
+                                    <element name="valueList" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                      <datatype name="attributeTypeValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="9">
+                                        <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                          <datatype name="attributeTypeValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="10">
+                                            <element name="type" namespace="http://www.compositesw.com/services/system/util/common">
+                                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                            </element>
+                                            <element name="value" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                            </element>
+                                            <element name="valueList" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                              <reference refId="9"/>
+                                            </element>
+                                            <element name="valueMap" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                              <datatype name="attributeTypeValueMap" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="11">
+                                                <element name="entry" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                                  <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="12">
+                                                    <element name="key" namespace="http://www.compositesw.com/services/system/util/common">
+                                                      <datatype name="attributeTypeValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="13">
+                                                        <element name="type" namespace="http://www.compositesw.com/services/system/util/common">
+                                                          <datatype name="attributeType" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                                        </element>
+                                                        <element name="value" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                                          <datatype name="attributeSimpleValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                                        </element>
+                                                        <element name="valueList" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                                          <datatype name="attributeTypeValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="14">
+                                                            <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                                              <reference refId="13"/>
+                                                            </element>
+                                                          </datatype>
+                                                        </element>
+                                                        <element name="valueMap" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                                          <reference refId="11"/>
+                                                        </element>
+                                                        <element name="valueArray" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                                          <datatype name="attributeSimpleValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="15">
+                                                            <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                                              <datatype name="attributeSimpleValue" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                                            </element>
+                                                          </datatype>
+                                                        </element>
+                                                      </datatype>
+                                                    </element>
+                                                    <element name="value" namespace="http://www.compositesw.com/services/system/util/common">
+                                                      <reference refId="13"/>
+                                                    </element>
+                                                  </datatype>
+                                                </element>
+                                              </datatype>
+                                            </element>
+                                            <element name="valueArray" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                              <datatype name="attributeSimpleValueList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="attributeComplexValue" superTypeNamespace="http://www.compositesw.com/services/system/util/common" subType="COMPLEX_TYPE" type="TREE" refId="16">
+                                                <element name="item" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                                </element>
+                                              </datatype>
+                                            </element>
+                                          </datatype>
+                                        </element>
+                                      </datatype>
+                                    </element>
+                                    <element name="valueMap" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                      <reference refId="11"/>
+                                    </element>
+                                    <element name="valueArray" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                      <reference refId="16"/>
+                                    </element>
+                                    <element name="unset" namespace="http://www.compositesw.com/services/system/util/common" minOccurs="0">
+                                      <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+                                    </element>
+                                  </datatype>
+                                </element>
+                              </datatype>
+                            </element>
+                            <element name="annotation" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                            </element>
+                            <element name="attributes" namespace="http://www.compositesw.com/services/system/admin/resource" minOccurs="0">
+                              <datatype name="attributeList" namespace="http://www.compositesw.com/services/system/util/common" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="17">
+                                <element name="attribute" namespace="http://www.compositesw.com/services/system/util/common" maxOccurs="2147483647" minOccurs="0">
+                                  <reference refId="8"/>
+                                </element>
+                              </datatype>
+                            </element>
+                          </datatype>
+                        </element>
+                      </datatype>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1518547843330</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="faultMessageType" type="BYTE_ARRAY">EB8GAgANAGYAYQB1AGwAdABNAGUAcwBzAGEAZwBlAHMDEgAAAAEDEgAAAAEBEwEJFAAAAAEQIQYV
+AAgARQBuAHYAZQBsAG8AcABlBiwAKQBoAHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMALgB4AG0A
+bABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8AZQBuAHYAZQBsAG8AcABlAC8DLwAAAAADFgAA
+AAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAQBgIACABFAG4AdgBlAGwAbwBwAGUGJAApAGgA
+dAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBh
+AHAALwBlAG4AdgBlAGwAbwBwAGUALwYqADMAewBoAHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMA
+LgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8AZQBuAHYAZQBsAG8AcABlAC8AfQBF
+AG4AdgBlAGwAbwBwAGUDEgAAAAIGOQAzAHsAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAH0ARQBu
+AHYAZQBsAG8AcABlAzoAAAABCCMQHwYCAAgARQBuAHYAZQBsAG8AcABlBiQAKQBoAHQAdABwADoA
+LwAvAHMAYwBoAGUAbQBhAHMALgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8AZQBu
+AHYAZQBsAG8AcABlAC8DEgAAAAMDEgAAAAMBEwEJFAAAAAEQIQYVAAQAQgBvAGQAeQYsACkAaAB0
+AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AeABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEA
+cAAvAGUAbgB2AGUAbABvAHAAZQAvAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAA
+CBkQHwYCAAQAQgBvAGQAeQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AeABtAGwA
+cwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAEAxIAAAAE
+ARMBCRQAAAABECEGFQAFAGYAYQB1AGwAdAYsADYAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBt
+AHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0A
+LwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4DLwAAAAIDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAA
+AAAIGRAfBgIABQBmAGEAdQBsAHQGJAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8A
+cwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0
+AGkAbAAvAGMAbwBtAG0AbwBuBiUABQBmAGEAdQBsAHQGKAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcA
+LgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBz
+AHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuAysAAAAOAxIAAAAFAxIAAAAFARMBCRQAAAAB
+ECEGFQAKAGUAcgByAG8AcgBFAG4AdAByAHkGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8A
+bQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBt
+AC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAAAAxt/////AyD/////AyIA
+AAAACBkQHwYCAAwAbQBlAHMAcwBhAGcAZQBFAG4AdAByAHkGJAA2AGgAdAB0AHAAOgAvAC8AdwB3
+AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMA
+eQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuBiUABwBhAG4AeQBUAHkAcABlBigAIABo
+AHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgA
+ZQBtAGEDKwAAAAwDEgAAAAYDEgAAAAYBEwEJFAAAAAUQIQYVAAQAYwBvAGQAZQYsADYAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4DLwAAAAEDFgAAAAAD
+GgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUABABuAGEAbQBlBiwANgBo
+AHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUA
+cgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMW
+AAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAHAG0AZQBzAHMA
+YQBnAGUGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBj
+AG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0A
+bwBuAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYV
+AAYAZABlAHQAYQBpAGwGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQA
+ZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAv
+AGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3
+aP////8QIQYVAAgAcwBlAHYAZQByAGkAdAB5BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBv
+AG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUA
+bQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMi
+AAAAAAgZEC8DEv//92j///////////////////////////////8=</attribute>
+  <attribute name="httpVerb" type="NULL"/>
+  <attribute name="inputMessagePartPaths" type="STRING_ARRAY">
+    <item>&quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&quot;/&quot;{http://www.compositesw.com/services/system/admin/resource}getChildResources&quot;</item>
+  </attribute>
+  <attribute name="inputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvBioAMwB7
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQMSAAAAAQY5ADMAewBo
+AHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMALgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8A
+YQBwAC8AZQBuAHYAZQBsAG8AcABlAC8AfQBFAG4AdgBlAGwAbwBwAGUDOgAAAAEIIxAfBgIACABF
+AG4AdgBlAGwAbwBwAGUGJAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMA
+bwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAgMSAAAAAgET
+AQkUAAAAARAhBhUABABCAG8AZAB5BiwAKQBoAHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMALgB4
+AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8AZQBuAHYAZQBsAG8AcABlAC8DLwAAAAED
+FgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAfBgIABABCAG8AZAB5BiQAKQBoAHQAdABw
+ADoALwAvAHMAYwBoAGUAbQBhAHMALgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8A
+ZQBuAHYAZQBsAG8AcABlAC8DEgAAAAMDEgAAAAMBEwEJFAAAAAEQIQYVABEAZwBlAHQAQwBoAGkA
+bABkAFIAZQBzAG8AdQByAGMAZQBzBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABv
+AHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEA
+ZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQMvAAAAAgMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMi
+AAAAAAgZEB8GAgARAGcAZQB0AEMAaABpAGwAZABSAGUAcwBvAHUAcgBjAGUAcwYkADkAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUGJQAYAGcA
+ZQB0AEMAaABpAGwAZABSAGUAcwBvAHUAcgBjAGUAcwBSAGUAcQB1AGUAcwB0BigAOQBoAHQAdABw
+ADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkA
+YwBlAHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQMrAAAADgMS
+AAAABAMSAAAABAETAQkUAAAAAxAhBhUABABwAGEAdABoBiwAOQBoAHQAdABwADoALwAvAHcAdwB3
+AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkA
+cwB0AGUAbQAvAGEAZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAQMb
+AAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAEAHQAeQBwAGUGLAA5AGgAdAB0AHAA
+OgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBj
+AGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYA
+AAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAYAZABlAHQAYQBp
+AGwGLAA5AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8A
+bQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1
+AHIAYwBlAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP//////
+//////////////8=</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1518547843330</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="messageType" type="STRING">Text</attribute>
+  <attribute name="outputMessagePartPaths" type="STRING_ARRAY">
+    <item>&quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&quot;/&quot;{http://www.compositesw.com/services/system/admin/resource}getChildResourcesResponse&quot;</item>
+  </attribute>
+  <attribute name="outputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvBioAMwB7
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQMSAAAAAQY5ADMAewBo
+AHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMALgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8A
+YQBwAC8AZQBuAHYAZQBsAG8AcABlAC8AfQBFAG4AdgBlAGwAbwBwAGUDOgAAAAEIIxAfBgIACABF
+AG4AdgBlAGwAbwBwAGUGJAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMA
+bwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAgMSAAAAAgET
+AQkUAAAAARAhBhUABABCAG8AZAB5BiwAKQBoAHQAdABwADoALwAvAHMAYwBoAGUAbQBhAHMALgB4
+AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8AZQBuAHYAZQBsAG8AcABlAC8DLwAAAAED
+FgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAfBgIABABCAG8AZAB5BiQAKQBoAHQAdABw
+ADoALwAvAHMAYwBoAGUAbQBhAHMALgB4AG0AbABzAG8AYQBwAC4AbwByAGcALwBzAG8AYQBwAC8A
+ZQBuAHYAZQBsAG8AcABlAC8DEgAAAAMDEgAAAAMBEwEJFAAAAAEQIQYVABkAZwBlAHQAQwBoAGkA
+bABkAFIAZQBzAG8AdQByAGMAZQBzAFIAZQBzAHAAbwBuAHMAZQYsADkAaAB0AHQAcAA6AC8ALwB3
+AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+cwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAIDFgAAAAADGgAA
+AAEDGwAAAAEDIP////8DIgAAAAAIGRAfBgIAGQBnAGUAdABDAGgAaQBsAGQAUgBlAHMAbwB1AHIA
+YwBlAHMAUgBlAHMAcABvAG4AcwBlBiQAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABv
+AHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEA
+ZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQYlABkAZwBlAHQAQwBoAGkAbABkAFIAZQBzAG8AdQBy
+AGMAZQBzAFIAZQBzAHAAbwBuAHMAZQYoADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAA
+bwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBh
+AGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDKwAAAA4DEgAAAAQDEgAAAAQBEwEJFAAAAAEQIQYV
+AAkAcgBlAHMAbwB1AHIAYwBlAHMGLAA5AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8A
+cwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBk
+AG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIA
+AAAACBkQHwYCAAwAcgBlAHMAbwB1AHIAYwBlAEwAaQBzAHQGJAA5AGgAdAB0AHAAOgAvAC8AdwB3
+AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMA
+eQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlBiUABwBhAG4AeQBUAHkAcABl
+BigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwA
+UwBjAGgAZQBtAGEDKwAAAAwDEgAAAAUDEgAAAAUBEwEJFAAAAAEQIQYVAAgAcgBlAHMAbwB1AHIA
+YwBlBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBv
+AG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkAbgAvAHIAZQBzAG8A
+dQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAAMbf////wMg/////wMiAAAAAAgZEB8GAgAIAHIAZQBz
+AG8AdQByAGMAZQYkADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMA
+dwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwBy
+AGUAcwBvAHUAcgBjAGUGJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcA
+LgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAABgMS
+AAAABgETAQkUAAAAERAhBhUABABuAGEAbQBlBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBv
+AG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUA
+bQAvAGEAZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg
+/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAEAHAAYQB0AGgGLAA5AGgAdAB0AHAAOgAvAC8A
+dwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAv
+AHMAeQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoA
+AAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAQAdAB5AHAAZQYsADkAaAB0
+AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIA
+dgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAA
+AAEDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUABwBzAHUA
+YgB0AHkAcABlBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3
+AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkAbgAvAHIA
+ZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//
+92j/////ECEGFQACAGkAZAYsADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkA
+dABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBp
+AG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAI
+GRAvAxL///do/////xAhBhUACABjAGgAYQBuAGcAZQBJAGQGLAA5AGgAdAB0AHAAOgAvAC8AdwB3
+AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMA
+eQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoAAAAA
+AxsAAAABAyD/////AyIAAAAACBkQLwMS///3Yf////8QIQYVAAcAdgBlAHIAcwBpAG8AbgYsADkA
+aAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBl
+AHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUD
+LwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUADwBp
+AG4AdAByAG8AcwBwAGUAYwB0AFMAdABhAHQAZQYsADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMA
+bwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABl
+AG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAAAAADGgAAAAADGwAAAAED
+IP////8DIgAAAAAIGRAvAxL///do/////xAhBhUACwBvAHcAbgBlAHIARABvAG0AYQBpAG4GLAA5
+AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMA
+ZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBkAG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBl
+Ay8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAkA
+bwB3AG4AZQByAE4AYQBtAGUGLAA5AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBp
+AHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBkAG0A
+aQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAA
+CBkQLwMS///3aP////8QIQYVAAsAaQBtAHAAYQBjAHQATABlAHYAZQBsBiwAOQBoAHQAdABwADoA
+LwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBl
+AHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkAbgAvAHIAZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAA
+AAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQANAGkAbQBwAGEAYwB0
+AE0AZQBzAHMAYQBnAGUGLAA5AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQA
+ZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBkAG0AaQBu
+AC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQ
+LwMS///3aP////8QIQYVAAcAZQBuAGEAYgBsAGUAZAYsADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAu
+AGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMA
+dABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAAAAADGgAAAAADGwAA
+AAEDIP////8DIgAAAAAIGRAvAxL///dV/////xAhBhUACQBsAG8AYwBrAFMAdABhAHQAZQYsADkA
+aAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBl
+AHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUD
+LwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAfBgIACQBsAG8AYwBrAFMAdABh
+AHQAZQYkADkAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMA
+bwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBv
+AHUAcgBjAGUGJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMA
+LgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAABwMSAAAABwET
+AQkUAAAABBAhBhUADwBsAG8AYwBrAE8AdwBuAGUAcgBEAG8AbQBhAGkAbgYsADkAaAB0AHQAcAA6
+AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMA
+ZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAA
+AAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUADQBsAG8AYwBrAE8A
+dwBuAGUAcgBOAGEAbQBlBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0
+AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkA
+bgAvAHIAZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZ
+EC8DEv//92j/////ECEGFQAOAGwAbwBjAGsAQwByAGUAYQB0AGUAVABpAG0AZQYsADkAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAED
+FgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAvAxL///dT/////xAhBhUADgBsAG8AYwBr
+AFAAYQByAGUAbgB0AFAAYQB0AGgGLAA5AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8A
+cwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AYQBk
+AG0AaQBuAC8AcgBlAHMAbwB1AHIAYwBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIA
+AAAACBkQLwMS///3aP//////////ECEGFQAFAGgAaQBuAHQAcwYsADkAaAB0AHQAcAA6AC8ALwB3
+AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+cwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAAAAADGgAA
+AAADGwAAAAEDIP////8DIgAAAAAIGRAfBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoA
+LwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAA
+AAwDEgAAAAgDEgAAAAgBEwEJFAAAAAEQIQYVAAQAaABpAG4AdAYsADkAaAB0AHQAcAA6AC8ALwB3
+AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+cwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAEDFgAAAAADGgAA
+AAADG3////8DIP////8DIgAAAAAIGRAfBgIACQBhAHQAdAByAGkAYgB1AHQAZQYkADYAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4GJQAHAGEAbgB5AFQA
+eQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBY
+AE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAACQMSAAAACQETAQkUAAAABxAhBhUABABuAGEAbQBl
+BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0A
+LwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMv
+AAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAEAHQA
+eQBwAGUGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBj
+AG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0A
+bwBuAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYV
+AAUAdgBhAGwAdQBlBiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUA
+cwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBj
+AG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/
+////ECEGFQAJAHYAYQBsAHUAZQBMAGkAcwB0BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBv
+AG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUA
+bQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMi
+AAAAAAgZEB8GAgAWAGEAdAB0AHIAaQBiAHUAdABlAFQAeQBwAGUAVgBhAGwAdQBlAEwAaQBzAHQG
+JAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAv
+AHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuBiUA
+FQBhAHQAdAByAGkAYgB1AHQAZQBDAG8AbQBwAGwAZQB4AFYAYQBsAHUAZQYoADYAaAB0AHQAcAA6
+AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMA
+ZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4DKwAAAAwDEgAAAAoDEgAA
+AAoBEwEJFAAAAAEQIQYVAAQAaQB0AGUAbQYsADYAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBt
+AHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0A
+LwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4DLwAAAAEDFgAAAAADGgAAAAADG3////8DIP////8DIgAA
+AAAIGRAfBgIAEgBhAHQAdAByAGkAYgB1AHQAZQBUAHkAcABlAFYAYQBsAHUAZQYkADYAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4GJQAHAGEAbgB5AFQA
+eQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBY
+AE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAACwMSAAAACwETAQkUAAAABRAhBhUABAB0AHkAcABl
+BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0A
+LwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMv
+AAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAFAHYA
+YQBsAHUAZQYsADYAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAu
+AGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0A
+bQBvAG4DLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAh
+BhUACQB2AGEAbAB1AGUATABpAHMAdAYsADYAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAA
+bwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1
+AHQAaQBsAC8AYwBvAG0AbQBvAG4DLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAD
+EgAAAAr//xAhBhUACAB2AGEAbAB1AGUATQBhAHAGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBj
+AG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQA
+ZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////
+AyIAAAAACBkQHwYCABUAYQB0AHQAcgBpAGIAdQB0AGUAVAB5AHAAZQBWAGEAbAB1AGUATQBhAHAG
+JAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAv
+AHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuBiUA
+FQBhAHQAdAByAGkAYgB1AHQAZQBDAG8AbQBwAGwAZQB4AFYAYQBsAHUAZQYoADYAaAB0AHQAcAA6
+AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMA
+ZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQAaQBsAC8AYwBvAG0AbQBvAG4DKwAAAAwDEgAAAAwDEgAA
+AAwBEwEJFAAAAAEQIQYVAAUAZQBuAHQAcgB5BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBv
+AG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUA
+bQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbf////wMg/////wMi
+AAAAAAgZEB8GJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMA
+LgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAADQMSAAAADQET
+AQkUAAAAAhAhBhUAAwBrAGUAeQYsADYAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBz
+AGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AcwB5AHMAdABlAG0ALwB1AHQA
+aQBsAC8AYwBvAG0AbQBvAG4DLwAAAAEDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAADEgAA
+AAv//xAhBhUABQB2AGEAbAB1AGUGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8A
+cwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0
+AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAAAxIA
+AAAL/////////////xAhBhUACgB2AGEAbAB1AGUAQQByAHIAYQB5BiwANgBoAHQAdABwADoALwAv
+AHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMA
+LwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMb
+AAAAAQMg/////wMiAAAAAAgZEB8GAgAYAGEAdAB0AHIAaQBiAHUAdABlAFMAaQBtAHAAbABlAFYA
+YQBsAHUAZQBMAGkAcwB0BiQANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0
+AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwA
+LwBjAG8AbQBtAG8AbgYlABUAYQB0AHQAcgBpAGIAdQB0AGUAQwBvAG0AcABsAGUAeABWAGEAbAB1
+AGUGKAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8A
+bQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBu
+AysAAAAMAxIAAAAOAxIAAAAOARMBCRQAAAABECEGFQAEAGkAdABlAG0GLAA2AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUA
+cwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAAA
+Axt/////AyD/////AyIAAAAACBkQLwMS///3aP////////////////////8QIQYVAAgAdgBhAGwA
+dQBlAE0AYQBwBiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUAcwB3
+AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUAdABpAGwALwBjAG8A
+bQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAMSAAAADP//ECEGFQAK
+AHYAYQBsAHUAZQBBAHIAcgBhAHkGLAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8A
+cwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0
+AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAAAxIA
+AAAO//8QIQYVAAUAdQBuAHMAZQB0BiwANgBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABv
+AHMAaQB0AGUAcwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAHUA
+dABpAGwALwBjAG8AbQBtAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZ
+EC8DEv//91X///////////////8QIQYVAAoAYQBuAG4AbwB0AGEAdABpAG8AbgYsADkAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAGMAbwBtAHAAbwBzAGkAdABlAHMAdwAuAGMAbwBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AcwB5AHMAdABlAG0ALwBhAGQAbQBpAG4ALwByAGUAcwBvAHUAcgBjAGUDLwAAAAED
+FgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUACgBhAHQAdABy
+AGkAYgB1AHQAZQBzBiwAOQBoAHQAdABwADoALwAvAHcAdwB3AC4AYwBvAG0AcABvAHMAaQB0AGUA
+cwB3AC4AYwBvAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBzAHkAcwB0AGUAbQAvAGEAZABtAGkAbgAv
+AHIAZQBzAG8AdQByAGMAZQMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEB8G
+AgANAGEAdAB0AHIAaQBiAHUAdABlAEwAaQBzAHQGJAA2AGgAdAB0AHAAOgAvAC8AdwB3AHcALgBj
+AG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQByAHYAaQBjAGUAcwAvAHMAeQBzAHQA
+ZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABw
+ADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGED
+KwAAAAwDEgAAAA8DEgAAAA8BEwEJFAAAAAEQIQYVAAkAYQB0AHQAcgBpAGIAdQB0AGUGLAA2AGgA
+dAB0AHAAOgAvAC8AdwB3AHcALgBjAG8AbQBwAG8AcwBpAHQAZQBzAHcALgBjAG8AbQAvAHMAZQBy
+AHYAaQBjAGUAcwAvAHMAeQBzAHQAZQBtAC8AdQB0AGkAbAAvAGMAbwBtAG0AbwBuAy8AAAABAxYA
+AAAAAxoAAAAAAxt/////AyD/////AyIAAAAAAxIAAAAJ////////////////////////////////
+//8=</attribute>
+  <attribute name="paramPaths" type="STRING_ARRAY">
+    <item>/</item>
+    <item>/</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1518547843330</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+  <attribute name="soapAction" type="STRING">getChildResources</attribute>
+  <attribute name="soapStyle" type="STRING">document</attribute>
+  <attribute name="sourceName" type="STRING">getChildResources</attribute>
+  <attribute name="timeout" type="LONG">-1</attribute>
+  <attribute name="usePortMappings" type="BOOLEAN">true</attribute>
+  <attribute name="usePortPipelines" type="BOOLEAN">true</attribute>
+</metadata>

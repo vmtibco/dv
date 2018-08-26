@@ -1,0 +1,338 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Initialize_SysRequests_Cache" path="/users/composite/admin/Test1/Initialize_SysRequests_Cache" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="IncrementalMaintenanceLevel" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/GetEnvironment" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="variableName" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/databases/system/SYS_REQUESTS" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/system/datasources/system/SYS_REQUESTS" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Localhost_Tutorial/tutorial/sysrequestscache" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="cachekey" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/SysRequests" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE Initialize_SysRequests_Cache(OUT IncrementalMaintenanceLevel VARCHAR)
+BEGIN
+DECLARE cacheKey BIGINT;
+DECLARE maxI TIMESTAMP;
+ 
+/* 1. Retrieve cache key from request environment */
+CALL /lib/util/GetEnvironment(&apos;System.CACHED_RESOURCE_CACHE_KEY&apos;, cacheKey);
+CALL /lib/debug/Log(&apos;SysRequests: cachedResourceCacheKey = &apos; || cacheKey);
+ 
+/* 2. Determine initial snapshot level */
+SET maxI = CURRENT_TIMESTAMP;
+ 
+/* 3. Load cache target table */
+INSERT INTO
+/users/composite/admin/Test1/Localhost_Tutorial/tutorial/sysrequestscache
+SELECT {option disable_data_cache}
+cacheKey, S.*
+FROM
+/users/composite/admin/Test1/SysRequests S
+WHERE
+END_TIME &lt;= maxI;
+ 
+/* 4. Return incremental maintenance level */
+SET IncrementalMaintenanceLevel = CAST(maxI AS VARCHAR);
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1510680612612</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510689605606</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510680612612</attribute>
+</metadata>

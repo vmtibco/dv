@@ -1,0 +1,459 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SysRequests" path="/users/composite/admin/Test1/SysRequests" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="REQUEST_ID" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARENT_ID" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SESSION_ID" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TRANSACTION_ID" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OWNER_ID" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OWNER" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="REQUEST_TYPE" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="STATUS" nullable="true">
+      <datatype type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DESCRIPTION" nullable="true">
+      <datatype type="STRING" maxLength="65535"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="START_TIME" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="END_TIME" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TOTAL_DURATION" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SERVER_DURATION" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ROWS_AFFECTED" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MAX_MEMORY" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MAX_DISK" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CURRENT_MEMORY" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CURRENT_DISK" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MESSAGE" nullable="true">
+      <datatype type="STRING" maxLength="65535"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MAX_USED_MEMORY" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CURRENT_USED_MEMORY" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/services/databases/system/SYS_REQUESTS" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Incremental_SysRequests_Cache" type="PROCEDURE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Initialize_SysRequests_Cache" type="PROCEDURE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Localhost_Tutorial" type="DATA_SOURCE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Localhost_Tutorial/tutorial/sysrequestscache" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    *
+FROM      
+    /services/databases/system/SYS_REQUESTS SYS_REQUESTS</attribute>
+  <attribute name="cacheClearRule" type="STRING">MANUAL</attribute>
+  <attribute name="cacheConfigured" type="BOOLEAN">true</attribute>
+  <attribute name="cacheDeltaLoader" type="STRING">/users/composite/admin/Test1/Incremental_SysRequests_Cache</attribute>
+  <attribute name="cacheEnabled" type="BOOLEAN">true</attribute>
+  <attribute name="cacheIncremental" type="BOOLEAN">false</attribute>
+  <attribute name="cacheLastTracking" type="STRING">/users/composite/admin/Test1/Localhost_Tutorial/tutorial/cache_tracking</attribute>
+  <attribute name="cachePostRefreshCallback" type="NULL"/>
+  <attribute name="cachePreRefreshCallback" type="NULL"/>
+  <attribute name="cachePullBasedIncremental" type="BOOLEAN">true</attribute>
+  <attribute name="cacheRefreshMode" type="STRING">SCHEDULED</attribute>
+  <attribute name="cacheSnapshotLoader" type="STRING">/users/composite/admin/Test1/Initialize_SysRequests_Cache</attribute>
+  <attribute name="cacheStorageSource" type="STRING">/users/composite/admin/Test1/Localhost_Tutorial</attribute>
+  <attribute name="cacheStorageTargets" type="MAP">
+    <item>
+      <key type="STRING">result</key>
+      <value type="STRING">/users/composite/admin/Test1/Localhost_Tutorial/tutorial/sysrequestscache</value>
+    </item>
+  </attribute>
+  <attribute name="cacheStorageType" type="STRING">DATA_SOURCE</attribute>
+  <attribute name="creationDate" type="LONG">1510688879105</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUQYBAAwAUwBZAFMAXwBSAEUAUQBVAEUAUwBUAFMGAgAMAFMAWQBTAF8AUgBFAFEA
+VQBFAFMAVABTAwv/////AwoAAIoCAwz/////CxEABAAIAHMAZQByAHYAaQBjAGUAcwAJAGQAYQB0
+AGEAYgBhAHMAZQBzAAYAcwB5AHMAdABlAG0ADABTAFkAUwBfAFIARQBRAFUARQBTAFQAU///AwUA
+AAAACAIQMQYB//8BAgEBBgABAwABBAABBQADBwAAAAAHCQAAAAEAAAAACQoAAAABEEEGAQABACoG
+AgAABgP//wYE//8DCv////8GBQAABgYAAAYHAAAGCAAA/////wkGAAAAARCCAwoAAAD1AwsAAACA
+AwwAAADIAw0AAADI//8IAxBxAwEAAAALAwIAAAAyCQMAAAImEHQDBgAAAAD//xByBgT/////EHP/
+/xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3
+Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8Q
+dQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/
+////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8Q
+dP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Q
+dv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb///////8=</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510688879105</attribute>
+  <trigger>
+    <security>
+      <owner user="admin" domain="composite"/>
+    </security>
+    <dependency target="/lib/resource/RefreshResourceCache" type="PROCEDURE">
+      <datatype name="Tree" type="TREE" refId="1"></datatype>
+    </dependency>
+    <dependency target="/users/composite/admin/Test1/SysRequests" type="TABLE">
+      <datatype type="TABLE" refId="1">
+        <element name="REQUEST_ID">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="PARENT_ID">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="SESSION_ID">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="TRANSACTION_ID">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="OWNER_ID">
+          <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="OWNER">
+          <datatype type="STRING" maxLength="255"/>
+        </element>
+        <element name="REQUEST_TYPE">
+          <datatype type="STRING" maxLength="255"/>
+        </element>
+        <element name="STATUS">
+          <datatype type="STRING" maxLength="20"/>
+        </element>
+        <element name="DESCRIPTION">
+          <datatype type="STRING" maxLength="65535"/>
+        </element>
+        <element name="START_TIME">
+          <datatype type="DATETIME"/>
+        </element>
+        <element name="END_TIME">
+          <datatype type="DATETIME"/>
+        </element>
+        <element name="TOTAL_DURATION">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="SERVER_DURATION">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="ROWS_AFFECTED">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="MAX_MEMORY">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="MAX_DISK">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="CURRENT_MEMORY">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="CURRENT_DISK">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="MESSAGE">
+          <datatype type="STRING" maxLength="65535"/>
+        </element>
+        <element name="MAX_USED_MEMORY">
+          <datatype type="INTEGER"/>
+        </element>
+        <element name="CURRENT_USED_MEMORY">
+          <datatype type="INTEGER"/>
+        </element>
+      </datatype>
+    </dependency>
+    <attribute name="actionProperties" type="MAP">
+      <item>
+        <key type="STRING">PATH</key>
+        <value type="STRING">/lib/resource/RefreshResourceCache</value>
+      </item>
+      <item>
+        <key type="STRING">PARAMETERS</key>
+        <value type="STRING">&apos;/users/composite/admin/Test1/SysRequests&apos;,&apos;TABLE&apos;</value>
+      </item>
+    </attribute>
+    <attribute name="actionType" type="STRING">PROCEDURE</attribute>
+    <attribute name="conditionSchedule" type="MAP">
+      <item>
+        <key type="STRING">period</key>
+        <value type="INTEGER">0</value>
+      </item>
+      <item>
+        <key type="STRING">recurringDay</key>
+        <value type="INTEGER">-1</value>
+      </item>
+      <item>
+        <key type="STRING">count</key>
+        <value type="INTEGER">0</value>
+      </item>
+      <item>
+        <key type="STRING">fromTimeInADay</key>
+        <value type="LONG">-1</value>
+      </item>
+      <item>
+        <key type="STRING">mode</key>
+        <value type="STRING">INTERVAL</value>
+      </item>
+      <item>
+        <key type="STRING">lastRunTime</key>
+        <value type="LONG">1533704639009</value>
+      </item>
+      <item>
+        <key type="STRING">lastScheduledTime</key>
+        <value type="LONG">1533704639000</value>
+      </item>
+      <item>
+        <key type="STRING">endTimeInADay</key>
+        <value type="LONG">-1</value>
+      </item>
+      <item>
+        <key type="STRING">startTime</key>
+        <value type="LONG">1510688879000</value>
+      </item>
+      <item>
+        <key type="STRING">interval</key>
+        <value type="INTEGER">120</value>
+      </item>
+      <item>
+        <key type="STRING">endTime</key>
+        <value type="LONG">0</value>
+      </item>
+      <item>
+        <key type="STRING">isCluster</key>
+        <value type="BOOLEAN">true</value>
+      </item>
+    </attribute>
+    <attribute name="conditionType" type="STRING">TIMER</attribute>
+    <attribute name="creationDate" type="LONG">1510689205634</attribute>
+    <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+    <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+    <attribute name="creatorUserName" type="STRING">admin</attribute>
+    <attribute name="enabled" type="BOOLEAN">true</attribute>
+    <attribute name="isChildTrigger" type="BOOLEAN">true</attribute>
+    <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+    <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+    <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+    <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+    <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510689205634</attribute>
+  </trigger>
+</metadata>

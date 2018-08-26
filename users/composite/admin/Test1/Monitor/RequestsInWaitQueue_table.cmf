@@ -1,0 +1,174 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="RequestsInWaitQueue" path="/users/composite/admin/Test1/Monitor/RequestsInWaitQueue" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="WaitingReqCnt" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/services/databases/system/SYS_REQUESTS" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="REQUEST_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SESSION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TRANSACTION_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="REQUEST_TYPE">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="START_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="END_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="TOTAL_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="SERVER_DURATION">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="ROWS_AFFECTED">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MAX_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_DISK">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MESSAGE">
+        <datatype type="STRING" maxLength="65535"/>
+      </element>
+      <element name="MAX_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="CURRENT_USED_MEMORY">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    count(SYS_REQUESTS.REQUEST_ID) WaitingReqCnt
+FROM      
+    /services/databases/system/SYS_REQUESTS SYS_REQUESTS
+WHERE
+    SYS_REQUESTS.PARENT_ID IS NULL AND 
+    SYS_REQUESTS.STATUS IN (&apos;WAITING&apos;)</attribute>
+  <attribute name="creationDate" type="LONG">1510701609371</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510701630521</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUQYBAAwAUwBZAFMAXwBSAEUAUQBVAEUAUwBUAFMGAgAMAFMAWQBTAF8AUgBFAFEA
+VQBFAFMAVABTAwv/////AwoAAIoCAwz/////CxEABAAIAHMAZQByAHYAaQBjAGUAcwAJAGQAYQB0
+AGEAYgBhAHMAZQBzAAYAcwB5AHMAdABlAG0ADABTAFkAUwBfAFIARQBRAFUARQBTAFQAU///AwUA
+AAAACAIQMQYB//8BAgEBBgABAwABBAABBQADBwAAAAAICBBhAQUAAQYACAEQZQEFAAgDEEEGAQAJ
+AFAAQQBSAEUATgBUAF8ASQBEBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAAAQQHgAAAAAAAAAD/
+/wMLAAAAAP////8IAhBjAQUACAgQQQYBAAYAUwBUAEEAVABVAFMGAgAABgP//wYE//8DCv////8I
+DBAbAxIAAAABBAQAAAAAAAAAFAETAf//AwsAAAAA//8IBBBDBgIAAAoOEBsGAgAEAEMASABBAFID
+EgAAAAEBOwAEBQAAAAAAAAAHBAQAAAAAAAAABwETAf//EAAAAAdXQUlUSU5H////////BwkAAAAB
+AAAAAAkKAAAAARBCBgEABQBjAG8AdQBuAHQGAgANAFcAYQBpAHQAaQBuAGcAUgBlAHEAQwBuAHQB
+CQABEgAJDQAAAAEQQQYBAAoAUgBFAFEAVQBFAFMAVABfAEkARAYCAAAGA///BgT//wMK/////wgM
+EBkDEgAAAAEEB4AAAAAAAAAA//8DCwAAAAD///////8JBgAAAAEQggMKAAAAHgMLAAAAHgMMAAAA
+yAMNAAAAyP//CAMQcQMBAAAACwMCAAAAMgkDAAACJhB0AwYAAAAA//8QcgYEAA0AVwBhAGkAdABp
+AG4AZwBSAGUAcQBDAG4AdP//EHP//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdAYJABYAUwBZAFMAXwBSAEUAUQBVAEUAUwBUAFMALgBQAEEAUgBFAE4A
+VABfAEkARP//EHIGBP////8QcwMFAAAAAP//EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHYGCAAeAFMAWQBTAF8AUgBFAFEAVQBFAFMAVABTAC4AUABBAFIARQBOAFQAXwBJAEQAIABJ
+AFMAIABOAFUATABM//8Qdv//EHb//xB2//8QdAYJABMAUwBZAFMAXwBSAEUAUQBVAEUAUwBUAFMA
+LgBTAFQAQQBUAFUAU///EHIGBP////8QcwMFAAAAAP//EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHYGCAAiAFMAWQBTAF8AUgBFAFEAVQBFAFMAVABTAC4AUwBUAEEAVABVAFMAIABJ
+AE4AIAAoACcAVwBBAEkAVABJAE4ARwAnACn//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8Q
+dQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/
+////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8Q
+dP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Q
+dv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz
+//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xBy
+BgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2
+//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP//
+//8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//
+EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP/
+/xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2////////</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510701609371</attribute>
+</metadata>

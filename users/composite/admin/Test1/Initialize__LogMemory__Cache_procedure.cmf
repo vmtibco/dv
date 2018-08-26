@@ -1,0 +1,156 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Initialize_LogMemory_Cache" path="/users/composite/admin/Test1/Initialize_LogMemory_Cache" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="IncrementalMaintenanceLevel" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/GetEnvironment" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="variableName" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/databases/system/LOG_MEMORY" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="MEMORY_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MEMORY_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/system/datasources/repository/cisrepo/probe_samples" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="id" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="creation_time">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="sample1" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="sample2" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="sample3" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="sample4" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="sample5" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="sample6" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Localhost_Tutorial/tutorial/logmemorycache" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="cachekey" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="MEMORY_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MEMORY_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/LogMemory" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="MEMORY_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MEMORY_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_BYTES">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="MANAGED_MAX">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE Initialize_LogMemory_Cache(OUT IncrementalMaintenanceLevel VARCHAR)
+BEGIN
+DECLARE cacheKey BIGINT;
+DECLARE maxI TIMESTAMP;
+ 
+/* 1. Retrieve cache key from request environment */
+CALL /lib/util/GetEnvironment(&apos;System.CACHED_RESOURCE_CACHE_KEY&apos;, cacheKey);
+CALL /lib/debug/Log(&apos;cachedResourceCacheKey = &apos; || cacheKey);
+ 
+/* 2. Determine initial snapshot level */
+-- SELECT {option no_data_cache} MAX(EVENT_TIME) INTO maxI FROM /users/composite/admin/Test1/LogEvents;
+SET maxI = CURRENT_TIMESTAMP;
+ 
+/* 3. Load cache target table */
+INSERT INTO
+/users/composite/admin/Test1/Localhost_Tutorial/tutorial/logmemorycache
+SELECT {option disable_data_cache}
+cacheKey, S.*
+FROM
+/users/composite/admin/Test1/LogMemory S
+WHERE
+EVENT_TIME &lt;= maxI;
+ 
+/* 4. Return incremental maintenance level */
+SET IncrementalMaintenanceLevel = CAST(maxI AS VARCHAR);
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1510680612612</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510688694304</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510680612612</attribute>
+</metadata>

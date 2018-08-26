@@ -1,0 +1,229 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Test_A2A" path="/users/composite/admin/Test1/Test_A2A" type="PROCEDURE" subtype="TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="false">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="PersonID" nullable="false">
+          <datatype name="BIGINT" type="INTEGER"/>
+        </element>
+        <element name="NTID" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+        </element>
+        <element name="EmployeeID" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="Postal" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="Building" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="BuildingCode" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="Column" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+    <parameter name="ArrayOfCustomizePerson" direction="IN" nullable="false">
+      <datatype name="ArrayOfCustomizePerson" referenceDefinitionSet="/users/composite/admin/Test1/CustomizePerson/CustomizePersonDefinitions" referenceType="ArrayOfCustomizePerson" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="ArrayOfCustomizePerson">
+        <schemaDatatype>
+          <datatype name="ArrayOfCustomizePerson" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test1/CustomizePerson/CustomizePersonDefinitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1497563840561</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1497651933637</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1497563840561</attribute>
+  <attribute name="transformModel" type="BYTE_ARRAY">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</attribute>
+  <attribute name="transformSource" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare variable $ArrayOfCustomizePerson external;
+let $nodes := 
+(
+  (
+    for $var1 at $counter0 in $ArrayOfCustomizePerson/CustomizePerson
+    return 
+      if (fn:not($counter0 &lt;= 2147483647 and fn:true()))
+      then ()
+      else 
+        element result
+        {
+          (
+            element PersonID
+            {
+              $var1/PersonID/text()
+            }
+            ,
+            element NTID
+            {
+              $var1/NTID/text()
+            }
+            ,
+            element EmployeeID
+            {
+              $var1/EmployeeID/text()
+            }
+            ,
+            element Postal
+            {
+              $var1/Postal/text()
+            }
+            ,
+            element Building
+            {
+              $var1/Building
+            }
+            ,
+            element BuildingCode
+            {
+              $var1/BuildingCode
+            }
+            ,
+            element Column
+            {
+              $var1/Column/text()
+            }
+          )
+        }
+    ,
+    let $counter := count($ArrayOfCustomizePerson/CustomizePerson)
+    return
+      if ($counter &gt;= 0) then
+      ()
+      else 
+        for $k in (1 to ( 0 - $counter))
+        return
+          element result
+          {
+            (
+              element PersonID
+              {
+              }
+              ,
+              element NTID
+              {
+              }
+              ,
+              element EmployeeID
+              {
+              }
+              ,
+              element Postal
+              {
+              }
+              ,
+              element Building
+              {
+              }
+              ,
+              element BuildingCode
+              {
+              }
+              ,
+              element Column
+              {
+              }
+            )
+          }
+  )
+)
+return
+$nodes</attribute>
+</metadata>

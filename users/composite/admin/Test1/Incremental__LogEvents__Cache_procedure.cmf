@@ -1,0 +1,258 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Incremental_LogEvents_Cache" path="/users/composite/admin/Test1/Incremental_LogEvents_Cache" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="IncrementalMaintenanceLevel" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/GetEnvironment" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="variableName" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/services/databases/system/LOG_EVENTS" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="EVENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TYPE_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="TYPE_NAME">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="CATEGORY">
+        <datatype type="STRING" minLength="5" maxLength="11" trailingSpaces="false"/>
+      </element>
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="SEVERITY">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="DETAIL">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/system/datasources/repository/cisrepo/event_log" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="id" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="severity" nullable="false">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="typeid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="status" nullable="false">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="parentid" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="description">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="time" nullable="false">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="userid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="attributes">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="snmpid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/system/datasources/repository/cisrepo/system_users" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="user_id" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="user_name">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="domain_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="annotation">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="cid">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="access_timestamp" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="reset_timestamp" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/Localhost_Tutorial/tutorial/logeventscache" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="cachekey" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="EVENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TYPE_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="TYPE_NAME">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="CATEGORY">
+        <datatype type="STRING" maxLength="11"/>
+      </element>
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="SEVERITY">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="DETAIL">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test1/LogEvents" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="EVENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TYPE_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="TYPE_NAME">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="CATEGORY">
+        <datatype type="STRING" minLength="5" maxLength="11" trailingSpaces="false"/>
+      </element>
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="SEVERITY">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="DETAIL">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE Incremental_LogEvents_Cache(OUT IncrementalMaintenanceLevel VARCHAR)
+BEGIN
+DECLARE cacheKey BIGINT;
+DECLARE maxI TIMESTAMP;
+ 
+/* 1. Retrieve cache key from request environment */
+CALL /lib/util/GetEnvironment(&apos;System.CACHED_RESOURCE_CACHE_KEY&apos;, cacheKey);
+CALL /lib/debug/Log(&apos;LogEvents: cachedResourceCacheKey = &apos; || cacheKey);
+ 
+/* 2. Retrieve incremental maintenance level from request environment */
+CALL /lib/util/GetEnvironment(&apos;System.CACHED_RESOURCE_INCREMENTAL_MAINTENANCE_LEVEL&apos;, IncrementalMaintenanceLevel);
+CALL /lib/debug/Log(&apos;LogEvents: cachedResourceIncrementalCacheMaintenanceLevel = &apos; || IncrementalMaintenanceLevel);
+ 
+/* 3. Determine next level */
+SELECT {option no_data_cache} MAX(EVENT_TIME) INTO maxI FROM /users/composite/admin/Test1/LogEvents;
+SET maxI = COALESCE(maxI, &apos;1900-01-01&apos;);
+ 
+/* 4. Refresh cache target table */
+INSERT INTO
+/users/composite/admin/Test1/Localhost_Tutorial/tutorial/logeventscache
+SELECT {option disable_data_cache}
+cacheKey, S.*
+FROM
+/users/composite/admin/Test1/LogEvents S
+WHERE
+EVENT_TIME &gt; CAST(IncrementalMaintenanceLevel AS TIMESTAMP) AND EVENT_TIME &lt;= maxI;
+ 
+/* 5. Update incremental maintenance level */
+SET IncrementalMaintenanceLevel = CAST(maxI AS VARCHAR);
+CALL /lib/debug/Log(&apos;LogEvents: IncrementalMaintenanceLevel for successful run of DeltaLoader script= &apos; || IncrementalMaintenanceLevel);
+ 
+EXCEPTION
+ELSE
+--Log the exception
+CALL /lib/debug/log(&apos;Exception raised in the delta loader script&apos;);
+CALL /lib/debug/log(&apos;Exception is : &apos; || CURRENT_EXCEPTION.NAME || &apos;: &apos; || 
+CURRENT_EXCEPTION.MESSAGE);
+ 
+--Don&apos;t advance the incremental maintenance level on a failure
+CALL /lib/util/GetEnvironment(&apos;System.CACHED_RESOURCE_INCREMENTAL_MAINTENANCE_LEVEL&apos;, IncrementalMaintenanceLevel);
+CALL /lib/debug/Log(&apos;IncrementalMaintenanceLevel after exception in DeltaLoader script= &apos; || IncrementalMaintenanceLevel);
+ 
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1510683309669</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1510689867814</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510683309669</attribute>
+</metadata>
