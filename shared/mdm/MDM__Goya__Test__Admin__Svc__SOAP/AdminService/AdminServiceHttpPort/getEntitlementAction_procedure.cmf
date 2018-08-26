@@ -1,0 +1,377 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getEntitlementAction" path="/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/AdminService/AdminServiceHttpPort/getEntitlementAction" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="UserEntitlementRequest" direction="IN" nullable="unknown">
+      <datatype name="UserEntitlementRequest" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" referenceDefinitionSet="/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/Definitions" referenceType="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementRequest" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementRequest">
+        <schemaDatatype>
+          <datatype name="UserEntitlementRequest" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="UserEntitlementRequestType" superTypeNamespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="UserInfo" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+              <datatype name="UserInfoType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="UserName" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="Password" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="Enterprise" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+              </datatype>
+            </element>
+            <element name="EntitlementUser" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+              <datatype name="GetEntitlementUserType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                <element name="UserName" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="Enterprise" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="UserEntitlementResponse" direction="OUT" nullable="unknown">
+      <datatype name="UserEntitlementResponse" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" referenceDefinitionSet="/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/Definitions" referenceType="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementResponse">
+        <schemaDatatype>
+          <datatype name="UserEntitlementResponse" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="UserEntitlementResponseType" superTypeNamespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="AccessControl" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647">
+              <datatype name="AccessControlType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="Resources" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                  <datatype name="ResourcesType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                    <element name="Resource" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647">
+                      <datatype name="ResourceType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                        <element name="resourceType" minOccurs="0" category="1">
+                          <datatype namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                        </element>
+                        <element name="id" minOccurs="0" category="1">
+                          <datatype name="long" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER"/>
+                        </element>
+                        <element name="all" minOccurs="0" category="1">
+                          <datatype name="boolean" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="0" maxValue="1"/>
+                        </element>
+                        <element name="Name" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                        </element>
+                        <element name="RepositoryName" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                        </element>
+                        <element name="Accesses" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                          <datatype name="AccessesType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                            <element name="Access" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647">
+                              <datatype name="AccessType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                                <element name="id" category="1">
+                                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                </element>
+                                <element name="Description" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                                  <datatype name="DescriptionType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="T_SimpleType" superTypeNamespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                                    <element name="lang" minOccurs="0" category="1">
+                                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                                    </element>
+                                    <element name="value" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" category="5">
+                                      <datatype name="T_SimpleType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                    </element>
+                                  </datatype>
+                                </element>
+                                <element name="Allowed" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                                  <datatype name="T_Allowed" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="string" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="SIMPLE_TYPE" type="STRING" maxLength="2147483647"/>
+                                </element>
+                              </datatype>
+                            </element>
+                          </datatype>
+                        </element>
+                      </datatype>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+            <element name="Roles" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647">
+              <datatype name="RolesType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="8">
+                <element name="Role" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="RoleType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="9">
+                    <element name="id" minOccurs="0" category="1">
+                      <datatype name="long" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER"/>
+                    </element>
+                    <element name="Name" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="Description" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                      <reference refId="7"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+            <element name="Functions" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647">
+              <datatype name="FunctionsType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="10">
+                <element name="Function" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="FunctionType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="11">
+                    <element name="id" minOccurs="0" category="1">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="Name" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="Description" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0">
+                      <reference refId="7"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="FaultDetails" direction="OUT" nullable="unknown">
+      <datatype name="FaultDetails" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" referenceDefinitionSet="/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/Definitions" referenceType="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails">
+        <schemaDatatype>
+          <datatype name="FaultDetails" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="CimFaultType" superTypeNamespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="Request" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+              <datatype name="AnyType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="anyType" namespace="http://www.w3.org/2001/XMLSchema" minOccurs="0">
+                  <datatype name="anyType" namespace="http://www.w3.org/2001/XMLSchema" referenceType="{http://www.w3.org/2001/XMLSchema}anyType" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}anyType">
+                    <schemaDatatype>
+                      <datatype name="anyType" type="TREE" refId="3"></datatype>
+                    </schemaDatatype>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+            <element name="CimDetail" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+              <datatype name="ErrorType" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                <element name="ErrorCode" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="ErrorMessage" namespace="http://www.tibco.com/cim/services/adminservice/wsdl/2.0" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/Definitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="EnableSOAPAction" type="BOOLEAN">true</attribute>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;soapPortBinding&quot; timeout=&quot;0&quot; targetNamespace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; soapVersion=&quot;http://schemas.xmlsoap.org/wsdl/soap/http&quot; soapTransport=&quot;http://schemas.xmlsoap.org/soap/http&quot; soapStyle=&quot;document&quot; serviceXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}AdminService&quot; serviceName=&quot;AdminService&quot; portXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}AdminServiceHttpPort&quot; portName=&quot;AdminServiceHttpPort&quot; enableMTOM=&quot;false&quot; enableCustomEndpoint=&quot;false&quot; contractStyle=&quot;ABSTRACT&quot; contractFirst=&quot;false&quot; contract=&quot;/shared/mdm/MDM_Goya_Test_Admin_Svc_SOAP/Definitions&quot; endpointUrlPath=&quot;http://10.12.50.106:8080/eml/services/AdminService&quot; enabled=&quot;false&quot; bindingStyles=&quot;&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;getEntitlementAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getEntitlementAction&quot; opName=&quot;getEntitlementAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;getEntitlementAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementRequest&amp;quot;&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userEntitlementRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserEntitlementRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementResponse&amp;quot;&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userEntitlementResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserEntitlementResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserEntitlementResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;loginAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}loginAction&quot; opName=&quot;loginAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;loginAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}loginRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;LoginRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}LoginRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}loginResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;LoginResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}LoginResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;logoutAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}logoutAction&quot; opName=&quot;logoutAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;logoutAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}logoutRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;LogoutRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}LogoutRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}logoutResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;LogoutResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}LogoutResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;getUserListAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getUserListAction&quot; opName=&quot;getUserListAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;getUserListAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userListRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserListRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserListRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userListResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserListResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserListResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;getRoleListAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getRoleListAction&quot; opName=&quot;getRoleListAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;getRoleListAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}roleListRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;RoleListRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}RoleListRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}roleListResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;RoleListResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}RoleListResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;getEnterpriseListAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getEnterpriseListAction&quot; opName=&quot;getEnterpriseListAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;getEnterpriseListAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getEnterpriseListRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;EnterpriseListRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}EnterpriseListRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}getEnterpriseListResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;EnterpriseListResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}EnterpriseListResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;enterpriseAdminAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}enterpriseAdminAction&quot; opName=&quot;enterpriseAdminAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;enterpriseAdminAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}enterpriseAdminActionRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;EnterpriseAdminActionRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}EnterpriseAdminActionRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}enterpriseAdminActionResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;EnterpriseAdminActionResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}EnterpriseAdminActionResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; soapStyle=&quot;document&quot; soapAction=&quot;userAdminAction&quot; opXmlName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userAdminAction&quot; opName=&quot;userAdminAction&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;userAdminAction&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userAdminActionRequest&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserAdminActionRequest&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserAdminActionRequest&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;part1&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}userAdminActionResponse&quot; location=&quot;body&quot; type=&quot;DEFINITION&quot; name=&quot;UserAdminActionResponse&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}UserAdminActionResponse&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;faultDetail&quot; nameSpace=&quot;http://www.tibco.com/cim/services/adminservice/wsdl/2.0&quot; messageName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}CimFaultMessage&quot; location=&quot;fault&quot; type=&quot;DEFINITION&quot; name=&quot;FaultDetails&quot; elementName=&quot;{http://www.tibco.com/cim/services/adminservice/wsdl/2.0}FaultDetails&quot; direction=&quot;OUTPUT&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1520816576075</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="inputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUAFgBVAHMA
+ZQByAEUAbgB0AGkAdABsAGUAbQBlAG4AdABSAGUAcQB1AGUAcwB0BiwANwBoAHQAdABwADoALwAv
+AHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEA
+ZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAACAxYAAAAAAxoAAAAB
+AxsAAAABAyD/////AyIAAAAACBkQHwYCABYAVQBzAGUAcgBFAG4AdABpAHQAbABlAG0AZQBuAHQA
+UgBlAHEAdQBlAHMAdAYkADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBt
+AC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcA
+cwBkAGwALwAyAC4AMAYlABoAVQBzAGUAcgBFAG4AdABpAHQAbABlAG0AZQBuAHQAUgBlAHEAdQBl
+AHMAdABUAHkAcABlBigANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0A
+LwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBz
+AGQAbAAvADIALgAwAysAAAAOAxIAAAAEAxIAAAAEARMBCRQAAAACECEGFQAIAFUAcwBlAHIASQBu
+AGYAbwYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0A
+LwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAy
+AC4AMAMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAMAFUAcwBlAHIA
+SQBuAGYAbwBUAHkAcABlBiQANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBv
+AG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8A
+dwBzAGQAbAAvADIALgAwBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoALwAvAHcAdwB3
+AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAAAAwDEgAAAAUD
+EgAAAAUBEwEJFAAAAAMQIQYVAAgAVQBzAGUAcgBOAGEAbQBlBiwANwBoAHQAdABwADoALwAvAHcA
+dwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABt
+AGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAABAxYAAAAAAxoAAAABAxsA
+AAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAgAUABhAHMAcwB3AG8AcgBkBiwANwBo
+AHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYA
+aQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAAB
+AxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAoARQBuAHQA
+ZQByAHAAcgBpAHMAZQYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBt
+AC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcA
+cwBkAGwALwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//
+92j//////////xAhBhUADwBFAG4AdABpAHQAbABlAG0AZQBuAHQAVQBzAGUAcgYsADcAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBl
+AHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAMvAAAAAQMWAAAA
+AAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAWAEcAZQB0AEUAbgB0AGkAdABsAGUAbQBl
+AG4AdABVAHMAZQByAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8A
+LgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBj
+AGUALwB3AHMAZABsAC8AMgAuADAGJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8A
+dwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMS
+AAAABgMSAAAABgETAQkUAAAAAhAhBhUACABVAHMAZQByAE4AYQBtAGUGLAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAAAAEDFgAAAAADGgAA
+AAEDGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUACgBFAG4AdABlAHIAcAByAGkA
+cwBlBiwANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAv
+AHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIA
+LgAwAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP//////////
+////////////////</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1527175227086</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="messageType" type="STRING">Text</attribute>
+  <attribute name="outputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUAFwBVAHMA
+ZQByAEUAbgB0AGkAdABsAGUAbQBlAG4AdABSAGUAcwBwAG8AbgBzAGUGLAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAAAAIDFgAAAAADGgAA
+AAEDGwAAAAEDIP////8DIgAAAAAIGRAfBgIAFwBVAHMAZQByAEUAbgB0AGkAdABsAGUAbQBlAG4A
+dABSAGUAcwBwAG8AbgBzAGUGJAA3AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8ALgBj
+AG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBjAGUA
+LwB3AHMAZABsAC8AMgAuADAGJQAbAFUAcwBlAHIARQBuAHQAaQB0AGwAZQBtAGUAbgB0AFIAZQBz
+AHAAbwBuAHMAZQBUAHkAcABlBigANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4A
+YwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBl
+AC8AdwBzAGQAbAAvADIALgAwAysAAAAOAxIAAAAEAxIAAAAEARMBCRQAAAADECEGFQANAEEAYwBj
+AGUAcwBzAEMAbwBuAHQAcgBvAGwGLAA3AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8A
+LgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBj
+AGUALwB3AHMAZABsAC8AMgAuADADLwAAAAEDFgAAAAADGgAAAAEDG3////8DIP////8DIgAAAAAI
+GRAfBgIAEQBBAGMAYwBlAHMAcwBDAG8AbgB0AHIAbwBsAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADAGJQAHAGEAbgB5AFQAeQBw
+AGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0A
+TABTAGMAaABlAG0AYQMrAAAADAMSAAAABQMSAAAABQETAQkUAAAAARAhBhUACQBSAGUAcwBvAHUA
+cgBjAGUAcwYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBp
+AG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwA
+LwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgANAFIAZQBz
+AG8AdQByAGMAZQBzAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8A
+LgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBj
+AGUALwB3AHMAZABsAC8AMgAuADAGJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8A
+dwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMS
+AAAABgMSAAAABgETAQkUAAAAARAhBhUACABSAGUAcwBvAHUAcgBjAGUGLAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAAAAEDFgAAAAADGgAA
+AAEDG3////8DIP////8DIgAAAAAIGRAfBgIADABSAGUAcwBvAHUAcgBjAGUAVAB5AHAAZQYkADcA
+aAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUAcgB2
+AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAYlAAcA
+YQBuAHkAVAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAw
+ADAAMQAvAFgATQBMAFMAYwBoAGUAbQBhAysAAAAMAxIAAAAHAxIAAAAHARMBCRQAAAAGECEGFQAM
+AHIAZQBzAG8AdQByAGMAZQBUAHkAcABlAy8AAAABAxYAAAABAxoAAAAAAxsAAAABAyD/////AyIA
+AAAACBkQGwYkADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBp
+AG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwA
+LwAyAC4AMAYlAAYAcwB0AHIAaQBuAGcGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBv
+AHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADQMSAAAACAQEAAAAAH////8B
+EwH/////ECEGFQACAGkAZAMvAAAAAQMWAAAAAQMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8D
+Ev//91//////ECEGFQADAGEAbABsAy8AAAABAxYAAAABAxoAAAAAAxsAAAABAyD/////AyIAAAAA
+CBkQLwMS///3Vf////8QIQYVAAQATgBhAG0AZQYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQA
+aQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBl
+AHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg////
+/wMiAAAAAAgZEC8DEv//92j/////ECEGFQAOAFIAZQBwAG8AcwBpAHQAbwByAHkATgBhAG0AZQYs
+ADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUA
+cgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAMv
+AAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAIAEEA
+YwBjAGUAcwBzAGUAcwYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBt
+AC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcA
+cwBkAGwALwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAM
+AEEAYwBjAGUAcwBzAGUAcwBUAHkAcABlBiQANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIA
+YwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2
+AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoA
+LwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAA
+AAwDEgAAAAkDEgAAAAkBEwEJFAAAAAEQIQYVAAYAQQBjAGMAZQBzAHMGLAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAAAAEDFgAAAAADGgAA
+AAEDG3////8DIP////8DIgAAAAAIGRAfBgIACgBBAGMAYwBlAHMAcwBUAHkAcABlBiQANwBoAHQA
+dABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBj
+AGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwBiUABwBhAG4A
+eQBUAHkAcABlBigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAx
+AC8AWABNAEwAUwBjAGgAZQBtAGEDKwAAAAwDEgAAAAoDEgAAAAoBEwEJFAAAAAMQIQYVAAIAaQBk
+Ay8AAAABAxYAAAABAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAsA
+RABlAHMAYwByAGkAcAB0AGkAbwBuBiwANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBv
+AC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkA
+YwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAA
+CBkQHwYCAA8ARABlAHMAYwByAGkAcAB0AGkAbwBuAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAvAC8A
+dwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBk
+AG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADAGJQAMAFQAXwBTAGkAbQBwAGwA
+ZQBUAHkAcABlBigANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBj
+AGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQA
+bAAvADIALgAwAysAAAAMAxIAAAALAxIAAAALARMBCRQAAAACECEGFQAEAGwAYQBuAGcDLwAAAAED
+FgAAAAEDGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUABQB2AGEAbAB1
+AGUGLAA3AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8A
+cwBlAHIAdgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAu
+ADADLwAAAAEDFgAAAAUDGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAbBgIADABUAF8AUwBpAG0A
+cABsAGUAVAB5AHAAZQYkADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBt
+AC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcA
+cwBkAGwALwAyAC4AMAYlAA0AYQBuAHkAUwBpAG0AcABsAGUAVAB5AHAAZQYoACAAaAB0AHQAcAA6
+AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAvAFgATQBMAFMAYwBoAGUAbQBhAysA
+AAANAxIAAAAMBAQAAAAAf////wETAf//////////ECEGFQAHAEEAbABsAG8AdwBlAGQGLAA3AGgA
+dAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBp
+AGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAAAAED
+FgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAbBgIACQBUAF8AQQBsAGwAbwB3AGUAZAYk
+ADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUA
+cgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAYl
+AAYAcwB0AHIAaQBuAGcGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIA
+MAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADQMSAAAADQQEAAAAAH////8BEwH/////////
+//////////////////////8QIQYVAAUAUgBvAGwAZQBzBiwANwBoAHQAdABwADoALwAvAHcAdwB3
+AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkA
+bgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAABAxYAAAAAAxoAAAABAxt/////
+AyD/////AyIAAAAACBkQHwYCAAkAUgBvAGwAZQBzAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAvAC8A
+dwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8AYQBk
+AG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADAGJQAHAGEAbgB5AFQAeQBwAGUG
+KAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABT
+AGMAaABlAG0AYQMrAAAADAMSAAAADgMSAAAADgETAQkUAAAAARAhBhUABABSAG8AbABlBiwANwBo
+AHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYA
+aQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAAB
+AxYAAAAAAxoAAAAAAxt/////AyD/////AyIAAAAACBkQHwYCAAgAUgBvAGwAZQBUAHkAcABlBiQA
+NwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQBy
+AHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwBiUA
+BwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAy
+ADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAAAAwDEgAAAA8DEgAAAA8BEwEJFAAAAAMQIQYV
+AAIAaQBkAy8AAAABAxYAAAABAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3X/////8Q
+IQYVAAQATgBhAG0AZQYsADcAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHQAaQBiAGMAbwAuAGMAbwBt
+AC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBpAG4AcwBlAHIAdgBpAGMAZQAvAHcA
+cwBkAGwALwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//
+92j/////ECEGFQALAEQAZQBzAGMAcgBpAHAAdABpAG8AbgYsADcAaAB0AHQAcAA6AC8ALwB3AHcA
+dwAuAHQAaQBiAGMAbwAuAGMAbwBtAC8AYwBpAG0ALwBzAGUAcgB2AGkAYwBlAHMALwBhAGQAbQBp
+AG4AcwBlAHIAdgBpAGMAZQAvAHcAcwBkAGwALwAyAC4AMAMvAAAAAQMWAAAAAAMaAAAAAQMbAAAA
+AQMg/////wMiAAAAAAMSAAAAC/////////////8QIQYVAAkARgB1AG4AYwB0AGkAbwBuAHMGLAA3
+AGgAdAB0AHAAOgAvAC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIA
+dgBpAGMAZQBzAC8AYQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADADLwAA
+AAEDFgAAAAADGgAAAAEDG3////8DIP////8DIgAAAAAIGRAfBgIADQBGAHUAbgBjAHQAaQBvAG4A
+cwBUAHkAcABlBiQANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBj
+AGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQA
+bAAvADIALgAwBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAz
+AC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAAAAwDEgAAABADEgAAABAB
+EwEJFAAAAAEQIQYVAAgARgB1AG4AYwB0AGkAbwBuBiwANwBoAHQAdABwADoALwAvAHcAdwB3AC4A
+dABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBz
+AGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAABAxYAAAAAAxoAAAAAAxt/////AyD/
+////AyIAAAAACBkQHwYCAAwARgB1AG4AYwB0AGkAbwBuAFQAeQBwAGUGJAA3AGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB0AGkAYgBjAG8ALgBjAG8AbQAvAGMAaQBtAC8AcwBlAHIAdgBpAGMAZQBzAC8A
+YQBkAG0AaQBuAHMAZQByAHYAaQBjAGUALwB3AHMAZABsAC8AMgAuADAGJQAHAGEAbgB5AFQAeQBw
+AGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0A
+TABTAGMAaABlAG0AYQMrAAAADAMSAAAAEQMSAAAAEQETAQkUAAAAAxAhBhUAAgBpAGQDLwAAAAED
+FgAAAAEDGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do/////xAhBhUABABOAGEAbQBl
+BiwANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBvAC4AYwBvAG0ALwBjAGkAbQAvAHMA
+ZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkAYwBlAC8AdwBzAGQAbAAvADIALgAw
+Ay8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAsA
+RABlAHMAYwByAGkAcAB0AGkAbwBuBiwANwBoAHQAdABwADoALwAvAHcAdwB3AC4AdABpAGIAYwBv
+AC4AYwBvAG0ALwBjAGkAbQAvAHMAZQByAHYAaQBjAGUAcwAvAGEAZABtAGkAbgBzAGUAcgB2AGkA
+YwBlAC8AdwBzAGQAbAAvADIALgAwAy8AAAABAxYAAAAAAxoAAAABAxsAAAABAyD/////AyIAAAAA
+AxIAAAAL/////////////////////////////w==</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1520816576075</attribute>
+  <attribute name="soapAction" type="STRING">getEntitlementAction</attribute>
+  <attribute name="timeout" type="LONG">-1</attribute>
+</metadata>

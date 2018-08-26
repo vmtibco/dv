@@ -1,0 +1,141 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="RELATIONSHIP" path="/shared/mdm/goya/NJ_DEV_12SQL01/MDMDB/dbo/RELATIONSHIP" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="OWNERID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARENTID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHILDID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TYPE" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MODDATE" nullable="false">
+      <datatype name="datetime2" extendedName="datetime2" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARENTVERSION" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHILDVERSION" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="QUANTITY" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MODMEMBERID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ACTIVE" nullable="false">
+      <datatype name="nchar" extendedName="nchar(1)" subType="DATASOURCE_TYPE" type="STRING" minLength="1" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHILDOWNERID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="RELATIONID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARTITIONKEY" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EFFECTIVEDATE" nullable="true">
+      <datatype name="datetime2" extendedName="datetime2" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="XPKRELATIONSHIP" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="OWNERID" sortOrder="ASCENDING"/>
+      <indexColumn name="PARENTID" sortOrder="ASCENDING"/>
+      <indexColumn name="CHILDID" sortOrder="ASCENDING"/>
+      <indexColumn name="TYPE" sortOrder="ASCENDING"/>
+      <indexColumn name="MODDATE" sortOrder="ASCENDING"/>
+      <indexColumn name="CHILDOWNERID" sortOrder="ASCENDING"/>
+      <indexColumn name="CHILDVERSION" sortOrder="ASCENDING"/>
+      <indexColumn name="PARENTVERSION" sortOrder="ASCENDING"/>
+    </index>
+    <index name="RELATIONSHIP_IDX01" type="OTHER" unique="false">
+      <indexColumn name="CHILDID" sortOrder="ASCENDING"/>
+      <indexColumn name="CHILDOWNERID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="RELATIONSHIP_IDX02" type="OTHER" unique="false">
+      <indexColumn name="RELATIONID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="RELATIONSHIP_IDX03" type="OTHER" unique="false">
+      <indexColumn name="EFFECTIVEDATE" sortOrder="ASCENDING"/>
+    </index>
+    <index name="XIE1RELATIONSHIP" type="OTHER" unique="false">
+      <indexColumn name="PARENTID" sortOrder="ASCENDING"/>
+      <indexColumn name="OWNERID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="XIE2RELATIONSHIP" type="OTHER" unique="false">
+      <indexColumn name="CHILDID" sortOrder="ASCENDING"/>
+      <indexColumn name="OWNERID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="XIE3RELATIONSHIP" type="OTHER" unique="false">
+      <indexColumn name="CHILDID" sortOrder="ASCENDING"/>
+      <indexColumn name="PARENTID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="XIE5RELATIONSHIP" type="OTHER" unique="false">
+      <indexColumn name="OWNERID" sortOrder="ASCENDING"/>
+      <indexColumn name="TYPE" sortOrder="ASCENDING"/>
+      <indexColumn name="ACTIVE" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1527716565586</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1527716565586</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1527716565586</attribute>
+</metadata>

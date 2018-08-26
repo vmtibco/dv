@@ -1,0 +1,144 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="EVENT" path="/shared/mdm/goya/NJ_DEV_12SQL01/MDMDB/dbo/EVENT" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="ID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARENTID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EVENTTYPE" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(30)" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OWNERORGANIZATIONID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHANNELORGANIZATIONID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARTNERORGANIZATIONID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONVERSATIONID" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EVENTDATE" nullable="true">
+      <datatype name="datetime2" extendedName="datetime2" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EVENTSTATE" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(30)" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="STATUS" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(30)" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EVENTDESCRIPTOR" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(30)" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DEPLOYMENTMODE" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(30)" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MODMEMBERID" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MODDATE" nullable="false">
+      <datatype name="datetime2" extendedName="datetime2" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MODVERSION" nullable="false">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="REGISTRATIONORDER" nullable="true">
+      <datatype name="nvarchar" extendedName="nvarchar(250)" subType="DATASOURCE_TYPE" type="STRING" maxLength="250"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PARTITIONKEY" nullable="true">
+      <datatype name="numeric" extendedName="numeric(22,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="22" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="XPKEVENT" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="ID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX1" type="OTHER" unique="false">
+      <indexColumn name="OWNERORGANIZATIONID" sortOrder="ASCENDING"/>
+      <indexColumn name="EVENTTYPE" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX2" type="OTHER" unique="false">
+      <indexColumn name="MODDATE" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX3" type="OTHER" unique="false">
+      <indexColumn name="PARENTID" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX4" type="OTHER" unique="false">
+      <indexColumn name="EVENTDATE" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX5" type="OTHER" unique="false">
+      <indexColumn name="EVENTDESCRIPTOR" sortOrder="ASCENDING"/>
+    </index>
+    <index name="EVENT_IDX6" type="OTHER" unique="false">
+      <indexColumn name="STATUS" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1527716566101</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1527716566101</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1527716566101</attribute>
+</metadata>
