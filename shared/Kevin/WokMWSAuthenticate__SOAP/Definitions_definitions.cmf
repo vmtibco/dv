@@ -1,0 +1,404 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Definitions" path="/shared/Kevin/WokMWSAuthenticate_SOAP/Definitions" type="DEFINITION_SET" subtype="WSDL_DEFINITION_SET" changeToken="0">
+  <definitions>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}AuthenticationException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}ESTIWSException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}InternalServerException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}InvalidInputException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}QueryException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}SessionException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}authenticate" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}authenticateResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}closeSession" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}closeSessionResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}AuthenticationException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}ESTIWSException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}InternalServerException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}InvalidInputException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}QueryException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}SessionException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}authenticate" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}authenticateResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}closeSession" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://auth.cxf.wokmws.thomsonreuters.com}closeSessionResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+  </definitions>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege user="anonymous" domain="composite" privileges="READ"/>
+    <privilege group="all" domain="composite" privileges="READ WRITE"/>
+    <privilege group="all" domain="dynamic" privileges="READ"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1479922926825</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1479922926825</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1479922926825</attribute>
+  <attribute name="sources" type="LIST">
+    <list type="OBJECT">rO0ABXNyADVjb20uY29tcG9zaXRlc3cuY29tbW9uLnJlcG9zaXRvcnkuRGVmaW5pdGlvblNldFNv
+dXJjZVYpv6Zr2hqJAgACTAAIbG9jYXRpb250ABJMamF2YS9sYW5nL1N0cmluZztMAApzb3VyY2VU
+ZXh0cQB+AAF4cHQAEldPS01XU0F1dGhlbnRpY2F0ZXQjDzw/eG1sIHZlcnNpb249IjEuMCIgZW5j
+b2Rpbmc9IlVURi04Ij8+DQo8d3NkbDpkZWZpbml0aW9ucyBuYW1lPSJXT0tNV1NBdXRoZW50aWNh
+dGVTZXJ2aWNlIiB0YXJnZXROYW1lc3BhY2U9Imh0dHA6Ly9hdXRoLmN4Zi53b2ttd3MudGhvbXNv
+bnJldXRlcnMuY29tIiB4bWxuczpXT0tNV1NBdXRoZW50aWNhdGU9Imh0dHA6Ly9hdXRoLmN4Zi53
+b2ttd3MudGhvbXNvbnJldXRlcnMuY29tIiB4bWxuczp3c2RsPSJodHRwOi8vc2NoZW1hcy54bWxz
+b2FwLm9yZy93c2RsLyIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVt
+YSIgeG1sbnM6c29hcD0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3NkbC9zb2FwLyI+DQog
+IDx3c2RsOnR5cGVzPg0KICAgIDx4czpzY2hlbWEgYXR0cmlidXRlRm9ybURlZmF1bHQ9InVucXVh
+bGlmaWVkIiBlbGVtZW50Rm9ybURlZmF1bHQ9InVucXVhbGlmaWVkIiB0YXJnZXROYW1lc3BhY2U9
+Imh0dHA6Ly9hdXRoLmN4Zi53b2ttd3MudGhvbXNvbnJldXRlcnMuY29tIiB4bWxuczpXT0tNV1NB
+dXRoZW50aWNhdGU9Imh0dHA6Ly9hdXRoLmN4Zi53b2ttd3MudGhvbXNvbnJldXRlcnMuY29tIiB4
+bWxuczpzb2FwPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93c2RsL3NvYXAvIiB4bWxuczp3
+c2RsPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93c2RsLyIgeG1sbnM6eHM9Imh0dHA6Ly93
+d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIw
+MDEvWE1MU2NoZW1hIj4NCjx4czplbGVtZW50IG5hbWU9ImF1dGhlbnRpY2F0ZSIgdHlwZT0iV09L
+TVdTQXV0aGVudGljYXRlOmF1dGhlbnRpY2F0ZSIvPg0KPHhzOmVsZW1lbnQgbmFtZT0iYXV0aGVu
+dGljYXRlUmVzcG9uc2UiIHR5cGU9IldPS01XU0F1dGhlbnRpY2F0ZTphdXRoZW50aWNhdGVSZXNw
+b25zZSIvPg0KPHhzOmVsZW1lbnQgbmFtZT0iY2xvc2VTZXNzaW9uIiB0eXBlPSJXT0tNV1NBdXRo
+ZW50aWNhdGU6Y2xvc2VTZXNzaW9uIi8+DQo8eHM6ZWxlbWVudCBuYW1lPSJjbG9zZVNlc3Npb25S
+ZXNwb25zZSIgdHlwZT0iV09LTVdTQXV0aGVudGljYXRlOmNsb3NlU2Vzc2lvblJlc3BvbnNlIi8+
+DQo8eHM6Y29tcGxleFR5cGUgbmFtZT0iYXV0aGVudGljYXRlIj4NCjx4czpzZXF1ZW5jZS8+DQo8
+L3hzOmNvbXBsZXhUeXBlPg0KPHhzOmNvbXBsZXhUeXBlIG5hbWU9ImF1dGhlbnRpY2F0ZVJlc3Bv
+bnNlIj4NCjx4czpzZXF1ZW5jZT4NCjx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icmV0
+dXJuIiB0eXBlPSJ4czpzdHJpbmciLz4NCjwveHM6c2VxdWVuY2U+DQo8L3hzOmNvbXBsZXhUeXBl
+Pg0KPHhzOmNvbXBsZXhUeXBlIG5hbWU9ImNsb3NlU2Vzc2lvbiI+DQo8eHM6c2VxdWVuY2UvPg0K
+PC94czpjb21wbGV4VHlwZT4NCjx4czpjb21wbGV4VHlwZSBuYW1lPSJjbG9zZVNlc3Npb25SZXNw
+b25zZSI+DQo8eHM6c2VxdWVuY2UvPg0KPC94czpjb21wbGV4VHlwZT4NCjx4czplbGVtZW50IG5h
+bWU9IkludGVybmFsU2VydmVyRXhjZXB0aW9uIiB0eXBlPSJXT0tNV1NBdXRoZW50aWNhdGU6SW50
+ZXJuYWxTZXJ2ZXJFeGNlcHRpb24iLz4NCjx4czpjb21wbGV4VHlwZSBuYW1lPSJJbnRlcm5hbFNl
+cnZlckV4Y2VwdGlvbiI+DQo8eHM6c2VxdWVuY2UvPg0KPC94czpjb21wbGV4VHlwZT4NCjx4czpl
+bGVtZW50IG5hbWU9IkVTVElXU0V4Y2VwdGlvbiIgdHlwZT0iV09LTVdTQXV0aGVudGljYXRlOkVT
+VElXU0V4Y2VwdGlvbiIvPg0KPHhzOmNvbXBsZXhUeXBlIG5hbWU9IkVTVElXU0V4Y2VwdGlvbiI+
+DQo8eHM6c2VxdWVuY2UvPg0KPC94czpjb21wbGV4VHlwZT4NCjx4czplbGVtZW50IG5hbWU9IlNl
+c3Npb25FeGNlcHRpb24iIHR5cGU9IldPS01XU0F1dGhlbnRpY2F0ZTpTZXNzaW9uRXhjZXB0aW9u
+Ii8+DQo8eHM6Y29tcGxleFR5cGUgbmFtZT0iU2Vzc2lvbkV4Y2VwdGlvbiI+DQo8eHM6c2VxdWVu
+Y2UvPg0KPC94czpjb21wbGV4VHlwZT4NCjx4czplbGVtZW50IG5hbWU9IkF1dGhlbnRpY2F0aW9u
+RXhjZXB0aW9uIiB0eXBlPSJXT0tNV1NBdXRoZW50aWNhdGU6QXV0aGVudGljYXRpb25FeGNlcHRp
+b24iLz4NCjx4czpjb21wbGV4VHlwZSBuYW1lPSJBdXRoZW50aWNhdGlvbkV4Y2VwdGlvbiI+DQo8
+eHM6c2VxdWVuY2UvPg0KPC94czpjb21wbGV4VHlwZT4NCjx4czplbGVtZW50IG5hbWU9IlF1ZXJ5
+RXhjZXB0aW9uIiB0eXBlPSJXT0tNV1NBdXRoZW50aWNhdGU6UXVlcnlFeGNlcHRpb24iLz4NCjx4
+czpjb21wbGV4VHlwZSBuYW1lPSJRdWVyeUV4Y2VwdGlvbiI+DQo8eHM6c2VxdWVuY2UvPg0KPC94
+czpjb21wbGV4VHlwZT4NCjx4czplbGVtZW50IG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlvbiIg
+dHlwZT0iV09LTVdTQXV0aGVudGljYXRlOkludmFsaWRJbnB1dEV4Y2VwdGlvbiIvPg0KPHhzOmNv
+bXBsZXhUeXBlIG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlvbiI+DQo8eHM6c2VxdWVuY2UvPg0K
+PC94czpjb21wbGV4VHlwZT4NCjwveHM6c2NoZW1hPg0KICA8L3dzZGw6dHlwZXM+DQogIDx3c2Rs
+Om1lc3NhZ2UgbmFtZT0iYXV0aGVudGljYXRlIj4NCiAgICA8d3NkbDpwYXJ0IG5hbWU9InBhcmFt
+ZXRlcnMiIGVsZW1lbnQ9IldPS01XU0F1dGhlbnRpY2F0ZTphdXRoZW50aWNhdGUiPg0KICAgIDwv
+d3NkbDpwYXJ0Pg0KICA8L3dzZGw6bWVzc2FnZT4NCiAgPHdzZGw6bWVzc2FnZSBuYW1lPSJJbnZh
+bGlkSW5wdXRFeGNlcHRpb24iPg0KICAgIDx3c2RsOnBhcnQgbmFtZT0iSW52YWxpZElucHV0RXhj
+ZXB0aW9uIiBlbGVtZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6SW52YWxpZElucHV0RXhjZXB0aW9u
+Ij4NCiAgICA8L3dzZGw6cGFydD4NCiAgPC93c2RsOm1lc3NhZ2U+DQogIDx3c2RsOm1lc3NhZ2Ug
+bmFtZT0iSW50ZXJuYWxTZXJ2ZXJFeGNlcHRpb24iPg0KICAgIDx3c2RsOnBhcnQgbmFtZT0iSW50
+ZXJuYWxTZXJ2ZXJFeGNlcHRpb24iIGVsZW1lbnQ9IldPS01XU0F1dGhlbnRpY2F0ZTpJbnRlcm5h
+bFNlcnZlckV4Y2VwdGlvbiI+DQogICAgPC93c2RsOnBhcnQ+DQogIDwvd3NkbDptZXNzYWdlPg0K
+ICA8d3NkbDptZXNzYWdlIG5hbWU9ImNsb3NlU2Vzc2lvbiI+DQogICAgPHdzZGw6cGFydCBuYW1l
+PSJwYXJhbWV0ZXJzIiBlbGVtZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6Y2xvc2VTZXNzaW9uIj4N
+CiAgICA8L3dzZGw6cGFydD4NCiAgPC93c2RsOm1lc3NhZ2U+DQogIDx3c2RsOm1lc3NhZ2UgbmFt
+ZT0iRVNUSVdTRXhjZXB0aW9uIj4NCiAgICA8d3NkbDpwYXJ0IG5hbWU9IkVTVElXU0V4Y2VwdGlv
+biIgZWxlbWVudD0iV09LTVdTQXV0aGVudGljYXRlOkVTVElXU0V4Y2VwdGlvbiI+DQogICAgPC93
+c2RsOnBhcnQ+DQogIDwvd3NkbDptZXNzYWdlPg0KICA8d3NkbDptZXNzYWdlIG5hbWU9IkF1dGhl
+bnRpY2F0aW9uRXhjZXB0aW9uIj4NCiAgICA8d3NkbDpwYXJ0IG5hbWU9IkF1dGhlbnRpY2F0aW9u
+RXhjZXB0aW9uIiBlbGVtZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6QXV0aGVudGljYXRpb25FeGNl
+cHRpb24iPg0KICAgIDwvd3NkbDpwYXJ0Pg0KICA8L3dzZGw6bWVzc2FnZT4NCiAgPHdzZGw6bWVz
+c2FnZSBuYW1lPSJjbG9zZVNlc3Npb25SZXNwb25zZSI+DQogICAgPHdzZGw6cGFydCBuYW1lPSJw
+YXJhbWV0ZXJzIiBlbGVtZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6Y2xvc2VTZXNzaW9uUmVzcG9u
+c2UiPg0KICAgIDwvd3NkbDpwYXJ0Pg0KICA8L3dzZGw6bWVzc2FnZT4NCiAgPHdzZGw6bWVzc2Fn
+ZSBuYW1lPSJhdXRoZW50aWNhdGVSZXNwb25zZSI+DQogICAgPHdzZGw6cGFydCBuYW1lPSJwYXJh
+bWV0ZXJzIiBlbGVtZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6YXV0aGVudGljYXRlUmVzcG9uc2Ui
+Pg0KICAgIDwvd3NkbDpwYXJ0Pg0KICA8L3dzZGw6bWVzc2FnZT4NCiAgPHdzZGw6bWVzc2FnZSBu
+YW1lPSJRdWVyeUV4Y2VwdGlvbiI+DQogICAgPHdzZGw6cGFydCBuYW1lPSJRdWVyeUV4Y2VwdGlv
+biIgZWxlbWVudD0iV09LTVdTQXV0aGVudGljYXRlOlF1ZXJ5RXhjZXB0aW9uIj4NCiAgICA8L3dz
+ZGw6cGFydD4NCiAgPC93c2RsOm1lc3NhZ2U+DQogIDx3c2RsOm1lc3NhZ2UgbmFtZT0iU2Vzc2lv
+bkV4Y2VwdGlvbiI+DQogICAgPHdzZGw6cGFydCBuYW1lPSJTZXNzaW9uRXhjZXB0aW9uIiBlbGVt
+ZW50PSJXT0tNV1NBdXRoZW50aWNhdGU6U2Vzc2lvbkV4Y2VwdGlvbiI+DQogICAgPC93c2RsOnBh
+cnQ+DQogIDwvd3NkbDptZXNzYWdlPg0KICA8d3NkbDpwb3J0VHlwZSBuYW1lPSJXT0tNV1NBdXRo
+ZW50aWNhdGUiPg0KICAgIDx3c2RsOm9wZXJhdGlvbiBuYW1lPSJhdXRoZW50aWNhdGUiPg0KICAg
+ICAgPHdzZGw6aW5wdXQgbmFtZT0iYXV0aGVudGljYXRlIiBtZXNzYWdlPSJXT0tNV1NBdXRoZW50
+aWNhdGU6YXV0aGVudGljYXRlIj4NCiAgICA8L3dzZGw6aW5wdXQ+DQogICAgICA8d3NkbDpvdXRw
+dXQgbmFtZT0iYXV0aGVudGljYXRlUmVzcG9uc2UiIG1lc3NhZ2U9IldPS01XU0F1dGhlbnRpY2F0
+ZTphdXRoZW50aWNhdGVSZXNwb25zZSI+DQogICAgPC93c2RsOm91dHB1dD4NCiAgICAgIDx3c2Rs
+OmZhdWx0IG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlvbiIgbWVzc2FnZT0iV09LTVdTQXV0aGVu
+dGljYXRlOkludmFsaWRJbnB1dEV4Y2VwdGlvbiI+DQogICAgPC93c2RsOmZhdWx0Pg0KICAgICAg
+PHdzZGw6ZmF1bHQgbmFtZT0iSW50ZXJuYWxTZXJ2ZXJFeGNlcHRpb24iIG1lc3NhZ2U9IldPS01X
+U0F1dGhlbnRpY2F0ZTpJbnRlcm5hbFNlcnZlckV4Y2VwdGlvbiI+DQogICAgPC93c2RsOmZhdWx0
+Pg0KICAgICAgPHdzZGw6ZmF1bHQgbmFtZT0iRVNUSVdTRXhjZXB0aW9uIiBtZXNzYWdlPSJXT0tN
+V1NBdXRoZW50aWNhdGU6RVNUSVdTRXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1bHQ+DQogICAg
+ICA8d3NkbDpmYXVsdCBuYW1lPSJBdXRoZW50aWNhdGlvbkV4Y2VwdGlvbiIgbWVzc2FnZT0iV09L
+TVdTQXV0aGVudGljYXRlOkF1dGhlbnRpY2F0aW9uRXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1
+bHQ+DQogICAgICA8d3NkbDpmYXVsdCBuYW1lPSJTZXNzaW9uRXhjZXB0aW9uIiBtZXNzYWdlPSJX
+T0tNV1NBdXRoZW50aWNhdGU6U2Vzc2lvbkV4Y2VwdGlvbiI+DQogICAgPC93c2RsOmZhdWx0Pg0K
+ICAgICAgPHdzZGw6ZmF1bHQgbmFtZT0iUXVlcnlFeGNlcHRpb24iIG1lc3NhZ2U9IldPS01XU0F1
+dGhlbnRpY2F0ZTpRdWVyeUV4Y2VwdGlvbiI+DQogICAgPC93c2RsOmZhdWx0Pg0KICAgIDwvd3Nk
+bDpvcGVyYXRpb24+DQogICAgPHdzZGw6b3BlcmF0aW9uIG5hbWU9ImNsb3NlU2Vzc2lvbiI+DQog
+ICAgICA8d3NkbDppbnB1dCBuYW1lPSJjbG9zZVNlc3Npb24iIG1lc3NhZ2U9IldPS01XU0F1dGhl
+bnRpY2F0ZTpjbG9zZVNlc3Npb24iPg0KICAgIDwvd3NkbDppbnB1dD4NCiAgICAgIDx3c2RsOm91
+dHB1dCBuYW1lPSJjbG9zZVNlc3Npb25SZXNwb25zZSIgbWVzc2FnZT0iV09LTVdTQXV0aGVudGlj
+YXRlOmNsb3NlU2Vzc2lvblJlc3BvbnNlIj4NCiAgICA8L3dzZGw6b3V0cHV0Pg0KICAgICAgPHdz
+ZGw6ZmF1bHQgbmFtZT0iSW52YWxpZElucHV0RXhjZXB0aW9uIiBtZXNzYWdlPSJXT0tNV1NBdXRo
+ZW50aWNhdGU6SW52YWxpZElucHV0RXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1bHQ+DQogICAg
+ICA8d3NkbDpmYXVsdCBuYW1lPSJJbnRlcm5hbFNlcnZlckV4Y2VwdGlvbiIgbWVzc2FnZT0iV09L
+TVdTQXV0aGVudGljYXRlOkludGVybmFsU2VydmVyRXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1
+bHQ+DQogICAgICA8d3NkbDpmYXVsdCBuYW1lPSJFU1RJV1NFeGNlcHRpb24iIG1lc3NhZ2U9IldP
+S01XU0F1dGhlbnRpY2F0ZTpFU1RJV1NFeGNlcHRpb24iPg0KICAgIDwvd3NkbDpmYXVsdD4NCiAg
+ICAgIDx3c2RsOmZhdWx0IG5hbWU9IkF1dGhlbnRpY2F0aW9uRXhjZXB0aW9uIiBtZXNzYWdlPSJX
+T0tNV1NBdXRoZW50aWNhdGU6QXV0aGVudGljYXRpb25FeGNlcHRpb24iPg0KICAgIDwvd3NkbDpm
+YXVsdD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IlNlc3Npb25FeGNlcHRpb24iIG1lc3NhZ2U9
+IldPS01XU0F1dGhlbnRpY2F0ZTpTZXNzaW9uRXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1bHQ+
+DQogICAgICA8d3NkbDpmYXVsdCBuYW1lPSJRdWVyeUV4Y2VwdGlvbiIgbWVzc2FnZT0iV09LTVdT
+QXV0aGVudGljYXRlOlF1ZXJ5RXhjZXB0aW9uIj4NCiAgICA8L3dzZGw6ZmF1bHQ+DQogICAgPC93
+c2RsOm9wZXJhdGlvbj4NCiAgPC93c2RsOnBvcnRUeXBlPg0KICA8d3NkbDpiaW5kaW5nIG5hbWU9
+IldPS01XU0F1dGhlbnRpY2F0ZVNlcnZpY2VTb2FwQmluZGluZyIgdHlwZT0iV09LTVdTQXV0aGVu
+dGljYXRlOldPS01XU0F1dGhlbnRpY2F0ZSI+DQogICAgPHNvYXA6YmluZGluZyBzdHlsZT0iZG9j
+dW1lbnQiIHRyYW5zcG9ydD0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9odHRwIi8+
+DQogICAgPHdzZGw6b3BlcmF0aW9uIG5hbWU9ImF1dGhlbnRpY2F0ZSI+DQogICAgICA8c29hcDpv
+cGVyYXRpb24gc29hcEFjdGlvbj0iIiBzdHlsZT0iZG9jdW1lbnQiLz4NCiAgICAgIDx3c2RsOmlu
+cHV0IG5hbWU9ImF1dGhlbnRpY2F0ZSI+DQogICAgICAgIDxzb2FwOmJvZHkgdXNlPSJsaXRlcmFs
+Ii8+DQogICAgICA8L3dzZGw6aW5wdXQ+DQogICAgICA8d3NkbDpvdXRwdXQgbmFtZT0iYXV0aGVu
+dGljYXRlUmVzcG9uc2UiPg0KICAgICAgICA8c29hcDpib2R5IHVzZT0ibGl0ZXJhbCIvPg0KICAg
+ICAgPC93c2RsOm91dHB1dD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IkludmFsaWRJbnB1dEV4
+Y2VwdGlvbiI+DQogICAgICAgIDxzb2FwOmZhdWx0IG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlv
+biIgdXNlPSJsaXRlcmFsIi8+DQogICAgICA8L3dzZGw6ZmF1bHQ+DQogICAgICA8d3NkbDpmYXVs
+dCBuYW1lPSJJbnRlcm5hbFNlcnZlckV4Y2VwdGlvbiI+DQogICAgICAgIDxzb2FwOmZhdWx0IG5h
+bWU9IkludGVybmFsU2VydmVyRXhjZXB0aW9uIiB1c2U9ImxpdGVyYWwiLz4NCiAgICAgIDwvd3Nk
+bDpmYXVsdD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IkVTVElXU0V4Y2VwdGlvbiI+DQogICAg
+ICAgIDxzb2FwOmZhdWx0IG5hbWU9IkVTVElXU0V4Y2VwdGlvbiIgdXNlPSJsaXRlcmFsIi8+DQog
+ICAgICA8L3dzZGw6ZmF1bHQ+DQogICAgICA8d3NkbDpmYXVsdCBuYW1lPSJBdXRoZW50aWNhdGlv
+bkV4Y2VwdGlvbiI+DQogICAgICAgIDxzb2FwOmZhdWx0IG5hbWU9IkF1dGhlbnRpY2F0aW9uRXhj
+ZXB0aW9uIiB1c2U9ImxpdGVyYWwiLz4NCiAgICAgIDwvd3NkbDpmYXVsdD4NCiAgICAgIDx3c2Rs
+OmZhdWx0IG5hbWU9IlNlc3Npb25FeGNlcHRpb24iPg0KICAgICAgICA8c29hcDpmYXVsdCBuYW1l
+PSJTZXNzaW9uRXhjZXB0aW9uIiB1c2U9ImxpdGVyYWwiLz4NCiAgICAgIDwvd3NkbDpmYXVsdD4N
+CiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IlF1ZXJ5RXhjZXB0aW9uIj4NCiAgICAgICAgPHNvYXA6
+ZmF1bHQgbmFtZT0iUXVlcnlFeGNlcHRpb24iIHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2Rs
+OmZhdWx0Pg0KICAgIDwvd3NkbDpvcGVyYXRpb24+DQogICAgPHdzZGw6b3BlcmF0aW9uIG5hbWU9
+ImNsb3NlU2Vzc2lvbiI+DQogICAgICA8c29hcDpvcGVyYXRpb24gc29hcEFjdGlvbj0iIiBzdHls
+ZT0iZG9jdW1lbnQiLz4NCiAgICAgIDx3c2RsOmlucHV0IG5hbWU9ImNsb3NlU2Vzc2lvbiI+DQog
+ICAgICAgIDxzb2FwOmJvZHkgdXNlPSJsaXRlcmFsIi8+DQogICAgICA8L3dzZGw6aW5wdXQ+DQog
+ICAgICA8d3NkbDpvdXRwdXQgbmFtZT0iY2xvc2VTZXNzaW9uUmVzcG9uc2UiPg0KICAgICAgICA8
+c29hcDpib2R5IHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2RsOm91dHB1dD4NCiAgICAgIDx3
+c2RsOmZhdWx0IG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlvbiI+DQogICAgICAgIDxzb2FwOmZh
+dWx0IG5hbWU9IkludmFsaWRJbnB1dEV4Y2VwdGlvbiIgdXNlPSJsaXRlcmFsIi8+DQogICAgICA8
+L3dzZGw6ZmF1bHQ+DQogICAgICA8d3NkbDpmYXVsdCBuYW1lPSJJbnRlcm5hbFNlcnZlckV4Y2Vw
+dGlvbiI+DQogICAgICAgIDxzb2FwOmZhdWx0IG5hbWU9IkludGVybmFsU2VydmVyRXhjZXB0aW9u
+IiB1c2U9ImxpdGVyYWwiLz4NCiAgICAgIDwvd3NkbDpmYXVsdD4NCiAgICAgIDx3c2RsOmZhdWx0
+IG5hbWU9IkVTVElXU0V4Y2VwdGlvbiI+DQogICAgICAgIDxzb2FwOmZhdWx0IG5hbWU9IkVTVElX
+U0V4Y2VwdGlvbiIgdXNlPSJsaXRlcmFsIi8+DQogICAgICA8L3dzZGw6ZmF1bHQ+DQogICAgICA8
+d3NkbDpmYXVsdCBuYW1lPSJBdXRoZW50aWNhdGlvbkV4Y2VwdGlvbiI+DQogICAgICAgIDxzb2Fw
+OmZhdWx0IG5hbWU9IkF1dGhlbnRpY2F0aW9uRXhjZXB0aW9uIiB1c2U9ImxpdGVyYWwiLz4NCiAg
+ICAgIDwvd3NkbDpmYXVsdD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IlNlc3Npb25FeGNlcHRp
+b24iPg0KICAgICAgICA8c29hcDpmYXVsdCBuYW1lPSJTZXNzaW9uRXhjZXB0aW9uIiB1c2U9Imxp
+dGVyYWwiLz4NCiAgICAgIDwvd3NkbDpmYXVsdD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9IlF1
+ZXJ5RXhjZXB0aW9uIj4NCiAgICAgICAgPHNvYXA6ZmF1bHQgbmFtZT0iUXVlcnlFeGNlcHRpb24i
+IHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2RsOmZhdWx0Pg0KICAgIDwvd3NkbDpvcGVyYXRp
+b24+DQogIDwvd3NkbDpiaW5kaW5nPg0KICA8d3NkbDpzZXJ2aWNlIG5hbWU9IldPS01XU0F1dGhl
+bnRpY2F0ZVNlcnZpY2UiPg0KICAgIDx3c2RsOnBvcnQgbmFtZT0iV09LTVdTQXV0aGVudGljYXRl
+UG9ydCIgYmluZGluZz0iV09LTVdTQXV0aGVudGljYXRlOldPS01XU0F1dGhlbnRpY2F0ZVNlcnZp
+Y2VTb2FwQmluZGluZyI+DQogICAgICA8c29hcDphZGRyZXNzIGxvY2F0aW9uPSJodHRwOi8vc2Vh
+cmNoLmlzaWtub3dsZWRnZS5jb20vZXN0aS93b2ttd3Mvd3MvV09LTVdTQXV0aGVudGljYXRlIi8+
+DQogICAgPC93c2RsOnBvcnQ+DQogIDwvd3NkbDpzZXJ2aWNlPg0KPC93c2RsOmRlZmluaXRpb25z
+Pg0K</list>
+  </attribute>
+</metadata>

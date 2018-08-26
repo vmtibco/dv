@@ -1,0 +1,328 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="citedReferences" path="/shared/Kevin/WokSearch_SOAP/WokSearchService/WokSearchPort/citedReferences" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="citedReferences" direction="IN" nullable="unknown">
+      <datatype name="citedReferences" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences">
+        <schemaDatatype>
+          <datatype name="citedReferences" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="citedReferences" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="databaseId" minOccurs="0">
+              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+            </element>
+            <element name="uid" minOccurs="0">
+              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+            </element>
+            <element name="editions" maxOccurs="2147483647" minOccurs="0">
+              <datatype name="editionDesc" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="collection" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="edition" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+              </datatype>
+            </element>
+            <element name="timeSpan" minOccurs="0">
+              <datatype name="timeSpan" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                <element name="begin" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="end" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+              </datatype>
+            </element>
+            <element name="queryLanguage" minOccurs="0">
+              <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+            </element>
+            <element name="retrieveParameters" minOccurs="0">
+              <datatype name="retrieveParameters" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                <element name="collectionFields" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="collectionFields" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="5">
+                    <element name="collectionName" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="fieldList" maxOccurs="2147483647" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="listName" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+                <element name="count">
+                  <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2207" maxValue="2147483647"/>
+                </element>
+                <element name="fields" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="queryField" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="6">
+                    <element name="name" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="sort" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+                <element name="firstRecord">
+                  <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2207" maxValue="2147483647"/>
+                </element>
+                <element name="options" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="keyValuePair" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="7">
+                    <element name="key" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="value" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="citedReferencesResponse" direction="OUT" nullable="unknown">
+      <datatype name="citedReferencesResponse" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse">
+        <schemaDatatype>
+          <datatype name="citedReferencesResponse" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="citedReferencesResponse" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="return" minOccurs="0">
+              <datatype name="citedReferencesSearchResults" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="queryID" minOccurs="0">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="records" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="citedReference" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                    <element name="articleID" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="citedAuthor" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="citedTitle" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="citedWork" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="page" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="recID" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="refID" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="timesCited" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="volume" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="year" minOccurs="0">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+                <element name="recordsFound">
+                  <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2207" maxValue="2147483647"/>
+                </element>
+                <element name="recordsSearched">
+                  <datatype name="long" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER"/>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="InvalidInputException" direction="OUT" nullable="unknown">
+      <datatype name="InvalidInputException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException">
+        <schemaDatatype>
+          <datatype name="InvalidInputException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="InvalidInputException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="InternalServerException" direction="OUT" nullable="unknown">
+      <datatype name="InternalServerException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException">
+        <schemaDatatype>
+          <datatype name="InternalServerException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="InternalServerException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="ESTIWSException" direction="OUT" nullable="unknown">
+      <datatype name="ESTIWSException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException">
+        <schemaDatatype>
+          <datatype name="ESTIWSException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="ESTIWSException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="AuthenticationException" direction="OUT" nullable="unknown">
+      <datatype name="AuthenticationException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException">
+        <schemaDatatype>
+          <datatype name="AuthenticationException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="AuthenticationException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="SessionException" direction="OUT" nullable="unknown">
+      <datatype name="SessionException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException">
+        <schemaDatatype>
+          <datatype name="SessionException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="SessionException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="QueryException" direction="OUT" nullable="unknown">
+      <datatype name="QueryException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" referenceDefinitionSet="/shared/Kevin/WokSearch_SOAP/Definitions" referenceType="{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException">
+        <schemaDatatype>
+          <datatype name="QueryException" namespace="http://woksearch.cxf.wokmws.thomsonreuters.com" superTypeName="QueryException" superTypeNamespace="http://woksearch.cxf.wokmws.thomsonreuters.com" subType="ELEMENT_DECL" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege user="anonymous" domain="composite" privileges="READ"/>
+    <privilege group="all" domain="composite" privileges="READ WRITE"/>
+    <privilege group="all" domain="dynamic" privileges="READ"/>
+  </security>
+  <dependency target="/shared/Kevin/WokSearch_SOAP/Definitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;soapPortBinding&quot; contract=&quot;/shared/Kevin/WokSearch/Definitions&quot; contractFirst=&quot;false&quot; contractStyle=&quot;ABSTRACT&quot; enableCustomEndpoint=&quot;false&quot; enableMTOM=&quot;false&quot; portName=&quot;WokSearchPort&quot; portXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}WokSearchPort&quot; serviceName=&quot;WokSearchService&quot; serviceXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}WokSearchService&quot; soapStyle=&quot;document&quot; soapTransport=&quot;http://schemas.xmlsoap.org/soap/http&quot; soapVersion=&quot;http://schemas.xmlsoap.org/wsdl/soap/http&quot; targetNamespace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; timeout=&quot;0&quot; bindingStyles=&quot;&quot; enabled=&quot;false&quot; endpointUrlPath=&quot;http://search.isiknowledge.com/esti/wokmws/ws/WokSearch&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;citedReferencesRetrieve&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieve&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;citedReferencesRetrieve&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieve&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieve&quot; name=&quot;citedReferencesRetrieve&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieveResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieveResponse&quot; name=&quot;citedReferencesRetrieveResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;relatedRecords&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecords&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;relatedRecords&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecords&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecords&quot; name=&quot;relatedRecords&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecordsResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecordsResponse&quot; name=&quot;relatedRecordsResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;citedReferences&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;citedReferences&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences&amp;quot;&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences&quot; name=&quot;citedReferences&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse&amp;quot;&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse&quot; name=&quot;citedReferencesResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;retrieve&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieve&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;retrieve&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieve&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieve&quot; name=&quot;retrieve&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveResponse&quot; name=&quot;retrieveResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;search&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}search&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;search&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}search&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}search&quot; name=&quot;search&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}searchResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}searchResponse&quot; name=&quot;searchResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;citingArticles&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticles&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;citingArticles&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticles&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticles&quot; name=&quot;citingArticles&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticlesResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticlesResponse&quot; name=&quot;citingArticlesResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; opName=&quot;retrieveById&quot; opXmlName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveById&quot; soapAction=&quot;&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;retrieveById&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveById&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveById&quot; name=&quot;retrieveById&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveByIdResponse&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;parameters&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveByIdResponse&quot; name=&quot;retrieveByIdResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InvalidInputException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException&quot; name=&quot;InvalidInputException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;InternalServerException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException&quot; name=&quot;InternalServerException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;ESTIWSException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException&quot; name=&quot;ESTIWSException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;AuthenticationException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException&quot; name=&quot;AuthenticationException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;SessionException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException&quot; name=&quot;SessionException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;fault&quot; messageName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; nameSpace=&quot;http://woksearch.cxf.wokmws.thomsonreuters.com&quot; partName=&quot;QueryException&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException&quot; name=&quot;QueryException&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1479922975231</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="inputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUADwBjAGkA
+dABlAGQAUgBlAGYAZQByAGUAbgBjAGUAcwYsAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBzAGUAYQBy
+AGMAaAAuAGMAeABmAC4AdwBvAGsAbQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQAZQByAHMA
+LgBjAG8AbQMvAAAAAgMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAPAGMAaQB0
+AGUAZABSAGUAZgBlAHIAZQBuAGMAZQBzBiQALgBoAHQAdABwADoALwAvAHcAbwBrAHMAZQBhAHIA
+YwBoAC4AYwB4AGYALgB3AG8AawBtAHcAcwAuAHQAaABvAG0AcwBvAG4AcgBlAHUAdABlAHIAcwAu
+AGMAbwBtBiUADwBjAGkAdABlAGQAUgBlAGYAZQByAGUAbgBjAGUAcwYoAC4AaAB0AHQAcAA6AC8A
+LwB3AG8AawBzAGUAYQByAGMAaAAuAGMAeABmAC4AdwBvAGsAbQB3AHMALgB0AGgAbwBtAHMAbwBu
+AHIAZQB1AHQAZQByAHMALgBjAG8AbQMrAAAADgMSAAAABAMSAAAABAETAQkUAAAABhAhBhUACgBk
+AGEAdABhAGIAYQBzAGUASQBkAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQ
+LwMS///3aP////8QIQYVAAMAdQBpAGQDLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAA
+AAAIGRAvAxL///do/////xAhBhUACABlAGQAaQB0AGkAbwBuAHMDLwAAAAEDFgAAAAADGgAAAAAD
+G3////8DIP////8DIgAAAAAIGRAfBgIACwBlAGQAaQB0AGkAbwBuAEQAZQBzAGMGJAAuAGgAdAB0
+AHAAOgAvAC8AdwBvAGsAcwBlAGEAcgBjAGgALgBjAHgAZgAuAHcAbwBrAG0AdwBzAC4AdABoAG8A
+bQBzAG8AbgByAGUAdQB0AGUAcgBzAC4AYwBvAG0GJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0
+AHAAOgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0A
+YQMrAAAADAMSAAAABQMSAAAABQETAQkUAAAAAhAhBhUACgBjAG8AbABsAGUAYwB0AGkAbwBuAy8A
+AAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAcAZQBk
+AGkAdABpAG8AbgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/
+/////////xAhBhUACAB0AGkAbQBlAFMAcABhAG4DLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP//
+//8DIgAAAAAIGRAfBgIACAB0AGkAbQBlAFMAcABhAG4GJAAuAGgAdAB0AHAAOgAvAC8AdwBvAGsA
+cwBlAGEAcgBjAGgALgBjAHgAZgAuAHcAbwBrAG0AdwBzAC4AdABoAG8AbQBzAG8AbgByAGUAdQB0
+AGUAcgBzAC4AYwBvAG0GJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcA
+LgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMrAAAADAMSAAAABgMS
+AAAABgETAQkUAAAAAhAhBhUABQBiAGUAZwBpAG4DLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP//
+//8DIgAAAAAIGRAvAxL///do/////xAhBhUAAwBlAG4AZAMvAAAAAQMWAAAAAAMaAAAAAAMbAAAA
+AQMg/////wMiAAAAAAgZEC8DEv//92j//////////xAhBhUADQBxAHUAZQByAHkATABhAG4AZwB1
+AGEAZwBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8Q
+IQYVABIAcgBlAHQAcgBpAGUAdgBlAFAAYQByAGEAbQBlAHQAZQByAHMDLwAAAAEDFgAAAAADGgAA
+AAADGwAAAAEDIP////8DIgAAAAAIGRAfBgIAEgByAGUAdAByAGkAZQB2AGUAUABhAHIAYQBtAGUA
+dABlAHIAcwYkAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBzAGUAYQByAGMAaAAuAGMAeABmAC4AdwBv
+AGsAbQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQAZQByAHMALgBjAG8AbQYlAAcAYQBuAHkA
+VAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAv
+AFgATQBMAFMAYwBoAGUAbQBhAysAAAAMAxIAAAAHAxIAAAAHARMBCRQAAAAFECEGFQAQAGMAbwBs
+AGwAZQBjAHQAaQBvAG4ARgBpAGUAbABkAHMDLwAAAAEDFgAAAAADGgAAAAADG3////8DIP////8D
+IgAAAAAIGRAfBgIAEABjAG8AbABsAGUAYwB0AGkAbwBuAEYAaQBlAGwAZABzBiQALgBoAHQAdABw
+ADoALwAvAHcAbwBrAHMAZQBhAHIAYwBoAC4AYwB4AGYALgB3AG8AawBtAHcAcwAuAHQAaABvAG0A
+cwBvAG4AcgBlAHUAdABlAHIAcwAuAGMAbwBtBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABw
+ADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGED
+KwAAAAwDEgAAAAgDEgAAAAgBEwEJFAAAAAMQIQYVAA4AYwBvAGwAbABlAGMAdABpAG8AbgBOAGEA
+bQBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYV
+AAkAZgBpAGUAbABkAEwAaQBzAHQDLwAAAAEDFgAAAAADGgAAAAADG3////8DIP////8DIgAAAAAI
+GRAvAxL///do/////xAhBhUACABsAGkAcwB0AE4AYQBtAGUDLwAAAAEDFgAAAAADGgAAAAADGwAA
+AAEDIP////8DIgAAAAAIGRAvAxL///do//////////8QIQYVAAUAYwBvAHUAbgB0Ay8AAAABAxYA
+AAAAAxoAAAABAxsAAAABAyD/////AyIAAAAACBkQGQYCAAMAaQBuAHQGJAAgAGgAdAB0AHAAOgAv
+AC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQYlAAQA
+bABvAG4AZwYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAv
+AFgATQBMAFMAYwBoAGUAbQBhAxIAAAAJBAf////////3YQQGAAAAAH//////////ECEGFQAGAGYA
+aQBlAGwAZABzAy8AAAABAxYAAAAAAxoAAAAAAxt/////AyD/////AyIAAAAACBkQHwYCAAoAcQB1
+AGUAcgB5AEYAaQBlAGwAZAYkAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBzAGUAYQByAGMAaAAuAGMA
+eABmAC4AdwBvAGsAbQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQAZQByAHMALgBjAG8AbQYl
+AAcAYQBuAHkAVAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8A
+MgAwADAAMQAvAFgATQBMAFMAYwBoAGUAbQBhAysAAAAMAxIAAAAKAxIAAAAKARMBCRQAAAACECEG
+FQAEAG4AYQBtAGUDLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do
+/////xAhBhUABABzAG8AcgB0Ay8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQ
+LwMS///3aP//////////ECEGFQALAGYAaQByAHMAdABSAGUAYwBvAHIAZAMvAAAAAQMWAAAAAAMa
+AAAAAQMbAAAAAQMg/////wMiAAAAAAMSAAAACf//ECEGFQAHAG8AcAB0AGkAbwBuAHMDLwAAAAED
+FgAAAAADGgAAAAADG3////8DIP////8DIgAAAAAIGRAfBgIADABrAGUAeQBWAGEAbAB1AGUAUABh
+AGkAcgYkAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBzAGUAYQByAGMAaAAuAGMAeABmAC4AdwBvAGsA
+bQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQAZQByAHMALgBjAG8AbQYlAAcAYQBuAHkAVAB5
+AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAvAFgA
+TQBMAFMAYwBoAGUAbQBhAysAAAAMAxIAAAALAxIAAAALARMBCRQAAAACECEGFQADAGsAZQB5Ay8A
+AAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAUAdgBh
+AGwAdQBlAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP//////
+/////////////////////////w==</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1479923064272</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="outputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUAFwBjAGkA
+dABlAGQAUgBlAGYAZQByAGUAbgBjAGUAcwBSAGUAcwBwAG8AbgBzAGUGLAAuAGgAdAB0AHAAOgAv
+AC8AdwBvAGsAcwBlAGEAcgBjAGgALgBjAHgAZgAuAHcAbwBrAG0AdwBzAC4AdABoAG8AbQBzAG8A
+bgByAGUAdQB0AGUAcgBzAC4AYwBvAG0DLwAAAAIDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAA
+AAAIGRAfBgIAFwBjAGkAdABlAGQAUgBlAGYAZQByAGUAbgBjAGUAcwBSAGUAcwBwAG8AbgBzAGUG
+JAAuAGgAdAB0AHAAOgAvAC8AdwBvAGsAcwBlAGEAcgBjAGgALgBjAHgAZgAuAHcAbwBrAG0AdwBz
+AC4AdABoAG8AbQBzAG8AbgByAGUAdQB0AGUAcgBzAC4AYwBvAG0GJQAXAGMAaQB0AGUAZABSAGUA
+ZgBlAHIAZQBuAGMAZQBzAFIAZQBzAHAAbwBuAHMAZQYoAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBz
+AGUAYQByAGMAaAAuAGMAeABmAC4AdwBvAGsAbQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQA
+ZQByAHMALgBjAG8AbQMrAAAADgMSAAAABAMSAAAABAETAQkUAAAAARAhBhUABgByAGUAdAB1AHIA
+bgMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAcAGMAaQB0AGUAZABS
+AGUAZgBlAHIAZQBuAGMAZQBzAFMAZQBhAHIAYwBoAFIAZQBzAHUAbAB0AHMGJAAuAGgAdAB0AHAA
+OgAvAC8AdwBvAGsAcwBlAGEAcgBjAGgALgBjAHgAZgAuAHcAbwBrAG0AdwBzAC4AdABoAG8AbQBz
+AG8AbgByAGUAdQB0AGUAcgBzAC4AYwBvAG0GJQAHAGEAbgB5AFQAeQBwAGUGKAAgAGgAdAB0AHAA
+OgAvAC8AdwB3AHcALgB3ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQMr
+AAAADAMSAAAABQMSAAAABQETAQkUAAAABBAhBhUABwBxAHUAZQByAHkASQBEAy8AAAABAxYAAAAA
+AxoAAAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAcAcgBlAGMAbwByAGQA
+cwMvAAAAAQMWAAAAAAMaAAAAAAMbf////wMg/////wMiAAAAAAgZEB8GAgAOAGMAaQB0AGUAZABS
+AGUAZgBlAHIAZQBuAGMAZQYkAC4AaAB0AHQAcAA6AC8ALwB3AG8AawBzAGUAYQByAGMAaAAuAGMA
+eABmAC4AdwBvAGsAbQB3AHMALgB0AGgAbwBtAHMAbwBuAHIAZQB1AHQAZQByAHMALgBjAG8AbQYl
+AAcAYQBuAHkAVAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8A
+MgAwADAAMQAvAFgATQBMAFMAYwBoAGUAbQBhAysAAAAMAxIAAAAGAxIAAAAGARMBCRQAAAAKECEG
+FQAJAGEAcgB0AGkAYwBsAGUASQBEAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAA
+CBkQLwMS///3aP////8QIQYVAAsAYwBpAHQAZQBkAEEAdQB0AGgAbwByAy8AAAABAxYAAAAAAxoA
+AAAAAxsAAAABAyD/////AyIAAAAACBkQLwMS///3aP////8QIQYVAAoAYwBpAHQAZQBkAFQAaQB0
+AGwAZQMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEG
+FQAJAGMAaQB0AGUAZABXAG8AcgBrAy8AAAABAxYAAAAAAxoAAAAAAxsAAAABAyD/////AyIAAAAA
+CBkQLwMS///3aP////8QIQYVAAQAcABhAGcAZQMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg////
+/wMiAAAAAAgZEC8DEv//92j/////ECEGFQAFAHIAZQBjAEkARAMvAAAAAQMWAAAAAAMaAAAAAAMb
+AAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAFAHIAZQBmAEkARAMvAAAAAQMWAAAA
+AAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZEC8DEv//92j/////ECEGFQAKAHQAaQBtAGUAcwBD
+AGkAdABlAGQDLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8DIgAAAAAIGRAvAxL///do////
+/xAhBhUABgB2AG8AbAB1AG0AZQMvAAAAAQMWAAAAAAMaAAAAAAMbAAAAAQMg/////wMiAAAAAAgZ
+EC8DEv//92j/////ECEGFQAEAHkAZQBhAHIDLwAAAAEDFgAAAAADGgAAAAADGwAAAAEDIP////8D
+IgAAAAAIGRAvAxL///do//////////8QIQYVAAwAcgBlAGMAbwByAGQAcwBGAG8AdQBuAGQDLwAA
+AAEDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAZBgIAAwBpAG4AdAYkACAAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAvAFgATQBMAFMAYwBoAGUAbQBh
+BiUABABsAG8AbgBnBigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4AbwByAGcALwAyADAA
+MAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDEgAAAAcEB/////////dhBAYAAAAAf/////////8QIQYV
+AA8AcgBlAGMAbwByAGQAcwBTAGUAYQByAGMAaABlAGQDLwAAAAEDFgAAAAADGgAAAAEDGwAAAAED
+IP////8DIgAAAAAIGRAvAxL///df//////////////////////////8=</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1479922975231</attribute>
+  <attribute name="soapAction" type="STRING"/>
+</metadata>

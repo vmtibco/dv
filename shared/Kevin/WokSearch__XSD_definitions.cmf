@@ -1,0 +1,815 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="WokSearch_XSD" path="/shared/Kevin/WokSearch_XSD" type="DEFINITION_SET" subtype="XML_SCHEMA_DEFINITION_SET" changeToken="0">
+  <definitions>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieve" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieveResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticles" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticlesResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecords" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecordsResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieve" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveById" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveByIdResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}search" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}searchResponse" type="ELEMENT">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}AuthenticationException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}ESTIWSException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}InternalServerException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}InvalidInputException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}QueryException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}SessionException" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReference" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferences" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieve" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesRetrieveResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citedReferencesSearchResults" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticles" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}citingArticlesResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}collectionFields" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}editionDesc" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}fullRecordData" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}fullRecordSearchResults" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}keyValuePair" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}labelValuesPair" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}queryField" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}queryParameters" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecords" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}relatedRecordsResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieve" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveById" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveByIdResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveParameters" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}retrieveResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}search" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}searchResponse" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+    <definition name="{http://woksearch.cxf.wokmws.thomsonreuters.com}timeSpan" type="TYPE">
+      <attribute name="creationDate" type="LONG">0</attribute>
+      <attribute name="creatorUserDomain" type="STRING"/>
+      <attribute name="creatorUserId" type="INTEGER">0</attribute>
+      <attribute name="creatorUserName" type="STRING"/>
+      <attribute name="lastModifiedDate" type="LONG">0</attribute>
+      <attribute name="lastModifiedUserDomain" type="STRING"/>
+      <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+      <attribute name="lastModifiedUserName" type="STRING"/>
+      <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+    </definition>
+  </definitions>
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege user="anonymous" domain="composite" privileges="READ"/>
+    <privilege group="all" domain="composite" privileges="READ WRITE"/>
+    <privilege group="all" domain="dynamic" privileges="READ"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1479923530707</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1479923556969</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1479923530707</attribute>
+  <attribute name="sources" type="LIST">
+    <list type="OBJECT">rO0ABXNyADVjb20uY29tcG9zaXRlc3cuY29tbW9uLnJlcG9zaXRvcnkuRGVmaW5pdGlvblNldFNv
+dXJjZVYpv6Zr2hqJAgACTAAIbG9jYXRpb250ABJMamF2YS9sYW5nL1N0cmluZztMAApzb3VyY2VU
+ZXh0cQB+AAF4cHQADVdva1NlYXJjaF9YU0R0MF4gICAgPHhzOnNjaGVtYSB4bWxuczp4cz0iaHR0
+cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOndva3NlYXJjaD0iaHR0cDovL3dv
+a3NlYXJjaC5jeGYud29rbXdzLnRob21zb25yZXV0ZXJzLmNvbSIgYXR0cmlidXRlRm9ybURlZmF1
+bHQ9InVucXVhbGlmaWVkIiBlbGVtZW50Rm9ybURlZmF1bHQ9InVucXVhbGlmaWVkIiB0YXJnZXRO
+YW1lc3BhY2U9Imh0dHA6Ly93b2tzZWFyY2guY3hmLndva213cy50aG9tc29ucmV1dGVycy5jb20i
+Pg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iY2l0ZWRSZWZlcmVuY2VzIiB0eXBlPSJ3b2tzZWFy
+Y2g6Y2l0ZWRSZWZlcmVuY2VzIi8+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJjaXRlZFJlZmVy
+ZW5jZXNSZXNwb25zZSIgdHlwZT0id29rc2VhcmNoOmNpdGVkUmVmZXJlbmNlc1Jlc3BvbnNlIi8+
+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJjaXRlZFJlZmVyZW5jZXNSZXRyaWV2ZSIgdHlwZT0i
+d29rc2VhcmNoOmNpdGVkUmVmZXJlbmNlc1JldHJpZXZlIi8+DQogICAgICA8eHM6ZWxlbWVudCBu
+YW1lPSJjaXRlZFJlZmVyZW5jZXNSZXRyaWV2ZVJlc3BvbnNlIiB0eXBlPSJ3b2tzZWFyY2g6Y2l0
+ZWRSZWZlcmVuY2VzUmV0cmlldmVSZXNwb25zZSIvPg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0i
+Y2l0aW5nQXJ0aWNsZXMiIHR5cGU9Indva3NlYXJjaDpjaXRpbmdBcnRpY2xlcyIvPg0KICAgICAg
+PHhzOmVsZW1lbnQgbmFtZT0iY2l0aW5nQXJ0aWNsZXNSZXNwb25zZSIgdHlwZT0id29rc2VhcmNo
+OmNpdGluZ0FydGljbGVzUmVzcG9uc2UiLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9InJlbGF0
+ZWRSZWNvcmRzIiB0eXBlPSJ3b2tzZWFyY2g6cmVsYXRlZFJlY29yZHMiLz4NCiAgICAgIDx4czpl
+bGVtZW50IG5hbWU9InJlbGF0ZWRSZWNvcmRzUmVzcG9uc2UiIHR5cGU9Indva3NlYXJjaDpyZWxh
+dGVkUmVjb3Jkc1Jlc3BvbnNlIi8+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJyZXRyaWV2ZSIg
+dHlwZT0id29rc2VhcmNoOnJldHJpZXZlIi8+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJyZXRy
+aWV2ZUJ5SWQiIHR5cGU9Indva3NlYXJjaDpyZXRyaWV2ZUJ5SWQiLz4NCiAgICAgIDx4czplbGVt
+ZW50IG5hbWU9InJldHJpZXZlQnlJZFJlc3BvbnNlIiB0eXBlPSJ3b2tzZWFyY2g6cmV0cmlldmVC
+eUlkUmVzcG9uc2UiLz4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9InJldHJpZXZlUmVzcG9uc2Ui
+IHR5cGU9Indva3NlYXJjaDpyZXRyaWV2ZVJlc3BvbnNlIi8+DQogICAgICA8eHM6ZWxlbWVudCBu
+YW1lPSJzZWFyY2giIHR5cGU9Indva3NlYXJjaDpzZWFyY2giLz4NCiAgICAgIDx4czplbGVtZW50
+IG5hbWU9InNlYXJjaFJlc3BvbnNlIiB0eXBlPSJ3b2tzZWFyY2g6c2VhcmNoUmVzcG9uc2UiLz4N
+CiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJjaXRlZFJlZmVyZW5jZXNSZXRyaWV2ZSI+DQog
+ICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAi
+IG5hbWU9InF1ZXJ5SWQiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICAgIDx4czplbGVtZW50
+IG1pbk9jY3Vycz0iMCIgbmFtZT0icmV0cmlldmVQYXJhbWV0ZXJzIiB0eXBlPSJ3b2tzZWFyY2g6
+cmV0cmlldmVQYXJhbWV0ZXJzIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICA8L3hz
+OmNvbXBsZXhUeXBlPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9InJldHJpZXZlUGFyYW1l
+dGVycyI+DQogICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtYXhP
+Y2N1cnM9InVuYm91bmRlZCIgbWluT2NjdXJzPSIwIiBuYW1lPSJjb2xsZWN0aW9uRmllbGRzIiBu
+aWxsYWJsZT0idHJ1ZSIgdHlwZT0id29rc2VhcmNoOmNvbGxlY3Rpb25GaWVsZHMiLz4NCiAgICAg
+ICAgICA8eHM6ZWxlbWVudCBuYW1lPSJjb3VudCIgdHlwZT0ieHM6aW50Ii8+DQogICAgICAgICAg
+PHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vycz0iMCIgbmFtZT0iZmll
+bGRzIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0id29rc2VhcmNoOnF1ZXJ5RmllbGQiLz4NCiAgICAg
+ICAgICA8eHM6ZWxlbWVudCBuYW1lPSJmaXJzdFJlY29yZCIgdHlwZT0ieHM6aW50Ii8+DQogICAg
+ICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vycz0iMCIgbmFt
+ZT0ib3B0aW9ucyIgbmlsbGFibGU9InRydWUiIHR5cGU9Indva3NlYXJjaDprZXlWYWx1ZVBhaXIi
+Lz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAg
+ICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iY29sbGVjdGlvbkZpZWxkcyI+DQogICAgICAgIDx4czpz
+ZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImNvbGxl
+Y3Rpb25OYW1lIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtYXhP
+Y2N1cnM9InVuYm91bmRlZCIgbWluT2NjdXJzPSIwIiBuYW1lPSJmaWVsZExpc3QiIG5pbGxhYmxl
+PSJ0cnVlIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1
+cnM9IjAiIG5hbWU9Imxpc3ROYW1lIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgPC94czpz
+ZXF1ZW5jZT4NCiAgICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUg
+bmFtZT0icXVlcnlGaWVsZCI+DQogICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6
+ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9Im5hbWUiIHR5cGU9InhzOnN0cmluZyIvPg0KICAg
+ICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0ic29ydCIgdHlwZT0ieHM6c3Ry
+aW5nIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICA8L3hzOmNvbXBsZXhUeXBlPg0K
+ICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9ImtleVZhbHVlUGFpciI+DQogICAgICAgIDx4czpz
+ZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImtleSIg
+dHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBu
+YW1lPSJ2YWx1ZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQog
+ICAgICA8L3hzOmNvbXBsZXhUeXBlPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9ImNpdGVk
+UmVmZXJlbmNlc1JldHJpZXZlUmVzcG9uc2UiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAg
+ICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vycz0iMCIgbmFt
+ZT0icmV0dXJuIiB0eXBlPSJ3b2tzZWFyY2g6Y2l0ZWRSZWZlcmVuY2UiLz4NCiAgICAgICAgPC94
+czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5
+cGUgbmFtZT0iY2l0ZWRSZWZlcmVuY2UiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAg
+ICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJhcnRpY2xlSUQiIHR5cGU9InhzOnN0
+cmluZyIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0iY2l0ZWRB
+dXRob3IiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vy
+cz0iMCIgbmFtZT0iY2l0ZWRUaXRsZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhz
+OmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJjaXRlZFdvcmsiIHR5cGU9InhzOnN0cmluZyIv
+Pg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icGFnZSIgdHlwZT0i
+eHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJy
+ZWNJRCIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJz
+PSIwIiBuYW1lPSJyZWZJRCIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1l
+bnQgbWluT2NjdXJzPSIwIiBuYW1lPSJ0aW1lc0NpdGVkIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAg
+ICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InZvbHVtZSIgdHlwZT0ieHM6
+c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJ5ZWFy
+IiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6
+Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0icmVsYXRlZFJlY29yZHMi
+Pg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJz
+PSIwIiBuYW1lPSJkYXRhYmFzZUlkIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6
+ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InVpZCIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAg
+ICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vycz0iMCIgbmFt
+ZT0iZWRpdGlvbnMiIHR5cGU9Indva3NlYXJjaDplZGl0aW9uRGVzYyIvPg0KICAgICAgICAgIDx4
+czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0idGltZVNwYW4iIHR5cGU9Indva3NlYXJjaDp0
+aW1lU3BhbiIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icXVl
+cnlMYW5ndWFnZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWlu
+T2NjdXJzPSIwIiBuYW1lPSJyZXRyaWV2ZVBhcmFtZXRlcnMiIHR5cGU9Indva3NlYXJjaDpyZXRy
+aWV2ZVBhcmFtZXRlcnMiLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6Y29t
+cGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iZWRpdGlvbkRlc2MiPg0KICAg
+ICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBu
+YW1lPSJjb2xsZWN0aW9uIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVu
+dCBtaW5PY2N1cnM9IjAiIG5hbWU9ImVkaXRpb24iIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAg
+ICA8L3hzOnNlcXVlbmNlPg0KICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgIDx4czpjb21w
+bGV4VHlwZSBuYW1lPSJ0aW1lU3BhbiI+DQogICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAg
+ICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImJlZ2luIiB0eXBlPSJ4czpzdHJpbmci
+Lz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImVuZCIgdHlwZT0i
+eHM6c3RyaW5nIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICA8L3hzOmNvbXBsZXhU
+eXBlPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9InJlbGF0ZWRSZWNvcmRzUmVzcG9uc2Ui
+Pg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJz
+PSIwIiBuYW1lPSJyZXR1cm4iIHR5cGU9Indva3NlYXJjaDpmdWxsUmVjb3JkU2VhcmNoUmVzdWx0
+cyIvPg0KICAgICAgICA8L3hzOnNlcXVlbmNlPg0KICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAg
+ICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJmdWxsUmVjb3JkU2VhcmNoUmVzdWx0cyI+DQogICAg
+ICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtYXhPY2N1cnM9InVuYm91
+bmRlZCIgbWluT2NjdXJzPSIwIiBuYW1lPSJvcHRpb25zIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0i
+d29rc2VhcmNoOmxhYmVsVmFsdWVzUGFpciIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9j
+Y3Vycz0iMCIgbmFtZT0icGFyZW50IiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6
+ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InF1ZXJ5SUQiIHR5cGU9InhzOnN0cmluZyIvPg0K
+ICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icmVjb3JkcyIgdHlwZT0i
+eHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0icmVjb3Jkc0ZvdW5kIiB0
+eXBlPSJ4czppbnQiLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJyZWNvcmRzU2VhcmNo
+ZWQiIHR5cGU9InhzOmxvbmciLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6
+Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0ibGFiZWxWYWx1ZXNQYWly
+Ij4NCiAgICAgICAgPHhzOnNlcXVlbmNlPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vy
+cz0iMCIgbmFtZT0ibGFiZWwiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICAgIDx4czplbGVt
+ZW50IG1heE9jY3Vycz0idW5ib3VuZGVkIiBtaW5PY2N1cnM9IjAiIG5hbWU9InZhbHVlcyIgbmls
+bGFibGU9InRydWUiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICA8L3hzOnNlcXVlbmNlPg0K
+ICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJjaXRl
+ZFJlZmVyZW5jZXMiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1l
+bnQgbWluT2NjdXJzPSIwIiBuYW1lPSJkYXRhYmFzZUlkIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAg
+ICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InVpZCIgdHlwZT0ieHM6c3Ry
+aW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9j
+Y3Vycz0iMCIgbmFtZT0iZWRpdGlvbnMiIHR5cGU9Indva3NlYXJjaDplZGl0aW9uRGVzYyIvPg0K
+ICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0idGltZVNwYW4iIHR5cGU9
+Indva3NlYXJjaDp0aW1lU3BhbiIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0i
+MCIgbmFtZT0icXVlcnlMYW5ndWFnZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhz
+OmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJyZXRyaWV2ZVBhcmFtZXRlcnMiIHR5cGU9Indv
+a3NlYXJjaDpyZXRyaWV2ZVBhcmFtZXRlcnMiLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAg
+ICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iY2l0ZWRS
+ZWZlcmVuY2VzUmVzcG9uc2UiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhz
+OmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJyZXR1cm4iIHR5cGU9Indva3NlYXJjaDpjaXRl
+ZFJlZmVyZW5jZXNTZWFyY2hSZXN1bHRzIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAg
+ICA8L3hzOmNvbXBsZXhUeXBlPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9ImNpdGVkUmVm
+ZXJlbmNlc1NlYXJjaFJlc3VsdHMiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAg
+PHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJxdWVyeUlEIiB0eXBlPSJ4czpzdHJpbmci
+Lz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtYXhPY2N1cnM9InVuYm91bmRlZCIgbWluT2NjdXJz
+PSIwIiBuYW1lPSJyZWNvcmRzIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0id29rc2VhcmNoOmNpdGVk
+UmVmZXJlbmNlIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbmFtZT0icmVjb3Jkc0ZvdW5kIiB0
+eXBlPSJ4czppbnQiLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBuYW1lPSJyZWNvcmRzU2VhcmNo
+ZWQiIHR5cGU9InhzOmxvbmciLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6
+Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0icmV0cmlldmUiPg0KICAg
+ICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBu
+YW1lPSJxdWVyeUlkIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBt
+aW5PY2N1cnM9IjAiIG5hbWU9InJldHJpZXZlUGFyYW1ldGVycyIgdHlwZT0id29rc2VhcmNoOnJl
+dHJpZXZlUGFyYW1ldGVycyIvPg0KICAgICAgICA8L3hzOnNlcXVlbmNlPg0KICAgICAgPC94czpj
+b21wbGV4VHlwZT4NCiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJyZXRyaWV2ZVJlc3BvbnNl
+Ij4NCiAgICAgICAgPHhzOnNlcXVlbmNlPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vy
+cz0iMCIgbmFtZT0icmV0dXJuIiB0eXBlPSJ3b2tzZWFyY2g6ZnVsbFJlY29yZERhdGEiLz4NCiAg
+ICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6
+Y29tcGxleFR5cGUgbmFtZT0iZnVsbFJlY29yZERhdGEiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+
+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vycz0i
+MCIgbmFtZT0ib3B0aW9ucyIgbmlsbGFibGU9InRydWUiIHR5cGU9Indva3NlYXJjaDpsYWJlbFZh
+bHVlc1BhaXIiLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InJl
+Y29yZHMiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICA8L3hzOnNlcXVlbmNlPg0KICAgICAg
+PC94czpjb21wbGV4VHlwZT4NCiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJzZWFyY2giPg0K
+ICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIw
+IiBuYW1lPSJxdWVyeVBhcmFtZXRlcnMiIHR5cGU9Indva3NlYXJjaDpxdWVyeVBhcmFtZXRlcnMi
+Lz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InJldHJpZXZlUGFy
+YW1ldGVycyIgdHlwZT0id29rc2VhcmNoOnJldHJpZXZlUGFyYW1ldGVycyIvPg0KICAgICAgICA8
+L3hzOnNlcXVlbmNlPg0KICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgIDx4czpjb21wbGV4
+VHlwZSBuYW1lPSJxdWVyeVBhcmFtZXRlcnMiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAg
+ICAgICAgPHhzOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJkYXRhYmFzZUlEIiB0eXBlPSJ4
+czpzdHJpbmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtYXhPY2N1cnM9InVuYm91bmRlZCIg
+bWluT2NjdXJzPSIwIiBuYW1lPSJlZGl0aW9ucyIgbmlsbGFibGU9InRydWUiIHR5cGU9Indva3Nl
+YXJjaDplZGl0aW9uRGVzYyIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIg
+bmFtZT0icXVlcnlMYW5ndWFnZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVs
+ZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJzeW1ib2xpY1RpbWVTcGFuIiB0eXBlPSJ4czpzdHJp
+bmciLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InRpbWVTcGFu
+IiB0eXBlPSJ3b2tzZWFyY2g6dGltZVNwYW4iLz4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5P
+Y2N1cnM9IjAiIG5hbWU9InVzZXJRdWVyeSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgIDwv
+eHM6c2VxdWVuY2U+DQogICAgICA8L3hzOmNvbXBsZXhUeXBlPg0KICAgICAgPHhzOmNvbXBsZXhU
+eXBlIG5hbWU9InNlYXJjaFJlc3BvbnNlIj4NCiAgICAgICAgPHhzOnNlcXVlbmNlPg0KICAgICAg
+ICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icmV0dXJuIiB0eXBlPSJ3b2tzZWFy
+Y2g6ZnVsbFJlY29yZFNlYXJjaFJlc3VsdHMiLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAg
+ICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iY2l0aW5n
+QXJ0aWNsZXMiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQg
+bWluT2NjdXJzPSIwIiBuYW1lPSJkYXRhYmFzZUlkIiB0eXBlPSJ4czpzdHJpbmciLz4NCiAgICAg
+ICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InVpZCIgdHlwZT0ieHM6c3RyaW5n
+Ii8+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWF4T2NjdXJzPSJ1bmJvdW5kZWQiIG1pbk9jY3Vy
+cz0iMCIgbmFtZT0iZWRpdGlvbnMiIHR5cGU9Indva3NlYXJjaDplZGl0aW9uRGVzYyIvPg0KICAg
+ICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0idGltZVNwYW4iIHR5cGU9Indv
+a3NlYXJjaDp0aW1lU3BhbiIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIg
+bmFtZT0icXVlcnlMYW5ndWFnZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVs
+ZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJyZXRyaWV2ZVBhcmFtZXRlcnMiIHR5cGU9Indva3Nl
+YXJjaDpyZXRyaWV2ZVBhcmFtZXRlcnMiLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAg
+IDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0iY2l0aW5nQXJ0
+aWNsZXNSZXNwb25zZSI+DQogICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxl
+bWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InJldHVybiIgdHlwZT0id29rc2VhcmNoOmZ1bGxSZWNv
+cmRTZWFyY2hSZXN1bHRzIi8+DQogICAgICAgIDwveHM6c2VxdWVuY2U+DQogICAgICA8L3hzOmNv
+bXBsZXhUeXBlPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9InJldHJpZXZlQnlJZCI+DQog
+ICAgICAgIDx4czpzZXF1ZW5jZT4NCiAgICAgICAgICA8eHM6ZWxlbWVudCBtaW5PY2N1cnM9IjAi
+IG5hbWU9ImRhdGFiYXNlSWQiIHR5cGU9InhzOnN0cmluZyIvPg0KICAgICAgICAgIDx4czplbGVt
+ZW50IG1heE9jY3Vycz0idW5ib3VuZGVkIiBtaW5PY2N1cnM9IjAiIG5hbWU9InVpZHMiIHR5cGU9
+InhzOnN0cmluZyIvPg0KICAgICAgICAgIDx4czplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0i
+cXVlcnlMYW5ndWFnZSIgdHlwZT0ieHM6c3RyaW5nIi8+DQogICAgICAgICAgPHhzOmVsZW1lbnQg
+bWluT2NjdXJzPSIwIiBuYW1lPSJyZXRyaWV2ZVBhcmFtZXRlcnMiIHR5cGU9Indva3NlYXJjaDpy
+ZXRyaWV2ZVBhcmFtZXRlcnMiLz4NCiAgICAgICAgPC94czpzZXF1ZW5jZT4NCiAgICAgIDwveHM6
+Y29tcGxleFR5cGU+DQogICAgICA8eHM6Y29tcGxleFR5cGUgbmFtZT0icmV0cmlldmVCeUlkUmVz
+cG9uc2UiPg0KICAgICAgICA8eHM6c2VxdWVuY2U+DQogICAgICAgICAgPHhzOmVsZW1lbnQgbWlu
+T2NjdXJzPSIwIiBuYW1lPSJyZXR1cm4iIHR5cGU9Indva3NlYXJjaDpmdWxsUmVjb3JkU2VhcmNo
+UmVzdWx0cyIvPg0KICAgICAgICA8L3hzOnNlcXVlbmNlPg0KICAgICAgPC94czpjb21wbGV4VHlw
+ZT4NCiAgICAgIDx4czplbGVtZW50IG5hbWU9IlF1ZXJ5RXhjZXB0aW9uIiB0eXBlPSJ3b2tzZWFy
+Y2g6UXVlcnlFeGNlcHRpb24iLz4NCiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJRdWVyeUV4
+Y2VwdGlvbiI+DQogICAgICAgIDx4czpzZXF1ZW5jZS8+DQogICAgICA8L3hzOmNvbXBsZXhUeXBl
+Pg0KICAgICAgPHhzOmVsZW1lbnQgbmFtZT0iQXV0aGVudGljYXRpb25FeGNlcHRpb24iIHR5cGU9
+Indva3NlYXJjaDpBdXRoZW50aWNhdGlvbkV4Y2VwdGlvbiIvPg0KICAgICAgPHhzOmNvbXBsZXhU
+eXBlIG5hbWU9IkF1dGhlbnRpY2F0aW9uRXhjZXB0aW9uIj4NCiAgICAgICAgPHhzOnNlcXVlbmNl
+Lz4NCiAgICAgIDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJJbnZh
+bGlkSW5wdXRFeGNlcHRpb24iIHR5cGU9Indva3NlYXJjaDpJbnZhbGlkSW5wdXRFeGNlcHRpb24i
+Lz4NCiAgICAgIDx4czpjb21wbGV4VHlwZSBuYW1lPSJJbnZhbGlkSW5wdXRFeGNlcHRpb24iPg0K
+ICAgICAgICA8eHM6c2VxdWVuY2UvPg0KICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICAgIDx4
+czplbGVtZW50IG5hbWU9IkVTVElXU0V4Y2VwdGlvbiIgdHlwZT0id29rc2VhcmNoOkVTVElXU0V4
+Y2VwdGlvbiIvPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9IkVTVElXU0V4Y2VwdGlvbiI+
+DQogICAgICAgIDx4czpzZXF1ZW5jZS8+DQogICAgICA8L3hzOmNvbXBsZXhUeXBlPg0KICAgICAg
+PHhzOmVsZW1lbnQgbmFtZT0iSW50ZXJuYWxTZXJ2ZXJFeGNlcHRpb24iIHR5cGU9Indva3NlYXJj
+aDpJbnRlcm5hbFNlcnZlckV4Y2VwdGlvbiIvPg0KICAgICAgPHhzOmNvbXBsZXhUeXBlIG5hbWU9
+IkludGVybmFsU2VydmVyRXhjZXB0aW9uIj4NCiAgICAgICAgPHhzOnNlcXVlbmNlLz4NCiAgICAg
+IDwveHM6Y29tcGxleFR5cGU+DQogICAgICA8eHM6ZWxlbWVudCBuYW1lPSJTZXNzaW9uRXhjZXB0
+aW9uIiB0eXBlPSJ3b2tzZWFyY2g6U2Vzc2lvbkV4Y2VwdGlvbiIvPg0KICAgICAgPHhzOmNvbXBs
+ZXhUeXBlIG5hbWU9IlNlc3Npb25FeGNlcHRpb24iPg0KICAgICAgICA8eHM6c2VxdWVuY2UvPg0K
+ICAgICAgPC94czpjb21wbGV4VHlwZT4NCiAgICA8L3hzOnNjaGVtYT4N</list>
+  </attribute>
+</metadata>
