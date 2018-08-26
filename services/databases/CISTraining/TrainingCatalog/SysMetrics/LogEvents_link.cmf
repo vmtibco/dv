@@ -1,0 +1,54 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="LogEvents" path="/services/databases/CISTraining/TrainingCatalog/SysMetrics/LogEvents" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test1/LogEvents" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="EVENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="PARENT_ID">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="TYPE_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="TYPE_NAME">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="CATEGORY">
+        <datatype type="STRING" minLength="5" maxLength="11" trailingSpaces="false"/>
+      </element>
+      <element name="EVENT_TIME">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="SEVERITY">
+        <datatype type="STRING" maxLength="24"/>
+      </element>
+      <element name="OWNER_ID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="OWNER">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="DESCRIPTION">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="DETAIL">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1510690239426</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1511368966184</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1510690239426</attribute>
+  <attribute name="targetPath" type="STRING">/users/composite/admin/Test1/LogEvents</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>

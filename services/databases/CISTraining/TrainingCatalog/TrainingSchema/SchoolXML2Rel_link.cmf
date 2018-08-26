@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SchoolXML2Rel" path="/services/databases/CISTraining/TrainingCatalog/TrainingSchema/SchoolXML2Rel" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege user="anonymous" domain="composite" privileges="READ"/>
+    <privilege user="judith" domain="composite" privileges="READ WRITE"/>
+    <privilege group="cistraining_developers" domain="composite" privileges="READ WRITE"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Application/Views/CISTraining/TrainingCatalog/TrainingSchema/SchoolXML2Rel" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="CourseName">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="CourseDescription">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="Department">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="CreditNumber">
+        <datatype type="DECIMAL" maxFractionalDigits="0"/>
+      </element>
+      <element name="TeacherName">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="TeacherEmail">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="StudentName">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="StudentEmail">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1431545340596</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431545340596</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431545340596</attribute>
+  <attribute name="targetPath" type="STRING">/users/composite/admin/CISTraining/Application/Views/CISTraining/TrainingCatalog/TrainingSchema/SchoolXML2Rel</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>
