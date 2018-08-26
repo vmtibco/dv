@@ -1,0 +1,173 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="events" path="/shared/BusinessWorks/events" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="summary" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="description" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="authorName" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="bookisbn" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="&quot;date&quot;" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="id" nullable="true">
+      <datatype type="STRING" maxLength="2147483647" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/BusinessWorks/Tutorial/public/events" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="summary">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+      <element name="description">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+      <element name="authorName">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+      <element name="bookisbn">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+      <element name="date">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+      <element name="id">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    CAST(events.summary AS VARCHAR(2147483647)) summary, 
+    CAST(events.description AS VARCHAR(2147483647)) description, 
+    CAST(events.authorName AS VARCHAR(2147483647)) authorName, 
+    CAST(events.bookisbn AS VARCHAR(2147483647)) bookisbn, 
+    CAST(events.&quot;date&quot; AS VARCHAR(2147483647)) &quot;&quot;&quot;date&quot;&quot;&quot;, 
+    CAST(events.id AS VARCHAR(2147483647)) id
+FROM      
+    /shared/BusinessWorks/Tutorial/&quot;public&quot;/events events</attribute>
+  <attribute name="creationDate" type="LONG">1515724196323</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1515725827658</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUQYBAAYAZQB2AGUAbgB0AHMGAgAGAGUAdgBlAG4AdABzAwv/////AwoAO/gAAwz/
+////CxEABQAGAHMAaABhAHIAZQBkAA0AQgB1AHMAaQBuAGUAcwBzAFcAbwByAGsAcwAIAFQAdQB0
+AG8AcgBpAGEAbAAGAHAAdQBiAGwAaQBjAAYAZQB2AGUAbgB0AHP//wMFAAAAAAgCEDEGAf//AQIB
+AQYAAQMAAQQAAQUAAwcAAAAABwkAAAABAAAAAAkKAAAABhBCBgEABABDAEEAUwBUBgIABwBzAHUA
+bQBtAGEAcgB5AQkAARIACQ0AAAACEEEGAQAHAHMAdQBtAG0AYQByAHkGAgAABgP//wYE//8DCv//
+//8IDBAUBgIABAB0AGUAeAB0BgMABAB0AGUAeAB0AysAAAAPAxIAAAABBAQAAAAAf////wETAf//
+AwsAAAAA//8QQwYC//8IDBAbBgIACwBMAE8ATgBHAFYAQQBSAEMASABBAFIDEgAAAAEEBAAAAAB/
+////ARMB////////EEIGAQAEAEMAQQBTAFQGAgALAGQAZQBzAGMAcgBpAHAAdABpAG8AbgEJAAES
+AAkNAAAAAhBBBgEACwBkAGUAcwBjAHIAaQBwAHQAaQBvAG4GAgAABgP//wYE//8DCv////8IDBAU
+BgIABAB0AGUAeAB0BgMABAB0AGUAeAB0AysAAAAPAxIAAAABBAQAAAAAf////wETAf//AwsAAAAA
+//8QQwYC//8IDBAbBgIACwBMAE8ATgBHAFYAQQBSAEMASABBAFIDEgAAAAEEBAAAAAB/////ARMB
+////////EEIGAQAEAEMAQQBTAFQGAgAKAGEAdQB0AGgAbwByAE4AYQBtAGUBCQABEgAJDQAAAAIQ
+QQYBAAoAYQB1AHQAaABvAHIATgBhAG0AZQYCAAAGA///BgT//wMK/////wgMEBQGAgAEAHQAZQB4
+AHQGAwAEAHQAZQB4AHQDKwAAAA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD//xBDBgL//wgM
+EBsGAgALAEwATwBOAEcAVgBBAFIAQwBIAEEAUgMSAAAAAQQEAAAAAH////8BEwH///////8QQgYB
+AAQAQwBBAFMAVAYCAAgAYgBvAG8AawBpAHMAYgBuAQkAARIACQ0AAAACEEEGAQAIAGIAbwBvAGsA
+aQBzAGIAbgYCAAAGA///BgT//wMK/////wgMEBQGAgAEAHQAZQB4AHQGAwAEAHQAZQB4AHQDKwAA
+AA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD//xBDBgL//wgMEBsGAgALAEwATwBOAEcAVgBB
+AFIAQwBIAEEAUgMSAAAAAQQEAAAAAH////8BEwH///////8QQgYBAAQAQwBBAFMAVAYCAAYAIgBk
+AGEAdABlACIBCQABEgAJDQAAAAIQQQYBAAQAZABhAHQAZQYCAAAGA///BgT//wMK/////wgMEBQG
+AgAEAHQAZQB4AHQGAwAEAHQAZQB4AHQDKwAAAA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD/
+/xBDBgL//wgMEBsGAgALAEwATwBOAEcAVgBBAFIAQwBIAEEAUgMSAAAAAQQEAAAAAH////8BEwH/
+//////8QQgYBAAQAQwBBAFMAVAYCAAIAaQBkAQkAARIACQ0AAAACEEEGAQACAGkAZAYCAAAGA///
+BgT//wMK/////wgMEBQGAgAEAHQAZQB4AHQGAwAEAHQAZQB4AHQDKwAAAA8DEgAAAAEEBAAAAAB/
+////ARMB//8DCwAAAAD//xBDBgL//wgMEBsGAgALAEwATwBOAEcAVgBBAFIAQwBIAEEAUgMSAAAA
+AQQEAAAAAH////8BEwH//////////wkGAAAAARCCAwoAAAE4AwsAAAEpAwwAAADIAw0AAACC//8I
+AxBxAwEAAAALAwIAAAAyCQMAAAImEHQDBgAAAAD//xByBgQABwBzAHUAbQBtAGEAcgB5//8Qc///
+EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAB
+//8QcgYEAAsAZABlAHMAYwByAGkAcAB0AGkAbwBu//8Qc///EHUBBwH//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAC//8QcgYEAAoAYQB1AHQAaABvAHIA
+TgBhAG0AZf//EHP//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdAMGAAAAA///EHIGBAAIAGIAbwBvAGsAaQBzAGIAbv//EHP//xB1AQcB//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAABP//EHIGBAAGACIAZABh
+AHQAZQAi//8Qc///EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0AwYAAAAF//8QcgYEAAIAaQBk//8Qc///EHUBBwH//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz
+//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xBy
+BgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2
+//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP//
+//8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//
+EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP/
+/xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3
+Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2////////</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1515724196323</attribute>
+</metadata>
