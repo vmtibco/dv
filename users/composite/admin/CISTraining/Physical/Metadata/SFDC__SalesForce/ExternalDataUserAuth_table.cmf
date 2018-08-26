@@ -1,0 +1,150 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="ExternalDataUserAuth" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/ExternalDataUserAuth" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="IsDeleted" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ExternalDataSourceId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Protocol" nullable="false">
+      <datatype name="picklist" extendedName="picklist(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Username" nullable="true">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Password" nullable="true">
+      <datatype name="encryptedstring" extendedName="encryptedstring" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="ExternalDataUserAuth-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="UserId_User" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="UserId"/>
+    </foreignKey>
+    <foreignKey name="ExternalDataSourceId_ExternalDataSource" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/ExternalDataSource">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="ExternalDataSourceId"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/ExternalDataSource" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1432306154652</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="foreignKeyRelationship" type="MAP">
+    <item>
+      <key type="STRING">ExternalDataSourceId_ExternalDataSource</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">ExternalDataSource</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">UserAuths</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">UserId_User</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">User</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">ExternalDataUserAuths</value>
+        </item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154652</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET">
+    <item type="STRING">Password</item>
+  </attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">LastModifiedDate</item>
+    <item type="STRING">Password</item>
+    <item type="STRING">SystemModstamp</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET">
+    <item type="STRING">Password</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154652</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

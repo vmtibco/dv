@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="FINK" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/F/FI/FINK" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Text Key -&gt; Pointer (SAPfind)
+Table class: POOL
+Last changed by: SAP
+Last changed on: 2003-11-07
+
+Field name                     Type    Short text                                                   
+CLASS                          C4      Information class for indexing                               
+LANGU                          C1      Language key                                                 
+TXTKEY                         C100    Text key                                                     
+POINTER                        X10     Pointer                                                      
+</annotation>
+  <columns>
+    <column name="CLASS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Information class for indexing</annotation>
+    </column>
+    <column name="LANGU" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language key</annotation>
+    </column>
+    <column name="TXTKEY" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text key</annotation>
+    </column>
+    <column name="POINTER" nullable="true">
+      <datatype name="X10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Pointer</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="CLASS" sortOrder="NONE"/>
+      <indexColumn name="LANGU" sortOrder="NONE"/>
+      <indexColumn name="TXTKEY" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

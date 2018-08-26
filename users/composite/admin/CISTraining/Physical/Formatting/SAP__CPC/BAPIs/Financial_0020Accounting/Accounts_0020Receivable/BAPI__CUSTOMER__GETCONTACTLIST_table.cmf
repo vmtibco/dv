@@ -1,0 +1,438 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CUSTOMER_GETCONTACTLIST" path="/users/composite/admin/CISTraining/Physical/Formatting/SAP_CPC/BAPIs/Financial Accounting/Accounts Receivable/BAPI_CUSTOMER_GETCONTACTLIST" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="Import COMM_FOR_DISPLAY" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Import CONTACTPERSONONLY" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Import MAXROWS" nullable="true">
+      <datatype type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN TYPE" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN ID" nullable="true">
+      <datatype type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="true">
+      <datatype type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="true">
+      <datatype type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="true">
+      <datatype type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="true">
+      <datatype type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA PARTNEREMPLOYEEID" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA CUSTOMER" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA LASTNAME" nullable="true">
+      <datatype type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA FIRSTNAME" nullable="true">
+      <datatype type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA SEX" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA TITLE_P" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA LANGU_P" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA LANGUP_ISO" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA COUNTRY" nullable="true">
+      <datatype type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA COUNTRYISO" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA CITY" nullable="true">
+      <datatype type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA POSTL_COD1" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA REGION" nullable="true">
+      <datatype type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA STREET" nullable="true">
+      <datatype type="STRING" maxLength="60"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA TEL1_NUMBR" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA FAX_NUMBER" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA FUNCTION" nullable="true">
+      <datatype type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA SORT1_P" nullable="true">
+      <datatype type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA ADDRESS" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA PERS_NO" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CONTACTADDRESSDATA E_MAIL" nullable="true">
+      <datatype type="STRING" maxLength="241"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CUSTOMERRANGE SIGN" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CUSTOMERRANGE OPTION" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CUSTOMERRANGE LOW" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CUSTOMERRANGE HIGH" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Accounts Receivable/BAPI_CUSTOMER_GETCONTACTLIST" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="Import COMM_FOR_DISPLAY" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="Import CONTACTPERSONONLY" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="Import MAXROWS" nullable="false">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="Export RETURN TYPE" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="Export RETURN ID" nullable="false">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="Export RETURN NUMBER" nullable="false">
+        <datatype type="STRING" maxLength="3"/>
+      </element>
+      <element name="Export RETURN MESSAGE" nullable="false">
+        <datatype type="STRING" maxLength="220"/>
+      </element>
+      <element name="Export RETURN LOG_NO" nullable="false">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="Export RETURN LOG_MSG_NO" nullable="false">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="Export RETURN MESSAGE_V1" nullable="false">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="Export RETURN MESSAGE_V2" nullable="false">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="Export RETURN MESSAGE_V3" nullable="false">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="Export RETURN MESSAGE_V4" nullable="false">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="CONTACTADDRESSDATA PARTNEREMPLOYEEID" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CONTACTADDRESSDATA CUSTOMER" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CONTACTADDRESSDATA LASTNAME" nullable="false">
+        <datatype type="STRING" maxLength="40"/>
+      </element>
+      <element name="CONTACTADDRESSDATA FIRSTNAME" nullable="false">
+        <datatype type="STRING" maxLength="40"/>
+      </element>
+      <element name="CONTACTADDRESSDATA SEX" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CONTACTADDRESSDATA TITLE_P" nullable="false">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="CONTACTADDRESSDATA LANGU_P" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CONTACTADDRESSDATA LANGUP_ISO" nullable="false">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CONTACTADDRESSDATA COUNTRY" nullable="false">
+        <datatype type="STRING" maxLength="3"/>
+      </element>
+      <element name="CONTACTADDRESSDATA COUNTRYISO" nullable="false">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CONTACTADDRESSDATA CITY" nullable="false">
+        <datatype type="STRING" maxLength="40"/>
+      </element>
+      <element name="CONTACTADDRESSDATA POSTL_COD1" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CONTACTADDRESSDATA REGION" nullable="false">
+        <datatype type="STRING" maxLength="3"/>
+      </element>
+      <element name="CONTACTADDRESSDATA STREET" nullable="false">
+        <datatype type="STRING" maxLength="60"/>
+      </element>
+      <element name="CONTACTADDRESSDATA TEL1_NUMBR" nullable="false">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="CONTACTADDRESSDATA FAX_NUMBER" nullable="false">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="CONTACTADDRESSDATA FUNCTION" nullable="false">
+        <datatype type="STRING" maxLength="40"/>
+      </element>
+      <element name="CONTACTADDRESSDATA SORT1_P" nullable="false">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="CONTACTADDRESSDATA ADDRESS" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CONTACTADDRESSDATA PERS_NO" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CONTACTADDRESSDATA E_MAIL" nullable="false">
+        <datatype type="STRING" maxLength="241"/>
+      </element>
+      <element name="CUSTOMERRANGE SIGN" nullable="false">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="CUSTOMERRANGE OPTION" nullable="false">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="CUSTOMERRANGE LOW" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="CUSTOMERRANGE HIGH" nullable="false">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    *
+FROM      
+    /users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/&quot;Financial Accounting&quot;/&quot;Accounts Receivable&quot;/BAPI_CUSTOMER_GETCONTACTLIST BAPI_CUSTOMER_GETCONTACTLIST</attribute>
+  <attribute name="creationDate" type="LONG">1432053350158</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432053374715</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUQYBABwAQgBBAFAASQBfAEMAVQBTAFQATwBNAEUAUgBfAEcARQBUAEMATwBOAFQA
+QQBDAFQATABJAFMAVAYCABwAQgBBAFAASQBfAEMAVQBTAFQATwBNAEUAUgBfAEcARQBUAEMATwBO
+AFQAQQBDAFQATABJAFMAVAML/////wMKAIvo1wMM/////wsRAAsABQB1AHMAZQByAHMACQBjAG8A
+bQBwAG8AcwBpAHQAZQAFAGEAZABtAGkAbgALAEMASQBTAFQAcgBhAGkAbgBpAG4AZwAIAFAAaAB5
+AHMAaQBjAGEAbAAIAE0AZQB0AGEAZABhAHQAYQAHAFMAQQBQAF8AQwBQAEMABQBCAEEAUABJAHMA
+FABGAGkAbgBhAG4AYwBpAGEAbAAgAEEAYwBjAG8AdQBuAHQAaQBuAGcAEwBBAGMAYwBvAHUAbgB0
+AHMAIABSAGUAYwBlAGkAdgBhAGIAbABlABwAQgBBAFAASQBfAEMAVQBTAFQATwBNAEUAUgBfAEcA
+RQBUAEMATwBOAFQAQQBDAFQATABJAFMAVP//AwUAAAAACAIQMQYB//8BAgEBBgABAwABBAABBQAD
+BwAAAAAHCQAAAAEAAAAACQoAAAABEEEGAQABACoGAgAABgP//wYE//8DCv////8GBQAABgYAAAYH
+AAAGCAAA/////wkGAAAAARCCAwoAAAC/AwsAAADVAwwAAADIAw0AAADI//8IAxBxAwEAAAALAwIA
+AAAyCQMAAAImEHQDBgAAAAD//xByBgT/////EHP//xB1AQcB//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz
+//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xBy
+BgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2
+//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP//
+//8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//
+EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP/
+/xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb///////8=</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432053350158</attribute>
+</metadata>

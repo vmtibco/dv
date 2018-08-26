@@ -1,0 +1,378 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Overhead Cost Controlling" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling" type="CONTAINER" subtype="SCHEMA" changeToken="0">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="autoAddChildren" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">1</attribute>
+  <attribute name="tableFilter" type="STRING">%</attribute>
+  <attribute name="userDeletedSet" type="SET">
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTERGROUP_CREATE - Create cost center group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPEGRP_GETLIST - Index of activity groups</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_GETLIST1 - Determine List of Cost Centers According to Selection Criteria</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPE_GETDETAIL - Detailed Information on an Activity Type at Key Date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_CHECKACTINPUT - Check Activity Input</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_CHECKMULTIPLE - Check changes to BP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_CHECKPRIMCOST - Plan Data Transfer: Check Primary Costs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDRGRP_CREATE - Create Order Group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTERGROUP_GETLIST - Index of cost center groups</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_READACTOUTPUT - Activity Output: Read Quantity and Price</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_SETSTRUCTURE - Enter template in business process master data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEM_CREATEMULTIPLE - Create One or More Cost Elements</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_POSTACTOUTPUT - Planning data transfer: Post activity planning</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPEGRP_ADDNODE - Add nodes to an activity type group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEM_GETLIST - Determine List of Cost Elements According to Selection Criteria</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_CHECKACTINPUT - Plan Data Transfer: Check Activity Input</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_GETDETAIL - Detailed Information About Cost Center For Key Date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_POSTPRIMCOST - Post Primary Costs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPEGRP_CREATE - Create activity type group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_CREATEMULTIPLE - Create One or More Cost Centers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CO_DOC_GET_ACT_POSTINGS - Read CO Documents: Manual Actual Postings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_KEYFIGURE_CREATEMULTIPLE - Create One or More Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BUSPROCESSCOGRP_ADDNODE - Insert new nodes in a business process group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEMENTGRP_GETDETAIL - Read cost element group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COST_ELEM_FIXACCOUNT_GET - Read Fixed Account Assignment for Company Code/Business Area/Cost Element</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CTR_GETACTIVITYQUANTITIES - Read Plan Activity</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CONTROLLINGAREA_FIND - Derive controlling area from company code</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDER_GETDETAIL - Delivers master data, statuses, and allowed transactions for internal orders</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDER_SAVEREPLICA - Replicate Individual Internal Order (ALE)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACC_CO_DOCUMENT_FIND - Find CO Document for Manual Actual Postings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BUSPROCESSCOGRP_GETLIST - Index of business process groups</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_SAVE_REPLICA - Replicate individual business process (ALE)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPE_GETLIST - List of All Activity Types by Selection Requirements</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CONTROLLINGAREA_GETPERIOD - For controlling area: Posting date -&gt; Period, fiscal year</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_CHECKACTOUTPUT - Check Activity Output: Quantities/Prices</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_CHECKPRIMCOST - Check Primary Costs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CONTROLLINGAREA_GETDETAIL - Controlling area: Details</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDER_GETLIST - Provides lists of internal orders according to various criteria</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_KEYFIGURE_GETDETAIL - Detailed Information for a statistical key figure for a key date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_GETLIST - Determine list of business processes using selection criteria</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_CHECKMULTIPLE - Check Changes Made to One or More Cost Centers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_DELETEMULTIPLE - Delete one or more BP&apos;s</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEMENTGRP_CREATE - Create cost element group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_CHECKACTOUTPUT - Plan Data Transfer: Check Activity Planning</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_READPRIMCOST - Read Primary Costs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CO_DOC_GET_ACT_POSTINGS - Use Find Details: Do Not Use This Method Any Longer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COAREA_GET_RELATED_CCODES - Determine Company Codes Assigned to one Controlling Area</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CTR_GETACTIVITYTYPES - List of Cost Centers/Activity Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_READACTINPUT - Read Activity Input</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDRGRP_GETDETAIL - Read order group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTERGROUP_GETDETAIL - Read cost center group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_POSTACTINPUT - Planning Data Transfer: Post Activity Input</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BUSPROCESSCOGRP_GETDETAIL - Read business process group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_TEMPLATECO_CREATE - Create Template from given Data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_POSTACTINPUT - Post Activity Input</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BUSPROCESSCOGRP_CREATE - Create business process group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BUSPROCSTRUCTURECO_CREATE - Create fixed process structures for CO business processes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTTYPE_CREATEMULTIPLE - Create One or More Activity Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_POSTACTOUTPUT - Post Activity Output: Quantities/Prices</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CONTROLLINGAREA_GETLIST - Read cost accounting area</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_TEMPLATECO_GET_DETAIL - Get Details for given Template CO</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPE_GETPRICES - Activity Type Prices for Key Date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_SAVE_PRICES - ALE: replicate price from business processes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_POSTKEYFIGURE - Transfer of planning data: Post stat. key figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_GETDETAIL - Detail information for business process on key date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_ACTIVATE_MULTIPLE - Activate inactive BP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDRGRP_ADDNODE - Insert node into an order group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_CHANGEMULTIPLE - Change one or more BP&apos;s</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_READKEYFIGURE - Read Statistical Key Figure</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_CHECKKEYFIGURE - Plan Data Transfer: Check Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_GETSOURCEINFOS - Information about Settings for Plan Data Source</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTERGROUP_ADDNODE - Insert nodes in a cost center group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_CHECKKEYFIGURE - Check Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTTYPE_CHANGEMULTIPLE - Change One or More Activity Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDER_CREATE - Create Internal Order From Transferred Data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PDTRANSCO_POSTPRIMCOST - Plan data transfer: Check primary costs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_RESOURCECO_SAVE_REPLICA - Replicate Individual CO Resources (ALE)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_TEMPLATECO_DELETE - Delete given Template CO</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEM_GETDETAIL - Detailed Information on a Cost Element at a Key Date</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COAREA_GETPERIODLIMITS - For controlling area: First and last day of period</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_KEYFIGURE_GETLIST - Determine List of Statistical Key Figures Using Selection Criteria</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_INTERNALORDRGRP_GETLIST - Order Group Index</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_PROCESS_CREATEMULTIPLE - Create one or more business processes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEMENTGRP_GETLIST - Index of cost element groups</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_CTR_ACTIVATE_MULTIPLE - Activate Inactive Cost Centers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_KEYFIGURE_CHANGEMULTIPLE - Change One or More Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTACTPLN_POSTKEYFIGURE - Post Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_ACTIVITYTYPEGRP_GETDETAIL - Read activity type group</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_DELETEMULTIPLE - Delete One or More Cost Centers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTCENTER_CHANGEMULTIPLE - Change One or More Cost Centers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_COSTELEMENTGRP_ADDNODE - Add new nodes to a cost element group</name>
+      <type>2</type>
+    </item>
+  </attribute>
+</metadata>

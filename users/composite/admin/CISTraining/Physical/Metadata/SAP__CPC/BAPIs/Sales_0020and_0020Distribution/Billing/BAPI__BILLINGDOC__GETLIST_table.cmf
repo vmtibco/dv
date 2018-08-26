@@ -1,0 +1,267 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_BILLINGDOC_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Sales and Distribution/Billing/BAPI_BILLINGDOC_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1998-12-03
+
+You can use this list to deliver back a list of those billing documents that meet the required selection criteria. 
+As input parameters for this method, you are expected to enter a from-to selection of preceding documents from the input structure REF_DOC_RANGE. If an error scenario is detected during processing, this information is sent back via the output structure RETURN. If processing is successful, item information is sent back in the ouput table SUCCESS_ITEM and header information in the output table BILLINGDOC_DETAIL. Required entries     : 
+    REF_DOC_RANGE      From-to selection of preceding documents </annotation>
+  <columns>
+    <column name="Import REFDOCRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="Import REFDOCRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="Import REFDOCRANGE REF_DOC_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From-document number of preceding document</annotation>
+    </column>
+    <column name="Import REFDOCRANGE REF_DOC_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To-document number of preceding document</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL BILLINGDOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing document</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL BILL_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing Type</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL BILLCATEG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing category</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL SD_DOC_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD document category</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD Document Currency</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO Currency Code</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL ACCTSTATUS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status for transfer to accounting</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL NET_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net value</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL TAX_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax amount</annotation>
+    </column>
+    <column name="BILLINGDOCUMENTDETAIL CANCELLED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicates whether canceled</annotation>
+    </column>
+    <column name="SUCCESS REF_DOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document number of the reference document</annotation>
+    </column>
+    <column name="SUCCESS REF_DOC_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the reference item</annotation>
+    </column>
+    <column name="SUCCESS BILL_DOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing document</annotation>
+    </column>
+    <column name="SUCCESS BILL_DOC_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing document item</annotation>
+    </column>
+    <column name="SUCCESS NET_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net value</annotation>
+    </column>
+    <column name="SUCCESS TAX_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax amount</annotation>
+    </column>
+    <column name="SUCCESS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="SUCCESS CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="SUCCESS NET_VALUE_ITEM" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net value</annotation>
+    </column>
+    <column name="SUCCESS TAX_VALUE_ITEM" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax amount</annotation>
+    </column>
+    <column name="SUCCESS GRO_VALUE_ITEM" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Gross value</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

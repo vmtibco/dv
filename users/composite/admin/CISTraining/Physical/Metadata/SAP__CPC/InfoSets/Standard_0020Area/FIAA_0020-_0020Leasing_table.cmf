@@ -1,0 +1,492 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="FIAA - Leasing" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/FIAA - Leasing" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Asset Class" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLKL</annotation>
+    </column>
+    <column name="Main Asset Number" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLN1</annotation>
+    </column>
+    <column name="Asset Subnumber" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLN2</annotation>
+    </column>
+    <column name="Company Code" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-BUKRS</annotation>
+    </column>
+    <column name="Asset description" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-TXA50</annotation>
+    </column>
+    <column name="Asset description ANLAV-TXT50" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-TXT50</annotation>
+    </column>
+    <column name="BERDATE" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BERDATE</annotation>
+    </column>
+    <column name="License plate no. of vehichle" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLZ-KFZKZ</annotation>
+    </column>
+    <column name="Cost Center" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLZ-KOSTL</annotation>
+    </column>
+    <column name="Personnel Number" nullable="true">
+      <datatype name="N16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLZ-PERNR</annotation>
+    </column>
+    <column name="Leasing base value as new" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LBASW</annotation>
+    </column>
+    <column name="Lease start date" nullable="true">
+      <datatype name="D16" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEABG</annotation>
+    </column>
+    <column name="Leasing company" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEAFI</annotation>
+    </column>
+    <column name="Number of lease payments" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEANZ</annotation>
+    </column>
+    <column name="Leasing type" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEART</annotation>
+    </column>
+    <column name="Periodic lease payment paid to leasing company/lessor" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEGEB</annotation>
+    </column>
+    <column name="Length of lease in years" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEJAR</annotation>
+    </column>
+    <column name="Length of lease in periods" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LEPER</annotation>
+    </column>
+    <column name="Leasing data text" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LETXT</annotation>
+    </column>
+    <column name="Leased asset purchase price" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LKAUF</annotation>
+    </column>
+    <column name="Leasing agreement notice date" nullable="true">
+      <datatype name="D16" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LKDAT</annotation>
+    </column>
+    <column name="Total of posted leasing payments" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LKUZA</annotation>
+    </column>
+    <column name="Total leasing interest posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LKUZI</annotation>
+    </column>
+    <column name="Total of long-term leasing liability" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LLAVB</annotation>
+    </column>
+    <column name="Lease payment cycle" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LRYTH</annotation>
+    </column>
+    <column name="Posting date of the last lease payment" nullable="true">
+      <datatype name="D16" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LTZBW</annotation>
+    </column>
+    <column name="Leasing agreement date" nullable="true">
+      <datatype name="D16" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LVDAT</annotation>
+    </column>
+    <column name="Leasing agreement number" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LVTNR</annotation>
+    </column>
+    <column name="Leasing interest rate (capital lease)" nullable="true">
+      <datatype name="P4.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="4" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LZINS</annotation>
+    </column>
+    <column name="_Leasing start date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>LEABG</annotation>
+    </column>
+    <column name="_Leasing company" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>LEAFI</annotation>
+    </column>
+    <column name="_Asset Class" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00001</annotation>
+    </column>
+    <column name="_Main Asset Number" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00002</annotation>
+    </column>
+    <column name="_Asset Subnumber" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_Company Code" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00004</annotation>
+    </column>
+    <column name="_Asset description" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00005</annotation>
+    </column>
+    <column name="_Asset description SP$00006" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00006</annotation>
+    </column>
+    <column name="_Current Date of Application Se" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00007</annotation>
+    </column>
+    <column name="_License plate no. of vehichle" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00008</annotation>
+    </column>
+    <column name="_Cost Center" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00009</annotation>
+    </column>
+    <column name="_Personnel Number" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00010</annotation>
+    </column>
+    <column name="_Leasing base value as new" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00011</annotation>
+    </column>
+    <column name="_Number of lease payments" nullable="true">
+      <datatype name="P6" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="6" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00014</annotation>
+    </column>
+    <column name="_Leasing type" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00015</annotation>
+    </column>
+    <column name="_ANLAV-LEGEB" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00016</annotation>
+    </column>
+    <column name="_Length of lease in years" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00017</annotation>
+    </column>
+    <column name="_Length of lease in periods" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00018</annotation>
+    </column>
+    <column name="_Leasing data text" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00019</annotation>
+    </column>
+    <column name="_Leased asset purchase price" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00020</annotation>
+    </column>
+    <column name="_Leasing agreement notice date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00021</annotation>
+    </column>
+    <column name="_Total of posted leasing paymen" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00022</annotation>
+    </column>
+    <column name="_Total leasing interest posted" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00023</annotation>
+    </column>
+    <column name="_Total of long-term leasing lia" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00024</annotation>
+    </column>
+    <column name="_Lease payment cycle" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00025</annotation>
+    </column>
+    <column name="_Posting date of the last lease" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00026</annotation>
+    </column>
+    <column name="_Leasing agreement date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00027</annotation>
+    </column>
+    <column name="_Leasing agreement number" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00028</annotation>
+    </column>
+    <column name="_Leasing interest rate (capital" nullable="true">
+      <datatype name="P8" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00029</annotation>
+    </column>
+    <column name="_Report date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BERDATUM</annotation>
+    </column>
+    <column name="_Worklist" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PA_AI_ID</annotation>
+    </column>
+    <column name="_Sort version" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SRTVR</annotation>
+    </column>
+    <column name="_Translation method" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>UMVAR</annotation>
+    </column>
+    <column name="_Asset super number" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_ANLUE</annotation>
+    </column>
+    <column name="_Business area" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_GSBER</annotation>
+    </column>
+    <column name="_Cost center" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_KOSTL</annotation>
+    </column>
+    <column name="_Location" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_STORT</annotation>
+    </column>
+    <column name="_Plant" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_WERKS</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421886029702</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421886029702</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421886029702</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">SO_WERKS</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001084</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

@@ -1,0 +1,184 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="ItemBids" path="/users/composite/admin/CISTraining/Business/Logical/ItemBids" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="item_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="seller_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="category_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="title" nullable="true">
+      <datatype type="STRING" maxLength="90"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="starting_bid" nullable="true">
+      <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="entry_date" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="expiration_date" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="shipping_amount" nullable="true">
+      <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="picture" nullable="true">
+      <datatype type="BLOB" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ext_description" nullable="true">
+      <datatype type="CLOB" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="bid_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="bidder_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="amount" nullable="true">
+      <datatype type="DECIMAL" maxDigits="14" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="time" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/pBids" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="parItemID" direction="IN">
+        <datatype type="INTEGER"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="bid_id">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="item_id">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="bidder_id">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="amount">
+            <datatype type="DECIMAL" maxDigits="14" minFractionalDigits="2" maxFractionalDigits="2"/>
+          </element>
+          <element name="time">
+            <datatype type="DATETIME"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Northbay/tutorial/item" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="item_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="seller_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="category_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="title">
+        <datatype type="STRING" maxLength="90"/>
+      </element>
+      <element name="starting_bid">
+        <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="entry_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="expiration_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="shipping_amount">
+        <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="picture">
+        <datatype type="BLOB" maxLength="2147483647"/>
+      </element>
+      <element name="ext_description">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    item.item_id, 
+    item.seller_id, 
+    item.category_id, 
+    item.title, 
+    item.starting_bid, 
+    item.entry_date, 
+    item.expiration_date, 
+    item.shipping_amount, 
+    item.picture, 
+    item.ext_description, 
+    pBids.bid_id, 
+    pBids.bidder_id, 
+    pBids.amount, 
+    pBids.&quot;time&quot;
+FROM      
+    /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Northbay/tutorial/item item INNER PROCEDURE JOIN 
+        /users/composite/admin/CISTraining/Business/Logical/pBids(item.item_id) pBids
+    ON item.item_id = pBids.item_id</attribute>
+  <attribute name="creationDate" type="LONG">1464636359401</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464639394110</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464636359401</attribute>
+</metadata>

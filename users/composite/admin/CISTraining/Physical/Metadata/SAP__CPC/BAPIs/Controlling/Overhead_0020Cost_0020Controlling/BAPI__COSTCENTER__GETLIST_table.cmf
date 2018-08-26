@@ -1,0 +1,267 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_COSTCENTER_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_COSTCENTER_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-10-01
+
+Uses selection criteria for a key date to provide a list of all cost centers that meet this criteria. The list contains controlling area, cost center, and cost center name. Caution: This method is out-of-date. 
+The GetDetail method is obsolete after Release 4.6. The functionality is borrowed from the GetDetail1 method. 
+If you have already used this method, you should change over to the new method. 
+Otherwise, use the new GetDetail1 method. 
+You want a list of all cost centers in controlling area 0001 and company code 0002 for the current date. 
+Function module call: 
+  DATA: I_COSTCENTER_LIST LIKE BAPI0012_2 OCCURS 0 WITH HEADER LINE. 
+        I_RETURN          LIKE BAPIRETURN. 
+
+  CALL FUNCTION &apos;BAPI_COSTCENTER_GETLIST&apos; 
+    EXPORTING CONTROLLINGAREA = &quot;0001&quot; 
+              COMPANYCODE     = &quot;0002&quot; 
+              DATE            = SY-DATUM 
+    TABLES                    = I_COSTCENTER_LIST 
+    IMPORTING RETURN          = I_RETURN. 
+
+You require system authorization for object &lt;DS:UO.K_CSKS&gt;K_CSKS&lt;/&gt;. 
+The selection criteria can be transferred as: 
+Individual values, for example parameter COMPANYCODE is filled 
+Intervals, for example parameters COMPANYCODE and COMPANYCODE_TO are filled 
+Upper limits, for example parameter COMPANYCODE_TO (the system selects all company codes &lt;= COMPANY_CODE_TO) 
+As an alternative to intervals, you can also select using &lt;DS:GLOS.cost_center_group&gt;Cost Center Group&lt;/&gt; (interface parameter COSTCENTERGROUP). If you have specified intervals and cost center groups, the system evaluates only using cost center groups. 
+If you do not enter any restricting criteria for the controlling area and/or cost center, the system issues a list of all cost centers. 
+Note that a selection can only be successful if it does not contain any contradictions. For example, in a controlling area there should not be any cost centers from company codes that are not assigned to the controlling area. 
+If no cost centers could be found by the system for the selection criteria entered, you can get information about the errors that have occurred by choosing the RETURN parameter. Export RETURN
+Return structure for errors and system messages. 
+
+Import COMPANYCODE
+Parameter holding the value of the company code or the lowest value of the company code interval in which the SAP R/3 System searches for cost centers. 
+For more information on company codes, see the corresponding data element documentation: &lt;DS:DE.BUKRS&gt;Company Code&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4) 
+No default. Import COMPANYCODE_TO
+Parameter holding the highest value of the company code interval in which the SAP R/3 System searches for cost centers. 
+For more information on company codes, see the corresponding data element documentation: &lt;DS:DE.BUKRS&gt;Company Code&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4) 
+No default. Import CONTROLLINGAREA
+Parameter holding the value of the controlling area or the lowest value of the controlling area interval in which the SAP R/3 System searches for cost centers. 
+For more information on the controlling area, see the corresponding data element documentation: &lt;DS:DE.KOKRS&gt;Controlling Area&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4) 
+No default. Import CONTROLLINGAREA_TO
+Parameter holding the highest value of the controlling area interval in which the SAP R/3 System searches for cost centers. 
+For more information on the controlling area, see the corresponding data element documentation: &lt;DS:DE.KOKRS&gt;Controlling Area&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4) 
+No default. Import COSTCENTER
+Parameter holding the value of the cost center or the lowest value of the cost center interval. 
+For more information on cost centers, see the corresponding data element documentation: &lt;DS:DE.KOSTL&gt;Cost Center&lt;/&gt;. 
+Dictionary data type: CHAR (field length 10) 
+No default. Import COSTCENTERGROUP
+As an alternative to intervals (From-to selection) you can also select a &lt;DS:GLOS.cost_center_group&gt;cost center group&lt;/&gt;. Import COSTCENTER_TO
+Parameter holding the highest value of the cost center interval. 
+For more information on cost centers, see the corresponding data element documentation: &lt;DS:DE.KOSTL&gt;Cost Center&lt;/&gt;. 
+Dictionary data type: CHAR (field length 10) 
+No default. Import DATE
+Dates in which the SAP R/3 System searches for cost centers. 
+For more information on the date, see the corresponding data element documentation: &lt;DS:DE.DATAB&gt;From Date&lt;/&gt; and &lt;DS:DE.DATBI&gt;To Date&lt;/&gt;. 
+Dictionary data type: DATS (field length 8) 
+Defaulted with the current system date (SY-DATUM). Import DATE_TO
+&quot;To date&quot; for the selection. 
+
+Import PERSON_IN_CHARGE
+Parameter holding the names of cost center managers or the lower level of the cost center manager interval in which the SAP R/3 System searches for cost centers. 
+Dictionary data type: CHAR (field length 20) 
+No default. Import PERSON_IN_CHARGE_TO
+Parameter holding the higher level of the cost center manager interval in which the SAP R/3 System searches for cost centers. 
+Dictionary data type: CHAR (field length 20) 
+No default. Import PERSON_IN_CHARGE_USER_FROM
+User Responsible for Cost Center / From-Value for the Selection. 
+
+Import PERSON_IN_CHARGE_USER_TO
+User Responsible for Cost Center / To-Value for the Selection. 
+
+COSTCENTER_LIST
+Return table holding the keys (controlling area and cost center ID) of all cost centers found, along with their names in the logon language SY-LANGU. 
+For more information on fields, see the corresponding data element documentation: &lt;DS:DE.KOSTL&gt;Cost Center&lt;/&gt; and &lt;DS:DE.KOKRS&gt;Controlling Area&lt;/&gt;. </annotation>
+  <columns>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code (From Value)</annotation>
+    </column>
+    <column name="Import COMPANYCODE_TO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code (To Value)</annotation>
+    </column>
+    <column name="Import CONTROLLINGAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (From Value)</annotation>
+    </column>
+    <column name="Import CONTROLLINGAREA_TO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (To Value)</annotation>
+    </column>
+    <column name="Import COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center (From Value)</annotation>
+    </column>
+    <column name="Import COSTCENTERGROUP" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center group</annotation>
+    </column>
+    <column name="Import COSTCENTER_TO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center (To Value)</annotation>
+    </column>
+    <column name="Import DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection Date: Key Date</annotation>
+    </column>
+    <column name="Import DATE_TO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Import PERSON_IN_CHARGE" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible (From Value)</annotation>
+    </column>
+    <column name="Import PERSON_IN_CHARGE_TO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible (To Value)</annotation>
+    </column>
+    <column name="Import PERSON_IN_CHARGE_USER_FROM" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Responsible (From-Value)</annotation>
+    </column>
+    <column name="Import PERSON_IN_CHARGE_USER_TO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Responsible (To-Value)</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="COSTCENTER_LIST CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="COSTCENTER_LIST COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="COSTCENTER_LIST COCNTR_TXT" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General name</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

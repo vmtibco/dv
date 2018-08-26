@@ -1,0 +1,344 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="UserAddress" path="/users/composite/admin/CISTraining/Business/Logical/UserAddress" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="user_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="first_name" nullable="true">
+      <datatype type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="middle_initial" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="last_name" nullable="true">
+      <datatype type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="non_english_name" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="email" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="opt_in" nullable="true">
+      <datatype type="INTEGER" minValue="-32768" maxValue="32767"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="phone" nullable="true">
+      <datatype type="STRING" maxLength="13"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="birthday" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="gender" nullable="true">
+      <datatype type="STRING" minLength="1" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="username" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="password" nullable="true">
+      <datatype type="STRING" minLength="9" maxLength="9"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="create_date" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="primary_address_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="address_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="street_address" nullable="true">
+      <datatype type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="city" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="state" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="zip_code" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="country" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/Address/Address" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="street_address">
+        <datatype type="STRING" maxLength="80"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="state">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="zip_code">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="country">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/User/User" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="first_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="middle_initial">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="last_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="non_english_name">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="email">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="opt_in">
+        <datatype type="INTEGER" minValue="-32768" maxValue="32767"/>
+      </element>
+      <element name="phone">
+        <datatype type="STRING" maxLength="13"/>
+      </element>
+      <element name="birthday">
+        <datatype type="DATE"/>
+      </element>
+      <element name="gender">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="username">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="password">
+        <datatype type="STRING" minLength="9" maxLength="9"/>
+      </element>
+      <element name="create_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="primary_address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="loc">
+        <datatype type="STRING" minLength="2" maxLength="2" trailingSpaces="false"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    TBL_User.user_id, 
+    TBL_User.first_name, 
+    TBL_User.middle_initial, 
+    TBL_User.last_name, 
+    TBL_User.non_english_name, 
+    TBL_User.email, 
+    TBL_User.opt_in, 
+    TBL_User.phone, 
+    TBL_User.birthday, 
+    TBL_User.gender, 
+    TBL_User.username, 
+    TBL_User.password, 
+    TBL_User.create_date, 
+    TBL_User.primary_address_id, 
+    Address.address_id, 
+    Address.street_address, 
+    Address.city, 
+    Address.state, 
+    Address.zip_code, 
+    Address.country
+FROM      
+    /users/composite/admin/CISTraining/Business/Logical/&quot;User&quot;/&quot;User&quot; TBL_User INNER JOIN 
+        /users/composite/admin/CISTraining/Business/Logical/Address/Address Address
+    ON TBL_User.user_id = Address.user_id AND 
+        TBL_User.loc = Address.state</attribute>
+  <attribute name="creationDate" type="LONG">1464635668414</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1465602751056</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAMQUQYBAAQAVQBzAGUAcgYCAAgAVABCAEwAXwBVAHMAZQByAwv/////AwoAO/iDAwz/
+////CxEACAAFAHUAcwBlAHIAcwAJAGMAbwBtAHAAbwBzAGkAdABlAAUAYQBkAG0AaQBuAAsAQwBJ
+AFMAVAByAGEAaQBuAGkAbgBnAAgAQgB1AHMAaQBuAGUAcwBzAAcATABvAGcAaQBjAGEAbAAEAFUA
+cwBlAHIABABVAHMAZQBy//8QUQYBAAcAQQBkAGQAcgBlAHMAcwYCAAcAQQBkAGQAcgBlAHMAcwML
+/////wMKADv4XAMM/////wsRAAgABQB1AHMAZQByAHMACQBjAG8AbQBwAG8AcwBpAHQAZQAFAGEA
+ZABtAGkAbgALAEMASQBTAFQAcgBhAGkAbgBpAG4AZwAIAEIAdQBzAGkAbgBlAHMAcwAHAEwAbwBn
+AGkAYwBhAGwABwBBAGQAZAByAGUAcwBzAAcAQQBkAGQAcgBlAHMAc///EFMGCQAFAEkATgBOAEUA
+UgMNAAAAAAMOAAAAAQgPEGEBBQABBgAIARBiBgcAAQA9AQUACAMQQQYBAAcAdQBzAGUAcgBfAGkA
+ZAYCAAAGA///BgT//wMK/////wgMEBkDEgAAAAEEB/////+AAAAABAYAAAAAf///////AwsAAAAA
+//8IBBBBBgEABwB1AHMAZQByAF8AaQBkBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAAAQQH////
+/4AAAAAEBgAAAAB///////8DCwAAAAH/////CAIQYgYHAAEAPQEFAAgDEEEGAQADAGwAbwBjBgIA
+AAYD//8GBP//Awr/////AwsAAAAA//8IBBBBBgEABQBzAHQAYQB0AGUGAgAABgP//wYE//8DCv//
+//8DCwAAAAH//////////wMFAAAAAQgCEDEGAf//AQIBAQYAAQMAAQQAAQUAAwcAAAAABwkAAAAB
+AAAAAgkKAAAAFBBBBgEABwB1AHMAZQByAF8AaQBkBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAA
+AQQH/////4AAAAAEBgAAAAB///////8DCwAAAAD//xBBBgEACgBmAGkAcgBzAHQAXwBuAGEAbQBl
+BgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAAA8BEwH//wMLAAAAAP//EEEGAQAO
+AG0AaQBkAGQAbABlAF8AaQBuAGkAdABpAGEAbAYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEE
+BAAAAAAAAAABARMB//8DCwAAAAD//xBBBgEACQBsAGEAcwB0AF8AbgBhAG0AZQYCAAAGA///BgT/
+/wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAAPARMB//8DCwAAAAD//xBBBgEAEABuAG8AbgBfAGUA
+bgBnAGwAaQBzAGgAXwBuAGEAbQBlBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAA
+ADIBEwH//wMLAAAAAP//EEEGAQAFAGUAbQBhAGkAbAYCAAAGA///BgT//wMK/////wgMEBsDEgAA
+AAEEBAAAAAAAAAAyARMB//8DCwAAAAD//xBBBgEABgBvAHAAdABfAGkAbgYCAAAGA///BgT//wMK
+/////wgMEBkDEgAAAAEEB////////4AABAYAAAAAAAB/////AwsAAAAA//8QQQYBAAUAcABoAG8A
+bgBlBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAAA0BEwH//wMLAAAAAP//EEEG
+AQAIAGIAaQByAHQAaABkAGEAeQYCAAAGA///BgT//wMK/////wgMEBUDEgAAAAH//wMLAAAAAP//
+EEEGAQAGAGcAZQBuAGQAZQByBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQFAAAAAAAAAAEE
+BAAAAAAAAAABARMB//8DCwAAAAD//xBBBgEACAB1AHMAZQByAG4AYQBtAGUGAgAABgP//wYE//8D
+Cv////8IDBAbAxIAAAABBAQAAAAAAAAAMgETAf//AwsAAAAA//8QQQYBAAgAcABhAHMAcwB3AG8A
+cgBkBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQFAAAAAAAAAAkEBAAAAAAAAAAJARMB//8D
+CwAAAAD//xBBBgEACwBjAHIAZQBhAHQAZQBfAGQAYQB0AGUGAgAABgP//wYE//8DCv////8IDBAW
+AxIAAAAB//8DCwAAAAD//xBBBgEAEgBwAHIAaQBtAGEAcgB5AF8AYQBkAGQAcgBlAHMAcwBfAGkA
+ZAYCAAAGA///BgT//wMK/////wgMEBkDEgAAAAEEB/////+AAAAABAYAAAAAf///////AwsAAAAA
+//8QQQYBAAoAYQBkAGQAcgBlAHMAcwBfAGkAZAYCAAAGA///BgT//wMK/////wgMEBkDEgAAAAEE
+B/////+AAAAABAYAAAAAf///////AwsAAAAB//8QQQYBAA4AcwB0AHIAZQBlAHQAXwBhAGQAZABy
+AGUAcwBzBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAAFABEwH//wMLAAAAAf//
+EEEGAQAEAGMAaQB0AHkGAgAABgP//wYE//8DCv////8IDBAbAxIAAAABBAQAAAAAAAAAHgETAf//
+AwsAAAAB//8QQQYBAAUAcwB0AGEAdABlBgIAAAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAA
+AAAAAAIBEwH//wMLAAAAAf//EEEGAQAIAHoAaQBwAF8AYwBvAGQAZQYCAAAGA///BgT//wMK////
+/wgMEBsDEgAAAAEEBAAAAAAAAAAKARMB//8DCwAAAAH//xBBBgEABwBjAG8AdQBuAHQAcgB5BgIA
+AAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAAAIBEwH//wMLAAAAAf////8JBgAAAAMQ
+ggMKAAAAHgMLAAAAHgMMAAAAyAMNAAABO///EIIDCgAAARgDCwAAAB4DDAAAAMgDDQAAAMj//xCC
+Awr/////Awv/////Awz/////Aw3///////8IAxBxAwEAAAALAwIAAAAyCQMAAAImEHQDBgAAAAD/
+/xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdAMGAAAAAf//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAC//8QcgYE/////xBzAwUAAAAA
+//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAA
+AAP//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdAMGAAAABP//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAF//8QcgYE/////xBzAwUA
+AAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQD
+BgAAAAb//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdAMGAAAAB///EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAI//8QcgYE/////xBz
+AwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHQDBgAAAAn//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdAMGAAAACv//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAL//8QcgYE////
+/xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHQDBgAAAAz//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAADf//EHIGBP////8QcwMFAAAAAP//EHUBBwH/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAO//8QcgYE
+/////xBzAwUAAAAB//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHQDBgAAAA///xByBgT/////EHMDBQAAAAH//xB1AQcB//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAAEP//EHIGBP////8QcwMFAAAAAf//EHUB
+BwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAR//8Q
+cgYE/////xBzAwUAAAAB//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHQDBgAAABL//xByBgT/////EHMDBQAAAAH//xB1AQcB//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAAE///EHIGBP////8QcwMFAAAAAf//
+EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3
+Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8Q
+dQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/
+////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8Q
+dP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Q
+dv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb///////8=</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464635668414</attribute>
+</metadata>

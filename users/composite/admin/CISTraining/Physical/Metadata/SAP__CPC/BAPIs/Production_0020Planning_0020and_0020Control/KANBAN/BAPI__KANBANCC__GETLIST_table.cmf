@@ -1,0 +1,499 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_KANBANCC_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/KANBAN/BAPI_KANBANCC_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-03-01
+Released on: 2009-10-26
+
+This method gives a list of control cycles for one or more selection criteria. Make sure that the individual selection parameters are linked with a logical AND in the data selection. 
+
+
+Export RETURN
+Error message, if no data records can be read or transmitted to the initiator. 
+Possible error messages are: 
+Value &lt;(&gt;&amp;&lt;)&gt; in field SIGN can only be I, E Value &lt;(&gt;&amp;&lt;)&gt; in field OPTION is not valid (EQ,NE,GT,GE,LE,LT,BT,NB,CP,NP) No authorization to display KANBAN data in plant &lt;(&gt;&amp;&lt;)&gt; 
+Import MAXROWS
+To prevent large amounts of data unintentionally being read and transmitted to the initiator when using this method, in this parameter a maximum number of data records is established, which should be read and transmitted to the initiator. 
+500 data records have been preset. ISSUINGPLANTRANGE
+The procurement of a material for a control cycle can take place from another plant. In this case a supplying plant is created in the control cycle. With this selection parameter the control cycles that have been read can be restricted to one or more supplying plants. This parameter must remain initial, if control cycles are to be read which are delivered from the same plant as that created in the control cyle. 
+ISSUINGSTGE_LOCRANGE
+The procurement of a material for a control cycle can take place by stock transfer. In this case a storage location is set in the control cycle. With this selection parameter the control cycles read can be limited to one or more storage locations. 
+
+KANBANCONTROLCYCLELIST
+In this list the control cycles read are transmitted to the initiator. 
+
+KANBANCONTROLCYCLERANGE
+With this selection parameter, the quantity of control cycles read can be limited directly using the control cycle number. 
+
+LIFECYCLERANGE
+You can select control cycles according to the lifecycle status. For this purpose, the lifecycle for control cycles must be activated in Customizing. Information on the meaning of individual parameter fields is available in the relevant data element documentation in the ABAP Dictionary. 
+
+
+MATERIALRANGE
+Each control cycle is created for a specific material. With this selection parameter the quantity of control cycles read can be limited using the material number. 
+
+PLANTRANGE
+Each control cycle is created for a specific plant. With this selection parameter the quantity of control cycles read can be limited using the plant number. 
+
+PURCH_ORGRANGE
+The procurement of a material for a control cycle can take place with external procurement. In this case, a vendor and the purchasing organization at which the vendor is created, are set in the control cycle. With this selection parameter the control cycles read are limited to one or more purchasing organizations. RESP_SUPPLYSOURCERANGE
+The procurement of material for a control cycle can take place with in-house production. In this case a person responsible for the supply source is set in the control cycle. With this selection parameter the control cycles read can be limited to one or more persons responsible for the supply source. 
+
+SUPPLYAREARANGE
+Each control cycle is created for a specific supply area. With this selection parameter the quantity of control cycles read can be limited by the number of supply areas. 
+
+VENDORRANGE
+The procurement of a material for a control cycle can take place by external procurement. In this case a vendor and the purchasing organization at which this vendor is created are set in the control cycle. With this selection parameter the control cycles read can be limited to one or more vendors. 
+
+</annotation>
+  <columns>
+    <column name="Import MAXROWS" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Number of Data Records Read</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="ISSUINGPLANTRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="ISSUINGPLANTRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="ISSUINGPLANTRANGE ISSUINGPLANT_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing Plant in Kanban Processing</annotation>
+    </column>
+    <column name="ISSUINGPLANTRANGE ISSUINGPLANT_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing Plant in Kanban Processing</annotation>
+    </column>
+    <column name="ISSUINGSTGE_LOCRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="ISSUINGSTGE_LOCRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="ISSUINGSTGE_LOCRANGE STGE_LOC_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="ISSUINGSTGE_LOCRANGE STGE_LOC_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST KANBANCONTROLCYCLE" nullable="false">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control cycle number</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST SUPPLYAREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supply Area</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLELIST MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLERANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLERANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLERANGE CTRLCYC_NO_LOW" nullable="false">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control cycle number</annotation>
+    </column>
+    <column name="KANBANCONTROLCYCLERANGE CTRLCYC_NO_HIGH" nullable="false">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control cycle number</annotation>
+    </column>
+    <column name="LIFECYCLERANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="LIFECYCLERANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="LIFECYCLERANGE LCM_STATUS_LOW" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lifecycle Status of Control Cycle</annotation>
+    </column>
+    <column name="LIFECYCLERANGE LCM_STATUS_HIGH" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lifecycle Status of Control Cycle</annotation>
+    </column>
+    <column name="MATERIALRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="MATERIALRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="MATERIALRANGE MATNR_LOW" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From material number</annotation>
+    </column>
+    <column name="MATERIALRANGE MATNR_HIGH" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To material number</annotation>
+    </column>
+    <column name="PLANTRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="PLANTRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="PLANTRANGE PLANT_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From plant</annotation>
+    </column>
+    <column name="PLANTRANGE PLANT_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To plant</annotation>
+    </column>
+    <column name="PURCH_ORGRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="PURCH_ORGRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="PURCH_ORGRANGE PURCH_ORG_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Organization</annotation>
+    </column>
+    <column name="PURCH_ORGRANGE PURCH_ORG_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Organization</annotation>
+    </column>
+    <column name="RESP_SUPPLYSOURCERANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="RESP_SUPPLYSOURCERANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="RESP_SUPPLYSOURCERANGE RESP_SUPPLY_SOURCE_LOW" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible for Supply Source</annotation>
+    </column>
+    <column name="RESP_SUPPLYSOURCERANGE RESP_SUPPLY_SOURCE_HIGH" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible for Supply Source</annotation>
+    </column>
+    <column name="SUPPLYAREARANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SUPPLYAREARANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SUPPLYAREARANGE SUPPLYAREA_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supply Area</annotation>
+    </column>
+    <column name="SUPPLYAREARANGE SUPPLYAREA_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supply Area</annotation>
+    </column>
+    <column name="VENDORRANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="VENDORRANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="VENDORRANGE VENDOR_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor Account Number</annotation>
+    </column>
+    <column name="VENDORRANGE VENDOR_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor Account Number</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421884107468</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421884107468</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421884107468</attribute>
+</metadata>

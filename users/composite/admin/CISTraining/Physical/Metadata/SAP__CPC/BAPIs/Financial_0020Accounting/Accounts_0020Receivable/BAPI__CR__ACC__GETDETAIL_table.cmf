@@ -1,0 +1,221 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CR_ACC_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Accounts Receivable/BAPI_CR_ACC_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2008-02-06
+Released on: 1997-09-17
+
+This method enables data from the master record of the vendor account to be determined in a credit control area. If the accounting system creates A/R summary data in response to this method, you can use the parameters 
+ALLOWED_AGING_IN_DAYS 
+ALLOWED_AGING_IN_HOURS 
+to specify how old this A/R summary data is allowed to be. 
+If this A/R summary data is then too old, it is then read from the database. 
+
+
+</annotation>
+  <columns>
+    <column name="Import ALLOWED_AGING_IN_DAYS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Permitted Ageing in Days</annotation>
+    </column>
+    <column name="Import ALLOWED_AGING_IN_HOURS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Permitted Ageing in Hours</annotation>
+    </column>
+    <column name="Import CREDITCONTROLAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Credit Control Area</annotation>
+    </column>
+    <column name="Import CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Credit Account</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL CRED_LIMIT" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Credit limit in credit control area currency</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL CRED_ACCNT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer&apos;s account number with credit limit reference</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL RCVBL_VALS" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Receivables (for Credit Limit Check)</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL CRED_LIAB" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Relevant Credit Exposure for Credit Limit Check</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency in which the credit limit is to be managed</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL RISK_CATEG" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Credit management: Risk category</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL BLOCKED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Blocked by credit management ?</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL NXT_REVIEW" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Next internal review</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL SECURED_ITEMS" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of Secured Receivables</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL DATA_TOO_OLD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Data is too old</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL DATA_NOT_FOUND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Data cannot be determined</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL AGING_IN_DAYS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ageing Degree in Days</annotation>
+    </column>
+    <column name="Export CREDIT_ACCOUNT_DETAIL AGING_IN_HOURS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ageing Degree in Hours</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883208150</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883208150</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883208150</attribute>
+</metadata>

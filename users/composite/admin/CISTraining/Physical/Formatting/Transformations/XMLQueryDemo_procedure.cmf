@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="XMLQueryDemo" path="/users/composite/admin/CISTraining/Physical/Formatting/Transformations/XMLQueryDemo" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="xmldoc" direction="OUT" nullable="true">
+      <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+        <schemaDatatype>
+          <datatype name="XML" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+      <attribute name="Customized" type="STRING">datatype.changed</attribute>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">PROCEDURE XMLQueryDemo(OUT xmldoc XML)
+BEGIN
+  SET xmldoc =
+  XMLQuery(&apos;declare variable $c external ; for $i in $c
+	where $i /PDName = &quot;Daniel Morgan&quot;
+	order by $i/PDName
+	return $i/PDName&apos; passing XMLELEMENT(name PDRecord, XMLELEMENT(name PDName, &apos;Daniel Morgan&apos;)) as c );
+
+END</attribute>
+  <attribute name="creationDate" type="LONG">1465420414042</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1465420463825</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="p:0:Customized" type="STRING">datatype.changed</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1465420414042</attribute>
+</metadata>

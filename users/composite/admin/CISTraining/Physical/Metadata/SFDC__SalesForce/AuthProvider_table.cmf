@@ -1,0 +1,128 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="AuthProvider" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/AuthProvider" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ProviderType" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="FriendlyName" nullable="false">
+      <datatype name="string" extendedName="string(32)" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DeveloperName" nullable="false">
+      <datatype name="string" extendedName="string(32)" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="RegistrationHandlerId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ExecutionUserId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ConsumerKey" nullable="true">
+      <datatype name="string" extendedName="string(256)" subType="DATASOURCE_TYPE" type="STRING" maxLength="256"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ConsumerSecret" nullable="true">
+      <datatype name="string" extendedName="string(100)" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ErrorUrl" nullable="true">
+      <datatype name="string" extendedName="string(500)" subType="DATASOURCE_TYPE" type="STRING" maxLength="500"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AuthorizeUrl" nullable="true">
+      <datatype name="url" extendedName="url(1024)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TokenUrl" nullable="true">
+      <datatype name="url" extendedName="url(1024)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserInfoUrl" nullable="true">
+      <datatype name="url" extendedName="url(1024)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DefaultScopes" nullable="true">
+      <datatype name="string" extendedName="string(256)" subType="DATASOURCE_TYPE" type="STRING" maxLength="256"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="AuthProvider-FriendlyName-uk" type="HASHED" unique="true">
+      <indexColumn name="FriendlyName" sortOrder="ASCENDING"/>
+    </index>
+    <index name="AuthProvider-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1432306154637</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154637</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET">
+    <item type="STRING">ConsumerSecret</item>
+  </attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">AuthorizeUrl</item>
+    <item type="STRING">ConsumerKey</item>
+    <item type="STRING">ConsumerSecret</item>
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">DefaultScopes</item>
+    <item type="STRING">ErrorUrl</item>
+    <item type="STRING">TokenUrl</item>
+    <item type="STRING">UserInfoUrl</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET">
+    <item type="STRING">ConsumerSecret</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154637</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

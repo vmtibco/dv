@@ -1,0 +1,172 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="PricebookEntry" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/PricebookEntry" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <annotation>Child Relationships
+	OpportunityLineItem
+	Attributes:
+		Relationship Name : OpportunityLineItems
+		Related Field     : PricebookEntryId
+
+	OrderItem
+	Attributes:
+		Relationship Name : OrderItems
+		Related Field     : PricebookEntryId
+</annotation>
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Name" nullable="true">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Pricebook2Id" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Product2Id" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UnitPrice" nullable="false">
+      <datatype name="currency" extendedName="currency(18.2)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="18" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="IsActive" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UseStandardPrice" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ProductCode" nullable="true">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="IsDeleted" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PricebookEntry-Name-uk" type="HASHED" unique="true">
+      <indexColumn name="Name" sortOrder="ASCENDING"/>
+    </index>
+    <index name="PricebookEntry-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="Pricebook2Id_Pricebook2" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Pricebook2">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="Pricebook2Id"/>
+    </foreignKey>
+    <foreignKey name="Product2Id_Product2" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Product2">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="Product2Id"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Pricebook2" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Product2" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="foreignKeyRelationship" type="MAP">
+    <item>
+      <key type="STRING">Product2Id_Product2</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Product2</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">PricebookEntries</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">Pricebook2Id_Pricebook2</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Pricebook2</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">PricebookEntries</value>
+        </item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET"></attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">LastModifiedDate</item>
+    <item type="STRING">SystemModstamp</item>
+    <item type="STRING">UnitPrice</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET"></attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

@@ -1,0 +1,295 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_VENDOR_FIND" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Accounts Payable/BAPI_VENDOR_FIND" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-05-26
+
+This method searches for all vendors, that store a transferred content in a transferred table field. The search terms are transferred in structure SELOPT_TAB. The vendors that are found are collected in the table RESULT_TAB. 
+The probable blocks or deletion flags will be marked for the vendors found. 
+The number of hits can be restricted by the parameter MAX_CNT. Value &quot;0&quot; means that there is no restriction on the search result. 
+The standard search is for the exact field content (Field SELOPT_TAB-FIELDVALUE). If the parameter PL_HOLD is selected, the use of wild cards is allowed. &quot;*&quot; is for any character string and &quot;+&quot; for any character. 
+The search terms are processed individually and not joined to other search terms, that is, only one field from the vendor master table is examined at a time. 
+The method is case sensitive with the exception of the match code fields that are maintained in the table TFMC. Vendors should be found that have &quot;23&quot; in the field KNB1-PERNR (personnel number) for the company code 0001. All the vendors that are found should be displayed. The search should be carried out exactly, that is, without match codes. The required entries: 
+Table SELOPT_TAB   Field              Content 
+----------------------------------------- 
+  COMP_CODE          0001 
+  TABNAME            LFB1 
+  FIELDNAME          PERNR 
+  FIELDVALUE         23 
+IMPORT Parameter 
+  MAX_CNT            0 
+  PL_HOLD            SPACE The transfer of import parameter MAX_CNT and PL_HOLD is optional, as 
+the values named above correspond to the standard settings. Vendors should be found that have that &quot;SAP&quot; at the beginning of field KNB5-KNRMA (account number of the dunning recipient). The search should be cross-company code and the number of hits should be restricted to 100. The use of wild cards is allowed. The required entries: 
+Table SELOPT_TAB   Field              Content 
+----------------------------------------- 
+  COMP_CODE          SPACE 
+  TABNAME            LFB5 
+  FIELDNAME          LFRMA 
+  FIELDVALUE         SAP* 
+IMPORT Parameter 
+  MAX_CNT            100 
+  PL_HOLD            X The import parameters MAX_CNT and PL_HOLD have to be transferred, as the values named above do not correspond to the standard settings. 
+
+
+Import MAX_CNT
+Maximum number of records found 
+Maximum number of matches 
+</annotation>
+  <columns>
+    <column name="Import MAX_CNT" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Number of Records Found</annotation>
+    </column>
+    <column name="Import PL_HOLD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Meta Character Permitted?</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RESULT_TAB COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="RESULT_TAB TABNAME" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Table Name</annotation>
+    </column>
+    <column name="RESULT_TAB FIELDNAME" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field Name</annotation>
+    </column>
+    <column name="RESULT_TAB FIELDVALUE" nullable="false">
+      <datatype name="C132" subType="DATASOURCE_TYPE" type="STRING" maxLength="132"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field value</annotation>
+    </column>
+    <column name="RESULT_TAB VENDOR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Vendor or Creditor</annotation>
+    </column>
+    <column name="RESULT_TAB PSTG_BLK_G" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central posting block</annotation>
+    </column>
+    <column name="RESULT_TAB PSTG_BLK_C" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting block for company code</annotation>
+    </column>
+    <column name="RESULT_TAB DEL_FLAG_G" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central Deletion Flag for Master Record</annotation>
+    </column>
+    <column name="RESULT_TAB DEL_FLAG_C" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion Flag for Master Record (Company Code Level)</annotation>
+    </column>
+    <column name="RESULT_TAB TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RESULT_TAB ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RESULT_TAB NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RESULT_TAB MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RESULT_TAB LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RESULT_TAB LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RESULT_TAB MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RESULT_TAB MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RESULT_TAB MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RESULT_TAB MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="SELOPT_TAB COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="SELOPT_TAB TABNAME" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Table Name</annotation>
+    </column>
+    <column name="SELOPT_TAB FIELDNAME" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field Name</annotation>
+    </column>
+    <column name="SELOPT_TAB FIELDVALUE" nullable="false">
+      <datatype name="C132" subType="DATASOURCE_TYPE" type="STRING" maxLength="132"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field value</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

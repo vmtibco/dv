@@ -1,0 +1,62 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Billing" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Sales and Distribution/Billing" type="CONTAINER" subtype="SCHEMA" changeToken="0">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="autoAddChildren" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">1</attribute>
+  <attribute name="tableFilter" type="STRING">%</attribute>
+  <attribute name="userDeletedSet" type="SET">
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_EDIT - Change object</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_IS_CANCELLED - Has the billing document been cancelled?</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CANCEL1 - Cancel/reverse</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CREATEFROMDATA - Create using external document</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CREATEMULTIPLE - Create</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_EXISTENCECHECK - Check existence of object</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_GETDETAIL - Find details</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CANCEL - Cancel/reverse</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CONFIRM - Confirm object</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_SIMULATE - Simulate using external document</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_CREATE - Create object</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>BAPI_BILLINGDOC_DISPLAY - Display object</name>
+      <type>2</type>
+    </item>
+  </attribute>
+</metadata>

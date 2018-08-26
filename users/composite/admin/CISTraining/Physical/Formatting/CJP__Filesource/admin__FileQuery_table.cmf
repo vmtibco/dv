@@ -1,0 +1,298 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="admin_FileQuery" path="/users/composite/admin/CISTraining/Physical/Formatting/CJP_Filesource/admin_FileQuery" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="City" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Today_High" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Today_Low" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Precipitation" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tomorrow_Forecast" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tomorrow_High" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tomorrow_Low" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Day_After_Forecast" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Day_After_High" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Day_After_Low" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Today_High_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Today_Low_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tomorrow_High_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tomorrow_Low_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Day_After_High_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Day_After_Low_Celsius" nullable="true">
+      <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/system/customfunctions/admin_ConvertToCelsius" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/CJP_Conversion/admin_ConvertToCelsius" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="Argument" direction="IN">
+        <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="FLOAT" minValue="1.1754943508222875E-38" maxValue="3.4028234663852886E38"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/CJP_Filesource/admin_FileQuery" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="City">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Today_High">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Today_Low">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Precipitation">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Tomorrow_Forecast">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Tomorrow_High">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Tomorrow_Low">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Day_After_Forecast">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Day_After_High">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="Day_After_Low">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    admin_FileQuery.City, 
+    admin_FileQuery.Today_High, 
+    admin_FileQuery.Today_Low, 
+    admin_FileQuery.Precipitation, 
+    admin_FileQuery.Tomorrow_Forecast, 
+    admin_FileQuery.Tomorrow_High, 
+    admin_FileQuery.Tomorrow_Low, 
+    admin_FileQuery.Day_After_Forecast, 
+    admin_FileQuery.Day_After_High, 
+    admin_FileQuery.Day_After_Low, 
+    admin_ConvertToCelsius(admin_FileQuery.Today_High) Today_High_Celsius, 
+    admin_ConvertToCelsius(admin_FileQuery.Today_Low) Today_Low_Celsius, 
+    admin_ConvertToCelsius(admin_FileQuery.Tomorrow_High) Tomorrow_High_Celsius, 
+    admin_ConvertToCelsius(admin_FileQuery.Tomorrow_Low) Tomorrow_Low_Celsius, 
+    admin_ConvertToCelsius(admin_FileQuery.Day_After_High) Day_After_High_Celsius, 
+    admin_ConvertToCelsius(admin_FileQuery.Day_After_Low) Day_After_Low_Celsius
+FROM      
+    /users/composite/admin/CISTraining/Physical/Metadata/CJP_Filesource/admin_FileQuery() admin_FileQuery</attribute>
+  <attribute name="creationDate" type="LONG">1464657528090</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464670047158</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUgYBAA8AYQBkAG0AaQBuAF8ARgBpAGwAZQBRAHUAZQByAHkGAgAPAGEAZABtAGkA
+bgBfAEYAaQBsAGUAUQB1AGUAcgB5Awv/////AwoAO/kpCxEACAAFAHUAcwBlAHIAcwAJAGMAbwBt
+AHAAbwBzAGkAdABlAAUAYQBkAG0AaQBuAAsAQwBJAFMAVAByAGEAaQBuAGkAbgBnAAgAUABoAHkA
+cwBpAGMAYQBsAAgATQBlAHQAYQBkAGEAdABhAA4AQwBKAFAAXwBGAGkAbABlAHMAbwB1AHIAYwBl
+AA8AYQBkAG0AaQBuAF8ARgBpAGwAZQBRAHUAZQByAHkJEAAAAAD//wMFAAAAAAgCEDEGAf//AQIB
+AQYAAQMAAQQAAQUAAwcAAAAABwkAAAABAAAAAAkKAAAAEBBBBgEABABDAGkAdAB5BgIAAAYD//8G
+BP//Awr/////CAwQGwYCAAcAVgBBAFIAQwBIAEEAUgMrAAAADwMSAAAAAQQEAAAAAH////8BEwH/
+/wMLAAAAAP//EEEGAQAKAFQAbwBkAGEAeQBfAEgAaQBnAGgGAgAABgP//wYE//8DCv////8IDBAb
+BgIABwBWAEEAUgBDAEgAQQBSAysAAAAPAxIAAAABBAQAAAAAf////wETAf//AwsAAAAA//8QQQYB
+AAkAVABvAGQAYQB5AF8ATABvAHcGAgAABgP//wYE//8DCv////8IDBAbBgIABwBWAEEAUgBDAEgA
+QQBSAysAAAAPAxIAAAABBAQAAAAAf////wETAf//AwsAAAAA//8QQQYBAA0AUAByAGUAYwBpAHAA
+aQB0AGEAdABpAG8AbgYCAAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAA
+AA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD//xBBBgEAEQBUAG8AbQBvAHIAcgBvAHcAXwBG
+AG8AcgBlAGMAYQBzAHQGAgAABgP//wYE//8DCv////8IDBAbBgIABwBWAEEAUgBDAEgAQQBSAysA
+AAAPAxIAAAABBAQAAAAAf////wETAf//AwsAAAAA//8QQQYBAA0AVABvAG0AbwByAHIAbwB3AF8A
+SABpAGcAaAYCAAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAA
+AAEEBAAAAAB/////ARMB//8DCwAAAAD//xBBBgEADABUAG8AbQBvAHIAcgBvAHcAXwBMAG8AdwYC
+AAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAAAAEEBAAAAAB/
+////ARMB//8DCwAAAAD//xBBBgEAEgBEAGEAeQBfAEEAZgB0AGUAcgBfAEYAbwByAGUAYwBhAHMA
+dAYCAAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAAAAEEBAAA
+AAB/////ARMB//8DCwAAAAD//xBBBgEADgBEAGEAeQBfAEEAZgB0AGUAcgBfAEgAaQBnAGgGAgAA
+BgP//wYE//8DCv////8IDBAbBgIABwBWAEEAUgBDAEgAQQBSAysAAAAPAxIAAAABBAQAAAAAf///
+/wETAf//AwsAAAAA//8QQQYBAA0ARABhAHkAXwBBAGYAdABlAHIAXwBMAG8AdwYCAAAGA///BgT/
+/wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAAAAEEBAAAAAB/////ARMB//8D
+CwAAAAD//xBCBgEAFgBhAGQAbQBpAG4AXwBDAG8AbgB2AGUAcgB0AFQAbwBDAGUAbABzAGkAdQBz
+BgIAEgBUAG8AZABhAHkAXwBIAGkAZwBoAF8AQwBlAGwAcwBpAHUAcwEJAAESAAkNAAAAARBBBgEA
+CgBUAG8AZABhAHkAXwBIAGkAZwBoBgIAAAYD//8GBP//Awr/////CAwQGwYCAAcAVgBBAFIAQwBI
+AEEAUgMrAAAADwMSAAAAAQQEAAAAAH////8BEwH//wMLAAAAAP////8QQgYBABYAYQBkAG0AaQBu
+AF8AQwBvAG4AdgBlAHIAdABUAG8AQwBlAGwAcwBpAHUAcwYCABEAVABvAGQAYQB5AF8ATABvAHcA
+XwBDAGUAbABzAGkAdQBzAQkAARIACQ0AAAABEEEGAQAJAFQAbwBkAGEAeQBfAEwAbwB3BgIAAAYD
+//8GBP//Awr/////CAwQGwYCAAcAVgBBAFIAQwBIAEEAUgMrAAAADwMSAAAAAQQEAAAAAH////8B
+EwH//wMLAAAAAP////8QQgYBABYAYQBkAG0AaQBuAF8AQwBvAG4AdgBlAHIAdABUAG8AQwBlAGwA
+cwBpAHUAcwYCABUAVABvAG0AbwByAHIAbwB3AF8ASABpAGcAaABfAEMAZQBsAHMAaQB1AHMBCQAB
+EgAJDQAAAAEQQQYBAA0AVABvAG0AbwByAHIAbwB3AF8ASABpAGcAaAYCAAAGA///BgT//wMK////
+/wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD/
+////EEIGAQAWAGEAZABtAGkAbgBfAEMAbwBuAHYAZQByAHQAVABvAEMAZQBsAHMAaQB1AHMGAgAU
+AFQAbwBtAG8AcgByAG8AdwBfAEwAbwB3AF8AQwBlAGwAcwBpAHUAcwEJAAESAAkNAAAAARBBBgEA
+DABUAG8AbQBvAHIAcgBvAHcAXwBMAG8AdwYCAAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBS
+AEMASABBAFIDKwAAAA8DEgAAAAEEBAAAAAB/////ARMB//8DCwAAAAD/////EEIGAQAWAGEAZABt
+AGkAbgBfAEMAbwBuAHYAZQByAHQAVABvAEMAZQBsAHMAaQB1AHMGAgAWAEQAYQB5AF8AQQBmAHQA
+ZQByAF8ASABpAGcAaABfAEMAZQBsAHMAaQB1AHMBCQABEgAJDQAAAAEQQQYBAA4ARABhAHkAXwBB
+AGYAdABlAHIAXwBIAGkAZwBoBgIAAAYD//8GBP//Awr/////CAwQGwYCAAcAVgBBAFIAQwBIAEEA
+UgMrAAAADwMSAAAAAQQEAAAAAH////8BEwH//wMLAAAAAP////8QQgYBABYAYQBkAG0AaQBuAF8A
+QwBvAG4AdgBlAHIAdABUAG8AQwBlAGwAcwBpAHUAcwYCABUARABhAHkAXwBBAGYAdABlAHIAXwBM
+AG8AdwBfAEMAZQBsAHMAaQB1AHMBCQABEgAJDQAAAAEQQQYBAA0ARABhAHkAXwBBAGYAdABlAHIA
+XwBMAG8AdwYCAAAGA///BgT//wMK/////wgMEBsGAgAHAFYAQQBSAEMASABBAFIDKwAAAA8DEgAA
+AAEEBAAAAAB/////ARMB//8DCwAAAAD///////8JBgAAAAEQggMKAAABXgMLAAABLQMMAAAAyAMN
+AAAAwv//CAMQcQMBAAAACwMCAAAAMgkDAAACJhB0AwYAAAAA//8QcgYE/////xBzAwUAAAAA//8Q
+dQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAAH/
+/xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdAMGAAAAAv//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAD//8QcgYE/////xBzAwUAAAAA
+//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAA
+AAT//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdAMGAAAABf//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAG//8QcgYE/////xBzAwUA
+AAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQD
+BgAAAAf//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdAMGAAAACP//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAJ//8QcgYE/////xBz
+AwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHQDBgAAAAr//xByBgQAEgBUAG8AZABhAHkAXwBIAGkAZwBoAF8AQwBlAGwAcwBpAHUAc///EHP/
+/xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAA
+C///EHIGBAARAFQAbwBkAGEAeQBfAEwAbwB3AF8AQwBlAGwAcwBpAHUAc///EHP//xB1AQcB//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAADP//EHIGBAAV
+AFQAbwBtAG8AcgByAG8AdwBfAEgAaQBnAGgAXwBDAGUAbABzAGkAdQBz//8Qc///EHUBBwH//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAN//8QcgYEABQA
+VABvAG0AbwByAHIAbwB3AF8ATABvAHcAXwBDAGUAbABzAGkAdQBz//8Qc///EHUBBwH//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAO//8QcgYEABYARABh
+AHkAXwBBAGYAdABlAHIAXwBIAGkAZwBoAF8AQwBlAGwAcwBpAHUAc///EHP//xB1AQcB//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAAD///EHIGBAAVAEQA
+YQB5AF8AQQBmAHQAZQByAF8ATABvAHcAXwBDAGUAbABzAGkAdQBz//8Qc///EHUBBwH//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz
+//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xBy
+BgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2
+//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP//
+//8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//
+EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP/
+/xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv///////w==</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464657528090</attribute>
+</metadata>

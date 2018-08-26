@@ -1,0 +1,62 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pInsertRecords" path="/users/composite/admin/CISTraining/Business/Logical/TransactionHandling/pInsertRecords" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters></parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/util/Pause" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="timeInMilliSeconds" direction="IN">
+        <datatype type="INTEGER"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/TransactionHandling/pInsertAudit" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="orderidKey" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/TransactionHandling/pInsertOrder" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="orderidKey" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pInsertRecords()
+BEGIN INDEPENDENT COMPENSATE ROLLBACK_ON_FAILURE TRANSACTION  
+	DECLARE orderidKey 	INTEGER DEFAULT CAST(FORMAT_DATE(CURRENT_TIME, &apos;HH24MISS&apos;) AS INTEGER);
+
+	CALL /users/composite/admin/CISTraining/Business/Logical/TransactionHandling/pInsertOrder(orderidKey);
+
+	CALL /users/composite/admin/CISTraining/Business/Logical/TransactionHandling/pInsertAudit(orderidKey);
+
+	CALL PAUSE(30000);
+
+	--ROLLBACK;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1433184143380</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">7/9</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>Pause</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1433184143380</attribute>
+</metadata>

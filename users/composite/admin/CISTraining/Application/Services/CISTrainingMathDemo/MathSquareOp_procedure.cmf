@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="MathSquareOp" path="/users/composite/admin/CISTraining/Application/Services/CISTrainingMathDemo/MathSquareOp" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="MathSquareOpRequest" direction="IN" nullable="true">
+      <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest">
+        <schemaDatatype>
+          <datatype name="MathSquareOpRequest" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="1">
+            <element name="ipSquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+              <datatype name="int" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="long" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="MathSquareOpResponse" direction="OUT" nullable="true">
+      <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" referenceType="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse">
+        <schemaDatatype>
+          <datatype name="MathSquareOpResponse" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="1">
+            <element name="SquareInt" namespace="http://www.cisco.com/cis/basictraining/MathDemoService">
+              <datatype superTypeName="integer" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="inTerm1" category="1">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+                <element name="value" namespace="http://www.cisco.com/cis/basictraining/MathDemoService" category="5">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Business/MathDemoOperations/SquareOperation" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="pInt" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+          <schemaDatatype>
+            <datatype name="XML" type="TREE" refId="2"></datatype>
+          </schemaDatatype>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE MathSquareOp (
+    IN MathSquareOpRequest /users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo.&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpRequest&quot;,
+    OUT MathSquareOpResponse /users/composite/admin/CISTraining/Application/DefinitionSets/MathDemo.&quot;{http://www.cisco.com/cis/basictraining/MathDemoService}MathSquareOpResponse&quot;
+)BEGIN
+	DECLARE pSquareStr VARCHAR;
+	DECLARE pSquareInt INTEGER DEFAULT 0;
+
+	SET pSquareStr = CAST((XPATH(MathSquareOpRequest,&apos;//*[namespace-uri()=&quot;http://www.cisco.com/cis/basictraining/MathDemoService&quot; and local-name()=&quot;ipSquareInt&quot;]/text()&apos;)) AS VARCHAR);
+
+	IF pSquareStr IS NOT NULL THEN
+		SET pSquareInt = CAST(pSquareStr AS INTEGER);
+	END IF;
+
+	CALL /users/composite/admin/CISTraining/Business/Business/MathDemoOperations/SquareOperation(pSquareInt, MathSquareOpResponse);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1431454893028</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431455413019</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431454893028</attribute>
+</metadata>

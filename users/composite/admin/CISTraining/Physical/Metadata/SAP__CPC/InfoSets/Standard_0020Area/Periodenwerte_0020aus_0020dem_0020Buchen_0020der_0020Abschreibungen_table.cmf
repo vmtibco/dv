@@ -1,0 +1,331 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Periodenwerte aus dem Buchen der Abschreibungen" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/Periodenwerte aus dem Buchen der Abschreibungen" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Depreciation area real or derived" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-AFABER</annotation>
+    </column>
+    <column name="Main Asset Number" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-ANLN1</annotation>
+    </column>
+    <column name="Asset Subnumber" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-ANLN2</annotation>
+    </column>
+    <column name="Company Code" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-BUKRS</annotation>
+    </column>
+    <column name="Sequence number of depreciation posting run in the period" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-AFBNR</annotation>
+    </column>
+    <column name="Fiscal Year" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-GJAHR</annotation>
+    </column>
+    <column name="Depreciation calculation period" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-PERAF</annotation>
+    </column>
+    <column name="Internal order" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-CAUFN</annotation>
+    </column>
+    <column name="Business Area" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-GSBER</annotation>
+    </column>
+    <column name="Cost Center" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-KOSTL</annotation>
+    </column>
+    <column name="Account determination" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-KTOGR</annotation>
+    </column>
+    <column name="Unplanned depreciation to be posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-AAFAZ</annotation>
+    </column>
+    <column name="Transferred reserves to be posted for the year" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-MAFAZ</annotation>
+    </column>
+    <column name="Ordinary depreciation posted in the current year" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-NAFAG</annotation>
+    </column>
+    <column name="Planned ordinary depreciation for the year" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-NAFAP</annotation>
+    </column>
+    <column name="Ordinary depreciation to be posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-NAFAZ</annotation>
+    </column>
+    <column name="Special depreciation to be posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-SAFAZ</annotation>
+    </column>
+    <column name="Interest posted for the year" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-ZINSG</annotation>
+    </column>
+    <column name="Interest planned for the year" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-ZINSP</annotation>
+    </column>
+    <column name="Interest for the year to be posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-ZINSZ</annotation>
+    </column>
+    <column name="Revaluation to be posted on cum. ordinary depreciation" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-AUFNZ</annotation>
+    </column>
+    <column name="Revaluation on replacement value to be posted" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLP-AUFWZ</annotation>
+    </column>
+    <column name="_Fiscal year" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PA_GJAHR</annotation>
+    </column>
+    <column name="_Area" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AFABE</annotation>
+    </column>
+    <column name="_Posting period" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AFBPLE</annotation>
+    </column>
+    <column name="_Asset Number" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAGE</annotation>
+    </column>
+    <column name="_Company code" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BUKRS</annotation>
+    </column>
+    <column name="_Cost center" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SO_KOSTL</annotation>
+    </column>
+    <column name="_Asset Subnumber" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_Sequence number of depreciatio" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00005</annotation>
+    </column>
+    <column name="_Internal order" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00008</annotation>
+    </column>
+    <column name="_Business Area" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00009</annotation>
+    </column>
+    <column name="_Account allocation key" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00011</annotation>
+    </column>
+    <column name="_Unplanned depreciation to be p" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00012</annotation>
+    </column>
+    <column name="_Transferred reserves to be pos" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00013</annotation>
+    </column>
+    <column name="_Ordinary depreciation posted i" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00014</annotation>
+    </column>
+    <column name="_Planned ordinary depreciation" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00015</annotation>
+    </column>
+    <column name="_Ordinary depreciation to be po" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00016</annotation>
+    </column>
+    <column name="_Special depreciation to be pos" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00017</annotation>
+    </column>
+    <column name="_Interest posted for the year" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00018</annotation>
+    </column>
+    <column name="_Interest planned for the year" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00019</annotation>
+    </column>
+    <column name="_Interest for the year to be po" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00020</annotation>
+    </column>
+    <column name="_Revaluation to be posted on cu" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00021</annotation>
+    </column>
+    <column name="_Revaluation on replacement val" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00022</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421885936952</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421885936952</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421885936952</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">SP$00022</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001072</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

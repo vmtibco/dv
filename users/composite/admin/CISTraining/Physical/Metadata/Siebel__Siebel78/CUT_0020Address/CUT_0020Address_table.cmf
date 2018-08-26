@@ -1,0 +1,1192 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CUT Address" path="/users/composite/admin/CISTraining/Physical/Metadata/Siebel_Siebel78/CUT Address/CUT Address" type="TABLE" subtype="NONE" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Account Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>TC:  Removed Predefault Parent: &apos;Account.Id&apos; for CR# 12-GZ6BRB</annotation>
+    </column>
+    <column name="Account Loc" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Account Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Used in Data Administration &gt; Brick Details</annotation>
+    </column>
+    <column name="Account Position Id" nullable="true">
+      <datatype name="DTYPE_ID MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="STRING">My Position Id</attribute>
+      <attribute name="mvLinkName" type="STRING">Account</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Used by CG Handheld to restrict number of CUT Addresses downloaded (CR 12-DGS812)</annotation>
+    </column>
+    <column name="Account Primary Address Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Active Status" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Addr Description" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FH: 12-KJPDSI. GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="Address Id" nullable="unknown">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Address Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Address Name Locked Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Address Type" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>05/22/02: BK: There are 2 fields intentionally mapping to this column. The only difference is picklist uses a different search spec based on the Order By</annotation>
+    </column>
+    <column name="Apartment Number" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Bill Address Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Brick Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Added Picklist to show all the Bricks.</annotation>
+    </column>
+    <column name="Brick Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>7.0 - took out denormalized field</annotation>
+    </column>
+    <column name="CLLI" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Calculated Address Comma1" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delimiter between Address and City in ADDR_NAME</annotation>
+    </column>
+    <column name="Calculated Address Comma2" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Calculated Address Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Calculated Address Name ENU" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Calculated Address Name JPN" nullable="unknown">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC; WB 9/18/02 CR# 12-CQ0D6F: Original Calculated Value:  [State] + [City] + Left([Street Address],[Street Address Len])</annotation>
+    </column>
+    <column name="City" nullable="true">
+      <datatype name="DTYPE_TEXT LINK_SPECIFICATION" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FH: 4/25/02 set Link Spec=T. Reason: BC &quot;CUT MSAG Profile&quot; -&gt;fields &quot;SA City&quot; has predefault value set to Parent BC &quot;CUT Address&quot; city</annotation>
+    </column>
+    <column name="City Len" nullable="true">
+      <datatype name="DTYPE_NUMBER" subType="DATASOURCE_TYPE" type="FLOAT"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CityStateZipCountry" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CityStateZipCountry ENU" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CityStateZipCountry JPN" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Contact Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Country" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="County" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Default Ship Priority Code" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="Descriptor" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Direction" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Disable DataCleansing" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="Email Address" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="End Date" nullable="true">
+      <datatype name="DTYPE_DATE" subType="DATASOURCE_TYPE" type="DATE"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Fax Number" nullable="true">
+      <datatype name="DTYPE_PHONE" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Full Address" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Integration Id" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Integration Id 2" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Added to support Bill-To Site Use Id for Oracle Connector [REXLEY]</annotation>
+    </column>
+    <column name="Integration Id 3" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Added to support Ship-To Site Use Id for Oracle Connector [REXLEY]</annotation>
+    </column>
+    <column name="LATA" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Landlord Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BK: 05/02: Added for FINS</annotation>
+    </column>
+    <column name="Landlord Phone Number" nullable="true">
+      <datatype name="DTYPE_PHONE" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BK: 05/02: Added for FINS</annotation>
+    </column>
+    <column name="Last Updated Con Addr" nullable="true">
+      <datatype name="DTYPE_UTCDATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>for move - Tim</annotation>
+    </column>
+    <column name="Latitude" nullable="true">
+      <datatype name="DTYPE_NUMBER" subType="DATASOURCE_TYPE" type="FLOAT"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Local Operating Company" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Local Operating Company Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Local Operating Company Site" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Longitude" nullable="true">
+      <datatype name="DTYPE_NUMBER" subType="DATASOURCE_TYPE" type="FLOAT"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MV Account Id" nullable="true">
+      <datatype name="DTYPE_TEXT MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="STRING">MV Account</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MV Contact Id" nullable="true">
+      <datatype name="DTYPE_TEXT MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="STRING">MV Contact</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MV Organization Id" nullable="true">
+      <datatype name="DTYPE_TEXT MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="STRING">MV Organization</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Used By LS</annotation>
+    </column>
+    <column name="Mail Code (ORG)" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="Mail Type Code" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Main Address Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Months At Location" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Occupancy CD" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Organization Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="Organization Integration Id" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS 3/2002: Don&apos;t think will work as FK on IX table.</annotation>
+    </column>
+    <column name="Organization Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC;  GS 3/2002: Don&apos;t think will work as FK on IX table.</annotation>
+    </column>
+    <column name="PO Box" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Parent Address" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="200"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Parent Address Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Parent Primary Address Id" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Phone Number" nullable="true">
+      <datatype name="DTYPE_PHONE" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Postal Code" nullable="true">
+      <datatype name="DTYPE_TEXT LINK_SPECIFICATION" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CR#12-MDQPSD Remove PickList Zipcode to prevent data bloat on handheld.</annotation>
+    </column>
+    <column name="Prefix" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Premise Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Primary Address Flg" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Province" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Rate Center" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Rural Route" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="S-S Instance" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="75"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC</annotation>
+    </column>
+    <column name="S-S Instance Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="S-S Key Id" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Ship Address Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Start Date" nullable="true">
+      <datatype name="DTYPE_DATE" subType="DATASOURCE_TYPE" type="DATE"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="State" nullable="true">
+      <datatype name="DTYPE_TEXT LINK_SPECIFICATION" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FH: 4/25/02 set Link Spec=T. Reason: BC &quot;CUT MSAG Profile&quot; -&gt;fields &quot;SA State&quot; has predefault value set to Parent BC &quot;CUT Address&quot; State</annotation>
+    </column>
+    <column name="State Len" nullable="unknown">
+      <datatype name="DTYPE_NUMBER" subType="DATASOURCE_TYPE" type="FLOAT"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Street Address" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="200"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Street Address 2" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Street Address Len" nullable="true">
+      <datatype name="DTYPE_NUMBER" subType="DATASOURCE_TYPE" type="FLOAT"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Street Name" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Street Number" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Street Type" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Calculated Field</annotation>
+    </column>
+    <column name="Suite Number" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>AMS Field</annotation>
+    </column>
+    <column name="Time at Location - Months" nullable="true">
+      <datatype name="DTYPE_INTEGER" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Type" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>GS: 4/2004 to bring is sync w/BusAddress BC; 05/22/02: BK: There are 2 fields intentionally mapping to this column. The only difference is picklist uses a different search spec based on the Order By</annotation>
+    </column>
+    <column name="Verified Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Created" nullable="false">
+      <datatype name="DTYPE_DATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Created By" nullable="false">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Updated" nullable="false">
+      <datatype name="DTYPE_DATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Updated By" nullable="false">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="c:0:destField" type="STRING">Id</attribute>
+  <attribute name="c:0:mvLinkName" type="NULL"/>
+  <attribute name="c:0:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:10:destField" type="NULL"/>
+  <attribute name="c:10:mvLinkName" type="NULL"/>
+  <attribute name="c:10:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:11:destField" type="NULL"/>
+  <attribute name="c:11:mvLinkName" type="NULL"/>
+  <attribute name="c:11:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:12:destField" type="NULL"/>
+  <attribute name="c:12:mvLinkName" type="NULL"/>
+  <attribute name="c:12:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:13:destField" type="NULL"/>
+  <attribute name="c:13:mvLinkName" type="NULL"/>
+  <attribute name="c:13:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:14:destField" type="NULL"/>
+  <attribute name="c:14:mvLinkName" type="NULL"/>
+  <attribute name="c:14:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:15:destField" type="NULL"/>
+  <attribute name="c:15:mvLinkName" type="NULL"/>
+  <attribute name="c:15:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:16:destField" type="NULL"/>
+  <attribute name="c:16:mvLinkName" type="NULL"/>
+  <attribute name="c:16:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:17:destField" type="NULL"/>
+  <attribute name="c:17:mvLinkName" type="NULL"/>
+  <attribute name="c:17:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:18:destField" type="NULL"/>
+  <attribute name="c:18:mvLinkName" type="NULL"/>
+  <attribute name="c:18:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:19:destField" type="NULL"/>
+  <attribute name="c:19:mvLinkName" type="NULL"/>
+  <attribute name="c:19:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:1:destField" type="NULL"/>
+  <attribute name="c:1:mvLinkName" type="NULL"/>
+  <attribute name="c:1:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:20:destField" type="NULL"/>
+  <attribute name="c:20:mvLinkName" type="NULL"/>
+  <attribute name="c:20:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:21:destField" type="NULL"/>
+  <attribute name="c:21:mvLinkName" type="NULL"/>
+  <attribute name="c:21:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:22:destField" type="NULL"/>
+  <attribute name="c:22:mvLinkName" type="NULL"/>
+  <attribute name="c:22:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:23:destField" type="NULL"/>
+  <attribute name="c:23:mvLinkName" type="NULL"/>
+  <attribute name="c:23:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:24:destField" type="NULL"/>
+  <attribute name="c:24:mvLinkName" type="NULL"/>
+  <attribute name="c:24:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:25:destField" type="NULL"/>
+  <attribute name="c:25:mvLinkName" type="NULL"/>
+  <attribute name="c:25:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:26:destField" type="NULL"/>
+  <attribute name="c:26:mvLinkName" type="NULL"/>
+  <attribute name="c:26:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:27:destField" type="NULL"/>
+  <attribute name="c:27:mvLinkName" type="NULL"/>
+  <attribute name="c:27:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:28:destField" type="NULL"/>
+  <attribute name="c:28:mvLinkName" type="NULL"/>
+  <attribute name="c:28:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:29:destField" type="NULL"/>
+  <attribute name="c:29:mvLinkName" type="NULL"/>
+  <attribute name="c:29:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:2:destField" type="NULL"/>
+  <attribute name="c:2:mvLinkName" type="NULL"/>
+  <attribute name="c:2:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:30:destField" type="NULL"/>
+  <attribute name="c:30:mvLinkName" type="NULL"/>
+  <attribute name="c:30:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:31:destField" type="NULL"/>
+  <attribute name="c:31:mvLinkName" type="NULL"/>
+  <attribute name="c:31:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:32:destField" type="NULL"/>
+  <attribute name="c:32:mvLinkName" type="NULL"/>
+  <attribute name="c:32:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:33:destField" type="NULL"/>
+  <attribute name="c:33:mvLinkName" type="NULL"/>
+  <attribute name="c:33:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:34:destField" type="NULL"/>
+  <attribute name="c:34:mvLinkName" type="NULL"/>
+  <attribute name="c:34:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:35:destField" type="NULL"/>
+  <attribute name="c:35:mvLinkName" type="NULL"/>
+  <attribute name="c:35:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:36:destField" type="NULL"/>
+  <attribute name="c:36:mvLinkName" type="NULL"/>
+  <attribute name="c:36:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:37:destField" type="NULL"/>
+  <attribute name="c:37:mvLinkName" type="NULL"/>
+  <attribute name="c:37:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:38:destField" type="NULL"/>
+  <attribute name="c:38:mvLinkName" type="NULL"/>
+  <attribute name="c:38:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:39:destField" type="NULL"/>
+  <attribute name="c:39:mvLinkName" type="NULL"/>
+  <attribute name="c:39:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:3:destField" type="NULL"/>
+  <attribute name="c:3:mvLinkName" type="NULL"/>
+  <attribute name="c:3:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:40:destField" type="NULL"/>
+  <attribute name="c:40:mvLinkName" type="NULL"/>
+  <attribute name="c:40:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:41:destField" type="NULL"/>
+  <attribute name="c:41:mvLinkName" type="NULL"/>
+  <attribute name="c:41:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:42:destField" type="NULL"/>
+  <attribute name="c:42:mvLinkName" type="NULL"/>
+  <attribute name="c:42:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:43:destField" type="NULL"/>
+  <attribute name="c:43:mvLinkName" type="NULL"/>
+  <attribute name="c:43:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:44:destField" type="NULL"/>
+  <attribute name="c:44:mvLinkName" type="NULL"/>
+  <attribute name="c:44:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:45:destField" type="NULL"/>
+  <attribute name="c:45:mvLinkName" type="NULL"/>
+  <attribute name="c:45:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:46:destField" type="NULL"/>
+  <attribute name="c:46:mvLinkName" type="NULL"/>
+  <attribute name="c:46:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:47:destField" type="NULL"/>
+  <attribute name="c:47:mvLinkName" type="NULL"/>
+  <attribute name="c:47:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:48:destField" type="NULL"/>
+  <attribute name="c:48:mvLinkName" type="NULL"/>
+  <attribute name="c:48:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:49:destField" type="NULL"/>
+  <attribute name="c:49:mvLinkName" type="NULL"/>
+  <attribute name="c:49:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:4:destField" type="STRING">My Position Id</attribute>
+  <attribute name="c:4:mvLinkName" type="STRING">Account</attribute>
+  <attribute name="c:4:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:50:destField" type="STRING">Id</attribute>
+  <attribute name="c:50:mvLinkName" type="STRING">MV Account</attribute>
+  <attribute name="c:50:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:51:destField" type="STRING">Id</attribute>
+  <attribute name="c:51:mvLinkName" type="STRING">MV Contact</attribute>
+  <attribute name="c:51:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:52:destField" type="STRING">Id</attribute>
+  <attribute name="c:52:mvLinkName" type="STRING">MV Organization</attribute>
+  <attribute name="c:52:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:53:destField" type="NULL"/>
+  <attribute name="c:53:mvLinkName" type="NULL"/>
+  <attribute name="c:53:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:54:destField" type="NULL"/>
+  <attribute name="c:54:mvLinkName" type="NULL"/>
+  <attribute name="c:54:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:55:destField" type="NULL"/>
+  <attribute name="c:55:mvLinkName" type="NULL"/>
+  <attribute name="c:55:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:56:destField" type="NULL"/>
+  <attribute name="c:56:mvLinkName" type="NULL"/>
+  <attribute name="c:56:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:57:destField" type="NULL"/>
+  <attribute name="c:57:mvLinkName" type="NULL"/>
+  <attribute name="c:57:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:58:destField" type="NULL"/>
+  <attribute name="c:58:mvLinkName" type="NULL"/>
+  <attribute name="c:58:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:59:destField" type="NULL"/>
+  <attribute name="c:59:mvLinkName" type="NULL"/>
+  <attribute name="c:59:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:5:destField" type="NULL"/>
+  <attribute name="c:5:mvLinkName" type="NULL"/>
+  <attribute name="c:5:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:60:destField" type="NULL"/>
+  <attribute name="c:60:mvLinkName" type="NULL"/>
+  <attribute name="c:60:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:61:destField" type="NULL"/>
+  <attribute name="c:61:mvLinkName" type="NULL"/>
+  <attribute name="c:61:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:62:destField" type="NULL"/>
+  <attribute name="c:62:mvLinkName" type="NULL"/>
+  <attribute name="c:62:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:63:destField" type="NULL"/>
+  <attribute name="c:63:mvLinkName" type="NULL"/>
+  <attribute name="c:63:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:64:destField" type="NULL"/>
+  <attribute name="c:64:mvLinkName" type="NULL"/>
+  <attribute name="c:64:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:65:destField" type="NULL"/>
+  <attribute name="c:65:mvLinkName" type="NULL"/>
+  <attribute name="c:65:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:66:destField" type="NULL"/>
+  <attribute name="c:66:mvLinkName" type="NULL"/>
+  <attribute name="c:66:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:67:destField" type="NULL"/>
+  <attribute name="c:67:mvLinkName" type="NULL"/>
+  <attribute name="c:67:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:68:destField" type="NULL"/>
+  <attribute name="c:68:mvLinkName" type="NULL"/>
+  <attribute name="c:68:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:69:destField" type="NULL"/>
+  <attribute name="c:69:mvLinkName" type="NULL"/>
+  <attribute name="c:69:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:6:destField" type="NULL"/>
+  <attribute name="c:6:mvLinkName" type="NULL"/>
+  <attribute name="c:6:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:70:destField" type="NULL"/>
+  <attribute name="c:70:mvLinkName" type="NULL"/>
+  <attribute name="c:70:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:71:destField" type="NULL"/>
+  <attribute name="c:71:mvLinkName" type="NULL"/>
+  <attribute name="c:71:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:72:destField" type="NULL"/>
+  <attribute name="c:72:mvLinkName" type="NULL"/>
+  <attribute name="c:72:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:73:destField" type="NULL"/>
+  <attribute name="c:73:mvLinkName" type="NULL"/>
+  <attribute name="c:73:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:74:destField" type="NULL"/>
+  <attribute name="c:74:mvLinkName" type="NULL"/>
+  <attribute name="c:74:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:75:destField" type="NULL"/>
+  <attribute name="c:75:mvLinkName" type="NULL"/>
+  <attribute name="c:75:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:76:destField" type="NULL"/>
+  <attribute name="c:76:mvLinkName" type="NULL"/>
+  <attribute name="c:76:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:77:destField" type="NULL"/>
+  <attribute name="c:77:mvLinkName" type="NULL"/>
+  <attribute name="c:77:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:78:destField" type="NULL"/>
+  <attribute name="c:78:mvLinkName" type="NULL"/>
+  <attribute name="c:78:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:79:destField" type="NULL"/>
+  <attribute name="c:79:mvLinkName" type="NULL"/>
+  <attribute name="c:79:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:7:destField" type="NULL"/>
+  <attribute name="c:7:mvLinkName" type="NULL"/>
+  <attribute name="c:7:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:80:destField" type="NULL"/>
+  <attribute name="c:80:mvLinkName" type="NULL"/>
+  <attribute name="c:80:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:81:destField" type="NULL"/>
+  <attribute name="c:81:mvLinkName" type="NULL"/>
+  <attribute name="c:81:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:82:destField" type="NULL"/>
+  <attribute name="c:82:mvLinkName" type="NULL"/>
+  <attribute name="c:82:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:83:destField" type="NULL"/>
+  <attribute name="c:83:mvLinkName" type="NULL"/>
+  <attribute name="c:83:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:84:destField" type="NULL"/>
+  <attribute name="c:84:mvLinkName" type="NULL"/>
+  <attribute name="c:84:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:85:destField" type="NULL"/>
+  <attribute name="c:85:mvLinkName" type="NULL"/>
+  <attribute name="c:85:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:86:destField" type="NULL"/>
+  <attribute name="c:86:mvLinkName" type="NULL"/>
+  <attribute name="c:86:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:87:destField" type="NULL"/>
+  <attribute name="c:87:mvLinkName" type="NULL"/>
+  <attribute name="c:87:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:88:destField" type="NULL"/>
+  <attribute name="c:88:mvLinkName" type="NULL"/>
+  <attribute name="c:88:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:89:destField" type="NULL"/>
+  <attribute name="c:89:mvLinkName" type="NULL"/>
+  <attribute name="c:89:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:89:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:8:destField" type="NULL"/>
+  <attribute name="c:8:mvLinkName" type="NULL"/>
+  <attribute name="c:8:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:90:destField" type="NULL"/>
+  <attribute name="c:90:mvLinkName" type="NULL"/>
+  <attribute name="c:90:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:90:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:91:destField" type="NULL"/>
+  <attribute name="c:91:mvLinkName" type="NULL"/>
+  <attribute name="c:91:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:91:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:92:destField" type="NULL"/>
+  <attribute name="c:92:mvLinkName" type="NULL"/>
+  <attribute name="c:92:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:92:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:93:destField" type="NULL"/>
+  <attribute name="c:93:mvLinkName" type="NULL"/>
+  <attribute name="c:93:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:93:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:9:destField" type="NULL"/>
+  <attribute name="c:9:mvLinkName" type="NULL"/>
+  <attribute name="c:9:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserId" type="INTEGER">0</attribute>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="lastModifiedDate" type="LONG">0</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING"/>
+  <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+  <attribute name="lastModifiedUserName" type="STRING"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

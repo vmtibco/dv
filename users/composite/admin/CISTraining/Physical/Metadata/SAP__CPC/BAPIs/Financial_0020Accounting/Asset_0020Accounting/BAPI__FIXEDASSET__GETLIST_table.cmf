@@ -1,0 +1,1910 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_FIXEDASSET_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Asset Accounting/BAPI_FIXEDASSET_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-02-28
+Released on: 1998-05-19
+
+Using this method, you can compile a quantity of asset master data. You can influence the volume of data that is returned by entering selection criteria, as well as by selecting the relevant information on the asset master records. 
+From the time-dependent data of an asset (such as cost center), the method returns the data that is valid on the report date. You can enter a report date as a parameter when you call the method. If you do not enter a report date, the method uses today&apos;s date as the report date. 
+
+In order for the method to return asset data, you must have display authorization for the object A_S_ANLKL (&quot;normal&quot; assets) and/or A_S_ANLGR (group assets). 
+Messages are returned in the RETURN parameter. See the parameter documentation for that parameter to see the return values and their meanings. 
+Export RETURN
+This parameter returns information on errors that might occur during selection of assets. 
+If the parameter is blank (initial), then the selection was successful. TYPE,,ID,,NUMBER,,Meaning,, S,,BAPI1022,,009,,REQUESTEDTABLESX not set,, S,,BAPI1022,,010,,Nothing was selected,, S,,BAPI1022,,011,,Number of hits was limited,, E,,BAPI1022,,012,,Selection field not allowed,, Additional error messages from Asset Accounting are also possible. 
+Import COMPANYCODE
+You have to use this parameter to transfer the company code to which the assets to be returned belong. The company code is a required entry. 
+Only the assets of one company code can be returned per method call. 
+
+None Import DEPRECIATIONAREA
+Specifies for which depreciation area the depreciation terms or values should be returned. 
+If you do not enter a depreciation area, and you nonetheless request depreciation terms or values using the REQUESTEDTABLESX parameter, then the system returns the depreciation terms or values from all depreciation areas of the selected asset. 
+
+Import EVALUATIONDATE
+The data returned in the table parameter TIMEDEPENDENTDATA can be defined as time-dependent in the asset master record. 
+The system returns the data that is valid on the EVALUATIONDATE that is transferred. 
+If time-dependent data is not requested (the REQUESTEDTABLESX-TIMEDEPENDENTDATA field is blank or 0 when the method is called), then the EVALUATIONDATE parameter has no significance. 
+
+Today&apos;s date Import MAXENTRIES
+Using this parameter, you can limit the number of hits, in order to ensure that the returned tables do not become too large if the selection was not limited enough. 
+If the number of hits is limited by the MAXENTRIES parameter, a message stating that is issued in the RETURN parameter. 
+
+The number of hits is not limited. Import REQUESTEDTABLESX
+This parameter specifies which data the method returns. 
+The following applies to the individual fields of the parameter: 
+If &apos; &apos; is transferred, the export parameter (table parameter) of the same name is not filled. 
+If &apos;X&apos; is transferred, the export parameter (table parameter) of the same name is filled, if assets were selected. 
+&apos;X&apos; must be transferred in at least one of the fields of the REQUESTEDTABLESX parameter. 
+ALLOCATIONS
+In this table parameter, the system returns data assigned to the &quot;Allocations&quot; group box of the selected assets. 
+
+DEPRECIATIONAREAS
+The depeciation terms of the DEPRECIATIONAREA depreciation area of the selected assets are returned in this table parameter. 
+If the DEPRECIATIONAREA parameter is not set when the method is called, the depreciation terms of all depreciation areas are returned. 
+
+DEPRECIATIONAREAVALS
+The selected values of the DEPRECIATIONAREA depreciation area of the selected assets are returned in this table parameter. 
+If the DEPRECIATIONAREA parameter is not set when the method is called, the values of all depreciation areas are returned. 
+It is not possible to choose the values returned per asset and per depreciation area. 
+
+EXTENSIONOUT
+In this table parameter, the system returns the user fields in the asset master record that are defined for the selected assets. 
+You can define user fields using customer enhancement  &lt;DS:MO.AIST0002&gt;AIST0002&lt;/&gt;. Creating user fields is a precondition for the system returning user fields in this table parameter. 
+If you have not created user fields in the asset master record using this customer enhancement, the system does not return any user fields in this table parameter. 
+
+GENERALDATA
+In this table parameter, the system returns the data assigned to the &quot;General data&quot; group box of the selected assets. 
+
+INSURANCE
+In this table parameter, the system returns the data assigned to the &quot;Insurance&quot; group box of the selected assets. 
+
+INVENTORY
+In this table parameter, the system returns the data assigned to the &quot;Inventory&quot; group box of the selected assets. 
+
+INVESTACCTASSIGNMNT
+In this table parameter, the system returns the data assigned to the &quot;Investment account assignments&quot; group box of the selected assets. 
+
+LEASING
+In this table parameter, the system returns the data assigned to the &quot;Leasing&quot; group box of the selected assets. 
+
+NETWORTHVALUATION
+In this table parameter, the system returns the data assigned to the &quot;Net worth tax&quot; group box of the selected assets. 
+
+ORIGIN
+In this table parameter, the system returns the data assigned to the &quot;Origins&quot; group box of the selected assets. 
+
+POSTINGINFORMATION
+In this table parameter, the system returns the data assigned to the &quot;Posting information&quot; group box of the selected assets. 
+
+REALESTATE
+In this table parameter, the system returns the data assigned to the &quot;Real estate&quot; group box of the selected assets. 
+
+SELECTIONCRITERIA
+By means of this table, you can designate selection criteria for limiting the selection of asset master data. Basically you can select using each field in the asset master. Specifically, this means you can limit the selection according to each field of the following parameters of the BAPI interface: 
+Allocations 
+GeneralData 
+Inventory 
+InvestAcctAssignmnt 
+Leasing 
+NetWorthValuation 
+Origin 
+PostingInformation 
+RealEstate 
+TimeDependentData 
+The parameters listed above also serve as return structures for the asset master data. However, the limiting and return processes are independent of each other. In other words, you can select by certain fields in the &apos;GeneralData&apos; structure, but have the system return only data from the &apos;Leasing&apos; structure. 
+For example, you can complete the fields of the parameter as follows: 
+Parameter = &apos;generaldata&apos; 
+field     = &apos;assetclass&apos; 
+sign      = &apos;I&apos; 
+option    = &apos;EQ&apos; 
+low       = &apos;00004000&apos; 
+The system lists all data for assets in class 4000. Remember that the number fields have to be completed using leading zeroes. The data which the BAPI should return is determined by your entering an &apos;X&apos; in the corresponding parameter in the &apos;RequestedTablesX&apos; structure. If you enter an &apos;X&apos; in the &apos;RequestedTablesX-GeneralData&apos; field, the BAPI supplies the &apos;GeneralData&apos; table with data. On the other hand, if you do not enter an &apos;X&apos; in the &apos;RequestedTablesX-GeneralData&apos; field, the &apos;GeneralData&apos; table remains empty. 
+TIMEDEPENDENTDATA
+In this table parameter, the system returns the data assigned to the &quot;Time-dependent data&quot; group box of the selected assets that is valid on the day of the EVALUATIONDATE. 
+If the EVALUATIONDATE parameter is not set, the system then returns the time-dependent data that is valid on the day of the method call. 
+It is not possible to get more than one set of time-dependent data for an asset in one method call. 
+
+</annotation>
+  <columns>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Import DEPRECIATIONAREA" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Depreciation Area for which Information is Requested</annotation>
+    </column>
+    <column name="Import EVALUATIONDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Report Date (Default = Today&apos;s Date)</annotation>
+    </column>
+    <column name="Import MAXENTRIES" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Number of Assets to be Returned</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX GENERALDATA" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX INVENTORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX POSTINGINFORMATION" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX TIMEDEPENDENTDATA" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX ALLOCATIONS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX ORIGIN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX INVESTACCTASSIGNMNT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX NETWORTHVALUATION" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX REALESTATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX INSURANCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX LEASING" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX DEPRECIATIONAREAS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX DEPRECIATIONAREAVALS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX EXTENSIONOUT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Import REQUESTEDTABLESX INVESTMENT_SUPPORT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox for requesting data for GETLIST</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="ALLOCATIONS ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="ALLOCATIONS SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="ALLOCATIONS EVALGROUP1" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Evaluation Group 1</annotation>
+    </column>
+    <column name="ALLOCATIONS EVALGROUP2" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Evaluation Group 2</annotation>
+    </column>
+    <column name="ALLOCATIONS EVALGROUP3" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Evaluation Group 3</annotation>
+    </column>
+    <column name="ALLOCATIONS EVALGROUP4" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Evaluation Group 4</annotation>
+    </column>
+    <column name="ALLOCATIONS EVALGROUP5" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sort Key 5</annotation>
+    </column>
+    <column name="ALLOCATIONS INV_REASON" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for investment</annotation>
+    </column>
+    <column name="ALLOCATIONS ENVIR_INVEST" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for environmental investment</annotation>
+    </column>
+    <column name="ALLOCATIONS ASSETSUPNO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset super number</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS AREA" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Real depreciation area</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS DESCRIPT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short name for depreciation area</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS DEACTIVATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Depreciation area is deactivated</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS DEP_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Depreciation key</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ULIFE_YRS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned useful life in years</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ULIFE_PRDS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned useful life in periods</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS EXP_ULIFE_YRS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Expired useful life in years at start of the fiscal year</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS EXP_ULIFE_PRDS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Expired useful life in periods at start of fiscal year</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS EXP_ULIFE_SDEP_YRS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Yrs Expired up to Fisc.Yr Start from Start of Spec.Dep.</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS EXP_ULIFE_SDEP_PRDS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Expired useful life in periods during FY from SDep start dat</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ORIG_ULIFE_YRS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original useful life in years</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ORIG_ULIFE_PRDS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original useful life in periods</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS CHANGE_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Depreciation key for the changeover year</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS DEP_UNITS" nullable="false">
+      <datatype name="P15" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of units depreciated in unit-of-prod. depreciation</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ODEP_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Depreciation calculation start date</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS SDEP_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start date for special depreciation</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS INTEREST_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start date for interest calculation</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS READINESS" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Accounting:  Date of operating readiness</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS INDEX" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index series for replacement values</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS AGE_INDEX" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index series for replacement values by age</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS VAR_DEP_PORTION" nullable="false">
+      <datatype name="P7.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Variable depreciation portion</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS SCRAPVALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset scrap value</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS NEG_VALUES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Negative values allowed</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS GRP_ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group asset</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS GRP_ASSET_SUBNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subnumber of group asset</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ACQ_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Acquisition year of the asset (manually changeable)</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS ACQ_PRD" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Accounting: Acquis. month (in depreciation area)</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS SCRAPVALUE_PRCTG" nullable="false">
+      <datatype name="P15.11" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="11"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scrap Value as Percentage of APC</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS FROM_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for beginning of validity</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAS TO_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date validity ends</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS AREA" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Real depreciation area</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS FISC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURRENT_APC" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Acquisition value at fiscal year end (w/o inv.support)</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURR_INVSUPP" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Investment support at fiscal year end</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURR_REVAL" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revaluation at fiscal year end</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS ACCUM_DEPR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Depreciation at fiscal year end</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS ACCUM_REVAL_DEPR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cum. revaluation of ord. depreciation at fiscal year end</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS DEPR_CURR_YEAR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned depreciation</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS INTEREST_CURR_YEAR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Interest planned</annotation>
+    </column>
+    <column name="DEPRECIATIONAREAVALS CURRENT_NBV" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Book value at fiscal year end</annotation>
+    </column>
+    <column name="EXTENSIONOUT STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="GENERALDATA ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="GENERALDATA SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="GENERALDATA ASSETCLASS" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset class</annotation>
+    </column>
+    <column name="GENERALDATA DESCRIPT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Description</annotation>
+    </column>
+    <column name="GENERALDATA DESCRIPT2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Additional asset description</annotation>
+    </column>
+    <column name="GENERALDATA ACCT_DETRM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account determination</annotation>
+    </column>
+    <column name="GENERALDATA SERIAL_NO" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Serial number</annotation>
+    </column>
+    <column name="GENERALDATA INVENT_NO" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inventory number</annotation>
+    </column>
+    <column name="GENERALDATA QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity</annotation>
+    </column>
+    <column name="GENERALDATA BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="GENERALDATA BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure in ISO code</annotation>
+    </column>
+    <column name="GENERALDATA HISTORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset is managed historically</annotation>
+    </column>
+    <column name="GENERALDATA MAIN_DESCRIPT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset main number text</annotation>
+    </column>
+    <column name="INSURANCE ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="INSURANCE SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="INSURANCE TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset insurance type</annotation>
+    </column>
+    <column name="INSURANCE COMPANY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Insurance companies</annotation>
+    </column>
+    <column name="INSURANCE POLICY_NO" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Insurance policy number</annotation>
+    </column>
+    <column name="INSURANCE TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplementary insurance text</annotation>
+    </column>
+    <column name="INSURANCE START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Insurance start date</annotation>
+    </column>
+    <column name="INSURANCE PREMIUM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Insurance rate FI-AA</annotation>
+    </column>
+    <column name="INSURANCE INDEX" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Insurance index series</annotation>
+    </column>
+    <column name="INSURANCE BASE_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base insurable value</annotation>
+    </column>
+    <column name="INSURANCE CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="INSURANCE CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="INSURANCE BASE_VAL_MAN_UPD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Update insurable value manually</annotation>
+    </column>
+    <column name="INSURANCE MAN_INS_VAL" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manual insurable value</annotation>
+    </column>
+    <column name="INSURANCE MAN_INS_VAL_MAINT_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maintenance year for manual insurable value</annotation>
+    </column>
+    <column name="INSURANCE CUR_INS_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Current insurable value</annotation>
+    </column>
+    <column name="INSURANCE CUR_INS_VALUE_MAINT_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal year for displaying insurance value</annotation>
+    </column>
+    <column name="INVENTORY ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="INVENTORY SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="INVENTORY DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Last inventory date</annotation>
+    </column>
+    <column name="INVENTORY NOTE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplementary inventory specifications</annotation>
+    </column>
+    <column name="INVENTORY INCLUDE_IN_LIST" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inventory indicator</annotation>
+    </column>
+    <column name="INVESTACCTASSIGNMNT ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="INVESTACCTASSIGNMNT SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="INVESTACCTASSIGNMNT INVEST_ORD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Investment Order</annotation>
+    </column>
+    <column name="INVESTACCTASSIGNMNT WBS_ELEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS element investment project - internal key</annotation>
+    </column>
+    <column name="INVESTACCTASSIGNMNT WBS_ELEMENT" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS element investment project - external key</annotation>
+    </column>
+    <column name="INVESTMENT_SUPPORT ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="INVESTMENT_SUPPORT SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="INVESTMENT_SUPPORT INV_SUPPORT_KEY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Investment support key</annotation>
+    </column>
+    <column name="INVESTMENT_SUPPORT CHANGE_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Type (U, I, S, D)</annotation>
+    </column>
+    <column name="LEASING ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="LEASING SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="LEASING COMPANY" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing company</annotation>
+    </column>
+    <column name="LEASING AGRMNT_NO" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing agreement number</annotation>
+    </column>
+    <column name="LEASING AGRMNTDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing agreement date</annotation>
+    </column>
+    <column name="LEASING NOTICEDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing agreement notice date</annotation>
+    </column>
+    <column name="LEASING START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lease start date</annotation>
+    </column>
+    <column name="LEASING LNGTH_YRS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Length of lease in years</annotation>
+    </column>
+    <column name="LEASING LNGTH_PRDS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Length of lease in periods</annotation>
+    </column>
+    <column name="LEASING TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing type</annotation>
+    </column>
+    <column name="LEASING BASE_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing base value as new</annotation>
+    </column>
+    <column name="LEASING CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="LEASING CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="LEASING PURCHPRICE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leased asset purchase price</annotation>
+    </column>
+    <column name="LEASING TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing data text</annotation>
+    </column>
+    <column name="LEASING NO_PAYMNTS" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of lease payments</annotation>
+    </column>
+    <column name="LEASING CYCLE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lease payment cycle</annotation>
+    </column>
+    <column name="LEASING IN_ADVANCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Advance payments</annotation>
+    </column>
+    <column name="LEASING PAYMENT" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Periodic lease payment paid to leasing company/lessor</annotation>
+    </column>
+    <column name="LEASING INTEREST" nullable="false">
+      <datatype name="P7.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leasing interest rate (capital lease)</annotation>
+    </column>
+    <column name="LEASING VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Present value of lease</annotation>
+    </column>
+    <column name="NETWORTHVALUATION ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="NETWORTHVALUATION SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="NETWORTHVALUATION CLASS_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Property classification key</annotation>
+    </column>
+    <column name="NETWORTHVALUATION PROP_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Property indicator</annotation>
+    </column>
+    <column name="NETWORTHVALUATION MAN_PROP_VAL_REASON" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for manual valuation of net assets</annotation>
+    </column>
+    <column name="NETWORTHVALUATION MAN_PROP_VAL" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manual net worth tax value</annotation>
+    </column>
+    <column name="NETWORTHVALUATION CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="NETWORTHVALUATION CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="NETWORTHVALUATION MAN_PROP_VAL_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manual net worth tax value</annotation>
+    </column>
+    <column name="ORIGIN ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="ORIGIN SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="ORIGIN VENDOR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account number of vendor (other key word)</annotation>
+    </column>
+    <column name="ORIGIN VENDOR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of asset supplier</annotation>
+    </column>
+    <column name="ORIGIN MANUFACTURER" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manufacturer of asset</annotation>
+    </column>
+    <column name="ORIGIN PURCH_NEW" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Asset purchased new</annotation>
+    </column>
+    <column name="ORIGIN TRADE_ID" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="ORIGIN COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset&apos;s country of origin</annotation>
+    </column>
+    <column name="ORIGIN COUNTRY_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country key in ISO code</annotation>
+    </column>
+    <column name="ORIGIN TYPE_NAME" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset type name</annotation>
+    </column>
+    <column name="ORIGIN ORIG_ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original asset that was transferred</annotation>
+    </column>
+    <column name="ORIGIN ORIG_ASSET_SUBNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original asset that was transferred</annotation>
+    </column>
+    <column name="ORIGIN ORIG_ACQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original acquisition date of AuC/ transferred asset</annotation>
+    </column>
+    <column name="ORIGIN ORIG_ACQ_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal year of original acquisition</annotation>
+    </column>
+    <column name="ORIGIN ORIG_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original acquisition value</annotation>
+    </column>
+    <column name="ORIGIN CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="ORIGIN CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="ORIGIN INHOUSE_PROD_PERCENTAGE" nullable="false">
+      <datatype name="P5.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>In-house production percentage</annotation>
+    </column>
+    <column name="POSTINGINFORMATION ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="POSTINGINFORMATION SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="POSTINGINFORMATION CAP_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset capitalization date</annotation>
+    </column>
+    <column name="POSTINGINFORMATION DEACT_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deactivation date</annotation>
+    </column>
+    <column name="POSTINGINFORMATION INITIAL_ACQ" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset value date of the first posting</annotation>
+    </column>
+    <column name="POSTINGINFORMATION INITIAL_ACQ_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal year in which first acquisition was posted</annotation>
+    </column>
+    <column name="POSTINGINFORMATION INITIAL_ACQ_PRD" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period in which first acquisition was posted</annotation>
+    </column>
+    <column name="POSTINGINFORMATION PLRET_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned retirement date</annotation>
+    </column>
+    <column name="POSTINGINFORMATION PO_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset purchase order date</annotation>
+    </column>
+    <column name="POSTINGINFORMATION CAP_KEY" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Results Analysis Key</annotation>
+    </column>
+    <column name="REALESTATE ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="REALESTATE SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="REALESTATE TAX_OFFICE" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Local tax office</annotation>
+    </column>
+    <column name="REALESTATE TAX_NO" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax number of the notice of assessment</annotation>
+    </column>
+    <column name="REALESTATE ASSESSMENT_NOTICE_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of last notice of assessment</annotation>
+    </column>
+    <column name="REALESTATE MUNICIPALITY" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Municipality</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land Register of</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_ENTRY_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land register entry on</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_VOL" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land register volume</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_PG" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land register page</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_NO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land register entry: Sequence number</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_MAP_NO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Land register map number</annotation>
+    </column>
+    <column name="REALESTATE LNDREG_PLOT_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plot number</annotation>
+    </column>
+    <column name="REALESTATE CONVEYANCE_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of conveyance</annotation>
+    </column>
+    <column name="REALESTATE AREA" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Surface area</annotation>
+    </column>
+    <column name="REALESTATE AREA_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Area unit</annotation>
+    </column>
+    <column name="REALESTATE AREA_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure in ISO code</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA PARAMETER" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter to which the selection condition should apply</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field to which the selection condition should apply</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA LOW" nullable="false">
+      <datatype name="C45" subType="DATASOURCE_TYPE" type="STRING" maxLength="45"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selections for GETLIST: Lower limit of value area</annotation>
+    </column>
+    <column name="SELECTIONCRITERIA HIGH" nullable="false">
+      <datatype name="C45" subType="DATASOURCE_TYPE" type="STRING" maxLength="45"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selections for GETLIST: Upperlimit of value area</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA ASSET" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA SUBNUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FROM_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for beginning of validity</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA TO_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date validity ends</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA BUS_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA RESP_CCTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center responsible for asset</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA INTERN_ORD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA MAINT_ORD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maintenance order</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA LOCATION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset location</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA ROOM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Room</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA PLATE_NO" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>License plate no. of vehichle</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA PERSON_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Number</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA SHIFT_FACT" nullable="false">
+      <datatype name="P3.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Multiple-shift factor for multiple shift operation</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA SHUTDOWN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset shutdown</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUNC_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA GRANT_NBR" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUNDS_CTR" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUND_APC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund for APC Account Assignments</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUNC_AREA_APC" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area for APC Account Assignments</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA GRANT_NBR_APC" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant for APC Account Assignments</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA FUNDS_CTR_APC" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center for APC Account Assignments</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA WBS_ELEMENT_COST" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS Element - External Key</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA RL_EST_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Key for Real Estate Object</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA RL_EST_KEY_EXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Real Estate Object - External Key</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA BUDGET_PERIOD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA BUDGET_PERIOD_APC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Budget Period for APC Account Assignments</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA SEGMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment for Segmental Reporting</annotation>
+    </column>
+    <column name="TIMEDEPENDENTDATA PROFIT_CTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883388320</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883388320</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883388320</attribute>
+</metadata>

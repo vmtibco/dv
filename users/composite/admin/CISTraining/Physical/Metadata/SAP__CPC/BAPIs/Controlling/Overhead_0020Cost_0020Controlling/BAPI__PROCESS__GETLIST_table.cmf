@@ -1,0 +1,404 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PROCESS_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_PROCESS_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1998-05-12
+
+The module determines a list of &lt;DS:GLOS.business process&gt;business processes&lt;/&gt; which correspond to the chosen requirements in the interface. 
+You can use the function module BAPI_PROCESS_GETDETAIL afterwards in order to provide more detail for a single business process. 
+For more information, see the SAP Library under Activity-Based Costing. Import ALLOCATIONCATEGORY
+&lt;DS:DE.LATYP_ABC&gt;allocation category&lt;/&gt; of the business process (if necessary, &quot;from&quot; value). Import ALLOCATIONCATEGORYTO
+&lt;DS:DE.LATYP_ABC&gt;allocation category&lt;/&gt; of the business processes (&quot;to&quot; value). Import ALLOCATIONCOSTELEMENT
+&lt;DS:GLOS.Verrechnungskostenart&gt;allocation cost category&lt;/&gt; of the business processes (if necessary, &quot;from&quot; value). Import ALLOCATIONCOSTELEMENTTO
+&lt;DS:GLOS.Verrechnungskostenart&gt;allocation cost category&lt;/&gt; of the business process (&quot;from&quot; value). Import BUSINESSPROCESS
+&quot;From&quot; value while choosing a business process area. Import BUSINESSPROCESSTO
+&quot;To&quot; value while choosing a business process area. Import BUSINESSPROCESSUNIT
+&lt;DS:GLOS.Kostentreiber&gt;cost driver&lt;/&gt; for the business process (if needed, &quot;from&quot; value). Import BUSINESSPROCESSUNITTO
+&lt;DS:GLOS.Kostentreiber&gt;cost driver&lt;/&gt; for the business process (&quot;to&quot; value). Import COMPANYCODE
+&lt;DS:GLOS.Buchungskreis&gt;company code&lt;/&gt; to which the business process should be assigned (if needed &quot;from&quot; value). Import COMPANYCODETO
+&quot;To&quot; value for the &lt;DS:GLOS.Buchungskreis&gt;company code&lt;/&gt; along with the &quot;from&quot; value builds an interval. Import CONTROLLINGAREA
+&lt;DS:GLOS.Kostenrechnungskreis&gt;controlling area&lt;/&gt; to which the &lt;DS:GLOS.Geschäftsprozeß&gt;business process&lt;/&gt; is assigned. Import DATEFROM
+Start of the valid period for the business processes being searched (&quot;from&quot; date). Import DATETO
+End of the valid period for the business processes being searched (&quot;to&quot; date). Import MASTER_DATA_INACTIVE
+X = read &lt;DS:TX.ACC_CMDT_STATUS&gt;inactive master record&lt;/&gt; 
+SPACE, X 
+SPACE Import PRICEINDICATOR
+&lt;DS:DE.TARKZ&gt;price indicator&lt;/&gt; of the business process (if needed, &quot;from&quot; value). Import PRICEINDICATORTO
+&lt;DS:DE.TARKZ&gt;price indicator&lt;/&gt; of the business process (&quot;to&quot; value). Import PROCESSOWNER
+Person, responsible for the business process (if needed, &quot;from&quot; value). Import PROCESSOWNERTO
+Person responsible for the business process (&quot;to&quot; value). Import PROCESS_OWNER_USER
+User Responsible for Business Process (From-Value) 
+
+Import PROCESS_OWNER_USER_TO
+User Responsible for Business Process (To-Value) 
+
+BUSINESSPROCESSLIST
+Table with selected requirements for corresponding business process with entry from &lt;DS:DE.KOKRS&gt;controlling area&lt;/&gt;, &lt;DS:DE.CO_PRZNR&gt;business process&lt;/&gt; and description/name. EXTENSIONIN
+Enhancement structure (Input). 
+
+EXTENSIONOUT
+Enhancement structure (Output). 
+
+RETURN
+Tables of the affected messages with parameter information.  Rows and columns for table parameters are specified. </annotation>
+  <columns>
+    <column name="Import ALLOCATIONCATEGORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation category (from value)</annotation>
+    </column>
+    <column name="Import ALLOCATIONCATEGORYTO" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation category (to value)</annotation>
+    </column>
+    <column name="Import ALLOCATIONCOSTELEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation cost element (from value)</annotation>
+    </column>
+    <column name="Import ALLOCATIONCOSTELEMENTTO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation cost element (to value)</annotation>
+    </column>
+    <column name="Import BUSINESSPROCESS" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business process (from value)</annotation>
+    </column>
+    <column name="Import BUSINESSPROCESSTO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business process (to value)</annotation>
+    </column>
+    <column name="Import BUSINESSPROCESSUNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measurement (from value)</annotation>
+    </column>
+    <column name="Import BUSINESSPROCESSUNITTO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measurement (to value)</annotation>
+    </column>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code (from value)</annotation>
+    </column>
+    <column name="Import COMPANYCODETO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code (to value)</annotation>
+    </column>
+    <column name="Import CONTROLLINGAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling area</annotation>
+    </column>
+    <column name="Import DATEFROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Validity period: Start</annotation>
+    </column>
+    <column name="Import DATETO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Validity period: End</annotation>
+    </column>
+    <column name="Import MASTER_DATA_INACTIVE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Master Record Inactive</annotation>
+    </column>
+    <column name="Import PRICEINDICATOR" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price indicator (from value)</annotation>
+    </column>
+    <column name="Import PRICEINDICATORTO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price indicator (to value)</annotation>
+    </column>
+    <column name="Import PROCESSOWNER" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible (From-Value)</annotation>
+    </column>
+    <column name="Import PROCESSOWNERTO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible (To-Value)</annotation>
+    </column>
+    <column name="Import PROCESS_OWNER_USER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Responsible for Business Process (From-Value)</annotation>
+    </column>
+    <column name="Import PROCESS_OWNER_USER_TO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Responsible for Business Process (To-Value)</annotation>
+    </column>
+    <column name="Import STATISTICAL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator &quot;Statistical Business Process&quot;</annotation>
+    </column>
+    <column name="BUSINESSPROCESSLIST CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="BUSINESSPROCESSLIST CO_BUSPROC" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Process</annotation>
+    </column>
+    <column name="BUSINESSPROCESSLIST NAME" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General Name</annotation>
+    </column>
+    <column name="BUSINESSPROCESSLIST DESCRIPT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+    <column name="EXTENSIONIN STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882760648</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882760648</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882760648</attribute>
+</metadata>

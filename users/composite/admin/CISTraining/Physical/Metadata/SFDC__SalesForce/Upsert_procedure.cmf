@@ -1,0 +1,56 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Upsert" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Upsert" type="PROCEDURE" subtype="DATABASE_PROCEDURE" changeToken="0">
+  <annotation>Creates new records and updates existing records; uses a custom field to determine the presence of existing records.
+
+Inputs:
+    externalIdFieldName:  field used to determine whether it should create a new record or update an existing one.
+    objectType:  The record type.
+    dataSql: SQL used to generate the new records.  Each row in the resulting result set will corresponds to a record in SalesForce.  The &apos;dataCursor&apos; input can be used instead.
+    dataCursor: Input cursor used to generate the new records.  Each row in the resulting result set will corresponds to a record in SalesForce.  The &apos;dataSql&apos; input can be used instead.
+    fields:  fields of the record.  This is a comma separated list.  If NULL, the fields will be extracted from the dataSql or dataCursor if possible.  Otherwise, an error will occur.
+
+Output:
+    A cursor containing the upsert results.
+        id - salesforce id of the record.
+        isCreated - boolean indicating if the record was newly created or not.</annotation>
+  <parameters>
+    <parameter name="externalIDFieldName" direction="IN" nullable="true">
+      <datatype name="VARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="objectType" direction="IN" nullable="true">
+      <datatype name="VARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="dataSql" direction="IN" nullable="true">
+      <datatype name="LONGVARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="2147483647"/>
+    </parameter>
+    <parameter name="dataCursor" direction="IN" nullable="true">
+      <datatype name="dataCursor" subType="DATASOURCE_TYPE" type="TABLE" refId="1"></datatype>
+    </parameter>
+    <parameter name="fields" direction="IN" nullable="true">
+      <datatype name="VARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="resultCursor" direction="OUT" nullable="true">
+      <datatype name="resultCursor" subType="DATASOURCE_TYPE" type="TABLE" refId="1">
+        <element name="id" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="isCreated" nullable="unknown">
+          <datatype name="BOOLEAN" type="BOOLEAN"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

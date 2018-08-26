@@ -1,0 +1,942 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_ACC_CO_DOCUMENT_FIND" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_ACC_CO_DOCUMENT_FIND" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2005-12-13
+Released on: 2002-07-05
+
+The method searches for CO documents that meet the specified criteria. The system only looks for actual postings (costs, revenues, activity allocations, statistical key figures and sender activities), and provides you with information on the documents it finds. 
+You specify the search criteria by using the DOCUMENT import parameter and the SELECT_CRITERIA table. You can also restrict the search area by using the RETURN_VALID_ONLY, RETURN_COSTS, RETURN_QTY, and RETURN_SKF indicators. 
+The RETURN_ITEMS parameter determines the information that is to be provided for the CO documents. 
+All of the messages that are issued during processing are collected in the RETURN return table. 
+The system saves the information on the documents found (with the search criteria) in the DOC_HEADERS, LINE_ITEMS, LINE_ITEMS_ACTIVITY, and LINE_ITEMS_STAT_KEY_FIG tables. The DOC_HEADERS table contains information on the document headers. If you request line items, the system provides them in the LINE_ITEMS, LINE_ITEMS_ACTIVITY, or LINE_ITEMS_STAT_KEY_FIG tables. 
+A controlling area and a cost center are defaulted as search criteria. The RETURN_VALID_ONLY indicator is set. The method then provides information for all documents that contain cost or revenue postings to this cost center, and have neither been reversed, nor are reversal documents. The system only provides information from the document headers. The following applies when search criteria are transferred: 
+In the SELECT_CRITERIA table, you can enter any selection criteria. The FIELD field is used for identifying the search criterion, and needs to be filled with default values (passwords) (see the SELECT_CRITERIA parameter). The SIGN, OPTION, LOW and HIGH fields are filled in the normal way for selection tables. The selection tables can have more than one entry with the same entry for FIELD. These entries should, however, not conflict with each other. 
+If you enter a criterion in the selection table that has also been specified in the DOCUMENT header structure (for example, posting date, period or fiscal year), then the entry from the header structure is transferred and the entries in the SELECT_CRITERIA table are ignored. Import DOCUMENT
+Document header with fields that are used as criteria for CO document searches. 
+The components have the following significance: 
+CO_AREA: Controlling area 
+DOC_NO: Document number 
+PSTNG_DATE.: Posting date 
+PERIOD: Posting period 
+FISC_YEAR: Fiscal year 
+OBJ_TYPE: Reference transaction that refers to the application in which the original document was created. 
+ORIG_TRANSAC: Original transaction that refers to the business transaction for which the original document was created. Import RETURN_COSTS
+Indicator that specifies whether the system should search for actual postings that contain cost or revenue postings. 
+&apos;X&apos; = search for cost and revenue postings (standard value) 
+&apos; &apos; = do not search for cost and revenue postings Import RETURN_ITEMS
+Indicator that determines whether the line items for the CO documents found should be returned or not. 
+&apos;X&apos; = Return line items 
+&apos; &apos; = Do not return line items (default value). Import RETURN_QTY
+Indicator that determines whether the system should search for actual postings that contain activity quantities or not. 
+&apos;X&apos; = Search for CO documents that contain activity quantities 
+&apos; &apos; = Do not search for CO documents that contain activity quantities (standard value). Import RETURN_SKF
+Indicator that determines whether the system looks for documents for statistical key figures or not. 
+&apos;X&apos; = Search for documents that contain statistical key figures. 
+&apos; &apos; = Ignore documents for statistical key figures in search (default value). Import RETURN_VALID_ONLY
+Indicator that determines whether the system is to also look for reversal and reversed documents. 
+&apos;X&apos; = Only search for documents that are not reversal documents and that have not been reversed. 
+&apos; &apos; = Include all documents in search (default value). DOC_HEADERS
+The table contains the document headers for the CO documents that the system found using the search criteria. LINE_ITEMSThis table contains the CO line items that the system found using the selection criteria. LINE_ITEMS_ACTIVITY
+The table contains the posting rows for activity quantities that the system found using your selection criteria. LINE_ITEMS_STAT_KEY_FIG
+The table contains the posting rows for statistical key figures that the system found using the search criteria that you entered. RETURN
+Message collector for the messages issued when you call the method. 
+The table contains the following fields: 
+TYPE:  Message type 
+ID: Name of the message class to which the message belongs. 
+NUMBER: Message number 
+MESSAGE: Message text 
+LOG_NO: Log number (when you use the application log) 
+LOG_MSG_NO: Sequential number of the message (when you use the application log). 
+MESSAGE_V1 - MESSAGE_V4: Message variables 
+SYSTEM: Name of the logical system from which the error message came. SELECT_CRITERIA
+You can enter criteria for the CO document search in this table. The SIGN, OPTION, LOW and HIGH fields are filled in the normal way for selection tables. The FIELD field contains passwords that are used to identify the search criterion. You must use the passwords that are listed in the following section. You can transfer more than one entry to the table using the same password. The entries must not contain any conflicting values. 
+Use the following values for FIELD: 
+&lt;ZU&gt;Account assignment objects:&lt;/&gt; 
+COSTCENTER for cost center 
+ACTTYPE for activity type 
+COSTCENTER/ACTTYPE for the cost center/activity type (10/6) object 
+ORDERID for internal orders 
+WBS_ELEM for WBS elements 
+SALES_ORD for sales orders 
+S_ORD_ITEM for sales order items (only the items) 
+SALES_ORD/S_ORD_ITEM for sales order items in a special order (10/6) 
+COST_OBJ for cost objects 
+CO_BUSPROC for business processes 
+NETWORK for networks 
+NETWORK/OPERATION for network activities (12/4) 
+RUNSCHD_HD for run schedule headers 
+PROFIT_SEGM_NO for profitability segments 
+OBJECT for any account assignment object You need to enter the names of the account assignment objects, for example, a cost center name or order number. You need to enter the leading zeros also. For the combined account assignment objects, you need to enter both object parts together without a hyphen or leading zeros, whereas the character string must be completed with spaces or leading zeros. The length of the subobjects is given above in parentheses. Example: You want the selection to be made using sales order item 10 in sales order 339. The fields must be filled as follows: FIELD=  &apos;SALES_ORD/S_ORD_ITEM&apos;, SIGN = &apos;I&apos;, OPTION = &apos;EQ&apos;, LOW = &apos;0000000339000010&apos;). If you want to search by profitability segments or any objects, you need to enter the internal object number as the value. &lt;ZU&gt;Search criteria without account assignment:&lt;/&gt; 
+COST_ELEM for cost elements 
+FISC_YEAR for fiscal years 
+PERIOD for posting periods 
+POSTGDATE for posting dates 
+DOCDATE for document dates 
+OBJ_TYPE for reference transactions 
+ORIG_TRANSAC for original transactions 
+STATKEYFIG for statistical key figures Since some criteria may be in the selection table SELECT_CRITERIA and the DOC_NO structure, it has been specified that the system ignores entries in the SELECT_CRITERIA table if the same entries are already in the DOC_NO structure. </annotation>
+  <columns>
+    <column name="Import DOCUMENT CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Import DOCUMENT DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="Import DOCUMENT PSTNG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="Import DOCUMENT PERIOD" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period</annotation>
+    </column>
+    <column name="Import DOCUMENT FISC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="Import DOCUMENT OBJ_TYPE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="Import DOCUMENT ORIG_TRANSAC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original CO Transaction</annotation>
+    </column>
+    <column name="Import RETURN_COSTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Read Costs</annotation>
+    </column>
+    <column name="Import RETURN_ITEMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Return Document Rows</annotation>
+    </column>
+    <column name="Import RETURN_QTY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Read Quantities</annotation>
+    </column>
+    <column name="Import RETURN_SKF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Read Statistical Key Figures</annotation>
+    </column>
+    <column name="Import RETURN_VALID_ONLY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Do Not Read Reversal Documents</annotation>
+    </column>
+    <column name="DOC_HEADERS CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="DOC_HEADERS DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="DOC_HEADERS FISC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="DOC_HEADERS PERIOD" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period</annotation>
+    </column>
+    <column name="DOC_HEADERS VERSION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version</annotation>
+    </column>
+    <column name="DOC_HEADERS CO_TRANSAC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO Business Transaction</annotation>
+    </column>
+    <column name="DOC_HEADERS DOCDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date</annotation>
+    </column>
+    <column name="DOC_HEADERS POSTGDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date</annotation>
+    </column>
+    <column name="DOC_HEADERS DOC_HDR_TX" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Header Text</annotation>
+    </column>
+    <column name="DOC_HEADERS USERNAME" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User name</annotation>
+    </column>
+    <column name="DOC_HEADERS REVERSEDOC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identifier for reversal document</annotation>
+    </column>
+    <column name="DOC_HEADERS REVERSED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document Has Been Reversed</annotation>
+    </column>
+    <column name="DOC_HEADERS VARIANT" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO actual postings fast input: Variant</annotation>
+    </column>
+    <column name="DOC_HEADERS OBJ_KEY" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Key</annotation>
+    </column>
+    <column name="DOC_HEADERS OBJ_TYPE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="DOC_HEADERS OBJ_SYS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system of source document</annotation>
+    </column>
+    <column name="DOC_HEADERS OBJ_KEY_R" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cancel: object key (AWREF_REV and AWORG_REV)</annotation>
+    </column>
+    <column name="DOC_HEADERS ORIG_TRANSAC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original CO Transaction</annotation>
+    </column>
+    <column name="DOC_HEADERS CO_AREA_CURR" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling area currency</annotation>
+    </column>
+    <column name="DOC_HEADERS CO_AREA_CURR_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="LINE_ITEMS CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="LINE_ITEMS DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="LINE_ITEMS COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="LINE_ITEMS ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="LINE_ITEMS ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="LINE_ITEMS WBS_ELEM" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="LINE_ITEMS SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="LINE_ITEMS S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="LINE_ITEMS COST_OBJ" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Object</annotation>
+    </column>
+    <column name="LINE_ITEMS CO_BUSPROC" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Process</annotation>
+    </column>
+    <column name="LINE_ITEMS NETWORK" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Network Number for Account Assignment</annotation>
+    </column>
+    <column name="LINE_ITEMS OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="LINE_ITEMS RUNSCHD_HD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Run schedule header number</annotation>
+    </column>
+    <column name="LINE_ITEMS MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving Material</annotation>
+    </column>
+    <column name="LINE_ITEMS PROD_VERSN" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production version of receiver material</annotation>
+    </column>
+    <column name="LINE_ITEMS PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant for receiver material</annotation>
+    </column>
+    <column name="LINE_ITEMS PROFIT_SEGM_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profitability Segment Number (CO-PA)</annotation>
+    </column>
+    <column name="LINE_ITEMS COST_ELEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Element</annotation>
+    </column>
+    <column name="LINE_ITEMS VALUE_TCUR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Overall Amount in Transaction Currency</annotation>
+    </column>
+    <column name="LINE_ITEMS TRANS_CURR" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transaction Currency</annotation>
+    </column>
+    <column name="LINE_ITEMS TRANS_CURR_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="LINE_ITEMS VALUE_OCUR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Amount in Object Currency</annotation>
+    </column>
+    <column name="LINE_ITEMS OBJECT_CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="LINE_ITEMS OBJ_CURR_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="LINE_ITEMS VALUE_COCUR" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Amount in Controlling Area Currency</annotation>
+    </column>
+    <column name="LINE_ITEMS QUANTITY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total quantity entered</annotation>
+    </column>
+    <column name="LINE_ITEMS POSTQUUN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posted Unit of Measure</annotation>
+    </column>
+    <column name="LINE_ITEMS POSTQUUN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="LINE_ITEMS DR_CR_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Debit/credit indicator</annotation>
+    </column>
+    <column name="LINE_ITEMS VALUE_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO Value Type</annotation>
+    </column>
+    <column name="LINE_ITEMS VERSION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version</annotation>
+    </column>
+    <column name="LINE_ITEMS SEG_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment text</annotation>
+    </column>
+    <column name="LINE_ITEMS DOC_ITEM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Item Number</annotation>
+    </column>
+    <column name="LINE_ITEMS PERSON_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Number</annotation>
+    </column>
+    <column name="LINE_ITEMS MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="LINE_ITEMS MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="LINE_ITEMS MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY CO_BUSPROC" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Process</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY ACTVTY_QTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Quantity</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY ACTIVITYUN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity unit</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY ACTIVITYUN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY POS_OUTQTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posted output quantity</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY POSTOUTUN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posted output unit</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY POSTOUTUN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY ACT_SCHLD" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled Activity</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY SEG_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment text</annotation>
+    </column>
+    <column name="LINE_ITEMS_ACTIVITY DOC_ITEM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Item Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG WBS_ELEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG COST_OBJ" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Object</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG CO_BUSPROC" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Process</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG NETWORK" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Network Number for Account Assignment</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG STATKEYFIG" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Statistical key figure</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG STAT_QTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Statistical quantity</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG STAT_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Measure: Statistical Key Figure</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG STAT_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG PERSON_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Number</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG SEG_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment text</annotation>
+    </column>
+    <column name="LINE_ITEMS_STAT_KEY_FIG DOC_ITEM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Item Number</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="SELECT_CRITERIA FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field Name</annotation>
+    </column>
+    <column name="SELECT_CRITERIA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection criteria: SIGN</annotation>
+    </column>
+    <column name="SELECT_CRITERIA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection criteria: OPTION</annotation>
+    </column>
+    <column name="SELECT_CRITERIA LOW" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection criteria: From value</annotation>
+    </column>
+    <column name="SELECT_CRITERIA HIGH" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection criteria: To value</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882772948</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882772948</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882772948</attribute>
+</metadata>

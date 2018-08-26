@@ -1,0 +1,241 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pGetDataForTable" path="/users/composite/admin/CISTraining/Business/Business/pGetDataForTable" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="inTableNm" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="strField1">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="strField2">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="intField">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="dblField">
+          <datatype name="DOUBLE" type="FLOAT"/>
+        </element>
+      </datatype>
+    </parameter>
+    <parameter name="executionTime" direction="OUT" nullable="true">
+      <datatype name="TIMESTAMP" type="DATETIME"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Application/DefinitionSets/TypeDefs" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/pRunInputQuery" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="inQuery" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="strField1">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="strField2">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="intField">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="dblField">
+            <datatype type="FLOAT"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training" type="DATA_SOURCE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training/training/pGetDataForTable_result_cache" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="cachekey" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="strField1">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="strField2">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="intField">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="dblField">
+        <datatype type="FLOAT"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training/training/pGetDataForTable_scalar_cache" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="cachekey" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="executionTime">
+        <datatype type="DATETIME"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pGetDataForTable(
+	IN inTableNm VARCHAR,
+	OUT result CURSOR /users/composite/admin/CISTraining/Application/DefinitionSets/TypeDefs.myRow,
+	OUT executionTime TIMESTAMP
+)
+BEGIN
+	DECLARE myQuery VARCHAR;
+
+	IF inTableNm = &apos;MovieFile&apos; THEN
+		SET myQuery = &apos;SELECT Title, Director, ReleaseYear, Price
+   FROM /users/composite/admin/CISTraining/Physical/Formatting/File_MovieDir/MovieFile&apos;;
+	ELSEIF inTableNm = &apos;OrderDetailsByCustomer&apos; THEN
+		SET myQuery = &apos;SELECT contactfirstname,contactlastname, orderid, unitprice
+   FROM /users/composite/admin/CISTraining/Business/Logical/OrderDetailsByCustomer&apos;;
+	ELSE
+		RAISE /users/composite/admin/CISTraining/Application/DefinitionSets/TypeDefs.invalidInputException;
+	END IF;
+
+	CALL /users/composite/admin/CISTraining/Business/Logical/pRunInputQuery(myQuery, result);
+
+	SET executionTime = CURRENT_TIMESTAMP;
+END</attribute>
+  <attribute name="cacheClearRule" type="STRING">MANUAL</attribute>
+  <attribute name="cacheConfigured" type="BOOLEAN">true</attribute>
+  <attribute name="cacheDeltaLoader" type="NULL"/>
+  <attribute name="cacheEnabled" type="BOOLEAN">true</attribute>
+  <attribute name="cacheIncremental" type="BOOLEAN">false</attribute>
+  <attribute name="cacheLastTracking" type="STRING">/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training/training/cache_tracking</attribute>
+  <attribute name="cachePostRefreshCallback" type="NULL"/>
+  <attribute name="cachePreRefreshCallback" type="NULL"/>
+  <attribute name="cacheProcedureLimit" type="INTEGER">32</attribute>
+  <attribute name="cachePullBasedIncremental" type="BOOLEAN">false</attribute>
+  <attribute name="cacheSnapshotLoader" type="NULL"/>
+  <attribute name="cacheStorageSource" type="STRING">/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training</attribute>
+  <attribute name="cacheStorageTargets" type="MAP">
+    <item>
+      <key type="STRING"/>
+      <value type="STRING">/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training/training/pGetDataForTable_scalar_cache</value>
+    </item>
+    <item>
+      <key type="STRING">result</key>
+      <value type="STRING">/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Training/training/pGetDataForTable_result_cache</value>
+    </item>
+  </attribute>
+  <attribute name="cacheStorageType" type="STRING">DATA_SOURCE</attribute>
+  <attribute name="creationDate" type="LONG">1431533726259</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431533726259</attribute>
+  <trigger>
+    <security>
+      <owner user="admin" domain="composite"/>
+    </security>
+    <dependency target="/lib/resource/RefreshResourceCache" type="PROCEDURE">
+      <datatype name="Tree" type="TREE" refId="1"></datatype>
+    </dependency>
+    <dependency target="/users/composite/admin/CISTraining/Business/Business/pGetDataForTable" type="PROCEDURE">
+      <datatype type="PROCEDURE" refId="1">
+        <element name="inTableNm" direction="IN">
+          <datatype type="STRING" maxLength="255"/>
+        </element>
+        <element name="result" direction="OUT">
+          <datatype type="TABLE" refId="2">
+            <element name="strField1">
+              <datatype type="STRING" maxLength="255"/>
+            </element>
+            <element name="strField2">
+              <datatype type="STRING" maxLength="255"/>
+            </element>
+            <element name="intField">
+              <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+            </element>
+            <element name="dblField">
+              <datatype type="FLOAT"/>
+            </element>
+          </datatype>
+        </element>
+        <element name="executionTime" direction="OUT">
+          <datatype type="DATETIME"/>
+        </element>
+      </datatype>
+    </dependency>
+    <attribute name="actionProperties" type="MAP">
+      <item>
+        <key type="STRING">PARAMETERS</key>
+        <value type="STRING">&apos;/users/composite/admin/CISTraining/Business/Business/pGetDataForTable&apos;,&apos;PROCEDURE&apos;</value>
+      </item>
+      <item>
+        <key type="STRING">PATH</key>
+        <value type="STRING">/lib/resource/RefreshResourceCache</value>
+      </item>
+    </attribute>
+    <attribute name="actionType" type="STRING">PROCEDURE</attribute>
+    <attribute name="conditionSchedule" type="MAP">
+      <item>
+        <key type="STRING">startTime</key>
+        <value type="LONG">1431721218000</value>
+      </item>
+      <item>
+        <key type="STRING">interval</key>
+        <value type="INTEGER">0</value>
+      </item>
+      <item>
+        <key type="STRING">count</key>
+        <value type="INTEGER">1</value>
+      </item>
+      <item>
+        <key type="STRING">isCluster</key>
+        <value type="BOOLEAN">true</value>
+      </item>
+      <item>
+        <key type="STRING">lastScheduledTime</key>
+        <value type="LONG">0</value>
+      </item>
+      <item>
+        <key type="STRING">endTime</key>
+        <value type="LONG">0</value>
+      </item>
+      <item>
+        <key type="STRING">period</key>
+        <value type="INTEGER">2</value>
+      </item>
+      <item>
+        <key type="STRING">mode</key>
+        <value type="STRING">CALENDAR</value>
+      </item>
+      <item>
+        <key type="STRING">lastRunTime</key>
+        <value type="LONG">0</value>
+      </item>
+    </attribute>
+    <attribute name="conditionType" type="STRING">TIMER</attribute>
+    <attribute name="creationDate" type="LONG">1431722178123</attribute>
+    <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+    <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+    <attribute name="creatorUserName" type="STRING">admin</attribute>
+    <attribute name="enabled" type="BOOLEAN">false</attribute>
+    <attribute name="isChildTrigger" type="BOOLEAN">true</attribute>
+    <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+    <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+    <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+    <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+    <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431722178123</attribute>
+  </trigger>
+</metadata>

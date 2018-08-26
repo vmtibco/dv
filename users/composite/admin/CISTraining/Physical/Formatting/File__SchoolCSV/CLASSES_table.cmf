@@ -1,0 +1,94 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CLASSES" path="/users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="CourseName" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CourseDescription" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Department" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreditNumber" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TeacherName" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TeacherEmail" nullable="true">
+      <datatype type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolCSV/school.csv" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="CourseName">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="CourseDescription">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="Department">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="CreditNumber">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="TeacherName">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="TeacherEmail">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="StudentName">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="StudentEmail">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT DISTINCT
+    school_csv.CourseName, 
+    school_csv.CourseDescription, 
+    school_csv.Department, 
+    school_csv.CreditNumber, 
+    school_csv.TeacherName, 
+    school_csv.TeacherEmail
+FROM      
+    /users/composite/admin/CISTraining/Physical/Metadata/File_SchoolCSV/&quot;school.csv&quot; school_csv</attribute>
+  <attribute name="creationDate" type="LONG">1431542499587</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431542546282</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431542499587</attribute>
+</metadata>

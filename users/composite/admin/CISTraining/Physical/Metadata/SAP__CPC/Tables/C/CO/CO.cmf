@@ -1,0 +1,2610 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CO" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/C/CO" type="CONTAINER" subtype="SCHEMA" changeToken="0">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="autoAddChildren" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">1</attribute>
+  <attribute name="tableFilter" type="STRING">%</attribute>
+  <attribute name="userDeletedSet" type="SET">
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLCLASS_NA - Invalid Template Environments</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVAT - Texts for Variants</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_HISTOV_HT_T - History Overview: History Types Text Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORYTH - Product Category Description (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMD_EVHIST - Event History: Main Table Of History Event Records</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_RFCDEST - Products: Assignment of Logical System to RFC Destination</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVHID - Table for Storing History Versions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_ALTID_CONT - Context Fields for Alternative IDs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWD - CRM CRD: Generated Text DataSources for Domains</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETVIEW_BSP - Generated Table for View COMV_SETVIEW_BSP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_LOGSYS - Storage Form in Logical Systems</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPCMP - OCM: Comparison result, individual records for components</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_GTIN - Generated Table for View COMV_PROD_GTIN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_FRG_RELH - Product - Set - Assignment History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COIX_DATA - Controlling: Info system cluster tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPD - CO Object: Line Item Settlement, Not Valuated, With Status</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_EH_OBTYP - Generated Table for View COMV_EH_OBTYP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPLNTYP - External Planning Sources</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAXJUR_REGT - Tax Jurisdiction codes by region</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_EH_INTPRE - Generated Table for View COMV_EH_INTPRE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_AUTHGR - Generated Table for View COMV_PR_AUTHGR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SETTYPE_GEN - Settings for Generating Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_UI - Generated Table for View COMV_IL_UI</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SCHEME - Numbering Scheme</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_TEXTBW - Generated Table for View COMV_PROD_TEXTBW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ATTRTYPES_T - Text Table for Logical Attribute Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_OTYPE - Generated Table for View COMV_IL_OTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_HIERARCHYT - Hierarchy Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTCOMP - Control Composites</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPHDR - OCM: Comparison results, indiv. records for order headers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_UNIT - Product Unit of Measurement</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COACTA - Assignment of actions to authorization objects</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CLEAR_ACT - Data Cleansing: Indicator per Category and Object Class</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLCOLUMN - Template columntypes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_PRFLT - Profile for Alternative IDs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BW0 - CRM CRD: Relevant Fields of the Link and Master Data Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_APPLCATGRPR - Generated Table for View COMV_APPLCATGRPR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_CAT_SAL - Generated Table for View COMV_PR_CAT_SAL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLP - CO-OM-ABC: Items in Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEJ - CO Object: Line Items (by Fiscal Year)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_TXJR_RE_ABA - Generated Table for View COMV_TXJR_RE_ABA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRFREEATTRH - Free Attributes for a Product - History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PROREF - Product reference</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CFOP_REGION - Assignment of departure region to CFOP Version</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_TAX_GROUP_DT - Generated Table for View COMV_TAX_GROUP_DT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMOD - Status of Coverage Analyzer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_RELDIR - CRM CRD: Relationship Directions (BP and IL)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_MAPPING - Mapping Table for CRM Product Structures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_ORG_REL - Generated Table for View COMV_PR_ORG_REL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRCOMP_BW - Generated Table for View COMV_PRCOMP_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_BUPA_CALL_FU - Determining FMs for Data Exchange BP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_CONFIG - Type of Configurable Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COO0SFN - CO object planning: interfaces, application function modules</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMPLATEVH - Generated Table for View COMT_TEMPLATEVH</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPL - CO-ABC Template Master Data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_SYSSTAT - Erlaubte Systemstatus der ALV je Produkt- / Settyp</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PME_SET_MAP - Mapping Set Types for PME Classes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRWB_SM_NEW - Generated Table for View COMV_PRWB_SM_NEW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFUNC2 - CO-OM-ABC: Function Definitions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTRP - PI Sheet: Process Parameter Texts (Versions)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_PUR_1V - Generated Table for View COMM_PR_PUR_1V</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTAINERINFO - Collection of all Container Fields</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TYPE - Product Master Definition of Product Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCC2 - PP-PI: Customer-Specific Attributes for Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSB - CO Object: Total Variances/Results Analyses</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_PRFL - Profile for Alternative IDs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLKONST - Constants for Parallel Processing of Template Allocation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVSVW - Generated Table for View COVMVSVW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_DTYPE - Engineering Change Management: Change Graph</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_TA_MANUFAC - Manufacturer Information</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLTABLE - Template: Valid Tables in Environment Maintenance</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SCPCHR_H - Change Graph for History Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_LOGSYS - Generated Table for View COMV_PR_LOGSYS</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_TYPE_TXT - Generated Table for View COMV_IL_TYPE_TXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_DTYPE_H - Change Graph for History Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREFVW - Generated Table for View COVREFVW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_SCHEMET - Numbering Scheme Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_SM_D - Description of Search Methods for Objects in Prod. Workbench</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_PUR_1 - Purchasing</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_ALTID - Generated Table for View COMV_PROD_ALTID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIT - Totals Records for Reconciliation Ledger</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB120PAR - Parameters for Costing Request</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRODUCT_IDX - Index Table for Products</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SET_DETAIL - Generated Table for View COMV_SET_DETAIL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT06_PFOLDER - Container Table for Product Folder (CM)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_TYPE_INA - Generated Table for View COMV_PR_TYPE_INA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLF - CO-ABC Find Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_ATTRIBUTES - Metadata for Attributes in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVSETTING - General Settings for Coverage Analyzer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_FRG_REG - Product-Set Assignment (Gen. Link-Handler)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWV - CRM CRD: Join-Conditions of the Link and (Master) Data Tab.</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORYWL - Category GUIDs and User for Worklist COMM_HIERARCHY</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_EN_TYPE_UI - Control Table (Field Status) Dependent on Extension Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_EH_EVTYP - Generated Table for View COMV_EH_EVTYP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB190PAR - Parameters for User Status Request</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_COMP_ORG - Types of Organizational Dependencies</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCHP - PI sheet: Control Recipe Header</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_COMPET - Assignment of Customer Products to Competitor Products</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPA_CRMSTATUS - CO-PA Status: Records from CRM</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COOMCO - Generated Table for View COOMCO</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIO2 - Transaction-dependent fields for reconciliation ledger</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEJT - CO Object: Line Items for Prices (by Fiscal Year)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRVIEWH - Product View - History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT01_MARA - Container Table for Material Master</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORYT - Product Category Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROSYS0_BW - Generated Table for View COMV_PROSYS0_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCATFRGRH - Assignment Product Category - Set Type (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SPARE - Product: Spare Part Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_OTYPE - Definition of Object Types for Object Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSPD - CO Object: Settled Primary Cost Totals</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPOPR - OCM: Comparison result, individual records for operations</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMP_TYPES - Hierarchy Tool: Comparison Type Check Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETTYP_ATTR - Administrative Table for Set Type Attribute Information</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ATTRIBUTE - Product - Additional Attribute</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_OBTYP - Event History: Definition of Object Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSL - CO Object: Activity Type Totals</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETTYPE_STR - Names of Structures for SAP Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CFOP_CODE - Entity table for CFOP codes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_EXT_TEMP - Template for Extension Tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_TYPE_TXT - Relationship Type Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORY - Category</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBRAV - Generated Table for View COBRAV</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPPP_ITM - CO Postprocessing List - Items</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COINCTRL - CO Interface: Control Parameters</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_ACCESS - Product Accessories</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWB - CRM CRD: Objects for the Extractor-Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVPR - Generated Table for View COVPR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPMSG - Messages from checks for leveling steps</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCR_CMX_DB_CR - Context Data for Root Node</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKP - CO Object: Control Data for Primary Planning</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_TAX_GROUP - Generated Table for View COMV_TAX_GROUP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPLNTYPT - Text for COPLNTYP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVDAT - Table for Storing Coverage Results from Coverage Analyzer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CLEAR_PRIO - Data Cleansing: Permitted Priorities</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4SET_SHTXT - Generated Table for View COMV_F4SET_SHTXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPA_CRM_CEERROR - CO-PA: Incoming AE Records from CRM with Errors</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFMA - PI Sheet: Message Assignment to Process Instruction</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONVERT_SPEC - Detailed information about special conversions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEFTC - Table Control Assignments: Fields</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCC - PP-PI: Attributes for Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_KEYTYPE_CST - SAP Control Table for Key Assignment Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_KEY_TAB_TMP - MDM: Product - Differentiation Key (Category 0000000000)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_CAT_PRTP_OF - Generated Table for View COMV_CAT_PRTP_OF</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCR_CMX_DB_CO43 - Assignment Production Scheduling Profile and Standard XStep</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSRV - Variants (characteristics) for LIS performance measures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCH - Process Management: Control Recipe Header</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_KONT_ATTR - Acct Assignment Attributes for Obj.Type in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWO - CRM CRD: Generated Objects for Attribute-DataSources</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_HIERARCHYH - Hierarchy (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CORE - Process Mgmt.: Display Characteristics of the Eval. Version</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB180PAR - Parameters for Request for Triggering WM Goods Movements</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPB - CO Object: Line Items Variance/Period-Based Results Analysis</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPITM - OCM: Comparison result, individual records for items</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONV_FILE - Clipboard for Objects to Convert</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSRVAPPL - Application Component to Which LIS Variants Belong</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPPP_HDR - CO Postprocessing List - Headers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_ALTID - Generated Table for View COMV_PR_ALTID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPARAML - CO-OM-ABC: Language-Dependent Parameter Names</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLACT - CO-OM-ABC: Values for Activation Column in Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_INTPRE - Event History: Interpretation of Event History Records</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_TYPE_T - Relationship Type Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_ATTRB_TEXT - Text for Attributes in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCQ - PPPI/QM Integration: Buffer Table for Reporting Results</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVA - Variants: Cluster Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_ATTR_VALUES - Attribute Values</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_NFITMTYPT - Text table table for Nota Fiscal Item types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_PTP - Generated Table for View COMV_SETTYPE_PTP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COENV_REL - Assignment of Environments to Sub-Environments</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_GEN - Generated Table for View COMV_SETTYPE_GEN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRODUCTH - Product History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETVIEW_BSP - Set Types and View Assignment for Set Types in BSP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_TYPE_UOM - Product Type-Specific Settings for Units of Measure</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVJR - Generated Table for View COVJR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_HISTOV_HT - History Overview: History Types Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CODB - File to save distributed orders (INDX)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWE - CRM CRD: Relevant Fields of the Object Tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SERVI - Product: Spare Part Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSP - CO Object: Cost Totals for External Postings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PROD_VARH - History: Assignment of Variants to Configurable Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWORK130PAR - Workbench release parameters for preposting</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMODSET - Repository for Customer/SAP View Information</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPBR - CO Object: Valuated Line Item Settlement</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMP_MRH - Set Type History Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IPR_SHTEXT - Generated Table for View COMV_IPR_SHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIP - Single plan items for reconciliation ledger</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_TP_OD - Sequence of Alternative IDs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_GTINH - GTIN - Global Trade Item Number  History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TEMPLATE - Product Template for Configurable Products</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRODUCT_IDX - Generated Table for View COMV_PRODUCT_IDX</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_OTYPE_T - Description of Object Types for Object Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ALTID_BSP - Generated Table for View COMV_ALTID_BSP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVPT - Generated Table for View COVPT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVAB - CO-PC Responsibility Area Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_ATTR_ALIASH - Attribute Alias</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SCHEME_SEG - Numbering Scheme Segment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COME - Process Management: Message Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COIX_DATA40 - Cluster table infosystem</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SET_HEADER - Settings for Generating Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKR - CO Object: Control Data for Statistical Key Figures</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMVH_IL_TYPE_T - Generated Table for View COMVH_IL_TYPE_T</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMEP - PI Sheet: Message Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRVIEW_T - Definition of Views in Product Maintenance</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COLORSEXC - Excel Colors</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_SETTP_TEMP - Template XXXX</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ATTRIBUTE_T - Product Additional Attribute Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COHIERARCH - CO-OM-ABC: Hiearchy Graphic for Functions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIO1 - Object Table for Reconciliation Ledger COFIT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRMAT_NREL - Group Table for Number Range Object MATERIALID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TYPE_UPL - Product-Type-Specific Settings for Upload</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRSRV_NREL - Group Table for Number Range Object SERVICEID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CFOP_VERT - Text table for CFOP Versions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKAA - CO Object: Control Data for Variances and Results Analysis</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCR_CMX_DB_CS - Context Data for XSteps</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVTKEY - Coverage Analyzer: Test Key</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRWBIL_USER - User Settings for Relationships in Product Maintenance</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVDATCOL - Last Data Collection: Control Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRODUCT - General Product Settings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONVERTER - Information about access to installed converter</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_LINK_PART_T - Text Table for COMC_LINK_PART01</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRSHTEXT - Generated Table for View COMV_PRSHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMHP - PI Sheet: Message Header</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLCLASS - Template environments</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_LINK_PART01 - Generated Table for View COMV_LINK_PART01</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_VALAREA_R3 - Valuation Areas in R/3</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKS - CO Object: Control Data for Secondary Planning</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COACTV - Assign transaction, activity to CO_ACTION</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_SM - Search Methods in Product Workbench</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMER - Process Message Record: Message Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEF - Template: Definitions for Classes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TYPE_NRO - Number Assignment Control</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBK - CO Object: Document Header</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDBP - Product/Object: Relationship to Partners (Time-Dependent)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO2MAPINF - Header Information for CO2MAP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG_REL - Settings for Link Tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB230PAR - Parameters for Request for Close</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_EXT_TEMPH - Template for Extension Tables History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMPLATEV - Generated Table for View COMT_TEMPLATEV</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_FRG_REL - Product - Set - Assignment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CLEAR_STAT - Data Cleansing: Status and Transition Can Be Selected</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT03_EKPO - Container Table for Purchase Order Item</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVHIS - Table for Storing the History from Coverage Analyzer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TYPE_T - Description of the Product Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_APPLICATION - Application</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEJR - CO Object: Line Items for Stat. Key Figures (by Fiscal Year)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_HISTOV_VAR - History Overview: Variant Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_OBJ_SET - Assignment of Set Types to Object Family (No Longer Used)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIS - Actual line items for reconciliation ledger</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_OBJ_FAM - Generated Table for View COMV_PR_OBJ_FAM</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_PRDTYPE - Generated Table for View COMV_PR_PRDTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_TP_SC - Short Form for Alternative ID Types in PC UI Quick Search</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRFREEATTR - Free Attributes for a Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCATH - Product Category (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_OBJT - Object Types in Product Workbench</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COCOA - Process Management: Operation Assignment Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVRFCERR - Number of RFC Errors While Accessing Server</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_TA_MANUFACH - Manufacturer Information</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAX_LAW_2 - Entity table for IPI Tax Law Keys</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CORP - Process Management: Evaluation Versions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREFVW_NGEN - Generated Table for View COVREFVW_NGEN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CFOP_VER - Entity table for existing CFOP Versions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWH - CRM CRD: Tables of an Object</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_OBJ_FAMT - Object Family Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4PR_CAT - Generated Table for View COMV_F4PR_CAT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWC - CRM CRD: Compound for Fields from Product Extensions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_MAP_KEY - Table Keys that Are Mapped to Each Other</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_ECMCHG_H - Change Graph for History Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_DAT - Generated Table for View COMV_SETTYPE_DAT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COIFT - Interface to Activity Allocation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVRES - Table of Coverage Results</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRODUCT_REF - Generated Table for View COMV_PRODUCT_REF</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDBP_H - History Table for COMM_IL_PRDBP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRVIEW - Product Maintenance Definition Views</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVLP - PI Sheet: Current Variable Values</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONNECT_XI_IS_BS - Connections from Integration Server to Business Systems</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_FRGTYPE - Set Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLCOLUMNT - Template column default texts (if not in COTPLDEFCOLT)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_BSP - Assignment of an ID Profile to BSP F4 Help</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COENV_COPY - Functions copied from sub environments to main environments</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SCHEME_T - Numbering Scheme Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETTYPE_T - Set Type Text</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAX_LAW_2T - Text table for IPI Tax Law Keys</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SPARE_H - Products: Spare Part Relationship History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SET_OBJTYPE - Objects Using Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWBSUBOBJ - File for Saving Sub-objects COWRK (INDX)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_R3_FIELDS - Assignment of R/3 material master fields to CFOP tax classif</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAXJUR_CITY - Tax Jurisdiction codes by City</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_COMMERCIALH - Business data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_TRANSFER - Transfer Attributes for Object Type in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMPLATE - Set Type Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_GTINTYPE - GTIN Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_FORMAT - Data for Converting the Product ID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSPP - Transfer of the Order in the COSP Table to the Project</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_KEYTYPE_PCU - SAP Control Table for Key Assignment Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COL_VERSION - Cool Versions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONV_MATRICES - Matrixes that must be checked into BOMs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ATTRIBUTE - Generated Table for View COMV_ATTRIBUTE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLAPPL - Template applications</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB200PAR - Parameters for Request for Confirmations</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRVIEW - Product View</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFP - Document Lines (project cash management)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_ATTR_DB_TMH - Template for Database Tables of Multi-Value Attributes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CORUUSR - User Settings for Confirmation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRAPPL_HIER - Product Type-Specific Application Area of a Hierarchy</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG_KEYG - Components of Differentiation Key (Gen. Link-Handler)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COACTT - Text of Authorization Check Activities</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMP_LAYER - Component Layering</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEFCELL - Template Cell Control</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCAT_ILH - Product Category - Relationship Type - Assignment History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_ALTID_VAL - Table for Alternative ID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_COPY_REL - Permitted Product Copy Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SCPCHR - Definition Scope -&gt; Characteristic</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_APPL - Generated Table for View COMV_APPL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVJL - Generated Table for View COVJL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ATTRTXT - Generated Table for View COMV_ATTRTXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSB_VTYPE - Code conversion OLTP (value type, RA category) in BIW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_KEYTYPEDATA - Generated Table for View COMV_KEYTYPEDATA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLFS - ABC: Sources of Formulas in a Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRPRDCATRH - Product - Product Category Assignment (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_OBJ_FAM - Object Family</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRSHTEXTH - Product Description (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVDATVOL - Coverage Analyzer: Data Volume Monitor</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAXTYP_BR - Entity Table for Nota Fiscal Tax Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_OBTYPT - Event History: Definition of Object Types (Description)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRAPPL_HIER - Generated Table for View COMV_PRAPPL_HIER</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVSET - Table for Storing Settings for Global View</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPH - OCM: Comparison result (header entry)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_CNFLD - Specify Context Data for ID Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_ATTR_RANGE - Table for Ranges</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_DIFF_BSP_A - Mapping BSP UI Event to Backend Action</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PROD_FRG - Product Type - Set Type - Assignment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLCLT - Template environment texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETTYPE_BSP - Set-Type Customizing for BSP Application</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_LOGSYS_MAP - Assignment of Logical Systems</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_FRGTYPE_T - Set Type Text</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPR - CO Object: Line Items for Stat. Key Figs (by Period)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG - Types of Organizational Dependencies</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_HIERARCHY - Category Hierarchy</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PROD_VAR - Assignment of Product Variants to Configurable Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_KEYTYPE_PCU - SAP Control Table for Key Assignment Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBKCURR - Generated Table for View COBKCURR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDMRK - Marketing Material</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSR - CO Object: Statistical Key Figure Totals</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDCPN - Product: Customer Number Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_TYPET - Description of Alternative ID Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_NFITMTYP - Entity table for Nota Fiscal Item types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO2MAP - Convert Information, Methods Include &lt;-&gt; ASP+ Source</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ALTID_VAL - Generated Table for View COMV_ALTID_VAL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVP_RCL - Generated Table for View COVP_RCL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB260PAR - Parameter for Request for Deletion Flag</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SETTYPE_DAT - Settings for Generating Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_LH_OBJ_KEY - Object-Type Differentiation-Key Type Assignment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRT_ALTIDPR - Assign ID Profile to Product Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_AUTHGR_T - Authorization Group Descriptions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT02_STPO - Container Table for BOM Item</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_AUTHGR - Authorization Groups for Product Master Maintenance</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDVND_H - History Table for COMM_IL_PRDVND</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_CLEAR - Generated Table for View COMV_PROD_CLEAR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COHIERARCH_USER - CO_ABC : Function Trees (activation user-dependent)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_HIERARCHYTH - Hierarchy Description (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4OB_SHTEXT - Generated Table for View COMV_F4OB_SHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO_SSTRCV3 - Generated Table for View CO_SSTRCV3</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PT_FT_CREAT - Which Sets May Be Created for Which Product Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_APPL - Product Workbench: Assignment of Object Type to Transaction</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_IDENT_ATTR - Identification Attributes on Object Type in AttributeService</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWK - CRM CRD: Join-Conditions of the Object Tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_TYPE_T - Generated Table for View COMV_IL_TYPE_T</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWS - CRM CRD: Selection Fields for Generated Attribute DataSource</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_TYPE - Determining Relationship Types for Object Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDVND - Product: Vendor Material Number Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRCAT_TEXT - Generated Table for View COMV_PRCAT_TEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPF - OCM: Names of compared fields</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COANZ - Index of Objects With Down Payments/Requests</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRVIEW_DEF - Product Workbench Default Setting Views</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_CAT - Generated Table for View COMV_PR_CAT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_OBJFAM - Generated Table for View COMV_PR_OBJFAM</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SETTYPE - Settings for Generating Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATGRY_CO - Product Category</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SET_DETAIL - Settings for Generating Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKL - CO Object: Control Data for Activity Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWI - CRM CRD: Relevant Fields of the Link and Master Data Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMVH_IL_OTYPE_T - Generated Table for View COMVH_IL_OTYPE_T</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_LINK_PART01 - General Settings for Time-Dependent Relationship to Partner</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLR - CO-OM-ABC: Master Data Extension, Process Template (Reports)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORYH - Category (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKA - CO Object: Control Data for Cost Elements</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_STRUC - Structures and Table Types of Relationship Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COK41C_ID - Identification Table for Posting Runs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPLNCTRL - Control Data for Planning Source</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_SHTEXT - Generated Table for View COMV_PR_SHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_TYPE - Generated Table for View COMV_PR_TYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TYPE_GEN - General Settings for Product Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_DB - Generated Table for View COMV_SETTYPE_DB</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB210PAR - Parameters for Request for Technical Completion</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRWB_USERTA - User Settings: Locator Tab</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRARCVERIFY - Table of Selected Non-Archivable/Non-Deletable Products</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_TYPE - Generated Table for View COMV_IL_TYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_OBJTYPE - Generated Table for View COMV_IL_OBJTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IPRODUCT - Inactive Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRTI_NREL - Group Table for Number Range Object TI_ID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_OBJ - Object Types for Alternative ID Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG_RELG - Additional Settings for Link Tables (Gen. Link-Handler)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRODUCT_BW - BW Extraction Product: Extract Individual Objects</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_PUR_1H - Purchasing</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLPT - CO-OM-ABC: Texts for Items in Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SET_BSP_CNT - Event Controlling for Set Types in BSP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CLEAR_PRIOT - Data Cleansing: Permitted Priorities</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SCHEME - Generated Table for View COMV_SCHEME</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCAT_IL - Assignment Category - Relationship Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG_KEYS - Key Fields of Organizational Units</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_LH_OBJ_KEYD - Default Values for the Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONNECT_XI_BS_IS - Connections from Business Systems to Integration Server</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREF - Coverage Reference Table: All Processing Blocks</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB220PAR - Parameters for Request for Technical Completion</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_TXJR_CT_ABA - Generated Table for View COMV_TXJR_CT_ABA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAX_LAW_1T - Tax Law ICMS - Texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMHR - Process Message Record: Message Header Data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE - Generated Table for View COMV_SETTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_TYPE_TBW - Generated Table for View COMV_IL_TYPE_TBW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EXT_SOURCET - Text Table for External Data Sources</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLFC - CO-OM-ABC: Process Template Control Blocks (TYPE TPLIC_BCB)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVDETVAR - Coverage Analyzer: Detail Variants</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_SETTYPE_CON - Parameter Table - Generation of Set Types and Attributes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_CAT_OT - Generated Table for View COMV_PR_CAT_OT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_EXTENSIONH - Extension Table History (Template)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COINT_TPOST_HD - Controlling Integration: Reposting: Header Data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_FIELD - Data for Alternative Product ID Fields</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPL - CO Object: Line Items for Activity Types (by Period)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_OBJT_D - Description of Object Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLT - CO-OM-ABC: Descriptive Text for Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVMVTIM - Table for Storing Time Snapshots</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_ATTR_SET - Control Table for the Field Status Dependent on Object Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_HISTOV_DBHT - Generated Table for View COMV_HISTOV_DBHT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_DSCOPE - Validity Range</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_VAR_BW - Generated Table for View COMV_PROD_VAR_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATFRGR - Assignment Category - Set Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDCTP_H - History Table for COMM_IL_PRDCTP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTEXTB - Context buffer</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMDTPLAN - Manager&apos;s Desktop: Planning Layout per Fcode</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_OBJFAM - Generated Table for View COMV_OBJFAM</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COL_INDX_CACHE - System Table: Cool Runtime Cache</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_SCHEME_SEG - Numbering Scheme Segment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_HISTOV_HT - Generated Table for View COMV_HISTOV_HT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COINT_INDX - Cockpit CO-Integr.: Data for Automatic Message Processing</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREG - Coverage Analyzer: Registration of Test Key</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CLEAR_TARG - Data Cleansing: Target Object List</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRFIN_NREL - Group Table for Number Range Object FINANCEID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFVP - PI Sheet: Process Instruction Characteristics</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PR_ORG_T - Types of Organizational Dependencies</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_HIER - Generated Table for View COMV_HIER</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTCOMPX - Control Composites: XML Strings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSBD - CO Object: Total of variances/accruals, of which settled</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFT - Process Management: Process Instructions in Control Recipe</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ALTID_PR_OD - Generated Table for View COMV_ALTID_PR_OD</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMVH_SETTYPE - Generated Table for View COMVH_SETTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COOI - Commitments Management: Line Items</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_TYPE_CON - Generated Table for View COMV_PR_TYPE_CON</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPA_GUID_MAP - Mapping Table between CRM GUIDS and CO-PA Database Structure</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_ECMCHG - Engineering Change Management: Change Graph</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IL_RELTYPE - Generated Table for View COMV_IL_RELTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLFV - CO-OM-ABC: Formula Value Lists for Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_PRODUCT_UPD - Indicator for Conversion Reports</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PRIDCMPT_BW - Generated Table for View COMV_PRIDCMPT_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_SETTPH_TEMP - Template XXXX (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_FRG_REGH - Product-Set Assignment History (Gen. Link-Handler)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKEY2 - CO Key Subnumbers Enhancement Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_ORG - Generated Table for View COMV_PR_ORG</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDCPN_H - History Table for COMM_IL_PRDCPN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_SERVI_H - Products: Relationship Types Services History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFUNC1 - CO-OM-ABC: Functions in Class</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ALTID_FIELD - Generated Table for View COMV_ALTID_FIELD</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4PR_SHTEXT - Generated Table for View COMV_F4PR_SHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COK41C_IX - Index Table for Documents in a Posting Run</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTROLS - Setting: Display control status</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_IL - Product Workbench: Assignment of Interlinkage to Object Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IPR_CAT_OT - Generated Table for View COMV_IPR_CAT_OT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATGRY_CO_T - Product Category Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT04_RSADD - Container Table for Reservation Appendix</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSLD - CO Object: Activity Type Totals - of Which Settled</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_UNIT_BW - Generated Table for View COMV_PR_UNIT_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_GTIN - GTIN - Global Trade Item Number</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CLEAR_STACK - Data Cleansing Cases</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_VAR - Generated Table for View COMV_PROD_VAR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEJL - CO Object: Line Items for Activity Types (by Fiscal Year)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COINT_TPOST_IT - Controlling Integration: Reposting: Line Items</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB160PAR - Workbench Print Parameters for Request</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO_SSTRCV5 - Generated Table for View CO_SSTRCV5</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4PR_PRDCFG - Generated Table for View COMV_F4PR_PRDCFG</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_OBJTYPE - Definition of Object Types for Object Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBRA - Settlement Rule for Order Settlement</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLAPPLT - Template application texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPCONF - OCM: Comparison result, state of change numbers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLACTT - CO-OM-ABC: Texts for Entries in Activation Column</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEPT - CO Object: Line Items for Prices (by Period)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_APPLT - Application Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDROPDOWN - DropDown-Listbox Values for Template columns</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_GTINTYPE_T - Description of GTIN Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_KEYTYPED_C - Generated Table for View COMV_KEYTYPED_C</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_HIERARCHY - General Settings for Hierarchies and Categories</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO_SSTRCV2 - Generated Table for View CO_SSTRCV2</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_SETTYPE - Administrative Tables for Set Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROD_CATEG - Generated Table for View COMV_PROD_CATEG</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_LH_OBJ_KEYG - System-Dependent Information for Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_SYSTEM - System Identification</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBRB - Distribution Rules Settlement Rule Order Settlement</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_OBJ_FAM1 - Generated Table for View COMV_PR_OBJ_FAM1</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_PR_OD - Sequence of Alternative IDs in a Profile</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_HISTOV_HIST - Generated Table for View COMV_HISTOV_HIST</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_CAT_HIERNEW - Generated Table for View COMV_CAT_HIERNEW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTCOMPXT - Control Composites: Texts for TEXT Properties</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVJ - Generated Table for View COVJ</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAX_LAW_1 - Entity table for ICMS Tax Law Keys</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CFOP_CODET - Text table for CFOP codes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_OBJ_TEXT - Text for Object Types in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_TRA - Generated Table for View COMV_SETTYPE_TRA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPVIEW - Generated Table for View COMPVIEW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLLINETYPET - Template line type texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_TA_R3_IDH - R3 Identification</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ATTRTYPES - Product Additional Attribute Attribute Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREFVW2_NGEN - Generated Table for View COVREFVW2_NGEN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_DIFF_BSP - Adapter Information for Differentiaton Key Selection</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_TA_R3_ID - R3 Identification</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS - Generated Table for View COAS</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPA_CRM_GUIDMAP - Mapping Table CRM GUIDS - CO-PA Document Numbers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFIV - PI Sheet: Signature for Deviation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLFP - CO-OM-ABC: Formula Parameter Lists for Process Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRSHTEXT - Product Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDMPN_H - History Table for COMM_IL_PRDMPN</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COIX - Controlling: Info system cluster tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO_SSTRCV4 - Generated Table for View CO_SSTRCV4</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWJ - CRM CRD: Do Not Use</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COST - CO Object: Price Totals</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSSD - CO Object: Settled Secondary Cost Totals</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVAL - Log Management Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMH - PP-PI: Header Data for Process Messages</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COER - Sales Order Value Revenue</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TOOL_REG - Registration for Auxiliary/Correction/Reset Programs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONT05_DRAW - Container Table for Document Information Record</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PROREF_H - Product Reference History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_UI - Customizing Table for Relationship Type Interface</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMEBR - CO Interface: Control Puffer Refresh During Online Errors</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_REFERENCES - References in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMPLATEH - Set Type History Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_ACCESS_H - Product Accessories History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPPRT - OCM: Comparison result, individual record for PRTs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_HISTOV_VHIL - History Overview: Variant and History Type Interlinkage Tabl</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_UNITH - Product - Unit of Measurement History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRWB_USER_2 - User Settings: Product Maintenance</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COES - CO Object: Sales Order Value Line Items</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_SCHEME - Numbering Scheme</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWA - CRM CRD: Applications for the Extractor-Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_LH_OBJ_TYPE - Object Types Which Use the Differentiation Key</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_ENQUEUE - Lock Arguments for Objects in Interlinkages</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_CT_SCMTYPE1 - Generated Table for View COMV_CT_SCMTYPE1</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_ALTID_TYPE - Control Data for Alternative Product IDs</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CLEAR_DEP - Data Cleansing: Table of Referencing Objects</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONV_PARAMETERS - Parameter that is sent directly to the converter</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COEP - CO Object: Line Items (by Period)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COAS_OBJ_TYPES - Object Types in Attribute Service</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMAP - Online BDC output mapping from message table to container</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IPR_CAT - Generated Table for View COMV_IPR_CAT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_HELPATTR - Auxiliary Attribute Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFV - Process Management: Process Instr. Charact. in Ctrl Recipe</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONTCOMPT - Control Composites: Short Texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCAT - Product Category</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PME_CAT_MAP - Mapping of a Category or Product to PME Classes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB170PAR - Parameters for Request for Creation of Capacity Requirements</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSS - CO Object: Cost Totals for Internal Postings</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLLINETYPE - Template linetypes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVLOG - Coverage Analyzer Log Entry</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMBINATIONS_IR - Combinations of Company Code/Securities ID for Issuer Risk</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_VIEW - Generated Table for View COMV_PR_VIEW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCAT_USER - User Settings in COMM_HIERARCHY</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEFLINETYP - Template line types per application</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB140PAR - Workbench Print Parameters for Request</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVPL - Generated Table for View COVPL</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVRES0 - Temporary Storage for Coverage Results</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_OBJ_FAM1 - Client-Dependent Settings for Object Family</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_HIERARCHYWL - Hierarchy GUIDs and User for Worklist COMM_HIERARCHY</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRWTY_NREL - Group Table for Number Range Object WARRANTYID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMS_ATTR_VAL - Table for Fixed Values</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRVIEWT - Product View Description</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_EVTYPT - Event History: Definition of Event Types (Description)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLS - CO-ABC: Source Text for Formulas in Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVJT - Generated Table for View COVJT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWT - CRM CRD: Application Tables</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATFRGRH - Assignment Category - Set Types (History)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_ALTID_FLD - Generated Table for View COMV_ALTID_FLD</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_ATTR_DB_TMP - Template for Database Tables of Multi-Value Attributes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PROSYS1_BW - Generated Table for View COMV_PROSYS1_BW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IPR_PRDTYPE - Generated Table for View COMV_IPR_PRDTYPE</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDMRK_H - Marketing Material History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_CATEGORYDEL - Categories To Be Deleted (Temporary) in Download</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PRWB_SM_NEW - Assignment: Locator Search Type &lt;--&gt; Product Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COKEY - CO key sub-numbers</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSPR - CO Objekt: Enhancement to COSP for Dependency Planning</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVTKEYDEL - Coverage Analyzer: Recreate Locked Test Groups</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWORK110PAR - Workbench scheduling parameters for preposting</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_TYPE_NRO - Generated Table for View COMV_PR_TYPE_NRO</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CO_SSTRCV1 - Generated Table for View CO_SSTRCV1</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMT_TEMP_MR - Set Type Template</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSSP - Transfer of the Order COSS Table to the Project</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRIP_NREL - Group Table for Number Range Object IPID</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_IPRSHTEXT - Generated Table for View COMV_IPRSHTEXT</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMPSQU - OCM: Comparison results; Single records for sequences</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONVERT_LOC - Location-Dependent Conversion</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_APPLCATGRPR - Application Area of a Hierarchy</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_PR_CAT_PUR - Generated Table for View COMV_PR_CAT_PUR</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMQ - Temporary Storage for Material Production Messages for QM</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>CONU - Foreign Trade: Duty Rate Numbers and Commodity Codes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_IL_RELTYPE - Definition of Relationship Types for Object Relationships</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COWB270PAR - Parameter for Flag for Deletion Indicator</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDMPN - Product: Manufacturer Number Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EXT_SOURCE - External Data Sources</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_PR_TEXTOBJ - Text Objects in the Product Master</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFUNCL - CO-OM-ABC: Language-Dependent Functions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMD - Process Management: Error Log for Message Destination</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COINT_TKB6TP - Controlling Integration: Account Determination for Reposting</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_DSCOPE_H - Change Graph for History Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVAD - Variant catalog</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PME_PRD_MAP - Mapping of CRM Products for PME Classes</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEFCOLT - Template column texts per class</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVPB - Generated Table for View COVPB</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSC - CO Object: Assignment Original Costing Sheets</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COFTP - PI Sheet: Process Instructions</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COM_COMMERCIAL - Business data</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRODUCT - Product</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COACT - List of possible actions for authorizations</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRVIEWTH - Product View Description - History</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COSP_VTYPE - Conversion of OLTP (Value Type, Bus. Trans.) in BIW</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLTABLET - CO-ABC: Valid Tables in Template Environment (lang-dependnt)</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_CRD_GEN_BWG - CRM CRD: Object Uses for the Extractor Generation</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_IL_PRDCTP - Product: Content Provider Relationship</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRWB_TODO - Worklist</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRCATFRGR - Assignment Product Category - Set Type</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COVREFVW2 - Generated Table for View COVREFVW2</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_EVTYP - Event History: Definition of Event Types</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COTPLDEFCOL - Template columns</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_ATTR_ALIAS - Attribute Alias</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SETTYPE_STA - Generated Table for View COMV_SETTYPE_STA</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PR_PUR_1VH - Generated Table for View COMM_PR_PUR_1VH</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAXJUR_REG - Tax Jurisdiction codes by region</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_F4PR_PRDTYP - Generated Table for View COMV_F4PR_PRDTYP</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMM_PRPRDCATR - Product - Product Category Assignment</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_EH_INTPR_OB - Main Eventhistory Table</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COPARAM - CO-OM-ABC: Function Parameters</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COBK_INDX - Index in COBK for ORGVG</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMV_SCHEME_SEG - Generated Table for View COMV_SCHEME_SEG</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COMC_TAXTYP_BRT - Nota Fiscal Tax Type: Texts</name>
+      <type>2</type>
+    </item>
+    <item type="NAME_TYPE_PAIR">
+      <name>COOI_PI - BW CO-OM: Commitment Management: Deleted Line Items</name>
+      <type>2</type>
+    </item>
+  </attribute>
+</metadata>

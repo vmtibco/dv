@@ -1,0 +1,1880 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PRODORD_GET_DETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Orders/BAPI_PRODORD_GET_DETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 2004-03-02
+INCLUDE COBAPI_GET_DETAIL OBJECT DOKU ID TX INCLUDE COBAPI_PRODUCTION_ORDER OBJECT DOKU ID TX 
+&lt;ZH&gt;Authorization Check&lt;/&gt; 
+The authorization object &lt;DS:UO.C_AFKO_AWK&gt;C_AFKO_AWK&lt;/&gt; with the activity 03 (Display), and the order type and plant of the order are checked Export RETURN
+Import COLLECTIVE_ORDER
+Import NUMBER
+Import ORDER_OBJECTS
+COMPONENT
+HEADER
+OPERATION
+POSITION
+PROD_REL_TOOL
+SEQUENCE
+TRIGGER_POINT
+</annotation>
+  <columns>
+    <column name="Import COLLECTIVE_ORDER" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Display complete collective order</annotation>
+    </column>
+    <column name="Import NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production order number</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS HEADER" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS POSITIONS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS SEQUENCES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS OPERATIONS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS COMPONENTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS PROD_REL_TOOLS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS TRIGGER_POINTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Import ORDER_OBJECTS SUBOPERATIONS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Checkbox</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="COMPONENT RESERVATION_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="COMPONENT RESERVATION_ITEM" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="COMPONENT RESERVATION_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record type</annotation>
+    </column>
+    <column name="COMPONENT DELETION_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item is Deleted</annotation>
+    </column>
+    <column name="COMPONENT MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="COMPONENT PROD_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="COMPONENT STORAGE_LOCATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="COMPONENT SUPPLY_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supply Area</annotation>
+    </column>
+    <column name="COMPONENT BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="COMPONENT SPECIAL_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="COMPONENT REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Date for the Component</annotation>
+    </column>
+    <column name="COMPONENT REQ_QUAN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Quantity</annotation>
+    </column>
+    <column name="COMPONENT BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="COMPONENT BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENT WITHDRAWN_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity Withdrawn</annotation>
+    </column>
+    <column name="COMPONENT ENTRY_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="COMPONENT ENTRY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="COMPONENT ENTRY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENT ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="COMPONENT MOVEMENT_TYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Movement Type (Inventory Management)</annotation>
+    </column>
+    <column name="COMPONENT ITEM_CATEGORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Category (Bill of Material)</annotation>
+    </column>
+    <column name="COMPONENT ITEM_NUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM item number</annotation>
+    </column>
+    <column name="COMPONENT SEQUENCE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="COMPONENT OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="COMPONENT BACKFLUSH" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Backflush</annotation>
+    </column>
+    <column name="COMPONENT VALUATION_SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation of Special Stock</annotation>
+    </column>
+    <column name="COMPONENT SYSTEM_STATUS" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Edited status text</annotation>
+    </column>
+    <column name="COMPONENT MATERIAL_DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Description (Short Text)</annotation>
+    </column>
+    <column name="COMPONENT COMMITED_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Committed quantity</annotation>
+    </column>
+    <column name="COMPONENT SHORTAGE" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Shortfage</annotation>
+    </column>
+    <column name="COMPONENT PURCHASE_REQ_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase Requisition Number</annotation>
+    </column>
+    <column name="COMPONENT PURCHASE_REQ_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchase Requisition</annotation>
+    </column>
+    <column name="COMPONENT MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="COMPONENT MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="COMPONENT MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="HEADER ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="HEADER PRODUCTION_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="HEADER MRP_CONTROLLER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP controller for the order</annotation>
+    </column>
+    <column name="HEADER PRODUCTION_SCHEDULER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supervisor</annotation>
+    </column>
+    <column name="HEADER MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="HEADER EXPL_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of BOM Explosion/Routing Transfer</annotation>
+    </column>
+    <column name="HEADER ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="HEADER RESERVATION_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="HEADER SCHED_RELEASE_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled release date</annotation>
+    </column>
+    <column name="HEADER ACTUAL_RELEASE_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual release date</annotation>
+    </column>
+    <column name="HEADER FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic finish date</annotation>
+    </column>
+    <column name="HEADER START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic start date</annotation>
+    </column>
+    <column name="HEADER PRODUCTION_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="HEADER PRODUCTION_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start</annotation>
+    </column>
+    <column name="HEADER ACTUAL_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start date</annotation>
+    </column>
+    <column name="HEADER ACTUAL_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual finish date</annotation>
+    </column>
+    <column name="HEADER SCRAP" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total scrap quantity in the order</annotation>
+    </column>
+    <column name="HEADER TARGET_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total order quantity</annotation>
+    </column>
+    <column name="HEADER UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Common unit of measure for all order items</annotation>
+    </column>
+    <column name="HEADER UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="HEADER PRIORITY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order priority</annotation>
+    </column>
+    <column name="HEADER ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Type</annotation>
+    </column>
+    <column name="HEADER ENTERED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entered by</annotation>
+    </column>
+    <column name="HEADER ENTER_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Created on</annotation>
+    </column>
+    <column name="HEADER DELETION_FLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion flag</annotation>
+    </column>
+    <column name="HEADER WBS_ELEMENT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="HEADER CONF_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="HEADER CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="HEADER INT_OBJ_NO" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Configuration (internal object number)</annotation>
+    </column>
+    <column name="HEADER SCHED_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish time</annotation>
+    </column>
+    <column name="HEADER SCHED_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start time</annotation>
+    </column>
+    <column name="HEADER COLLECTIVE_ORDER" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Order is part of collective order</annotation>
+    </column>
+    <column name="HEADER ORDER_SEQ_NO" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Seq. number order</annotation>
+    </column>
+    <column name="HEADER FINISH_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic finish (time)</annotation>
+    </column>
+    <column name="HEADER START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic start time</annotation>
+    </column>
+    <column name="HEADER ACTUAL_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start time</annotation>
+    </column>
+    <column name="HEADER LEADING_ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leading order in current processing</annotation>
+    </column>
+    <column name="HEADER SALES_ORDER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="HEADER SALES_ORDER_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="HEADER PROD_SCHED_PROFILE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Scheduling Profile</annotation>
+    </column>
+    <column name="HEADER MATERIAL_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material description</annotation>
+    </column>
+    <column name="HEADER SYSTEM_STATUS" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>System Status</annotation>
+    </column>
+    <column name="HEADER CONFIRMED_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Committed quantity for order acc. to ATP check components</annotation>
+    </column>
+    <column name="HEADER PLAN_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Plant</annotation>
+    </column>
+    <column name="HEADER BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="HEADER MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="HEADER MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="HEADER MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="OPERATION ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="OPERATION COUNTER" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General counter for order</annotation>
+    </column>
+    <column name="OPERATION SEQUENCE_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="OPERATION CONF_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="OPERATION CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter</annotation>
+    </column>
+    <column name="OPERATION PURCHASE_REQ_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase requisition number</annotation>
+    </column>
+    <column name="OPERATION PURCHASE_REQ_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the purchase requisition in the order</annotation>
+    </column>
+    <column name="OPERATION GROUP_COUNTER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="OPERATION TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="OPERATION TASK_LIST_GROUP" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="OPERATION OPERATION_NUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="OPERATION OPR_CNTRL_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control key</annotation>
+    </column>
+    <column name="OPERATION PROD_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="OPERATION DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation short text</annotation>
+    </column>
+    <column name="OPERATION DESCRIPTION2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second line of the description</annotation>
+    </column>
+    <column name="OPERATION STANDARD_VALUE_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard value key</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_1" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_2" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_3" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_4" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_5" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION ACTIVITY_TYPE_6" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="OPERATION UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Measure for Activity/Operation</annotation>
+    </column>
+    <column name="OPERATION UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="OPERATION QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation Quantity</annotation>
+    </column>
+    <column name="OPERATION SCRAP" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation scrap</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_DATE_EXEC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Execution (date)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_TIME_EXEC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Execution (time)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_DATE_PROC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Processing (date)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_TIME_PROC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Processing (time)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_DATE_TEARD" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Teardown (date)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_START_TIME_TEARD" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Teardown (time)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_FIN_DATE_EXEC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish: Execution (date)</annotation>
+    </column>
+    <column name="OPERATION EARL_SCHED_FIN_TIME_EXEC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish: Execution (time)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_DATE_EXEC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Execution (date)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_TIME_EXEC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Execution (time)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_DATE_PROC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Processing (date)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_TIME_PROC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Processing (time)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_DATE_TEARD" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Teardown (date)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_START_TIME_TEARD" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start: Teardown (time)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_FIN_DATE_EXEC" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled finish: Execution (date)</annotation>
+    </column>
+    <column name="OPERATION LATE_SCHED_FIN_TIME_EXEC" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled finish: Execution (time)</annotation>
+    </column>
+    <column name="OPERATION WORK_CENTER" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center</annotation>
+    </column>
+    <column name="OPERATION WORK_CENTER_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center description</annotation>
+    </column>
+    <column name="OPERATION SYSTEM_STATUS" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>System Status</annotation>
+    </column>
+    <column name="OPERATION SUBOPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="POSITION ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="POSITION ORDER_ITEM_NUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Item Number</annotation>
+    </column>
+    <column name="POSITION SALES_ORDER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales order number</annotation>
+    </column>
+    <column name="POSITION SALES_ORDER_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales order item</annotation>
+    </column>
+    <column name="POSITION SCRAP" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scrap quantity in item</annotation>
+    </column>
+    <column name="POSITION QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order item quantity</annotation>
+    </column>
+    <column name="POSITION DELIVERED_QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity of goods received for the order item</annotation>
+    </column>
+    <column name="POSITION BASE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="POSITION BASE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="POSITION MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number for Order</annotation>
+    </column>
+    <column name="POSITION ACTUAL_DELIVERY_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual delivery/finish date</annotation>
+    </column>
+    <column name="POSITION PLANNED_DELIVERY_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery date from planned order</annotation>
+    </column>
+    <column name="POSITION PLAN_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning plant for the order</annotation>
+    </column>
+    <column name="POSITION STORAGE_LOCATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="POSITION DELIVERY_COMPL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>&quot;Delivery Completed&quot; Indicator</annotation>
+    </column>
+    <column name="POSITION PRODUCTION_VERSION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Version</annotation>
+    </column>
+    <column name="POSITION PROD_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="POSITION ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Type</annotation>
+    </column>
+    <column name="POSITION FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic finish date</annotation>
+    </column>
+    <column name="POSITION PRODUCTION_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="POSITION BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="POSITION DELETION_FLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion flag</annotation>
+    </column>
+    <column name="POSITION MRP_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP Area</annotation>
+    </column>
+    <column name="POSITION MATERIAL_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material description</annotation>
+    </column>
+    <column name="POSITION MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="POSITION MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="POSITION MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="PROD_REL_TOOL COUNTER" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="PROD_REL_TOOL PRT_ITEM_COUNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item counter for production resources/tools</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DELETION_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion Indicator</annotation>
+    </column>
+    <column name="PROD_REL_TOOL TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="PROD_REL_TOOL TASK_LIST_GROUP" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="PROD_REL_TOOL CTRL_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control key for management of production resources/tools</annotation>
+    </column>
+    <column name="PROD_REL_TOOL EARL_SCHED_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start (date) for PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL EARL_SCHED_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start (time) for PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL EARL_SCHED_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish (date) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL EARL_SCHED_FINISH_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled end (time) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL LATEST_SCHED_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start (date) for PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL LATEST_SCHED_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled start (time) for PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL LATEST_SCHED_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled finish (date) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL LATEST_SCHED_FINISH_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest scheduled end (time) for PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ACTUAL_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start (date) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ACTUAL_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start (time) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ACTUAL_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual finish (date) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ACTUAL_FINISH_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual finish (time) of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DURATION" nullable="false">
+      <datatype name="F8.16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="308" maxFractionalDigits="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Duration of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DURATION_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time unit for duration of PRT usage</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DURATION_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_VALUE_FOR_PRT_QTY" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard value for the PRT quantity</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_VALUE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity unit of production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_VALUE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL TOTAL_QUANTITY" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total planned quantity of production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL QUANTITY_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity unit of production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL QUANTITY_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL FORMULA_TOT_QTY" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Formula for calculating the total quantity of PRT</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_USAGE_VALUE_FOR_PRT" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard usage value for production resources/tools</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_USAGE_VALUE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Usage value unit of the production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL STD_USAGE_VALUE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL USAGE_VALUE" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total planned usage value of production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL USAGE_VALUE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Usage value unit of the production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL USAGE_VALUE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL FORMULA_TOT_USAGE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Formula for calculating the total usage value of PRT</annotation>
+    </column>
+    <column name="PROD_REL_TOOL ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="PROD_REL_TOOL PRT_CATEGORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production resources/tools category</annotation>
+    </column>
+    <column name="PROD_REL_TOOL PRT_NUMBER" nullable="false">
+      <datatype name="C33" subType="DATASOURCE_TYPE" type="STRING" maxLength="33"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production resource/tool number</annotation>
+    </column>
+    <column name="PROD_REL_TOOL PRT_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production resources/tools in plant</annotation>
+    </column>
+    <column name="PROD_REL_TOOL MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DOCUMENT_TYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DOCUMENT_NUMBER" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document number</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DOCUMENT_VERSION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Version</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DOCUMENT_PART" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Part</annotation>
+    </column>
+    <column name="PROD_REL_TOOL EQUIPMENT" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Equipment Number</annotation>
+    </column>
+    <column name="PROD_REL_TOOL MEASURING_POINT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Measuring Point</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DESCRIPTION_MEASURING_POINT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description of Measuring Point</annotation>
+    </column>
+    <column name="PROD_REL_TOOL DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description of the production resource/tool</annotation>
+    </column>
+    <column name="PROD_REL_TOOL BASE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure for production resources/tools</annotation>
+    </column>
+    <column name="PROD_REL_TOOL BASE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="PROD_REL_TOOL SYSTEM_STATUS" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>System Status</annotation>
+    </column>
+    <column name="PROD_REL_TOOL MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="PROD_REL_TOOL MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="PROD_REL_TOOL MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="SEQUENCE ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="SEQUENCE COUNTER" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="SEQUENCE TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="SEQUENCE TASK_LIST_GROUP" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="SEQUENCE GROUP_COUNTER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="SEQUENCE SEQUENCE_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="SEQUENCE SEQUENCE_CATEGORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence category</annotation>
+    </column>
+    <column name="SEQUENCE DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence description</annotation>
+    </column>
+    <column name="SEQUENCE LOT_SZ_MIN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From lot size</annotation>
+    </column>
+    <column name="SEQUENCE LOT_SZ_MAX" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To lot size</annotation>
+    </column>
+    <column name="SEQUENCE BRANCH_OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of the branch operation</annotation>
+    </column>
+    <column name="SEQUENCE RETURN_OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of the return operation</annotation>
+    </column>
+    <column name="SEQUENCE ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="SEQUENCE TASK_MEASURE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task list unit of measure</annotation>
+    </column>
+    <column name="SEQUENCE TASK_MEASURE_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="TRIGGER_POINT MILESTONE_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Milestone number</annotation>
+    </column>
+    <column name="TRIGGER_POINT VALID_FROM_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-From Date</annotation>
+    </column>
+    <column name="TRIGGER_POINT DELETION_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion Indicator</annotation>
+    </column>
+    <column name="TRIGGER_POINT CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Milestone created by</annotation>
+    </column>
+    <column name="TRIGGER_POINT CREATED_ON" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Milestone created on</annotation>
+    </column>
+    <column name="TRIGGER_POINT CHANGED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Milestone changed by</annotation>
+    </column>
+    <column name="TRIGGER_POINT CHANGED_ON" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Milestone changed on</annotation>
+    </column>
+    <column name="TRIGGER_POINT STD_NET_WORK" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard network number</annotation>
+    </column>
+    <column name="TRIGGER_POINT STD_NET_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard network type</annotation>
+    </column>
+    <column name="TRIGGER_POINT ALT_NET_WORK" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Alternative to a standard network</annotation>
+    </column>
+    <column name="TRIGGER_POINT IND_FUNCTIONS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Milestone is used for milestone functions</annotation>
+    </column>
+    <column name="TRIGGER_POINT DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+    <column name="TRIGGER_POINT OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="TRIGGER_POINT ORDER_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

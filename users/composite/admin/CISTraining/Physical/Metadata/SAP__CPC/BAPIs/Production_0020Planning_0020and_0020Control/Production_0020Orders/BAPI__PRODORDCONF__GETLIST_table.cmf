@@ -1,0 +1,324 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PRODORDCONF_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Orders/BAPI_PRODORDCONF_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-03-01
+Released on: 1998-06-29
+
+This method lists all the confirmations that fulfill pre-defined seletion criteria. All the key data for the confirmation and the confirmed object, such as order, sequence, operation and sub-operation is displayed in the list. The administrative data for the confirmation, such as confirmation date and time, person confirming, record type of the confirmation is also displayed. 
+All confirmation for the orders with order numbers 100111 bis 100222 are to be listed. 
+Call the method: 
+  DATA: AUFNR_TAB LIKE BAPI_PP_ORDERRANGE OCCURS  2 WITH HEADER LINE, 
+        CONF_TAB  LIKE BAPI_PP_CONF_KEY   OCCURS 20 WITH HEADER LINE. 
+  DATA: I_RETURN  LIKE BAPIRET1. 
+  REFRESH: AUFNR_TAB. 
+  AUFNR_TAB-SIGN   = &apos;I&apos;. 
+  AUFNR_TAB-OPTION = &apos;BT&apos;. 
+  AUFNR_TAB-LOW    = &apos;000000100111&apos;. 
+  AUFNR_TAB-HIGH   = &apos;000000100222&apos;. 
+  APPEND AUFNR_TAB. 
+  CALL FUNCTION &apos;BAPI_PRODORDCONF_GETLIST&apos; 
+       IMPORTING 
+            RETURN        = I_RETURN 
+       TABLES 
+            ORDER_RANGE   = AUFNR_TAB 
+            CONFIRMATIONS = CONF_TAB. 
+
+The selection criteria can be transfered as 
+Individual values (for example, Parameter OPERATION) 
+Intervals (for example, ORDER_RANGE and CONF_RANGE) 
+If no limiting conditions are entered, all the confirmations are displayed in a list. 
+Note that  selection criteria can only successfully select objects, if they do not contain any contradictions. For example, no confirmations can be found in a production order, if you enter an operation  as a parameter that does not exist in the order. 
+If no confirmations could be found for selection criteria you enetered, you receive the relevant information in the RETURN parameter. 
+Export RETURN
+The Return parameter is only filled if no confirmation has been found that fulfills the transferred selection requirements. 
+Otherwise, the Return parameter is returned with initial values. 
+
+Import OPERATION
+Operation in an order, for which existing confirmations are to be provided. 
+
+Import SEQUENCE
+Number of the sequence in an order, for which existing confirmations for the assigned operations are to be provided. 
+
+Import SUBOPERATION
+Sub-operation in an order, for which existing confirmations are to be provided. 
+
+CONFIRMATIONS
+The &lt;LS&gt;Confirmations&lt;/&gt; table provides key data, and also some selected detail data, for all selected confirmations. 
+
+CONF_RANGE
+Confirmations that are to be included in the selection can be provided in the &lt;LS&gt;CONF_RANGE&lt;/&gt; range table. 
+
+ORDER_RANGE
+Orders that are to be considered for confirmation selection can be provided in the &lt;LS&gt;ORDER_RANGE&lt;/&gt; range table. 
+
+</annotation>
+  <columns>
+    <column name="Import OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation</annotation>
+    </column>
+    <column name="Import SEQUENCE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="Import SUBOPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="CONFIRMATIONS CONF_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="CONFIRMATIONS CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter</annotation>
+    </column>
+    <column name="CONFIRMATIONS ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="CONFIRMATIONS SEQUENCE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence number</annotation>
+    </column>
+    <column name="CONFIRMATIONS OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="CONFIRMATIONS SUBOPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="CONFIRMATIONS RECORDTYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record type for confirmation</annotation>
+    </column>
+    <column name="CONFIRMATIONS CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="CONFIRMATIONS CREATED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Created On</annotation>
+    </column>
+    <column name="CONFIRMATIONS CREATED_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry time</annotation>
+    </column>
+    <column name="CONFIRMATIONS FIN_CONF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partial/Final Confirmation</annotation>
+    </column>
+    <column name="CONFIRMATIONS REVERSED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document Has Been Reversed</annotation>
+    </column>
+    <column name="CONFIRMATIONS REV_CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter of cancelled confirmation</annotation>
+    </column>
+    <column name="CONFIRMATIONS CONF_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation text</annotation>
+    </column>
+    <column name="CONFIRMATIONS EX_IDENT" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External key of a confirmation (for example from PDC system)</annotation>
+    </column>
+    <column name="CONF_RANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="CONF_RANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="CONF_RANGE LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="CONF_RANGE HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="ORDER_RANGE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="ORDER_RANGE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="ORDER_RANGE LOW" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="ORDER_RANGE HIGH" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421884324778</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421884324778</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421884324778</attribute>
+</metadata>

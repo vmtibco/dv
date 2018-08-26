@@ -1,0 +1,449 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_ASSET_ACQUISITION_CHECK" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Asset Accounting/BAPI_ASSET_ACQUISITION_CHECK" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1998-04-29
+
+When you use the &quot;Check&quot; method, you can simulate an asset acquisition, including the creation of the FI/CO document to be posted, in Asset Accounting. 
+On the Asset Accounting side, the system goes through all of the same checks as it does for the &quot;Post&quot; method. 
+However, there is no check of the document that is created. INCLUDE AMFA_BAPI_HINTS OBJECT DOKU ID TX  &amp;FURTHER_SOURCES_OF_INF&amp; Export RETURN
+
+Import ACCOUNTASSIGNMENTS
+
+
+Import ACQUISITIONDATA
+
+
+Import FURTHERPOSTINGDATA
+
+
+Import GENERALPOSTINGDATA
+
+Import ORIGINDOCREFERENCE
+
+
+</annotation>
+  <columns>
+    <column name="Import ACCOUNTASSIGNMENTS ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS WBS_ELEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUNDS_CTR" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS RL_EST_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Key for Real Estate Object</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS WBS_ELEMENT" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS CORR_ITEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Correction item number</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUNC_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS GRANT_NBR" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUND_APC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund for APC Account Assignments</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUNC_AREA_APC" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area for APC Account Assignments</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS GRANT_NBR_APC" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant for APC Account Assignments</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUNDS_CTR_APC" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center for APC Account Assignments</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS WBS_ELEM_COST" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS Element (Costs)</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS BUDGET_PERIOD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="Import ACCOUNTASSIGNMENTS BUDGET_PERIOD_APC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Budget Period for APC Account Assignments</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA AMOUNT" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount posted</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure in ISO code</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA VALUEDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Date</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA TRADE_ID" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="Import ACQUISITIONDATA TR_PART_BA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Trading partner&apos;s business area</annotation>
+    </column>
+    <column name="Import FURTHERPOSTINGDATA ALLOC_NMBR" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Assignment Number</annotation>
+    </column>
+    <column name="Import FURTHERPOSTINGDATA HEADER_TXT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Header Text</annotation>
+    </column>
+    <column name="Import FURTHERPOSTINGDATA REF_DOC_NO" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="Import FURTHERPOSTINGDATA REF_DOC_NO_LONG" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number (for Dependencies see Long Text)</annotation>
+    </column>
+    <column name="Import FURTHERPOSTINGDATA ITEM_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Text</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA USERNAME" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User name</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA DOC_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA DOC_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA PSTNG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA FIS_PERIOD" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Period</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA TRANS_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Translation Date</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA ASSETMAINO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA ASSETSUBNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="Import GENERALPOSTINGDATA ASSETTRTYP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Transaction Type</annotation>
+    </column>
+    <column name="Import ORIGINDOCREFERENCE OBJ_TYPE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="Import ORIGINDOCREFERENCE OBJ_KEY" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Key</annotation>
+    </column>
+    <column name="Import ORIGINDOCREFERENCE OBJ_SYS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system of source document</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883362520</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883362520</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883362520</attribute>
+</metadata>

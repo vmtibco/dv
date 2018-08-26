@@ -1,0 +1,526 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Account" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Account" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <annotation>Child Relationships
+	AccountHistory
+	Attributes:
+		Relationship Name : Histories
+		Related Field     : AccountId
+
+	AccountPartner
+	Attributes:
+		Relationship Name : AccountPartnersTo
+		Related Field     : AccountToId
+
+	Account
+	Attributes:
+		Relationship Name : ChildAccounts
+		Related Field     : ParentId
+
+	Asset
+	Attributes:
+		Relationship Name : Assets
+		Related Field     : AccountId
+
+	AccountContactRole
+	Attributes:
+		Relationship Name : AccountContactRoles
+		Related Field     : AccountId
+
+	Contract
+	Attributes:
+		Relationship Name : Contracts
+		Related Field     : AccountId
+
+	Task
+	Attributes:
+		Relationship Name : Tasks
+		Related Field     : WhatId
+
+	AccountPartner
+	Attributes:
+		Relationship Name : AccountPartnersFrom
+		Related Field     : AccountFromId
+
+	EntitySubscription
+	Attributes:
+		Relationship Name : FeedSubscriptionsForEntity
+		Related Field     : ParentId
+
+	Order
+	Attributes:
+		Relationship Name : Orders
+		Related Field     : AccountId
+
+	Partner
+	Attributes:
+		Relationship Name : PartnersTo
+		Related Field     : AccountToId
+
+	OpportunityPartner
+	Attributes:
+		Relationship Name : OpportunityPartnersTo
+		Related Field     : AccountToId
+
+	Contact
+	Attributes:
+		Relationship Name : Contacts
+		Related Field     : AccountId
+
+	Opportunity
+	Attributes:
+		Relationship Name : Opportunities
+		Related Field     : AccountId
+
+	Case
+	Attributes:
+		Relationship Name : Cases
+		Related Field     : AccountId
+
+	Partner
+	Attributes:
+		Relationship Name : PartnersFrom
+		Related Field     : AccountFromId
+
+	Event
+	Attributes:
+		Relationship Name : Events
+		Related Field     : WhatId
+
+	ProcessInstance
+	Attributes:
+		Relationship Name : ProcessInstances
+		Related Field     : TargetObjectId
+
+	Attachment
+	Attributes:
+		Relationship Name : Attachments
+		Related Field     : ParentId
+
+	Note
+	Attributes:
+		Relationship Name : Notes
+		Related Field     : ParentId
+
+	AccountShare
+	Attributes:
+		Relationship Name : Shares
+		Related Field     : AccountId
+
+	AccountFeed
+	Attributes:
+		Relationship Name : Feeds
+		Related Field     : ParentId
+</annotation>
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="IsDeleted" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MasterRecordId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Name" nullable="false">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Type" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ParentId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="BillingStreet" nullable="true">
+      <datatype name="textarea" extendedName="textarea(255)" subType="DATASOURCE_TYPE" type="CLOB" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="BillingCity" nullable="true">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="BillingState" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="BillingPostalCode" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="BillingCountry" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShippingStreet" nullable="true">
+      <datatype name="textarea" extendedName="textarea(255)" subType="DATASOURCE_TYPE" type="CLOB" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShippingCity" nullable="true">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShippingState" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShippingPostalCode" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShippingCountry" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Phone" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Fax" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AccountNumber" nullable="true">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Website" nullable="true">
+      <datatype name="url" extendedName="url(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Sic" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Industry" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AnnualRevenue" nullable="true">
+      <datatype name="currency" extendedName="currency(18.0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="18" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="NumberOfEmployees" nullable="true">
+      <datatype name="int" extendedName="int(8)" subType="DATASOURCE_TYPE" type="INTEGER" maxValue="99999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Ownership" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TickerSymbol" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Description" nullable="true">
+      <datatype name="textarea" extendedName="textarea(32000)" subType="DATASOURCE_TYPE" type="CLOB" maxLength="32000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Rating" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Site" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OwnerId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastActivityDate" nullable="true">
+      <datatype name="date" extendedName="date" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Jigsaw" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="JigsawCompanyId" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CleanStatus" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AccountSource" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DunsNumber" nullable="true">
+      <datatype name="string" extendedName="string(9)" subType="DATASOURCE_TYPE" type="STRING" maxLength="9"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Tradestyle" nullable="true">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="NaicsCode" nullable="true">
+      <datatype name="string" extendedName="string(8)" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="NaicsDesc" nullable="true">
+      <datatype name="string" extendedName="string(120)" subType="DATASOURCE_TYPE" type="STRING" maxLength="120"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="YearStarted" nullable="true">
+      <datatype name="string" extendedName="string(4)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SicDesc" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DandbCompanyId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CustomerPriority__c" nullable="true">
+      <datatype name="picklist" extendedName="picklist(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SLA__c" nullable="true">
+      <datatype name="picklist" extendedName="picklist(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Active__c" nullable="true">
+      <datatype name="picklist" extendedName="picklist(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="NumberofLocations__c" nullable="true">
+      <datatype name="double" extendedName="double(3.0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UpsellOpportunity__c" nullable="true">
+      <datatype name="picklist" extendedName="picklist(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SLASerialNumber__c" nullable="true">
+      <datatype name="string" extendedName="string(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SLAExpirationDate__c" nullable="true">
+      <datatype name="date" extendedName="date" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="Account-Name-uk" type="HASHED" unique="true">
+      <indexColumn name="Name" sortOrder="ASCENDING"/>
+    </index>
+    <index name="Account-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="ParentId_Account" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/BasicTraining/Demo25/Salesforce.com/Account">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="ParentId"/>
+    </foreignKey>
+    <foreignKey name="DandbCompanyId_DandBCompany" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/DandBCompany">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="DandbCompanyId"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/BasicTraining/Demo25/Salesforce.com/Account" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/DandBCompany" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1415758709193</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET">
+    <item type="STRING">Active__c</item>
+    <item type="STRING">CustomerPriority__c</item>
+    <item type="STRING">NumberofLocations__c</item>
+    <item type="STRING">SLAExpirationDate__c</item>
+    <item type="STRING">SLASerialNumber__c</item>
+    <item type="STRING">SLA__c</item>
+    <item type="STRING">UpsellOpportunity__c</item>
+  </attribute>
+  <attribute name="foreignKeyRelationship" type="MAP">
+    <item>
+      <key type="STRING">DandbCompanyId_DandBCompany</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">DandbCompany</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">Accounts</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">ParentId_Account</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Parent</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">ChildAccounts</value>
+        </item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="lastModifiedDate" type="LONG">1415758709193</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET">
+    <item type="STRING">Description</item>
+  </attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">AnnualRevenue</item>
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">Description</item>
+    <item type="STRING">LastModifiedDate</item>
+    <item type="STRING">NumberofLocations__c</item>
+    <item type="STRING">SystemModstamp</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET">
+    <item type="STRING">Description</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1415758709193</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

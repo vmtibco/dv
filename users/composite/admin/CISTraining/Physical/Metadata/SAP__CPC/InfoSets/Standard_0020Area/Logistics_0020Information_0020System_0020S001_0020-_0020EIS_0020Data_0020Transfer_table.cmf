@@ -1,0 +1,303 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Logistics Information System S001 - EIS Data Transfer" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/Logistics Information System S001 - EIS Data Transfer" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Base Unit of Measure" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-BASME</annotation>
+    </column>
+    <column name="Client" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-MANDT</annotation>
+    </column>
+    <column name="Period to analyze - posting period" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-SPBUP</annotation>
+    </column>
+    <column name="Statistics currency" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-STWAE</annotation>
+    </column>
+    <column name="Version number in the information structure" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-VRSIO</annotation>
+    </column>
+    <column name="Sold-to party" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-KUNNR</annotation>
+    </column>
+    <column name="Material Number" nullable="true">
+      <datatype name="C36" subType="DATASOURCE_TYPE" type="STRING" maxLength="36"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-MATNR</annotation>
+    </column>
+    <column name="Division" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-SPART</annotation>
+    </column>
+    <column name="Sales Organization" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-VKORG</annotation>
+    </column>
+    <column name="Distribution Channel" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-VTWEG</annotation>
+    </column>
+    <column name="Incoming orders quantity" nullable="true">
+      <datatype name="P8.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-AEMENGE</annotation>
+    </column>
+    <column name="Net value of incoming orders" nullable="true">
+      <datatype name="P10.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="10" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-AENETWR</annotation>
+    </column>
+    <column name="Credit memos quantity" nullable="true">
+      <datatype name="P8.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-GUMENGE</annotation>
+    </column>
+    <column name="Net value of credit memos" nullable="true">
+      <datatype name="P10.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="10" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-GUNETWR</annotation>
+    </column>
+    <column name="Open orders quantity in base unit of measure" nullable="true">
+      <datatype name="P8.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-OAUME</annotation>
+    </column>
+    <column name="Open net value of orders" nullable="true">
+      <datatype name="P10.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="10" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-OAUWE</annotation>
+    </column>
+    <column name="Returns Quantity" nullable="true">
+      <datatype name="P8.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-REMENGE</annotation>
+    </column>
+    <column name="Net value of incoming returns" nullable="true">
+      <datatype name="P10.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="10" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-RENETWR</annotation>
+    </column>
+    <column name="Sales quantity" nullable="true">
+      <datatype name="P8.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="8" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-UMMENGE</annotation>
+    </column>
+    <column name="Net value of invoiced sales" nullable="true">
+      <datatype name="P10.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="10" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>S001-UMNETWR</annotation>
+    </column>
+    <column name="_Base Unit of Measure" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00001</annotation>
+    </column>
+    <column name="_Client" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00002</annotation>
+    </column>
+    <column name="_Period to analyze - posting pe" nullable="true">
+      <datatype name="N7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_Statistics currency" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00004</annotation>
+    </column>
+    <column name="_Version number in the informat" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00005</annotation>
+    </column>
+    <column name="_Sold-to party" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00006</annotation>
+    </column>
+    <column name="_Material Number" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00007</annotation>
+    </column>
+    <column name="_Division" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00008</annotation>
+    </column>
+    <column name="_Sales Organization" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00009</annotation>
+    </column>
+    <column name="_Distribution Channel" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00010</annotation>
+    </column>
+    <column name="_Incoming orders quantity" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00011</annotation>
+    </column>
+    <column name="_Net value of incoming orders" nullable="true">
+      <datatype name="P26" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="26" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00012</annotation>
+    </column>
+    <column name="_Credit memos quantity" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00013</annotation>
+    </column>
+    <column name="_Net value of credit memos" nullable="true">
+      <datatype name="P26" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="26" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00014</annotation>
+    </column>
+    <column name="_Open orders quantity in base u" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00015</annotation>
+    </column>
+    <column name="_Open net value of orders" nullable="true">
+      <datatype name="P26" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="26" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00016</annotation>
+    </column>
+    <column name="_Returns Quantity" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00017</annotation>
+    </column>
+    <column name="_Net value of incoming returns" nullable="true">
+      <datatype name="P26" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="26" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00018</annotation>
+    </column>
+    <column name="_Sales quantity" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00019</annotation>
+    </column>
+    <column name="_Net value of invoiced sales" nullable="true">
+      <datatype name="P26" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="26" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00020</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421886029702</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421886029702</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421886029702</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">SP$00020</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001068</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

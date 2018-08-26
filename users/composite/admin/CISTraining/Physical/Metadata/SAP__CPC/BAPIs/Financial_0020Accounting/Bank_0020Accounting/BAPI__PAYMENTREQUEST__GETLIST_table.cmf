@@ -1,0 +1,499 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PAYMENTREQUEST_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Bank Accounting/BAPI_PAYMENTREQUEST_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-11-26
+
+You can use this method to create a list of payment requests. You enter the desired selection criteria (for example, origin, company code, fiscal year) in the table parameters. You can find further information in the documentation of the respective parameters. 
+
+
+The following authorization object is checked with the activity 03 (display): 
+&lt;DS:UO.F_PAYRQ&gt;F_PAYRQ&lt;/&gt;,,Authorization object for payment requests 
+&lt;ZH&gt;Returned data&lt;/&gt; 
+The payment requests matching the selection criteria are returned in table &lt;LS&gt;ListRequestid&lt;/&gt;. 
+&lt;ZH&gt;Processing steps&lt;/&gt; 
+The method carries out the following processing steps: 
+Selection parameter checks 
+Customer exit for check 
+Selection of payment requests from temporary buffer and database 
+Authorization check 
+Customer exit for further restriction of data 
+&lt;ZH&gt;Customer enhancements&lt;/&gt; 
+The method supports the SAP customer enhancement concept. Two customer exits are provided for selection parameter checks and restriction of selected data (SAP enhancement: PRQ_BAPI). 
+&lt;ZH&gt;Messages&lt;/&gt; INCLUDE BAPI_RET 
+You can find further information in the SAP Library under &lt;LS&gt;Financials -&gt; Financial Accounting -&gt; Bank Accounting -&gt; Payment Transactions -&gt; Automatic Payment -&gt; Payment Program for Payment Requests&lt;/&gt;. Export RETURNINCLUDE BAPI_TABLE Type,,ID   ,,Number,,Text I   ,,FIBL1,,004   ,,Due to lack of authorization not all data records are returned E   ,,S&amp;   ,,026   ,,Value &amp; in field SIGN can only be I, E E   ,,S&amp;   ,,027   ,,Value &amp; in field OPTION is invalid (EQ,NE,GT,GE,LE ,LT,BT,NB,CP,NP) E   ,,FIBL1,,003   ,,No authorization to execute in company code &amp;1 and origin &amp;2 E   ,,FIBL1,,014   ,,The parameters for the table PAYRQ selection are too complex 
+Import MAXROWS
+Maximum number of table entries to be read by the method. 
+The parameter helps avoid long display selection times in the event that the wrong choice of selection parameter is made. The system carries out an unrestricted search if no value is entered. 
+
+LIST_REQUESTID
+This table contains all payment requests matching the selection criteria. Besides the key number for the payment request (field REQUESTID) the data necessary for selection criteria assignment is also returned. INCLUDE BAPI_DATAELEMENT 
+
+SEL_AC_DOC_NO
+You can use this parameter to select according to document number of the corresponding accounting document of the payment request. If you leave the parameter blank, all values will be selected. INCLUDE BAPI_DATAELEMENT 
+SEL_CLR_DOC_NO
+Use this parameter to select according to clearing document number of the payment request. If you leave this parameter blank, all values are selected. INCLUDE BAPI_DATAELEMENT 
+SEL_COMP_CODE
+Use this parameter to select according to company code of the payment request. If you leave this parameter blank, all values will be selected. INCLUDE BAPI_DATAELEMENT 
+
+SEL_FISC_YEAR
+This parameter allows you to select according to fiscal year of the corresponding accounting document of the payment request. If you leave the parameter blank, all values are selected. INCLUDE BAPI_DATAELEMENT 
+SEL_ITEM_NUM
+This parameter allows you to select according to posting line of the corresponding accounting document of the payment request. Leaving the parameter empty means that all values are selected. INCLUDE BAPI_DATAELEMENT 
+SEL_LOGSYSTEM
+This parameter allows you to select according to the logical system of the payment request. Leaving the parameter empty means that all values are selected. INCLUDE BAPI_DATAELEMENT 
+
+SEL_OBJ_KEY
+This parameter allows you to select according to reference object of the payment request. Leaving the parameter empty means that all values are selected. INCLUDE BAPI_DATAELEMENT 
+
+SEL_OBJ_TYPE
+Use this parameter to select according to object type of the payment request. Leaving the parameter empty means that all values are selected. INCLUDE BAPI_DATAELEMENT 
+
+SEL_ORIGIN
+This parameter allows you to select according to payment request origin. Leaving the parameter empty means that all values are selected. INCLUDE BAPI_DATAELEMENT 
+
+</annotation>
+  <columns>
+    <column name="Import MAXROWS" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="LIST_REQUESTID REQUESTID" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key Number for Payment Request</annotation>
+    </column>
+    <column name="LIST_REQUESTID ORIGIN" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Indicator</annotation>
+    </column>
+    <column name="LIST_REQUESTID LOGSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="LIST_REQUESTID OBJ_TYPE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="LIST_REQUESTID OBJ_KEY" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Key</annotation>
+    </column>
+    <column name="LIST_REQUESTID COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="LIST_REQUESTID AC_DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Document Number</annotation>
+    </column>
+    <column name="LIST_REQUESTID ITEM_NUM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Line Item Within Accounting Document</annotation>
+    </column>
+    <column name="LIST_REQUESTID FISC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="LIST_REQUESTID CLR_DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of the Clearing Document</annotation>
+    </column>
+    <column name="SEL_AC_DOC_NO SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_AC_DOC_NO OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_AC_DOC_NO AC_DOC_NO_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Document Number</annotation>
+    </column>
+    <column name="SEL_AC_DOC_NO AC_DOC_NO_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Document Number</annotation>
+    </column>
+    <column name="SEL_CLR_DOC_NO SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_CLR_DOC_NO OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_CLR_DOC_NO CLR_DOC_NO_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of the Clearing Document</annotation>
+    </column>
+    <column name="SEL_CLR_DOC_NO CLR_DOC_NO_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of the Clearing Document</annotation>
+    </column>
+    <column name="SEL_COMP_CODE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_COMP_CODE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_COMP_CODE COMP_CODE_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="SEL_COMP_CODE COMP_CODE_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="SEL_FISC_YEAR SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_FISC_YEAR OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_FISC_YEAR FISC_YEAR_LOW" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="SEL_FISC_YEAR FISC_YEAR_HIGH" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="SEL_ITEM_NUM SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_ITEM_NUM OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_ITEM_NUM ITEM_NUM_LOW" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Line Item Within Accounting Document</annotation>
+    </column>
+    <column name="SEL_ITEM_NUM ITEM_NUM_HIGH" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Line Item Within Accounting Document</annotation>
+    </column>
+    <column name="SEL_LOGSYSTEM SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_LOGSYSTEM OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_LOGSYSTEM LOGSYSTEM_LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="SEL_LOGSYSTEM LOGSYSTEM_HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="SEL_OBJ_KEY SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_OBJ_KEY OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_OBJ_KEY OBJ_KEY_LOW" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Key</annotation>
+    </column>
+    <column name="SEL_OBJ_KEY OBJ_KEY_HIGH" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Key</annotation>
+    </column>
+    <column name="SEL_OBJ_TYPE SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_OBJ_TYPE OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_OBJ_TYPE OBJ_TYPE_LOW" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="SEL_OBJ_TYPE OBJ_TYPE_HIGH" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="SEL_ORIGIN SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="SEL_ORIGIN OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="SEL_ORIGIN ORIGIN_LOW" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Indicator</annotation>
+    </column>
+    <column name="SEL_ORIGIN ORIGIN_HIGH" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Indicator</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883482060</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883482060</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883482060</attribute>
+</metadata>

@@ -1,0 +1,986 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PLANNEDORDER_GET_DET_LIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Planning/BAPI_PLANNEDORDER_GET_DET_LIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2005-12-10
+Released on: 1998-07-17
+
+This method can be used to obtain a &quot;detailed&quot; list of planned orders that are selected using the selection criteria given as an import parameter to the method. 
+Please note that only the planned orders that are saved in the database will be selected. 
+To help you understand how the method can be used, test transaction &quot;MDBA&quot; is available. It has integrated all 6 planned order methods into a transaction to deal with planned orders. 
+For more information, please refer to the program documentation on this transaction. The name of the program is &apos;MDBAPI01&apos;. 
+Authorization checks: 
+The following authorization objects are checked with the activity V (Change): 
+&lt;DS:UO.M_PLAF_ORG&gt;M_PLAF_ORG&lt;/&gt; 
+&lt;DS:UO.M_LFPL_ORG&gt;M_LFPL_ORG&lt;/&gt; 
+You can find more information in the parameter documentation of the parameters below. Confirmations: 
+Messages are received back in the parameter &apos;Return&apos;. You can find return values and their meaning in this parameter documentation. 
+Export RETURNINCLUDE BAPI_TABLE Error messages Type      ID      Number      Message 
+E       61       092       &lt;DS:NA.61092&gt;Please specify at least one restriction&lt;/&gt; 
+E       61       402       &lt;DS:NA.61402&gt;No authorization for &amp;&lt;/&gt; 
+E       MD       130       &lt;DS:NA.MD130&gt;You do not have the necess.authorization for this function (see long txt)&lt;/&gt; 
+E       MD       212       &lt;DS:NA.MD212&gt;Please enter a planning scenario&lt;/&gt; 
+E       61       453       &lt;DS:NA.61453&gt;Enter plant&lt;/&gt; 
+E       61       509       &lt;DS:NA.61453&gt;Enter material&lt;/&gt; 
+E       61       041       &lt;DS:NA.61041&gt;No planned orders exist for selected criterion&lt;/&gt; Success messages Type      ID      Number      Message 
+S       MD       655       &lt;DS:NA.MD655&gt;&amp; planned orders have been selected&lt;/&gt; Import SELECTIONCRITERIA
+You can use this parameter to specify selection criterias to select planned orders. There are certain restrictions for specifying selection criterias as listed below: 
+
+At least one selection criteria has to be specified 
+A plant has to be specified if you use a material as the selection criteria 
+A plant has to be specified if you use a MRP controller as the selection criteria 
+Both a plant and a material has to be specified if you use a production version as the selection criteria 
+You must specify a planning scenario number if you enter &apos;X&apos; in the Simulative_ord indicator. 
+
+DETAILEDLIST
+If one or more planned orders are selected with the selection criteria that you had given by the import parameter, you will have a list of planned orders in this parameter. Not only the planned order number but also the header data of each planned order will be shown in each line of the list. You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP dictionary. 
+
+</annotation>
+  <columns>
+    <column name="Import SELECTIONCRITERIA PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA MRP_CTRLER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP Controller (Materials Planner)</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA RUNSCHD_HD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Run schedule header number</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA VERSION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Version</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA PROD_LINE" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production line for repetitive manufacturing</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA PLANNING_ID" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning identification 2</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA END_SEL_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of the Period of Examination</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA STR_SEL_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start of the Period to Be Evaluated</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA PLAN_SCENARIO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Scenario of Long-Term Planning</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA SIMULATIVE_ORD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for simulative planned orders</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="Import SELECTIONCRITERIA MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="DETAILEDLIST PLANNEDORDER_NUM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order number</annotation>
+    </column>
+    <column name="DETAILEDLIST MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning material</annotation>
+    </column>
+    <column name="DETAILEDLIST PLAN_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Plant</annotation>
+    </column>
+    <column name="DETAILEDLIST PROD_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production plant in planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order type</annotation>
+    </column>
+    <column name="DETAILEDLIST PROCUREMENT_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Procurement Type</annotation>
+    </column>
+    <column name="DETAILEDLIST SPECIALPROC_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special procurement type</annotation>
+    </column>
+    <column name="DETAILEDLIST TOTAL_PLORD_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total planned order quantity</annotation>
+    </column>
+    <column name="DETAILEDLIST FIXED_SCRAP_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed quantity of scrap from production</annotation>
+    </column>
+    <column name="DETAILEDLIST REQ_QUAN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Quantity</annotation>
+    </column>
+    <column name="DETAILEDLIST ORDER_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order start date in planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST ORDER_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order finish date in the planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST PLAN_OPEN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned opening date in planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST GR_PROC_TIME" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods receipt processing time in days</annotation>
+    </column>
+    <column name="DETAILEDLIST MRP_CONTROLLER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP controller</annotation>
+    </column>
+    <column name="DETAILEDLIST CONVERSION_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Conversion indicator for planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST FIRMING_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Firming indicator for planned order data</annotation>
+    </column>
+    <column name="DETAILEDLIST BOM_EXP_FIX_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixing indicator for BOM explosion</annotation>
+    </column>
+    <column name="DETAILEDLIST ACCTASSCAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Assignment Category</annotation>
+    </column>
+    <column name="DETAILEDLIST SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="DETAILEDLIST S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHED_LINE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery Schedule for Sales Order</annotation>
+    </column>
+    <column name="DETAILEDLIST RESERV_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="DETAILEDLIST QUOTA_ARR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Quota Arrangement</annotation>
+    </column>
+    <column name="DETAILEDLIST QUOTARRITM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quota Arrangement Item</annotation>
+    </column>
+    <column name="DETAILEDLIST FIXED_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Vendor</annotation>
+    </column>
+    <column name="DETAILEDLIST AGREEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="DETAILEDLIST AGMT_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="DETAILEDLIST PURCH_ORG" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Organization</annotation>
+    </column>
+    <column name="DETAILEDLIST STGE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="DETAILEDLIST CONSUMPT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Consumption Posting</annotation>
+    </column>
+    <column name="DETAILEDLIST SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="DETAILEDLIST INT_PROJ_ITEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS Element</annotation>
+    </column>
+    <column name="DETAILEDLIST BOMEXPL_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM explosion number</annotation>
+    </column>
+    <column name="DETAILEDLIST BOMEXPL_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Explosion date</annotation>
+    </column>
+    <column name="DETAILEDLIST VALIDITY_OBJECT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Variant/Standard Variant</annotation>
+    </column>
+    <column name="DETAILEDLIST BOM_USAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM Usage</annotation>
+    </column>
+    <column name="DETAILEDLIST ALTERNATIVE_BOM" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Alternative BOM</annotation>
+    </column>
+    <column name="DETAILEDLIST BOM_STATUS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM status</annotation>
+    </column>
+    <column name="DETAILEDLIST CHANGE_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="DETAILEDLIST SETRESERNO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement reservation number</annotation>
+    </column>
+    <column name="DETAILEDLIST SETTLITMNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the settlement reservation</annotation>
+    </column>
+    <column name="DETAILEDLIST DIST_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution key for quantity produced</annotation>
+    </column>
+    <column name="DETAILEDLIST VERSION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Version</annotation>
+    </column>
+    <column name="DETAILEDLIST RUNSCHD_HD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Run schedule header number</annotation>
+    </column>
+    <column name="DETAILEDLIST PROD_SCHEDULER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supervisor</annotation>
+    </column>
+    <column name="DETAILEDLIST PROD_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start date for production</annotation>
+    </column>
+    <column name="DETAILEDLIST PROD_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Finish date for production</annotation>
+    </column>
+    <column name="DETAILEDLIST CAP_REQ_RECORDID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHEDULING_ID" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for a schedule record</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHEDULING_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling indicator</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHEDULING_ERROR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error</annotation>
+    </column>
+    <column name="DETAILEDLIST PRODUCTION_NOTE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production note in the planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST BACKFLUSH_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Backflushing for order</annotation>
+    </column>
+    <column name="DETAILEDLIST BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="DETAILEDLIST CONFIGURATION" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Configuration (internal object number)</annotation>
+    </column>
+    <column name="DETAILEDLIST REVISION_LEVEL" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revision Level</annotation>
+    </column>
+    <column name="DETAILEDLIST REDUCED_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduced quantity in the planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHED_RATE_INDEX" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index for the results of scheduling production rates</annotation>
+    </column>
+    <column name="DETAILEDLIST ROUGH_SCHEDINDEXLT_INDEX" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index for rough scheduling results</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHED_ERROR_PR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error in scheduling production rates</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHED_ERROR_RS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error in rough scheduling</annotation>
+    </column>
+    <column name="DETAILEDLIST OBJECT_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object type</annotation>
+    </column>
+    <column name="DETAILEDLIST PLNG_SCENARIO_LT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Scenario of Long-Term Planning</annotation>
+    </column>
+    <column name="DETAILEDLIST SIM_REQ_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Simulation requirements number</annotation>
+    </column>
+    <column name="DETAILEDLIST KANBAN_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Kanban Indicator</annotation>
+    </column>
+    <column name="DETAILEDLIST DISP_CAP_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: capacity for planned order dispatched</annotation>
+    </column>
+    <column name="DETAILEDLIST SEQ_NUMBER_ORDER" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Seq. number order</annotation>
+    </column>
+    <column name="DETAILEDLIST ORDER_STR_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Time of Planned Order</annotation>
+    </column>
+    <column name="DETAILEDLIST ORDER_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End Time of Planned Order</annotation>
+    </column>
+    <column name="DETAILEDLIST ASS_ORD_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: for assembly order procedures</annotation>
+    </column>
+    <column name="DETAILEDLIST COLLORD_LEAD_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ind.: Leading order in collective order is planned ordre</annotation>
+    </column>
+    <column name="DETAILEDLIST AVAILABLE_CONF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: confirmation of availability</annotation>
+    </column>
+    <column name="DETAILEDLIST COMMIT_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: committed quantity</annotation>
+    </column>
+    <column name="DETAILEDLIST PLORD_CTRL" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Action control: planned order processing</annotation>
+    </column>
+    <column name="DETAILEDLIST ACTION_PLND_ORD" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Action: planned order processing</annotation>
+    </column>
+    <column name="DETAILEDLIST DATE_OF_ACTION" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of action: planned order</annotation>
+    </column>
+    <column name="DETAILEDLIST TIME_OF_ACTION" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of action: Planned order processing</annotation>
+    </column>
+    <column name="DETAILEDLIST TOTAL_COMMIT_DAT" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total commitment date of plnd ord. after ATP check f.comps.</annotation>
+    </column>
+    <column name="DETAILEDLIST SCHED_PROD_DATES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: scheduling using production dates</annotation>
+    </column>
+    <column name="DETAILEDLIST LEAD_SCHED_LEVEL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: leading scheduling level (determines dates)</annotation>
+    </column>
+    <column name="DETAILEDLIST ATP_CHECK_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for type of availability check</annotation>
+    </column>
+    <column name="DETAILEDLIST PLN_WO_ASSEMBLY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: planning without final assembly</annotation>
+    </column>
+    <column name="DETAILEDLIST REQ_PLAN_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements Plan Number</annotation>
+    </column>
+    <column name="DETAILEDLIST REQ_TOTALING" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements totaling</annotation>
+    </column>
+    <column name="DETAILEDLIST NUMERATOR" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Numerator for Conversion to Base Units of Measure</annotation>
+    </column>
+    <column name="DETAILEDLIST DENOMINATR" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Denominator for conversion to base units of measure</annotation>
+    </column>
+    <column name="DETAILEDLIST ENTRY_QNT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="DETAILEDLIST UNIT_OF_ENTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="DETAILEDLIST REQ_RECORD_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements record number</annotation>
+    </column>
+    <column name="DETAILEDLIST SPEC_STVAL_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation of Special Stock</annotation>
+    </column>
+    <column name="DETAILEDLIST DELIV_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity of Goods Received</annotation>
+    </column>
+    <column name="DETAILEDLIST WITHDR_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issued Quantity</annotation>
+    </column>
+    <column name="DETAILEDLIST OBJ_DEPEND_TREE" nullable="false">
+      <datatype name="C17" subType="DATASOURCE_TYPE" type="STRING" maxLength="17"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal number for edge of object dependencies tree</annotation>
+    </column>
+    <column name="DETAILEDLIST SC_VENDOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subcontracting vendor</annotation>
+    </column>
+    <column name="DETAILEDLIST DELIV_REC_VENDOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor to be supplied/who is to receive delivery</annotation>
+    </column>
+    <column name="DETAILEDLIST MRP_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP Area</annotation>
+    </column>
+    <column name="DETAILEDLIST ISSUE_MRP_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing MRP area when transferring stock</annotation>
+    </column>
+    <column name="DETAILEDLIST MPN_MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number Corresponding to Manufacturer Part Number</annotation>
+    </column>
+    <column name="DETAILEDLIST REPETITIVE_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Repetitive Manufacturing indicator</annotation>
+    </column>
+    <column name="DETAILEDLIST BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="DETAILEDLIST UNIT_OF_ENTRY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="DETAILEDLIST MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST MPN_MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST MPN_MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST MPN_MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="DETAILEDLIST SUPPL_STLOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing Storage Location for Stock Transport Order</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421885342370</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421885342370</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421885342370</attribute>
+</metadata>

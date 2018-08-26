@@ -1,0 +1,162 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_GL_ACC_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/GeneralLedgerAccount/BAPI_GL_ACC_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-08-28
+
+This method provides a list of G/L accounts for a company code. The data determined by the system is returned in a table. Problems arising are returned in the form of a return code message. 
+The same authorization checks are carried out as take place when displaying information within a transaction. 
+The system does not convert the input parameter COMPANYCODE, meaning that leading blank characters within this parameter are not cleared. 
+Depending upon the LANGUAGE parameter, any description, in so far as it exists, appears in the desired language. Where no description exists in the desired language for the G/L account in question, nothing is returned. The LANGUAGE parameter is optional. In the absence of any langauge being entered, the user&apos;s logon language is used. 
+Messages are returned within the RETURN parameter, the parameter documentation for which contains the return codes and their meaning. Export RETURN
+The return code for the method is supplied in a structure containing five fields. You will find information on the significance of the individual fields in the relevant data element documentation. 
+&lt;ZH&gt;Layout of the structure&lt;/&gt; 
+TYPE         &lt;DS:DE.BAPI_MTYPE&gt;Message type&lt;/&gt; 
+CODE         &lt;DS:DE.BAPI_RCODE&gt;Message code&lt;/&gt; 
+MESSAGE      &lt;DS:DE.BAPI_MSG&gt;Message text&lt;/&gt; 
+LOG_NO       Application log: Log number 
+LOG_MSG_NO   Application log: Sequence number of message 
+
+Import COMPANYCODE
+You will find information on the significance of the company code in the relevant data element documentation: 
+&lt;DS:DE.BUKRS&gt;Company code&lt;/&gt; 
+
+ACCOUNT_LIST
+The list of G/L accounts is supplied in a table. You will find information on the significance of the parameters in the relevant data element documentation: 
+&lt;zh&gt;Structure of the table&lt;/&gt; 
+COMP_CODE    &lt;DS:DE.BUKRS&gt;Company code&lt;/&gt; 
+GL_ACCOUNT   &lt;DS:DE.SAKNR&gt;G/L account number&lt;/&gt; 
+SHORT_TEXT   &lt;DS:DE.TXT20_SKAT&gt;G/L account short text&lt;/&gt; 
+LONG_TEXT    &lt;DS:DE.TXT50_SKAT&gt;G/L account long text&lt;/&gt; 
+
+</annotation>
+  <columns>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code</annotation>
+    </column>
+    <column name="Import LANGUAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language</annotation>
+    </column>
+    <column name="Import LANGUAGE_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language according to ISO 639</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="ACCOUNT_LIST COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="ACCOUNT_LIST GL_ACCOUNT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="ACCOUNT_LIST SHORT_TEXT" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account short text</annotation>
+    </column>
+    <column name="ACCOUNT_LIST LONG_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Long Text</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883659414</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883659414</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883659414</attribute>
+</metadata>

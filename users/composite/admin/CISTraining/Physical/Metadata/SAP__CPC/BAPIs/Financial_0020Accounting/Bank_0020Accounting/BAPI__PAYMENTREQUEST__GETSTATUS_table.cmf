@@ -1,0 +1,161 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PAYMENTREQUEST_GETSTATUS" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Bank Accounting/BAPI_PAYMENTREQUEST_GETSTATUS" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-11-26
+
+This method can be used to determine the status of a single payment request. 
+
+
+The following authorization object is checked with activity 03 (display): 
+&lt;DS:UO.F_PAYRQ&gt;F_PAYRQ&lt;/&gt;,,Authorization object for payment requests 
+You enter the key number of the payment request and the status of the payment request is returned. 
+&lt;ZH&gt;Processing steps&lt;/&gt; 
+The method carries out the following processing steps: 
+Reading of payment request 
+Authorization check 
+Determination of the status 
+&lt;ZH&gt;Messages&lt;/&gt; INCLUDE BAPI_RET 
+You can find more information in the SAP Library under &lt;LS&gt;Financials -&gt; Financial Accounting -&gt; Bank Accounting -&gt; Payment Transactions -&gt; Automatic Payment -&gt; Payment Program for Payment Requests&lt;/&gt;. Export REQUEST_STATUS
+Possible statuses are: 
+01: Payment request posted 
+02: Payment request contained within a payment proposal 
+03: Payment request paid by the payment program 
+11: Payment request canceled 
+21: Payment request parked 
+22: Payment request posted (no release for payment) 
+
+Export RETURNINCLUDE BAPI_TABLE Type,,ID   ,,Number,,Text E   ,,FIBL1,,003   ,,No authorization for execution in company code &amp;1 and origin &amp;2 E   ,,PZ   ,,129   ,,Payment request &amp;1 is already canceled in temporary storage E   ,,PZ   ,,134   ,,Payment request &amp;1 is currently in being processed E   ,,PZ   ,,110   ,,Data for payment request selection is not sufficient E   ,,PZ   ,,090   ,,Payment request &amp; does not exist E   ,,PZ   ,,093   ,,Payment request for document &lt;(&gt;&amp;1/&amp;2/&amp;3&lt;)&gt; from &amp;4 does not exist E   ,,PZ   ,,102   ,,No payment request exists for reference &lt;(&gt;&amp;&lt;)&gt;1/ &lt;(&gt;&amp;&lt;)&gt;2/&amp;3 E   ,,PZ   ,,091   ,,Several payment requests exist for document &lt;(&gt;&amp;&lt;)&gt;1/&lt;(&gt;&amp;&lt;)&gt;2/&amp;3 from &amp;4 E   ,,PZ   ,,104   ,,More than one payment request exists for reference &lt;(&gt;&amp;&lt;)&gt;1/&lt;(&gt;&amp;&lt;)&gt;2/&amp;3 S   ,,PZ   ,,144   ,,Payment request &amp;1 posted (without release for payment) S   ,,PZ   ,,145   ,,Payment request &amp;1 parked S   ,,PZ   ,,140   ,,Payment request &amp;1 posted S   ,,PZ   ,,143   ,,Payment request &amp;1 contained in payment proposal S   ,,PZ   ,,141   ,,Payment request &amp;1 already paid S   ,,PZ   ,,142   ,,Payment request &amp;1 canceled 
+Import REQUESTIDINCLUDE BAPI_KEYFIELD 
+
+</annotation>
+  <columns>
+    <column name="Import REQUESTID" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key Number for Payment Request</annotation>
+    </column>
+    <column name="Export REQUEST_STATUS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of a Payment Request</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883482060</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883482060</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883482060</attribute>
+</metadata>

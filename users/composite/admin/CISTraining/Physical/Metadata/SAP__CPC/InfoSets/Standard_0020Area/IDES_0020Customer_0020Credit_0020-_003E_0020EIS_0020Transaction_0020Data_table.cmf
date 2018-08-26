@@ -1,0 +1,86 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="IDES Customer Credit -&gt; EIS Transaction Data" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/IDES Customer Credit -&gt; EIS Transaction Data" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Customer Number" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>KNA1-KUNNR</annotation>
+    </column>
+    <column name="Credit limit: Total limit across all con" nullable="true">
+      <datatype name="P17.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="17" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>KNKA-KLIMG</annotation>
+    </column>
+    <column name="Currency Key" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>KNKA-WAERS</annotation>
+    </column>
+    <column name="Currency Key KNKA-WAERS" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>KNKA-WAERS</annotation>
+    </column>
+    <column name="_Customer Number" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00001</annotation>
+    </column>
+    <column name="_Credit limit: Total limit acro" nullable="true">
+      <datatype name="P20" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="20" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00002</annotation>
+    </column>
+    <column name="_Currency Key" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_Alternative local currency" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ALCUR</annotation>
+    </column>
+    <column name="_Translation date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>EXCDT</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421886029702</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421886029702</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421886029702</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">EXCDT</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001085</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

@@ -1,0 +1,84 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SKAT" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/S/SK/SKAT" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: G/L Account Master Record (Chart of Accounts: Description)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2004-02-10
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+SPRAS                          C1      Language Key                                                 
+KTOPL                          C4      Chart of Accounts                                            
+SAKNR                          C10     G/L Account Number                                           
+TXT20                          C20     G/L account short text                                       
+TXT50                          C50     G/L Account Long Text                                        
+MCOD1                          C25     Search Term for Matchcode Search                             
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="SPRAS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="KTOPL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="SAKNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="TXT20" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account short text</annotation>
+    </column>
+    <column name="TXT50" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Long Text</annotation>
+    </column>
+    <column name="MCOD1" nullable="true">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term for Matchcode Search</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="SPRAS" sortOrder="NONE"/>
+      <indexColumn name="KTOPL" sortOrder="NONE"/>
+      <indexColumn name="SAKNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

@@ -1,0 +1,1483 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BSAK" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/B/BS/BSAK" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Accounting: Secondary Index for Vendors (Cleared Items)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2010-07-14
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+BUKRS                          C4      Company Code                                                 
+LIFNR                          C10     Account Number of Vendor or Creditor                         
+UMSKS                          C1      Special G/L Transaction Type                                 
+UMSKZ                          C1      Special G/L Indicator                                        
+AUGDT                          D8      Clearing Date                                                
+AUGBL                          C10     Document Number of the Clearing Document                     
+ZUONR                          C18     Assignment Number                                            
+GJAHR                          N4      Fiscal Year                                                  
+BELNR                          C10     Accounting Document Number                                   
+BUZEI                          N3      Number of Line Item Within Accounting Document               
+BUDAT                          D8      Posting Date in the Document                                 
+BLDAT                          D8      Document Date in Document                                    
+CPUDT                          D8      Day On Which Accounting Document Was Entered                 
+WAERS                          C5      Currency Key                                                 
+XBLNR                          C16     Reference Document Number                                    
+BLART                          C2      Document Type                                                
+MONAT                          N2      Fiscal Period                                                
+BSCHL                          C2      Posting Key                                                  
+ZUMSK                          C1      Target Special G/L Indicator                                 
+SHKZG                          C1      Debit/Credit Indicator                                       
+GSBER                          C4      Business Area                                                
+MWSKZ                          C2      Tax on sales/purchases code                                  
+DMBTR                          P13.2   Amount in Local Currency                                     
+WRBTR                          P13.2   Amount in document currency                                  
+MWSTS                          P13.2   Tax Amount in Local Currency                                 
+WMWST                          P13.2   Tax amount in document currency                              
+BDIFF                          P13.2   Valuation Difference                                         
+BDIF2                          P13.2   Valuation Difference for the Second Local Currency           
+SGTXT                          C50     Item Text                                                    
+PROJN                          C16     Old: Project number : No longer used --&gt; PS_POSNR            
+AUFNR                          C12     Order Number                                                 
+ANLN1                          C12     Main Asset Number                                            
+ANLN2                          C4      Asset Subnumber                                              
+EBELN                          C10     Purchasing Document Number                                   
+EBELP                          N5      Item Number of Purchasing Document                           
+SAKNR                          C10     G/L Account Number                                           
+HKONT                          C10     General Ledger Account                                       
+FKONT                          N3      Financial Budget Item                                        
+FILKD                          C10     Account Number of the Branch                                 
+ZFBDT                          D8      Baseline Date for Due Date Calculation                       
+ZTERM                          C4      Terms of Payment Key                                         
+ZBD1T                          P3      Cash discount days 1                                         
+ZBD2T                          P3      Cash discount days 2                                         
+ZBD3T                          P3      Net Payment Terms Period                                     
+ZBD1P                          P5.3    Cash Discount Percentage 1                                   
+ZBD2P                          P5.3    Cash Discount Percentage 2                                   
+SKFBT                          P13.2   Amount Eligible for Cash Discount in Document Currency       
+SKNTO                          P13.2   Cash discount amount in local currency                       
+WSKTO                          P13.2   Cash discount amount in document currency                    
+ZLSCH                          C1      Payment Method                                               
+ZLSPR                          C1      Payment Block Key                                            
+ZBFIX                          C1      Fixed Payment Terms                                          
+HBKID                          C5      Short Key for a House Bank                                   
+BVTYP                          C4      Partner Bank Type                                            
+REBZG                          C10     Number of the Invoice the Transaction Belongs to             
+REBZJ                          N4      Fiscal Year of the Relevant Invoice (for Credit Memo)        
+REBZZ                          N3      Line Item in the Relevant Invoice                            
+SAMNR                          N8      Invoice List Number                                          
+ZOLLT                          C8      Customs Tariff Number                                        
+ZOLLD                          D8      Customs Date                                                 
+LZBKZ                          C3      State Central Bank Indicator                                 
+LANDL                          C3      Supplying Country                                            
+DIEKZ                          C1      Service Indicator (Foreign Payment)                          
+MANSP                          C1      Dunning block                                                
+MSCHL                          C1      Dunning key                                                  
+MADAT                          D8      Last dunned on                                               
+MANST                          N1      Dunning level                                                
+MABER                          C2      Dunning Area                                                 
+XNETB                          C1      Indicator: Document posted net ?                             
+XANET                          C1      Indicator: Down payment in net procedure ?                   
+XCPDD                          C1      Indicator: Address and bank data set individually            
+XESRD                          C1      Indicator: Is any ISR data set in the document ?             
+XZAHL                          C1      Indicator: Is the posting key used in a payment transaction? 
+MWSK1                          C2      Tax Code for Distribution                                    
+DMBT1                          P13.2   Amount in Local Currency for Tax Distribution                
+WRBT1                          P13.2   Amount in foreign currency for tax breakdown                 
+MWSK2                          C2      Tax Code for Distribution                                    
+DMBT2                          P13.2   Amount in Local Currency for Tax Distribution                
+WRBT2                          P13.2   Amount in foreign currency for tax breakdown                 
+MWSK3                          C2      Tax Code for Distribution                                    
+DMBT3                          P13.2   Amount in Local Currency for Tax Distribution                
+WRBT3                          P13.2   Amount in foreign currency for tax breakdown                 
+QSSKZ                          C2      Withholding Tax Code                                         
+QSSHB                          P13.2   Withholding Tax Base Amount                                  
+QBSHB                          P13.2   Withholding Tax Amount (in Document Currency)                
+BSTAT                          C1      Document Status                                              
+ANFBN                          C10     Document Number of the Bill of Exchange Payment Request      
+ANFBJ                          N4      Fiscal Year of the Bill of Exchange Payment Request Document 
+ANFBU                          C4      Company Code in Which Bill of Exch.Payment Request Is Posted 
+VBUND                          C6      Company ID of trading partner                                
+REBZT                          C1      Follow-On Document Type                                      
+STCEG                          C20     VAT Registration Number                                      
+EGBLD                          C3      Country of Destination for Delivery of Goods                 
+EGLLD                          C3      Supplying Country for Delivery of Goods                      
+QSZNR                          C10     Certificate Number of the Withholding Tax Exemption          
+QSFBT                          P13.2   Withholding Tax-Exempt Amount (in Document Currency)         
+XINVE                          C1      Indicator: Capital Goods Affected?                           
+PROJK                          N8      Work Breakdown Structure Element (WBS Element)               
+FIPOS                          C14     Commitment Item                                              
+NPLNR                          C12     Network Number for Account Assignment                        
+AUFPL                          N10     Routing number of operations in the order                    
+APLZL                          N8      Internal counter                                             
+XEGDR                          C1      Indicator: Triangular deal within the EU ?                   
+DMBE2                          P13.2   Amount in Second Local Currency                              
+DMBE3                          P13.2   Amount in Third Local Currency                               
+DMB21                          P13.2   Amount in Second Local Currency for Tax Breakdown            
+DMB22                          P13.2   Amount in Second Local Currency for Tax Breakdown            
+DMB23                          P13.2   Amount in Second Local Currency for Tax Breakdown            
+DMB31                          P13.2   Amount in Third Local Currency for Tax Breakdown             
+DMB32                          P13.2   Amount in Third Local Currency for Tax Breakdown             
+DMB33                          P13.2   Amount in Third Local Currency for Tax Breakdown             
+MWST2                          P13.2   Tax Amount in Second Local Currency                          
+MWST3                          P13.2   Tax Amount in Third Local Currency                           
+SKNT2                          P13.2   Cash Discount Amount in Second Local Currency                
+SKNT3                          P13.2   Cash Discount Amount in Third Local Currency                 
+BDIF3                          P13.2   Valuation Difference for the Third Local Currency            
+XRAGL                          C1      Indicator: Clearing was Reversed                             
+RSTGR                          C3      Reason Code for Payments                                     
+UZAWE                          C2      Payment Method Supplement                                    
+KOSTL                          C10     Cost Center                                                  
+LNRAN                          N5      Sequence number of asset line items in fiscal year           
+XSTOV                          C1      Indicator: Document is flagged for reversal                  
+KZBTR                          P13.2   Original Reduction Amount in Local Currency                  
+XREF1                          C12     Business partner reference key                               
+XREF2                          C12     Business partner reference key                               
+XARCH                          C1      Indicator: Document already archived ?                       
+PSWSL                          C5      Update Currency for General Ledger Transaction Figures       
+PSWBT                          P13.2   Amount for Updating in General Ledger                        
+IMKEY                          C8      Internal Key for Real Estate Object                          
+ZEKKN                          N2      Sequential Number of Account Assignment                      
+FISTL                          C16     Funds Center                                                 
+GEBER                          C10     Fund                                                         
+DABRZ                          D8      Reference Date for Settlement                                
+XNEGP                          C1      Indicator: Negative posting                                  
+EMPFB                          C10     Payee/Payer                                                  
+PRCTR                          C10     Profit Center                                                
+XREF3                          C20     Reference key for line item                                  
+DTWS1                          N2      Instruction key 1                                            
+DTWS2                          N2      Instruction key 2                                            
+DTWS3                          N2      Instruction key 3                                            
+DTWS4                          N2      Instruction key 4                                            
+XPYPR                          C1      Indicator: Payment Order Exists for this Item                
+KIDNO                          C30     Payment Reference                                            
+PYCUR                          C5      Currency for Automatic Payment                               
+PYAMT                          P13.2   Amount in Payment Currency                                   
+BUPLA                          C4      Business Place                                               
+SECCO                          C4      Section Code                                                 
+PPDIFF                         P13.2   Realized Exchange Rate Gain/Loss 1.Loc.Curr.(Part Payments)  
+PPDIF2                         P13.2   Realized Exchange Rate Gain/Loss 2.Loc. Curr.(Part Payments) 
+PPDIF3                         P13.2   Realized Exchange Rate Gain/Loss 3.Loc.Curr.(Part Payments)  
+PENLC1                         P13.2   Penalty charge amount in first local currency                
+PENLC2                         P13.2   Penalty charge amount in second local currency               
+PENLC3                         P13.2   Penalty Charge Amount in Third Local Currency                
+PENFC                          P13.2   Penalty charge amount in document currency                   
+PENDAYS                        I10     Number of days for penalty charge calculation                
+PENRC                          C2      Reason for late payment                                      
+VERTT                          C1      Contract Type                                                
+VERTN                          C13     Contract Number                                              
+VBEWA                          C4      Flow Type                                                    
+KBLNR                          C10     Document Number for Earmarked Funds                          
+KBLPOS                         N3      Earmarked Funds: Document Item                               
+GRANT_NBR                      C20     Grant                                                        
+GMVKZ                          C1      Item is in Execution                                         
+SRTYPE                         C2      Type of Additional Receivable                                
+LOTKZ                          C10     Lot Number for Requests                                      
+ZINKZ                          C2      Exempted from interest calculation                           
+FKBER                          C16     Functional Area                                              
+INTRENO                        C13     Internal Real Estate Master Data Code                        
+PPRCT                          C10     Partner Profit Center                                        
+BUZID                          C1      Identification of the Line Item                              
+AUGGJ                          N4      Fiscal Year of Clearing Document                             
+HKTID                          C5      ID for account details                                       
+BUDGET_PD                      C10     FM: Budget Period                                            
+KONTT                          C2      Account Assignment Category for Industry Solution            
+KONTL                          C50     Acct assignment string for industry-specific acct assignmnts 
+UEBGDAT                        D8      Transfer date of an item to legal dunning proceeding         
+VNAME                          C6      Joint Venture                                                
+EGRUP                          C3      Equity group                                                 
+BTYPE                          C2      Payroll Type                                                 
+PROPMANO                       C13     Mandate, Mandate-Opening Contract                            
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="BUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="LIFNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Vendor or Creditor</annotation>
+    </column>
+    <column name="UMSKS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special G/L Transaction Type</annotation>
+    </column>
+    <column name="UMSKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special G/L Indicator</annotation>
+    </column>
+    <column name="AUGDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Clearing Date</annotation>
+    </column>
+    <column name="AUGBL" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of the Clearing Document</annotation>
+    </column>
+    <column name="ZUONR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Assignment Number</annotation>
+    </column>
+    <column name="GJAHR" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="BELNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Document Number</annotation>
+    </column>
+    <column name="BUZEI" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Line Item Within Accounting Document</annotation>
+    </column>
+    <column name="BUDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="BLDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="CPUDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Day On Which Accounting Document Was Entered</annotation>
+    </column>
+    <column name="WAERS" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="XBLNR" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="BLART" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type</annotation>
+    </column>
+    <column name="MONAT" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Period</annotation>
+    </column>
+    <column name="BSCHL" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Key</annotation>
+    </column>
+    <column name="ZUMSK" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Target Special G/L Indicator</annotation>
+    </column>
+    <column name="SHKZG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Debit/Credit Indicator</annotation>
+    </column>
+    <column name="GSBER" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="MWSKZ" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax on sales/purchases code</annotation>
+    </column>
+    <column name="DMBTR" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Local Currency</annotation>
+    </column>
+    <column name="WRBTR" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in document currency</annotation>
+    </column>
+    <column name="MWSTS" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Amount in Local Currency</annotation>
+    </column>
+    <column name="WMWST" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax amount in document currency</annotation>
+    </column>
+    <column name="BDIFF" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Difference</annotation>
+    </column>
+    <column name="BDIF2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Difference for the Second Local Currency</annotation>
+    </column>
+    <column name="SGTXT" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Text</annotation>
+    </column>
+    <column name="PROJN" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Old: Project number : No longer used --&gt; PS_POSNR</annotation>
+    </column>
+    <column name="AUFNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="ANLN1" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="ANLN2" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="EBELN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Number</annotation>
+    </column>
+    <column name="EBELP" nullable="true">
+      <datatype name="N5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchasing Document</annotation>
+    </column>
+    <column name="SAKNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="HKONT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General Ledger Account</annotation>
+    </column>
+    <column name="FKONT" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Budget Item</annotation>
+    </column>
+    <column name="FILKD" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of the Branch</annotation>
+    </column>
+    <column name="ZFBDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Baseline Date for Due Date Calculation</annotation>
+    </column>
+    <column name="ZTERM" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Terms of Payment Key</annotation>
+    </column>
+    <column name="ZBD1T" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount days 1</annotation>
+    </column>
+    <column name="ZBD2T" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount days 2</annotation>
+    </column>
+    <column name="ZBD3T" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net Payment Terms Period</annotation>
+    </column>
+    <column name="ZBD1P" nullable="true">
+      <datatype name="P5.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Percentage 1</annotation>
+    </column>
+    <column name="ZBD2P" nullable="true">
+      <datatype name="P5.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Percentage 2</annotation>
+    </column>
+    <column name="SKFBT" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount Eligible for Cash Discount in Document Currency</annotation>
+    </column>
+    <column name="SKNTO" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount amount in local currency</annotation>
+    </column>
+    <column name="WSKTO" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount amount in document currency</annotation>
+    </column>
+    <column name="ZLSCH" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payment Method</annotation>
+    </column>
+    <column name="ZLSPR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payment Block Key</annotation>
+    </column>
+    <column name="ZBFIX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Payment Terms</annotation>
+    </column>
+    <column name="HBKID" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short Key for a House Bank</annotation>
+    </column>
+    <column name="BVTYP" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Bank Type</annotation>
+    </column>
+    <column name="REBZG" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of the Invoice the Transaction Belongs to</annotation>
+    </column>
+    <column name="REBZJ" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year of the Relevant Invoice (for Credit Memo)</annotation>
+    </column>
+    <column name="REBZZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Line Item in the Relevant Invoice</annotation>
+    </column>
+    <column name="SAMNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Invoice List Number</annotation>
+    </column>
+    <column name="ZOLLT" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customs Tariff Number</annotation>
+    </column>
+    <column name="ZOLLD" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customs Date</annotation>
+    </column>
+    <column name="LZBKZ" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>State Central Bank Indicator</annotation>
+    </column>
+    <column name="LANDL" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplying Country</annotation>
+    </column>
+    <column name="DIEKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Service Indicator (Foreign Payment)</annotation>
+    </column>
+    <column name="MANSP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Dunning block</annotation>
+    </column>
+    <column name="MSCHL" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Dunning key</annotation>
+    </column>
+    <column name="MADAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Last dunned on</annotation>
+    </column>
+    <column name="MANST" nullable="true">
+      <datatype name="N1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Dunning level</annotation>
+    </column>
+    <column name="MABER" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Dunning Area</annotation>
+    </column>
+    <column name="XNETB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document posted net ?</annotation>
+    </column>
+    <column name="XANET" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Down payment in net procedure ?</annotation>
+    </column>
+    <column name="XCPDD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Address and bank data set individually</annotation>
+    </column>
+    <column name="XESRD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is any ISR data set in the document ?</annotation>
+    </column>
+    <column name="XZAHL" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is the posting key used in a payment transaction?</annotation>
+    </column>
+    <column name="MWSK1" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Code for Distribution</annotation>
+    </column>
+    <column name="DMBT1" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Local Currency for Tax Distribution</annotation>
+    </column>
+    <column name="WRBT1" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in foreign currency for tax breakdown</annotation>
+    </column>
+    <column name="MWSK2" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Code for Distribution</annotation>
+    </column>
+    <column name="DMBT2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Local Currency for Tax Distribution</annotation>
+    </column>
+    <column name="WRBT2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in foreign currency for tax breakdown</annotation>
+    </column>
+    <column name="MWSK3" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Code for Distribution</annotation>
+    </column>
+    <column name="DMBT3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Local Currency for Tax Distribution</annotation>
+    </column>
+    <column name="WRBT3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in foreign currency for tax breakdown</annotation>
+    </column>
+    <column name="QSSKZ" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Withholding Tax Code</annotation>
+    </column>
+    <column name="QSSHB" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Withholding Tax Base Amount</annotation>
+    </column>
+    <column name="QBSHB" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Withholding Tax Amount (in Document Currency)</annotation>
+    </column>
+    <column name="BSTAT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Status</annotation>
+    </column>
+    <column name="ANFBN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of the Bill of Exchange Payment Request</annotation>
+    </column>
+    <column name="ANFBJ" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year of the Bill of Exchange Payment Request Document</annotation>
+    </column>
+    <column name="ANFBU" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code in Which Bill of Exch.Payment Request Is Posted</annotation>
+    </column>
+    <column name="VBUND" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="REBZT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Follow-On Document Type</annotation>
+    </column>
+    <column name="STCEG" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>VAT Registration Number</annotation>
+    </column>
+    <column name="EGBLD" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country of Destination for Delivery of Goods</annotation>
+    </column>
+    <column name="EGLLD" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplying Country for Delivery of Goods</annotation>
+    </column>
+    <column name="QSZNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Certificate Number of the Withholding Tax Exemption</annotation>
+    </column>
+    <column name="QSFBT" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Withholding Tax-Exempt Amount (in Document Currency)</annotation>
+    </column>
+    <column name="XINVE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Capital Goods Affected?</annotation>
+    </column>
+    <column name="PROJK" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="FIPOS" nullable="true">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="NPLNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Network Number for Account Assignment</annotation>
+    </column>
+    <column name="AUFPL" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="APLZL" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="XEGDR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Triangular deal within the EU ?</annotation>
+    </column>
+    <column name="DMBE2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Second Local Currency</annotation>
+    </column>
+    <column name="DMBE3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Third Local Currency</annotation>
+    </column>
+    <column name="DMB21" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Second Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="DMB22" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Second Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="DMB23" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Second Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="DMB31" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Third Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="DMB32" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Third Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="DMB33" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Third Local Currency for Tax Breakdown</annotation>
+    </column>
+    <column name="MWST2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Amount in Second Local Currency</annotation>
+    </column>
+    <column name="MWST3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Amount in Third Local Currency</annotation>
+    </column>
+    <column name="SKNT2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Amount in Second Local Currency</annotation>
+    </column>
+    <column name="SKNT3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Amount in Third Local Currency</annotation>
+    </column>
+    <column name="BDIF3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Difference for the Third Local Currency</annotation>
+    </column>
+    <column name="XRAGL" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Clearing was Reversed</annotation>
+    </column>
+    <column name="RSTGR" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason Code for Payments</annotation>
+    </column>
+    <column name="UZAWE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payment Method Supplement</annotation>
+    </column>
+    <column name="KOSTL" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="LNRAN" nullable="true">
+      <datatype name="N5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence number of asset line items in fiscal year</annotation>
+    </column>
+    <column name="XSTOV" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document is flagged for reversal</annotation>
+    </column>
+    <column name="KZBTR" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original Reduction Amount in Local Currency</annotation>
+    </column>
+    <column name="XREF1" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business partner reference key</annotation>
+    </column>
+    <column name="XREF2" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business partner reference key</annotation>
+    </column>
+    <column name="XARCH" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document already archived ?</annotation>
+    </column>
+    <column name="PSWSL" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Update Currency for General Ledger Transaction Figures</annotation>
+    </column>
+    <column name="PSWBT" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount for Updating in General Ledger</annotation>
+    </column>
+    <column name="IMKEY" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Key for Real Estate Object</annotation>
+    </column>
+    <column name="ZEKKN" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequential Number of Account Assignment</annotation>
+    </column>
+    <column name="FISTL" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="GEBER" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="DABRZ" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Date for Settlement</annotation>
+    </column>
+    <column name="XNEGP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Negative posting</annotation>
+    </column>
+    <column name="EMPFB" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payee/Payer</annotation>
+    </column>
+    <column name="PRCTR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="XREF3" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference key for line item</annotation>
+    </column>
+    <column name="DTWS1" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Instruction key 1</annotation>
+    </column>
+    <column name="DTWS2" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Instruction key 2</annotation>
+    </column>
+    <column name="DTWS3" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Instruction key 3</annotation>
+    </column>
+    <column name="DTWS4" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Instruction key 4</annotation>
+    </column>
+    <column name="XPYPR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Payment Order Exists for this Item</annotation>
+    </column>
+    <column name="KIDNO" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payment Reference</annotation>
+    </column>
+    <column name="PYCUR" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency for Automatic Payment</annotation>
+    </column>
+    <column name="PYAMT" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount in Payment Currency</annotation>
+    </column>
+    <column name="BUPLA" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Place</annotation>
+    </column>
+    <column name="SECCO" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Section Code</annotation>
+    </column>
+    <column name="PPDIFF" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Realized Exchange Rate Gain/Loss 1.Loc.Curr.(Part Payments)</annotation>
+    </column>
+    <column name="PPDIF2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Realized Exchange Rate Gain/Loss 2.Loc. Curr.(Part Payments)</annotation>
+    </column>
+    <column name="PPDIF3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Realized Exchange Rate Gain/Loss 3.Loc.Curr.(Part Payments)</annotation>
+    </column>
+    <column name="PENLC1" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Penalty charge amount in first local currency</annotation>
+    </column>
+    <column name="PENLC2" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Penalty charge amount in second local currency</annotation>
+    </column>
+    <column name="PENLC3" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Penalty Charge Amount in Third Local Currency</annotation>
+    </column>
+    <column name="PENFC" nullable="true">
+      <datatype name="P13.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Penalty charge amount in document currency</annotation>
+    </column>
+    <column name="PENDAYS" nullable="true">
+      <datatype name="I10" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of days for penalty charge calculation</annotation>
+    </column>
+    <column name="PENRC" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for late payment</annotation>
+    </column>
+    <column name="VERTT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Contract Type</annotation>
+    </column>
+    <column name="VERTN" nullable="true">
+      <datatype name="C13" subType="DATASOURCE_TYPE" type="STRING" maxLength="13"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Contract Number</annotation>
+    </column>
+    <column name="VBEWA" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Flow Type</annotation>
+    </column>
+    <column name="KBLNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number for Earmarked Funds</annotation>
+    </column>
+    <column name="KBLPOS" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earmarked Funds: Document Item</annotation>
+    </column>
+    <column name="GRANT_NBR" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="GMVKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item is in Execution</annotation>
+    </column>
+    <column name="SRTYPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of Additional Receivable</annotation>
+    </column>
+    <column name="LOTKZ" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lot Number for Requests</annotation>
+    </column>
+    <column name="ZINKZ" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exempted from interest calculation</annotation>
+    </column>
+    <column name="FKBER" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="INTRENO" nullable="true">
+      <datatype name="C13" subType="DATASOURCE_TYPE" type="STRING" maxLength="13"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Real Estate Master Data Code</annotation>
+    </column>
+    <column name="PPRCT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Profit Center</annotation>
+    </column>
+    <column name="BUZID" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identification of the Line Item</annotation>
+    </column>
+    <column name="AUGGJ" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year of Clearing Document</annotation>
+    </column>
+    <column name="HKTID" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for account details</annotation>
+    </column>
+    <column name="BUDGET_PD" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="KONTT" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Assignment Category for Industry Solution</annotation>
+    </column>
+    <column name="KONTL" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Acct assignment string for industry-specific acct assignmnts</annotation>
+    </column>
+    <column name="UEBGDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transfer date of an item to legal dunning proceeding</annotation>
+    </column>
+    <column name="VNAME" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Joint Venture</annotation>
+    </column>
+    <column name="EGRUP" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Equity group</annotation>
+    </column>
+    <column name="BTYPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payroll Type</annotation>
+    </column>
+    <column name="PROPMANO" nullable="true">
+      <datatype name="C13" subType="DATASOURCE_TYPE" type="STRING" maxLength="13"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Mandate, Mandate-Opening Contract</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="BUKRS" sortOrder="NONE"/>
+      <indexColumn name="LIFNR" sortOrder="NONE"/>
+      <indexColumn name="UMSKS" sortOrder="NONE"/>
+      <indexColumn name="UMSKZ" sortOrder="NONE"/>
+      <indexColumn name="AUGDT" sortOrder="NONE"/>
+      <indexColumn name="AUGBL" sortOrder="NONE"/>
+      <indexColumn name="ZUONR" sortOrder="NONE"/>
+      <indexColumn name="GJAHR" sortOrder="NONE"/>
+      <indexColumn name="BELNR" sortOrder="NONE"/>
+      <indexColumn name="BUZEI" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

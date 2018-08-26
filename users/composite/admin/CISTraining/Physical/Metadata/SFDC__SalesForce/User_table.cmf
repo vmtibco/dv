@@ -1,0 +1,873 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="User" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <annotation>Child Relationships
+	Contract
+	Attributes:
+		Relationship Name : ContractsSigned
+		Related Field     : CompanySignedId
+
+	Site
+	Attributes:
+		Relationship Name : UserSites
+		Related Field     : AdminId
+
+	UserShare
+	Attributes:
+		Relationship Name : Shares
+		Related Field     : UserId
+
+	PermissionSetAssignment
+	Attributes:
+		Relationship Name : PermissionSetAssignments
+		Related Field     : AssigneeId
+
+	EventRelation
+	Attributes:
+		Relationship Name : EventRelations
+		Related Field     : RelationId
+
+	EntitySubscription
+	Attributes:
+		Relationship Name : FeedSubscriptions
+		Related Field     : SubscriberId
+
+	CollaborationGroupMember
+	Attributes:
+		Relationship Name : GroupMemberships
+		Related Field     : MemberId
+
+	ExternalDataUserAuth
+	Attributes:
+		Relationship Name : ExternalDataUserAuths
+		Related Field     : UserId
+
+	EntitySubscription
+	Attributes:
+		Relationship Name : FeedSubscriptionsForEntity
+		Related Field     : ParentId
+
+	UserFeed
+	Attributes:
+		Relationship Name : Feeds
+		Related Field     : ParentId
+
+	User
+	Attributes:
+		Relationship Name : ManagedUsers
+		Related Field     : ManagerId
+</annotation>
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Username" nullable="false">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastName" nullable="false">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="FirstName" nullable="true">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Name" nullable="false">
+      <datatype name="string" extendedName="string(121)" subType="DATASOURCE_TYPE" type="STRING" maxLength="121"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CompanyName" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Division" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Department" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Title" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Street" nullable="true">
+      <datatype name="textarea" extendedName="textarea(255)" subType="DATASOURCE_TYPE" type="CLOB" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="City" nullable="true">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="State" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PostalCode" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Country" nullable="true">
+      <datatype name="string" extendedName="string(80)" subType="DATASOURCE_TYPE" type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Email" nullable="false">
+      <datatype name="email" extendedName="email(128)" subType="DATASOURCE_TYPE" type="STRING" maxLength="128"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Phone" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Fax" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="MobilePhone" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Alias" nullable="false">
+      <datatype name="string" extendedName="string(8)" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CommunityNickname" nullable="false">
+      <datatype name="string" extendedName="string(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="IsActive" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TimeZoneSidKey" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserRoleId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LocaleSidKey" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ReceivesInfoEmails" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ReceivesAdminInfoEmails" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EmailEncodingKey" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ProfileId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserType" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LanguageLocaleKey" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="EmployeeNumber" nullable="true">
+      <datatype name="string" extendedName="string(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DelegatedApproverId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ManagerId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastLoginDate" nullable="true">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastPasswordChangeDate" nullable="true">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OfflineTrialExpirationDate" nullable="true">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OfflinePdaTrialExpirationDate" nullable="true">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsMarketingUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsOfflineUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsCallCenterAutoLogin" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsMobileUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsSFContentUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsKnowledgeUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsInteractionUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsSupportUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsJigsawProspectingUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsSiteforceContributorUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsSiteforcePublisherUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPermissionsChatterAnswersUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ForecastEnabled" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesActivityRemindersPopup" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesEventRemindersCheckboxDefault" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesTaskRemindersCheckboxDefault" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesReminderSoundOff" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableAllFeedsEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableFollowersEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableProfilePostEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableChangeCommentEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableLaterCommentEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisProfPostCommentEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesContentNoEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesContentEmailAsAndWhen" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesApexPagesDeveloperMode" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesHideCSNGetChatterMobileTask" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableMentionsPostEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisMentionsCommentEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesHideCSNDesktopTask" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisCommentAfterLikeEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableLikeEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableMessageEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesOptOutOfTouch" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesJigsawListUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableBookmarkEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableSharePostEmail" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesEnableAutoSubForFeeds" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesDisableFileShareNotificationsForApi" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowTitleToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowManagerToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowEmailToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowWorkPhoneToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowMobilePhoneToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowFaxToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowStreetAddressToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowCityToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowStateToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowPostalCodeToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserPreferencesShowCountryToExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ContactId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AccountId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CallCenterId" nullable="true">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Extension" nullable="true">
+      <datatype name="phone" extendedName="phone(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="FederationIdentifier" nullable="true">
+      <datatype name="string" extendedName="string(512)" subType="DATASOURCE_TYPE" type="STRING" maxLength="512"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AboutMe" nullable="true">
+      <datatype name="textarea" extendedName="textarea(1000)" subType="DATASOURCE_TYPE" type="CLOB" maxLength="1000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="FullPhotoUrl" nullable="true">
+      <datatype name="url" extendedName="url(1024)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SmallPhotoUrl" nullable="true">
+      <datatype name="url" extendedName="url(1024)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DigestFrequency" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DefaultGroupNotificationFrequency" nullable="false">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="JigsawImportLimitOverride" nullable="true">
+      <datatype name="int" extendedName="int(9)" subType="DATASOURCE_TYPE" type="INTEGER" maxValue="999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="User-Name-uk" type="HASHED" unique="true">
+      <indexColumn name="Name" sortOrder="ASCENDING"/>
+    </index>
+    <index name="User-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="UserRoleId_UserRole" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/UserRole">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="UserRoleId"/>
+    </foreignKey>
+    <foreignKey name="ProfileId_Profile" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Profile">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="ProfileId"/>
+    </foreignKey>
+    <foreignKey name="ManagerId_User" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="ManagerId"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Profile" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/UserRole" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="foreignKeyRelationship" type="MAP">
+    <item>
+      <key type="STRING">ProfileId_Profile</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Profile</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">Users</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">UserRoleId_UserRole</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">UserRole</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">Users</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">ManagerId_User</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Manager</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">ManagedUsers</value>
+        </item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET"></attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">AboutMe</item>
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">FederationIdentifier</item>
+    <item type="STRING">FullPhotoUrl</item>
+    <item type="STRING">LastLoginDate</item>
+    <item type="STRING">LastModifiedDate</item>
+    <item type="STRING">LastPasswordChangeDate</item>
+    <item type="STRING">OfflinePdaTrialExpirationDate</item>
+    <item type="STRING">OfflineTrialExpirationDate</item>
+    <item type="STRING">SmallPhotoUrl</item>
+    <item type="STRING">SystemModstamp</item>
+    <item type="STRING">UserPermissionsCallCenterAutoLogin</item>
+    <item type="STRING">UserPermissionsChatterAnswersUser</item>
+    <item type="STRING">UserPermissionsInteractionUser</item>
+    <item type="STRING">UserPermissionsJigsawProspectingUser</item>
+    <item type="STRING">UserPermissionsKnowledgeUser</item>
+    <item type="STRING">UserPermissionsMarketingUser</item>
+    <item type="STRING">UserPermissionsMobileUser</item>
+    <item type="STRING">UserPermissionsOfflineUser</item>
+    <item type="STRING">UserPermissionsSFContentUser</item>
+    <item type="STRING">UserPermissionsSiteforceContributorUser</item>
+    <item type="STRING">UserPermissionsSiteforcePublisherUser</item>
+    <item type="STRING">UserPermissionsSupportUser</item>
+    <item type="STRING">UserPreferencesActivityRemindersPopup</item>
+    <item type="STRING">UserPreferencesApexPagesDeveloperMode</item>
+    <item type="STRING">UserPreferencesContentEmailAsAndWhen</item>
+    <item type="STRING">UserPreferencesContentNoEmail</item>
+    <item type="STRING">UserPreferencesDisCommentAfterLikeEmail</item>
+    <item type="STRING">UserPreferencesDisMentionsCommentEmail</item>
+    <item type="STRING">UserPreferencesDisProfPostCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableAllFeedsEmail</item>
+    <item type="STRING">UserPreferencesDisableBookmarkEmail</item>
+    <item type="STRING">UserPreferencesDisableChangeCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableFileShareNotificationsForApi</item>
+    <item type="STRING">UserPreferencesDisableFollowersEmail</item>
+    <item type="STRING">UserPreferencesDisableLaterCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableLikeEmail</item>
+    <item type="STRING">UserPreferencesDisableMentionsPostEmail</item>
+    <item type="STRING">UserPreferencesDisableMessageEmail</item>
+    <item type="STRING">UserPreferencesDisableProfilePostEmail</item>
+    <item type="STRING">UserPreferencesDisableSharePostEmail</item>
+    <item type="STRING">UserPreferencesEnableAutoSubForFeeds</item>
+    <item type="STRING">UserPreferencesEventRemindersCheckboxDefault</item>
+    <item type="STRING">UserPreferencesHideCSNDesktopTask</item>
+    <item type="STRING">UserPreferencesHideCSNGetChatterMobileTask</item>
+    <item type="STRING">UserPreferencesJigsawListUser</item>
+    <item type="STRING">UserPreferencesOptOutOfTouch</item>
+    <item type="STRING">UserPreferencesReminderSoundOff</item>
+    <item type="STRING">UserPreferencesShowCityToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowCountryToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowEmailToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowFaxToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowManagerToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowMobilePhoneToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowPostalCodeToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowStateToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowStreetAddressToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowTitleToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowWorkPhoneToExternalUsers</item>
+    <item type="STRING">UserPreferencesTaskRemindersCheckboxDefault</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET">
+    <item type="STRING">UserPermissionsCallCenterAutoLogin</item>
+    <item type="STRING">UserPermissionsChatterAnswersUser</item>
+    <item type="STRING">UserPermissionsInteractionUser</item>
+    <item type="STRING">UserPermissionsJigsawProspectingUser</item>
+    <item type="STRING">UserPermissionsKnowledgeUser</item>
+    <item type="STRING">UserPermissionsMarketingUser</item>
+    <item type="STRING">UserPermissionsMobileUser</item>
+    <item type="STRING">UserPermissionsOfflineUser</item>
+    <item type="STRING">UserPermissionsSFContentUser</item>
+    <item type="STRING">UserPermissionsSiteforceContributorUser</item>
+    <item type="STRING">UserPermissionsSiteforcePublisherUser</item>
+    <item type="STRING">UserPermissionsSupportUser</item>
+    <item type="STRING">UserPreferencesActivityRemindersPopup</item>
+    <item type="STRING">UserPreferencesApexPagesDeveloperMode</item>
+    <item type="STRING">UserPreferencesContentEmailAsAndWhen</item>
+    <item type="STRING">UserPreferencesContentNoEmail</item>
+    <item type="STRING">UserPreferencesDisCommentAfterLikeEmail</item>
+    <item type="STRING">UserPreferencesDisMentionsCommentEmail</item>
+    <item type="STRING">UserPreferencesDisProfPostCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableAllFeedsEmail</item>
+    <item type="STRING">UserPreferencesDisableBookmarkEmail</item>
+    <item type="STRING">UserPreferencesDisableChangeCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableFileShareNotificationsForApi</item>
+    <item type="STRING">UserPreferencesDisableFollowersEmail</item>
+    <item type="STRING">UserPreferencesDisableLaterCommentEmail</item>
+    <item type="STRING">UserPreferencesDisableLikeEmail</item>
+    <item type="STRING">UserPreferencesDisableMentionsPostEmail</item>
+    <item type="STRING">UserPreferencesDisableMessageEmail</item>
+    <item type="STRING">UserPreferencesDisableProfilePostEmail</item>
+    <item type="STRING">UserPreferencesDisableSharePostEmail</item>
+    <item type="STRING">UserPreferencesEnableAutoSubForFeeds</item>
+    <item type="STRING">UserPreferencesEventRemindersCheckboxDefault</item>
+    <item type="STRING">UserPreferencesHideCSNDesktopTask</item>
+    <item type="STRING">UserPreferencesHideCSNGetChatterMobileTask</item>
+    <item type="STRING">UserPreferencesJigsawListUser</item>
+    <item type="STRING">UserPreferencesOptOutOfTouch</item>
+    <item type="STRING">UserPreferencesReminderSoundOff</item>
+    <item type="STRING">UserPreferencesShowCityToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowCountryToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowEmailToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowFaxToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowManagerToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowMobilePhoneToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowPostalCodeToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowStateToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowStreetAddressToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowTitleToExternalUsers</item>
+    <item type="STRING">UserPreferencesShowWorkPhoneToExternalUsers</item>
+    <item type="STRING">UserPreferencesTaskRemindersCheckboxDefault</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

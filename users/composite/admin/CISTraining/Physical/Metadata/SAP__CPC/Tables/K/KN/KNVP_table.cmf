@@ -1,0 +1,135 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="KNVP" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/K/KN/KNVP" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Customer Master Partner Functions
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2002-02-19
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+KUNNR                          C10     Customer Number                                              
+VKORG                          C4      Sales Organization                                           
+VTWEG                          C2      Distribution Channel                                         
+SPART                          C2      Division                                                     
+PARVW                          C2      Partner Function                                             
+PARZA                          N3      Partner counter                                              
+KUNN2                          C10     Customer number of business partner                          
+LIFNR                          C10     Account Number of Vendor or Creditor                         
+PERNR                          N8      Personnel Number                                             
+PARNR                          N10     Number of contact person                                     
+KNREF                          C30     Customer description of partner (plant, storage location)    
+DEFPA                          C1      Default Partner                                              
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="KUNNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="VKORG" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Organization</annotation>
+    </column>
+    <column name="VTWEG" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution Channel</annotation>
+    </column>
+    <column name="SPART" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Division</annotation>
+    </column>
+    <column name="PARVW" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Function</annotation>
+    </column>
+    <column name="PARZA" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner counter</annotation>
+    </column>
+    <column name="KUNN2" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer number of business partner</annotation>
+    </column>
+    <column name="LIFNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Vendor or Creditor</annotation>
+    </column>
+    <column name="PERNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Number</annotation>
+    </column>
+    <column name="PARNR" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of contact person</annotation>
+    </column>
+    <column name="KNREF" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer description of partner (plant, storage location)</annotation>
+    </column>
+    <column name="DEFPA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Default Partner</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="KUNNR" sortOrder="NONE"/>
+      <indexColumn name="VKORG" sortOrder="NONE"/>
+      <indexColumn name="VTWEG" sortOrder="NONE"/>
+      <indexColumn name="SPART" sortOrder="NONE"/>
+      <indexColumn name="PARVW" sortOrder="NONE"/>
+      <indexColumn name="PARZA" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

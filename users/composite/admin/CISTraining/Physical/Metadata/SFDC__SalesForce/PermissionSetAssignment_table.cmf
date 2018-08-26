@@ -1,0 +1,95 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="PermissionSetAssignment" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/PermissionSetAssignment" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionSetId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="AssigneeId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PermissionSetAssignment-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys>
+    <foreignKey name="AssigneeId_User" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="AssigneeId"/>
+    </foreignKey>
+    <foreignKey name="PermissionSetId_PermissionSet" primaryKeyName="Id" primaryKeyTableName="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/PermissionSet">
+      <foreignKeyColumn primaryColumnName="Id" foreignColumnName="PermissionSetId"/>
+    </foreignKey>
+  </foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/PermissionSet" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/User" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="foreignKeyRelationship" type="MAP">
+    <item>
+      <key type="STRING">PermissionSetId_PermissionSet</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">PermissionSet</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">Assignments</value>
+        </item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">AssigneeId_User</key>
+      <value type="MAP">
+        <item>
+          <key type="STRING">nameAsParent</key>
+          <value type="STRING">Assignee</value>
+        </item>
+        <item>
+          <key type="STRING">nameAsChild</key>
+          <value type="STRING">PermissionSetAssignments</value>
+        </item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET"></attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">SystemModstamp</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET"></attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

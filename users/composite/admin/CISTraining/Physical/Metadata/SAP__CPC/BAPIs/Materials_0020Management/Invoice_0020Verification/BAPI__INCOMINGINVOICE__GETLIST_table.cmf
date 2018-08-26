@@ -1,0 +1,498 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_INCOMINGINVOICE_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Materials Management/Invoice Verification/BAPI_INCOMINGINVOICE_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-03-01
+Released on: 1999-03-25
+
+This method allows you to find incoming invoices according to the selection criteria listed below. 
+The following authorization object is checked with activity 03: 
+&lt;DS:UO.M_RECH_WRK&gt;M_RECH_WRK&lt;/&gt; Plant authorization for entering incoming invoices Input parameters 
+You can use the following criteria to select invoices: 
+Vendor (Structure VendorRa) 
+Posting date (Structure PstngDateRa) 
+Document date (Structure DocDateRa) 
+Entry date (Structure CpuDateRa) 
+External creator (Structure PersonExtRa) 
+Invoice status (Structure StatusRa) 
+Reference Document Number (Structure RefDocRa) 
+If you do not enter many selection restrictions, performance may be affected. IF &amp;[SWITCH]MM_SFWS_TM&amp; = &apos;X&apos;. Integration 
+The TM_DOCUMENTS parameter allows you to specify that the system should only select invoice documents or header data that were created with reference to an external transport management system. ENDIF. Return messages INCLUDE BAPI_RETURN OBJECT DOKU ID TX 
+The method can only perform its function if no error messages were generated in the &lt;LS&gt;Return&lt;/&gt; table. This is the case if it was possible to process the header data and all items without errors. Import ERP_DOCUMENTS
+This parameter allows you to specify that the system only selects invoice documents or header data that were created in the ERP system, for example with reference to a purchase order or a G/L account. 
+
+Import TM_DOCUMENTS
+This parameter allows you to specify that the system should only select invoice documents or header data that were created with reference to SAP TM. 
+
+CPUDATE_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.CPUDT&gt;Entry date&lt;/&gt; 
+
+DOCDATE_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.BLDAT&gt;Document date&lt;/&gt; 
+
+HEADERLIST
+The table contains the header data for the invoices selected. INCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+PERSON_EXT_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.ERNAME&gt;Entered by external system user&lt;/&gt; 
+
+PSTNGDATE_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.BUDAT&gt;Posting date&lt;/&gt; 
+
+REFDOC_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX 
+&lt;DS:DE.XBLNR&gt;Reference Document Number&lt;/&gt; 
+
+RETURNINCLUDE BAPI_TABLE OBJECT DOKU ID TX LANGUAGE EN Type,,ID,,Number,,Message E,,M8,,530,,No invoice documents were selected E,,M8,,381,,List incomplete, as you have no authorization 
+&lt;ZH&gt;Other possible messages&lt;/&gt; 
+Messages from other function modules or programs could also appear, such as: Type,,ID,,Number,,Message A,,B1,,883,,Currency code &amp; has no ISO code 
+
+STATUS_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.RBSTAT&gt;Invoice document status&lt;/&gt; 
+If no values are transferred for the status of the invoice document, the system selects posted documents. These documents have the status  &apos;   &apos;, &apos;4&apos;, or &apos;5&apos;. You can enter the following values for the status of the invoice document: &lt;LB&gt;&apos; &apos;&lt;/&gt;: Posted (Online invoice verification) &lt;LB&gt;1&lt;/&gt;: Planned for background verification (Background invoice verification) &lt;LB&gt;2&lt;/&gt;: Deleted (Background and online invoice verification) &lt;LB&gt;3&lt;/&gt;: Contains errors (Background invoice verification) &lt;LB&gt;4&lt;/&gt;: Correct (posted, not complete) (Background invoice verification) &lt;LB&gt;5&lt;/&gt;: Posted (Background and online invoice verification) &lt;LB&gt;A&lt;/&gt;: Parked (Online invoice verification) &lt;LB&gt;B&lt;/&gt;: Parked complete (Online invoice verification) &lt;LB&gt;C&lt;/&gt;: Held parked (Online invoice verification) &lt;LB&gt;D&lt;/&gt;: Held entered (Online invoice verification) &lt;LB&gt;E&lt;/&gt;: Parked released (Online invoice verification) To list all parked documents, for example, table &lt;ZH&gt;StatusRa&lt;/&gt; must contain the following lines: SIGN--- OPTION --- LOW --- HIGH &lt;LB&gt;I&lt;/&gt;---------- &lt;LB&gt;EQ&lt;/&gt; ---------- &lt;LB&gt;E&lt;/&gt;------- &lt;LB&gt;A &lt;/&gt;----- &lt;LB&gt;I&lt;/&gt;---------- &lt;LB&gt;EQ&lt;/&gt; ---------- &lt;LB&gt;E&lt;/&gt;------- &lt;LB&gt;B&lt;/&gt; ----- &lt;LB&gt;I&lt;/&gt;---------- &lt;LB&gt;EQ&lt;/&gt; ---------- &lt;LB&gt;E&lt;/&gt;------- &lt;LB&gt;E&lt;/&gt; ----- 
+VENDOR_RAINCLUDE BAPI_DATAELEMENT OBJECT DOKU ID TX LANGUAGE EN 
+&lt;DS:DE.LIFRE&gt;Vendor&lt;/&gt; 
+
+</annotation>
+  <columns>
+    <column name="Import ERP_DOCUMENTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection of ERP Invoice Documents</annotation>
+    </column>
+    <column name="Import TM_DOCUMENTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection of Invoice Documents Relating to Transportation Management</annotation>
+    </column>
+    <column name="CPUDATE_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="CPUDATE_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="CPUDATE_RA LOW" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Day On Which Accounting Document Was Entered</annotation>
+    </column>
+    <column name="CPUDATE_RA HIGH" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Day On Which Accounting Document Was Entered</annotation>
+    </column>
+    <column name="DOCDATE_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="DOCDATE_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="DOCDATE_RA LOW" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="DOCDATE_RA HIGH" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="HEADERLIST INV_DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number of an Invoice Document</annotation>
+    </column>
+    <column name="HEADERLIST FISC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="HEADERLIST PSTNG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="HEADERLIST DOC_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="HEADERLIST ENTRY_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Day On Which Accounting Document Was Entered</annotation>
+    </column>
+    <column name="HEADERLIST ENTRY_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of Entry</annotation>
+    </column>
+    <column name="HEADERLIST COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="HEADERLIST GROSS_AMNT" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Gross Invoice Amount in Document Currency</annotation>
+    </column>
+    <column name="HEADERLIST CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="HEADERLIST CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="HEADERLIST DIFF_INV" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Different Invoicing Party</annotation>
+    </column>
+    <column name="HEADERLIST REF_DOC_NO" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="HEADERLIST HEADER_TXT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Header Text</annotation>
+    </column>
+    <column name="HEADERLIST PERSON_EXT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entered by external system user</annotation>
+    </column>
+    <column name="HEADERLIST INVOICE_STATUS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Invoice document status</annotation>
+    </column>
+    <column name="HEADERLIST REF_DOC_NO_LONG" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number (for Dependencies see Long Text)</annotation>
+    </column>
+    <column name="HEADERLIST TM_DOCUMENT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document from Transportation Management</annotation>
+    </column>
+    <column name="PERSON_EXT_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="PERSON_EXT_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="PERSON_EXT_RA LOW" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entered by external system user</annotation>
+    </column>
+    <column name="PERSON_EXT_RA HIGH" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entered by external system user</annotation>
+    </column>
+    <column name="PSTNGDATE_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="PSTNGDATE_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="PSTNGDATE_RA LOW" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="PSTNGDATE_RA HIGH" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="REFDOC_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="REFDOC_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="REFDOC_RA LOW" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="REFDOC_RA HIGH" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="STATUS_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="STATUS_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="STATUS_RA LOW" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Invoice document status</annotation>
+    </column>
+    <column name="STATUS_RA HIGH" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Invoice document status</annotation>
+    </column>
+    <column name="VENDOR_RA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inclusion/exclusion criterion SIGN for range tables</annotation>
+    </column>
+    <column name="VENDOR_RA OPTION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection operator OPTION for range tables</annotation>
+    </column>
+    <column name="VENDOR_RA LOW" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Different Invoicing Party</annotation>
+    </column>
+    <column name="VENDOR_RA HIGH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Different Invoicing Party</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883937416</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883937416</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883937416</attribute>
+</metadata>

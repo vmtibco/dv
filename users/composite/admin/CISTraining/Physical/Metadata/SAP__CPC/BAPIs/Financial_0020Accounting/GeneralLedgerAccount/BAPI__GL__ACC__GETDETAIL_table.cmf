@@ -1,0 +1,242 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_GL_ACC_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/GeneralLedgerAccount/BAPI_GL_ACC_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2001-06-07
+Released on: 1997-08-28
+
+This method provides the user with further information about a G/L account. The system provides detailed data about the G/L account. Problems arising are returned in the form of a return code message. 
+If you only want text to be output, you can set this using the parameter TEXT_ONLY. 
+The same authorization checks are carried out as take place when displaying information within a transaction. 
+The only exception is the output of text only. In this case, only the authorization check for the charts of accounts is carried out. 
+The system does not convert the input parameter COMPANYCODE, meaning that leading blank characters within this parameter are not cleared. Likewise, no conversion is carried out for the parameter GLACCT. G/L account numbers must therefore be entered with leading zeros (for example, 0000113100). 
+Depending upon the LANGUAGE parameter, any description, in so far as it exists, appears in the desired language. Where no description exists in the desired language for the G/L account in question, nothing is returned and the parameter RETURN contains a warning. Alternatively, you can also specify the language as an ISO code in the LANGUAGE_ISO parameter. The LANGUAGE and LANGUAGE_ISO parameters are optional. In the absence of any langauge being entered, the user&apos;s logon language is used. If both parameters are set, the system ignores the LANGUAGE_ISO parameter. 
+Messages are returned in the RETURN parameter, the parameter documentation for which contains the return codes and their meaning. 
+Export ACCOUNT_DETAIL
+The detailed information about a G/L account is provided in a structure. You can find information about the meaning of the various parameters in the related data element documentation: 
+&lt;zh&gt;Structure&lt;/&gt; 
+COMP_CODE       &lt;DS:DE.BUKRS&gt;Company code&lt;/&gt; 
+GL_ACCOUNT      &lt;DS:DE.SAKNR&gt;G/L account number&lt;/&gt; 
+SHORT_TEXT      &lt;DS:DE.TXT20_SKAT&gt;G/L account short text&lt;/&gt; 
+LONG_TEXT       &lt;DS:DE.TXT50_SKAT&gt;G/L account long text&lt;/&gt; 
+CHRT_ACCTS      &lt;DS:DE.KTOPL&gt;Chart of accounts&lt;/&gt; 
+ACCT_GROUP      &lt;DS:DE.KTOKS&gt;G/L account group&lt;/&gt; 
+BAL_SH_ACC      &lt;DS:DE.XBILK&gt;Indicator: Account is a balance sheet a ccount?&lt;/&gt; 
+INC_ST_ACT      &lt;DS:DE.GVTYP&gt;P&amp;L account statement type&lt;/&gt; 
+ACCT_CURR       &lt;DS:DE.WAERS_SKB1&gt;Account currency&lt;/&gt; 
+ACCT_CURR_ISO   ISO code of the currency key 
+TAX_CODE        &lt;DS:DE.SMWSK&gt;Tax category in account master record&lt;/&gt; 
+NO_TAX_REQUIRED &lt;DS:DE.XMWNO&gt;Posting without tax allowed&lt;/&gt; 
+
+Export RETURN
+The return code for the method is supplied in a structure containing five fields. You will find information on the significance of the individual fields in the relevant data element documentation: 
+&lt;ZH&gt;Layout of structure&lt;/&gt; 
+TYPE         &lt;DS:DE.BAPI_MTYPE&gt;Message type&lt;/&gt; 
+CODE         &lt;DS:DE.BAPI_RCODE&gt;Message code&lt;/&gt; 
+MESSAGE      &lt;DS:DE.BAPI_MSG&gt;Message text&lt;/&gt; 
+LOG_NO       Application log: Log number 
+LOG_MSG_NO   Application log: Sequence number of message 
+
+Import COMPANYCODE
+You will find information on the significance of the company code in the relevant data element documentation: 
+&lt;DS:DE.BUKRS&gt;Company code&lt;/&gt; 
+
+Import GLACCT
+You will find information on the significance of the G/L account number in the relevant data element documentation: 
+&lt;DS:DE.SAKNR&gt;G/L account number&lt;/&gt; 
+
+Import LANGUAGE
+You can find information about the meaning of the language in the related data element documentation: 
+&lt;DS:DE.SPRAS&gt;Language&lt;/&gt; 
+You can also enter the languge by using an ISO-Code in the LANGUAGE_ISO parameter. 
+
+If no language is entered, the logon language is used. If you have set both parameters, the LANGUAGE_ISO parameter is ignored. Import LANGUAGE_ISO
+Alternative parameter to LANGUAGE 
+
+</annotation>
+  <columns>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code</annotation>
+    </column>
+    <column name="Import GLACCT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account number</annotation>
+    </column>
+    <column name="Import LANGUAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language</annotation>
+    </column>
+    <column name="Import LANGUAGE_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language according to ISO 639</annotation>
+    </column>
+    <column name="Import TEXT_ONLY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Export ACCOUNT_DETAIL COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL GL_ACCOUNT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL SHORT_TEXT" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account short text</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL LONG_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Long Text</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL CHRT_ACCTS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL BS_ACCOUNT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Account is a balance sheet account?</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL PL_ACCOUNT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>P&amp;L statement account type</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL ACCT_CURR" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account currency</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL ACCT_CURR_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL TAX_CODE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax on sales/purchases code</annotation>
+    </column>
+    <column name="Export ACCOUNT_DETAIL NO_TAX_REQUIRED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Tax code is not a required field</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

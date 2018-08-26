@@ -1,0 +1,708 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_COSTCENTER_GETDETAIL1" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_COSTCENTER_GETDETAIL1" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-02-08
+
+This odule supplies detailed information for a selected cost center. 
+You can determine a list of cost centers prior to this using function module BAPI_COSTCENTER_GETLIST1. 
+For more information on this topic, see the SAP Library under Cost Center Accounting. Export COSTCENTERDETAIL
+Structure with detailed information about the cost center. 
+
+Import CONTROLLINGAREA
+Controlling area from which the cost center originates. 
+
+Import COSTCENTER
+Cost center for which the detailed information is to be determined. 
+
+Import KEYDATE
+Key date for which the detailed information is to be determined. 
+Validity period of cost center. 
+Current date. Import LANGUAGE
+Language in which texts are read 
+
+Import MASTER_DATA_INACTIVE
+X = only take &lt;DS:TX.ACC_CMDT_STATUS&gt;inactive master records&lt;/&gt; into consideration 
+SPACE, X 
+SPACE EXTENSIONINEXTENSIONOUTRETURN
+Return structure for errors and system messages. 
+
+</annotation>
+  <columns>
+    <column name="Import CONTROLLINGAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Import COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="Import KEYDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key Date</annotation>
+    </column>
+    <column name="Import LANGUAGE LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Import LANGUAGE LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="Import MASTER_DATA_INACTIVE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Master Record Inactive</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL VALID_FROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-From Date</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL VALID_TO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid To Date</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL PERSON_IN_CHARGE" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL DEPARTMENT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Department</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL COSTCENTER_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center Category</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL COSTCTR_HIER_GRP" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard Hierarchy Area</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL BUS_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL PROFIT_CTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL RECORD_QUANTITY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for Recording Consumption Quantities</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_ACTUAL_PRIMARY_COSTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Actual Primary Postings</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_PLAN_PRIMARY_COSTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Plan Primary Costs</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_ACT_SECONDARY_COSTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Actual Secondary Costs</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_PLAN_SECONDARY_COSTS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Plan Secondary Costs</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_ACTUAL_REVENUES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Actual Revenue Postings</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_PLAN_REVENUES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Planning Revenues</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOCK_IND_COMMITMENT_UPDATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for Commitment Update</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL CONDITION_TABLE_USAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Usage of the condition table</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL APPLICATION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL CSTG_SHEET" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Costing Sheet</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ACTY_INDEP_TEMPLATE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Template for Activity-Independent Formula Planning</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ACTY_DEP_TEMPLATE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Template for Activity-Dependent Formula Planning</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_TITLE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Title</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_NAME1" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_NAME2" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 2</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_NAME3" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 3</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_NAME4" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 4</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_STREET" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House number and street</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_CITY" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_DISTRICT" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_COUNTRY_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country key in ISO code</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_POSTL_CODE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Postal Code</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_POBX_PCD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>P.O. Box Postal Code</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ADDR_REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_TELEPHONE" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First telephone number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_TELEPHONE2" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second telephone number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_TELEBOX" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telebox number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_TELEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telex number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_FAX_NUMBER" nullable="false">
+      <datatype name="C31" subType="DATASOURCE_TYPE" type="STRING" maxLength="31"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fax Number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_TELETEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Teletex number</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_PRINTER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Printer destination for CCtr report</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL TELCO_DATA_LINE" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data communication line no.</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_VENTURE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Joint Venture</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_REC_IND" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Recovery Indicator</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_EQUITY_TYP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Equity type</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_OTYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Joint Venture Object Type</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_JIBCL" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>JIB/JIBE Class</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL JV_JIBSA" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>JIB/JIBE Subclass A</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL NAME" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General Name</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL DESCRIPT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL FUNC_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ACT_STATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activation Status of Generic Master Record</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ACTY_DEP_TEMPLATE_ALLOC_CC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Template: Activity-Dependent Allocation to Cost Center</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL ACTY_INDEP_TEMPLATE_ALLOC_CC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Template: Activity-Independent Allocation to Cost Center</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL PERSON_IN_CHARGE_USER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Responsible</annotation>
+    </column>
+    <column name="Export COSTCENTERDETAIL LOGSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="EXTENSIONIN STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

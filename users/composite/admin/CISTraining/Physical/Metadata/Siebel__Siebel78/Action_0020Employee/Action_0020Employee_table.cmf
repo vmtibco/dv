@@ -1,0 +1,247 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Action Employee" path="/users/composite/admin/CISTraining/Physical/Metadata/Siebel_Siebel78/Action Employee/Action Employee" type="TABLE" subtype="NONE" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Account Id" nullable="unknown">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Activity Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Activity Row Status" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Added by LS, set in C++</annotation>
+    </column>
+    <column name="Appointment Status" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Category Id" nullable="unknown">
+      <datatype name="DTYPE_TEXT MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="STRING">Category</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Employee Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Manual Flag" nullable="true">
+      <datatype name="DTYPE_BOOL" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Plan Start Date" nullable="true">
+      <datatype name="DTYPE_UTCDATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Primary Category Id" nullable="true">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Role Code" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Start Date" nullable="true">
+      <datatype name="DTYPE_UTCDATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Status" nullable="true">
+      <datatype name="DTYPE_TEXT" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Territory Id" nullable="true">
+      <datatype name="DTYPE_TEXT MULTI_VALUED" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="STRING">Id</attribute>
+      <attribute name="mvLinkName" type="STRING">Territory</attribute>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Created" nullable="false">
+      <datatype name="DTYPE_DATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Created By" nullable="false">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Updated" nullable="false">
+      <datatype name="DTYPE_DATETIME" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Updated By" nullable="false">
+      <datatype name="DTYPE_ID" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <attribute name="destField" type="NULL"/>
+      <attribute name="mvLinkName" type="NULL"/>
+      <attribute name="noAssociate" type="BOOLEAN">false</attribute>
+      <attribute name="selectionState" type="INTEGER">2</attribute>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="c:0:destField" type="STRING">Id</attribute>
+  <attribute name="c:0:mvLinkName" type="NULL"/>
+  <attribute name="c:0:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:10:destField" type="NULL"/>
+  <attribute name="c:10:mvLinkName" type="NULL"/>
+  <attribute name="c:10:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:11:destField" type="NULL"/>
+  <attribute name="c:11:mvLinkName" type="NULL"/>
+  <attribute name="c:11:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:12:destField" type="NULL"/>
+  <attribute name="c:12:mvLinkName" type="NULL"/>
+  <attribute name="c:12:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:13:destField" type="STRING">Id</attribute>
+  <attribute name="c:13:mvLinkName" type="STRING">Territory</attribute>
+  <attribute name="c:13:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:13:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:14:destField" type="NULL"/>
+  <attribute name="c:14:mvLinkName" type="NULL"/>
+  <attribute name="c:14:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:14:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:15:destField" type="NULL"/>
+  <attribute name="c:15:mvLinkName" type="NULL"/>
+  <attribute name="c:15:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:15:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:16:destField" type="NULL"/>
+  <attribute name="c:16:mvLinkName" type="NULL"/>
+  <attribute name="c:16:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:16:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:17:destField" type="NULL"/>
+  <attribute name="c:17:mvLinkName" type="NULL"/>
+  <attribute name="c:17:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:17:selectionState" type="INTEGER">2</attribute>
+  <attribute name="c:1:destField" type="NULL"/>
+  <attribute name="c:1:mvLinkName" type="NULL"/>
+  <attribute name="c:1:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:2:destField" type="NULL"/>
+  <attribute name="c:2:mvLinkName" type="NULL"/>
+  <attribute name="c:2:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:3:destField" type="NULL"/>
+  <attribute name="c:3:mvLinkName" type="NULL"/>
+  <attribute name="c:3:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:4:destField" type="NULL"/>
+  <attribute name="c:4:mvLinkName" type="NULL"/>
+  <attribute name="c:4:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:5:destField" type="STRING">Id</attribute>
+  <attribute name="c:5:mvLinkName" type="STRING">Category</attribute>
+  <attribute name="c:5:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:6:destField" type="NULL"/>
+  <attribute name="c:6:mvLinkName" type="NULL"/>
+  <attribute name="c:6:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:7:destField" type="NULL"/>
+  <attribute name="c:7:mvLinkName" type="NULL"/>
+  <attribute name="c:7:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:8:destField" type="NULL"/>
+  <attribute name="c:8:mvLinkName" type="NULL"/>
+  <attribute name="c:8:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="c:9:destField" type="NULL"/>
+  <attribute name="c:9:mvLinkName" type="NULL"/>
+  <attribute name="c:9:noAssociate" type="BOOLEAN">false</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserId" type="INTEGER">0</attribute>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="lastModifiedDate" type="LONG">0</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING"/>
+  <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+  <attribute name="lastModifiedUserName" type="STRING"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

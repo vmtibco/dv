@@ -1,0 +1,592 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_COMPANYCODE_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/CompanyCode/BAPI_COMPANYCODE_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2001-06-07
+Released on: 1997-08-28
+
+This method enables the user to access further information for a company code. The system returns the detail data and address data for the company code. Problems arising are retured as a return code message. 
+The same authorization checks are carried out as take place when displaying displaying information within an R/3 transaction. 
+The system does not convert the input parameter COMPANYID, meaning that leading blank characters within this parameter are not cleared. 
+Where no address data is found for a company code, a warning message is returned by the return parameter. This does not however prevent other detail from being returned. 
+Messages are returned under the RETURN parameter. This parameter documentation contains the return codes and their meaning. 
+Export COMPANYCODE_ADDRESS
+The system returns company code address details in one structure. 
+&lt;ZH&gt;Structure Layout&lt;/&gt; 
+ADDR_NO         Address number 
+FORMOFADDR      Title 
+NAME            Name 1 
+NAME_2          Name 2 
+NAME_3          Name 3 
+NAME_4          Name 4 
+C_O_NAME        c/o name 
+CITY            City 
+DISTRICT        District 
+CITY_NO         City code for city and street file 
+POSTL_COD1      Postal code of city 
+POSTL_COD2      Postal code of P.O. box 
+POSTL_COD3      Postal code of company (for major customers) 
+PO_BOX          P.O. box 
+PO_BOX_CIT      City of P.O. box 
+DELIV_DIS       Postal delivery district 
+STREET          Street 
+STREET_NO       Code for city and street file 
+STR_ABBR        Abbreviation of street name (Spain) 
+HOUSE_NO        House number 
+STR_SUPPL1      Supplement 1 for street 
+STR_SUPPL2      Supplement 2 for street 
+LOCATION        Building and location description 
+BUILDING        Building 
+FLOOR           Floor 
+ROOM_NO         Room number 
+COUNTRY         Country key 
+LANGU           Language key 
+REGION          Region (state, county, province) 
+SORT1           Search term 1 
+SORT2           Search term 2 
+TIME_ZONE       Time zone of address 
+TAXJURCODE      Jurisdiction for taxation - tax jurisdiction code 
+ADR_NOTES       Notes to address 
+COMM_TYPE       Communication type (key) 
+TEL1_NUMBR      First telephone no.: area code + number 
+TEL1_EXT        First telephone no.: extension 
+FAX_NUMBER      First fax no.: area code + number 
+FAX_EXTENS      First fax no.: extension 
+
+ADDR_NO        Dictionary data type: CHAR(field length 10) 
+FORMOFADDR     Dictionary data type: CHAR(field length 15) 
+NAME           Dictionary data type: CHAR(field length 40) 
+NAME_2         Dictionary data type: CHAR(field length 40) 
+NAME_3         Dictionary data type: CHAR(field length 40) 
+NAME_4         Dictionary data type: CHAR(field length 40) 
+C_O_NAME       Dictionary data type: CHAR(field length 40) 
+CITY           Dictionary data type: CHAR(field length 40) 
+DISTRICT       Dictionary data type: CHAR(field length 40) 
+CITY_NO        Dictionary data type: CHAR(field length 12) 
+POSTL_COD1     Dictionary data type: CHAR(field length 10) 
+POSTL_COD2     Dictionary data type: CHAR(field length 10) 
+POSTL_COD3     Dictionary data type: CHAR(field length 10) 
+PO_BOX         Dictionary data type: CHAR(field length 10) 
+PO_BOX_CIT     Dictionary data type: CHAR(field length 40) 
+DELIV_DIS      Dictionary data type: CHAR(field length 15) 
+STREET         Dictionary data type: CHAR(field length 40) 
+STREET_NO      Dictionary data type: CHAR(field length 12) 
+STR_ABBR       Dictionary data type: CHAR(field length  2) 
+HOUSE_NO       Dictionary data type: CHAR(field length 10) 
+STR_SUPPL1     Dictionary data type: CHAR(field length 40) 
+STR_SUPPL2     Dictionary data type: CHAR(field length 40) 
+LOCATION       Dictionary data type: CHAR(field length 40) 
+BUILDING       Dictionary data type: CHAR(field length 10) 
+FLOOR          Dictionary data type: CHAR(field length 10) 
+ROOM_NO        Dictionary data type: CHAR(field length 10) 
+COUNTRY        Dictionary data type: CHAR(field length  3) 
+LANGU          Dictionary data type: CHAR(field length  1) 
+REGION         Dictionary data type: CHAR(field length  3) 
+SORT1          Dictionary data type: CHAR(field length 20) 
+SORT2          Dictionary data type: CHAR(field length 20) 
+TIME_ZONE      Dictionary data type: CHAR(field length 6) 
+TAXJURCODE     Dictionary data type: CHAR(field length 15) 
+ADR_NOTES      Dictionary data type: CHAR(field length 50) 
+COMM_TYPE      Dictionary data type: CHAR(field length 3) 
+TEL1_NUMBR     Dictionary data type: CHAR(field length 30) 
+TEL1_EXT       Dictionary data type: CHAR(field length 10) 
+FAX_NUMBER     Dictionary data type: CHAR(field length 30) 
+FAX_EXTENS     Dictionary data type: CHAR(field length 10) 
+Export COMPANYCODE_DETAIL
+The system returns company code detials in one structure with twelve fields. You can find a definition of these parameters in the respective data element documentation. 
+&lt;ZH&gt;Structure Layout &lt;/&gt; 
+COMP_CODE      &lt;DS:DE.BUKRS&gt;Company code&lt;/&gt; 
+COMP_NAME      Company code or company name 
+CITY1          City 
+COUNTRY1       &lt;DS:DE.LAND1&gt;Country key&lt;/&gt; 
+CURRENCY       &lt;DS:DE.WAERS&gt;Currency key&lt;/&gt; 
+LANGU1         &lt;DS:DE.SPRAS&gt;Language key&lt;/&gt; 
+CHRT_ACCTS     &lt;DS:DE.KTOPL&gt;Chart of accounts&lt;/&gt; 
+FY_VARIANT     &lt;DS:DE.PERIV&gt;Fiscal year variant&lt;/&gt; 
+VAT_REG_NO     &lt;DS:DE.STCEG&gt;VAT registration number&lt;/&gt; 
+COMPANY        &lt;DS:DE.RCOMP&gt;Company&lt;/&gt; 
+ADDR_NO        Address number 
+
+COMP_CODE      Dictionary data type: CHAR(field length 4) 
+COMP_NAME      Dictionary data type: CHAR(field length 25) 
+CITY1          Dictionary data type: CHAR(field length 25) 
+COUNTRY1       Dictionary data type: CHAR(field length 3) 
+CURRENCY       Dictionary data type: CHAR(field length 5) 
+LANGU1         Dictionary data type: CHAR(field length 1) 
+CHRT_ACCTS     Dictionary data type: CHAR(field length 4) 
+FY_VARIANT     Dictionary data type: CHAR(field length 2) 
+VAT_REG_NO     Dictionary data type: CHAR(field length 20) 
+COMPANY        Dictionary data type: CHAR(field length 6) 
+ADDR_NO        Dictionary data type: CHAR(field length 10) 
+Export RETURN
+The system returns the return code of this method in one structure with five fields. You can find definitions of these fields in the respective data element documentation. 
+&lt;ZH&gt;Structure Layout&lt;/&gt; 
+TYPE         &lt;DS:DE.BAPI_MTYPE&gt;Message type&lt;/&gt; 
+CODE         &lt;DS:DE.BAPI_RCODE&gt;Message code&lt;/&gt; 
+MESSAGE      &lt;DS:DE.BAPI_MSG&gt;Message text&lt;/&gt; 
+LOG_NO       Application log: log number 
+LOG_MSG_NO   Application log: sequence number of message 
+
+Import COMPANYCODEID
+You can find out what a company code is in the data element documentation 
+&lt;DS:DE.BUKRS&gt;Company Code&lt;/&gt; 
+
+</annotation>
+  <columns>
+    <column name="Import COMPANYCODEID" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS ADDR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS FORMOFADDR" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Form of address text</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS NAME" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS NAME_2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 2</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS NAME_3" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 3</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS NAME_4" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 4</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS C_O_NAME" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>c/o name</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS CITY" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS DISTRICT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS CITY_NO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City code for city/street file</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS POSTL_COD1" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City postal code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS POSTL_COD2" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box postal code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS POSTL_COD3" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company postal code (for large customers)</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS PO_BOX_CIT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box city</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS DELIV_DIS" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Post Delivery District</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS STREET" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street name</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS STREET_NO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street Number for City/Street File</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS STR_ABBR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Abbreviation of Street Name</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS HOUSE_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House Number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS STR_SUPPL1" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 2</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS STR_SUPPL2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 3</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS LOCATION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 5</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS BUILDING" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>old: building (no. or abbreviation)</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS FLOOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Floor in building</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS ROOM_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Room or Appartment Number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS SORT1" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term 1</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS SORT2" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term 2</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS TIME_ZONE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address time zone</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS ADR_NOTES" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address notes</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS COMM_TYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Method (Key) (Business Address Services)</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS TEL1_NUMBR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First telephone no.: dialling code+number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS TEL1_EXT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First Telephone No.: Extension</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS FAX_NUMBER" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First fax no.: dialling code+number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_ADDRESS FAX_EXTENS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First fax no.: extension</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL COMP_NAME" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Company Code or Company</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL CITY" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL CHRT_ACCTS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL FY_VARIANT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year Variant</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL VAT_REG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>VAT Registration Number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL COMPANY" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL ADDR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address number</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL COUNTRY_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country ISO code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="Export COMPANYCODE_DETAIL LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883573682</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883573682</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883573682</attribute>
+</metadata>

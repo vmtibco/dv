@@ -1,0 +1,79 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="FI - General Ledger Master Data" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/FI - General Ledger Master Data" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Chart of Accounts" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SKAT-KTOPL</annotation>
+    </column>
+    <column name="G/L Account Number" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SKAT-SAKNR</annotation>
+    </column>
+    <column name="Language Key" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SKAT-SPRAS</annotation>
+    </column>
+    <column name="G/L account short text" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SKAT-TXT20</annotation>
+    </column>
+    <column name="_Chart of Accounts" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00001</annotation>
+    </column>
+    <column name="_G/L Account Number" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00002</annotation>
+    </column>
+    <column name="_Language Key" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_G/L account short text" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00004</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421886011112</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421886011112</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421886011112</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">SP$00004</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001081</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

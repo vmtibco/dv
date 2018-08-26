@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getOrder" path="/users/composite/admin/CISTraining/Physical/Metadata/Test/getOrder" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="orderId" direction="IN" nullable="unknown">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="unknown">
+      <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;restfulPortBinding&quot; serviceName=&quot;getOrder&quot; bindingStyles=&quot;&quot; enabled=&quot;false&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; httpMethod=&quot;GET&quot; operationPathTemplate=&quot;GetOrder?orderId={orderId}&quot; resourceName=&quot;getOrder&quot; requestWrapperQName=&quot;&quot; parameterStyle=&quot;BARE&quot; responseWrapperQName=&quot;&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; bindingLocation=&quot;query&quot; nulLable=&quot;false&quot; parameterFormat=&quot;JSON&quot; xml=&quot;false&quot; name=&quot;orderId&quot; dataType=&quot;VARCHAR&quot; inOut=&quot;IN&quot; maxLength=&quot;255&quot; location=&quot;URL&quot; isUrl=&quot;true&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1465912923851</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="execTimeout" type="LONG">0</attribute>
+  <attribute name="httpLocation" type="STRING">http://vmadired-ws01:9500/json/AdvancedTraining/GetOrder?orderId={orderId}</attribute>
+  <attribute name="httpVerb" type="STRING">GET</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1465912932431</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1465912923851</attribute>
+  <attribute name="timeout" type="LONG">0</attribute>
+</metadata>

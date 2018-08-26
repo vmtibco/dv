@@ -1,0 +1,334 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_RESERVATION_GETITEMS" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Materials Management/Inventory Management/BAPI_RESERVATION_GETITEMS" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-09-17
+
+This method allows you to list reservations. You pass on the desired selection criteria (e.g. requirement date, plant, goods recipient) in the import parameters. For further information, refer to the relevant parameter documentation. 
+
+The following authorization objects are checked with the activity 03 (Display): 
+
+&lt;DS:UO.M_MRES_BWA&gt;M_RES_BWA&lt;/&gt;,,Reservations: movement type 
+&lt;DS:UO.M_MRES_WWA&gt;M_MRES_WWA&lt;/&gt;,,Reservations: plant 
+If errors occur during processing and the reservation cannot be saved, the relevant error messages are returned in the table &lt;ZH&gt;Return&lt;/&gt;. Information messages are also logged in this table. INCLUDE BAPI_INVENTUR_WEITERINF LANGUAGE EN Import CLOSED_ITEMS
+If this indicator is set, those reservations whose quantity is greater than or equal to the quantity withdrawn and/or for which the &quot;Final issue&quot; indicator has been set are also displayed. 
+
+Import DELETED_ITEMS
+If the indicator is set, deleted reservations will also be listed. 
+
+Import GR_RCPT
+You will find information on the meaning of the goods recipient in the relevant data element documentation: 
+&lt;DS:DE.WEMPF&gt;Goods recipient&lt;/&gt; 
+
+Import MATERIAL
+You will find information on the meaning of the material in the relevant data element documentation: 
+&lt;DS:DE.MATNR&gt;Material number&lt;/&gt; 
+
+Import MOVE_PLANT
+You will find information on the meaning of the receiving plant in the relevant data element documentation: 
+&lt;DS:DE.UMWRK&gt;Receiving plant&lt;/&gt; 
+
+Import OPEN_ITEMS
+If the indicator is set, reservations for which a goods movement (e.g. goods issue) is still expected are displayed. 
+
+Import PLANT
+You will find information on the meaning of the plant in the relevant data element documentation: 
+&lt;DS:DE.WERKS&gt;Plant&lt;/&gt; 
+
+Import REQ_DATE
+You will find information on the meaning of the requirement date (&quot;date required&quot;) in the relevant data element documentation: 
+&lt;DS:DE.BANFN&gt;Requirement date&lt;/&gt; 
+
+Import RES_NOINCLUDE BAPI_KEYFIELD 
+
+RESERVATION_ITEMS
+The table contains all reservation items that satisfy the selection criteria. INCLUDE BAPI_DATAELEMENT 
+
+RETURNINCLUDE BAPI_TABLE Type,,ID,,Number,,Message E,,W5,,027,,No reservations satisfying these selection 
+,,,,,,criteria exist E,,W5,,073,,Please pass on parameter for open or 
+,,,,,,closed reservations 
+</annotation>
+  <columns>
+    <column name="Import CLOSED_ITEMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Including Closed Reservation Items</annotation>
+    </column>
+    <column name="Import DELETED_ITEMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Including Deleted Reservation Items</annotation>
+    </column>
+    <column name="Import GR_RCPT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Recipient/Ship-To Party</annotation>
+    </column>
+    <column name="Import MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material</annotation>
+    </column>
+    <column name="Import MOVE_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving Plant</annotation>
+    </column>
+    <column name="Import OPEN_ITEMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Open Reservation Items</annotation>
+    </column>
+    <column name="Import PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="Import REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From Requirement Date</annotation>
+    </column>
+    <column name="Import RES_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reservation Number</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS RES_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS RES_ITEM" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS STORE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Date for the Component</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS G_L_ACCT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS SHORT_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Text</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS GR_RCPT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Recipient/Ship-To Party</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS UNLOAD_PT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unloading Point</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS FIXED_QUAN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity is Fixed</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS MOVEMENT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Movement for Reservation Allowed</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS WITHD_QUAN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity Withdrawn</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS PROCESS_ID" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Line already processed</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="RESERVATION_ITEMS MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883873144</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883873144</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883873144</attribute>
+</metadata>

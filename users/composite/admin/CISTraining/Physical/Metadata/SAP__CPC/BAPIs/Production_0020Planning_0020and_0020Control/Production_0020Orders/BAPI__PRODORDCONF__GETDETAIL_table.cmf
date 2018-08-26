@@ -1,0 +1,1922 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PRODORDCONF_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Orders/BAPI_PRODORDCONF_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-03-01
+Released on: 1998-06-30
+
+In this method the data for a confirmation for a production order is provided in the &lt;LS&gt;ConfDetail&lt;/&gt; parameter. It makes no difference whether the confirmation is entered as a 
+&lt;ls&gt;Time ticket&lt;/&gt; 
+&lt;ls&gt;Time event&lt;/&gt; 
+&lt;ls&gt;Activity confirmation&lt;/&gt; 
+&lt;ls&gt;Order confirmation&lt;/&gt; 
+Goods movements that are posted together with the confirmation, are also provided. Here the system differentiates between successfully posted goods movements in the &lt;LS&gt;Goodsmovements&lt;/&gt; table and goods movements with errors in the &lt;LS&gt;Failedgmoves&lt;/&gt;. The latter can be re-processed with the COGI transcation. 
+&lt;zh&gt;Authorization check&lt;/&gt; 
+The authorization object &lt;DS:UO.C_AFRU_AWK&gt;C_AFRU_AWK&lt;/&gt; is checked together with the activity 03 (display), the order type and the plant of the confirmed production order. 
+&lt;ZH&gt;Parameters&lt;/&gt; 
+&lt;LS&gt;Confirmation&lt;/&gt; The parameter &lt;LS&gt;Confirmation&lt;/&gt; is the confirmation number, with which the confirmed object can be identified. 
+
+&lt;LS&gt;ConfirmationCounter&lt;/&gt; The parameter &lt;LS&gt;ConfirmationCounter&lt;/&gt; identifies individual confirmations, together with the  parameter &lt;LS&gt;Confirmation&lt;/&gt;. 
+
+&lt;LS&gt;Return&lt;/&gt; If the confirmation data could not be provided due to an error, the &lt;LS&gt;Return&lt;/&gt; parameter receives information about the error. 
+
+&lt;LS&gt;ConfDetail&lt;/&gt; &lt;LS&gt;ConfDetail&lt;/&gt; contains the confirmation data of the selected confirmation. 
+
+&lt;LS&gt;Goodsmovements&lt;/&gt; The optional table &lt;LS&gt;Goodsmovements&lt;/&gt; contains the goods movements that have been successfully posted for the confirmation. These can be goods issues or goods receipts from several material documents. 
+
+&lt;LS&gt;Failedgmoves&lt;/&gt; The optional table &lt;LS&gt;Failedgmoves&lt;/&gt; contains the goods movements that could not be posted because of an error. These goods movements have to be re-processed with the help of transaction COGI. 
+&lt;DS:TRAN.COGI&gt;Reprocessing incorrect goods movements&lt;/&gt; Export CONF_DETAIL
+Detail data about the confirmation that is identified with the key &lt;LS&gt;Confirmation&lt;/&gt; and &lt;LS&gt;ConfirmationCounter&lt;/&gt;. 
+
+Export RETURN
+The Return parameter shows whether the requested confirmation data could be provided or which exceptions occurred. 
+If the confirmation data has been successfully provided, the Return parameter is returned with initial values. 
+The Return parameter is only filled if either the requested confirmation does not exist, the confirmation exists but belongs in another order category or authorization to access the confirmation does not exist. If one of these exceptions occurs, the &lt;LS&gt;Return&lt;/&gt; parameter&apos;s structure contains all the necessary information about the error in detail. This is also prepared in the message text &lt;LS&gt;MESSAGE&lt;/&gt;. 
+
+Import CONFIRMATION
+The confirmation number is assigned internally. It is assigned to every operation in an order at the point when the operation is created. It therefore clearly identifies the operation. 
+If a confirmation is entered for an order, rather than for an operation, this internal number is not assigned until the first confirmation is made. The number is then stored in the order header. 
+The confirmation number and the confirmation counter combine to form the key for every confirmation record in the table AFRU. 
+
+Import CONFIRMATIONCOUNTER
+The confirmation counter is assigned internally and is used to differentiate between several confirmations for the same operation or the same order. The last confirmation counter to be assigned is always recorded in the operation or the order. 
+The confirmation number and the confirmation counter combine to form the key for every confirmation record in table AFRU. 
+
+FAILEDGMOVES
+Automatic goods movements can also be posted with a confirmation. This can take the form of &lt;LS&gt;automatic goods receipts&lt;/&gt; and &lt;LS&gt;backflushing&lt;/&gt;. 
+The posting of individual goods movements can fail due to an exception. Other goods movements can be posted immediately, without difficulty, when the confirmation is saved. Failed goods movements can be successfully posted by being reprocessed at a later stage. 
+However, by rescheduling the execution of goods movements postings, you can also decouple them from the process of saving the confirmation. In this case, future change records are written for background jobs. 
+The structure of the &lt;LS&gt;FailedGmoves&lt;/&gt; table contains all goods movements that are assigned to the selected confirmation and that have not yet been successfully posted. These can be goods movements &lt;LS&gt;with errors&lt;/&gt; as well as those &lt;LS&gt;selected&lt;/&gt; for background jobs. 
+
+GOODSMOVEMENTS
+Automatic goods movements can also be posted with a confirmation. This can take the form of &lt;LS&gt;automatic goods receipts&lt;/&gt; and &lt;LS&gt;backflushing&lt;/&gt;. 
+The posting of individual goods movements can fail due to an exception. Other goods movements can be posted immediately, without difficulty, when the confirmation is saved. Failed goods movements can be successfully posted by being reprocessed at a later stage. 
+However, by rescheduling the execution of goods movement postings, you can also decouple them from the process of saving the confirmation. In this case, future change records are written for background jobs. 
+The &lt;LS&gt;Goodsmovements&lt;/&gt; table contains all goods movements that are assigned to the selected confirmation and that have been successfully posted up to this point in time. 
+
+</annotation>
+  <columns>
+    <column name="Import CONFIRMATION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation</annotation>
+    </column>
+    <column name="Import CONFIRMATIONCOUNTER" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter</annotation>
+    </column>
+    <column name="Export CONF_DETAIL ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SEQUENCE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="Export CONF_DETAIL OPERATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SUB_OPER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CAPA_CATEGORY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity category</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SPLIT" nullable="false">
+      <datatype name="s1" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Split number</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CREATED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Created On</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CREATED_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry time</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CR_BY_APPL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Indicator of PDC Message (Application)</annotation>
+    </column>
+    <column name="Export CONF_DETAIL ORIGIN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Indicator of PDC Message</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CREATE_MODE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for type of confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CR_BY_MILEST" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Milestone confirmation carried out</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_NO_MILEST" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_CNT_MILEST" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter</annotation>
+    </column>
+    <column name="Export CONF_DETAIL REVERSED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document Has Been Reversed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL REV_CONF_CNT" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation counter of cancelled confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FIN_CONF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partial/Final Confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CLEAR_RES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Clear Open Reservations</annotation>
+    </column>
+    <column name="Export CONF_DETAIL POSTG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting date</annotation>
+    </column>
+    <column name="Export CONF_DETAIL DEV_REASON" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Variance</annotation>
+    </column>
+    <column name="Export CONF_DETAIL DEV_REAS_TXT" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text describing the reason for a variance in a confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation text</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EX_CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External creator of confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EX_CREATED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External date of entry for confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EX_CREATED_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External time of entry for confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_QUAN_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation unit of measure</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_QUAN_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL YIELD" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Yield to Be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SCRAP" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scrap to Be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL REWORK" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Current rework quantity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EXEC_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for start of execution</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EXEC_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;Execution start&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SETUP_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for &apos;Setup finish&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SETUP_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;Setup finish&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PROC_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for &apos;Processing start&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PROC_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;Processing start&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PROC_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for &apos;processing finish&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PROC_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;processing finish&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL TEARDOWN_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for &apos;teardown start&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL TEARDOWN_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;teardown start&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EXEC_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed date for execution finish</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EXEC_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed time for &apos;Execution finish&apos;</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FCST_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast finish date of operation from confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FCST_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast finish time of operation from confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="Export CONF_DETAIL WORK_CNTR" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center</annotation>
+    </column>
+    <column name="Export CONF_DETAIL COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Export CONF_DETAIL RECORDTYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record type for confirmation</annotation>
+    </column>
+    <column name="Export CONF_DETAIL LOGDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical Date</annotation>
+    </column>
+    <column name="Export CONF_DETAIL LOGTIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical time</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT1_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY1" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI1" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT2" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT2_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY2" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI2" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT3" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT3_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY3" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI3" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT4" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT4_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY4" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI4" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT5" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT5_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY5" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI5" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT6" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the activity to be confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTI_UNIT6_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_ACTIVITY6" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Currently to be Confirmed</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_ACTI6" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No remaining activity expected</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_BUS_PROC_UNIT1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measurement for conf. quantity for business process</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_BUS_PROC_UNIT1_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL CONF_BUSS_PROC1" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Current quantity to be confirmed for the business process</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_REMN_BUS_PROC1" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>No remaining quantity expected for business process</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PROCSS_DEG" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation: Degree of processing</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT1_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL1" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT2" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT2_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL2" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT3" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT3_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL3" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT4" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT4_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL4" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT5" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT5_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL5" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT6" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL STD_UNIT6_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_STD_VAL6" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast value used to update the standard value</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_BUS_PROC_UNIT1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit for remaining quantity of business process</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_BUS_PROC_UNIT1_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL FORCAST_BUS_PROC_VAL1" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Remaining quantity for business process</annotation>
+    </column>
+    <column name="Export CONF_DETAIL PERS_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel number</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NAME" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of employee</annotation>
+    </column>
+    <column name="Export CONF_DETAIL TIMEID_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time Recording ID Number</annotation>
+    </column>
+    <column name="Export CONF_DETAIL WAGETYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Wage Type</annotation>
+    </column>
+    <column name="Export CONF_DETAIL SUITABILITY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suitability</annotation>
+    </column>
+    <column name="Export CONF_DETAIL NO_OF_EMPL" nullable="false">
+      <datatype name="P5.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of employees</annotation>
+    </column>
+    <column name="Export CONF_DETAIL WAGEGROUP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Wage group</annotation>
+    </column>
+    <column name="Export CONF_DETAIL BREAK_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit for the break time</annotation>
+    </column>
+    <column name="Export CONF_DETAIL BREAK_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export CONF_DETAIL BREAK_TIME" nullable="false">
+      <datatype name="P9.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed break time</annotation>
+    </column>
+    <column name="Export CONF_DETAIL EX_IDENT" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External key of a confirmation (for example from PDC system)</annotation>
+    </column>
+    <column name="Export CONF_DETAIL WIP_MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material of WIP Batch</annotation>
+    </column>
+    <column name="Export CONF_DETAIL WIP_BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WIP Batch</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="FAILEDGMOVES DOC_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of a document from a goods movement with errors</annotation>
+    </column>
+    <column name="FAILEDGMOVES DOC_ITM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="FAILEDGMOVES CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="FAILEDGMOVES CREATED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Created On</annotation>
+    </column>
+    <column name="FAILEDGMOVES CREATED_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry time</annotation>
+    </column>
+    <column name="FAILEDGMOVES FAILED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date when the error first arose</annotation>
+    </column>
+    <column name="FAILEDGMOVES FAILED_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time when the error first arose</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_NO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>System Message Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Type</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message variable 01</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message variable 02</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message variable 03</annotation>
+    </column>
+    <column name="FAILEDGMOVES MSG_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message variable 04</annotation>
+    </column>
+    <column name="FAILEDGMOVES PSTNG_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date in the Document</annotation>
+    </column>
+    <column name="FAILEDGMOVES DOC_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date in Document</annotation>
+    </column>
+    <column name="FAILEDGMOVES EXPIRYDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SLED/Best-Before Date or Date of Production</annotation>
+    </column>
+    <column name="FAILEDGMOVES MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="FAILEDGMOVES STGE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="FAILEDGMOVES BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES MOVE_TYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Movement Type (Inventory Management)</annotation>
+    </column>
+    <column name="FAILEDGMOVES STCK_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Stock Type</annotation>
+    </column>
+    <column name="FAILEDGMOVES SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="FAILEDGMOVES VENDOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Vendor or Creditor</annotation>
+    </column>
+    <column name="FAILEDGMOVES SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="FAILEDGMOVES SCHED_LINE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery Schedule for Sales Order</annotation>
+    </column>
+    <column name="FAILEDGMOVES ENTRY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="FAILEDGMOVES ENTRY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="FAILEDGMOVES ENTRY_QNT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="FAILEDGMOVES NO_MORE_GR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>&quot;Delivery Completed&quot; Indicator</annotation>
+    </column>
+    <column name="FAILEDGMOVES GR_RCPT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Recipient/Ship-To Party</annotation>
+    </column>
+    <column name="FAILEDGMOVES UNLOAD_PT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unloading Point</annotation>
+    </column>
+    <column name="FAILEDGMOVES ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES ORDERID_ITNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Item Number</annotation>
+    </column>
+    <column name="FAILEDGMOVES CALC_MOTIVE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Indicator</annotation>
+    </column>
+    <column name="FAILEDGMOVES RESERV_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="FAILEDGMOVES RES_ITEM" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="FAILEDGMOVES RES_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record type</annotation>
+    </column>
+    <column name="FAILEDGMOVES WITHDRAWN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Final Issue for This Reservation</annotation>
+    </column>
+    <column name="FAILEDGMOVES MVT_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Movement Indicator</annotation>
+    </column>
+    <column name="FAILEDGMOVES MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="FAILEDGMOVES MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="FAILEDGMOVES MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MAT_DOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Material Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS DOC_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Document Year</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MATDOC_ITM" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item in Material Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS STGE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_TYPE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Movement Type (Inventory Management)</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS STCK_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Stock Type</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS VENDOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor Account Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Customer</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SCHED_LINE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery Schedule for Sales Order</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS VAL_TYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Type</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ENTRY_QNT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ENTRY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ENTRY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PO_PR_QNT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Purchase Order Price Unit</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ORDERPR_UN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Price Unit (Purchasing)</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ORDERPR_UN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PO_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase Order Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PO_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchasing Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SHIPPING" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Shipping Instructions</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS COMP_SHIP" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Compliance with Shipping Instructions</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS NO_MORE_GR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>&quot;Delivery Completed&quot; Indicator</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ITEM_TEXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Text</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS GR_RCPT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Recipient/Ship-To Party</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS UNLOAD_PT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unloading Point</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ORDER_ITNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Item Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CALC_MOTIVE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting Indicator</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ASSET_NO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Main Asset Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SUB_NUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Asset Subnumber</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS RESERV_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS RES_ITEM" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS RES_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record type</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS WITHDRAWN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Final Issue for This Reservation</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_MAT" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving/Issuing Material</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving/Issuing Plant</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_STLOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving/Issuing Storage Location</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Receiving/Issuing Batch</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_VAL_TYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Type of Transfer Batch</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MVT_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Movement Indicator</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_REAS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Movement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS RL_EST_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Key for Real Estate Object</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS REF_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Date for Settlement</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS COST_OBJ" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Object</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PROFIT_SEGM_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profitability Segment Number (CO-PA)</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PROFIT_CTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS WBS_ELEM" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS NETWORK" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Network Number for Account Assignment</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PART_ACCT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner account number</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS AMOUNT_LC" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Externally entered posting amount in local currency</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS AMOUNT_SV" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Externally entered sales value in local currency</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS REF_DOC_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year of a Reference Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS REF_DOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document No. of a Reference Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS REF_DOC_IT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item of a Reference Document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS EXPIRYDATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Shelf Life Expiration or Best-Before Date</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PROD_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of Manufacture</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS FUND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS FUNDS_CTR" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CMMT_ITEM" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS VAL_SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number of Valuated Sales Order Stock</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS VAL_S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Item of Valuated Sales Order Stock</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS VAL_WBS_ELEM" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CO_BUSPROC" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Process</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS SUPPL_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplying Vendor</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS X_AUTO_CRE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item automatically created</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_MAT_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MOVE_MAT Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_MAT_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MOVE_MAT Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS MOVE_MAT_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MOVE_MAT Field</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS GRANT_NBR" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS CMMT_ITEM_LONG" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS LINE_ID" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unique identification of document line</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS PARENT_ID" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identifier of immediately superior line</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS LINE_DEPTH" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Hierarchy level of line in document</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS BUDGET_PERIOD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS EARMARKED_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number for Earmarked Funds</annotation>
+    </column>
+    <column name="GOODSMOVEMENTS EARMARKED_ITEM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earmarked Funds: Document Item</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421884324778</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421884324778</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421884324778</attribute>
+</metadata>

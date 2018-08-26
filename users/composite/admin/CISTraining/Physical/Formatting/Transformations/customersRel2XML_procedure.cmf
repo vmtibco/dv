@@ -1,0 +1,108 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="customersRel2XML" path="/users/composite/admin/CISTraining/Physical/Formatting/Transformations/customersRel2XML" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="CustID" direction="IN" nullable="true">
+      <datatype name="BIGINT" type="INTEGER"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="customer">
+          <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+            <schemaDatatype>
+              <datatype name="XML" type="TREE" refId="2"></datatype>
+            </schemaDatatype>
+          </datatype>
+        </element>
+      </datatype>
+      <attribute name="Customized" type="STRING">datatype.changed</attribute>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Orders/tutorial/customers" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="customerid" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="companyname">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="contactfirstname">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="contactlastname">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="billingaddress">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="stateorprovince">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="postalcode">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="countryregion">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="contacttitle">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="phonenumber">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="faxnumber">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE customersRel2XML(
+	IN CustID BIGINT, 
+	OUT result CURSOR (
+		customer XML
+	)
+)
+BEGIN
+	OPEN result FOR 
+	SELECT 
+		XMLDOCUMENT(
+			XMLELEMENT(NAME Customer, XMLATTRIBUTES(customers.customerid AS CustomerID), 
+				XMLELEMENT(NAME FirstName, customers.contactfirstname), 
+				XMLELEMENT(NAME LastName, customers.contactlastname), 
+				XMLELEMENT(NAME Title, customers.contacttitle), 
+				XMLELEMENT(NAME PhoneNumber, customers.phonenumber), 
+				XMLELEMENT(NAME Company, customers.companyname), 
+				XMLELEMENT(NAME BillingAdddress, 
+					XMLELEMENT(NAME Address, customers.billingaddress), 
+					XMLELEMENT(NAME City, customers.city), 
+					XMLELEMENT(NAME State, customers.stateorprovince), 
+					XMLELEMENT(NAME PostalCode, customers.postalcode), 
+					XMLELEMENT(NAME Country, customers.countryregion)
+				)
+			)
+		)
+	FROM      
+		/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Orders/tutorial/customers customers
+	WHERE
+		customers.customerid = CustID;
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1434832463541</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1434832635810</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="p:1:Customized" type="STRING">datatype.changed</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1434832463541</attribute>
+</metadata>

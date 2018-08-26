@@ -1,0 +1,316 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SchoolXML2Rel" path="/users/composite/admin/CISTraining/Physical/Formatting/Transformations/SchoolXML2Rel" type="PROCEDURE" subtype="TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="ClassList" direction="OUT" nullable="false">
+      <datatype name="ClassList" type="TABLE" refId="1">
+        <element name="CourseName" direction="OUT">
+          <datatype name="NCName" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="CourseDescription" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="Department" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="CreditNumber" direction="OUT">
+          <datatype name="integer" type="DECIMAL" maxFractionalDigits="0"/>
+        </element>
+        <element name="TeacherName" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="TeacherEmail" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="StudentName" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="StudentEmail" direction="OUT">
+          <datatype name="string" type="STRING" maxLength="2147483647"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/school.xml" type="TREE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1431539391660</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431545325175</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431539391660</attribute>
+  <attribute name="transformModel" type="BYTE_ARRAY">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
+AC8AAAAmFQAAAAA=</attribute>
+  <attribute name="transformSource" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace school =  &quot;http://compositesw.com/transform/example/school&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare function local:school_xml( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/&quot;&quot;school.xml&quot;&quot; :)
+  let $var4 := doc(&quot;/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/&quot;&quot;school.xml&quot;&quot;&quot;)/school:Classes
+  return
+    $var4
+};
+
+let $nodes := 
+(
+  let $var4:= local:school_xml()
+  return
+  (
+    for $var0 at $counter1 in $var4/school:Class
+    return 
+      if (fn:not($counter1 &lt;= 2147483647 and fn:true()))
+      then ()
+      else 
+        for $var3 at $counter2 in $var0/school:Student
+        return 
+          if (fn:not($counter2 &lt;= 2147483647 and fn:true()))
+          then ()
+          else 
+            element ClassList
+            {
+              (
+                element CourseName
+                {
+                  if (fn:string-length(fn:string($var0/school:CourseName)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:CourseName/text()
+                }
+                ,
+                element CourseDescription
+                {
+                  if (fn:string-length(fn:string($var0/school:CourseDescription)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:CourseDescription/text()
+                }
+                ,
+                element Department
+                {
+                  if (fn:string-length(fn:string($var0/school:Department)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:Department/text()
+                }
+                ,
+                element CreditNumber
+                {
+                  if (fn:string-length(fn:string($var0/school:CreditNumber)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:CreditNumber/text()
+                }
+                ,
+                element TeacherName
+                {
+                  if (fn:string-length(fn:string($var0/school:Teacher/school:TeacherName)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:Teacher/school:TeacherName/text()
+                }
+                ,
+                element TeacherEmail
+                {
+                  if (fn:string-length(fn:string($var0/school:Teacher/school:TeacherEmail)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var0/school:Teacher/school:TeacherEmail/text()
+                }
+                ,
+                element StudentName
+                {
+                  if (fn:string-length(fn:string($var3/school:StudentName)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var3/school:StudentName/text()
+                }
+                ,
+                element StudentEmail
+                {
+                  if (fn:string-length(fn:string($var3/school:StudentEmail)) &gt; 0)
+                  then
+                    ()
+                  else
+                    attribute xsi:nil {&quot;true&quot;}
+                  ,
+                  $var3/school:StudentEmail/text()
+                }
+              )
+            }
+    ,
+    let $counter := count($var4/school:Class/school:Student)
+    return
+      if ($counter &gt;= 0) then
+      ()
+      else 
+        for $k in (1 to ( 0 - $counter))
+        return
+          element ClassList
+          {
+            (
+              element CourseName
+              {
+              }
+              ,
+              element CourseDescription
+              {
+              }
+              ,
+              element Department
+              {
+              }
+              ,
+              element CreditNumber
+              {
+              }
+              ,
+              element TeacherName
+              {
+              }
+              ,
+              element TeacherEmail
+              {
+              }
+              ,
+              element StudentName
+              {
+              }
+              ,
+              element StudentEmail
+              {
+              }
+            )
+          }
+  )
+)
+return
+$nodes</attribute>
+</metadata>

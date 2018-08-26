@@ -1,0 +1,122 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Address" path="/users/composite/admin/CISTraining/Business/Logical/Address/Address" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="address_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="user_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="street_address" nullable="true">
+      <datatype type="STRING" maxLength="80"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="city" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="state" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="zip_code" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="country" nullable="true">
+      <datatype type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/Address/AddressLA" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="street_address">
+        <datatype type="STRING" maxLength="80"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="state">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="zip_code">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="country">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/Address/AddressTX" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="street_address">
+        <datatype type="STRING" maxLength="80"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="state">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="zip_code">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="country">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    *
+FROM      
+    /users/composite/admin/CISTraining/Business/Logical/Address/AddressLA AddressLA
+UNION ALL
+SELECT
+	*
+FROM
+    /users/composite/admin/CISTraining/Business/Logical/Address/AddressTX AddressTX</attribute>
+  <attribute name="creationDate" type="LONG">1464635107532</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464635217753</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464635107532</attribute>
+</metadata>

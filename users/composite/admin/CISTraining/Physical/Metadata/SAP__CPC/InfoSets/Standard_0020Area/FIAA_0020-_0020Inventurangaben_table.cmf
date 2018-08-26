@@ -1,0 +1,492 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="FIAA - Inventurangaben" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/InfoSets/Standard Area/FIAA - Inventurangaben" type="TABLE" subtype="1060" changeToken="0" tableType="NONE">
+  <columns>
+    <column name="Asset Class" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLKL</annotation>
+    </column>
+    <column name="Main Asset Number" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLN1</annotation>
+    </column>
+    <column name="Asset Subnumber" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLN2</annotation>
+    </column>
+    <column name="Asset super number" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ANLUE</annotation>
+    </column>
+    <column name="Company Code" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-BUKRS</annotation>
+    </column>
+    <column name="Manufacturer of asset" nullable="true">
+      <datatype name="C60" subType="DATASOURCE_TYPE" type="STRING" maxLength="60"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-HERST</annotation>
+    </column>
+    <column name="Inventory indicator" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-INKEN</annotation>
+    </column>
+    <column name="Inventory number" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-INVNR</annotation>
+    </column>
+    <column name="Supplementary inventory specifications" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-INVZU</annotation>
+    </column>
+    <column name="Last inventory date" nullable="true">
+      <datatype name="D16" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-IVDAT</annotation>
+    </column>
+    <column name="Account determination" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-KTOGR</annotation>
+    </column>
+    <column name="Base Unit of Measure" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-MEINS</annotation>
+    </column>
+    <column name="Quantity" nullable="true">
+      <datatype name="P7.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-MENGE</annotation>
+    </column>
+    <column name="Asset description" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-TXA50</annotation>
+    </column>
+    <column name="Asset description ANLAV-TXT50" nullable="true">
+      <datatype name="C100" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-TXT50</annotation>
+    </column>
+    <column name="Fiscal year in which first acquisition was posted" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-ZUJHR</annotation>
+    </column>
+    <column name="BERDATE" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BERDATE</annotation>
+    </column>
+    <column name="Internal order" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-CAUFN</annotation>
+    </column>
+    <column name="Business Area" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-GSBER</annotation>
+    </column>
+    <column name="Maintenance order" nullable="true">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-IAUFN</annotation>
+    </column>
+    <column name="License plate no. of vehichle" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-KFZKZ</annotation>
+    </column>
+    <column name="Cost Center" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-KOSTL</annotation>
+    </column>
+    <column name="Cost center responsible for asset" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-KOSTLV</annotation>
+    </column>
+    <column name="Activity Type" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-LSTAR</annotation>
+    </column>
+    <column name="Multiple-shift factor for multiple shift operation" nullable="true">
+      <datatype name="P2.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-MSFAK</annotation>
+    </column>
+    <column name="Room" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-RAUMN</annotation>
+    </column>
+    <column name="Asset location" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-STORT</annotation>
+    </column>
+    <column name="Tax Jurisdiction" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-TXJCD</annotation>
+    </column>
+    <column name="Plant" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-WERKS</annotation>
+    </column>
+    <column name="Asset shutdown" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLAV-XSTIL</annotation>
+    </column>
+    <column name="Acquisition value at fiscal year end (w/o inv.support)" nullable="true">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ANLCV-BEST_GJE</annotation>
+    </column>
+    <column name="_Last inventory date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>IVDAT</annotation>
+    </column>
+    <column name="_Asset class" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00001</annotation>
+    </column>
+    <column name="_Main asset number" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00002</annotation>
+    </column>
+    <column name="_Sub-number" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00003</annotation>
+    </column>
+    <column name="_Asset group number" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00004</annotation>
+    </column>
+    <column name="_Company code" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00005</annotation>
+    </column>
+    <column name="_Manufacturer of asset" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00006</annotation>
+    </column>
+    <column name="_Inventory indicator" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00007</annotation>
+    </column>
+    <column name="_Inventory number" nullable="true">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00008</annotation>
+    </column>
+    <column name="_Additional inventory specifica" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00009</annotation>
+    </column>
+    <column name="_Account allocation key" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00011</annotation>
+    </column>
+    <column name="_Base unit of measure" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00012</annotation>
+    </column>
+    <column name="_Quantity" nullable="true">
+      <datatype name="P17" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="17" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00013</annotation>
+    </column>
+    <column name="_Description of asset" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00014</annotation>
+    </column>
+    <column name="_Description of asset SP$00015" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00015</annotation>
+    </column>
+    <column name="_Fiscal year in which first acq" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00016</annotation>
+    </column>
+    <column name="_UM" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00017</annotation>
+    </column>
+    <column name="_Internal order" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00018</annotation>
+    </column>
+    <column name="_Business area" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00019</annotation>
+    </column>
+    <column name="_Maintenance order" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00020</annotation>
+    </column>
+    <column name="_License plate no. of vehichle" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00021</annotation>
+    </column>
+    <column name="_Cost center" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00022</annotation>
+    </column>
+    <column name="_Cost center responsible for as" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00023</annotation>
+    </column>
+    <column name="_Activity type" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00024</annotation>
+    </column>
+    <column name="_Multi-shift factor in a multip" nullable="true">
+      <datatype name="P4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="4" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00025</annotation>
+    </column>
+    <column name="_Room" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00026</annotation>
+    </column>
+    <column name="_Asset location" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00027</annotation>
+    </column>
+    <column name="_Jurisdiction for tax calculati" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00028</annotation>
+    </column>
+    <column name="_Plant" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00029</annotation>
+    </column>
+    <column name="_Asset shutdown" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00030</annotation>
+    </column>
+    <column name="_Acquisition value at fiscal ye" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SP$00031</annotation>
+    </column>
+    <column name="_Report date" nullable="true">
+      <datatype name="D10" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BERDATUM</annotation>
+    </column>
+    <column name="_Depreciation area" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BEREICH1</annotation>
+    </column>
+    <column name="_Worklist" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PA_AI_ID</annotation>
+    </column>
+    <column name="_Sort version" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SRTVR</annotation>
+    </column>
+    <column name="_Translation method" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>UMVAR</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421886029702</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421886029702</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421886029702</attribute>
+  <attribute name="sap-query-area" type="STRING">Standard Area</attribute>
+  <attribute name="sap-query-fname" type="STRING">UMVAR</attribute>
+  <attribute name="sap-query-name" type="STRING">SY000000001086</attribute>
+  <attribute name="sap-query-usergroup" type="STRING">SYSTGENERATE</attribute>
+</metadata>

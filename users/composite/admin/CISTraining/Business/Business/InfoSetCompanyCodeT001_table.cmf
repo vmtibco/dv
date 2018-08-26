@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="InfoSetCompanyCodeT001" path="/users/composite/admin/CISTraining/Business/Business/InfoSetCompanyCodeT001" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <annotation>This shows querying and filtering a SAP InfoSet object</annotation>
+  <columns>
+    <column name="Company Code" nullable="true">
+      <datatype type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Name of the company code or company" nullable="true">
+      <datatype type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="_Company Code" nullable="true">
+      <datatype type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="_Name of the company code or co" nullable="true">
+      <datatype type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/SAP_CPC/InfoSets/Standard Area/Company Code T001" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="Company Code">
+        <datatype type="STRING" maxLength="4"/>
+      </element>
+      <element name="Name of the company code or company">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="_Company Code">
+        <datatype type="STRING" maxLength="4"/>
+      </element>
+      <element name="_Name of the company code or co">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT /*{ OPTION DISABLE_PUSH } */
+    *
+FROM (SELECT 
+        *
+    FROM /users/composite/admin/CISTraining/Physical/Formatting/SAP_CPC/InfoSets/&quot;Standard Area&quot;/&quot;Company Code T001&quot; Company_Code_T001) subq
+WHERE subq.&quot;_Company Code&quot; = &apos;0100&apos;
+	OR subq.&quot;_Company Code&quot; = &apos;8590&apos;</attribute>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserId" type="INTEGER">0</attribute>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432053286567</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">0</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">0</attribute>
+</metadata>

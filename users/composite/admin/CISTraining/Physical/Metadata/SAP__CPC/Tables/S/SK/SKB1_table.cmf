@@ -1,0 +1,355 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SKB1" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/S/SK/SKB1" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: G/L account master (company code)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2008-11-28
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+BUKRS                          C4      Company Code                                                 
+SAKNR                          C10     G/L Account Number                                           
+BEGRU                          C4      Authorization Group                                          
+BUSAB                          C2      Accounting clerk                                             
+DATLZ                          D8      Date of the last interest calculation run                    
+ERDAT                          D8      Date on which the Record Was Created                         
+ERNAM                          C12     Name of Person who Created the Object                        
+FDGRV                          C10     Planning group                                               
+FDLEV                          C2      Planning level                                               
+FIPLS                          N3      Financial Budget Item                                        
+FSTAG                          C4      Field status group                                           
+HBKID                          C5      Short Key for a House Bank                                   
+HKTID                          C5      ID for account details                                       
+KDFSL                          C4      Key for Exchange Rate Differences in Foreign Currency Accts  
+MITKZ                          C1      Account is reconciliation account                            
+MWSKZ                          C2      Tax Category in Account Master Record                        
+STEXT                          C50     G/L account additional text                                  
+VZSKZ                          C2      Interest calculation indicator                               
+WAERS                          C5      Account currency                                             
+WMETH                          C2      Indicator: account managed in external system                
+XGKON                          C1      Cash receipt account / cash disbursement account             
+XINTB                          C1      Indicator: Is account only posted to automatically?          
+XKRES                          C1      Indicator: Can Line Items Be Displayed by Account?           
+XLOEB                          C1      Indicator: Account marked for deletion?                      
+XNKON                          C1      Indicator: Supplement for automatic postings ?               
+XOPVW                          C1      Indicator: Open item management?                             
+XSPEB                          C1      Indicator: Is Account Blocked for Posting?                   
+ZINDT                          D8      Key date of the last interest calculation                    
+ZINRT                          N2      Interest calculation frequency in months                     
+ZUAWA                          C3      Key for sorting according to assignment numbers              
+ALTKT                          C10     Alternative account number in company code                   
+XMITK                          C1      Indicator: Reconcil.acct ready for input at time of posting? 
+RECID                          C2      Recovery Indicator                                           
+FIPOS                          C14     Commitment Item                                              
+XMWNO                          C1      Indicator: Tax code is not a required field                  
+XSALH                          C1      Indicator: Only Manage Balances in Local Currency            
+BEWGP                          C10     Valuation Group                                              
+INFKY                          C8      Inflation Key                                                
+TOGRU                          C4      Tolerance Group for G/L Accounts                             
+XLGCLR                         C1      Clearing Specific to Ledger Groups                           
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="BUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="SAKNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L Account Number</annotation>
+    </column>
+    <column name="BEGRU" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Authorization Group</annotation>
+    </column>
+    <column name="BUSAB" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting clerk</annotation>
+    </column>
+    <column name="DATLZ" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of the last interest calculation run</annotation>
+    </column>
+    <column name="ERDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date on which the Record Was Created</annotation>
+    </column>
+    <column name="ERNAM" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="FDGRV" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning group</annotation>
+    </column>
+    <column name="FDLEV" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning level</annotation>
+    </column>
+    <column name="FIPLS" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Budget Item</annotation>
+    </column>
+    <column name="FSTAG" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field status group</annotation>
+    </column>
+    <column name="HBKID" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short Key for a House Bank</annotation>
+    </column>
+    <column name="HKTID" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for account details</annotation>
+    </column>
+    <column name="KDFSL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Exchange Rate Differences in Foreign Currency Accts</annotation>
+    </column>
+    <column name="MITKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account is reconciliation account</annotation>
+    </column>
+    <column name="MWSKZ" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Category in Account Master Record</annotation>
+    </column>
+    <column name="STEXT" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account additional text</annotation>
+    </column>
+    <column name="VZSKZ" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Interest calculation indicator</annotation>
+    </column>
+    <column name="WAERS" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account currency</annotation>
+    </column>
+    <column name="WMETH" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: account managed in external system</annotation>
+    </column>
+    <column name="XGKON" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash receipt account / cash disbursement account</annotation>
+    </column>
+    <column name="XINTB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is account only posted to automatically?</annotation>
+    </column>
+    <column name="XKRES" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Can Line Items Be Displayed by Account?</annotation>
+    </column>
+    <column name="XLOEB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Account marked for deletion?</annotation>
+    </column>
+    <column name="XNKON" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Supplement for automatic postings ?</annotation>
+    </column>
+    <column name="XOPVW" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Open item management?</annotation>
+    </column>
+    <column name="XSPEB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is Account Blocked for Posting?</annotation>
+    </column>
+    <column name="ZINDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key date of the last interest calculation</annotation>
+    </column>
+    <column name="ZINRT" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Interest calculation frequency in months</annotation>
+    </column>
+    <column name="ZUAWA" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for sorting according to assignment numbers</annotation>
+    </column>
+    <column name="ALTKT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Alternative account number in company code</annotation>
+    </column>
+    <column name="XMITK" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Reconcil.acct ready for input at time of posting?</annotation>
+    </column>
+    <column name="RECID" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Recovery Indicator</annotation>
+    </column>
+    <column name="FIPOS" nullable="true">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="XMWNO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Tax code is not a required field</annotation>
+    </column>
+    <column name="XSALH" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Only Manage Balances in Local Currency</annotation>
+    </column>
+    <column name="BEWGP" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Group</annotation>
+    </column>
+    <column name="INFKY" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inflation Key</annotation>
+    </column>
+    <column name="TOGRU" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tolerance Group for G/L Accounts</annotation>
+    </column>
+    <column name="XLGCLR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Clearing Specific to Ledger Groups</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="BUKRS" sortOrder="NONE"/>
+      <indexColumn name="SAKNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

@@ -1,0 +1,448 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="PA0001" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/P/PA/PA0001" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: HR Master Record: Infotype 0001 (Org. Assignment)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2008-11-28
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+PERNR                          N8      Personnel number                                             
+SUBTY                          C4      Subtype                                                      
+OBJPS                          C2      Object Identification                                        
+SPRPS                          C1      Lock Indicator for HR Master Data Record                     
+ENDDA                          D8      End Date                                                     
+BEGDA                          D8      Start Date                                                   
+SEQNR                          N3      Number of Infotype Record with Same Key                      
+AEDTM                          D8      Changed On                                                   
+UNAME                          C12     Name of Person Who Changed Object                            
+HISTO                          C1      Historical Record Flag                                       
+ITXEX                          C1      Text Exists for Infotype                                     
+REFEX                          C1      Reference Fields Exist (Primary/Secondary Costs)             
+ORDEX                          C1      Confirmation Fields Exist                                    
+ITBLD                          C2      Infotype Screen Control                                      
+PREAS                          C2      Reason for Changing Master Data                              
+FLAG1                          C1      Reserved Field/Unused Field                                  
+FLAG2                          C1      Reserved Field/Unused Field                                  
+FLAG3                          C1      Reserved Field/Unused Field                                  
+FLAG4                          C1      Reserved Field/Unused Field                                  
+RESE1                          C2      Reserved Field/Unused Field of Length 2                      
+RESE2                          C2      Reserved Field/Unused Field of Length 2                      
+GRPVL                          C4      Grouping Value for Personnel Assignments                     
+BUKRS                          C4      Company Code                                                 
+WERKS                          C4      Personnel Area                                               
+PERSG                          C1      Employee Group                                               
+PERSK                          C2      Employee Subgroup                                            
+VDSK1                          C14     Organizational Key                                           
+GSBER                          C4      Business Area                                                
+BTRTL                          C4      Personnel Subarea                                            
+JUPER                          C4      Legal Person                                                 
+ABKRS                          C2      Payroll Area                                                 
+ANSVH                          C2      Work Contract                                                
+KOSTL                          C10     Cost Center                                                  
+ORGEH                          N8      Organizational Unit                                          
+PLANS                          N8      Position                                                     
+STELL                          N8      Job                                                          
+MSTBR                          C8      Supervisor Area                                              
+SACHA                          C3      Payroll Administrator                                        
+SACHP                          C3      Administrator for HR Master Data                             
+SACHZ                          C3      Administrator for Time Recording                             
+SNAME                          C30     Employee&apos;s Name (Sortable by LAST NAME FIRST NAME)           
+ENAME                          C40     Formatted Name of Employee or Applicant                      
+OTYPE                          C2      Object Type                                                  
+SBMOD                          C4      Administrator Group                                          
+KOKRS                          C4      Controlling Area                                             
+FISTL                          C16     Funds Center                                                 
+GEBER                          C10     Fund                                                         
+FKBER                          C16     Functional Area                                              
+GRANT_NBR                      C20     Grant                                                        
+SGMNT                          C10     Segment for Segmental Reporting                              
+BUDGET_PD                      C10     FM: Budget Period                                            
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="PERNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel number</annotation>
+    </column>
+    <column name="SUBTY" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subtype</annotation>
+    </column>
+    <column name="OBJPS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Identification</annotation>
+    </column>
+    <column name="SPRPS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for HR Master Data Record</annotation>
+    </column>
+    <column name="ENDDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End Date</annotation>
+    </column>
+    <column name="BEGDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Date</annotation>
+    </column>
+    <column name="SEQNR" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Infotype Record with Same Key</annotation>
+    </column>
+    <column name="AEDTM" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Changed On</annotation>
+    </column>
+    <column name="UNAME" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person Who Changed Object</annotation>
+    </column>
+    <column name="HISTO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Historical Record Flag</annotation>
+    </column>
+    <column name="ITXEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text Exists for Infotype</annotation>
+    </column>
+    <column name="REFEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Fields Exist (Primary/Secondary Costs)</annotation>
+    </column>
+    <column name="ORDEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation Fields Exist</annotation>
+    </column>
+    <column name="ITBLD" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Infotype Screen Control</annotation>
+    </column>
+    <column name="PREAS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Changing Master Data</annotation>
+    </column>
+    <column name="FLAG1" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG2" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG3" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG4" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="RESE1" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="RESE2" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="GRPVL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grouping Value for Personnel Assignments</annotation>
+    </column>
+    <column name="BUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="WERKS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Area</annotation>
+    </column>
+    <column name="PERSG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Employee Group</annotation>
+    </column>
+    <column name="PERSK" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Employee Subgroup</annotation>
+    </column>
+    <column name="VDSK1" nullable="true">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Organizational Key</annotation>
+    </column>
+    <column name="GSBER" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="BTRTL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Subarea</annotation>
+    </column>
+    <column name="JUPER" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Legal Person</annotation>
+    </column>
+    <column name="ABKRS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payroll Area</annotation>
+    </column>
+    <column name="ANSVH" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Contract</annotation>
+    </column>
+    <column name="KOSTL" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="ORGEH" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Organizational Unit</annotation>
+    </column>
+    <column name="PLANS" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Position</annotation>
+    </column>
+    <column name="STELL" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Job</annotation>
+    </column>
+    <column name="MSTBR" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supervisor Area</annotation>
+    </column>
+    <column name="SACHA" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payroll Administrator</annotation>
+    </column>
+    <column name="SACHP" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Administrator for HR Master Data</annotation>
+    </column>
+    <column name="SACHZ" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Administrator for Time Recording</annotation>
+    </column>
+    <column name="SNAME" nullable="true">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Employee&apos;s Name (Sortable by LAST NAME FIRST NAME)</annotation>
+    </column>
+    <column name="ENAME" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Formatted Name of Employee or Applicant</annotation>
+    </column>
+    <column name="OTYPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="SBMOD" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Administrator Group</annotation>
+    </column>
+    <column name="KOKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="FISTL" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="GEBER" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="FKBER" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="GRANT_NBR" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="SGMNT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment for Segmental Reporting</annotation>
+    </column>
+    <column name="BUDGET_PD" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="PERNR" sortOrder="NONE"/>
+      <indexColumn name="SUBTY" sortOrder="NONE"/>
+      <indexColumn name="OBJPS" sortOrder="NONE"/>
+      <indexColumn name="SPRPS" sortOrder="NONE"/>
+      <indexColumn name="ENDDA" sortOrder="NONE"/>
+      <indexColumn name="BEGDA" sortOrder="NONE"/>
+      <indexColumn name="SEQNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

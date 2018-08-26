@@ -1,0 +1,686 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_BPCONTACT_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Sales and Distribution/Sales Support/BAPI_BPCONTACT_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-01-20
+
+The system uses this BAPI function module to read partner sales activities. The identification of the partner sales activities should be used as input parameter. 
+SFA interface (Specification+Design) Import RTF_ITF
+Text format RTF or ITF 
+SPACE: Text conversion with function module CONVERT_TEXT R: Text conversion with function module CONVERT_RTF_TO_ITF and CONVERT_ITF_TO_RTF I: No text conversion (text in ITF format) 
+The default value is SPACE. BINARYRELATIONSHIP
+Binary relationships with partner sales activities. 
+Two objects can have a relationship. This relationship is described with a &lt;ZH&gt;function&lt;/&gt; and the &lt;ZH&gt;relationship type&lt;/&gt; of the objects involved. BUSINESSPARTNER
+Partner in partner sales activity. 
+Partners can have different &lt;ZH&gt;functions&lt;/&gt; in a partner sales activity. 
+The following list includes some partner functions: 
+Sold-to party 
+Contact person at customer&apos;s location 
+Sales employee GENERALDATA
+General partner sales activity data RETURN
+The processing log is transmitted in this parameter. It contains all messages (error, warning, information) from the consistency check. 
+Implemented messages: 
+Error   &lt;ZH&gt;151&lt;/&gt; Not all documents are sales activities/promotions. 
+Error   &lt;ZH&gt;152&lt;/&gt; Not all sales activities/promotions could be read. 
+Error   &lt;ZH&gt;257&lt;/&gt; Object is not a sales activity. 
+Error   &lt;ZH&gt;258&lt;/&gt; Logical system of object does not correspond to current system. SALESACTIVITYID
+Input: Identification of partner sales activities that are read by method. 
+Output: Selected business partner activities The quantities of Input and Output do not have to be identical. 
+
+TEXT
+Long texts in partner sales activity. Long texts are issued in RTF format. </annotation>
+  <columns>
+    <column name="Import RTF_ITF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text Form.</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP REFSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP REFOBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP REFOBJECTKEY" nullable="false">
+      <datatype name="C70" subType="DATASOURCE_TYPE" type="STRING" maxLength="70"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object key</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP REFROLE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Relationship Service : Role type A</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP OBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP OBJECTKEY" nullable="false">
+      <datatype name="C70" subType="DATASOURCE_TYPE" type="STRING" maxLength="70"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object key</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP ROLE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Relationship Service : Role type B</annotation>
+    </column>
+    <column name="BINARYRELATIONSHIP BINRELTYP" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Relationship Service binary link type</annotation>
+    </column>
+    <column name="BUSINESSPARTNER REFOBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="BUSINESSPARTNER REFOBJECTKEY" nullable="false">
+      <datatype name="C70" subType="DATASOURCE_TYPE" type="STRING" maxLength="70"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object key</annotation>
+    </column>
+    <column name="BUSINESSPARTNER DOC_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD document no. of a sales activity in sales support</annotation>
+    </column>
+    <column name="BUSINESSPARTNER ITM_NUMBER" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the SD document</annotation>
+    </column>
+    <column name="BUSINESSPARTNER COUNT_PARVW" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Counter for partner functions</annotation>
+    </column>
+    <column name="BUSINESSPARTNER PARTN_ROLE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Function</annotation>
+    </column>
+    <column name="BUSINESSPARTNER PARTN_ROLE_OLD" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Function</annotation>
+    </column>
+    <column name="BUSINESSPARTNER PARTN_ID" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner number (KUNNR, LIFNR, or PERNR)</annotation>
+    </column>
+    <column name="BUSINESSPARTNER PARTN_ID_OLD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner number (KUNNR, LIFNR, or PERNR)</annotation>
+    </column>
+    <column name="BUSINESSPARTNER ADDR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address number</annotation>
+    </column>
+    <column name="BUSINESSPARTNER PERS_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person number</annotation>
+    </column>
+    <column name="BUSINESSPARTNER ADDRTYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address type (1=Organization, 2=Person, 3=Contact person)</annotation>
+    </column>
+    <column name="BUSINESSPARTNER ADDR_ORIGIN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin of an address</annotation>
+    </column>
+    <column name="BUSINESSPARTNER UNLOAD_PT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unloading Point</annotation>
+    </column>
+    <column name="BUSINESSPARTNER CALENDAR_UPDATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maintain appointments in calendar</annotation>
+    </column>
+    <column name="BUSINESSPARTNER ADDR_LINK" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Link to address number</annotation>
+    </column>
+    <column name="GENERALDATA REFOBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="GENERALDATA REFOBJECTKEY" nullable="false">
+      <datatype name="C70" subType="DATASOURCE_TYPE" type="STRING" maxLength="70"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object key</annotation>
+    </column>
+    <column name="GENERALDATA DOC_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD document no. of a sales activity in sales support</annotation>
+    </column>
+    <column name="GENERALDATA REFDOCTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document type of reference object</annotation>
+    </column>
+    <column name="GENERALDATA REFRELTYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Relationship type</annotation>
+    </column>
+    <column name="GENERALDATA ACTIVITY_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Activity Type for Sales Support</annotation>
+    </column>
+    <column name="GENERALDATA SALESORG" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Organization</annotation>
+    </column>
+    <column name="GENERALDATA DISTR_CHAN" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution Channel</annotation>
+    </column>
+    <column name="GENERALDATA DIVISION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Division</annotation>
+    </column>
+    <column name="GENERALDATA SALES_OFF" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Office</annotation>
+    </column>
+    <column name="GENERALDATA SALES_GRP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Group</annotation>
+    </column>
+    <column name="GENERALDATA FROM_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start of sales activity (date)</annotation>
+    </column>
+    <column name="GENERALDATA TO_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of sales activity (date)</annotation>
+    </column>
+    <column name="GENERALDATA FROM_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start of sales activity</annotation>
+    </column>
+    <column name="GENERALDATA TO_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of sales activity (time)</annotation>
+    </column>
+    <column name="GENERALDATA REASON" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for sales activity</annotation>
+    </column>
+    <column name="GENERALDATA RESULT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Outcome of sales activities</annotation>
+    </column>
+    <column name="GENERALDATA RESULT_EXPLANATION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Analysis of sales activity outcome</annotation>
+    </column>
+    <column name="GENERALDATA STATE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of sales activity</annotation>
+    </column>
+    <column name="GENERALDATA FOLLOW_UP_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of follow-up activity</annotation>
+    </column>
+    <column name="GENERALDATA FOLLOW_UP_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of follow-up sales activity</annotation>
+    </column>
+    <column name="GENERALDATA ACTIVITY_COMMENT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short text for a sales activity</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_01" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 01</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_02" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 02</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_03" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 03</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_04" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 04</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_05" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 05</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_06" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 06</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_07" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 07</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_08" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 08</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_09" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 09</annotation>
+    </column>
+    <column name="GENERALDATA DESCRPT_10" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales activity description 10</annotation>
+    </column>
+    <column name="GENERALDATA TXT_KONSE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text entered in document</annotation>
+    </column>
+    <column name="GENERALDATA DIRECTION" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Direction of sales activity: Inbound / outbound</annotation>
+    </column>
+    <column name="GENERALDATA PARTN_ROLE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Function</annotation>
+    </column>
+    <column name="GENERALDATA PARTN_ID" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner number (KUNNR, LIFNR, or PERNR)</annotation>
+    </column>
+    <column name="GENERALDATA CONTACT_ROLE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Function</annotation>
+    </column>
+    <column name="GENERALDATA CONTACT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of contact person</annotation>
+    </column>
+    <column name="GENERALDATA LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="GENERALDATA LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="SALESACTIVITYID SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="SALESACTIVITYID OBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="SALESACTIVITYID DOC_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD document no. of a sales activity in sales support</annotation>
+    </column>
+    <column name="TEXT REFOBJECTTYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Type</annotation>
+    </column>
+    <column name="TEXT REFOBJECTKEY" nullable="false">
+      <datatype name="C70" subType="DATASOURCE_TYPE" type="STRING" maxLength="70"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object key</annotation>
+    </column>
+    <column name="TEXT DOC_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD document no. of a sales activity in sales support</annotation>
+    </column>
+    <column name="TEXT TEXT_ID" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text ID</annotation>
+    </column>
+    <column name="TEXT LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="TEXT LANGUP_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="TEXT TEXT_LINE" nullable="false">
+      <datatype name="C134" subType="DATASOURCE_TYPE" type="STRING" maxLength="134"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ITF format</annotation>
+    </column>
+    <column name="TEXT FUNCTION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Function</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421885614742</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421885614742</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421885614742</attribute>
+</metadata>

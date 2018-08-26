@@ -1,0 +1,302 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_ACTIVITYTYPE_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_ACTIVITYTYPE_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-10-01
+
+Uses selection criteria for a given day to provide a list of all activity types (controlling area, activity type, and activity type name) matching the criteria. 
+You want a list of all activity types in controlling area 0001 and allocated through cost element 600000 for today&apos;s date. 
+Function module callup: 
+DATA: I_ACTIVITYTYPE_LIST LIKE BAPI1031_2 OCCURS 0 WITH HEADER LINE, 
+      I_RETURN            LIKE BAPIRETURN 
+
+CALL FUNCTION &apos;BAPI_ACTIVITYTYPE_GETLIST&apos; 
+   EXPORTING CONTROLLINGAREA    = &apos;0001&apos; 
+             ALLOC_COST_ELEMENT = &apos;600000&apos; 
+             DATE               = SY-DATUM 
+   IMPORTING RETURN             = I_RETURN 
+   TABLES    ACTIVITYTYPE_LIST  = I_ACTIVITYTYPE_LIST 
+
+You require system authorization for object &lt;DS:UO.K_CSLA&gt;K_CSLA&lt;/&gt;. 
+You can enter the criteria as single values (such as parameter CONTROLLINGAREA), as intervals (CONTROLLINGAREA and CONTROLLINGAREA_TO),or as the upper limit (CONTROLLINGAREA_TO only). 
+You may also enter a search string with a masking symbol (* or +). The module selects all activity types using the string in their names, titles, or descriptions. 
+If you do not enter any criteria, a list of all activity types appears. 
+If the R/3 System finds no activity types for the selection criteria, you can find more information in the RETURN parameter regarding any errors that occur. 
+Technical note on import parameters ACTIVITYTYPE, ACTIVITYTYPE_TO and SEARCHSTRING: 
+The selection first valueates the parameters ACTIVITYTYPE and ACTIVITYTYPE_TO. If the criterium is an individual value, an interval, or an upper limit, the module selects master data according to the selection criteria. If you do not enter restrictions, the module displays all activity types fitting the existing criteria. 
+Afterwards, the module adds the appropriate texts. 
+If you use the parameter SEARCHSTRING, the module checks, after the text selection, whether the activity type or the short/long texts include the search string. If not, the module removes the corresponding entry from the return table. 
+Export RETURN
+Return structure for errors and system messages. 
+
+Import ACTIVITYTYPE
+Parameter holding the activity type value or the lowest value of the activity type interval. 
+For more information on activity types, see the corresponding data element documentation: &lt;DS:DE.LSTAR&gt;Activity Type&lt;/&gt;. 
+Dictionary data type: CHAR (field length 6). 
+No default. Import ACTIVITYTYPE_CATEGORY
+Parameter holding the activity type category value or the lowest value of the activity type category interval in which the SAP R/3 System searches for activity types. 
+For more information on activity type categories, see the corresponding data element documentation: &lt;DS:DE.LATYP&gt;Activity Type Category&lt;/&gt;. 
+Dictionary data type: CHAR (field length 1). 
+No default. Import ACTIVITYTYPE_CATEGORY_TO
+Parameter holding the highest value of the activity type category in which the SAP R/3 System searches for activity types. 
+For more information on activity type categories, see the corresponding data element documentation: &lt;DS:DE.LATYP&gt;Activity Type Category&lt;/&gt;. 
+Dictionary data type: CHAR (field length 1). 
+No default. Import ACTIVITYTYPE_TO
+Parameter holding the highest value of the activity type interval. 
+For more information on activity types, see the corresponding data element documentation: &lt;DS:DE.LSTAR&gt;Activity Type&lt;/&gt;. 
+Dictionary data type: CHAR (field length 6). 
+No default. Import ACTIVITYTYPE_UNIT
+Parameter holding the activity type unit value or the lowest value of the activity type unit interval in which the SAP R/3 System searches for activity types. 
+For more information on activity type units, see the corresponding data element documentation: &lt;DS:DE.LEINH&gt;Activity Type Unit&lt;/&gt;. 
+Dictionary data type: CHAR (field length 3). 
+No default. Import ACTIVITYTYPE_UNIT_TO
+Parameter holding the highest value of the activity type unit interval in which the SAP R/3 System searches for activity types. 
+For more information on activity type units, see the corresponding data element documentation: &lt;DS:DE.LEINH&gt;Activity Type Unit&lt;/&gt;. 
+Dictionary data type: CHAR (field length 3). 
+No default. Import ALLOCATION_COSTELEMENT
+Parameter holding the allocation cost element for the activity type or the lower value of the allocation cost element interval in which the SAP R/3 System searches for activity types. 
+For more information on allocation cost elements, see the corresponding data element documentation: &lt;DS:DE.VKSTA&gt;Allocation Cost Element&lt;/&gt;. 
+Dictionary data type: CHAR (field length 10). 
+No default. Import ALLOCATION_COSTELEMENT_TO
+Parameter holding the highest value of the allocation cost element interval in which the SAP R/3 System searches for activity types. 
+For more information on allocation cost elements, see the corresponding data element documentation: &lt;DS:DE.VKSTA&gt;Allocation Cost Element&lt;/&gt;. 
+Dictionary data type: CHAR (field length 10). 
+No default. Import CONTROLLINGAREA
+Parameter holding the value of the controlling area or the lowest value of the controlling area interval in which the SAP R/3 System searches for activity types. 
+For more information on controlling areas, see the corresponding data element documentation: &lt;DS:DE.KOKRS&gt;Controlling Area&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4). 
+No default. Import CONTROLLINGAREA_TO
+Parameter holding the highest value of the controlling area interval in which the SAP R/3 System searches for activity types. 
+For more information on controlling areas, see the corresponding data element documentation: &lt;DS:DE.KOKRS&gt;Controlling Area&lt;/&gt;. 
+Dictionary data type: CHAR (field length 4). 
+No default. Import DATE
+Dates in which the SAP R/3 System searches for activity types. 
+For more information on the date, see the corresponding data element documentation: &lt;DS:DE.DATAB&gt;From Date&lt;/&gt; and &lt;DS:DE.DATBI&gt;To Date&lt;/&gt;. 
+Dictionary data type: DATS (field length 8) 
+Defaulted with the current system date (SY-DATUM). Import PRICE_INDICATOR
+Parameter holding the activity price indicator value or the lowest value of the activity price indicator interval in which the SAP R/3 System searches for activity types. 
+For more information on activity price indicators, see the corresponding data element documentation: &lt;DS:DE.TARKZ&gt;Activity Price Indicator&lt;/&gt;. 
+Dictionary data type: CHAR (field length 3). 
+No default. Import PRICE_INDICATOR_TO
+Parameter holding the highest value of the activity price indicator interval in which the SAP R/3 System searches for activity types. 
+For more information on activity price indicators, see the corresponding data element documentation: &lt;DS:DE.TARKZ&gt;Activity Price Indicator&lt;/&gt;. 
+Dictionary data type: CHAR (field length 3). 
+No default. Import SEARCHSTRING
+Parameter holding the string according to which the SAP R/3 System searches for the name or description of the activity type. 
+Dictionary data type: CHAR (field length 40) 
+No default. ACTIVITYTYPE_LIST
+Return table holding the keys (controlling area and activity type ID) ofall cost centers found, along with their names in the logon language SY-LANGU. 
+For more information on fields, see the corresponding data element documentation: &lt;DS:DE.LSTAR&gt;Activity Type&lt;/&gt; and &lt;DS:DE.KOKRS&gt; Controlling Area&lt;/&gt;. </annotation>
+  <columns>
+    <column name="Import ACTIVITYTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type (From-Value)</annotation>
+    </column>
+    <column name="Import ACTIVITYTYPE_CATEGORY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type Category (From-Value)</annotation>
+    </column>
+    <column name="Import ACTIVITYTYPE_CATEGORY_TO" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type Category (To-Value)</annotation>
+    </column>
+    <column name="Import ACTIVITYTYPE_TO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type (To-Value)</annotation>
+    </column>
+    <column name="Import ACTIVITYTYPE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Unit (From-Value)</annotation>
+    </column>
+    <column name="Import ACTIVITYTYPE_UNIT_TO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Unit (To-Value)</annotation>
+    </column>
+    <column name="Import ALLOCATION_COSTELEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation Cost Element (From Value)</annotation>
+    </column>
+    <column name="Import ALLOCATION_COSTELEMENT_TO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation Cost Element (To Value)</annotation>
+    </column>
+    <column name="Import CONTROLLINGAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (From Value)</annotation>
+    </column>
+    <column name="Import CONTROLLINGAREA_TO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (To Value)</annotation>
+    </column>
+    <column name="Import DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection Date: Key Date</annotation>
+    </column>
+    <column name="Import DATETO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Import PRICE_INDICATOR" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price indicator (from value)</annotation>
+    </column>
+    <column name="Import PRICE_INDICATOR_TO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price indicator (to value)</annotation>
+    </column>
+    <column name="Import SEARCHSTRING" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search String for Activity- Type, Name, Description</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="ACTIVITYTYPE_LIST CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="ACTIVITYTYPE_LIST ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="ACTIVITYTYPE_LIST NAME" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General Name</annotation>
+    </column>
+    <column name="ACTIVITYTYPE_LIST DESCRIPT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882772958</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882772958</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882772958</attribute>
+</metadata>

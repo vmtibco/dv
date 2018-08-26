@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="ConvertLead" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/ConvertLead" type="PROCEDURE" subtype="DATABASE_PROCEDURE" changeToken="0">
+  <annotation>Converts a Lead into an Account, Contact, or (optionally) an Opportunity.</annotation>
+  <parameters>
+    <parameter name="LeadConvert" direction="IN" nullable="true">
+      <datatype name="LeadConvert" subType="DATASOURCE_TYPE" type="TABLE" refId="1">
+        <element name="accountId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="contactId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="convertedStatus" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="doNotCreateOpportunity" nullable="unknown">
+          <datatype name="SMALLINT" type="INTEGER" minValue="-32768" maxValue="32767"/>
+        </element>
+        <element name="leadId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="opportunityName" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="overwriteLeadSource" nullable="unknown">
+          <datatype name="SMALLINT" type="INTEGER" minValue="-32768" maxValue="32767"/>
+        </element>
+        <element name="ownerId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="sendNotificationEmail" nullable="unknown">
+          <datatype name="SMALLINT" type="INTEGER" minValue="-32768" maxValue="32767"/>
+        </element>
+      </datatype>
+    </parameter>
+    <parameter name="LeadConvertResult" direction="OUT" nullable="true">
+      <datatype name="LeadConvertResult" subType="DATASOURCE_TYPE" type="TABLE" refId="1">
+        <element name="accountId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="contactId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="errors" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="leadId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="opportunityId" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="success" nullable="unknown">
+          <datatype name="SMALLINT" type="INTEGER" minValue="-32768" maxValue="32767"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

@@ -1,0 +1,218 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="User" path="/users/composite/admin/CISTraining/Business/Logical/User/User" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="user_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="first_name" nullable="true">
+      <datatype type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="middle_initial" nullable="true">
+      <datatype type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="last_name" nullable="true">
+      <datatype type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="non_english_name" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="email" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="opt_in" nullable="true">
+      <datatype type="INTEGER" minValue="-32768" maxValue="32767"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="phone" nullable="true">
+      <datatype type="STRING" maxLength="13"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="birthday" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="gender" nullable="true">
+      <datatype type="STRING" minLength="1" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="username" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="password" nullable="true">
+      <datatype type="STRING" minLength="9" maxLength="9"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="create_date" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="primary_address_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="loc" nullable="true">
+      <datatype type="STRING" minLength="2" maxLength="2" trailingSpaces="false"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/User/UserLA" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="first_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="middle_initial">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="last_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="non_english_name">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="email">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="opt_in">
+        <datatype type="INTEGER" minValue="-32768" maxValue="32767"/>
+      </element>
+      <element name="phone">
+        <datatype type="STRING" maxLength="13"/>
+      </element>
+      <element name="birthday">
+        <datatype type="DATE"/>
+      </element>
+      <element name="gender">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="username">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="password">
+        <datatype type="STRING" minLength="9" maxLength="9"/>
+      </element>
+      <element name="create_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="primary_address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="loc">
+        <datatype type="STRING" minLength="2" maxLength="2" trailingSpaces="false"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Business/Logical/User/UserTX" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="first_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="middle_initial">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="last_name">
+        <datatype type="STRING" maxLength="15"/>
+      </element>
+      <element name="non_english_name">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="email">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="opt_in">
+        <datatype type="INTEGER" minValue="-32768" maxValue="32767"/>
+      </element>
+      <element name="phone">
+        <datatype type="STRING" maxLength="13"/>
+      </element>
+      <element name="birthday">
+        <datatype type="DATE"/>
+      </element>
+      <element name="gender">
+        <datatype type="STRING" minLength="1" maxLength="1"/>
+      </element>
+      <element name="username">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="password">
+        <datatype type="STRING" minLength="9" maxLength="9"/>
+      </element>
+      <element name="create_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="primary_address_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="loc">
+        <datatype type="STRING" minLength="2" maxLength="2" trailingSpaces="false"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    *
+FROM      
+    /users/composite/admin/CISTraining/Business/Logical/&quot;User&quot;/UserLA UserLA
+UNION
+SELECT
+	*
+FROM
+    /users/composite/admin/CISTraining/Business/Logical/&quot;User&quot;/UserTX UserTX</attribute>
+  <attribute name="creationDate" type="LONG">1464635384584</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464635902570</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464635384584</attribute>
+</metadata>

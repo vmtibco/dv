@@ -1,0 +1,57 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pqGetOrderProcessingTime" path="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Orders/tutorial/pqGetOrderProcessingTime" type="PROCEDURE" subtype="EXTERNAL_SQL_PROCEDURE" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype type="TABLE" refId="1">
+        <element name="orderid">
+          <datatype name="INTEGER" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="productid">
+          <datatype name="INTEGER" extendedName="int4" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="orderdate">
+          <datatype name="DATE" extendedName="date" subType="DATASOURCE_TYPE" type="DATE"/>
+        </element>
+        <element name="processingtime">
+          <datatype name="INTERVAL DAY TO SECOND" extendedName="interval" subType="DATASOURCE_TYPE" type="INTERVAL_DAY" intervalMode="INTERVAL_DAY_TO_SECOND" intervalPrecision="2"/>
+        </element>
+        <element name="unitprice">
+          <datatype name="NUMERIC" extendedName="numeric(12,2)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="12" maxFractionalDigits="2"/>
+        </element>
+      </datatype>
+      <attribute name="Customized" type="STRING">metadata.added;datatype.changed</attribute>
+    </parameter>
+    <parameter name="orderProcessingDays" direction="IN" nullable="true">
+      <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <attribute name="Customized" type="STRING">metadata.added;datatype.changed;direction.changed</attribute>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Orders" type="DATA_SOURCE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT orders.orderid, orderdetails.productid, orders.orderdate,  
+AGE(orders.shipDate, orders.orderdate) processingtime,
+orderdetails.unitprice
+FROM orders, orderdetails
+WHERE orders.orderid = orderdetails.orderid AND 
+CAST(AGE(orders.shipdate, orders.orderdate) AS VARCHAR(255)) SIMILAR TO ({0} || &apos; day%&apos;)
+
+</attribute>
+  <attribute name="creationDate" type="LONG">1431462647550</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="isSingleSelect" type="STRING">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1431463083490</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="p:0:Customized" type="STRING">metadata.added;datatype.changed</attribute>
+  <attribute name="p:1:Customized" type="STRING">metadata.added;datatype.changed;direction.changed</attribute>
+  <attribute name="passThroughSource" type="STRING">/users/composite/admin/CISTraining/Physical/Metadata/PostgreSQL_Orders</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1431462647550</attribute>
+</metadata>

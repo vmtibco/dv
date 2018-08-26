@@ -1,0 +1,478 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_INTERNALORDER_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_INTERNALORDER_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-07-14
+
+This method delivers all important master data, the system status, the user status and the permitted business transactions to the &quot;Internal orders&quot; business object. 
+The system displays all category &quot;01&quot; and &quot;02&quot; orders, including capital investment orders. 
+The user must have a read authorization for the specified order type the desired status. If this is not the case, the list does not display the corresponding orders. 
+Messages are returned using the RETURN parameter. The parameter documentation contains return values and their significance. Export MASTER_DATA
+The MASTERDATA structure has the following data elements: Field,,SAP Data Element,,Short Description ORDER,,&lt;DS:DE.AUFNR&gt;AUFNR&lt;/&gt;,,Order number ORDER_TYPE,,&lt;DS:DE.AUFART&gt;AUfART&lt;/&gt;,,Order type SHORT_TEXT,,&lt;DS:DE.AUFTEXT&gt;AUFTEXT&lt;/&gt;,,Short text EXT_ORD_NO,,&lt;DS:DE.AUFEX&gt;AUFEX&lt;/&gt;,,External order number OBJECT_NO,,&lt;DS:DE.J_OBJNR&gt;J_OBJNR&lt;/&gt;,,Object number CO_AREA,,&lt;DS:DE.KOKRS&gt;KOKRS&lt;/&gt;,,Controlling area C_CODE,,&lt;DS:DE.BUKRS&gt;BUKRS&lt;/&gt;,,Company code BUS_AREA,,&lt;DS:DE.GSBER&gt;GSBER&lt;/&gt;,,Business area PLANT,,&lt;DS:DE.WERKS&gt;WERKS&lt;/&gt;,,Plant PROFIT_CTR,,&lt;DS:DE.PRCTR&gt;PRCTR&lt;/&gt;,,Profit center RESPCCTR,,&lt;DS:DE.AUFKOSTV&gt;AUFKOSTV&lt;/&gt;,,Responsible cost center WBS_ELEM,,&lt;DS:DE.PS_PSP_ELE&gt;PS_PSP_ELE&lt;/&gt;,,WBS element Export RETURN
+The RETURN structure has the following data elements: Field,,SAP Data Element,,Short Description TYPE,,&lt;DS:DE.BAPI_MTYPE&gt;BAPI_MTYPE&lt;/&gt;,,Message type CODE,,&lt;DS:DE.BAPI_RCODE&gt;BAPI_RCODE&lt;/&gt;,,Message code MESSAGE,,&lt;DS:DE.BAPI_MSG &gt;BAPI_MSG&lt;/&gt;,,Message text LOG_NO,,Not used here LOG_MSG_NO,,Not used here Import LANGUAGE
+The parameter contains the &lt;DS:DE.SPRAS&gt;language&lt;/&gt; of the status and transaction texts. Import ORDERID
+&lt;DS:DE.AUFNR&gt;order_number&lt;/&gt; ALLOWED_BUS_TRACT
+The ALLOWED_BUS_TRACT table has the following data elements: Field,,SAP Data Element,,Short Description TRANS,,&lt;DS:DE.J_VORGANG&gt;J_VORGANG&lt;/&gt;,,Business transaction DESCRIPT,,TEXT30,,Long text SYSTEM_STATUS
+The SYSTEM_STATUS table has the following data elements: Field,,SAP Data Element,,Short Description SYS_STATUS,,&lt;DS:DE.J_ISTAT&gt;J_ISTAT&lt;/&gt;,,System status SY_ST_TEXT,,&lt;DS:DE.J_TXT04&gt;J_TXT04&lt;/&gt;,,Individual status of an object SY_ST_DSCR,,J_TXT30,,Individual status long text USER_STATUS
+The USER_STATUS table has the following data elements: Field,,SAP Data Element,,Short Description STAT_PROF,,&lt;DS:DE.J_STSMA&gt;J_STSMA&lt;/&gt;,,Status profile USR_STATUS,,&lt;DS:DE.J_ESTAT&gt;J_ESTAT&lt;/&gt;,,User status US_ST_NUMB,,&lt;DS:DE.J_STONR&gt;J_STONR&lt;/&gt;,,User status number US_ST_TEXT,,&lt;DS:DE.J_TXT04&gt;J_TXT04&lt;/&gt;,,Individual status of an object US_ST_DSCR,,J_TXT30,,Individual object long text 
+
+For orders that use the old order status management, the current order status is entered in the US_ST_NUMB and US_ST_TEXT fields in the table. </annotation>
+  <columns>
+    <column name="Import LANGUAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language of Status and Business Transaction Texts</annotation>
+    </column>
+    <column name="Import ORDERID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="Export MASTER_DATA ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="Export MASTER_DATA ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Type</annotation>
+    </column>
+    <column name="Export MASTER_DATA ORDER_NAME" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+    <column name="Export MASTER_DATA EXT_ORD_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External order number</annotation>
+    </column>
+    <column name="Export MASTER_DATA OBJECT_NO" nullable="false">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number</annotation>
+    </column>
+    <column name="Export MASTER_DATA CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Export MASTER_DATA COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export MASTER_DATA BUS_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="Export MASTER_DATA PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="Export MASTER_DATA PROFIT_CTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="Export MASTER_DATA RESPCCTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Responsible cost center</annotation>
+    </column>
+    <column name="Export MASTER_DATA WBS_ELEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work breakdown structure element (WBS element)</annotation>
+    </column>
+    <column name="Export MASTER_DATA WBS_ELEMENT_EXT" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Breakdown Structure Element (WBS Element)</annotation>
+    </column>
+    <column name="Export MASTER_DATA REQUEST_CCTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requesting cost center</annotation>
+    </column>
+    <column name="Export MASTER_DATA REQU_COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requesting company code</annotation>
+    </column>
+    <column name="Export MASTER_DATA SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="Export MASTER_DATA S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="Export MASTER_DATA TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="Export MASTER_DATA CCTR_POSTED" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center to which costs are actually posted</annotation>
+    </column>
+    <column name="Export MASTER_DATA CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Currency</annotation>
+    </column>
+    <column name="Export MASTER_DATA CSTG_SHEET" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Costing Sheet</annotation>
+    </column>
+    <column name="Export MASTER_DATA OVERHEAD_KEY" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Overhead key</annotation>
+    </column>
+    <column name="Export MASTER_DATA RES_ANAL_KEY" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Results Analysis Key</annotation>
+    </column>
+    <column name="Export MASTER_DATA INTEREST_PROF" nullable="false">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Interest Profile for Project/Order Interest Calculation</annotation>
+    </column>
+    <column name="Export MASTER_DATA APPLICANT" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Applicant</annotation>
+    </column>
+    <column name="Export MASTER_DATA APPLICANT_PHONE" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Applicant&apos;s telephone number</annotation>
+    </column>
+    <column name="Export MASTER_DATA PERSON_RESP" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person responsible</annotation>
+    </column>
+    <column name="Export MASTER_DATA PERSON_RESP_PHONE" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telephone number of person in charge</annotation>
+    </column>
+    <column name="Export MASTER_DATA ESTIMATED_COSTS" nullable="false">
+      <datatype name="P11.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="11" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Estimated total costs of order</annotation>
+    </column>
+    <column name="Export MASTER_DATA APPLICATION_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application Date</annotation>
+    </column>
+    <column name="Export MASTER_DATA DEPARTMENT" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Department</annotation>
+    </column>
+    <column name="Export MASTER_DATA DATE_WORK_BEGINS" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work Start</annotation>
+    </column>
+    <column name="Export MASTER_DATA DATE_WORK_ENDS" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of Work</annotation>
+    </column>
+    <column name="Export MASTER_DATA WORK_PERMIT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identifier for work permit issued</annotation>
+    </column>
+    <column name="Export MASTER_DATA PROCESSING_GROUP" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Processing group</annotation>
+    </column>
+    <column name="Export MASTER_DATA PLN_RELEASE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned release date</annotation>
+    </column>
+    <column name="Export MASTER_DATA PLN_COMPLETION" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned completion date</annotation>
+    </column>
+    <column name="Export MASTER_DATA PLN_CLOSE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned closing date</annotation>
+    </column>
+    <column name="Export MASTER_DATA REQUEST_ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requesting order</annotation>
+    </column>
+    <column name="Export MASTER_DATA FUNC_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Export MASTER_DATA FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="Export MASTER_DATA IN_CHARGE_USER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Person Responsible for CO Internal Order</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="ALLOWED_BUS_TRACT TRANS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Transaction</annotation>
+    </column>
+    <column name="ALLOWED_BUS_TRACT DESCRIPT" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text (30 Characters)</annotation>
+    </column>
+    <column name="SYSTEM_STATUS SYS_STATUS" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>System status</annotation>
+    </column>
+    <column name="SYSTEM_STATUS SY_ST_TEXT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Individual status of an object (short form)</annotation>
+    </column>
+    <column name="SYSTEM_STATUS SY_ST_DSCR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object status</annotation>
+    </column>
+    <column name="USER_STATUS STAT_PROF" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status Profile</annotation>
+    </column>
+    <column name="USER_STATUS USR_STATUS" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Status</annotation>
+    </column>
+    <column name="USER_STATUS US_ST_NUMB" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status Order Number</annotation>
+    </column>
+    <column name="USER_STATUS US_ST_TEXT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Individual status of an object (short form)</annotation>
+    </column>
+    <column name="USER_STATUS US_ST_DSCR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object status</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882769478</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882769478</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882769478</attribute>
+</metadata>

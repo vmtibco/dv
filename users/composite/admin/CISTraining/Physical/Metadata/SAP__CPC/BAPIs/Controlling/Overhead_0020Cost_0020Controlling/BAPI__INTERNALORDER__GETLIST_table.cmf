@@ -1,0 +1,179 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_INTERNALORDER_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_INTERNALORDER_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-07-14
+
+This method allows you to select internal orders (category &quot;01&quot; and &quot;2&quot;)  using various criteria. This includes capital investment orders. 
+The System returns a table of all orders found. 
+You can combine selection criteria as desired. However, you must include limiting requirements; you cannot select all internal orders simultaneously. 
+The user must have a read authorization for the desired order type in the desired status. Without it, the list does not display the corresponding orders. 
+Some criteria support selection intervals. The different combinations of upper and lower limits have the following effects: ORDER,,ORDER_TO,,Effect SPACE,,SPACE (Default),,No limiting effect 123456,,SPACE,,Only order 123456 is selected 123456,,234567,,All orders between 123456 ,,,,and 234567 selected SPACE,,234567,,All orders between 0000000 ,,,,and 2324567 selected 
+Messages are sent using the RETURN parameter. You can find the return values and their significance in this parameter documentation. Export RETURN
+The RETURN structure has the following data elements: Field,,SAP Data Element,,Short Description TYPE,,&lt;DS:DE.BAPI_MTYPE&gt;BAPI_MTYPE&lt;/&gt;,,Message type CODE,,&lt;DS:DE.BAPI_RCODE&gt;BAPI_RCODE&lt;/&gt;,,Message code MESSAGE,,&lt;DS:DE.BAPI_MSG &gt;BAPI_MSG&lt;/&gt;,,Message text LOG_NO,,Not used here LOG_MSG_NO,,Not used here Import CONTROLLING_AREA
+&lt;DS:DE.KOKRS&gt;Controlling area&lt;/&gt; Import ORDER
+&lt;DS:DE.AUFNR&gt;Order number&lt;/&gt; Import ORDER_EXTERNAL_NO
+&lt;DS:DE.AUFEX&gt;External order number&lt;/&gt; Import ORDER_EXTERNAL_NO_TO
+To &lt;DS:DE.AUFEX&gt;external order number&lt;/&gt; Import ORDER_TO
+To &lt;DS:DE.AUFNR&gt;order number&lt;/&gt; Import ORDER_TYPE
+&lt;DS:DE.AUFART&gt;Order type&lt;/&gt; Import RESP_COST_CENTER
+&lt;DS:DE.AUFKOSTV&gt;Responsible cost center&lt;/&gt; ORDER_LIST
+The ORDERLIST table has the following data elements: Field,,SAP Data Element,,Short Description ORDER,,&lt;DS:DE.AUFNR&gt;AUFNR&lt;/&gt;,,Order number OBJ_NO,,&lt;DS:DE.J_OBJNR&gt;J_OBJNR&lt;/&gt;,,Object number ORDER_TYPE,,&lt;DS:DE.AUFART&gt;AUfART&lt;/&gt;,,Order type SHORT_TEXT,,&lt;DS:DE.AUFTEXT&gt;AUFTEXT&lt;/&gt;,,Short text </annotation>
+  <columns>
+    <column name="Import CONTROLLING_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Import ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number (Single Value or Lower Limit)</annotation>
+    </column>
+    <column name="Import ORDER_EXTERNAL_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External Order Number (Single Value or Lower Limit)</annotation>
+    </column>
+    <column name="Import ORDER_EXTERNAL_NO_TO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External Order Number (Upper Limit)</annotation>
+    </column>
+    <column name="Import ORDER_TO" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number (Upper Limit)</annotation>
+    </column>
+    <column name="Import ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Type</annotation>
+    </column>
+    <column name="Import RESP_COST_CENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Responsible Cost Center</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="ORDER_LIST ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="ORDER_LIST OBJECT_NO" nullable="false">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number</annotation>
+    </column>
+    <column name="ORDER_LIST ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Type</annotation>
+    </column>
+    <column name="ORDER_LIST ORDER_NAME" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882769478</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882769478</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882769478</attribute>
+</metadata>

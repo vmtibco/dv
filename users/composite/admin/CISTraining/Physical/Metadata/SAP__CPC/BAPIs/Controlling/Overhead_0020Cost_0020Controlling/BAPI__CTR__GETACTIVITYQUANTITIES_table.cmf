@@ -1,0 +1,401 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CTR_GETACTIVITYQUANTITIES" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_CTR_GETACTIVITYQUANTITIES" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1998-05-18
+
+This method returns the planned activities for the cost center / activity type combinations. 
+The system returns the following fields for the periods selected: 
+&lt;DS:DE.LSTXX     &gt;ACT_QUANTITY    &lt;/&gt; Planned activity 
+&lt;DS:DE.KAPXX     &gt;ACT_CAPACITY    &lt;/&gt; Capacity 
+&lt;DS:DE.DISXX     &gt;ACT_SCEDULED_QTY&lt;/&gt; Scheduled activity 
+&lt;DS:DE.LEINH     &gt;ACT_UNIT        &lt;/&gt; Activity unit 
+&lt;DS:DE.ISOCD_UNIT&gt;ACT_UNIT_ISO    &lt;/&gt; Activity unit (ISO) 
+&lt;DS:DE.AUSEH     &gt;OUTPUT_UNIT     &lt;/&gt; Output unit 
+&lt;DS:DE.ISOCD_UNIT&gt;OUTPUT_UNIT_ISO &lt;/&gt; Output unit (ISO) 
+You must enter the following parameters: 
+COAREA     Controlling area 
+FISCYEAR   Fiscal year 
+VERSION    Version 
+PERIODFROM From period (To period is optional) 
+You can restrict the number of cost center/activity type combinations through the optional entry of a cost center, a cost center interval or a cost center group or an activity type or an activity type interval. Import ACTTYPEFROMINCLUDE &apos;STAMM&apos; OBJECT DOKU ID TX LANGUAGE EN 
+Activity types represent the activity produced by a cost center and are measured in units of time or measure (quantities). 
+Within activity type planning you can set control data to specify whether the price for activity type valuation is to be set manually or calculated iteratively using price calculation. Import ACTTYPETO
+Upper limit for an &lt;GL:activity_type&gt;activity type&lt;/&gt; interval 
+When the ACTTYPETO is filled, the two activity type parameters define an interval. The system then selects all the activity types existing within this interval. Import COAREA
+Key that uniquely identifies a &lt;GL:controlling_area&gt;controlling area&lt;/&gt;. 
+The controlling area represents the highest organizational unit in Controlling. 
+For both a 1:1 as well as for a 1:n relationship between controlling area and company code, the number of &lt;DS:GLOS.posting_period&gt;posting periods&lt;/&gt; of the controlling area and of the company code(s) must be identical. A variance in the &lt;DS:GLOS.special_period&gt;special periods&lt;/&gt; is allowed by the R/3 System. Import COSTCENTERFROM
+Key uniquely identifying a &lt;GL:cost_center&gt;cost center&lt;/&gt;. Import COSTCENTERGRP
+Organizational unit for the summarization of multiple &lt;GL:cost_center&gt;cost centers&lt;/&gt;. 
+You can create any number of cost center groups independently of the standard hierarchy. 
+You can summarize the cost center groups into additional cost center groups to create a cost center hierarchy. 
+You can use a cost center group, for example, to create reports for multiple cost centers or to process multiple cost centers in one business transaction. Import COSTCENTERTO
+Upper limit for a &lt;GL:cost_center&gt;cost center&lt;/&gt; interval. 
+If the COSTCENTERTO field is filled, the two cost center parameters define an interval. The system then selects all the cost centers existing within this interval. Import FISCYEARINCLUDE &apos;FI_GJAHR&apos; OBJECT DOKU ID TX Import PERIODFROM
+Period, for which the processing is to be executed. Import PERIODTO
+Upper limit of the period interval if processing is to be executed for multiple periods. Import VERSION
+Controlling-area-related summary of fiscal-year-dependent indicators for plan data, such as: 
+&lt;DS:GLOS.delta_version&gt;Delta version&lt;/&gt; 
+Lock version 
+Integrated planning 
+Copying allowed 
+Iterative prices 
+Average prices 
+Exchange rate type 
+Value date 
+Within a controlling area there exists precisely one actual- and plan version (version 0). The SAP system creates these automatically when you set up the controlling area. For plan version 0 you only need to maintain the fiscal-year-dependent version data. 
+As well as version 0, you can then create any number of additional plan versions and plan using the planning transactions. 
+You are not able to enter a version in the request screen for actual postings. Postings are made automatically in version 0 by the system. 
+You can use the prices of the activity types for version 0 to carry out actual allocation. This means that price planning within activity type planning should be either: 
+Executed only within version 0 or 
+You need to copy the alternative version on version 0 before the first actual posting if these prices are later to be used for direct activity allocation. 
+To carry out planning you must maintain the following fiscal-year-dependent parameters: 
+&lt;DS:CHAP.SIMG_XXCONCKP93PVPAR&gt;Fiscal-Year-Dependent Parameters&lt;/&gt; IF &amp;DEVICE&amp; = &quot;PRINTER&quot; INCLUDE &quot;SIMG_XXCONCKP93PVPAR&quot; OBJECT DSYS ID CHAP ENDIF 
+In Activity-Based Costing you also have the option of working with a delta version. To do this you must specify a valid version to which you want to make reference to. As soon as you specify a reference version, the system indicates the current version as the delta version. When you use a delta version, you must specify the business transactions to be added to the delta version in &quot;User-defined business transactions for a delta version&quot;. ACTQUANTITIES
+Return table with the planned activities for the cost center/activity type combinations 
+The following fields are returned 
+&lt;DS:DE.KOSTL     &gt;COSTCENTER      &lt;/&gt; Cost center 
+&lt;DS:DE.LSTAR     &gt;ACTTYPE         &lt;/&gt; Activity type 
+&lt;DS:DE.CO_PERIO  &gt;PERIOD          &lt;/&gt; Period 
+&lt;DS:DE.LSTXX     &gt;ACT_QUANTITY    &lt;/&gt; Planned activity 
+&lt;DS:DE.KAPXX     &gt;ACT_CAPACITY    &lt;/&gt; Capacity 
+&lt;DS:DE.DISXX     &gt;ACT_SCEDULED_QTY&lt;/&gt; Scheduled activity 
+&lt;DS:DE.LEINH     &gt;ACT_UNIT        &lt;/&gt; Activity unit 
+&lt;DS:DE.ISOCD_UNIT&gt;ACT_UNIT_ISO    &lt;/&gt; Activity unit (ISO) 
+&lt;DS:DE.AUSEH     &gt;OUTPUT_UNIT     &lt;/&gt; Output unit 
+&lt;DS:DE.ISOCD_UNIT&gt;OUTPUT_UNIT_ISO &lt;/&gt; Output unit (ISO) EXTENSIONINEXTENSIONOUTRETURN
+Return table containing any errors messages that may have occurred. </annotation>
+  <columns>
+    <column name="Import ACTTYPEFROM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity type</annotation>
+    </column>
+    <column name="Import ACTTYPETO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To activity type</annotation>
+    </column>
+    <column name="Import COAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling area</annotation>
+    </column>
+    <column name="Import COSTCENTERFROM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center</annotation>
+    </column>
+    <column name="Import COSTCENTERGRP" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center group</annotation>
+    </column>
+    <column name="Import COSTCENTERTO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To cost center</annotation>
+    </column>
+    <column name="Import FISCYEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal year</annotation>
+    </column>
+    <column name="Import PERIODFROM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From Period</annotation>
+    </column>
+    <column name="Import PERIODTO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To Period</annotation>
+    </column>
+    <column name="Import VERSION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version</annotation>
+    </column>
+    <column name="ACTQUANTITIES COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACTTYPE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Type</annotation>
+    </column>
+    <column name="ACTQUANTITIES PERIOD" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_QUANTITY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity Quantity</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_CAPACITY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_SCEDULED_QTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled Activity</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activity unit</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="ACTQUANTITIES ACT_OUTPUT_QTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Output</annotation>
+    </column>
+    <column name="ACTQUANTITIES OUTPUT_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Output Unit</annotation>
+    </column>
+    <column name="ACTQUANTITIES OUTPUT_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="EXTENSIONIN STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONIN VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT STRUCTURE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Structure name of  BAPI table extension</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART1" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART2" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART3" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="EXTENSIONOUT VALUEPART4" nullable="false">
+      <datatype name="C240" subType="DATASOURCE_TYPE" type="STRING" maxLength="240"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data part of BAPI extension parameter</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882769448</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882769448</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882769448</attribute>
+</metadata>

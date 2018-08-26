@@ -1,0 +1,179 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_ACTIVITYTYPEGRP_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_ACTIVITYTYPEGRP_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 2000-01-14
+List of &lt;DS:GLOS.3526B5DDAFAB52B9E10000009B38F974&gt;activity type groups &lt;/&gt;. All the activity type groups are searched for that satisfy the selection criteria. You can restrict the search for groups by transferring a mask for the group name in the optional parameter &lt;ZH&gt;GroupNameMask&lt;/&gt; (masking indicators are +*). The  &lt;DS:GLOS.3526B5D3AFAB52B9E10000009B38F974&gt;controlling area&lt;/&gt; of the groups is entered in parameter &lt;ZH&gt;ControllingAreaMask&lt;/&gt; (masking indicators are also possible here). If the optional parameter &lt;ZH&gt;TopNodesOnly&lt;/&gt; is set to &apos;X&apos;, a search is only made for groups that are the top node in a hierarchy, i.e. that are not used in other groups. The list of groups found is transfered to the table &lt;ZH&gt;GroupList&lt;/&gt;. If an error should occur during the search, the error message is issued in the &lt;ZH&gt;Return&lt;/&gt; parameter. All the activity group types from controlling area 1000 that begin with &apos;A&apos; are to be displayed. Call the method: DATA: LT_GROUPLIST LIKE BAPI1112_LIST OCCURS 0,       L_RETURN     LIKE BAPIRET2. CALL FUNCTION &apos;BAPI_ACTIVITYTYPEGRP_GETLIST&apos;      EXPORTING           CONTROLLINGAREAMASK = &apos;1000&apos;           GROUPNAMEMASK       = &apos;A*&apos;      IMPORTING           RETURN              = L_RETURN      TABLES           GROUPLIST           = LT_GROUPLIST. You require the read authorization for object  &lt;DS:UO.K_CSLA_SET&gt;K_CSLA_SET&lt;/&gt; Export RETURN
+INCLUDE CO_BAPI_GROUP_GETLIST_RETURN OBJECT DOKU ID TX LANGUAGE EN 
+
+Import CONTROLLINGAREAMASK
+INCLUDE CO_BAPI_GROUP_GETLIST_COAREA OBJECT DOKU ID TX LANGUAGE EN 
+
+INCLUDE CO_BAPI_GETLIST_COAREA_VOR OBJECT DOKU ID TX LANGUAGE EN Import GROUPNAMEMASK
+INCLUDE CO_BAPI_GROUP_GETLIST_GRPMSK OBJECT DOKU ID TX LANGUAGE EN 
+
+INCLUDE CO_BAPI_GETLIST_GRPMASK_VOR OBJECT DOKU ID TX LANGUAGE EN Import TOPNODESONLY
+INCLUDE CO_BAPI_GROUP_GETLIST_TOPNOD OBJECT DOKU ID TX LANGUAGE EN 
+
+INCLUDE CO_BAPI_GETLIST_TOPNODE_VOR OBJECT DOKU ID TX LANGUAGE EN GROUPLIST
+INCLUDE CO_BAPI_GROUP_GETLIST_GRPLTS OBJECT DOKU ID TX LANGUAGE EN INCLUDE CO_BAPI_GROUP_STRUCTURE_03 OBJECT DOKU ID TX LANGUAGE EN INCLUDE CO_BAPI_GROUP_PARAMETER_INFO OBJECT DOKU ID TX LANGUAGE EN 
+
+</annotation>
+  <columns>
+    <column name="Import CONTROLLINGAREAMASK" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry Screen for the Controlling Area</annotation>
+    </column>
+    <column name="Import GROUPNAMEMASK" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry Screen for the Group Name</annotation>
+    </column>
+    <column name="Import TOPNODESONLY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Only for Top Node</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="GROUPLIST CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="GROUPLIST GROUPNAME" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group name</annotation>
+    </column>
+    <column name="GROUPLIST DESCRIPT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group short description</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882772958</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882772958</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882772958</attribute>
+</metadata>

@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Merge" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Merge" type="PROCEDURE" subtype="DATABASE_PROCEDURE" changeToken="0">
+  <annotation>Use this call to merge records of the same object type into one of the records, deleting the others, and re-parenting any related records.
+
+Inputs:
+    objectType:  The master record type.  The only supported types are Lead, Contact, and Account.
+    masterRecordId: The master record id that others are merged into.
+    recordToMergeIds:  The records to be merged into the master record.  This is a comma separated list.
+
+Output:
+    A cursor containing the merge results.</annotation>
+  <parameters>
+    <parameter name="objectType" direction="IN" nullable="true">
+      <datatype name="VARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="masterRecordId" direction="IN" nullable="true">
+      <datatype name="VARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="recordToMergeIds" direction="IN" nullable="true">
+      <datatype name="LONGVARCHAR" subType="DATASOURCE_TYPE" type="STRING" maxLength="2147483647"/>
+    </parameter>
+    <parameter name="resultCursor" direction="OUT" nullable="true">
+      <datatype name="resultCursor" subType="DATASOURCE_TYPE" type="TABLE" refId="1">
+        <element name="seq" nullable="unknown">
+          <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="type" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="data" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="info" nullable="unknown">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

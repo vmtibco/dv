@@ -1,0 +1,402 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="PA0003" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/P/PA/PA0003" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: HR Master Record: Infotype 0003 (Payroll Status)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2002-02-26
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+PERNR                          N8      Personnel number                                             
+SUBTY                          C4      Subtype                                                      
+OBJPS                          C2      Object Identification                                        
+SPRPS                          C1      Lock Indicator for HR Master Data Record                     
+ENDDA                          D8      End Date                                                     
+BEGDA                          D8      Start Date                                                   
+SEQNR                          N3      Number of Infotype Record with Same Key                      
+AEDTM                          D8      Changed On                                                   
+UNAME                          C12     Name of Person Who Changed Object                            
+HISTO                          C1      Historical Record Flag                                       
+ITXEX                          C1      Text Exists for Infotype                                     
+REFEX                          C1      Reference Fields Exist (Primary/Secondary Costs)             
+ORDEX                          C1      Confirmation Fields Exist                                    
+ITBLD                          C2      Infotype Screen Control                                      
+PREAS                          C2      Reason for Changing Master Data                              
+FLAG1                          C1      Reserved Field/Unused Field                                  
+FLAG2                          C1      Reserved Field/Unused Field                                  
+FLAG3                          C1      Reserved Field/Unused Field                                  
+FLAG4                          C1      Reserved Field/Unused Field                                  
+RESE1                          C2      Reserved Field/Unused Field of Length 2                      
+RESE2                          C2      Reserved Field/Unused Field of Length 2                      
+GRPVL                          C4      Grouping Value for Personnel Assignments                     
+ABRSP                          C1      Indicator: Personnel number locked for payroll               
+ABRDT                          D8      Accounted to                                                 
+RRDAT                          D8      Earliest master data change since last payroll run           
+RRDAF                          D8      not in use                                                   
+KOABR                          C1      Internal Use                                                 
+PRDAT                          D8      Earliest personal retroactive accounting date                
+PKGAB                          D8      Date as of which personal calendar must be generated         
+ABWD1                          D8      End of processing 1 (run payroll for pers.no. up to)         
+ABWD2                          D8      End of processing (do not run payroll for pers.no. after)    
+BDERR                          D8      Recalculation date for PDC                                   
+BDER1                          D8      Effective recalculation date for PDC                         
+KOBDE                          C1      PDC Error Indicator                                          
+TIMRC                          C1      Date of initial PDC entry                                    
+DAT00                          D8      Initial input date for a personnel number                    
+UHR00                          T6      Time of initial input                                        
+INUMK                          C8      Character field, 8 characters long                           
+WERKS                          C4      Administrator Group                                          
+SACHZ                          C3      Administrator for Time Recording                             
+SFELD                          C20     Sort field for infotype 0003                                 
+ADRUN                          C1      HR: Special payroll run                                      
+VIEKN                          C2      Infotype View Indicator                                      
+TRVFL                          C1      Indicator for recorded trips                                 
+RCBON                          D8      Earliest payroll-relevant master data change (bonus)         
+PRTEV                          D8      Earliest personal recalculation date for time evaluation     
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="PERNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel number</annotation>
+    </column>
+    <column name="SUBTY" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subtype</annotation>
+    </column>
+    <column name="OBJPS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Identification</annotation>
+    </column>
+    <column name="SPRPS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for HR Master Data Record</annotation>
+    </column>
+    <column name="ENDDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End Date</annotation>
+    </column>
+    <column name="BEGDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Date</annotation>
+    </column>
+    <column name="SEQNR" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Infotype Record with Same Key</annotation>
+    </column>
+    <column name="AEDTM" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Changed On</annotation>
+    </column>
+    <column name="UNAME" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person Who Changed Object</annotation>
+    </column>
+    <column name="HISTO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Historical Record Flag</annotation>
+    </column>
+    <column name="ITXEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text Exists for Infotype</annotation>
+    </column>
+    <column name="REFEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Fields Exist (Primary/Secondary Costs)</annotation>
+    </column>
+    <column name="ORDEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation Fields Exist</annotation>
+    </column>
+    <column name="ITBLD" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Infotype Screen Control</annotation>
+    </column>
+    <column name="PREAS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Changing Master Data</annotation>
+    </column>
+    <column name="FLAG1" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG2" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG3" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG4" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="RESE1" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="RESE2" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="GRPVL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grouping Value for Personnel Assignments</annotation>
+    </column>
+    <column name="ABRSP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Personnel number locked for payroll</annotation>
+    </column>
+    <column name="ABRDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounted to</annotation>
+    </column>
+    <column name="RRDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest master data change since last payroll run</annotation>
+    </column>
+    <column name="RRDAF" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>not in use</annotation>
+    </column>
+    <column name="KOABR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Use</annotation>
+    </column>
+    <column name="PRDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest personal retroactive accounting date</annotation>
+    </column>
+    <column name="PKGAB" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date as of which personal calendar must be generated</annotation>
+    </column>
+    <column name="ABWD1" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of processing 1 (run payroll for pers.no. up to)</annotation>
+    </column>
+    <column name="ABWD2" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of processing (do not run payroll for pers.no. after)</annotation>
+    </column>
+    <column name="BDERR" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Recalculation date for PDC</annotation>
+    </column>
+    <column name="BDER1" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Effective recalculation date for PDC</annotation>
+    </column>
+    <column name="KOBDE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PDC Error Indicator</annotation>
+    </column>
+    <column name="TIMRC" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of initial PDC entry</annotation>
+    </column>
+    <column name="DAT00" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Initial input date for a personnel number</annotation>
+    </column>
+    <column name="UHR00" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of initial input</annotation>
+    </column>
+    <column name="INUMK" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Character field, 8 characters long</annotation>
+    </column>
+    <column name="WERKS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Administrator Group</annotation>
+    </column>
+    <column name="SACHZ" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Administrator for Time Recording</annotation>
+    </column>
+    <column name="SFELD" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sort field for infotype 0003</annotation>
+    </column>
+    <column name="ADRUN" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>HR: Special payroll run</annotation>
+    </column>
+    <column name="VIEKN" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Infotype View Indicator</annotation>
+    </column>
+    <column name="TRVFL" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for recorded trips</annotation>
+    </column>
+    <column name="RCBON" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest payroll-relevant master data change (bonus)</annotation>
+    </column>
+    <column name="PRTEV" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest personal recalculation date for time evaluation</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="PERNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

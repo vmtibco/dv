@@ -1,0 +1,280 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="SchoolXML2Rel_XSD" path="/users/composite/admin/CISTraining/Physical/Formatting/Transformations/SchoolXML2Rel_XSD" type="PROCEDURE" subtype="TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="Classes" direction="IN" nullable="false">
+      <datatype name="Classes" namespace="http://compositesw.com/transform/example/school" referenceDefinitionSet="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/schoolDefinitions" referenceType="{http://compositesw.com/transform/example/school}Classes" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://compositesw.com/transform/example/school}Classes">
+        <schemaDatatype>
+          <datatype name="Classes" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="ClassList" direction="OUT" nullable="false">
+      <datatype name="ClassList" type="TABLE" refId="1">
+        <element name="CourseName" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="CourseDescription" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="StudentName" direction="OUT" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="StudentEmail" direction="OUT" nullable="false">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/schoolDefinitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1465984098909</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1465985184497</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1465984098909</attribute>
+  <attribute name="transformModel" type="BYTE_ARRAY">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</attribute>
+  <attribute name="transformSource" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace school =  &quot;http://compositesw.com/transform/example/school&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare variable $Classes external;
+declare function local:cast4( $CourseName)
+{
+  fn:substring($CourseName, 0 ,256)
+};
+
+declare function local:cast( $CourseDescription)
+{
+  fn:substring($CourseDescription, 0 ,256)
+};
+
+declare function local:cast2( $StudentName)
+{
+  fn:substring($StudentName, 0 ,256)
+};
+
+declare function local:cast3( $StudentEmail)
+{
+  fn:substring($StudentEmail, 0 ,256)
+};
+
+let $nodes := 
+(
+  (
+    for $var0 at $counter1 in $Classes/school:Class
+    return 
+      if (fn:not($counter1 &lt;= 2147483647 and fn:true()))
+      then ()
+      else 
+        for $var3 at $counter2 in $var0/school:Student
+        return 
+          if (fn:not($counter2 &lt;= 2147483647 and fn:true()))
+          then ()
+          else 
+            element ClassList
+            {
+              (
+                let $var6 := $var0/school:CourseName/text()
+                let $var5:= local:cast4(fn:data($var6))
+                return
+                element CourseName
+                {
+                  $var5
+                }
+                ,
+                let $var9 := $var0/school:CourseDescription/text()
+                let $var8:= local:cast(fn:data($var9))
+                return
+                element CourseDescription
+                {
+                  $var8
+                }
+                ,
+                let $var12 := $var3/school:StudentName/text()
+                let $var11:= local:cast2(fn:data($var12))
+                return
+                element StudentName
+                {
+                  $var11
+                }
+                ,
+                let $var15 := $var3/school:StudentEmail/text()
+                let $var14:= local:cast3(fn:data($var15))
+                return
+                element StudentEmail
+                {
+                  $var14
+                }
+              )
+            }
+    ,
+    let $counter := count($Classes/school:Class/school:Student)
+    return
+      if ($counter &gt;= 0) then
+      ()
+      else 
+        for $k in (1 to ( 0 - $counter))
+        return
+          element ClassList
+          {
+            (
+              element CourseName
+              {
+              }
+              ,
+              element CourseDescription
+              {
+              }
+              ,
+              element StudentName
+              {
+              }
+              ,
+              element StudentEmail
+              {
+              }
+            )
+          }
+  )
+)
+return
+$nodes</attribute>
+</metadata>

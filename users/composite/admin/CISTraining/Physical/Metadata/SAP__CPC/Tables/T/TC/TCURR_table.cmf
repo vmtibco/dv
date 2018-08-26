@@ -1,0 +1,93 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="TCURR" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/T/TC/TCURR" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Exchange Rates
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2003-11-06
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+KURST                          C4      Exchange Rate Type                                           
+FCURR                          C5      From currency                                                
+TCURR                          C5      To-currency                                                  
+GDATU                          C8      Date As of Which the Exchange Rate Is Effective              
+UKURS                          P9.5    Exchange Rate                                                
+FFACT                          P9      Ratio for the &quot;From&quot; Currency Units                          
+TFACT                          P9      Ratio for the &quot;To&quot; Currency Units                            
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="KURST" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exchange Rate Type</annotation>
+    </column>
+    <column name="FCURR" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From currency</annotation>
+    </column>
+    <column name="TCURR" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To-currency</annotation>
+    </column>
+    <column name="GDATU" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date As of Which the Exchange Rate Is Effective</annotation>
+    </column>
+    <column name="UKURS" nullable="true">
+      <datatype name="P9.5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exchange Rate</annotation>
+    </column>
+    <column name="FFACT" nullable="true">
+      <datatype name="P9" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ratio for the &quot;From&quot; Currency Units</annotation>
+    </column>
+    <column name="TFACT" nullable="true">
+      <datatype name="P9" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ratio for the &quot;To&quot; Currency Units</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="KURST" sortOrder="NONE"/>
+      <indexColumn name="FCURR" sortOrder="NONE"/>
+      <indexColumn name="TCURR" sortOrder="NONE"/>
+      <indexColumn name="GDATU" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

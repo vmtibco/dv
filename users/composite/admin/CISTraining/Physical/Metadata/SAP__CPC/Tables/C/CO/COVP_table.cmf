@@ -1,0 +1,1092 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="COVP" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/C/CO/COVP" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Generated Table for View
+Table class: VIEW
+Last changed by: DDIC
+Last changed on: 2010-11-26
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+KOKRS                          C4      Controlling Area                                             
+BELNR                          C10     Document Number                                              
+BUZEI                          N3      Posting row                                                  
+PERIO                          N3      Period                                                       
+WTGBTR                         P15.2   Total Value in Transaction Currency                          
+WOGBTR                         P15.2   Total Value in Object Currency                               
+WKGBTR                         P15.2   Total Value in Controlling Area Currency                     
+WKFBTR                         P15.2   Fixed Value in Controlling Area Currency                     
+PAGBTR                         P15.2   Total Price Variance in CO Area Currency                     
+PAFBTR                         P15.2   Fixed Price Variance in CO Area Currency                     
+MEGBTR                         P15.3   Total Quantity                                               
+MEFBTR                         P15.3   Fixed Quantity                                               
+MBGBTR                         P15.3   Total quantity entered                                       
+MBFBTR                         P15.3   Fixed quantity entered                                       
+LEDNR                          C2      Ledger for Controlling objects                               
+OBJNR                          C22     Object number                                                
+GJAHR                          N4      Fiscal Year                                                  
+WRTTP                          C2      Value Type                                                   
+VERSN                          C3      Version                                                      
+KSTAR                          C10     Cost Element                                                 
+HRKFT                          C14     CO key subnumber                                             
+VRGNG                          C4      CO Business Transaction                                      
+PAROB                          C22     Partner Object                                               
+PAROB1                         C22     Partner object (always filled)                               
+USPOB                          C22     Source Object (Cost Center/Activity Type)                    
+VBUND                          C6      Company ID of trading partner                                
+PARGB                          C4      Trading partner&apos;s business area                              
+BEKNZ                          C1      Debit/credit indicator                                       
+TWAER                          C5      Transaction Currency                                         
+OWAER                          C5      Currency Key                                                 
+MEINH                          C3      Unit of Measure                                              
+MEINB                          C3      Posted Unit of Measure                                       
+MVFLG                          C1      Quantity Complete/Incomplete                                 
+SGTXT                          C50     Segment text                                                 
+REFBZ                          N3      Posting row of reference document                            
+ZLENR                          N3      Document Item Number                                         
+BW_REFBZ                       N3      Posting Row in Operative Version                             
+GKONT                          C10     Offsetting Account Number                                    
+GKOAR                          C1      Offsetting Account Type                                      
+WERKS                          C4      Plant                                                        
+MATNR                          C18     Material Number                                              
+RBEST                          N3      Category of Reference Purchase Order                         
+EBELN                          C10     Purchasing Document Number                                   
+EBELP                          N5      Item Number of Purchasing Document                           
+ZEKKN                          N2      Sequential Number of Account Assignment                      
+ERLKZ                          C1      Completion indicator for line item                           
+PERNR                          N8      Personnel Number                                             
+BTRKL                          N2      Amount Class for Value in Controlling Area Currency          
+OBJNR_N1                       C22     Auxiliary account assignment 1                               
+OBJNR_N2                       C22     Auxiliary account assignment 2                               
+OBJNR_N3                       C22     Auxiliary account assignment 3                               
+PAOBJNR                        N10     Profitability Segment Number (CO-PA)                         
+BELTP                          N1      Debit type                                                   
+BUKRS                          C4      Company Code                                                 
+GSBER                          C4      Business Area                                                
+FKBER                          C16     Functional Area                                              
+SCOPE                          C2      Object Class                                                 
+LOGSYSO                        C10     Logical system of object                                     
+PKSTAR                         C10     Cost element of partner                                      
+PBUKRS                         C4      Company code of partner                                      
+PFKBER                         C16     Partner Functional Area                                      
+PSCOPE                         C2      Partner object class                                         
+LOGSYSP                        C10     Logical system of partner object                             
+DABRZ                          D8      Reference Date for Settlement                                
+BWSTRAT                        C1      Strategy for Determining an Allocation Price                 
+OBJNR_HK                       C22     Object Number of Origin Object                               
+TIMESTMP                       P16     Time created (Greenwich Meantime)                            
+QMNUM                          C12     Notification No                                              
+GEBER                          C10     Fund                                                         
+PGEBER                         C10     Partner Fund                                                 
+GRANT_NBR                      C20     Grant                                                        
+PGRANT_NBR                     C20     Partner Grant                                                
+REFBZ_FI                       N3      Posting Item of FI Reference Document                        
+SEGMENT                        C10     Segment for Segmental Reporting                              
+PSEGMENT                       C10     Partner Segment for Segmental Reporting                      
+BUDGET_PD                      C10     FM: Budget Period                                            
+PBUDGET_PD                     C10     FM: Partner Budget Period                                    
+ZZSPREG                        C5      Special Region                                               
+ZZBUSPARTN                     C10     Business partner                                             
+ZZPRODUCT                      C10     Product group                                                
+ZZLOCA                         C4      City                                                         
+ZZCHAN                         C4      Distribution channel                                         
+ZZLOB                          C7      BUSINESS LINE                                                
+ZZNFAL                         C10     Fallnummer für IS-H                                          
+ZZUSERFLD1                     C9      Territory                                                    
+ZZUSERFLD2                     C12     Owner/Cont.                                                  
+ZZUSERFLD3                     C22     Vein                                                         
+ZZREGION                       C3      Location                                                     
+ZZSTATE                        C3      State/Province Code                                          
+Z_PRS_OFFSHORE                 C1      Professional Services: Delivery Type                         
+Z_PRS_BILL_FLAG                C1      Professional Services: Billable/Non-Billable                 
+Z_PRS_COUNTRY                  C3      Country Key                                                  
+Z_PRS_CHARGELEVL               C2      Professional Services: Charge Level                          
+PERAB                          N3      From Period                                                  
+PERBI                          N3      To period                                                    
+BLDAT                          D8      Document Date                                                
+BUDAT                          D8      Posting Date                                                 
+CPUDT                          D8      Date Document Was Created                                    
+USNAM                          C12     User Name                                                    
+BLTXT                          C50     Document Header Text                                         
+STFLG                          C1      Identifier for reversal document                             
+STOKZ                          C1      Indicator: Document Has Been Reversed                        
+REFBT                          C1      Document type of reference document                          
+REFBN                          C10     Reference Document Number                                    
+REFBK                          C4      Company code of FI document                                  
+REFGJ                          N4      Fiscal year of reference document                            
+BLART                          C2      Document type of FI reference document                       
+ORGVG                          C4      Original CO business transaction                             
+SUMBZ                          N3      Number of posting lines for local objects                    
+DELBZ                          N3      Number of deleted line items                                 
+WSDAT                          D8      Value Date for Currency Translation                          
+KURST                          C4      Exchange Rate Type                                           
+VARNR                          C5      CO actual postings fast input: Variant                       
+KWAER                          C5      Controlling area currency                                    
+CTYP1                          C2      Currency Type 1 in CO Standard Ledger                        
+CTYP2                          C2      Currency Type 2 in CO Standard Ledger                        
+CTYP3                          C2      Currency Type 3 in CO Standard Ledger                        
+CTYP4                          C2      Currency Type 4 in CO Standard Ledger                        
+AWTYP                          C5      Reference Transaction                                        
+AWORG                          C10     Reference Organizational Units                               
+LOGSYSTEM                      C10     Logical System                                               
+CPUTM                          T6      Time of Entry                                                
+ALEBZ                          N3      Number of posting rows sent to external systems              
+ALEBN                          C10     For ALE: CO Document Number in Generating System             
+AWSYS                          C10     Logical system of source document                            
+AWREF_REV                      C10     Reversal: Reverse Document Reference Document Number         
+AWORG_REV                      C10     Reversal: Reverse Document Reference Organization            
+VALDT                          D8      Special Valuation Date for Cost  Accounting                  
+K_GJAHR                        N4      Fiscal Year                                                  
+K_VERSN                        C3      Version in CO Document Header                                
+K_VRGNG                        C4      CO Business Transaction                                      
+K_TIMESTMP                     P16     Time created (Greenwich Meantime)                            
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="KOKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="BELNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Number</annotation>
+    </column>
+    <column name="BUZEI" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting row</annotation>
+    </column>
+    <column name="PERIO" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period</annotation>
+    </column>
+    <column name="WTGBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Value in Transaction Currency</annotation>
+    </column>
+    <column name="WOGBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Value in Object Currency</annotation>
+    </column>
+    <column name="WKGBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Value in Controlling Area Currency</annotation>
+    </column>
+    <column name="WKFBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Value in Controlling Area Currency</annotation>
+    </column>
+    <column name="PAGBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Price Variance in CO Area Currency</annotation>
+    </column>
+    <column name="PAFBTR" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Price Variance in CO Area Currency</annotation>
+    </column>
+    <column name="MEGBTR" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total Quantity</annotation>
+    </column>
+    <column name="MEFBTR" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Quantity</annotation>
+    </column>
+    <column name="MBGBTR" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total quantity entered</annotation>
+    </column>
+    <column name="MBFBTR" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed quantity entered</annotation>
+    </column>
+    <column name="LEDNR" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ledger for Controlling objects</annotation>
+    </column>
+    <column name="OBJNR" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number</annotation>
+    </column>
+    <column name="GJAHR" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="WRTTP" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Value Type</annotation>
+    </column>
+    <column name="VERSN" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version</annotation>
+    </column>
+    <column name="KSTAR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Element</annotation>
+    </column>
+    <column name="HRKFT" nullable="true">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO key subnumber</annotation>
+    </column>
+    <column name="VRGNG" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO Business Transaction</annotation>
+    </column>
+    <column name="PAROB" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Object</annotation>
+    </column>
+    <column name="PAROB1" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner object (always filled)</annotation>
+    </column>
+    <column name="USPOB" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Source Object (Cost Center/Activity Type)</annotation>
+    </column>
+    <column name="VBUND" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="PARGB" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Trading partner&apos;s business area</annotation>
+    </column>
+    <column name="BEKNZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Debit/credit indicator</annotation>
+    </column>
+    <column name="TWAER" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transaction Currency</annotation>
+    </column>
+    <column name="OWAER" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="MEINH" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Measure</annotation>
+    </column>
+    <column name="MEINB" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posted Unit of Measure</annotation>
+    </column>
+    <column name="MVFLG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity Complete/Incomplete</annotation>
+    </column>
+    <column name="SGTXT" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment text</annotation>
+    </column>
+    <column name="REFBZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting row of reference document</annotation>
+    </column>
+    <column name="ZLENR" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Item Number</annotation>
+    </column>
+    <column name="BW_REFBZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Row in Operative Version</annotation>
+    </column>
+    <column name="GKONT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Offsetting Account Number</annotation>
+    </column>
+    <column name="GKOAR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Offsetting Account Type</annotation>
+    </column>
+    <column name="WERKS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="MATNR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="RBEST" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Category of Reference Purchase Order</annotation>
+    </column>
+    <column name="EBELN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Number</annotation>
+    </column>
+    <column name="EBELP" nullable="true">
+      <datatype name="N5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchasing Document</annotation>
+    </column>
+    <column name="ZEKKN" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequential Number of Account Assignment</annotation>
+    </column>
+    <column name="ERLKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion indicator for line item</annotation>
+    </column>
+    <column name="PERNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel Number</annotation>
+    </column>
+    <column name="BTRKL" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Amount Class for Value in Controlling Area Currency</annotation>
+    </column>
+    <column name="OBJNR_N1" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Auxiliary account assignment 1</annotation>
+    </column>
+    <column name="OBJNR_N2" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Auxiliary account assignment 2</annotation>
+    </column>
+    <column name="OBJNR_N3" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Auxiliary account assignment 3</annotation>
+    </column>
+    <column name="PAOBJNR" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profitability Segment Number (CO-PA)</annotation>
+    </column>
+    <column name="BELTP" nullable="true">
+      <datatype name="N1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Debit type</annotation>
+    </column>
+    <column name="BUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="GSBER" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business Area</annotation>
+    </column>
+    <column name="FKBER" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="SCOPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Class</annotation>
+    </column>
+    <column name="LOGSYSO" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system of object</annotation>
+    </column>
+    <column name="PKSTAR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost element of partner</annotation>
+    </column>
+    <column name="PBUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code of partner</annotation>
+    </column>
+    <column name="PFKBER" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Functional Area</annotation>
+    </column>
+    <column name="PSCOPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner object class</annotation>
+    </column>
+    <column name="LOGSYSP" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system of partner object</annotation>
+    </column>
+    <column name="DABRZ" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Date for Settlement</annotation>
+    </column>
+    <column name="BWSTRAT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Strategy for Determining an Allocation Price</annotation>
+    </column>
+    <column name="OBJNR_HK" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Number of Origin Object</annotation>
+    </column>
+    <column name="TIMESTMP" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time created (Greenwich Meantime)</annotation>
+    </column>
+    <column name="QMNUM" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Notification No</annotation>
+    </column>
+    <column name="GEBER" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="PGEBER" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Fund</annotation>
+    </column>
+    <column name="GRANT_NBR" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="PGRANT_NBR" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Grant</annotation>
+    </column>
+    <column name="REFBZ_FI" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Item of FI Reference Document</annotation>
+    </column>
+    <column name="SEGMENT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Segment for Segmental Reporting</annotation>
+    </column>
+    <column name="PSEGMENT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Segment for Segmental Reporting</annotation>
+    </column>
+    <column name="BUDGET_PD" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="PBUDGET_PD" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Partner Budget Period</annotation>
+    </column>
+    <column name="ZZSPREG" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Region</annotation>
+    </column>
+    <column name="ZZBUSPARTN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business partner</annotation>
+    </column>
+    <column name="ZZPRODUCT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Product group</annotation>
+    </column>
+    <column name="ZZLOCA" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="ZZCHAN" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution channel</annotation>
+    </column>
+    <column name="ZZLOB" nullable="true">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BUSINESS LINE</annotation>
+    </column>
+    <column name="ZZNFAL" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fallnummer für IS-H</annotation>
+    </column>
+    <column name="ZZUSERFLD1" nullable="true">
+      <datatype name="C9" subType="DATASOURCE_TYPE" type="STRING" maxLength="9"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Territory</annotation>
+    </column>
+    <column name="ZZUSERFLD2" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Owner/Cont.</annotation>
+    </column>
+    <column name="ZZUSERFLD3" nullable="true">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vein</annotation>
+    </column>
+    <column name="ZZREGION" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Location</annotation>
+    </column>
+    <column name="ZZSTATE" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>State/Province Code</annotation>
+    </column>
+    <column name="Z_PRS_OFFSHORE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Professional Services: Delivery Type</annotation>
+    </column>
+    <column name="Z_PRS_BILL_FLAG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Professional Services: Billable/Non-Billable</annotation>
+    </column>
+    <column name="Z_PRS_COUNTRY" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Z_PRS_CHARGELEVL" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Professional Services: Charge Level</annotation>
+    </column>
+    <column name="PERAB" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From Period</annotation>
+    </column>
+    <column name="PERBI" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To period</annotation>
+    </column>
+    <column name="BLDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date</annotation>
+    </column>
+    <column name="BUDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Date</annotation>
+    </column>
+    <column name="CPUDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date Document Was Created</annotation>
+    </column>
+    <column name="USNAM" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User Name</annotation>
+    </column>
+    <column name="BLTXT" nullable="true">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Header Text</annotation>
+    </column>
+    <column name="STFLG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identifier for reversal document</annotation>
+    </column>
+    <column name="STOKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document Has Been Reversed</annotation>
+    </column>
+    <column name="REFBT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document type of reference document</annotation>
+    </column>
+    <column name="REFBN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Document Number</annotation>
+    </column>
+    <column name="REFBK" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code of FI document</annotation>
+    </column>
+    <column name="REFGJ" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal year of reference document</annotation>
+    </column>
+    <column name="BLART" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document type of FI reference document</annotation>
+    </column>
+    <column name="ORGVG" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original CO business transaction</annotation>
+    </column>
+    <column name="SUMBZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of posting lines for local objects</annotation>
+    </column>
+    <column name="DELBZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of deleted line items</annotation>
+    </column>
+    <column name="WSDAT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Value Date for Currency Translation</annotation>
+    </column>
+    <column name="KURST" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exchange Rate Type</annotation>
+    </column>
+    <column name="VARNR" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO actual postings fast input: Variant</annotation>
+    </column>
+    <column name="KWAER" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling area currency</annotation>
+    </column>
+    <column name="CTYP1" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Type 1 in CO Standard Ledger</annotation>
+    </column>
+    <column name="CTYP2" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Type 2 in CO Standard Ledger</annotation>
+    </column>
+    <column name="CTYP3" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Type 3 in CO Standard Ledger</annotation>
+    </column>
+    <column name="CTYP4" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Type 4 in CO Standard Ledger</annotation>
+    </column>
+    <column name="AWTYP" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Transaction</annotation>
+    </column>
+    <column name="AWORG" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Organizational Units</annotation>
+    </column>
+    <column name="LOGSYSTEM" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="CPUTM" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of Entry</annotation>
+    </column>
+    <column name="ALEBZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of posting rows sent to external systems</annotation>
+    </column>
+    <column name="ALEBN" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>For ALE: CO Document Number in Generating System</annotation>
+    </column>
+    <column name="AWSYS" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system of source document</annotation>
+    </column>
+    <column name="AWREF_REV" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reversal: Reverse Document Reference Document Number</annotation>
+    </column>
+    <column name="AWORG_REV" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reversal: Reverse Document Reference Organization</annotation>
+    </column>
+    <column name="VALDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Valuation Date for Cost  Accounting</annotation>
+    </column>
+    <column name="K_GJAHR" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="K_VERSN" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version in CO Document Header</annotation>
+    </column>
+    <column name="K_VRGNG" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>CO Business Transaction</annotation>
+    </column>
+    <column name="K_TIMESTMP" nullable="true">
+      <datatype name="P16" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="16" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time created (Greenwich Meantime)</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="KOKRS" sortOrder="NONE"/>
+      <indexColumn name="BELNR" sortOrder="NONE"/>
+      <indexColumn name="BUZEI" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

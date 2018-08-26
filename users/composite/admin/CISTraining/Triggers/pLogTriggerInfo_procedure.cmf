@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pLogTriggerInfo" path="/users/composite/admin/CISTraining/Triggers/pLogTriggerInfo" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="trCondition" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="256"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/GetProperty" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="property" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/System" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pLogTriggerInfo(IN trCondition VARCHAR(256)) 
+BEGIN
+  	DECLARE dLocDate DATE DEFAULT CURRENT_DATE();
+	DECLARE dLocTime TIME DEFAULT CURRENT_TIME();
+
+	DECLARE userName VARCHAR(256) DEFAULT &apos;Unknown User&apos;; 
+	DECLARE userDomain VARCHAR(256) DEFAULT &apos;Unknown Domain&apos;; 
+
+	CALL /lib/util/GetProperty(System.CURRENT_USER_NAME, userName); 
+	CALL /lib/util/GetProperty(System.CURRENT_USER_DOMAIN, userDomain); 
+
+	CALL log(&apos;&lt;&apos; || userName || &apos;@&apos; || userDomain || &apos;&gt; &apos; ||
+					&apos;Detected trigger condition &quot;&apos; || trCondition); 
+END</attribute>
+  <attribute name="creationDate" type="LONG">1464654085527</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">7/12</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Log</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">29/9</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>System</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">29/10</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>System</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464654085527</attribute>
+</metadata>

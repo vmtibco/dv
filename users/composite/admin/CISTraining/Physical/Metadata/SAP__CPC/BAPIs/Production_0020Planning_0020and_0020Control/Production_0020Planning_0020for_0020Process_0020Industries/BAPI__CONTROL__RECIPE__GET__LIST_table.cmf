@@ -1,0 +1,414 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CONTROL_RECIPE_GET_LIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Planning for Process Industries/BAPI_CONTROL_RECIPE_GET_LIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2005-12-27
+Released on: 1998-07-22
+
+Using this method, you read the header data of the &lt;GL:control_recipe&gt;control recipes&lt;/&gt; available in the SAP system. 
+For example, you can call this method from a process control system to obtain information on the control recipes created for this system. 
+Afterwards, you can use method &lt;LS&gt;ControlRecipe.Request (Request and transfer control recipes)&lt;/&gt; to export the control recipes to the control system. 
+
+&lt;ZH&gt;Authorizations&lt;/&gt; 
+You need the following authorization to carry out the method: Authorization object,,Field              ,,Value C_CREX_WRK          ,,Destination address,,RFC destination of the 
+                    ,,                   ,,control recipe destination                     ,,Activity           ,,&lt;LS&gt;03&lt;/&gt; (Display control recipe)                     ,,Plant              ,,Plant of the control recipe 
+&lt;LS&gt;Selection Criteria&lt;/&gt; 
+You can pass on the following data as criteria for control recipe selection: 
+The plant in parameter &lt;LS&gt;Plant&lt;/&gt; (required) 
+Data of the corresponding process order in parameters &lt;LS&gt;ProcessOrder &lt;/&gt; and &lt;LS&gt;Material&lt;/&gt; 
+Control recipe data in the parameters &lt;LS&gt;DestAddress&lt;/&gt;, &lt;LS&gt;DestType &lt;/&gt;, &lt;LS&gt;TestCntlRec&lt;/&gt;, &lt;LS&gt;CntlRecStatus&lt;/&gt;, &lt;LS&gt;DateFrom&lt;/&gt;, and &lt;LS&gt;DateTo&lt;/&gt; 
+&lt;LS&gt;Control Recipes&lt;/&gt; 
+The header data of the selected control recipes are returned in parameter &lt;LS&gt;CntlRecHeader&lt;/&gt;. 
+&lt;ZH&gt;System Messages&lt;/&gt; 
+System messages issued during method processing are returned in parameter &lt;LS&gt;Return&lt;/&gt;. For information on possible messages and their meaning, see the parameter documentation. 
+For more information on control recipe processing, see the SAP Library, section &lt;LS&gt;PP Production Planning - Process Industries&lt;/&gt; -&gt; &lt;LS&gt;Process Management&lt;/&gt; -&gt; &lt;LS&gt;Control Recipes&lt;/&gt;. Export RETURN
+In this parameter, the SAP system returns the messages issued during the method call. Typ,,ID ,,Number,,System message E  ,,CB1,,403   ,,No control recipes found 
+Import CNTLRECSTATUS
+In this parameter, you specify the status of the control recipes to be selected. 
+For more information on the control recipe status, see the documentation of the corresponding data element: 
+&lt;DS:DE.CO_CRSTAT&gt;Control recipe status&lt;/&gt; 
+See the ABAP Dictionary &lt;LS&gt;00001&lt;/&gt;,,Created 
+Import DATEFROM
+In this parameter, you pass on the creation date as of which control recipes are to be selected. 
+
+Import DATETO
+In this parameter, you pass on the creation date up to which control recipes are to be selected. 
+
+Import DESTADDRESS
+In this parameter, you pass on the address of the control recipe destination for which control recipes are to be selected. 
+For more information on the control recipe destination, see the documentation of the corresponding data elements: 
+&lt;DS:DE.ADR&gt;Address of the control recipe destination&lt;/&gt; 
+RFC destinations defined in SAP Customizing (see IMG for &lt;LS&gt;Process Management&lt;/&gt;, &lt;DS:SIMG.COCB520&gt;Define RFC destinations for control recipe destinations&lt;/&gt;). 
+Import DESTTYPE
+In this parameter, you pass on the type of the control recipe destination for which control recipes are to be selected. 
+For more information on the destination type, see the documentation of the corresponding data element: 
+&lt;DS:DE.COMTY&gt;Type of the control recipe destination&lt;/&gt; 
+See the ABAP Dictionary &lt;LS&gt;3&lt;/&gt; ,,Download to ext. system, initiated by process control Import MATERIAL
+In this parameter, you pass on the &lt;GL:Material&gt;materials&lt;/&gt; of the process orders for which control recipes are to be selected. 
+For more information on the material, refer to the documentation of the corresponding data element: 
+&lt;DS:DE.CO_MATNR&gt;Material for order&lt;/&gt; 
+See the ABAP Dictionary 
+Import MATERIAL_EVG
+Parameter for the long material number This parameter can be used to transfer long material numbers. These numbers can be up to 40 characters long. To use this parameter you must activate the switch for the business function LAMA (long material number) in the system. The business function LAMA is available as a component of the business function set for DIMP. 
+None 
+None 
+Import PLANT
+In this parameter, you pass on the key of the &lt;GL:plant&gt;plant&lt;/&gt; for which control recipes are to be selected. 
+See the ABAP Dictionary 
+Import PROCESSORDER
+In this parameter, you pass on the key of the &lt;GL:process_order&gt;process order&lt;/&gt; for which control recipes are to be selected. 
+See the ABAP Dictionary 
+Import PRODCNTLREC
+You use this parameter to specify that only productive control recipes are to be selected. &lt;LS&gt;X&lt;/&gt;           ,,Select productive control recipes &lt;LS&gt;&apos; &apos; (blank)&lt;/&gt; ,,Do not select productive control recipes &lt;LS&gt;X&lt;/&gt;           ,,Select productive control recipes Import TESTCNTLREC
+You use this parameter to specify that control recipes for test purposes are to be selected. 
+For more information on the test indicator, see the documentation of the corresponding data element: 
+&lt;DS:DE.TSTKZ&gt;Indicator: Control recipe for test purposes&lt;/&gt; &lt;LS&gt;X&lt;/&gt;           ,,Select control recipes for test purposes &lt;LS&gt;&apos; &apos; (blank)&lt;/&gt; ,,Do not select control recipes for test purposes 
+CNTLRECHEADER
+In this table, the SAP system passes on the header data of the selected control recipes. For information on the meaning of the table fields, see the documentation of the corresponding data elements. 
+&lt;ZH&gt;Table Structure&lt;/&gt; CNTL_REC_ID    ,,&lt;DS:DE.CO_CRID&gt;Control recipe number&lt;/&gt; PLANT          ,,&lt;DS:DE.WERKS_D&gt;Plant&lt;/&gt; of the control recipe PROC_ORDER     ,,&lt;DS:DE.CO_BORD&gt;Process order&lt;/&gt; that the control recipe belongs to DEST           ,,&lt;DS:DE.PHSEQ&gt;Control recipe destination&lt;/&gt; DEST_ADDRESS   ,,&lt;DS:DE.ADR_FS&gt;Address of the control recipe destination &lt;/&gt; DEST_TYPE      ,,&lt;DS:DE.COMTY&gt;Type of the control recipe destination&lt;/&gt; CNTL_REC_STATUS,,&lt;DS:DE.CO_CRSTAT&gt;Control recipe status&lt;/&gt; TEST_FLAG      ,,&lt;DS:DE.TSTKZ&gt;Indicator: Control recipe for test purposes&lt;/&gt; RECIPE_TEXT    ,,Short text of the master recipe used in the order MATERIAL       ,,&lt;DS:DE.CO_MATNR&gt;Material number for order&lt;/&gt; MATERIAL_TEXT  ,,&lt;DS:DE.CO_MATXT&gt;Material description&lt;/&gt; INSPLOT        ,,&lt;DS:DE.QPLOS&gt;Inspection lot number&lt;/&gt; assigned to the order BATCH          ,,Batch number of the material to be produced SCHEDULED_START_DATE,,Earliest scheduled start date of the ctrl recipe 
+,,(Date) SCHEDULED_START_TIME,,Earliest scheduled start time of the ctrl recipe 
+,,(Time) TEST_FLAG      ,,&lt;LS&gt;X&lt;/&gt;           ,,Control recipe for test purposes 
+               ,,&lt;LS&gt;&apos; &apos; (blank)&lt;/&gt; ,,Productive control recipe 
+For information on the value range of the other table fields, see the ABAP Dictionary. 
+</annotation>
+  <columns>
+    <column name="Import CNTLRECSTATUS" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Control Recipe Status</annotation>
+    </column>
+    <column name="Import DATEFROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Earliest Creation Date for Control Recipes</annotation>
+    </column>
+    <column name="Import DATETO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Latest Creation Date for Control Recipes</annotation>
+    </column>
+    <column name="Import DESTADDRESS" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Address of Control Recipe Destination</annotation>
+    </column>
+    <column name="Import DESTTYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Type of Control Recipe Destination</annotation>
+    </column>
+    <column name="Import MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Material of Process Order</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_EXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External Long Material Number</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_VERS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Version Number</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material number (external GUID)</annotation>
+    </column>
+    <column name="Import PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Plant of Control Recipes</annotation>
+    </column>
+    <column name="Import PROCESSORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Process Order Number</annotation>
+    </column>
+    <column name="Import PRODCNTLREC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Indicator: Read Productive Control Recipes</annotation>
+    </column>
+    <column name="Import SCHEDDATEFROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Earliest Scheduled Start Date of Control Recipes</annotation>
+    </column>
+    <column name="Import SCHEDDATETO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Latest Scheduled Start Date of Control Recipes</annotation>
+    </column>
+    <column name="Import TESTCNTLREC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Indicator: Read Control Recipes for Test Purposes</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="CNTLRECHEADER CNTL_REC_ID" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control recipe number</annotation>
+    </column>
+    <column name="CNTLRECHEADER PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="CNTLRECHEADER PROC_ORDER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Process order number</annotation>
+    </column>
+    <column name="CNTLRECHEADER DEST" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control Recipe Destination</annotation>
+    </column>
+    <column name="CNTLRECHEADER DEST_ADDRESS" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address of the control recipe destination</annotation>
+    </column>
+    <column name="CNTLRECHEADER DEST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of Control Recipe Destination</annotation>
+    </column>
+    <column name="CNTLRECHEADER CNTL_REC_STATUS" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control recipe status</annotation>
+    </column>
+    <column name="CNTLRECHEADER TEST_FLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Message or Control Recipe for Test Purposes</annotation>
+    </column>
+    <column name="CNTLRECHEADER RECIPE_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Description</annotation>
+    </column>
+    <column name="CNTLRECHEADER MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number for Order</annotation>
+    </column>
+    <column name="CNTLRECHEADER MATERIAL_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Description</annotation>
+    </column>
+    <column name="CNTLRECHEADER INSPLOT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inspection Lot Number</annotation>
+    </column>
+    <column name="CNTLRECHEADER MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="CNTLRECHEADER MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="CNTLRECHEADER MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="CNTLRECHEADER BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="CNTLRECHEADER SCHEDULED_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest Scheduled Start: Execution (Date)</annotation>
+    </column>
+    <column name="CNTLRECHEADER SCHEDULED_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest Scheduled Start: Execution (Time)</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

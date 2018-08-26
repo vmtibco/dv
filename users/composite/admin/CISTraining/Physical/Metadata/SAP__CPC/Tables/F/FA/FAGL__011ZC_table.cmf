@@ -1,0 +1,101 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="FAGL_011ZC" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/F/FA/FAGL_011ZC" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Fin. Statement Structure: Assignment FS Items - G/L Account
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2004-01-16
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+VERSN                          C4      Financial Statement Version                                  
+ERGSL                          C10     Financial Statement Item                                     
+KTOPL                          C4      Chart of Accounts                                            
+VONKT                          C10     Account interval lower limit                                 
+BISKT                          C10     Account interval upper limit                                 
+XSOLL                          C1      Indicator: Is entry relevant if there is a debit balance?    
+XHABN                          C1      Indicator: Is entry relevant if there is a credit balance ?  
+XVERD                          C1      Indicator: Group balance decides on allocation               
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="VERSN" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Statement Version</annotation>
+    </column>
+    <column name="ERGSL" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Statement Item</annotation>
+    </column>
+    <column name="KTOPL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="VONKT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account interval lower limit</annotation>
+    </column>
+    <column name="BISKT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account interval upper limit</annotation>
+    </column>
+    <column name="XSOLL" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is entry relevant if there is a debit balance?</annotation>
+    </column>
+    <column name="XHABN" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is entry relevant if there is a credit balance ?</annotation>
+    </column>
+    <column name="XVERD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Group balance decides on allocation</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="VERSN" sortOrder="NONE"/>
+      <indexColumn name="ERGSL" sortOrder="NONE"/>
+      <indexColumn name="KTOPL" sortOrder="NONE"/>
+      <indexColumn name="VONKT" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

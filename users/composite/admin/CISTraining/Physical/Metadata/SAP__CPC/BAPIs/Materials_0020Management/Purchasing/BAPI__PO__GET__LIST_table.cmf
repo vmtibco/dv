@@ -1,0 +1,2464 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PO_GET_LIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Materials Management/Purchasing/BAPI_PO_GET_LIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-09-17
+
+You can use this method to list all purchase orders that have to be released (approved) with a certain release code and group (collective release). 
+As of SAP Release 4.0A, use the method &lt;LB&gt;GetItemsForRelease&lt;/&gt; of the business object &lt;LS&gt;PurchaseOrder&lt;/&gt;. 
+
+Authorization object &lt;DS:UO.M_EINK_FRG&gt;M_EINK_FRG&lt;/&gt; is checked. 
+The release code (&lt;LB&gt;RelCode&lt;/&gt;) and the release group (&lt;LB&gt;RelGroup &lt;/&gt;) have to be passed on. 
+The parameter &lt;LB&gt;ItemsForRelease&lt;/&gt; determine whether: 
+Purchase orders awaiting release, or 
+Already-released purchase orders 
+are selected. 
+
+This is useful, for example, if a list is to be generated for the cancellation (revokation) of previously effected releases. 
+The results are returned in the table parameters &lt;LB&gt;Headers&lt;/&gt;, &lt;LB&gt;Addresses&lt;/&gt; and &lt;LB&gt;Items&lt;/&gt;. 
+For further information, refer to the &lt;LS&gt;MM Purchasing &lt;/&gt; documentation. Import ITEMS_FOR_RELEASE
+If the indicator is set, only POs that can be released are listed. 
+If the indicator is not set, only POs that have already been released are listed. 
+Dictionary data type: CHAR (field length 1). 
+Import REL_CODE
+You will find iformation on the meaning of the release codes in the relevant data element documentation: 
+&lt;DS:DE.FRGCO&gt;Release Code&lt;/&gt; 
+Dictionary data type: CHAR (field length 2). 
+Import REL_GROUP
+You will find information on the meaning of the release group in the relevant data element documentation: 
+&lt;DS:DE.FRGGR&gt;Release Group&lt;/&gt; 
+Dictionary data type: CHAR (field length 2). 
+PO_ADDRESSES
+This table contains the vendor&apos;s address. 
+
+PO_HEADERS
+This table contains all PO header data. 
+
+PO_ITEMS
+This table contains all PO items. 
+
+RETURN
+This table contains the return messages from the method call. 
+
+</annotation>
+  <columns>
+    <column name="Import ITEMS_FOR_RELEASE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Display Purchase Orders Awaiting Release Only</annotation>
+    </column>
+    <column name="Import REL_CODE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release Code</annotation>
+    </column>
+    <column name="Import REL_GROUP" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release Group</annotation>
+    </column>
+    <column name="PO_ADDRESSES PO_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Number</annotation>
+    </column>
+    <column name="PO_ADDRESSES NAME1" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES NAME2" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES NAME3" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES NAME4" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES ZIP_CODE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Postal Code</annotation>
+    </column>
+    <column name="PO_ADDRESSES CITY" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="PO_ADDRESSES CNTRY_KEY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="PO_ADDRESSES STREET" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House number and street</annotation>
+    </column>
+    <column name="PO_ADDRESSES PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="PO_ADDRESSES ZIP_POBOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>P.O. Box Postal Code</annotation>
+    </column>
+    <column name="PO_ADDRESSES TITLE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Title</annotation>
+    </column>
+    <column name="PO_ADDRESSES TELEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telex number</annotation>
+    </column>
+    <column name="PO_ADDRESSES FAX_NUMBER" nullable="false">
+      <datatype name="C31" subType="DATASOURCE_TYPE" type="STRING" maxLength="31"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fax Number</annotation>
+    </column>
+    <column name="PO_ADDRESSES TELETEXT" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Teletex number</annotation>
+    </column>
+    <column name="PO_ADDRESSES DATA_LINE" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data communication line no.</annotation>
+    </column>
+    <column name="PO_ADDRESSES TELEBOX" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telebox number</annotation>
+    </column>
+    <column name="PO_ADDRESSES REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW ADDRNUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW ADDRHANDLE" nullable="false">
+      <datatype name="C140" subType="DATASOURCE_TYPE" type="STRING" maxLength="140"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Handle for Creating Addresses/Persons (Bus. Addr. Services)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NATION" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>International address version ID</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date referred to</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW DATE_FROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-from date - in current Release only 00010101 possible</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW DATE_TO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-to date in current Release only 99991231 possible</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TITLE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Form-of-Address Key</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME1" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 2</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME3" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 3</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME4" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 4</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME_TXT" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Converted name field (with form of address)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW NAME_CO" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>c/o name</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CITY1" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CITY2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CITY_CODE" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City code for city/street file</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CITYP_CODE" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District code for City and Street file</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CHCKSTATUS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City file test status</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW POST_CODE1" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City postal code</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW POST_CODE2" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box postal code</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW POST_CODE3" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company postal code (for large customers)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW PO_BOX_NUM" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Flag: PO Box without number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW PO_BOX_LOC" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box city</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW CITY_CODE2" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City PO box code (City file)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW PO_BOX_REG" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region for PO Box (Country, State, Province, ...)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW PO_BOX_CTY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO box country</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW POSTALAREA" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Post Delivery District</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TRANSPZONE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transportation zone to or from which the goods are delivered</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW STREET" nullable="false">
+      <datatype name="C60" subType="DATASOURCE_TYPE" type="STRING" maxLength="60"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW STREETCODE" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street Number for City/Street File</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW STREETABBR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Abbreviation of Street Name</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW HOUSE_NUM1" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House Number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW HOUSE_NUM2" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House number supplement</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW HOUSE_NUM3" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not supported) House Number Range</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW STR_SUPPL1" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 2</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW STR_SUPPL2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 3</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW LOCATION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 5</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW BUILDING" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>old: building (no. or abbreviation)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW FLOOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Floor in building</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW ROOMNUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Room or Appartment Number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW SORT1" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term 1</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW SORT2" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term 2</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW SORT_PHN" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Phonetic Search Sort Field</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW ADDRORIGIN" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not Supported) Address Data Source (Key)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW EXTENSION1" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Extension (only for data conversion) (data line/telebox)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW EXTENSION2" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Extension (only for data conversion) (data line/telebox)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TIME_ZONE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address time zone</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW ADDRESS_ID" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>(Not supported) Physical address ID</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW REMARK" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address notes</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW DEFLT_COMM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Method (Key) (Business Address Services)</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TEL_NUMBER" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First telephone no.: dialling code+number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW TEL_EXTENS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First Telephone No.: Extension</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW FAX_NUMBER" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First fax no.: dialling code+number</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW FAX_EXTENS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First fax no.: extension</annotation>
+    </column>
+    <column name="PO_ADDRESSES_NEW BUILD_LONG" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Building (Number or Code)</annotation>
+    </column>
+    <column name="PO_HEADERS PO_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Number</annotation>
+    </column>
+    <column name="PO_HEADERS CO_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="PO_HEADERS DOC_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Category</annotation>
+    </column>
+    <column name="PO_HEADERS DOC_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Type</annotation>
+    </column>
+    <column name="PO_HEADERS CNTRL_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control indicator for purchasing document type</annotation>
+    </column>
+    <column name="PO_HEADERS DELETE_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion Indicator in Purchasing Document</annotation>
+    </column>
+    <column name="PO_HEADERS STATUS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of Purchasing Document</annotation>
+    </column>
+    <column name="PO_HEADERS CREATED_ON" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date on Which Record Was Created</annotation>
+    </column>
+    <column name="PO_HEADERS CREATED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="PO_HEADERS ITEM_INTVL" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number Interval</annotation>
+    </column>
+    <column name="PO_HEADERS LAST_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Last Item Number</annotation>
+    </column>
+    <column name="PO_HEADERS VENDOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor Account Number</annotation>
+    </column>
+    <column name="PO_HEADERS LANGUAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="PO_HEADERS PMNTTRMS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Terms of Payment Key</annotation>
+    </column>
+    <column name="PO_HEADERS DSCNT1_TO" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount days 1</annotation>
+    </column>
+    <column name="PO_HEADERS DSCNT2_TO" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount days 2</annotation>
+    </column>
+    <column name="PO_HEADERS DSCNT3_TO" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash discount days 3</annotation>
+    </column>
+    <column name="PO_HEADERS CASH_DISC1" nullable="false">
+      <datatype name="P5.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Percentage 1</annotation>
+    </column>
+    <column name="PO_HEADERS CASH_DISC2" nullable="false">
+      <datatype name="P5.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Discount Percentage 2</annotation>
+    </column>
+    <column name="PO_HEADERS PURCH_ORG" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Organization</annotation>
+    </column>
+    <column name="PO_HEADERS PUR_GROUP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Group</annotation>
+    </column>
+    <column name="PO_HEADERS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="PO_HEADERS EXCH_RATE" nullable="false">
+      <datatype name="P9.5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Direct Quoted Exchange Rate</annotation>
+    </column>
+    <column name="PO_HEADERS EX_RATE_FX" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Fixing of Exchange Rate</annotation>
+    </column>
+    <column name="PO_HEADERS DOC_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Date</annotation>
+    </column>
+    <column name="PO_HEADERS VPER_START" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start of Validity Period</annotation>
+    </column>
+    <column name="PO_HEADERS VPER_END" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End of Validity Period</annotation>
+    </column>
+    <column name="PO_HEADERS APPLIC_BY" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Closing Date for Applications</annotation>
+    </column>
+    <column name="PO_HEADERS QUOT_DEAD" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deadline for Submission of Bid/Quotation</annotation>
+    </column>
+    <column name="PO_HEADERS BINDG_PER" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Binding Period for Quotation</annotation>
+    </column>
+    <column name="PO_HEADERS WARRANTY" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Warranty Date</annotation>
+    </column>
+    <column name="PO_HEADERS BIDINV_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bid invitation number</annotation>
+    </column>
+    <column name="PO_HEADERS QUOTATION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quotation Number</annotation>
+    </column>
+    <column name="PO_HEADERS QUOT_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quotation Submission Date</annotation>
+    </column>
+    <column name="PO_HEADERS REF_1" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Your Reference</annotation>
+    </column>
+    <column name="PO_HEADERS SALES_PERS" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Responsible Salesperson at Vendor&apos;s Office</annotation>
+    </column>
+    <column name="PO_HEADERS TELEPHONE" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor&apos;s Telephone Number</annotation>
+    </column>
+    <column name="PO_HEADERS SUPPL_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplying Vendor</annotation>
+    </column>
+    <column name="PO_HEADERS CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="PO_HEADERS AGREEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="PO_HEADERS REJ_REASON" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for rejection of quotations and sales orders</annotation>
+    </column>
+    <column name="PO_HEADERS COMPL_DLV" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Complete Delivery Stipulated for Each Purchase Order</annotation>
+    </column>
+    <column name="PO_HEADERS GR_MESSAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Goods Receipt Message</annotation>
+    </column>
+    <column name="PO_HEADERS SUPPL_PLNT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Supplying (Issuing) Plant in Stock Transport Order</annotation>
+    </column>
+    <column name="PO_HEADERS RCVG_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field not used</annotation>
+    </column>
+    <column name="PO_HEADERS INCOTERMS1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Incoterms (Part 1)</annotation>
+    </column>
+    <column name="PO_HEADERS INCOTERMS2" nullable="false">
+      <datatype name="C28" subType="DATASOURCE_TYPE" type="STRING" maxLength="28"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Incoterms (Part 2)</annotation>
+    </column>
+    <column name="PO_HEADERS TARGET_VAL" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cumulative Planned Value</annotation>
+    </column>
+    <column name="PO_HEADERS COLL_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Collective Number</annotation>
+    </column>
+    <column name="PO_HEADERS DOC_COND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of the document condition</annotation>
+    </column>
+    <column name="PO_HEADERS PROCEDURE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Procedure (Pricing, Output Control, Acct. Det., Costing,...)</annotation>
+    </column>
+    <column name="PO_HEADERS UPDATE_GRP" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Update group for statistics update</annotation>
+    </column>
+    <column name="PO_HEADERS DIFF_INV" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Different Invoicing Party</annotation>
+    </column>
+    <column name="PO_HEADERS EXPORT_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of foreign trade data in MM and SD documents</annotation>
+    </column>
+    <column name="PO_HEADERS OUR_REF" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Our Reference</annotation>
+    </column>
+    <column name="PO_HEADERS LOGSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="PO_HEADERS SUBITEMINT" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number Interval for Subitems</annotation>
+    </column>
+    <column name="PO_HEADERS MAST_COND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document with time-dependent conditions</annotation>
+    </column>
+    <column name="PO_HEADERS REL_GROUP" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release group</annotation>
+    </column>
+    <column name="PO_HEADERS REL_STRAT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release Strategy</annotation>
+    </column>
+    <column name="PO_HEADERS REL_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release Indicator: Purchasing Document</annotation>
+    </column>
+    <column name="PO_HEADERS REL_STATUS" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release status</annotation>
+    </column>
+    <column name="PO_HEADERS SUBJ_TO_R" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release Not Yet Completely Effected</annotation>
+    </column>
+    <column name="PO_HEADERS TAXR_CNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country for Tax Return</annotation>
+    </column>
+    <column name="PO_HEADERS SCHED_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for scheduling agreement release documentation</annotation>
+    </column>
+    <column name="PO_HEADERS CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO Currency Code</annotation>
+    </column>
+    <column name="PO_HEADERS EXCH_RATE_CM" nullable="false">
+      <datatype name="P9.5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indirect Quoted Exchange Rate</annotation>
+    </column>
+    <column name="PO_ITEMS PO_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Number</annotation>
+    </column>
+    <column name="PO_ITEMS PO_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchasing Document</annotation>
+    </column>
+    <column name="PO_ITEMS DELETE_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deletion Indicator in Purchasing Document</annotation>
+    </column>
+    <column name="PO_ITEMS STATUS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>RFQ status</annotation>
+    </column>
+    <column name="PO_ITEMS CHANGED_ON" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Item Change Date</annotation>
+    </column>
+    <column name="PO_ITEMS SHORT_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short Text</annotation>
+    </column>
+    <column name="PO_ITEMS MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="PO_ITEMS PUR_MAT" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="PO_ITEMS CO_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="PO_ITEMS PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="PO_ITEMS STORE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="PO_ITEMS TRACKINGNO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Tracking Number</annotation>
+    </column>
+    <column name="PO_ITEMS MAT_GRP" nullable="false">
+      <datatype name="C9" subType="DATASOURCE_TYPE" type="STRING" maxLength="9"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Group</annotation>
+    </column>
+    <column name="PO_ITEMS INFO_REC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Purchasing Info Record</annotation>
+    </column>
+    <column name="PO_ITEMS VEND_MAT" nullable="false">
+      <datatype name="C22" subType="DATASOURCE_TYPE" type="STRING" maxLength="22"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material number used by vendor</annotation>
+    </column>
+    <column name="PO_ITEMS TARGET_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Target Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS QUANTITY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase Order Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase Order Unit of Measure</annotation>
+    </column>
+    <column name="PO_ITEMS ORDERPR_UN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Price Unit (Purchasing)</annotation>
+    </column>
+    <column name="PO_ITEMS CONV_NUM1" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Numerator for Conversion of Order Price Unit into Order Unit</annotation>
+    </column>
+    <column name="PO_ITEMS CONV_DEN1" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Denominator for Conv. of Order Price Unit into Order Unit</annotation>
+    </column>
+    <column name="PO_ITEMS CONV_NUM2" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Numerator for Conversion of Order Unit to Base Unit</annotation>
+    </column>
+    <column name="PO_ITEMS CONV_DEN2" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Denominator for Conversion of Order Unit to Base Unit</annotation>
+    </column>
+    <column name="PO_ITEMS NET_PRICE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net price in purchasing document (in document currency)</annotation>
+    </column>
+    <column name="PO_ITEMS PRICE_UNIT" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price Unit</annotation>
+    </column>
+    <column name="PO_ITEMS NET_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net order value in PO currency</annotation>
+    </column>
+    <column name="PO_ITEMS GROS_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Gross order value in PO currency</annotation>
+    </column>
+    <column name="PO_ITEMS QUOT_DEAD" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deadline for Submission of Bid/Quotation</annotation>
+    </column>
+    <column name="PO_ITEMS GR_PR_TIME" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Receipt Processing Time in Days</annotation>
+    </column>
+    <column name="PO_ITEMS TAX_CODE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax on sales/purchases code</annotation>
+    </column>
+    <column name="PO_ITEMS SETT_GRP1" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement Group 1 (Purchasing)</annotation>
+    </column>
+    <column name="PO_ITEMS QUAL_INSP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Stock Type</annotation>
+    </column>
+    <column name="PO_ITEMS INFO_UPD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Update Info Record</annotation>
+    </column>
+    <column name="PO_ITEMS PRNT_PRICE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price Printout</annotation>
+    </column>
+    <column name="PO_ITEMS EST_PRICE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Estimated Price</annotation>
+    </column>
+    <column name="PO_ITEMS NUM_REMIND" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reminders/Expediters</annotation>
+    </column>
+    <column name="PO_ITEMS REMINDER1" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Days for First Reminder/Expediter</annotation>
+    </column>
+    <column name="PO_ITEMS REMINDER2" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Days for Second Reminder/Expediter</annotation>
+    </column>
+    <column name="PO_ITEMS REMINDER3" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Days for Third Reminder/Expediter</annotation>
+    </column>
+    <column name="PO_ITEMS OVERDELTOL" nullable="false">
+      <datatype name="P3.1" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Overdelivery Tolerance Limit</annotation>
+    </column>
+    <column name="PO_ITEMS UNLIMITED" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Unlimited Overdelivery Allowed</annotation>
+    </column>
+    <column name="PO_ITEMS UNDER_TOL" nullable="false">
+      <datatype name="P3.1" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Underdelivery Tolerance Limit</annotation>
+    </column>
+    <column name="PO_ITEMS VAL_TYPE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Type</annotation>
+    </column>
+    <column name="PO_ITEMS VAL_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation Category</annotation>
+    </column>
+    <column name="PO_ITEMS REJ_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Rejection Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS COMMENT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal Comment on Quotation</annotation>
+    </column>
+    <column name="PO_ITEMS DEL_COMPL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>&quot;Delivery Completed&quot; Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS FINAL_INV" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Final Invoice Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS ITEM_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Category in Purchasing Document</annotation>
+    </column>
+    <column name="PO_ITEMS ACCTASSCAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Assignment Category</annotation>
+    </column>
+    <column name="PO_ITEMS CONSUMPT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Consumption Posting</annotation>
+    </column>
+    <column name="PO_ITEMS DISTRIB" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution Indicator for Multiple Account Assignment</annotation>
+    </column>
+    <column name="PO_ITEMS PART_INV" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partial Invoice Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS GR_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Receipt Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS GR_NON_VAL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Receipt, Non-Valuated</annotation>
+    </column>
+    <column name="PO_ITEMS IR_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Invoice Receipt Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS GR_BASEDIV" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: GR-Based Invoice Verification</annotation>
+    </column>
+    <column name="PO_ITEMS ACKN_REQD" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Acknowledgment Requirement</annotation>
+    </column>
+    <column name="PO_ITEMS ACKNOWL_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Acknowledgment Number</annotation>
+    </column>
+    <column name="PO_ITEMS AGREEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="PO_ITEMS AGMT_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="PO_ITEMS RECON_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reconciliation Date for Agreed Cumulative Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS AGRCUMQTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Agreed Cumulative Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS FIRM_ZONE" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Firm Zone (Go-Ahead for Production)</annotation>
+    </column>
+    <column name="PO_ITEMS TRADE_OFF" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Trade-Off Zone (Go-Ahead for Materials Procurement)</annotation>
+    </column>
+    <column name="PO_ITEMS BOM_EXPL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: BOM explosion</annotation>
+    </column>
+    <column name="PO_ITEMS EXCLUSION" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exclusion in Outline Agreement Item with Material Class</annotation>
+    </column>
+    <column name="PO_ITEMS BASE_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="PO_ITEMS SHIPPING" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Shipping Instructions</annotation>
+    </column>
+    <column name="PO_ITEMS OUTL_TARGV" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Target Value for Outline Agreement in Document Currency</annotation>
+    </column>
+    <column name="PO_ITEMS NOND_ITAX" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Non-deductible input tax</annotation>
+    </column>
+    <column name="PO_ITEMS RELORD_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard release order quantity</annotation>
+    </column>
+    <column name="PO_ITEMS PRICE_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of Price Determination</annotation>
+    </column>
+    <column name="PO_ITEMS DOC_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Document Category</annotation>
+    </column>
+    <column name="PO_ITEMS EFF_VALUE" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Effective value of item</annotation>
+    </column>
+    <column name="PO_ITEMS COMMITMENT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item affects commitments</annotation>
+    </column>
+    <column name="PO_ITEMS CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer</annotation>
+    </column>
+    <column name="PO_ITEMS ADDRESS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address</annotation>
+    </column>
+    <column name="PO_ITEMS COND_GROUP" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition Group with Vendor</annotation>
+    </column>
+    <column name="PO_ITEMS NO_C_DISC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Does Not Qualify for Cash Discount</annotation>
+    </column>
+    <column name="PO_ITEMS UPDATE_GRP" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Update group for statistics update</annotation>
+    </column>
+    <column name="PO_ITEMS PLAN_DEL" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned Delivery Time in Days</annotation>
+    </column>
+    <column name="PO_ITEMS NET_WEIGHT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net Weight</annotation>
+    </column>
+    <column name="PO_ITEMS WEIGHTUNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Weight</annotation>
+    </column>
+    <column name="PO_ITEMS TAX_JUR_CD" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="PO_ITEMS PRINT_REL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Print-relevant schedule lines exist</annotation>
+    </column>
+    <column name="PO_ITEMS SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS SETRESERNO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement reservation number</annotation>
+    </column>
+    <column name="PO_ITEMS SETTLITMNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the settlement reservation</annotation>
+    </column>
+    <column name="PO_ITEMS NOT_CHGBL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quality inspection indicator cannot be changed</annotation>
+    </column>
+    <column name="PO_ITEMS CTR_KEY_QM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Control Key for Quality Management in Procurement</annotation>
+    </column>
+    <column name="PO_ITEMS CERT_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Certificate Type</annotation>
+    </column>
+    <column name="PO_ITEMS EAN_UPC" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>International Article Number (EAN/UPC)</annotation>
+    </column>
+    <column name="PO_ITEMS CONF_CTRL" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation Control Key</annotation>
+    </column>
+    <column name="PO_ITEMS REV_LEV" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revision Level</annotation>
+    </column>
+    <column name="PO_ITEMS FUND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fund</annotation>
+    </column>
+    <column name="PO_ITEMS FUNDS_CTR" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds Center</annotation>
+    </column>
+    <column name="PO_ITEMS CMMT_ITEM" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="PO_ITEMS BA_PARTNER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Business area reported to the partner</annotation>
+    </column>
+    <column name="PO_ITEMS PTR_ASS_BA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>assumed business area of the business partner</annotation>
+    </column>
+    <column name="PO_ITEMS PROFIT_CTR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="PO_ITEMS PARTNER_PC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Profit Center</annotation>
+    </column>
+    <column name="PO_ITEMS PRICE_CTR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Price Determination (Pricing) Date Control</annotation>
+    </column>
+    <column name="PO_ITEMS GROSS_WGHT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Gross Weight</annotation>
+    </column>
+    <column name="PO_ITEMS VOLUME" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Volume</annotation>
+    </column>
+    <column name="PO_ITEMS VOLUMEUNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Volume unit</annotation>
+    </column>
+    <column name="PO_ITEMS INCOTERMS1" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Incoterms (Part 1)</annotation>
+    </column>
+    <column name="PO_ITEMS INCOTERMS2" nullable="false">
+      <datatype name="C28" subType="DATASOURCE_TYPE" type="STRING" maxLength="28"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Incoterms (Part 2)</annotation>
+    </column>
+    <column name="PO_ITEMS ADVANCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Advance procurement: project stock</annotation>
+    </column>
+    <column name="PO_ITEMS PRIOR_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Prior Vendor</annotation>
+    </column>
+    <column name="PO_ITEMS SUB_RANGE" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor Subrange</annotation>
+    </column>
+    <column name="PO_ITEMS PCKG_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Package number</annotation>
+    </column>
+    <column name="PO_ITEMS STATISTIC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item is statistical</annotation>
+    </column>
+    <column name="PO_ITEMS HL_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Higher-Level Item in Purchasing Documents</annotation>
+    </column>
+    <column name="PO_ITEMS GR_TO_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest Possible Goods Receipt</annotation>
+    </column>
+    <column name="PO_ITEMS SUPPL_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor to be supplied/who is to receive delivery</annotation>
+    </column>
+    <column name="PO_ITEMS SC_VENDOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subcontracting vendor</annotation>
+    </column>
+    <column name="PO_ITEMS CONF_MATL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cross-Plant Configurable Material</annotation>
+    </column>
+    <column name="PO_ITEMS MAT_CAT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Category</annotation>
+    </column>
+    <column name="PO_ITEMS KANBAN_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Kanban Indicator</annotation>
+    </column>
+    <column name="PO_ITEMS ADDRESS2" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of delivery address</annotation>
+    </column>
+    <column name="PO_ITEMS INT_OBJ_NO" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Configuration (internal object number)</annotation>
+    </column>
+    <column name="PO_ITEMS ERS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Evaluated Receipt Settlement (ERS)</annotation>
+    </column>
+    <column name="PO_ITEMS GRSETTFROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Date for GR-Based Settlement</annotation>
+    </column>
+    <column name="PO_ITEMS LAST_TRANS" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Last Transmission</annotation>
+    </column>
+    <column name="PO_ITEMS TRANS_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time</annotation>
+    </column>
+    <column name="PO_ITEMS SER_NO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequential Number</annotation>
+    </column>
+    <column name="PO_ITEMS PROMOTION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Promotion</annotation>
+    </column>
+    <column name="PO_ITEMS ALLOC_TBL" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation Table Number</annotation>
+    </column>
+    <column name="PO_ITEMS AT_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of allocation table</annotation>
+    </column>
+    <column name="PO_ITEMS POINTS" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Points</annotation>
+    </column>
+    <column name="PO_ITEMS POINTS_UN" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Points unit</annotation>
+    </column>
+    <column name="PO_ITEMS SEASON_TY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Season Category</annotation>
+    </column>
+    <column name="PO_ITEMS SEASON_YR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Season Year</annotation>
+    </column>
+    <column name="PO_ITEMS SETT_GRP_2" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement Group 2 (Rebate Settlement, Purchasing)</annotation>
+    </column>
+    <column name="PO_ITEMS SETT_GRP_3" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement Group 3 (Rebate Settlement, Purchasing)</annotation>
+    </column>
+    <column name="PO_ITEMS SETT_ITEM" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Relevant to Subsequent (Period-End Rebate) Settlement</annotation>
+    </column>
+    <column name="PO_ITEMS ML_AKT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material ledger activated at material level</annotation>
+    </column>
+    <column name="PO_ITEMS REMSHLIFE" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Minimum Remaining Shelf Life</annotation>
+    </column>
+    <column name="PO_ITEMS RFQ" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>RFQ Number</annotation>
+    </column>
+    <column name="PO_ITEMS RFQ_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of RFQ</annotation>
+    </column>
+    <column name="PO_ITEMS CONFIG_ORG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin of Configuration</annotation>
+    </column>
+    <column name="PO_ITEMS QUOTAUSAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quota arrangement usage</annotation>
+    </column>
+    <column name="PO_ITEMS SPSTCK_PHY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator for Physical Stock Transfer</annotation>
+    </column>
+    <column name="PO_ITEMS PREQ_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchase Requisition Number</annotation>
+    </column>
+    <column name="PO_ITEMS PREQ_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Purchase Requisition</annotation>
+    </column>
+    <column name="PO_ITEMS MAT_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Type</annotation>
+    </column>
+    <column name="PO_ITEMS SI_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subitem Category, Purchasing Document</annotation>
+    </column>
+    <column name="PO_ITEMS SUB_ITEMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subitems Exist</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_1" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 1 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_2" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 2 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_3" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 3 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_4" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 4 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_5" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 5 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBTOTAL_6" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition subtotal 6 from calculation schema</annotation>
+    </column>
+    <column name="PO_ITEMS SUBITM_KEY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Processing key for sub-items</annotation>
+    </column>
+    <column name="PO_ITEMS MAX_CMG" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Cumulative Material Go-Ahead Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS MAX_CPGO" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Cumulative Production Go-Ahead Quantity</annotation>
+    </column>
+    <column name="PO_ITEMS RET_ITEM" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Returns Item</annotation>
+    </column>
+    <column name="PO_ITEMS AT_RELEV" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Relevant to Allocation Table</annotation>
+    </column>
+    <column name="PO_ITEMS ORD_REAS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Ordering</annotation>
+    </column>
+    <column name="PO_ITEMS DEL_TYP_RT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery Type for Returns to Vendors</annotation>
+    </column>
+    <column name="PO_ITEMS PRDTE_CTRL" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material freight group</annotation>
+    </column>
+    <column name="PO_ITEMS MANUF_PROF" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manufacturer Part Profile</annotation>
+    </column>
+    <column name="PO_ITEMS MANU_MAT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manufacturer Part Number</annotation>
+    </column>
+    <column name="PO_ITEMS MFR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of a Manufacturer</annotation>
+    </column>
+    <column name="PO_ITEMS MFR_NO_EXT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External manufacturer code name or number</annotation>
+    </column>
+    <column name="PO_ITEMS ITEM_CAT_EXT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Category in Purchasing Document</annotation>
+    </column>
+    <column name="PO_ITEMS PO_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order unit in ISO code</annotation>
+    </column>
+    <column name="PO_ITEMS ORDERPR_UN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for purchase order price unit</annotation>
+    </column>
+    <column name="PO_ITEMS BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure in ISO code</annotation>
+    </column>
+    <column name="PO_ITEMS WEIGHTUNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of weight</annotation>
+    </column>
+    <column name="PO_ITEMS VOLUMEUNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Volume unit in ISO code</annotation>
+    </column>
+    <column name="PO_ITEMS POINTS_UN_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for points unit</annotation>
+    </column>
+    <column name="PO_ITEMS CONF_MATL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for CONF_MATL field</annotation>
+    </column>
+    <column name="PO_ITEMS CONF_MATL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for CONF_MATL Field</annotation>
+    </column>
+    <column name="PO_ITEMS CONF_MATL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for Field CONF_MATL</annotation>
+    </column>
+    <column name="PO_ITEMS MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="PO_ITEMS MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="PO_ITEMS MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="PO_ITEMS PUR_MAT_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for PUR_MAT Field</annotation>
+    </column>
+    <column name="PO_ITEMS PUR_MAT_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for PUR_MAT Field</annotation>
+    </column>
+    <column name="PO_ITEMS PUR_MAT_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for PUR_MAT Field</annotation>
+    </column>
+    <column name="PO_ITEMS GRANT_NBR" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grant</annotation>
+    </column>
+    <column name="PO_ITEMS CMMT_ITEM_LONG" nullable="false">
+      <datatype name="C24" subType="DATASOURCE_TYPE" type="STRING" maxLength="24"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Commitment Item</annotation>
+    </column>
+    <column name="PO_ITEMS FUNC_AREA_LONG" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="PO_ITEMS BUDGET_PERIOD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FM: Budget Period</annotation>
+    </column>
+    <column name="RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

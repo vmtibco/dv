@@ -1,0 +1,286 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="productsRel2XML" path="/users/composite/admin/CISTraining/Application/Services/productsRel2XML" type="PROCEDURE" subtype="XQUERY_TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="root" direction="OUT" nullable="true">
+      <datatype name="root" referenceDefinitionSet="/users/composite/admin/CISTraining/Application/DefinitionSets/Products" referenceType="root" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="root">
+        <schemaDatatype>
+          <datatype name="root" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="1">
+            <element name="ProductDetail" maxOccurs="2147483647">
+              <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="ProductId">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+                <element name="ProductName">
+                  <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="ProductCategory">
+                  <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="ProductPrice">
+                  <datatype name="decimal" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" minDigits="1" maxDigits="32" maxFractionalDigits="6" maxValue="-1"/>
+                </element>
+                <element name="ProductOnHand">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+                <element name="ProductReOrder">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Application/DefinitionSets/Products" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Inventory/tutorial/products" type="TABLE">
+    <datatype name="products" type="TABLE" refId="1">
+      <element name="productid">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="productname">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="productdescription">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="categoryid">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="serialnumber">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="unitprice">
+        <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="reorderlevel">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="leadtime">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1499744947263</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1499745115863</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1499744947263</attribute>
+  <attribute name="transformModel" type="NULL"/>
+  <attribute name="xquery" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace ns1=&quot;http://www.w3.org/2001/XMLSchema&quot;;
+
+&lt;root xmlns:ns1=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;{
+  let $nodes := (
+    element root {
+      let $query := &quot;select productid,productname,categoryid,unitprice,reorderlevel from /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Inventory/tutorial/products&quot;
+      let $products1 := composite:executeQuery($query)//result
+      for $products in $products1
+      return
+      element ProductDetail {
+        element ProductId {$products/productid/text()},
+        element ProductName {$products/productname/text()},
+        element ProductCategory {$products/categoryid/text()},
+        element ProductPrice {$products/unitprice/text()},
+        element ProductOnHand {},
+        element ProductReOrder {$products/reorderlevel/text()}
+      }
+    }
+  )
+  return
+  $nodes[1]
+}&lt;/root&gt;/root</attribute>
+  <attribute name="xqueryModel" type="STRING">
+&lt;xqueryModel customized=&quot;false&quot; version=&quot;new&quot;&gt;
+  &lt;rootNode&gt;
+    &lt;nodeType&gt;COMPLEX&lt;/nodeType&gt;
+    &lt;element name=&quot;root&quot;&gt;
+      &lt;datatype name=&quot;root&quot; referenceDefinitionSet=&quot;/users/composite/admin/CISTraining/Application/DefinitionSets/Products&quot; referenceType=&quot;root&quot; subType=&quot;ELEMENT_DECL&quot; type=&quot;XML&quot; contentConstraint=&quot;SEQUENCE&quot; schemaConstraint=&quot;ANY&quot; componentType=&quot;ELEMENT&quot; componentName=&quot;root&quot;&gt;
+        &lt;schemaDatatype&gt;
+          &lt;datatype name=&quot;root&quot; superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;ELEMENT_DECL&quot; anonymous=&quot;true&quot; type=&quot;TREE&quot; refId=&quot;1&quot;&gt;
+            &lt;element name=&quot;ProductDetail&quot; maxOccurs=&quot;2147483647&quot;&gt;
+              &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;2&quot;&gt;
+                &lt;element name=&quot;ProductId&quot;&gt;
+                  &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;ProductName&quot;&gt;
+                  &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;ProductCategory&quot;&gt;
+                  &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;ProductPrice&quot;&gt;
+                  &lt;datatype name=&quot;decimal&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; minDigits=&quot;1&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;6&quot; maxValue=&quot;-1&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;ProductOnHand&quot;&gt;
+                  &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;ProductReOrder&quot;&gt;
+                  &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                &lt;/element&gt;
+              &lt;/datatype&gt;
+            &lt;/element&gt;
+          &lt;/datatype&gt;
+        &lt;/schemaDatatype&gt;
+      &lt;/datatype&gt;
+    &lt;/element&gt;
+    &lt;sourcePath/&gt;
+    &lt;sourceType/&gt;
+    &lt;sourceSignature/&gt;
+    &lt;sourceAlias/&gt;
+    &lt;sourceJoin/&gt;
+    &lt;sourceFilter&gt;
+      &lt;text/&gt;
+    &lt;/sourceFilter&gt;
+    &lt;sourceSortOrder/&gt;
+    &lt;sourceGroupBy/&gt;
+    &lt;sourceInputs/&gt;
+    &lt;childNodes&gt;
+      &lt;childNode&gt;
+        &lt;nodeType&gt;COMPLEX&lt;/nodeType&gt;
+        &lt;element name=&quot;ProductDetail&quot; maxOccurs=&quot;2147483647&quot;&gt;
+          &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;1&quot;&gt;
+            &lt;element name=&quot;ProductId&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;ProductName&quot;&gt;
+              &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;ProductCategory&quot;&gt;
+              &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;ProductPrice&quot;&gt;
+              &lt;datatype name=&quot;decimal&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; minDigits=&quot;1&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;6&quot; maxValue=&quot;-1&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;ProductOnHand&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;ProductReOrder&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+          &lt;/datatype&gt;
+        &lt;/element&gt;
+        &lt;sourcePath&gt;/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Inventory/tutorial/products&lt;/sourcePath&gt;
+        &lt;sourceType&gt;TABLE&lt;/sourceType&gt;
+        &lt;sourceSignature&gt;
+          &lt;datatype name=&quot;products&quot; type=&quot;TABLE&quot; refId=&quot;1&quot;&gt;
+            &lt;element name=&quot;productid&quot;&gt;
+              &lt;datatype type=&quot;INTEGER&quot; minValue=&quot;-2147483648&quot; maxValue=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;productname&quot;&gt;
+              &lt;datatype type=&quot;STRING&quot; maxLength=&quot;50&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;productdescription&quot;&gt;
+              &lt;datatype type=&quot;STRING&quot; maxLength=&quot;255&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;categoryid&quot;&gt;
+              &lt;datatype type=&quot;INTEGER&quot; minValue=&quot;-2147483648&quot; maxValue=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;serialnumber&quot;&gt;
+              &lt;datatype type=&quot;STRING&quot; maxLength=&quot;50&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;unitprice&quot;&gt;
+              &lt;datatype type=&quot;DECIMAL&quot; maxDigits=&quot;12&quot; minFractionalDigits=&quot;2&quot; maxFractionalDigits=&quot;2&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;reorderlevel&quot;&gt;
+              &lt;datatype type=&quot;INTEGER&quot; minValue=&quot;-2147483648&quot; maxValue=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;leadtime&quot;&gt;
+              &lt;datatype type=&quot;STRING&quot; maxLength=&quot;30&quot;/&gt;
+            &lt;/element&gt;
+          &lt;/datatype&gt;
+        &lt;/sourceSignature&gt;
+        &lt;sourceAlias&gt;products&lt;/sourceAlias&gt;
+        &lt;sourceJoin&gt;
+          &lt;joinType&gt;CROSS&lt;/joinType&gt;
+          &lt;joinExpression/&gt;
+        &lt;/sourceJoin&gt;
+        &lt;sourceFilter&gt;
+          &lt;text/&gt;
+        &lt;/sourceFilter&gt;
+        &lt;sourceSortOrder/&gt;
+        &lt;sourceGroupBy/&gt;
+        &lt;sourceInputs/&gt;
+        &lt;childNodes&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductId&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value&gt;$products/productid/text()&lt;/value&gt;
+          &lt;/childNode&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductName&quot;&gt;
+              &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value&gt;$products/productname/text()&lt;/value&gt;
+          &lt;/childNode&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductCategory&quot;&gt;
+              &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value&gt;$products/categoryid/text()&lt;/value&gt;
+          &lt;/childNode&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductPrice&quot;&gt;
+              &lt;datatype name=&quot;decimal&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; minDigits=&quot;1&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;6&quot; maxValue=&quot;-1&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value&gt;$products/unitprice/text()&lt;/value&gt;
+          &lt;/childNode&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductOnHand&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value/&gt;
+          &lt;/childNode&gt;
+          &lt;childNode&gt;
+            &lt;nodeType&gt;SIMPLE&lt;/nodeType&gt;
+            &lt;element name=&quot;ProductReOrder&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;value&gt;$products/reorderlevel/text()&lt;/value&gt;
+          &lt;/childNode&gt;
+        &lt;/childNodes&gt;
+      &lt;/childNode&gt;
+    &lt;/childNodes&gt;
+  &lt;/rootNode&gt;
+  &lt;inputSignature/&gt;
+  &lt;xquery&gt;declare copy-namespaces no-preserve,inherit;
+declare namespace ns1=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;;
+
+&amp;lt;root xmlns:ns1=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;{
+  let $nodes := (
+    element root {
+      let $query := &amp;quot;select productid,productname,categoryid,unitprice,reorderlevel from /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Inventory/tutorial/products&amp;quot;
+      let $products1 := composite:executeQuery($query)//result
+      for $products in $products1
+      return
+      element ProductDetail {
+        element ProductId {$products/productid/text()},
+        element ProductName {$products/productname/text()},
+        element ProductCategory {$products/categoryid/text()},
+        element ProductPrice {$products/unitprice/text()},
+        element ProductOnHand {},
+        element ProductReOrder {$products/reorderlevel/text()}
+      }
+    }
+  )
+  return
+  $nodes[1]
+}&amp;lt;/root&amp;gt;/root&lt;/xquery&gt;
+&lt;/xqueryModel&gt;</attribute>
+</metadata>

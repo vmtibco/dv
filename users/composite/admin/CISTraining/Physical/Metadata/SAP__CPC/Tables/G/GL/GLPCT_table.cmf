@@ -1,0 +1,876 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="GLPCT" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/G/GL/GLPCT" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: EC-PCA: Totals Table
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2002-02-26
+
+Field name                     Type    Short text                                                   
+RCLNT                          C3      Client                                                       
+RLDNR                          C2      Ledger                                                       
+RRCTY                          C1      Record Type                                                  
+RVERS                          C3      Version                                                      
+RYEAR                          N4      Fiscal Year                                                  
+ROBJNR                         C18     Object number for FI-SL tables                               
+COBJNR                         C18     Object number for FI-SL tables                               
+SOBJNR                         C18     Object number for FI-SL tables                               
+RTCUR                          C5      Currency Key                                                 
+RUNIT                          C3      Base Unit of Measure                                         
+DRCRK                          C1      Debit/Credit Indicator                                       
+RPMAX                          N3      Period                                                       
+RBUKRS                         C4      Company Code                                                 
+RPRCTR                         C10     Profit Center                                                
+RHOART                         N2      Type of origin object (EC-PCA)                               
+RFAREA                         C16     Functional Area                                              
+KOKRS                          C4      Controlling Area                                             
+RACCT                          C10     Account Number                                               
+HRKFT                          C4      Origin Group as Subdivision of Cost Element                  
+RASSC                          C6      Company ID of trading partner                                
+EPRCTR                         C10     Partner profit center for elimination of internal business   
+ACTIV                          C4      FI-SL Business Transaction                                   
+AFABE                          N2      Real depreciation area                                       
+OCLNT                          N3      Original client                                              
+LOGSYS                         C10     Logical system                                               
+SBUKRS                         C4      Sender company code                                          
+SPRCTR                         C10     Partner Profit Center                                        
+SHOART                         N2      Type of receiver object                                      
+SFAREA                         C16     Partner Functional Area                                      
+VERSA                          C3      Results Analysis Version                                     
+TSLVT                          P15.2   Total transactions of the period in transaction currency     
+TSL01                          P15.2   Total transactions of the period in transaction currency     
+TSL02                          P15.2   Total transactions of the period in transaction currency     
+TSL03                          P15.2   Total transactions of the period in transaction currency     
+TSL04                          P15.2   Total transactions of the period in transaction currency     
+TSL05                          P15.2   Total transactions of the period in transaction currency     
+TSL06                          P15.2   Total transactions of the period in transaction currency     
+TSL07                          P15.2   Total transactions of the period in transaction currency     
+TSL08                          P15.2   Total transactions of the period in transaction currency     
+TSL09                          P15.2   Total transactions of the period in transaction currency     
+TSL10                          P15.2   Total transactions of the period in transaction currency     
+TSL11                          P15.2   Total transactions of the period in transaction currency     
+TSL12                          P15.2   Total transactions of the period in transaction currency     
+TSL13                          P15.2   Total transactions of the period in transaction currency     
+TSL14                          P15.2   Total transactions of the period in transaction currency     
+TSL15                          P15.2   Total transactions of the period in transaction currency     
+TSL16                          P15.2   Total transactions of the period in transaction currency     
+HSLVT                          P15.2   Total transactions for the period in company code curr.      
+HSL01                          P15.2   Total transactions for the period in company code curr.      
+HSL02                          P15.2   Total transactions for the period in company code curr.      
+HSL03                          P15.2   Total transactions for the period in company code curr.      
+HSL04                          P15.2   Total transactions for the period in company code curr.      
+HSL05                          P15.2   Total transactions for the period in company code curr.      
+HSL06                          P15.2   Total transactions for the period in company code curr.      
+HSL07                          P15.2   Total transactions for the period in company code curr.      
+HSL08                          P15.2   Total transactions for the period in company code curr.      
+HSL09                          P15.2   Total transactions for the period in company code curr.      
+HSL10                          P15.2   Total transactions for the period in company code curr.      
+HSL11                          P15.2   Total transactions for the period in company code curr.      
+HSL12                          P15.2   Total transactions for the period in company code curr.      
+HSL13                          P15.2   Total transactions for the period in company code curr.      
+HSL14                          P15.2   Total transactions for the period in company code curr.      
+HSL15                          P15.2   Total transactions for the period in company code curr.      
+HSL16                          P15.2   Total transactions for the period in company code curr.      
+KSLVT                          P15.2   Total transactions for the period in pctr local currency     
+KSL01                          P15.2   Total transactions for the period in pctr local currency     
+KSL02                          P15.2   Total transactions for the period in pctr local currency     
+KSL03                          P15.2   Total transactions for the period in pctr local currency     
+KSL04                          P15.2   Total transactions for the period in pctr local currency     
+KSL05                          P15.2   Total transactions for the period in pctr local currency     
+KSL06                          P15.2   Total transactions for the period in pctr local currency     
+KSL07                          P15.2   Total transactions for the period in pctr local currency     
+KSL08                          P15.2   Total transactions for the period in pctr local currency     
+KSL09                          P15.2   Total transactions for the period in pctr local currency     
+KSL10                          P15.2   Total transactions for the period in pctr local currency     
+KSL11                          P15.2   Total transactions for the period in pctr local currency     
+KSL12                          P15.2   Total transactions for the period in pctr local currency     
+KSL13                          P15.2   Total transactions for the period in pctr local currency     
+KSL14                          P15.2   Total transactions for the period in pctr local currency     
+KSL15                          P15.2   Total transactions for the period in pctr local currency     
+KSL16                          P15.2   Total transactions for the period in pctr local currency     
+MSLVT                          P15.3   Total of the transactions of period in units of measure      
+MSL01                          P15.3   Total of the transactions of period in units of measure      
+MSL02                          P15.3   Total of the transactions of period in units of measure      
+MSL03                          P15.3   Total of the transactions of period in units of measure      
+MSL04                          P15.3   Total of the transactions of period in units of measure      
+MSL05                          P15.3   Total of the transactions of period in units of measure      
+MSL06                          P15.3   Total of the transactions of period in units of measure      
+MSL07                          P15.3   Total of the transactions of period in units of measure      
+MSL08                          P15.3   Total of the transactions of period in units of measure      
+MSL09                          P15.3   Total of the transactions of period in units of measure      
+MSL10                          P15.3   Total of the transactions of period in units of measure      
+MSL11                          P15.3   Total of the transactions of period in units of measure      
+MSL12                          P15.3   Total of the transactions of period in units of measure      
+MSL13                          P15.3   Total of the transactions of period in units of measure      
+MSL14                          P15.3   Total of the transactions of period in units of measure      
+MSL15                          P15.3   Total of the transactions of period in units of measure      
+MSL16                          P15.3   Total of the transactions of period in units of measure      
+CSPRED                         C4      Distribution key for currency amounts                        
+QSPRED                         C4      Distribution key for quantities                              
+STAGR                          C6      Statistical key figure                                       
+WERKS                          C4      Plant                                                        
+REP_MATNR                      C18     Representative material for Profit Center Accounting         
+RSCOPE                         C2      Object Class                                                 
+RMVCT                          C3      Transaction Type                                             
+</annotation>
+  <columns>
+    <column name="RCLNT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="RLDNR" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ledger</annotation>
+    </column>
+    <column name="RRCTY" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Record Type</annotation>
+    </column>
+    <column name="RVERS" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version</annotation>
+    </column>
+    <column name="RYEAR" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year</annotation>
+    </column>
+    <column name="ROBJNR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number for FI-SL tables</annotation>
+    </column>
+    <column name="COBJNR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number for FI-SL tables</annotation>
+    </column>
+    <column name="SOBJNR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object number for FI-SL tables</annotation>
+    </column>
+    <column name="RTCUR" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="RUNIT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="DRCRK" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Debit/Credit Indicator</annotation>
+    </column>
+    <column name="RPMAX" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Period</annotation>
+    </column>
+    <column name="RBUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="RPRCTR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit Center</annotation>
+    </column>
+    <column name="RHOART" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of origin object (EC-PCA)</annotation>
+    </column>
+    <column name="RFAREA" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Functional Area</annotation>
+    </column>
+    <column name="KOKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="RACCT" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number</annotation>
+    </column>
+    <column name="HRKFT" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Origin Group as Subdivision of Cost Element</annotation>
+    </column>
+    <column name="RASSC" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="EPRCTR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner profit center for elimination of internal business</annotation>
+    </column>
+    <column name="ACTIV" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>FI-SL Business Transaction</annotation>
+    </column>
+    <column name="AFABE" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Real depreciation area</annotation>
+    </column>
+    <column name="OCLNT" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original client</annotation>
+    </column>
+    <column name="LOGSYS" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system</annotation>
+    </column>
+    <column name="SBUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sender company code</annotation>
+    </column>
+    <column name="SPRCTR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Profit Center</annotation>
+    </column>
+    <column name="SHOART" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of receiver object</annotation>
+    </column>
+    <column name="SFAREA" nullable="true">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Functional Area</annotation>
+    </column>
+    <column name="VERSA" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Results Analysis Version</annotation>
+    </column>
+    <column name="TSLVT" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL01" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL02" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL03" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL04" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL05" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL06" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL07" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL08" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL09" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL10" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL11" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL12" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL13" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL14" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL15" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="TSL16" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions of the period in transaction currency</annotation>
+    </column>
+    <column name="HSLVT" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL01" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL02" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL03" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL04" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL05" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL06" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL07" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL08" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL09" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL10" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL11" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL12" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL13" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL14" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL15" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="HSL16" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in company code curr.</annotation>
+    </column>
+    <column name="KSLVT" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL01" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL02" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL03" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL04" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL05" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL06" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL07" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL08" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL09" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL10" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL11" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL12" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL13" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL14" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL15" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="KSL16" nullable="true">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total transactions for the period in pctr local currency</annotation>
+    </column>
+    <column name="MSLVT" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL01" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL02" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL03" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL04" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL05" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL06" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL07" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL08" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL09" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL10" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL11" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL12" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL13" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL14" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL15" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="MSL16" nullable="true">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total of the transactions of period in units of measure</annotation>
+    </column>
+    <column name="CSPRED" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution key for currency amounts</annotation>
+    </column>
+    <column name="QSPRED" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution key for quantities</annotation>
+    </column>
+    <column name="STAGR" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Statistical key figure</annotation>
+    </column>
+    <column name="WERKS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="REP_MATNR" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Representative material for Profit Center Accounting</annotation>
+    </column>
+    <column name="RSCOPE" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Class</annotation>
+    </column>
+    <column name="RMVCT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transaction Type</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="RCLNT" sortOrder="NONE"/>
+      <indexColumn name="RLDNR" sortOrder="NONE"/>
+      <indexColumn name="RRCTY" sortOrder="NONE"/>
+      <indexColumn name="RVERS" sortOrder="NONE"/>
+      <indexColumn name="RYEAR" sortOrder="NONE"/>
+      <indexColumn name="ROBJNR" sortOrder="NONE"/>
+      <indexColumn name="COBJNR" sortOrder="NONE"/>
+      <indexColumn name="SOBJNR" sortOrder="NONE"/>
+      <indexColumn name="RTCUR" sortOrder="NONE"/>
+      <indexColumn name="RUNIT" sortOrder="NONE"/>
+      <indexColumn name="DRCRK" sortOrder="NONE"/>
+      <indexColumn name="RPMAX" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

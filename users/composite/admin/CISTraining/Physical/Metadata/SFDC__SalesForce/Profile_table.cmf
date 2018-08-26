@@ -1,0 +1,814 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Profile" path="/users/composite/admin/CISTraining/Physical/Metadata/SFDC_SalesForce/Profile" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="NONE">
+  <annotation>Child Relationships
+	User
+	Attributes:
+		Relationship Name : Users
+		Related Field     : ProfileId
+</annotation>
+  <columns>
+    <column name="Id" nullable="false">
+      <datatype name="id" extendedName="id" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Name" nullable="false">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEmailSingle" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEmailMass" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditTask" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditEvent" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsExportReport" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsImportPersonal" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditPublicTemplates" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsModifyAllData" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageCases" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsMassInlineEdit" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditKnowledge" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageKnowledge" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageSolutions" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCustomizeApplication" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditReadonlyFields" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsRunReports" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewSetup" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsTransferAnyEntity" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsNewReportBuilder" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsActivateContract" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsActivateOrder" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsImportLeads" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageLeads" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsTransferAnyLead" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewAllData" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditPublicDocuments" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewEncryptedData" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditBrandTemplates" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditHtmlTemplates" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsChatterInternalUser" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsDeleteActivatedContract" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsChatterInviteExternalUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsSendSitRequests" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageRemoteAccess" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCanUseNewDashboardBuilder" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageCategories" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsConvertLeads" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsPasswordNeverExpires" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsUseTeamReassignWizards" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditActivatedOrders" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsInstallMultiforce" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsPublishMultiforce" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsChatterOwnGroups" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditOppLineItemUnitPrice" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCreateMultiforce" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsBulkApiHardDelete" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsSolutionImport" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageCallCenters" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageSynonyms" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewContent" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageEmailClientConfig" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEnableNotifications" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageDataIntegrations" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsDistributeFromPersWksp" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewDataCategories" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageDataCategories" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsAuthorApex" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageMobile" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsApiEnabled" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageCustomReportTypes" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEditCaseComments" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsTransferAnyCase" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsContentAdministrator" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCreateWorkspaces" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageContentPermissions" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageContentProperties" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageContentTypes" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageAnalyticSnapshots" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsScheduleReports" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageBusinessHourHolidays" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageDynamicDashboards" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCustomSidebarOnAllPages" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageInteraction" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewMyTeamsDashboards" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsModerateChatter" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsResetPasswords" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsFlowUFLRequired" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsCanInsertFeedSystemFields" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageKnowledgeImportExport" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEmailTemplateManagement" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsEmailAdministration" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageChatterMessages" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsAllowEmailIC" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsChatterFileLink" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageNetworks" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsManageAuthProviders" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsRunFlow" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="PermissionsViewAllUsers" nullable="false">
+      <datatype name="boolean" extendedName="boolean" subType="DATASOURCE_TYPE" type="INTEGER" minValue="0" maxValue="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserLicenseId" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="UserType" nullable="true">
+      <datatype name="picklist" extendedName="picklist(40)" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CreatedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedDate" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="LastModifiedById" nullable="false">
+      <datatype name="reference" extendedName="reference" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SystemModstamp" nullable="false">
+      <datatype name="datetime" extendedName="datetime" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Description" nullable="true">
+      <datatype name="string" extendedName="string(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="Profile-Name-uk" type="HASHED" unique="true">
+      <indexColumn name="Name" sortOrder="ASCENDING"/>
+    </index>
+    <index name="Profile-id-uk" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="id" sortOrder="ASCENDING"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1432306154668</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="customColumns" type="SET"></attribute>
+  <attribute name="lastModifiedDate" type="LONG">1432306154668</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="nonFilterableColumns" type="SET"></attribute>
+  <attribute name="nonGroupableColumns" type="SET">
+    <item type="STRING">CreatedDate</item>
+    <item type="STRING">LastModifiedDate</item>
+    <item type="STRING">PermissionsActivateContract</item>
+    <item type="STRING">PermissionsActivateOrder</item>
+    <item type="STRING">PermissionsAllowEmailIC</item>
+    <item type="STRING">PermissionsApiEnabled</item>
+    <item type="STRING">PermissionsAuthorApex</item>
+    <item type="STRING">PermissionsBulkApiHardDelete</item>
+    <item type="STRING">PermissionsCanInsertFeedSystemFields</item>
+    <item type="STRING">PermissionsCanUseNewDashboardBuilder</item>
+    <item type="STRING">PermissionsChatterFileLink</item>
+    <item type="STRING">PermissionsChatterInternalUser</item>
+    <item type="STRING">PermissionsChatterInviteExternalUsers</item>
+    <item type="STRING">PermissionsChatterOwnGroups</item>
+    <item type="STRING">PermissionsContentAdministrator</item>
+    <item type="STRING">PermissionsConvertLeads</item>
+    <item type="STRING">PermissionsCreateMultiforce</item>
+    <item type="STRING">PermissionsCreateWorkspaces</item>
+    <item type="STRING">PermissionsCustomSidebarOnAllPages</item>
+    <item type="STRING">PermissionsCustomizeApplication</item>
+    <item type="STRING">PermissionsDeleteActivatedContract</item>
+    <item type="STRING">PermissionsDistributeFromPersWksp</item>
+    <item type="STRING">PermissionsEditActivatedOrders</item>
+    <item type="STRING">PermissionsEditBrandTemplates</item>
+    <item type="STRING">PermissionsEditCaseComments</item>
+    <item type="STRING">PermissionsEditEvent</item>
+    <item type="STRING">PermissionsEditHtmlTemplates</item>
+    <item type="STRING">PermissionsEditKnowledge</item>
+    <item type="STRING">PermissionsEditOppLineItemUnitPrice</item>
+    <item type="STRING">PermissionsEditPublicDocuments</item>
+    <item type="STRING">PermissionsEditPublicTemplates</item>
+    <item type="STRING">PermissionsEditReadonlyFields</item>
+    <item type="STRING">PermissionsEditTask</item>
+    <item type="STRING">PermissionsEmailAdministration</item>
+    <item type="STRING">PermissionsEmailMass</item>
+    <item type="STRING">PermissionsEmailSingle</item>
+    <item type="STRING">PermissionsEmailTemplateManagement</item>
+    <item type="STRING">PermissionsEnableNotifications</item>
+    <item type="STRING">PermissionsExportReport</item>
+    <item type="STRING">PermissionsFlowUFLRequired</item>
+    <item type="STRING">PermissionsImportLeads</item>
+    <item type="STRING">PermissionsImportPersonal</item>
+    <item type="STRING">PermissionsInstallMultiforce</item>
+    <item type="STRING">PermissionsManageAnalyticSnapshots</item>
+    <item type="STRING">PermissionsManageAuthProviders</item>
+    <item type="STRING">PermissionsManageBusinessHourHolidays</item>
+    <item type="STRING">PermissionsManageCallCenters</item>
+    <item type="STRING">PermissionsManageCases</item>
+    <item type="STRING">PermissionsManageCategories</item>
+    <item type="STRING">PermissionsManageChatterMessages</item>
+    <item type="STRING">PermissionsManageContentPermissions</item>
+    <item type="STRING">PermissionsManageContentProperties</item>
+    <item type="STRING">PermissionsManageContentTypes</item>
+    <item type="STRING">PermissionsManageCustomReportTypes</item>
+    <item type="STRING">PermissionsManageDataCategories</item>
+    <item type="STRING">PermissionsManageDataIntegrations</item>
+    <item type="STRING">PermissionsManageDynamicDashboards</item>
+    <item type="STRING">PermissionsManageEmailClientConfig</item>
+    <item type="STRING">PermissionsManageInteraction</item>
+    <item type="STRING">PermissionsManageKnowledge</item>
+    <item type="STRING">PermissionsManageKnowledgeImportExport</item>
+    <item type="STRING">PermissionsManageLeads</item>
+    <item type="STRING">PermissionsManageMobile</item>
+    <item type="STRING">PermissionsManageNetworks</item>
+    <item type="STRING">PermissionsManageRemoteAccess</item>
+    <item type="STRING">PermissionsManageSolutions</item>
+    <item type="STRING">PermissionsManageSynonyms</item>
+    <item type="STRING">PermissionsManageUsers</item>
+    <item type="STRING">PermissionsMassInlineEdit</item>
+    <item type="STRING">PermissionsModerateChatter</item>
+    <item type="STRING">PermissionsModifyAllData</item>
+    <item type="STRING">PermissionsNewReportBuilder</item>
+    <item type="STRING">PermissionsPasswordNeverExpires</item>
+    <item type="STRING">PermissionsPublishMultiforce</item>
+    <item type="STRING">PermissionsResetPasswords</item>
+    <item type="STRING">PermissionsRunFlow</item>
+    <item type="STRING">PermissionsRunReports</item>
+    <item type="STRING">PermissionsScheduleReports</item>
+    <item type="STRING">PermissionsSendSitRequests</item>
+    <item type="STRING">PermissionsSolutionImport</item>
+    <item type="STRING">PermissionsTransferAnyCase</item>
+    <item type="STRING">PermissionsTransferAnyEntity</item>
+    <item type="STRING">PermissionsTransferAnyLead</item>
+    <item type="STRING">PermissionsUseTeamReassignWizards</item>
+    <item type="STRING">PermissionsViewAllData</item>
+    <item type="STRING">PermissionsViewAllUsers</item>
+    <item type="STRING">PermissionsViewContent</item>
+    <item type="STRING">PermissionsViewDataCategories</item>
+    <item type="STRING">PermissionsViewEncryptedData</item>
+    <item type="STRING">PermissionsViewMyTeamsDashboards</item>
+    <item type="STRING">PermissionsViewSetup</item>
+    <item type="STRING">SystemModstamp</item>
+  </attribute>
+  <attribute name="nonSortableColumns" type="SET">
+    <item type="STRING">PermissionsActivateContract</item>
+    <item type="STRING">PermissionsActivateOrder</item>
+    <item type="STRING">PermissionsAllowEmailIC</item>
+    <item type="STRING">PermissionsApiEnabled</item>
+    <item type="STRING">PermissionsAuthorApex</item>
+    <item type="STRING">PermissionsBulkApiHardDelete</item>
+    <item type="STRING">PermissionsCanInsertFeedSystemFields</item>
+    <item type="STRING">PermissionsCanUseNewDashboardBuilder</item>
+    <item type="STRING">PermissionsChatterFileLink</item>
+    <item type="STRING">PermissionsChatterInternalUser</item>
+    <item type="STRING">PermissionsChatterInviteExternalUsers</item>
+    <item type="STRING">PermissionsChatterOwnGroups</item>
+    <item type="STRING">PermissionsContentAdministrator</item>
+    <item type="STRING">PermissionsConvertLeads</item>
+    <item type="STRING">PermissionsCreateMultiforce</item>
+    <item type="STRING">PermissionsCreateWorkspaces</item>
+    <item type="STRING">PermissionsCustomSidebarOnAllPages</item>
+    <item type="STRING">PermissionsCustomizeApplication</item>
+    <item type="STRING">PermissionsDeleteActivatedContract</item>
+    <item type="STRING">PermissionsDistributeFromPersWksp</item>
+    <item type="STRING">PermissionsEditActivatedOrders</item>
+    <item type="STRING">PermissionsEditBrandTemplates</item>
+    <item type="STRING">PermissionsEditCaseComments</item>
+    <item type="STRING">PermissionsEditEvent</item>
+    <item type="STRING">PermissionsEditHtmlTemplates</item>
+    <item type="STRING">PermissionsEditKnowledge</item>
+    <item type="STRING">PermissionsEditOppLineItemUnitPrice</item>
+    <item type="STRING">PermissionsEditPublicDocuments</item>
+    <item type="STRING">PermissionsEditPublicTemplates</item>
+    <item type="STRING">PermissionsEditReadonlyFields</item>
+    <item type="STRING">PermissionsEditTask</item>
+    <item type="STRING">PermissionsEmailAdministration</item>
+    <item type="STRING">PermissionsEmailMass</item>
+    <item type="STRING">PermissionsEmailSingle</item>
+    <item type="STRING">PermissionsEmailTemplateManagement</item>
+    <item type="STRING">PermissionsEnableNotifications</item>
+    <item type="STRING">PermissionsExportReport</item>
+    <item type="STRING">PermissionsFlowUFLRequired</item>
+    <item type="STRING">PermissionsImportLeads</item>
+    <item type="STRING">PermissionsImportPersonal</item>
+    <item type="STRING">PermissionsInstallMultiforce</item>
+    <item type="STRING">PermissionsManageAnalyticSnapshots</item>
+    <item type="STRING">PermissionsManageAuthProviders</item>
+    <item type="STRING">PermissionsManageBusinessHourHolidays</item>
+    <item type="STRING">PermissionsManageCallCenters</item>
+    <item type="STRING">PermissionsManageCases</item>
+    <item type="STRING">PermissionsManageCategories</item>
+    <item type="STRING">PermissionsManageChatterMessages</item>
+    <item type="STRING">PermissionsManageContentPermissions</item>
+    <item type="STRING">PermissionsManageContentProperties</item>
+    <item type="STRING">PermissionsManageContentTypes</item>
+    <item type="STRING">PermissionsManageCustomReportTypes</item>
+    <item type="STRING">PermissionsManageDataCategories</item>
+    <item type="STRING">PermissionsManageDataIntegrations</item>
+    <item type="STRING">PermissionsManageDynamicDashboards</item>
+    <item type="STRING">PermissionsManageEmailClientConfig</item>
+    <item type="STRING">PermissionsManageInteraction</item>
+    <item type="STRING">PermissionsManageKnowledge</item>
+    <item type="STRING">PermissionsManageKnowledgeImportExport</item>
+    <item type="STRING">PermissionsManageLeads</item>
+    <item type="STRING">PermissionsManageMobile</item>
+    <item type="STRING">PermissionsManageNetworks</item>
+    <item type="STRING">PermissionsManageRemoteAccess</item>
+    <item type="STRING">PermissionsManageSolutions</item>
+    <item type="STRING">PermissionsManageSynonyms</item>
+    <item type="STRING">PermissionsManageUsers</item>
+    <item type="STRING">PermissionsMassInlineEdit</item>
+    <item type="STRING">PermissionsModerateChatter</item>
+    <item type="STRING">PermissionsModifyAllData</item>
+    <item type="STRING">PermissionsNewReportBuilder</item>
+    <item type="STRING">PermissionsPasswordNeverExpires</item>
+    <item type="STRING">PermissionsPublishMultiforce</item>
+    <item type="STRING">PermissionsResetPasswords</item>
+    <item type="STRING">PermissionsRunFlow</item>
+    <item type="STRING">PermissionsRunReports</item>
+    <item type="STRING">PermissionsScheduleReports</item>
+    <item type="STRING">PermissionsSendSitRequests</item>
+    <item type="STRING">PermissionsSolutionImport</item>
+    <item type="STRING">PermissionsTransferAnyCase</item>
+    <item type="STRING">PermissionsTransferAnyEntity</item>
+    <item type="STRING">PermissionsTransferAnyLead</item>
+    <item type="STRING">PermissionsUseTeamReassignWizards</item>
+    <item type="STRING">PermissionsViewAllData</item>
+    <item type="STRING">PermissionsViewAllUsers</item>
+    <item type="STRING">PermissionsViewContent</item>
+    <item type="STRING">PermissionsViewDataCategories</item>
+    <item type="STRING">PermissionsViewEncryptedData</item>
+    <item type="STRING">PermissionsViewMyTeamsDashboards</item>
+    <item type="STRING">PermissionsViewSetup</item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1432306154668</attribute>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

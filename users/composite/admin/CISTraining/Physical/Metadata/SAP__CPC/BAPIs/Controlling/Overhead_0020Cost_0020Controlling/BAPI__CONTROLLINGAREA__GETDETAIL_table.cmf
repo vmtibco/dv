@@ -1,0 +1,280 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CONTROLLINGAREA_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_CONTROLLINGAREA_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2001-06-07
+Released on: 1999-02-16
+
+Supplies the following details about a &lt;DS:DE.KOKRS&gt;controlling area&lt;/&gt;: 
+Name 
+Currency 
+Chart of accounts 
+Fiscal year variant 
+DATA: CONTROLLINGAREAID        LIKE BAPI0004_2-CO_AREA , 
+      CONTROLLINGAREA_DETAIL   LIKE BAPI0004_2         , 
+      RETURN                   LIKE BAPIRETURN         . 
+
+CONTROLLINGAREAID = &apos;0001&apos;. 
+
+CALL FUNCTION &apos;BAPI_CONTROLLINGAREA_GETDETAIL&apos; 
+     EXPORTING 
+         CONTROLLINGAREAID      = CONTROLLINGAREAID 
+     IMPORTING 
+         CONTROLLINGAREA_DETAIL = CONTROLLINGAREA_DETAIL 
+         RETURN                 = RETURN 
+     EXCEPTIONS 
+         OTHERS                 = 1 . 
+You require system authorization for object &lt;DS:UO.S_TABU_DIS&gt;S_TABU_DIS&lt;/&gt; and table class KC. 
+You can determine existing controlling area keys with ControllingArea.GetList (BAPI_CONTROLLINGAREA_GETLIST). 
+Messages are returned in parameter RETURN. You can find the return values and their meanings in the parameter documentation. Export CONTROLLINGAREA_DETAIL
+The parameter structure holds selected information on the &lt;DS:DE.KOKRS&gt;controlling area&lt;/&gt;, such as the currency or chart of accounts. Export RETURN
+Method return code. Type    Code   Meaning E(rror) KZ600  No authorization for displaying controlling areas E(rror) KZ601  Controlling area X does not exist Blank   Blank  Method ended sucessfully Import CONTROLLINGAREAID
+Key for &lt;DS:DE.KOKRS&gt;controlling area&lt;/&gt; for which the R/3 System is to determine detailed information. </annotation>
+  <columns>
+    <column name="Import CONTROLLINGAREAID" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (Key)</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL NAME" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of the controlling area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CHRT_ACTTS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL FY_VARIANT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year Variant</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CC_HIER_GRP" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard Hierarchy for Cost Centers</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL PRCTR_HIER_GRP" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit center area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL BPROC_HIER_GRP" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Standard Hierarchy Area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL ASSIGNMENT_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation Indicator</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CO_AREA_LOGSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical System</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CCA_MASTERDATA_LOGSYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system for master data maintenance</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CCA_ALE_METHOD" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost center distribution method via ALE</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL PRCTR_ALE_METHOD" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Method for Distributing Profit Centers Using ALE</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL FM_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Management Area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL OPERATING_CONCERN" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operating concern</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL DUMMY_PROFIT_CENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Dummy Profit Center</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL PROFIT_CENTER_LEDGER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Profit center ledger</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL PRCTR_REPORT_CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Local Currency for Profit Center Accounting</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL PRCTR_CURRENCY_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency type of the profit center report currency</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL CO_AREA_CURRENCY_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Type for Controlling Area</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL VALUATION_VIEW" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation View</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL VALUATION_PROFILE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency and Valuation Profile</annotation>
+    </column>
+    <column name="Export CONTROLLINGAREA_DETAIL VALUATION_ACTIVE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ind.: Currency and Valuation Profile Active</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882772958</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882772958</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882772958</attribute>
+</metadata>

@@ -1,0 +1,314 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PROC_CHAR_GET_LIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Planning for Process Industries/BAPI_PROC_CHAR_GET_LIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2004-01-27
+Released on: 1998-07-23
+
+Using this method, you read &lt;GL:process_message_characteristic&gt;process message characteristics&lt;/&gt; and &lt;GL:process_instruction_characteristic&gt;process instruction characteristics&lt;/&gt; defined in the SAP system as well as their detail data. 
+For example, you obtain information on the characteristics group and the format of a characteristic. This information is stored in Customizing in the characteristics definition (see IMG for &lt;LS&gt;Process Management&lt;/&gt;, &lt;DS:SIMG.COCB332&gt;Define characteristics for process messages&lt;/&gt; and &lt;DS:SIMG.COCB412&gt;Define characteristics for process instructions&lt;/&gt;). 
+
+&lt;ZH&gt;Authorizations&lt;/&gt; 
+You need the following authorization to carry out the method: Authorization object,,Field            ,,Plant C_CABN              ,,Activity         ,,&lt;LS&gt;03&lt;/&gt; (Display characteristic) 
+&lt;ZH&gt;Selection Criteria&lt;/&gt; 
+In the parameters &lt;LS&gt;Plant&lt;/&gt;, &lt;LS&gt;InstrCharsFlag&lt;/&gt;, &lt;LS&gt;MessageCharsFlag&lt;/&gt;, and &lt;LS&gt;CharacteristicGroup&lt;/&gt;, you specify the characteristics for which detailed data is to be passed on. 
+In parameter &lt;LS&gt;Language&lt;/&gt;, you specify the language of the texts to be passed on. 
+&lt;ZH&gt;Characteristics Data&lt;/&gt; 
+The detailed data of the selected characteristics is returned in parameters &lt;LS&gt;CharacteristicData&lt;/&gt; and &lt;LS&gt;CharacteristicTexts&lt;/&gt;. 
+&lt;ZH&gt;System Messages&lt;/&gt; 
+System messages issued during message processing are returned in parameter &lt;LS&gt;Return&lt;/&gt;. For information on possible messages and their meaning, see the parameter documentation. 
+Export RETURN
+In this parameter, the SAP system returns the messages issued during the method call. Type,,ID ,,Number,,System message E   ,,CB1,,208   ,,No messages found for the selection criteria 
+    ,,   ,,      ,,you entered E   ,,CB1,,209   ,,Characteristic group &amp; not released for 
+    ,,   ,,      ,,the desired use E   ,,CB ,,615   ,,No authorization to display characteristic data 
+Import CHARACTERISTICGROUP
+In this parameter, you pass on the characteristics group whose characteristics are to be selected. 
+For information on the characteristics group, see the IMG for &lt;LS&gt; Process Management&lt;/&gt;, sections &lt;DS:SIMG.COCB331&gt;Define characteristics groups for process messages&lt;/&gt; and &lt;DS:SIMG.COCB411&gt;Define characteristics groups for process instructions&lt;/&gt;. 
+See the ABAP Dictionary &lt;LS&gt;&apos; &apos; (blank)&lt;/&gt; ,,All characteristics groups Import INSTRCHARSFLAG
+Using this parameter, you specify whether &lt;GL:process_instruction_characteristic&gt;process instruction characteristics&lt;/&gt; are to be selected. &lt;LS&gt;X&lt;/&gt;          ,,Select process instruction characteristics &lt;LS&gt;&apos; &apos; (blank)&lt;/&gt;,,Do not select process instruction characteristics &lt;LS&gt;X&lt;/&gt;          ,,Select process instruction characteristics Import LANGUAGE
+Using this parameter, you specify the language in which the short texts of the characteristics are to be passed on. 
+
+Logon language Import MESSAGECHARSFLAG
+Using this parameter, you specify whether &lt;GL:process_message_characteristic&gt;process message characteristics&lt;/&gt; are to be selected. &lt;LS&gt;X&lt;/&gt;          ,,Select process message characteristic &lt;LS&gt;&apos; &apos; (blank)&lt;/&gt;,,Do not select process message characteristic &lt;LS&gt;X&lt;/&gt;          ,,Select process message characteristic Import PLANT
+In this parameter, you pass on the key of the &lt;GL:plant&gt;plant&lt;/&gt; for which characteristics are to be selected. 
+See the ABAP Dictionary 
+CHARACTERISTICDATA
+In this table, the SAP system passes on the detailed data of the selected characteristics. For information on the meaning of the table fields, see the documentation of the corresponding data elements. 
+&lt;ZH&gt;Table Structure&lt;/&gt; NAME_CHAR       ,,&lt;DS:DE.ATNAM&gt;Characteristic name&lt;/&gt; DATA_TYPE       ,,&lt;DS:DE.ATFOR&gt;Data type of the characteristic&lt;/&gt; NUMBER_DIGITS   ,,&lt;DS:DE.ANZST&gt;Max. number of characters for characteristic value&lt;/&gt; NUMBER_DECIMALS ,,&lt;DS:DE.ANZDZ&gt;Number of decimal places&lt;/&gt; SIGN            ,,&lt;DS:DE.ATVOR&gt;Ind.: Negative values allowed&lt;/&gt; TEMPLATE        ,,&lt;DS:DE.ATSCH&gt;Template for value&lt;/&gt; CASE_SENSITIVE  ,,&lt;DS:DE.ATKLE&gt;Ind.: Case sensitive value&lt;/&gt; EXPONENT        ,,&lt;DS:DE.ATDIM&gt;Exponent display&lt;/&gt; EXPONENT_TYPE   ,,&lt;DS:DE.ATDEX&gt;Exponent display format&lt;/&gt; CHAR_GROUP      ,,&lt;DS:DE.ATKLA&gt;Characteristics group&lt;/&gt; LONGTEXT_FLAG   ,,&lt;DS:DE.CO_TXTRF&gt;Indicator: Characteristic value is long text&lt;/&gt; DATA_TYPE       ,,&lt;LS&gt;CHAR&lt;/&gt; ,,Alphanumeric character 
+                ,,&lt;LS&gt;NUM&lt;/&gt;  ,,Floating point number 
+                ,,&lt;LS&gt;DATE&lt;/&gt; ,,Date 
+                ,,&lt;LS&gt;TIME&lt;/&gt; ,,Time EXPONENT_TYPE   ,,See data element documentation 
+CHARACTERISTICTEXTS
+In this table, the SAP system returns the short texts of the selected characteristics. For information on the meaning of the table fields, see the documentation of the corresponding data elements. 
+&lt;ZH&gt;Table Structure&lt;/&gt; NAME_CHAR  ,,&lt;DS:DE.ATNAM&gt;Characteristic name&lt;/&gt; LANGU      ,,&lt;DS:DE.SPRAS&gt;Internal language key&lt;/&gt; LANGU_ISO  ,,Language key according to ISO 639 DESCR_CHAR ,,&lt;DS:DE.ATBEZ&gt;Language-dependent characteristic description &lt;/&gt; HD_LINE1   ,,&lt;DS:DE.ATUE1&gt;First line of heading&lt;/&gt; HD_LINE2   ,,&lt;DS:DE.ATUE2&gt;Second line of heading&lt;/&gt; 
+
+</annotation>
+  <columns>
+    <column name="Import CHARACTERISTICGROUP" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Characteristics Group of Characteristics</annotation>
+    </column>
+    <column name="Import INSTRCHARSFLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: &quot;Select Process Instruction Characteristics&quot; Indicator</annotation>
+    </column>
+    <column name="Import LANGUAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Language of Characteristic Texts</annotation>
+    </column>
+    <column name="Import MESSAGECHARSFLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: &quot;Select Message Characteristics&quot; Indicator</annotation>
+    </column>
+    <column name="Import PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Import: Plant</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN PARAMETER" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Name</annotation>
+    </column>
+    <column name="Export RETURN ROW" nullable="false">
+      <datatype name="I4" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lines in parameter</annotation>
+    </column>
+    <column name="Export RETURN FIELD" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field in parameter</annotation>
+    </column>
+    <column name="Export RETURN SYSTEM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Logical system from which message originates</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA NAME_CHAR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Characteristic Name</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA DATA_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data type of characteristic</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA NUMBER_DIGITS" nullable="false">
+      <datatype name="b2" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Characters</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA NUMBER_DECIMALS" nullable="false">
+      <datatype name="b2" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Decimal Places</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA SIGN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Value with Plus or Minus Sign</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA TEMPLATE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Value with template</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA CASE_SENSITIVE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Case Sensitive</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA EXPONENT" nullable="false">
+      <datatype name="b2" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exponent display</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA EXPONENT_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Exponent Display Format</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA CHAR_GROUP" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chars Group</annotation>
+    </column>
+    <column name="CHARACTERISTICDATA LONGTEXT_FLAG" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Characteristic value is long text</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS NAME_CHAR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Characteristic Name</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS DESCR_CHAR" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Characteristic description</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS HD_LINE1" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First Line of Heading</annotation>
+    </column>
+    <column name="CHARACTERISTICTEXTS HD_LINE2" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second line of heading</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421885500560</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421885500560</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421885500560</attribute>
+</metadata>

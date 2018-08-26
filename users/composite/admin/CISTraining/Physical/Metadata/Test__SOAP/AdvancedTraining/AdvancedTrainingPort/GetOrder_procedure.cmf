@@ -1,0 +1,126 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="GetOrder" path="/users/composite/admin/CISTraining/Physical/Metadata/Test_SOAP/AdvancedTraining/AdvancedTrainingPort/GetOrder" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="WrapperedGetorder" direction="IN" nullable="unknown">
+      <datatype name="WrapperedGetorder" namespace="http://tempuri.org/" referenceDefinitionSet="/users/composite/admin/CISTraining/Physical/Metadata/Test_SOAP/Definitions" referenceType="{http://tempuri.org/}WrapperedGetorder" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://tempuri.org/}WrapperedGetorder">
+        <schemaDatatype>
+          <datatype name="WrapperedGetorder" namespace="http://tempuri.org/" superTypeName="WrapperedGetorderType" superTypeNamespace="http://tempuri.org/" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="GetOrderOrderid" namespace="http://tempuri.org/">
+              <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="WrapperedGetorderResponse" direction="OUT" nullable="unknown">
+      <datatype name="WrapperedGetorderResponse" namespace="http://tempuri.org/" referenceDefinitionSet="/users/composite/admin/CISTraining/Physical/Metadata/Test_SOAP/Definitions" referenceType="{http://tempuri.org/}WrapperedGetorderResponse" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://tempuri.org/}WrapperedGetorderResponse">
+        <schemaDatatype>
+          <datatype name="WrapperedGetorderResponse" namespace="http://tempuri.org/" superTypeName="WrapperedGetorderResponseType" superTypeNamespace="http://tempuri.org/" subType="ELEMENT_DECL" type="TREE" refId="1">
+            <element name="GetOrderResult" namespace="http://tempuri.org/">
+              <datatype name="GetOrderResultOutputCursorType" namespace="http://tempuri.org/" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="row" namespace="http://tempuri.org/" maxOccurs="2147483647" minOccurs="0">
+                  <datatype name="GetOrderResultOutputRowType" namespace="http://tempuri.org/" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                    <element name="orderid" namespace="http://tempuri.org/">
+                      <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                    </element>
+                    <element name="productid" namespace="http://tempuri.org/">
+                      <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                    </element>
+                    <element name="quantity" namespace="http://tempuri.org/">
+                      <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                    </element>
+                    <element name="unitprice" namespace="http://tempuri.org/">
+                      <datatype name="decimal" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" minDigits="1" maxDigits="32" maxFractionalDigits="6" maxValue="-1"/>
+                    </element>
+                    <element name="status" namespace="http://tempuri.org/">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="discount" namespace="http://tempuri.org/">
+                      <datatype name="decimal" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" minDigits="1" maxDigits="32" maxFractionalDigits="6" maxValue="-1"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/Test_SOAP/Definitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;soapPortBinding&quot; contract=&quot;/users/composite/admin/CISTraining/Physical/Metadata/Test_SOAP/Definitions&quot; contractFirst=&quot;false&quot; contractStyle=&quot;ABSTRACT&quot; enableCustomEndpoint=&quot;false&quot; enableMTOM=&quot;false&quot; portName=&quot;AdvancedTrainingPort&quot; portXmlName=&quot;{http://tempuri.org/}AdvancedTrainingPort&quot; serviceName=&quot;AdvancedTraining&quot; serviceXmlName=&quot;{http://tempuri.org/}AdvancedTraining&quot; soapStyle=&quot;document&quot; soapTransport=&quot;http://schemas.xmlsoap.org/soap/http&quot; soapVersion=&quot;http://schemas.xmlsoap.org/wsdl/soap/http&quot; targetNamespace=&quot;http://tempuri.org/&quot; timeout=&quot;0&quot; bindingStyles=&quot;&quot; enabled=&quot;false&quot; endpointUrlPath=&quot;http://VMADIRED-WS01:9500/soap11/AdvancedTraining&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; enableFastInfoset=&quot;false&quot; enableMTOM=&quot;false&quot; enableSOAPAction=&quot;true&quot; nameSpace=&quot;http://tempuri.org/&quot; opName=&quot;GetOrder&quot; opXmlName=&quot;{http://tempuri.org/}GetOrder&quot; soapStyle=&quot;document&quot; timeout=&quot;0&quot; useInputEnvelop=&quot;false&quot; useOutputEnvelop=&quot;false&quot; usePortPipeline=&quot;false&quot; resourceName=&quot;GetOrder&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://tempuri.org/}GetOrderInput&quot; nameSpace=&quot;http://tempuri.org/&quot; partName=&quot;parameters&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://tempuri.org/}WrapperedGetorder&amp;quot;&quot; useChildParameter=&quot;false&quot; direction=&quot;INPUT&quot; elementName=&quot;{http://tempuri.org/}WrapperedGetorder&quot; name=&quot;WrapperedGetorder&quot; type=&quot;DEFINITION&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; location=&quot;body&quot; messageName=&quot;{http://tempuri.org/}GetOrderOutput&quot; nameSpace=&quot;http://tempuri.org/&quot; partName=&quot;parameters&quot; partPath=&quot;&amp;quot;{http://schemas.xmlsoap.org/soap/envelope/}Body&amp;quot;/&amp;quot;{http://tempuri.org/}WrapperedGetorderResponse&amp;quot;&quot; useChildParameter=&quot;false&quot; direction=&quot;OUTPUT&quot; elementName=&quot;{http://tempuri.org/}WrapperedGetorderResponse&quot; name=&quot;WrapperedGetorderResponse&quot; type=&quot;DEFINITION&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1465914680134</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="inputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUAEQBXAHIA
+YQBwAHAAZQByAGUAZABHAGUAdABvAHIAZABlAHIGLAATAGgAdAB0AHAAOgAvAC8AdABlAG0AcAB1
+AHIAaQAuAG8AcgBnAC8DLwAAAAIDFgAAAAADGgAAAAEDGwAAAAEDIP////8DIgAAAAAIGRAfBgIA
+EQBXAHIAYQBwAHAAZQByAGUAZABHAGUAdABvAHIAZABlAHIGJAATAGgAdAB0AHAAOgAvAC8AdABl
+AG0AcAB1AHIAaQAuAG8AcgBnAC8GJQAVAFcAcgBhAHAAcABlAHIAZQBkAEcAZQB0AG8AcgBkAGUA
+cgBUAHkAcABlBigAEwBoAHQAdABwADoALwAvAHQAZQBtAHAAdQByAGkALgBvAHIAZwAvAysAAAAO
+AxIAAAAEAxIAAAAEARMBCRQAAAABECEGFQAPAEcAZQB0AE8AcgBkAGUAcgBPAHIAZABlAHIAaQBk
+BiwAEwBoAHQAdABwADoALwAvAHQAZQBtAHAAdQByAGkALgBvAHIAZwAvAy8AAAABAxYAAAAAAxoA
+AAABAxsAAAABAyD/////AyIAAAAACBkQLwMS///3Xf////////////////////8=</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1465914680134</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="outputMessageType" type="BYTE_ARRAY">EBAGAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAB
+BjkAMwB7AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIA
+ZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwB9AEUAbgB2AGUAbABvAHAAZQM6AAAAAQgj
+EB8GAgAIAEUAbgB2AGUAbABvAHAAZQYkACkAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4A
+eABtAGwAcwBvAGEAcAAuAG8AcgBnAC8AcwBvAGEAcAAvAGUAbgB2AGUAbABvAHAAZQAvAxIAAAAC
+AxIAAAACARMBCRQAAAABECEGFQAEAEIAbwBkAHkGLAApAGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBt
+AGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMAbwBhAHAALwBlAG4AdgBlAGwAbwBwAGUA
+LwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg/////wMiAAAAAAgZEB8GAgAEAEIAbwBkAHkGJAAp
+AGgAdAB0AHAAOgAvAC8AcwBjAGgAZQBtAGEAcwAuAHgAbQBsAHMAbwBhAHAALgBvAHIAZwAvAHMA
+bwBhAHAALwBlAG4AdgBlAGwAbwBwAGUALwMSAAAAAwMSAAAAAwETAQkUAAAAARAhBhUAGQBXAHIA
+YQBwAHAAZQByAGUAZABHAGUAdABvAHIAZABlAHIAUgBlAHMAcABvAG4AcwBlBiwAEwBoAHQAdABw
+ADoALwAvAHQAZQBtAHAAdQByAGkALgBvAHIAZwAvAy8AAAACAxYAAAAAAxoAAAABAxsAAAABAyD/
+////AyIAAAAACBkQHwYCABkAVwByAGEAcABwAGUAcgBlAGQARwBlAHQAbwByAGQAZQByAFIAZQBz
+AHAAbwBuAHMAZQYkABMAaAB0AHQAcAA6AC8ALwB0AGUAbQBwAHUAcgBpAC4AbwByAGcALwYlAB0A
+VwByAGEAcABwAGUAcgBlAGQARwBlAHQAbwByAGQAZQByAFIAZQBzAHAAbwBuAHMAZQBUAHkAcABl
+BigAEwBoAHQAdABwADoALwAvAHQAZQBtAHAAdQByAGkALgBvAHIAZwAvAysAAAAOAxIAAAAEAxIA
+AAAEARMBCRQAAAABECEGFQAOAEcAZQB0AE8AcgBkAGUAcgBSAGUAcwB1AGwAdAYsABMAaAB0AHQA
+cAA6AC8ALwB0AGUAbQBwAHUAcgBpAC4AbwByAGcALwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAAAQMg
+/////wMiAAAAAAgZEB8GAgAeAEcAZQB0AE8AcgBkAGUAcgBSAGUAcwB1AGwAdABPAHUAdABwAHUA
+dABDAHUAcgBzAG8AcgBUAHkAcABlBiQAEwBoAHQAdABwADoALwAvAHQAZQBtAHAAdQByAGkALgBv
+AHIAZwAvBiUABwBhAG4AeQBUAHkAcABlBigAIABoAHQAdABwADoALwAvAHcAdwB3AC4AdwAzAC4A
+bwByAGcALwAyADAAMAAxAC8AWABNAEwAUwBjAGgAZQBtAGEDKwAAAAwDEgAAAAUDEgAAAAUBEwEJ
+FAAAAAEQIQYVAAMAcgBvAHcGLAATAGgAdAB0AHAAOgAvAC8AdABlAG0AcAB1AHIAaQAuAG8AcgBn
+AC8DLwAAAAEDFgAAAAADGgAAAAADG3////8DIP////8DIgAAAAAIGRAfBgIAGwBHAGUAdABPAHIA
+ZABlAHIAUgBlAHMAdQBsAHQATwB1AHQAcAB1AHQAUgBvAHcAVAB5AHAAZQYkABMAaAB0AHQAcAA6
+AC8ALwB0AGUAbQBwAHUAcgBpAC4AbwByAGcALwYlAAcAYQBuAHkAVAB5AHAAZQYoACAAaAB0AHQA
+cAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAAMQAvAFgATQBMAFMAYwBoAGUAbQBh
+AysAAAAMAxIAAAAGAxIAAAAGARMBCRQAAAAGECEGFQAHAG8AcgBkAGUAcgBpAGQGLAATAGgAdAB0
+AHAAOgAvAC8AdABlAG0AcAB1AHIAaQAuAG8AcgBnAC8DLwAAAAEDFgAAAAADGgAAAAEDGwAAAAED
+IP////8DIgAAAAAIGRAvAxL///dd/////xAhBhUACQBwAHIAbwBkAHUAYwB0AGkAZAYsABMAaAB0
+AHQAcAA6AC8ALwB0AGUAbQBwAHUAcgBpAC4AbwByAGcALwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAA
+AQMg/////wMiAAAAAAgZEC8DEv//913/////ECEGFQAIAHEAdQBhAG4AdABpAHQAeQYsABMAaAB0
+AHQAcAA6AC8ALwB0AGUAbQBwAHUAcgBpAC4AbwByAGcALwMvAAAAAQMWAAAAAAMaAAAAAQMbAAAA
+AQMg/////wMiAAAAAAgZEC8DEv//913/////ECEGFQAJAHUAbgBpAHQAcAByAGkAYwBlBiwAEwBo
+AHQAdABwADoALwAvAHQAZQBtAHAAdQByAGkALgBvAHIAZwAvAy8AAAABAxYAAAAAAxoAAAABAxsA
+AAABAyD/////AyIAAAAACBkQLwMS///3WP////8QIQYVAAYAcwB0AGEAdAB1AHMGLAATAGgAdAB0
+AHAAOgAvAC8AdABlAG0AcAB1AHIAaQAuAG8AcgBnAC8DLwAAAAEDFgAAAAADGgAAAAEDGwAAAAED
+IP////8DIgAAAAAIGRAvAxL///do/////xAhBhUACABkAGkAcwBjAG8AdQBuAHQGLAATAGgAdAB0
+AHAAOgAvAC8AdABlAG0AcAB1AHIAaQAuAG8AcgBnAC8DLwAAAAEDFgAAAAADGgAAAAEDGwAAAAED
+IP////8DIgAAAAAIGRAvAxL///dY////////////////////////////////</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1465914680134</attribute>
+</metadata>

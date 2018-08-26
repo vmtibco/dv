@@ -1,0 +1,209 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BidItems-SortMerge" path="/users/composite/admin/CISTraining/Business/Logical/BidItems-SortMerge" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="item_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="title" nullable="true">
+      <datatype type="STRING" maxLength="90"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="starting_bid" nullable="true">
+      <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="shipping_amount" nullable="true">
+      <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="bid_id" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="amount" nullable="true">
+      <datatype type="DECIMAL" maxDigits="14" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="time" nullable="true">
+      <datatype type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Northbay/tutorial/item" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="item_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="seller_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="category_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="title">
+        <datatype type="STRING" maxLength="90"/>
+      </element>
+      <element name="starting_bid">
+        <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="entry_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="expiration_date">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="shipping_amount">
+        <datatype type="DECIMAL" maxDigits="10" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="picture">
+        <datatype type="BLOB" maxLength="2147483647"/>
+      </element>
+      <element name="ext_description">
+        <datatype type="CLOB" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_NorthbayBid/tutorial/bid" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="bid_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="item_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="bidder_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="amount">
+        <datatype type="DECIMAL" maxDigits="14" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="time">
+        <datatype type="DATETIME"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    item.item_id, 
+    item.title, 
+    item.starting_bid, 
+    item.shipping_amount, 
+    bid.bid_id, 
+    bid.amount, 
+    bid.&quot;time&quot;
+FROM      
+    /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Northbay/tutorial/item item INNER JOIN 
+        /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_NorthbayBid/tutorial/bid bid
+    ON item.item_id = bid.item_id</attribute>
+  <attribute name="creationDate" type="LONG">1464582222601</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464639450437</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAMQUQYBAAMAYgBpAGQGAgADAGIAaQBkAwv/////Awr/////Awz/////CxEACQAFAHUA
+cwBlAHIAcwAJAGMAbwBtAHAAbwBzAGkAdABlAAUAYQBkAG0AaQBuAAsAQwBJAFMAVAByAGEAaQBu
+AGkAbgBnAAgAUABoAHkAcwBpAGMAYQBsAAoARgBvAHIAbQBhAHQAdABpAG4AZwAWAFAAbwBzAHQA
+ZwByAGUAUwBRAEwAXwBOAG8AcgB0AGgAYgBhAHkAQgBpAGQACAB0AHUAdABvAHIAaQBhAGwAAwBi
+AGkAZP//EFEGAQAEAGkAdABlAG0GAgAEAGkAdABlAG0DC/////8DCv////8DDP////8LEQAJAAUA
+dQBzAGUAcgBzAAkAYwBvAG0AcABvAHMAaQB0AGUABQBhAGQAbQBpAG4ACwBDAEkAUwBUAHIAYQBp
+AG4AaQBuAGcACABQAGgAeQBzAGkAYwBhAGwACgBGAG8AcgBtAGEAdAB0AGkAbgBnABMAUABvAHMA
+dABnAHIAZQBTAFEATABfAE4AbwByAHQAaABiAGEAeQAIAHQAdQB0AG8AcgBpAGEAbAAEAGkAdABl
+AG3//xBTBgkABQBJAE4ATgBFAFIDDQAAAAEDDgAAAAAIDxBiBgcAAQA9AQUACAMQQQYBAAcAaQB0
+AGUAbQBfAGkAZAYCAAAGA///BgT//wMK/////wMLAAAAAf//CAQQQQYBAAcAaQB0AGUAbQBfAGkA
+ZAYCAAAGA///BgT//wMK/////wMLAAAAAP///////wMFAAAAAQgCEDEGAf//AQIBAQYAAQMAAQQA
+AQUAAwcAAAAABwkAAAABAAAAAgkKAAAABxBBBgEABwBpAHQAZQBtAF8AaQBkBgIAAAYD//8GBP//
+Awr/////CAwQGQMSAAAAAQQH/////4AAAAAEBgAAAAB///////8DCwAAAAH//xBBBgEABQB0AGkA
+dABsAGUGAgAABgP//wYE//8DCv////8IDBAbAxIAAAABBAQAAAAAAAAAWgETAf//AwsAAAAB//8Q
+QQYBAAwAcwB0AGEAcgB0AGkAbgBnAF8AYgBpAGQGAgAABgP//wYE//8DCv////8IDBAXAxIAAAAB
+Aw4AAAAKAxEAAAACAxAAAAAC//8DCwAAAAH//xBBBgEADwBzAGgAaQBwAHAAaQBuAGcAXwBhAG0A
+bwB1AG4AdAYCAAAGA///BgT//wMK/////wgMEBcDEgAAAAEDDgAAAAoDEQAAAAIDEAAAAAL//wML
+AAAAAf//EEEGAQAGAGIAaQBkAF8AaQBkBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAAAQQH////
+/4AAAAAEBgAAAAB///////8DCwAAAAD//xBBBgEABgBhAG0AbwB1AG4AdAYCAAAGA///BgT//wMK
+/////wgMEBcDEgAAAAEDDgAAAA4DEQAAAAIDEAAAAAL//wMLAAAAAP//EEEGAQAEAHQAaQBtAGUG
+AgAABgP//wYE//8DCv////8IDBAWAxIAAAAB//8DCwAAAAD/////CQYAAAADEIIDCgAAAtwDCwAA
+AH8DDAAAAMgDDQAAAHL//xCCAwoAAAFcAwsAAABzAwwAAADIAw0AAADC//8QggMK/////wML////
+/wMM/////wMN////////CAMQcQMBAAAACwMCAAAAMgkDAAACJhB0AwYAAAAA//8QcgYE/////xBz
+AwUAAAAB//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHQDBgAAAAH//xByBgT/////EHMDBQAAAAH//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdAMGAAAAAv//EHIGBP////8QcwMFAAAAAf//EHUBBwH//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAD//8QcgYE////
+/xBzAwUAAAAB//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHQDBgAAAAT//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAABf//EHIGBP////8QcwMFAAAAAP//EHUBBwH/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAG//8QcgYE
+/////xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEH
+AP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////
+EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//
+EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//
+EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//
+EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//
+/////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC///
+//8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Q
+c///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8Q
+cgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Q
+dv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Q
+dv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/
+////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL////
+/xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD/
+/xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz
+//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xBy
+BgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2
+//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP//
+//8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/////
+//8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//
+EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP/
+/xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2////////</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464582222601</attribute>
+</metadata>

@@ -1,0 +1,1815 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_PLANNEDORDER_GET_DETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Production Planning and Control/Production Planning/BAPI_PLANNEDORDER_GET_DETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2005-12-10
+Released on: 1998-07-17
+
+This method can be used to obtain the details of a planned order. The details include the header data, material components, capacity header data, capacity data. Please note that this method reads data from the database. This means that you will not be able to obtain the detailed information of a planned order that is not saved yet to the database. For example, if you have just created a planned order with method &lt;DS:FU.BAPI_PLANNEDORDER_CREATE&gt;PlannedOrder.Create&lt;/&gt;, you can only get the details of this planned order after saving it to the database using such method as &lt;DS:FU.BAPI_TRANSACTION_COMMIT&gt;CommitWork&lt;/&gt;. 
+To help you understand how the method can be used, test transaction &quot;MDBA&quot; is available. It has integrated all 6 planned order methods into a transaction to deal with planned orders. 
+For more information, please refer to the program documentation on this transaction. The name of the program is &apos;MDBAPI01&apos;. 
+Authorization checks: 
+The following authorization objects are checked with the activity A (Display): 
+&lt;DS:UO.M_PLAF_ORG&gt;M_PLAF_ORG&lt;/&gt; 
+&lt;DS:UO.M_LFPL_ORG&gt;M_LFPL_ORG&lt;/&gt; 
+You can find more information in the parameter documentation of the parameters below. Confirmations: 
+Messages are received back in the parameter &apos;Return&apos;. You can find return values and their meaning in this parameter documentation. 
+Export CAPACITYHEADERDATA1
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity header data of the planned order if detailed scheduling data exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP dictionary. 
+
+Export CAPACITYHEADERDATA2
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity header data of the planned order if rate-based scheduling data exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP dictionary. 
+
+Export CAPACITYHEADERDATA3
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity header data of the planned order if rough-cut scheduling data exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP dictionary. 
+
+Export HEADERDATA
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the header data of the planned order. 
+
+Export RETURNINCLUDE BAPI_TABLE Error messages Type      ID      Number      Message 
+E       61       003       &lt;DS:NA.61003&gt;Planned order &amp; does not exist&lt;/&gt; 
+E       61       400       &lt;DS:NA.61400&gt;No authorization for &amp; in plant Success messages Type      ID      Number      Message 
+Import PLANNEDORDER
+You can find information on the meaning of the planned order number in the data element documentation: 
+&lt;DS:DE.PLNUM&gt;planned order number&lt;/&gt; INCLUDE BAPI_KEYFIELD 
+
+CAPACITYDATA1
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity data of the planned order if detailed scheduling exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP Dictionary. 
+
+CAPACITYDATA2
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity data of the planned order if rate-based scheduling exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP Dictionary. 
+
+CAPACITYDATA3
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the capacity data of the planned order if rough-cut scheduling exists. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP Dictionary. 
+
+COMPONENTSDATA
+When the system has found the planned order in question and obtained the details to export to the calling system, this parameter will be filled with the material components data of the planned order if material components exist. 
+You can find information on the meaning of individual parameter fields in the corresponding data element documentation in the ABAP Dictionary. 
+
+</annotation>
+  <columns>
+    <column name="Import PLANNEDORDER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order number</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 CAP_REQ_RECORDID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 GROUP_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 GROUP_COUNTER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 LAST_SCHED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of the last scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 PROD_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 EARLY_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 PROD_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 EARLY_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 SCHED_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 BREAK_ALLOW_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator:  Scheduling allowing for breaks</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 SCHED_REDTN_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduction indicator for scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 SCHEDULING_ERROR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 SCHED_SOURCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling source</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA1 ROUTING_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for routing transfer</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 CAP_REQ_RECORDID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 GROUP_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 GROUP_COUNTER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 LAST_SCHED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of the last scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 PROD_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 EARLY_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 PROD_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 EARLY_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 SCHED_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 BREAK_ALLOW_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator:  Scheduling allowing for breaks</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 SCHED_REDTN_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduction indicator for scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 SCHEDULING_ERROR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 SCHED_SOURCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling source</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA2 ROUTING_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for routing transfer</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 CAP_REQ_RECORDID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 ROUTING_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 TASK_LIST_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 GROUP_KEY" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 GROUP_COUNTER" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 LAST_SCHED_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of the last scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 PROD_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 EARLY_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled finish: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 PROD_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 EARLY_START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Earliest scheduled start: Execution (time)</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 SCHED_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling type</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 BREAK_ALLOW_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator:  Scheduling allowing for breaks</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 SCHED_REDTN_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduction indicator for scheduling</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 SCHEDULING_ERROR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 SCHED_SOURCE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling source</annotation>
+    </column>
+    <column name="Export CAPACITYHEADERDATA3 ROUTING_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for routing transfer</annotation>
+    </column>
+    <column name="Export HEADERDATA PLANNEDORDER_NUM" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order number</annotation>
+    </column>
+    <column name="Export HEADERDATA MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning material</annotation>
+    </column>
+    <column name="Export HEADERDATA PLAN_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Plant</annotation>
+    </column>
+    <column name="Export HEADERDATA PROD_PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production plant in planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA ORDER_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order type</annotation>
+    </column>
+    <column name="Export HEADERDATA PROCUREMENT_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Procurement Type</annotation>
+    </column>
+    <column name="Export HEADERDATA SPECIALPROC_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special procurement type</annotation>
+    </column>
+    <column name="Export HEADERDATA TOTAL_PLORD_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total planned order quantity</annotation>
+    </column>
+    <column name="Export HEADERDATA FIXED_SCRAP_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed quantity of scrap from production</annotation>
+    </column>
+    <column name="Export HEADERDATA REQ_QUAN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Quantity</annotation>
+    </column>
+    <column name="Export HEADERDATA ORDER_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order start date in planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA ORDER_FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order finish date in the planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA PLAN_OPEN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned opening date in planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA GR_PROC_TIME" nullable="false">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods receipt processing time in days</annotation>
+    </column>
+    <column name="Export HEADERDATA MRP_CONTROLLER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP controller</annotation>
+    </column>
+    <column name="Export HEADERDATA CONVERSION_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Conversion indicator for planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA FIRMING_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Firming indicator for planned order data</annotation>
+    </column>
+    <column name="Export HEADERDATA BOM_EXP_FIX_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixing indicator for BOM explosion</annotation>
+    </column>
+    <column name="Export HEADERDATA ACCTASSCAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Assignment Category</annotation>
+    </column>
+    <column name="Export HEADERDATA SALES_ORD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Order Number</annotation>
+    </column>
+    <column name="Export HEADERDATA S_ORD_ITEM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number in Sales Order</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHED_LINE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery Schedule for Sales Order</annotation>
+    </column>
+    <column name="Export HEADERDATA RESERV_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="Export HEADERDATA QUOTA_ARR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Quota Arrangement</annotation>
+    </column>
+    <column name="Export HEADERDATA QUOTARRITM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quota Arrangement Item</annotation>
+    </column>
+    <column name="Export HEADERDATA FIXED_VEND" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fixed Vendor</annotation>
+    </column>
+    <column name="Export HEADERDATA AGREEMENT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="Export HEADERDATA AGMT_ITEM" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Number of Principal Purchase Agreement</annotation>
+    </column>
+    <column name="Export HEADERDATA PURCH_ORG" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Purchasing Organization</annotation>
+    </column>
+    <column name="Export HEADERDATA STGE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="Export HEADERDATA CONSUMPT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Consumption Posting</annotation>
+    </column>
+    <column name="Export HEADERDATA SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="Export HEADERDATA INT_PROJ_ITEM" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>WBS Element</annotation>
+    </column>
+    <column name="Export HEADERDATA BOMEXPL_NO" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM explosion number</annotation>
+    </column>
+    <column name="Export HEADERDATA BOMEXPL_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Explosion date</annotation>
+    </column>
+    <column name="Export HEADERDATA VALIDITY_OBJECT" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Parameter Variant/Standard Variant</annotation>
+    </column>
+    <column name="Export HEADERDATA BOM_USAGE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM Usage</annotation>
+    </column>
+    <column name="Export HEADERDATA ALTERNATIVE_BOM" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Alternative BOM</annotation>
+    </column>
+    <column name="Export HEADERDATA BOM_STATUS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM status</annotation>
+    </column>
+    <column name="Export HEADERDATA CHANGE_NUMBER" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="Export HEADERDATA SETRESERNO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Settlement reservation number</annotation>
+    </column>
+    <column name="Export HEADERDATA SETTLITMNO" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the settlement reservation</annotation>
+    </column>
+    <column name="Export HEADERDATA DIST_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution key for quantity produced</annotation>
+    </column>
+    <column name="Export HEADERDATA VERSION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Version</annotation>
+    </column>
+    <column name="Export HEADERDATA RUNSCHD_HD" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Run schedule header number</annotation>
+    </column>
+    <column name="Export HEADERDATA PROD_SCHEDULER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supervisor</annotation>
+    </column>
+    <column name="Export HEADERDATA PROD_START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start date for production</annotation>
+    </column>
+    <column name="Export HEADERDATA PROD_FINISH_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Finish date for production</annotation>
+    </column>
+    <column name="Export HEADERDATA CAP_REQ_RECORDID" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHEDULING_ID" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for a schedule record</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHEDULING_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling indicator</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHEDULING_ERROR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error</annotation>
+    </column>
+    <column name="Export HEADERDATA PRODUCTION_NOTE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production note in the planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA BACKFLUSH_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Backflushing for order</annotation>
+    </column>
+    <column name="Export HEADERDATA BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="Export HEADERDATA CONFIGURATION" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Configuration (internal object number)</annotation>
+    </column>
+    <column name="Export HEADERDATA REVISION_LEVEL" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revision Level</annotation>
+    </column>
+    <column name="Export HEADERDATA REDUCED_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduced quantity in the planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHED_RATE_INDEX" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index for the results of scheduling production rates</annotation>
+    </column>
+    <column name="Export HEADERDATA ROUGH_SCHEDINDEXLT_INDEX" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Index for rough scheduling results</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHED_ERROR_PR" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error in scheduling production rates</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHED_ERROR_RS" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling error in rough scheduling</annotation>
+    </column>
+    <column name="Export HEADERDATA OBJECT_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object type</annotation>
+    </column>
+    <column name="Export HEADERDATA PLNG_SCENARIO_LT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planning Scenario of Long-Term Planning</annotation>
+    </column>
+    <column name="Export HEADERDATA SIM_REQ_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Simulation requirements number</annotation>
+    </column>
+    <column name="Export HEADERDATA KANBAN_INDICATOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Kanban Indicator</annotation>
+    </column>
+    <column name="Export HEADERDATA DISP_CAP_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: capacity for planned order dispatched</annotation>
+    </column>
+    <column name="Export HEADERDATA SEQ_NUMBER_ORDER" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Seq. number order</annotation>
+    </column>
+    <column name="Export HEADERDATA ORDER_STR_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Time of Planned Order</annotation>
+    </column>
+    <column name="Export HEADERDATA ORDER_FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End Time of Planned Order</annotation>
+    </column>
+    <column name="Export HEADERDATA ASS_ORD_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: for assembly order procedures</annotation>
+    </column>
+    <column name="Export HEADERDATA COLLORD_LEAD_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ind.: Leading order in collective order is planned ordre</annotation>
+    </column>
+    <column name="Export HEADERDATA AVAILABLE_CONF" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: confirmation of availability</annotation>
+    </column>
+    <column name="Export HEADERDATA COMMIT_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: committed quantity</annotation>
+    </column>
+    <column name="Export HEADERDATA PLORD_CTRL" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Action control: planned order processing</annotation>
+    </column>
+    <column name="Export HEADERDATA ACTION_PLND_ORD" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Action: planned order processing</annotation>
+    </column>
+    <column name="Export HEADERDATA DATE_OF_ACTION" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of action: planned order</annotation>
+    </column>
+    <column name="Export HEADERDATA TIME_OF_ACTION" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of action: Planned order processing</annotation>
+    </column>
+    <column name="Export HEADERDATA TOTAL_COMMIT_DAT" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total commitment date of plnd ord. after ATP check f.comps.</annotation>
+    </column>
+    <column name="Export HEADERDATA SCHED_PROD_DATES" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: scheduling using production dates</annotation>
+    </column>
+    <column name="Export HEADERDATA LEAD_SCHED_LEVEL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned order: leading scheduling level (determines dates)</annotation>
+    </column>
+    <column name="Export HEADERDATA ATP_CHECK_TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for type of availability check</annotation>
+    </column>
+    <column name="Export HEADERDATA PLN_WO_ASSEMBLY" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: planning without final assembly</annotation>
+    </column>
+    <column name="Export HEADERDATA REQ_PLAN_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements Plan Number</annotation>
+    </column>
+    <column name="Export HEADERDATA REQ_TOTALING" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements totaling</annotation>
+    </column>
+    <column name="Export HEADERDATA NUMERATOR" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Numerator for Conversion to Base Units of Measure</annotation>
+    </column>
+    <column name="Export HEADERDATA DENOMINATR" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Denominator for conversion to base units of measure</annotation>
+    </column>
+    <column name="Export HEADERDATA ENTRY_QNT" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity in Unit of Entry</annotation>
+    </column>
+    <column name="Export HEADERDATA UNIT_OF_ENTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="Export HEADERDATA REQ_RECORD_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements record number</annotation>
+    </column>
+    <column name="Export HEADERDATA SPEC_STVAL_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valuation of Special Stock</annotation>
+    </column>
+    <column name="Export HEADERDATA DELIV_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity of Goods Received</annotation>
+    </column>
+    <column name="Export HEADERDATA WITHDR_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issued Quantity</annotation>
+    </column>
+    <column name="Export HEADERDATA OBJ_DEPEND_TREE" nullable="false">
+      <datatype name="C17" subType="DATASOURCE_TYPE" type="STRING" maxLength="17"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal number for edge of object dependencies tree</annotation>
+    </column>
+    <column name="Export HEADERDATA SC_VENDOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subcontracting vendor</annotation>
+    </column>
+    <column name="Export HEADERDATA DELIV_REC_VENDOR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Vendor to be supplied/who is to receive delivery</annotation>
+    </column>
+    <column name="Export HEADERDATA MRP_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP Area</annotation>
+    </column>
+    <column name="Export HEADERDATA ISSUE_MRP_AREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing MRP area when transferring stock</annotation>
+    </column>
+    <column name="Export HEADERDATA MPN_MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number Corresponding to Manufacturer Part Number</annotation>
+    </column>
+    <column name="Export HEADERDATA REPETITIVE_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Repetitive Manufacturing indicator</annotation>
+    </column>
+    <column name="Export HEADERDATA BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export HEADERDATA UNIT_OF_ENTRY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="Export HEADERDATA MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA MPN_MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA MPN_MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA MPN_MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MPN_MATERIAL Field</annotation>
+    </column>
+    <column name="Export HEADERDATA SUPPL_STLOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issuing Storage Location for Stock Transport Order</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="CAPACITYDATA1 SEQUENCE_NUM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="CAPACITYDATA1 ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="CAPACITYDATA1 SUB_ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="CAPACITYDATA1 WORK_CNTR" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center</annotation>
+    </column>
+    <column name="CAPACITYDATA1 START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / date</annotation>
+    </column>
+    <column name="CAPACITYDATA1 START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / time</annotation>
+    </column>
+    <column name="CAPACITYDATA1 FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / date</annotation>
+    </column>
+    <column name="CAPACITYDATA1 FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / time</annotation>
+    </column>
+    <column name="CAPACITYDATA1 CAP_CAT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity category</annotation>
+    </column>
+    <column name="CAPACITYDATA1 CAP_REQ" nullable="false">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity requirements scheduled for the operation/activity</annotation>
+    </column>
+    <column name="CAPACITYDATA1 DISPLAY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of of measure for displaying capacity requirements</annotation>
+    </column>
+    <column name="CAPACITYDATA1 DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation short text</annotation>
+    </column>
+    <column name="CAPACITYDATA1 DISPLAY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="CAPACITYDATA2 SEQUENCE_NUM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="CAPACITYDATA2 ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="CAPACITYDATA2 SUB_ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="CAPACITYDATA2 WORK_CNTR" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center</annotation>
+    </column>
+    <column name="CAPACITYDATA2 START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / date</annotation>
+    </column>
+    <column name="CAPACITYDATA2 START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / time</annotation>
+    </column>
+    <column name="CAPACITYDATA2 FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / date</annotation>
+    </column>
+    <column name="CAPACITYDATA2 FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / time</annotation>
+    </column>
+    <column name="CAPACITYDATA2 CAP_CAT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity category</annotation>
+    </column>
+    <column name="CAPACITYDATA2 CAP_REQ" nullable="false">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity requirements scheduled for the operation/activity</annotation>
+    </column>
+    <column name="CAPACITYDATA2 DISPLAY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of of measure for displaying capacity requirements</annotation>
+    </column>
+    <column name="CAPACITYDATA2 DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation short text</annotation>
+    </column>
+    <column name="CAPACITYDATA2 DISPLAY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="CAPACITYDATA3 SEQUENCE_NUM" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sequence</annotation>
+    </column>
+    <column name="CAPACITYDATA3 ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation/Activity Number</annotation>
+    </column>
+    <column name="CAPACITYDATA3 SUB_ACTIVITY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Suboperation</annotation>
+    </column>
+    <column name="CAPACITYDATA3 WORK_CNTR" nullable="false">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Work center</annotation>
+    </column>
+    <column name="CAPACITYDATA3 START_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / date</annotation>
+    </column>
+    <column name="CAPACITYDATA3 START_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest start / time</annotation>
+    </column>
+    <column name="CAPACITYDATA3 FIN_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / date</annotation>
+    </column>
+    <column name="CAPACITYDATA3 FIN_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest finish / time</annotation>
+    </column>
+    <column name="CAPACITYDATA3 CAP_CAT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity category</annotation>
+    </column>
+    <column name="CAPACITYDATA3 CAP_REQ" nullable="false">
+      <datatype name="P7.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="7" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Capacity requirements scheduled for the operation/activity</annotation>
+    </column>
+    <column name="CAPACITYDATA3 DISPLAY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of of measure for displaying capacity requirements</annotation>
+    </column>
+    <column name="CAPACITYDATA3 DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Operation short text</annotation>
+    </column>
+    <column name="CAPACITYDATA3 DISPLAY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENTSDATA ORDER_LVL" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order level</annotation>
+    </column>
+    <column name="COMPONENTSDATA ORDER_PATH" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order path</annotation>
+    </column>
+    <column name="COMPONENTSDATA SORT_STRING" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sort String</annotation>
+    </column>
+    <column name="COMPONENTSDATA MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="COMPONENTSDATA PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="COMPONENTSDATA ITEM_CAT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item Category (Bill of Material)</annotation>
+    </column>
+    <column name="COMPONENTSDATA BOM_ITEM_NUMBER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM Item Number</annotation>
+    </column>
+    <column name="COMPONENTSDATA PHANT_ITEM" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Phantom item indicator</annotation>
+    </column>
+    <column name="COMPONENTSDATA SPEC_STOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Special Stock Indicator</annotation>
+    </column>
+    <column name="COMPONENTSDATA REQ_QUAN" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Quantity</annotation>
+    </column>
+    <column name="COMPONENTSDATA CONF_QUAN" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed quantity for availability check in SKU</annotation>
+    </column>
+    <column name="COMPONENTSDATA BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="COMPONENTSDATA ENTRY_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement quantity of the component</annotation>
+    </column>
+    <column name="COMPONENTSDATA ENTRY_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of Entry</annotation>
+    </column>
+    <column name="COMPONENTSDATA FIXED_QUAN" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity is Fixed</annotation>
+    </column>
+    <column name="COMPONENTSDATA COMP_SCRAP" nullable="false">
+      <datatype name="P5.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Component scrap in percent</annotation>
+    </column>
+    <column name="COMPONENTSDATA REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirement Date for the Component</annotation>
+    </column>
+    <column name="COMPONENTSDATA LATEST_REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Latest requirements date</annotation>
+    </column>
+    <column name="COMPONENTSDATA DIST_KEY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution key for component consumption</annotation>
+    </column>
+    <column name="COMPONENTSDATA REV_LEV" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revision Level</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_ITEM_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Variable-sized item indicator</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_ITEM_NUM" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of variable-size items</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_ITEM_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quantity of variable-size item</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_ITEM_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Unit of measure for sizes 1 to 3</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_1" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Size 1</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_2" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Size 2</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_3" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Size 3</annotation>
+    </column>
+    <column name="COMPONENTSDATA FORMULA_KEY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Formula key</annotation>
+    </column>
+    <column name="COMPONENTSDATA ISS_ST_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Issue Storage Location</annotation>
+    </column>
+    <column name="COMPONENTSDATA FOLLOWUP_ITEM" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Follow-Up Item</annotation>
+    </column>
+    <column name="COMPONENTSDATA MRP_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP Type</annotation>
+    </column>
+    <column name="COMPONENTSDATA MATL_DESC" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Description (Short Text)</annotation>
+    </column>
+    <column name="COMPONENTSDATA PLAN_WO_FA_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: planning without final assembly</annotation>
+    </column>
+    <column name="COMPONENTSDATA CHANGE_NUM" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="COMPONENTSDATA SUPPLYAREA" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supply Area</annotation>
+    </column>
+    <column name="COMPONENTSDATA REQ_TOTALING_TYP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requirements totaling type</annotation>
+    </column>
+    <column name="COMPONENTSDATA BASE_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENTSDATA ENTRY_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENTSDATA VARSIZE_ITEM_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code for unit of measurement</annotation>
+    </column>
+    <column name="COMPONENTSDATA MATERIAL_EXTERNAL" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="COMPONENTSDATA MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="COMPONENTSDATA MATERIAL_VERSION" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421885342360</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421885342360</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421885342360</attribute>
+</metadata>

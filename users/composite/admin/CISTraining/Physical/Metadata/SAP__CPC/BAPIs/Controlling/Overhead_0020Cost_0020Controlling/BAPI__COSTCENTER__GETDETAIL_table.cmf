@@ -1,0 +1,363 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_COSTCENTER_GETDETAIL" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_COSTCENTER_GETDETAIL" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1997-10-01
+
+This method supplies detailed information for a cost center. 
+The method requires the controlling area, the cost center, and a key date. 
+The method gives the name and description of the cost center, cost center manager and structures with address and communication data. Warning: This method is obsolete. 
+The GetDetail method is out-of-date as of Release 4.6. Functionality will be transferred from the GetDetail1 method. 
+If you have already used this method, you should change over to the new method. 
+Otherwise, use the new GetDetail1 method. 
+You want to see the present cost center manager and telephone number of cost center PRODUCTION in controlling area 0001. 
+Function module callup: 
+  DATA: I_CONTROLLINGAREA  LIKE BAPI0012_1-CO_AREA, 
+        I_COSTCENTER       LIKE BAPI0012_1-COSTCENTER, 
+        I_PERSON_IN_CHARGE LIKE BAPI0012_5-INCHARGE, 
+        I_ADDRESS          LIKE BAPI0012_3, 
+        I_COMMUNICATION    LIKE BAPI0012_4. 
+        I_RETURN           LIKE BAPIRETURN. 
+
+  I_CONTROLLINGAREA = &quot;0001&quot;. 
+  I_COSTCENTER      = &quot;PRODUCTION&quot;. 
+
+  CALL FUNCTION &quot;BAPI_COSTCENTER_GETDETAIL&quot; 
+    EXPORTING CONTROLLINGAREA  = I_CONTROLLINGAREA 
+              COSTCENTER       = I_COSTCENTER 
+              DATE             = SY-DATUM 
+    IMPORTING ADDRESS          = I_ADDRESS 
+              COMMUNICATION    = I_COMMUNICATION 
+              PERSON_IN_CHARGE = I_PERSON_IN_CHARGE 
+              RETURN           = I_RETURN. 
+
+You require system authorization for object &lt;DS:UO.K_CSKS&gt;K_CSKS&lt;/&gt;. 
+If no detailed information was found by the system for the cost center, you can find more information on the errors that occurred in the RETURN parameter. Export ADDRESS
+For more information on the individual fields in the address structure, see the corresponding data element documentation: 
+&lt;ZH&gt;Form of Address&lt;/&gt; 
+&lt;DS:DE.NAME1_GP&gt;Business Address&lt;/&gt; 
+&lt;DS:DE.STRAS_GP&gt;Street and House Number&lt;/&gt; 
+&lt;DS:DE.ORT01_GP&gt;Location 1&lt;/&gt; 
+&lt;DS:DE.PSTLZ&gt;Postal Code&lt;/&gt; 
+&lt;ZH&gt;PO Box&lt;/&gt; 
+&lt;DS:DE.PSTL2&gt;Postal Code of PO Box&lt;/&gt; 
+&lt;DS:DE.ORT02_GP&gt;Location 2/&lt;/&gt; 
+&lt;DS:DE.LAND1&gt;Country&lt;/&gt; 
+&lt;DS:DE.REGIO&gt;Region&lt;/&gt; 
+&lt;DS:DE.TXJCD&gt;Tax jur.code&lt;/&gt; Export COMMUNICATION
+For more information on the individual fields, see the corresponding data element documentation: 
+&lt;DS:DE.SPRAS&gt;Language&lt;/&gt; 
+&lt;ZH&gt;Telephone 1&lt;/&gt; 
+&lt;ZH&gt;Telephone 2/Extension&lt;/&gt; 
+&lt;DS:DE.TELBX&gt;Telebox&lt;/&gt; 
+&lt;DS:DE.KDNAM&gt;Printer Name&lt;/&gt; 
+&lt;ZH&gt;Telex Number&lt;/&gt; 
+&lt;DS:DE.TELFX&gt;Telefax Number&lt;/&gt; 
+&lt;DS:DE.TELTX&gt;Teletex Number&lt;/&gt; 
+&lt;DS:DE.DATLT&gt;Data Connection Number&lt;/&gt; Export DESCRIPTION
+Parameter holding the cost center name/description. 
+Dictionary data type: CHAR (field length 40) Export NAME
+This parameter contains the name of the cost center. 
+Dictionary data type: CHAR (Field length 20). 
+Export PERSON_IN_CHARGE
+Parameter holding the name of the cost center manager. 
+Dictionary data type: CHAR (field length 20) Export RETURN
+Return structure for errors and system messages. 
+
+Import CONTROLLINGAREA
+Parameter receiving the value of the controlling area in which you want to search for detailed cost center information. 
+For more information, see the corresponding data element documentation on &lt;DS:DE.KOKRS&gt;controlling areas&lt;/&gt;. 
+None. Import COSTCENTER
+Parameter receiving the value of the cost center in which you want to search for detailed information. 
+For more information, see the corresponding data element documentation on &lt;DS:DE.KOKRS&gt;cost centers&lt;/&gt;. 
+None. Import DATE
+Key date for which you want to search for details about a cost center. 
+You can find information about the importance of the key date in the corresponding data element documentation: 
+&lt;DS:DE.DATAB&gt;From date&lt;/&gt; 
+&lt;DS:DE.DATBI&gt;To date&lt;/&gt;. 
+Dictionary data type: DATS (field length 8). 
+Specify default with the current date (SY-DATUM). </annotation>
+  <columns>
+    <column name="Import CONTROLLINGAREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+    <column name="Import COSTCENTER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center</annotation>
+    </column>
+    <column name="Import DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Selection Date: Key Date</annotation>
+    </column>
+    <column name="Export ADDRESS TITLE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Title</annotation>
+    </column>
+    <column name="Export ADDRESS NAME" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export ADDRESS NAME_2" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export ADDRESS NAME_3" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export ADDRESS NAME_4" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export ADDRESS STREET" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House number and street</annotation>
+    </column>
+    <column name="Export ADDRESS CITY" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="Export ADDRESS DISTRICT" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="Export ADDRESS COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Export ADDRESS TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="Export ADDRESS PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="Export ADDRESS POSTL_CODE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Postal Code</annotation>
+    </column>
+    <column name="Export ADDRESS POBX_PCD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>P.O. Box Postal Code</annotation>
+    </column>
+    <column name="Export ADDRESS REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="Export COMMUNICATION TELEPHONE1" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First telephone number</annotation>
+    </column>
+    <column name="Export COMMUNICATION TELEPHONE2" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second telephone number</annotation>
+    </column>
+    <column name="Export COMMUNICATION LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Export COMMUNICATION FAX_NUMBER" nullable="false">
+      <datatype name="C31" subType="DATASOURCE_TYPE" type="STRING" maxLength="31"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fax Number</annotation>
+    </column>
+    <column name="Export COMMUNICATION TELEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telex number</annotation>
+    </column>
+    <column name="Export COMMUNICATION TELETEXT" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Teletex number</annotation>
+    </column>
+    <column name="Export COMMUNICATION TELEBOX" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telebox number</annotation>
+    </column>
+    <column name="Export COMMUNICATION DATA_LINE" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data communication line no.</annotation>
+    </column>
+    <column name="Export COMMUNICATION PRINTER" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Printer destination for CCtr report</annotation>
+    </column>
+    <column name="Export DESCRIPTION" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center Description</annotation>
+    </column>
+    <column name="Export NAME" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center Name</annotation>
+    </column>
+    <column name="Export PERSON_IN_CHARGE" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost Center Manager</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882770438</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882770438</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882770438</attribute>
+</metadata>

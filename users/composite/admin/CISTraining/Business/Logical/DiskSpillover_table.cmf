@@ -1,0 +1,64 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="DiskSpillover" path="/users/composite/admin/CISTraining/Business/Logical/DiskSpillover" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="key" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="fielda" nullable="true">
+      <datatype type="STRING" maxLength="45"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="1" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="fielda1" nullable="true">
+      <datatype type="STRING" maxLength="45"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Training/training/query_engine_lab" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="key">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="fielda">
+        <datatype type="STRING" maxLength="45"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT {OPTION FORCE_DISK}
+    query_engine_lab.&quot;key&quot;, 
+    query_engine_lab.fielda, 
+    query_engine_lab_1.&quot;key&quot; &quot;1&quot;, 
+    query_engine_lab_1.fielda fielda1
+FROM      
+    /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Training/training/query_engine_lab query_engine_lab INNER {option disable_push, hash} JOIN 
+        /users/composite/admin/CISTraining/Physical/Formatting/PostgreSQL_Training/training/query_engine_lab query_engine_lab_1
+    ON query_engine_lab.&quot;key&quot; = query_engine_lab_1.&quot;key&quot;</attribute>
+  <attribute name="creationDate" type="LONG">1464639732855</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464639829828</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464639732855</attribute>
+</metadata>

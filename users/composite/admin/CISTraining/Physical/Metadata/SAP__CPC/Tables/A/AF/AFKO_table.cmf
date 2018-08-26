@@ -1,0 +1,1298 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="AFKO" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/A/AF/AFKO" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Order header data PP orders
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2012-02-28
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+AUFNR                          C12     Order Number                                                 
+GLTRP                          D8      Basic finish date                                            
+GSTRP                          D8      Basic Start Date                                             
+FTRMS                          D8      Scheduled release date                                       
+GLTRS                          D8      Scheduled finish                                             
+GSTRS                          D8      Scheduled start                                              
+GSTRI                          D8      Actual start date                                            
+GETRI                          D8      Confirmed Order Finish Date                                  
+GLTRI                          D8      Actual finish date                                           
+FTRMI                          D8      Actual release date                                          
+FTRMP                          D8      Planned release date                                         
+RSNUM                          N10     Number of Reservation/Dependent Requirement                  
+GASMG                          P13.3   Total scrap quantity in the order                            
+GAMNG                          P13.3   Total order quantity                                         
+GMEIN                          C3      Base Unit of Measure                                         
+PLNBEZ                         C18     Material Number                                              
+PLNTY                          C1      Task List Type                                               
+PLNNR                          C8      Key for Task List Group                                      
+PLNAW                          C1      Application of the task list                                 
+PLNAL                          C2      Group Counter                                                
+PVERW                          C3      Task list usage                                              
+PLAUF                          D8      Date for routing transfer                                    
+PLSVB                          P13.3   To lot size                                                  
+PLNME                          C3      Task list unit of measure                                    
+PLSVN                          P13.3   From Lot Size                                                
+PDATV                          D8      Valid-From Date                                              
+PAENR                          C12     Change Number                                                
+PLGRP                          C3      Responsible planner group/department                         
+LODIV                          P13.3   Lot size divisor                                             
+STLTY                          C1      BOM category                                                 
+STLBEZ                         C18     Material Number                                              
+STLST                          N2      BOM status                                                   
+STLNR                          C8      Bill of material                                             
+SDATV                          D8      Valid-From Date                                              
+SBMNG                          P13.3   Base quantity                                                
+SBMEH                          C3      Base Unit of Measure                                         
+SAENR                          C12     Change Number                                                
+STLAL                          C2      Alternative BOM                                              
+STLAN                          C1      BOM Usage                                                    
+SLSVN                          P13.3   From Lot Size                                                
+SLSBS                          P13.3   To Lot Size                                                  
+AUFLD                          D8      Date of BOM Explosion/Routing Transfer                       
+DISPO                          C3      MRP controller for the order                                 
+AUFPL                          N10     Routing number of operations in the order                    
+FEVOR                          C3      Production Supervisor                                        
+FHORI                          C3      Scheduling Margin Key for Floats                             
+TERKZ                          C1      Scheduling type                                              
+REDKZ                          C1      Reduction indicator for scheduling                           
+APRIO                          C1      Order priority                                               
+NTZUE                          C12     Superior network number                                      
+VORUE                          C4      Superior activity                                            
+PROFID                         C7      Network profile                                              
+VORGZ                          N3      Float before production (in days)                            
+SICHZ                          N3      Float after production (in days)                             
+FREIZ                          N3      Release period (in days)                                     
+UPTER                          C1      Indicator: Change to Scheduled Dates                         
+BEDID                          N12     ID of the capacity requirements record                       
+PRONR                          N8      Project definition                                           
+ZAEHL                          N8      Internal counter                                             
+MZAEHL                         N8      Internal counter                                             
+ZKRIZ                          N7      Counter for additional criteria                              
+PRUEFLOS                       N12     Inspection Lot Number                                        
+KLVARP                         C4      Costing variant for planned costs                            
+KLVARI                         C4      Costing variant for actual costs                             
+RGEKZ                          C1      Indicator: Backflushing for order                            
+PLART                          C1      Basis for scheduling                                         
+FLG_AOB                        C1      Indicator: relationships                                     
+FLG_ARBEI                      C1      Indicator: Default value work is relevant                    
+GLTPP                          D8      Finish date (forecast)                                       
+GSTPP                          D8      Forecast start date                                          
+GLTPS                          D8      Scheduled forecast finish                                    
+GSTPS                          D8      Scheduled forecast start                                     
+FTRPS                          D8      Scheduled release date (forecast)                            
+RDKZP                          C1      Reduction indicator for scheduling (forecast)                
+TRKZP                          C1      Scheduling type (forecast)                                   
+RUECK                          N10     Completion confirmation number for the operation             
+RMZHL                          N8      Internal counter                                             
+IGMNG                          P13.3   Yield confirmed from order confirmation                      
+RATID                          N12     ID of the capacity requirements record                       
+GROID                          N12     ID of the capacity requirements record                       
+CUOBJ                          N18     Configuration (internal object number)                       
+GLUZS                          T6      Scheduled finish time                                        
+GSUZS                          T6      Scheduled start time                                         
+REVLV                          C2      Revision Level                                               
+RSHTY                          C2      Object types of the CIM resource                             
+RSHID                          N8      Object ID of the resource                                    
+RSNTY                          C2      Object types of the CIM resource                             
+RSNID                          N8      Object ID of the resource                                    
+NAUTERM                        C1      Indicator: Do not schedule automatically                     
+NAUCOST                        C1      Indicator: Do not cost automatically                         
+STUFE                          P2      Level (in multi-level BOM explosions)                        
+WEGXX                          P4      Path (for multi-level BOM explosions)                        
+VWEGX                          P4      Path (for multi-level BOM explosions)                        
+ARSNR                          N10     Number of Reservation/Dependent Requirement                  
+ARSPS                          N4      Order Item Number                                            
+MAUFNR                         C12     Number of superior order                                     
+LKNOT                          C12     Left node in collective order                                
+RKNOT                          C12     Right node of a collective order                             
+PRODNET                        C1      Indicator: Order is part of collective order                 
+IASMG                          P13.3   Scrap confirmed for order                                    
+ABARB                          N3      Confirmation: Degree of processing                           
+AUFNT                          C12     Number of superior network                                   
+AUFPT                          N10     Routing number of operations in the order                    
+APLZT                          N8      General counter for order                                    
+NO_DISP                        C1      Effective for Materials Planning                             
+CSPLIT                         C4      Apportionment Structure                                      
+AENNR                          C12     Change Number                                                
+CY_SEQNR                       N14     Seq. number order                                            
+BREAKS                         C1      Indicator:  Scheduling allowing for breaks                   
+VORGZ_TRM                      P6.3    Scheduled float before production in days                    
+SICHZ_TRM                      P6.3    Scheduled float after production in days                     
+TRMDT                          D8      Date of the last scheduling                                  
+GLUZP                          T6      Basic finish (time)                                          
+GSUZP                          T6      Basic start time                                             
+GSUZI                          T6      Actual start time                                            
+GEUZI                          T6      Confirmed order finish (time)                                
+GLUPP                          T6      Forecast finish (time)                                       
+GSUPP                          T6      Forecast start (time)                                        
+GLUPS                          T6      Scheduled forecast finish time                               
+GSUPS                          T6      Scheduled start time (Forecast)                              
+CHSCH                          C6      Search procedure for batch determination                     
+KAPT_VORGZ                     N3      Float (bef. production) remaining after finite scheduling    
+KAPT_SICHZ                     N3      Remaining float after finite scheduling                      
+LEAD_AUFNR                     C12     Leading order in current processing                          
+PNETSTARTD                     D8      Outline start of collective network (date)                   
+PNETSTARTT                     T6      Start time of a collective order                             
+PNETENDD                       D8      Outline finish of collective order (date)                    
+PNETENDT                       T6      Outline finish time                                          
+KBED                           C1      Ind: do not create capacity requirements                     
+KKALKR                         C1      Indicator: Components will not be costed                     
+SFCPF                          C6      Production Scheduling Profile                                
+RMNGA                          P13.3   Total confirmed rework quantity                              
+GSBTR                          D8      Overall commitment date                                      
+VFMNG                          P13.3   Committed quantity for order acc. to ATP check components    
+NOPCOST                        C1      Do not calculate planned costs for order                     
+NETZKONT                       C1      Indicator for the account assignment of a network(hdr/act.)  
+ATRKZ                          C1      Request ID                                                   
+OBJTYPE                        C1      Change indicator                                             
+CH_PROC                        C1      Process that has lead to the change of an object             
+KAPVERSA                       N2      Version of Available Capacity                                
+COLORDPROC                     C1      Collective order with/without automatic goods movement       
+KZERB                          C1      Indicator: Project summarization via master data charact.    
+CONF_KEY                       N8      Identical object                                             
+ST_ARBID                       N8      Object ID                                                    
+VSNMR_V                        C12     Sales document version number                                
+TERHW                          C1      Scheduling note from order scheduling                        
+SPLSTAT                        C1      Status of an order in a split hierarchy                      
+COSTUPD                        C1      Costs are updated                                            
+MAX_GAMNG                      P13.3   Maximum Value of Total Order Quantity After Distribution     
+ADPSP                          C40     PM/PS Reference Element                                      
+RMANR                          C10     Sales and Distribution Document Number                       
+POSNR_RMA                      N6      Item number of the SD document                               
+POSNV_RMA                      N6      Item number of the SD document                               
+OIHANTYP                       C2      Excise Duty Handling Type                                    
+MILL_RATIO                     I10     Factor for Quantity-Based Settlement                         
+BMEINS                         C3      Base Unit of Measure                                         
+BMENGE                         P13.3   Base quantity                                                
+MILL_OC_ZUSKZ                  C1      Combination Indicator                                        
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="AUFNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Number</annotation>
+    </column>
+    <column name="GLTRP" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic finish date</annotation>
+    </column>
+    <column name="GSTRP" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic Start Date</annotation>
+    </column>
+    <column name="FTRMS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled release date</annotation>
+    </column>
+    <column name="GLTRS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish</annotation>
+    </column>
+    <column name="GSTRS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start</annotation>
+    </column>
+    <column name="GSTRI" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start date</annotation>
+    </column>
+    <column name="GETRI" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed Order Finish Date</annotation>
+    </column>
+    <column name="GLTRI" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual finish date</annotation>
+    </column>
+    <column name="FTRMI" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual release date</annotation>
+    </column>
+    <column name="FTRMP" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Planned release date</annotation>
+    </column>
+    <column name="RSNUM" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="GASMG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total scrap quantity in the order</annotation>
+    </column>
+    <column name="GAMNG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total order quantity</annotation>
+    </column>
+    <column name="GMEIN" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="PLNBEZ" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="PLNTY" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task List Type</annotation>
+    </column>
+    <column name="PLNNR" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Key for Task List Group</annotation>
+    </column>
+    <column name="PLNAW" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application of the task list</annotation>
+    </column>
+    <column name="PLNAL" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group Counter</annotation>
+    </column>
+    <column name="PVERW" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task list usage</annotation>
+    </column>
+    <column name="PLAUF" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date for routing transfer</annotation>
+    </column>
+    <column name="PLSVB" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To lot size</annotation>
+    </column>
+    <column name="PLNME" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Task list unit of measure</annotation>
+    </column>
+    <column name="PLSVN" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From Lot Size</annotation>
+    </column>
+    <column name="PDATV" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-From Date</annotation>
+    </column>
+    <column name="PAENR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="PLGRP" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Responsible planner group/department</annotation>
+    </column>
+    <column name="LODIV" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lot size divisor</annotation>
+    </column>
+    <column name="STLTY" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM category</annotation>
+    </column>
+    <column name="STLBEZ" nullable="true">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="STLST" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM status</annotation>
+    </column>
+    <column name="STLNR" nullable="true">
+      <datatype name="C8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bill of material</annotation>
+    </column>
+    <column name="SDATV" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Valid-From Date</annotation>
+    </column>
+    <column name="SBMNG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base quantity</annotation>
+    </column>
+    <column name="SBMEH" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="SAENR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="STLAL" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Alternative BOM</annotation>
+    </column>
+    <column name="STLAN" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>BOM Usage</annotation>
+    </column>
+    <column name="SLSVN" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>From Lot Size</annotation>
+    </column>
+    <column name="SLSBS" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>To Lot Size</annotation>
+    </column>
+    <column name="AUFLD" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of BOM Explosion/Routing Transfer</annotation>
+    </column>
+    <column name="DISPO" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>MRP controller for the order</annotation>
+    </column>
+    <column name="AUFPL" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="FEVOR" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Supervisor</annotation>
+    </column>
+    <column name="FHORI" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling Margin Key for Floats</annotation>
+    </column>
+    <column name="TERKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling type</annotation>
+    </column>
+    <column name="REDKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduction indicator for scheduling</annotation>
+    </column>
+    <column name="APRIO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order priority</annotation>
+    </column>
+    <column name="NTZUE" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Superior network number</annotation>
+    </column>
+    <column name="VORUE" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Superior activity</annotation>
+    </column>
+    <column name="PROFID" nullable="true">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Network profile</annotation>
+    </column>
+    <column name="VORGZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Float before production (in days)</annotation>
+    </column>
+    <column name="SICHZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Float after production (in days)</annotation>
+    </column>
+    <column name="FREIZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Release period (in days)</annotation>
+    </column>
+    <column name="UPTER" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Change to Scheduled Dates</annotation>
+    </column>
+    <column name="BEDID" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="PRONR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Project definition</annotation>
+    </column>
+    <column name="ZAEHL" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="MZAEHL" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="ZKRIZ" nullable="true">
+      <datatype name="N7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Counter for additional criteria</annotation>
+    </column>
+    <column name="PRUEFLOS" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inspection Lot Number</annotation>
+    </column>
+    <column name="KLVARP" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Costing variant for planned costs</annotation>
+    </column>
+    <column name="KLVARI" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Costing variant for actual costs</annotation>
+    </column>
+    <column name="RGEKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Backflushing for order</annotation>
+    </column>
+    <column name="PLART" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basis for scheduling</annotation>
+    </column>
+    <column name="FLG_AOB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: relationships</annotation>
+    </column>
+    <column name="FLG_ARBEI" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Default value work is relevant</annotation>
+    </column>
+    <column name="GLTPP" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Finish date (forecast)</annotation>
+    </column>
+    <column name="GSTPP" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast start date</annotation>
+    </column>
+    <column name="GLTPS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled forecast finish</annotation>
+    </column>
+    <column name="GSTPS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled forecast start</annotation>
+    </column>
+    <column name="FTRPS" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled release date (forecast)</annotation>
+    </column>
+    <column name="RDKZP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reduction indicator for scheduling (forecast)</annotation>
+    </column>
+    <column name="TRKZP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling type (forecast)</annotation>
+    </column>
+    <column name="RUECK" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Completion confirmation number for the operation</annotation>
+    </column>
+    <column name="RMZHL" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internal counter</annotation>
+    </column>
+    <column name="IGMNG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Yield confirmed from order confirmation</annotation>
+    </column>
+    <column name="RATID" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="GROID" nullable="true">
+      <datatype name="N12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID of the capacity requirements record</annotation>
+    </column>
+    <column name="CUOBJ" nullable="true">
+      <datatype name="N18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Configuration (internal object number)</annotation>
+    </column>
+    <column name="GLUZS" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled finish time</annotation>
+    </column>
+    <column name="GSUZS" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start time</annotation>
+    </column>
+    <column name="REVLV" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Revision Level</annotation>
+    </column>
+    <column name="RSHTY" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object types of the CIM resource</annotation>
+    </column>
+    <column name="RSHID" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object ID of the resource</annotation>
+    </column>
+    <column name="RSNTY" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object types of the CIM resource</annotation>
+    </column>
+    <column name="RSNID" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object ID of the resource</annotation>
+    </column>
+    <column name="NAUTERM" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Do not schedule automatically</annotation>
+    </column>
+    <column name="NAUCOST" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Do not cost automatically</annotation>
+    </column>
+    <column name="STUFE" nullable="true">
+      <datatype name="P2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="2" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Level (in multi-level BOM explosions)</annotation>
+    </column>
+    <column name="WEGXX" nullable="true">
+      <datatype name="P4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="4" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Path (for multi-level BOM explosions)</annotation>
+    </column>
+    <column name="VWEGX" nullable="true">
+      <datatype name="P4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="4" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Path (for multi-level BOM explosions)</annotation>
+    </column>
+    <column name="ARSNR" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Reservation/Dependent Requirement</annotation>
+    </column>
+    <column name="ARSPS" nullable="true">
+      <datatype name="N4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order Item Number</annotation>
+    </column>
+    <column name="MAUFNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of superior order</annotation>
+    </column>
+    <column name="LKNOT" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Left node in collective order</annotation>
+    </column>
+    <column name="RKNOT" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Right node of a collective order</annotation>
+    </column>
+    <column name="PRODNET" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Order is part of collective order</annotation>
+    </column>
+    <column name="IASMG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scrap confirmed for order</annotation>
+    </column>
+    <column name="ABARB" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation: Degree of processing</annotation>
+    </column>
+    <column name="AUFNT" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of superior network</annotation>
+    </column>
+    <column name="AUFPT" nullable="true">
+      <datatype name="N10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Routing number of operations in the order</annotation>
+    </column>
+    <column name="APLZT" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>General counter for order</annotation>
+    </column>
+    <column name="NO_DISP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Effective for Materials Planning</annotation>
+    </column>
+    <column name="CSPLIT" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Apportionment Structure</annotation>
+    </column>
+    <column name="AENNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change Number</annotation>
+    </column>
+    <column name="CY_SEQNR" nullable="true">
+      <datatype name="N14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Seq. number order</annotation>
+    </column>
+    <column name="BREAKS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator:  Scheduling allowing for breaks</annotation>
+    </column>
+    <column name="VORGZ_TRM" nullable="true">
+      <datatype name="P6.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="6" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled float before production in days</annotation>
+    </column>
+    <column name="SICHZ_TRM" nullable="true">
+      <datatype name="P6.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="6" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled float after production in days</annotation>
+    </column>
+    <column name="TRMDT" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date of the last scheduling</annotation>
+    </column>
+    <column name="GLUZP" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic finish (time)</annotation>
+    </column>
+    <column name="GSUZP" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Basic start time</annotation>
+    </column>
+    <column name="GSUZI" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual start time</annotation>
+    </column>
+    <column name="GEUZI" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmed order finish (time)</annotation>
+    </column>
+    <column name="GLUPP" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast finish (time)</annotation>
+    </column>
+    <column name="GSUPP" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Forecast start (time)</annotation>
+    </column>
+    <column name="GLUPS" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled forecast finish time</annotation>
+    </column>
+    <column name="GSUPS" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduled start time (Forecast)</annotation>
+    </column>
+    <column name="CHSCH" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search procedure for batch determination</annotation>
+    </column>
+    <column name="KAPT_VORGZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Float (bef. production) remaining after finite scheduling</annotation>
+    </column>
+    <column name="KAPT_SICHZ" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Remaining float after finite scheduling</annotation>
+    </column>
+    <column name="LEAD_AUFNR" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Leading order in current processing</annotation>
+    </column>
+    <column name="PNETSTARTD" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Outline start of collective network (date)</annotation>
+    </column>
+    <column name="PNETSTARTT" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start time of a collective order</annotation>
+    </column>
+    <column name="PNETENDD" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Outline finish of collective order (date)</annotation>
+    </column>
+    <column name="PNETENDT" nullable="true">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Outline finish time</annotation>
+    </column>
+    <column name="KBED" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Ind: do not create capacity requirements</annotation>
+    </column>
+    <column name="KKALKR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Components will not be costed</annotation>
+    </column>
+    <column name="SFCPF" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Production Scheduling Profile</annotation>
+    </column>
+    <column name="RMNGA" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Total confirmed rework quantity</annotation>
+    </column>
+    <column name="GSBTR" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Overall commitment date</annotation>
+    </column>
+    <column name="VFMNG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Committed quantity for order acc. to ATP check components</annotation>
+    </column>
+    <column name="NOPCOST" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Do not calculate planned costs for order</annotation>
+    </column>
+    <column name="NETZKONT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for the account assignment of a network(hdr/act.)</annotation>
+    </column>
+    <column name="ATRKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Request ID</annotation>
+    </column>
+    <column name="OBJTYPE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Change indicator</annotation>
+    </column>
+    <column name="CH_PROC" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Process that has lead to the change of an object</annotation>
+    </column>
+    <column name="KAPVERSA" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version of Available Capacity</annotation>
+    </column>
+    <column name="COLORDPROC" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Collective order with/without automatic goods movement</annotation>
+    </column>
+    <column name="KZERB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Project summarization via master data charact.</annotation>
+    </column>
+    <column name="CONF_KEY" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identical object</annotation>
+    </column>
+    <column name="ST_ARBID" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object ID</annotation>
+    </column>
+    <column name="VSNMR_V" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales document version number</annotation>
+    </column>
+    <column name="TERHW" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Scheduling note from order scheduling</annotation>
+    </column>
+    <column name="SPLSTAT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of an order in a split hierarchy</annotation>
+    </column>
+    <column name="COSTUPD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Costs are updated</annotation>
+    </column>
+    <column name="MAX_GAMNG" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum Value of Total Order Quantity After Distribution</annotation>
+    </column>
+    <column name="ADPSP" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PM/PS Reference Element</annotation>
+    </column>
+    <column name="RMANR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales and Distribution Document Number</annotation>
+    </column>
+    <column name="POSNR_RMA" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the SD document</annotation>
+    </column>
+    <column name="POSNV_RMA" nullable="true">
+      <datatype name="N6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the SD document</annotation>
+    </column>
+    <column name="OIHANTYP" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Excise Duty Handling Type</annotation>
+    </column>
+    <column name="MILL_RATIO" nullable="true">
+      <datatype name="I10" subType="DATASOURCE_TYPE" type="INTEGER"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Factor for Quantity-Based Settlement</annotation>
+    </column>
+    <column name="BMEINS" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="BMENGE" nullable="true">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base quantity</annotation>
+    </column>
+    <column name="MILL_OC_ZUSKZ" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Combination Indicator</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="AUFNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

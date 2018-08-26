@@ -1,0 +1,650 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="T001" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/T/T0/T001" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: Company Codes
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2008-11-28
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+BUKRS                          C4      Company Code                                                 
+BUTXT                          C25     Name of Company Code or Company                              
+ORT01                          C25     City                                                         
+LAND1                          C3      Country Key                                                  
+WAERS                          C5      Currency Key                                                 
+SPRAS                          C1      Language Key                                                 
+KTOPL                          C4      Chart of Accounts                                            
+WAABW                          N2      Maximum exchange rate deviation in percent                   
+PERIV                          C2      Fiscal Year Variant                                          
+KOKFI                          C1      Allocation Indicator                                         
+RCOMP                          C6      Company                                                      
+ADRNR                          C10     Address                                                      
+STCEG                          C20     VAT Registration Number                                      
+FIKRS                          C4      Financial Management Area                                    
+XFMCO                          C1      Indicator: Project Cash Management active?                   
+XFMCB                          C1      Indicator: Cash budget management active                     
+XFMCA                          C1      Activate Update in Funds Management                          
+TXJCD                          C15     Jurisdiction for tax calculation - tax jurisdiction code     
+FMHRDATE                       D8      Funds center can be assigned to an account in HR from        
+BUVAR                          C1      Company Code Variant (Screen)                                
+FDBUK                          C4      Cash Management and Forecast Company Code                    
+XFDIS                          C1      Indicator: Cash Management activated?                        
+XVALV                          C1      Indicator: Propose current date as value date ?              
+XSKFN                          C1      Indicator: Discount base amount is the net value             
+KKBER                          C4      Credit control area                                          
+XMWSN                          C1      Indicator: Base amount for tax is net of discount ?          
+MREGL                          C4      Rules for Copying from the Sample Account for G/L Accounts   
+XGSBE                          C1      Indicator: Business area financial statements required?      
+XGJRV                          C1      Indicator: Propose fiscal year ?                             
+XKDFT                          C1      Indicator: Post translations for exchange rate differences ? 
+XPROD                          C1      Indicator: Productive company code?                          
+XEINK                          C1      Indicator: Purchase Account Processing is Active             
+XJVAA                          C1      Indicator: JVA Active                                        
+XVVWA                          C1      Indicator: Financial Assets Management active                
+XSLTA                          C1      Indicator: No ex.rate difference when clearing in local crcy 
+XFDMM                          C1      Indicator: Updating MM in Cash Mgmt/Forecast activated?      
+XFDSD                          C1      Indicator: Updating SD in Cash Mgmt/Forecast activated?      
+XEXTB                          C1      Indicator: Company code is in another system                 
+EBUKR                          C4      Original Key of the Company Code                             
+KTOP2                          C4      Chart of Accounts According to Country Legislation           
+UMKRS                          C4      Sales/Purchases Tax Group                                    
+BUKRS_GLOB                     C6      Name of global company code                                  
+FSTVA                          C4      Field Status Variant                                         
+OPVAR                          C4      Posting Period Variant                                       
+XCOVR                          C1      Indicator: hedge request active                              
+TXKRS                          C1      Foreign Currency Translation for Tax Items                   
+WFVAR                          C4      Workflow variant                                             
+XBBBF                          C1      G/L account authorization check in inventory management      
+XBBBE                          C1      G/L account authorization check in PO/scheduling agreement   
+XBBBA                          C1      G/L account authorization check in purchase requisitions     
+XBBKO                          C1      G/L account authorization check in contracts                 
+XSTDT                          C1      Indicator: Document date as the basis for tax determination  
+MWSKV                          C2      Input Tax Code for Non-Taxable Transactions                  
+MWSKA                          C2      Output Tax Code for Non-Taxable Transactions                 
+IMPDA                          C1      Foreign Trade: Import Data Control in MM Purchase Orders     
+XNEGP                          C1      Indicator: Negative Postings Permitted                       
+XKKBI                          C1      Indicator: Can credit control area be overwritten?           
+WT_NEWWT                       C1      Indicator: Extended withholding tax active                   
+PP_PDATE                       C1      Procedure for Setting the Posting Date                       
+INFMT                          C4      Inflation Method                                             
+FSTVARE                        C4      Funds reservation field status var.                          
+KOPIM                          C1      Foreign trade: Import data copying control for GR            
+DKWEG                          C1      Foreign Trade: Screen ctrl of imp.data f. MM-goods rececipt  
+OFFSACCT                       N1      Method for offsetting account determination                  
+BAPOVAR                        C2      Additional settings variant for bus.area financial statemnts 
+XCOS                           C1      Cost of sales accounting status                              
+XCESSION                       C1      Accounts Receivable Pledging Active                          
+XSPLT                          C1      Enable Amount Split                                          
+SURCCM                         C1      Surcharge Calculation Method                                 
+DTPROV                         C2      Document Type for Provisions for Taxes on Services Received  
+DTAMTC                         C2      Document Type for Journal Voucher (Amount Correction)        
+DTTAXC                         C2      Document Type for Journal Voucher (Tax Code Correction)      
+DTTDSP                         C2      Document Type for Remittance Challans                        
+DTAXR                          C4      Deferred Tax Rule                                            
+XVATDATE                       C1      Tax Reporting Date Active in Documents                       
+PST_PER_VAR                    C1      Manage Variant of Posting Period for Company Code/Ledger     
+FM_DERIVE_ACC                  C1      Activate Account Assignment Derivation in Funds Management   
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="BUKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="BUTXT" nullable="true">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Company Code or Company</annotation>
+    </column>
+    <column name="ORT01" nullable="true">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="LAND1" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="WAERS" nullable="true">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="SPRAS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="KTOPL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts</annotation>
+    </column>
+    <column name="WAABW" nullable="true">
+      <datatype name="N2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Maximum exchange rate deviation in percent</annotation>
+    </column>
+    <column name="PERIV" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year Variant</annotation>
+    </column>
+    <column name="KOKFI" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Allocation Indicator</annotation>
+    </column>
+    <column name="RCOMP" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company</annotation>
+    </column>
+    <column name="ADRNR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address</annotation>
+    </column>
+    <column name="STCEG" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>VAT Registration Number</annotation>
+    </column>
+    <column name="FIKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Financial Management Area</annotation>
+    </column>
+    <column name="XFMCO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Project Cash Management active?</annotation>
+    </column>
+    <column name="XFMCB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Cash budget management active</annotation>
+    </column>
+    <column name="XFMCA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activate Update in Funds Management</annotation>
+    </column>
+    <column name="TXJCD" nullable="true">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Jurisdiction for tax calculation - tax jurisdiction code</annotation>
+    </column>
+    <column name="FMHRDATE" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds center can be assigned to an account in HR from</annotation>
+    </column>
+    <column name="BUVAR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code Variant (Screen)</annotation>
+    </column>
+    <column name="FDBUK" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cash Management and Forecast Company Code</annotation>
+    </column>
+    <column name="XFDIS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Cash Management activated?</annotation>
+    </column>
+    <column name="XVALV" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Propose current date as value date ?</annotation>
+    </column>
+    <column name="XSKFN" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Discount base amount is the net value</annotation>
+    </column>
+    <column name="KKBER" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Credit control area</annotation>
+    </column>
+    <column name="XMWSN" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Base amount for tax is net of discount ?</annotation>
+    </column>
+    <column name="MREGL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Rules for Copying from the Sample Account for G/L Accounts</annotation>
+    </column>
+    <column name="XGSBE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Business area financial statements required?</annotation>
+    </column>
+    <column name="XGJRV" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Propose fiscal year ?</annotation>
+    </column>
+    <column name="XKDFT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Post translations for exchange rate differences ?</annotation>
+    </column>
+    <column name="XPROD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Productive company code?</annotation>
+    </column>
+    <column name="XEINK" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Purchase Account Processing is Active</annotation>
+    </column>
+    <column name="XJVAA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: JVA Active</annotation>
+    </column>
+    <column name="XVVWA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Financial Assets Management active</annotation>
+    </column>
+    <column name="XSLTA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: No ex.rate difference when clearing in local crcy</annotation>
+    </column>
+    <column name="XFDMM" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Updating MM in Cash Mgmt/Forecast activated?</annotation>
+    </column>
+    <column name="XFDSD" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Updating SD in Cash Mgmt/Forecast activated?</annotation>
+    </column>
+    <column name="XEXTB" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Company code is in another system</annotation>
+    </column>
+    <column name="EBUKR" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Original Key of the Company Code</annotation>
+    </column>
+    <column name="KTOP2" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Chart of Accounts According to Country Legislation</annotation>
+    </column>
+    <column name="UMKRS" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales/Purchases Tax Group</annotation>
+    </column>
+    <column name="BUKRS_GLOB" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of global company code</annotation>
+    </column>
+    <column name="FSTVA" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Field Status Variant</annotation>
+    </column>
+    <column name="OPVAR" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Posting Period Variant</annotation>
+    </column>
+    <column name="XCOVR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: hedge request active</annotation>
+    </column>
+    <column name="TXKRS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Foreign Currency Translation for Tax Items</annotation>
+    </column>
+    <column name="WFVAR" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Workflow variant</annotation>
+    </column>
+    <column name="XBBBF" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account authorization check in inventory management</annotation>
+    </column>
+    <column name="XBBBE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account authorization check in PO/scheduling agreement</annotation>
+    </column>
+    <column name="XBBBA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account authorization check in purchase requisitions</annotation>
+    </column>
+    <column name="XBBKO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>G/L account authorization check in contracts</annotation>
+    </column>
+    <column name="XSTDT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Document date as the basis for tax determination</annotation>
+    </column>
+    <column name="MWSKV" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Input Tax Code for Non-Taxable Transactions</annotation>
+    </column>
+    <column name="MWSKA" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Output Tax Code for Non-Taxable Transactions</annotation>
+    </column>
+    <column name="IMPDA" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Foreign Trade: Import Data Control in MM Purchase Orders</annotation>
+    </column>
+    <column name="XNEGP" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Negative Postings Permitted</annotation>
+    </column>
+    <column name="XKKBI" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Can credit control area be overwritten?</annotation>
+    </column>
+    <column name="WT_NEWWT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Extended withholding tax active</annotation>
+    </column>
+    <column name="PP_PDATE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Procedure for Setting the Posting Date</annotation>
+    </column>
+    <column name="INFMT" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inflation Method</annotation>
+    </column>
+    <column name="FSTVARE" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Funds reservation field status var.</annotation>
+    </column>
+    <column name="KOPIM" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Foreign trade: Import data copying control for GR</annotation>
+    </column>
+    <column name="DKWEG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Foreign Trade: Screen ctrl of imp.data f. MM-goods rececipt</annotation>
+    </column>
+    <column name="OFFSACCT" nullable="true">
+      <datatype name="N1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Method for offsetting account determination</annotation>
+    </column>
+    <column name="BAPOVAR" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Additional settings variant for bus.area financial statemnts</annotation>
+    </column>
+    <column name="XCOS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cost of sales accounting status</annotation>
+    </column>
+    <column name="XCESSION" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounts Receivable Pledging Active</annotation>
+    </column>
+    <column name="XSPLT" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Enable Amount Split</annotation>
+    </column>
+    <column name="SURCCM" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Surcharge Calculation Method</annotation>
+    </column>
+    <column name="DTPROV" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type for Provisions for Taxes on Services Received</annotation>
+    </column>
+    <column name="DTAMTC" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type for Journal Voucher (Amount Correction)</annotation>
+    </column>
+    <column name="DTTAXC" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type for Journal Voucher (Tax Code Correction)</annotation>
+    </column>
+    <column name="DTTDSP" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Type for Remittance Challans</annotation>
+    </column>
+    <column name="DTAXR" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Deferred Tax Rule</annotation>
+    </column>
+    <column name="XVATDATE" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Reporting Date Active in Documents</annotation>
+    </column>
+    <column name="PST_PER_VAR" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Manage Variant of Posting Period for Company Code/Ledger</annotation>
+    </column>
+    <column name="FM_DERIVE_ACC" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Activate Account Assignment Derivation in Funds Management</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="BUKRS" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

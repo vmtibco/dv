@@ -1,0 +1,130 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_COAREA_GET_RELATED_CCODES" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Controlling/Overhead Cost Controlling/BAPI_COAREA_GET_RELATED_CCODES" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2001-06-07
+Released on: 1999-02-16
+
+The ControllingArea.GetRelatedCompCodes method (BAPI_COAREA_GET_RELATED_CCODES) determines all the company codes assigned to one controlling area. 
+DATA: CONTROLLINGAREAID        LIKE BAPI0004_3-CO_AREA , 
+      RELATED_COMPANYCODES     LIKE BAPI0004_3 OCCURS 0, 
+      RETURN                   LIKE BAPIRETURN         . 
+
+CONTROLLINGAREAID = &apos;0001&apos;. 
+
+CALL FUNCTION &apos;BAPI_COAREA_GET_RELATED_CCODES&apos; 
+     EXPORTING 
+          CONTROLLINGAREAID    =  CONTROLLINGAREAID 
+     IMPORTING 
+          RETURN               =  RETURN 
+     TABLES 
+          RELATED_COMPANYCODES =  RELATED_COMPANYCODES . 
+You require authorization for object &lt;DS:UO.S_TABU_DIS&gt;S_TABU_DIS&lt;/&gt; and table class KC. 
+You can determine the existing key for the controlling area using the ControllingArea.GetList (BAPI_CONTROLLINGAREA_GETLIST) method. 
+Messages are are issued in the RETURN parameter. In this parameter documentation you can find the return values and their meaning. 
+If no company codes have been assigned, the RETURN parameter is initial and the  RELATED_COMPANYCODES table contains no entries. Export RETURN
+Return code for the methods Type    Code   Description E(rror) KZ600  No authorization to display controlling areas E(rror) KZ601  Controlling area X does not exist Blank   Blank  Method completed successfully Import CONTROLLINGAREAID
+Key of the &lt;DS:DE.KOKRS&gt;controlling area&lt;/&gt;, for which detail information is to be determined. RELATED_COMPANYCODES
+This table contains all &lt;DS:DE.BUKRS&gt;company code&lt;/&gt;s in the current clients that are assigned to a specified controlling area (parameter CONTROLLINGAREAID). The assigned controlling area is contained as well. 
+If there are no assignments, the table remains empty and the RETURN parameter is initial. </annotation>
+  <columns>
+    <column name="Import CONTROLLINGAREAID" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area (Key)</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="RELATED_COMPANYCODES COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="RELATED_COMPANYCODES CO_AREA" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Controlling Area</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421882772958</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421882772958</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421882772958</attribute>
+</metadata>

@@ -1,0 +1,536 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="PA0006" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/Tables/P/PA/PA0006" type="TABLE" subtype="1011" changeToken="0" tableType="NONE">
+  <annotation>Short text: HR Master Record: Infotype 0006 (Addresses)
+Table class: TRANSP
+Last changed by: SAP
+Last changed on: 2008-11-28
+
+Field name                     Type    Short text                                                   
+MANDT                          C3      Client                                                       
+PERNR                          N8      Personnel number                                             
+SUBTY                          C4      Subtype                                                      
+OBJPS                          C2      Object Identification                                        
+SPRPS                          C1      Lock Indicator for HR Master Data Record                     
+ENDDA                          D8      End Date                                                     
+BEGDA                          D8      Start Date                                                   
+SEQNR                          N3      Number of Infotype Record with Same Key                      
+AEDTM                          D8      Changed On                                                   
+UNAME                          C12     Name of Person Who Changed Object                            
+HISTO                          C1      Historical Record Flag                                       
+ITXEX                          C1      Text Exists for Infotype                                     
+REFEX                          C1      Reference Fields Exist (Primary/Secondary Costs)             
+ORDEX                          C1      Confirmation Fields Exist                                    
+ITBLD                          C2      Infotype Screen Control                                      
+PREAS                          C2      Reason for Changing Master Data                              
+FLAG1                          C1      Reserved Field/Unused Field                                  
+FLAG2                          C1      Reserved Field/Unused Field                                  
+FLAG3                          C1      Reserved Field/Unused Field                                  
+FLAG4                          C1      Reserved Field/Unused Field                                  
+RESE1                          C2      Reserved Field/Unused Field of Length 2                      
+RESE2                          C2      Reserved Field/Unused Field of Length 2                      
+GRPVL                          C4      Grouping Value for Personnel Assignments                     
+ANSSA                          C4      Address Record Type                                          
+NAME2                          C40     Contact Name                                                 
+STRAS                          C60     Street and House Number                                      
+ORT01                          C40     City                                                         
+ORT02                          C40     District                                                     
+PSTLZ                          C10     Postal Code                                                  
+LAND1                          C3      Country Key                                                  
+TELNR                          C14     Telephone Number                                             
+ENTKM                          P3      Distance in Kilometers                                       
+WKWNG                          C1      Company Housing                                              
+BUSRT                          C3      Bus Route                                                    
+LOCAT                          C40     2nd Address Line                                             
+ADR03                          C40     Street 2                                                     
+ADR04                          C40     Street 3                                                     
+STATE                          C3      Region (State, Province, County)                             
+HSNMR                          C10     House Number                                                 
+POSTA                          C10     Identification of an apartment in a building                 
+BLDNG                          C10     Building (number or code)                                    
+FLOOR                          C10     Floor in building                                            
+STRDS                          C2      Street Abbreviation                                          
+ENTK2                          P3      Distance in Kilometers                                       
+COM01                          C4      Communication Type                                           
+NUM01                          C20     Communication Number                                         
+COM02                          C4      Communication Type                                           
+NUM02                          C20     Communication Number                                         
+COM03                          C4      Communication Type                                           
+NUM03                          C20     Communication Number                                         
+COM04                          C4      Communication Type                                           
+NUM04                          C20     Communication Number                                         
+COM05                          C4      Communication Type                                           
+NUM05                          C20     Communication Number                                         
+COM06                          C4      Communication Type                                           
+NUM06                          C20     Communication Number                                         
+INDRL                          C2      Indicator for relationship (specification code)              
+COUNC                          C3      County Code                                                  
+RCTVC                          C6      Municipal city code                                          
+OR2KK                          C40     Second address line (Katakana)                               
+CONKK                          C40     Contact Person (Katakana) (Japan)                            
+OR1KK                          C40     First address line (Katakana)                                
+RAILW                          N1      Social Subscription Railway                                  
+</annotation>
+  <columns>
+    <column name="MANDT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Client</annotation>
+    </column>
+    <column name="PERNR" nullable="true">
+      <datatype name="N8" subType="DATASOURCE_TYPE" type="STRING" maxLength="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Personnel number</annotation>
+    </column>
+    <column name="SUBTY" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Subtype</annotation>
+    </column>
+    <column name="OBJPS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Object Identification</annotation>
+    </column>
+    <column name="SPRPS" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Lock Indicator for HR Master Data Record</annotation>
+    </column>
+    <column name="ENDDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>End Date</annotation>
+    </column>
+    <column name="BEGDA" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Start Date</annotation>
+    </column>
+    <column name="SEQNR" nullable="true">
+      <datatype name="N3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Number of Infotype Record with Same Key</annotation>
+    </column>
+    <column name="AEDTM" nullable="true">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Changed On</annotation>
+    </column>
+    <column name="UNAME" nullable="true">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person Who Changed Object</annotation>
+    </column>
+    <column name="HISTO" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Historical Record Flag</annotation>
+    </column>
+    <column name="ITXEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Text Exists for Infotype</annotation>
+    </column>
+    <column name="REFEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Fields Exist (Primary/Secondary Costs)</annotation>
+    </column>
+    <column name="ORDEX" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Confirmation Fields Exist</annotation>
+    </column>
+    <column name="ITBLD" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Infotype Screen Control</annotation>
+    </column>
+    <column name="PREAS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for Changing Master Data</annotation>
+    </column>
+    <column name="FLAG1" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG2" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG3" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="FLAG4" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field</annotation>
+    </column>
+    <column name="RESE1" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="RESE2" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reserved Field/Unused Field of Length 2</annotation>
+    </column>
+    <column name="GRPVL" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Grouping Value for Personnel Assignments</annotation>
+    </column>
+    <column name="ANSSA" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address Record Type</annotation>
+    </column>
+    <column name="NAME2" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Contact Name</annotation>
+    </column>
+    <column name="STRAS" nullable="true">
+      <datatype name="C60" subType="DATASOURCE_TYPE" type="STRING" maxLength="60"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street and House Number</annotation>
+    </column>
+    <column name="ORT01" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="ORT02" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="PSTLZ" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Postal Code</annotation>
+    </column>
+    <column name="LAND1" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="TELNR" nullable="true">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telephone Number</annotation>
+    </column>
+    <column name="ENTKM" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distance in Kilometers</annotation>
+    </column>
+    <column name="WKWNG" nullable="true">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Housing</annotation>
+    </column>
+    <column name="BUSRT" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bus Route</annotation>
+    </column>
+    <column name="LOCAT" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2nd Address Line</annotation>
+    </column>
+    <column name="ADR03" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 2</annotation>
+    </column>
+    <column name="ADR04" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street 3</annotation>
+    </column>
+    <column name="STATE" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="HSNMR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House Number</annotation>
+    </column>
+    <column name="POSTA" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Identification of an apartment in a building</annotation>
+    </column>
+    <column name="BLDNG" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Building (number or code)</annotation>
+    </column>
+    <column name="FLOOR" nullable="true">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Floor in building</annotation>
+    </column>
+    <column name="STRDS" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Street Abbreviation</annotation>
+    </column>
+    <column name="ENTK2" nullable="true">
+      <datatype name="P3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="3" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distance in Kilometers</annotation>
+    </column>
+    <column name="COM01" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM01" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="COM02" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM02" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="COM03" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM03" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="COM04" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM04" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="COM05" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM05" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="COM06" nullable="true">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Type</annotation>
+    </column>
+    <column name="NUM06" nullable="true">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Communication Number</annotation>
+    </column>
+    <column name="INDRL" nullable="true">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for relationship (specification code)</annotation>
+    </column>
+    <column name="COUNC" nullable="true">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>County Code</annotation>
+    </column>
+    <column name="RCTVC" nullable="true">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Municipal city code</annotation>
+    </column>
+    <column name="OR2KK" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second address line (Katakana)</annotation>
+    </column>
+    <column name="CONKK" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Contact Person (Katakana) (Japan)</annotation>
+    </column>
+    <column name="OR1KK" nullable="true">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First address line (Katakana)</annotation>
+    </column>
+    <column name="RAILW" nullable="true">
+      <datatype name="N1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Social Subscription Railway</annotation>
+    </column>
+  </columns>
+  <indexes>
+    <index name="PRIMARY_KEY" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="MANDT" sortOrder="NONE"/>
+      <indexColumn name="PERNR" sortOrder="NONE"/>
+      <indexColumn name="SUBTY" sortOrder="NONE"/>
+      <indexColumn name="OBJPS" sortOrder="NONE"/>
+      <indexColumn name="SPRPS" sortOrder="NONE"/>
+      <indexColumn name="ENDDA" sortOrder="NONE"/>
+      <indexColumn name="BEGDA" sortOrder="NONE"/>
+      <indexColumn name="SEQNR" sortOrder="NONE"/>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

@@ -1,0 +1,553 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_SALESORDER_GETLIST" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Sales and Distribution/Sales/BAPI_SALESORDER_GETLIST" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2012-03-01
+Released on: 1997-07-25
+
+You can use this method to display the sales orders for a customer. 
+
+Mandatory entries: 
+You must enter the relevant customer number in the SALESDOCUMENT parameter and the requested sales organization in the SALES_ORGANIZATION parameter. 
+Optional entries: 
+You can restrict the selection by entering certain criteria. For example you can display all the orders for a certain material or orders from a particular time period (MATERIAL or DOCUMENT_DATE and DOCUMENT_DATE TO paramters). You can also find a certain sales order using the customer&apos;s purchase order number (PURCHASE_ORDER parameter). 
+Export RETURN
+Error message 
+This structure returns the return code of the function module. 
+&lt;ZH&gt;Structure&lt;/&gt; 
+TYPE         Message type:  S Success, E Error, W Warning, I              Information 
+CODE         Message code 
+MESSAGE      Message text 
+LOG_NO       Application log: log number 
+LOG_MSG_NO   Application log: sequential number of message 
+
+If no errors occure, return parameter is blank. Otherwise the relevant error messages are issued with a short text. Import CUSTOMER_NUMBER
+A key that uniquely identifies the customer within the SAP system. 
+
+Import DOCUMENT_DATE
+From customer order date (contract date) 
+Starting date for the time period for which you want to create a list  of sales documents. 
+The system checks the date that you have entered against the document date of the sales documents. Import DOCUMENT_DATE_TO
+To sales order date (contract date) 
+End date of period, for which you want to create a list of sales documents. 
+The system checks the date that you have entered against the document date in the sales documents. Import MATERIAL
+Alphanumeric key that uniquely identifies the material. 
+
+Import MATERIAL_EVG
+Parameter for long material numbers You can use this parameter to transfer long material numbers that have a maximum length of 40 characters. To use this parameter, you must switch on the switch for the business function LAMA (long material number) in the system. The business function LAMA is a component of the business function set for DIMP. 
+None 
+None 
+Import PURCHASE_ORDER
+Customer purchase order number 
+The customer uses this customer as a unique identification of their purchasing document (for example, inquiries or purchase orders). 
+The number is a link between the customer&apos;s purchase order and the sales document that you have created. You can use the customer number in your correspondance with the customer to find certain document information. If the number refers to a purchase order, you can also print it on the documents that you send to the customer (for example, on the delivery note). Import SALES_ORGANIZATION
+Organizational unit responsible for the sales and distribution of certain products and services. The responsibility of the sales organization can also include the legal liability for the product and the customer&apos;s right to compensation. 
+
+Import TRANSACTION_GROUP
+The transaction group controls which sales document types you can control with which system transactions during sales processing. 
+0,,Sales order 1,,Customer inquiry 2,,Quotation 3,,Scheduling agreement 4,,Contract 5,,Item proposal 6,,Delivery 7,,Billing document 
+0 sales orders SALES_ORDERS
+Table of customer sales orders 
+You can find more information about the individual paramter fields in the relevant data element documentation in the ABAP Dictionary. </annotation>
+  <columns>
+    <column name="Import CUSTOMER_NUMBER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer number</annotation>
+    </column>
+    <column name="Import DOCUMENT_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry date</annotation>
+    </column>
+    <column name="Import DOCUMENT_DATE_TO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry date up to and including</annotation>
+    </column>
+    <column name="Import MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material number</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_EXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External Long Material Number</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_VERS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Version Number</annotation>
+    </column>
+    <column name="Import MATERIAL_EVG MATERIAL_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material number (external GUID)</annotation>
+    </column>
+    <column name="Import PURCHASE_ORDER" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer purchase order number</annotation>
+    </column>
+    <column name="Import PURCHASE_ORDER_NUMBER" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Purchase Order Number</annotation>
+    </column>
+    <column name="Import SALES_ORGANIZATION" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales organization</annotation>
+    </column>
+    <column name="Import TRANSACTION_GROUP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Single-Character Indicator</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN CODE" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message code</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="SALES_ORDERS SD_DOC" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales and Distribution Document Number</annotation>
+    </column>
+    <column name="SALES_ORDERS ITM_NUMBER" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Item number of the SD document</annotation>
+    </column>
+    <column name="SALES_ORDERS MATERIAL" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Material Number</annotation>
+    </column>
+    <column name="SALES_ORDERS SHORT_TEXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Short text for sales order item</annotation>
+    </column>
+    <column name="SALES_ORDERS DOC_TYPE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Document Type</annotation>
+    </column>
+    <column name="SALES_ORDERS DOC_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document Date (Date Received/Sent)</annotation>
+    </column>
+    <column name="SALES_ORDERS REQ_QTY" nullable="false">
+      <datatype name="P15.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Cumulative Order Quantity in Sales Units</annotation>
+    </column>
+    <column name="SALES_ORDERS REQ_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Requested delivery date</annotation>
+    </column>
+    <column name="SALES_ORDERS PURCH_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer purchase order number</annotation>
+    </column>
+    <column name="SALES_ORDERS BATCH" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Batch Number</annotation>
+    </column>
+    <column name="SALES_ORDERS VALID_FROM" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quotation or contract valid from</annotation>
+    </column>
+    <column name="SALES_ORDERS VALID_TO" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Quotation or contract valid to</annotation>
+    </column>
+    <column name="SALES_ORDERS BILL_BLOCK" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Billing block in SD document</annotation>
+    </column>
+    <column name="SALES_ORDERS DLV_BLOCK" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Delivery block (document header)</annotation>
+    </column>
+    <column name="SALES_ORDERS SOLD_TO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sold-to party</annotation>
+    </column>
+    <column name="SALES_ORDERS NAME" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="SALES_ORDERS EXCHG_RATE" nullable="false">
+      <datatype name="P9.5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Directly quoted exchange rate for pricing and statistics</annotation>
+    </column>
+    <column name="SALES_ORDERS DLV_QTY" nullable="false">
+      <datatype name="P13.3" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="13" maxFractionalDigits="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Actual quantity delivered (in sales units)</annotation>
+    </column>
+    <column name="SALES_ORDERS BASE_UOM" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base Unit of Measure</annotation>
+    </column>
+    <column name="SALES_ORDERS NET_PRICE" nullable="false">
+      <datatype name="P11.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="11" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net price</annotation>
+    </column>
+    <column name="SALES_ORDERS COND_P_UNT" nullable="false">
+      <datatype name="P5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="5" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition pricing unit</annotation>
+    </column>
+    <column name="SALES_ORDERS COND_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition unit</annotation>
+    </column>
+    <column name="SALES_ORDERS NET_VAL_HD" nullable="false">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net Value of the Sales Order in Document Currency</annotation>
+    </column>
+    <column name="SALES_ORDERS NET_VALUE" nullable="false">
+      <datatype name="P15.2" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="15" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Net Value in Document Currency</annotation>
+    </column>
+    <column name="SALES_ORDERS DIVISION" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Division</annotation>
+    </column>
+    <column name="SALES_ORDERS DOC_STATUS" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Document status</annotation>
+    </column>
+    <column name="SALES_ORDERS SALES_GRP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Group</annotation>
+    </column>
+    <column name="SALES_ORDERS SALES_OFF" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Office</annotation>
+    </column>
+    <column name="SALES_ORDERS SALES_ORG" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales Organization</annotation>
+    </column>
+    <column name="SALES_ORDERS SALES_UNIT" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales unit</annotation>
+    </column>
+    <column name="SALES_ORDERS SHIP_POINT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Shipping Point/Receiving Point</annotation>
+    </column>
+    <column name="SALES_ORDERS DISTR_CHAN" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Distribution Channel</annotation>
+    </column>
+    <column name="SALES_ORDERS GI_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Goods Issue Date</annotation>
+    </column>
+    <column name="SALES_ORDERS CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>SD Document Currency</annotation>
+    </column>
+    <column name="SALES_ORDERS PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="SALES_ORDERS STORE_LOC" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Storage Location</annotation>
+    </column>
+    <column name="SALES_ORDERS ORD_REASON" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Order reason (reason for the business transaction)</annotation>
+    </column>
+    <column name="SALES_ORDERS REASON_REJ" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reason for rejection of quotations and sales orders</annotation>
+    </column>
+    <column name="SALES_ORDERS B_UOM_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Base unit of measure in ISO code</annotation>
+    </column>
+    <column name="SALES_ORDERS CD_UNT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Condition unit of measure in UoM</annotation>
+    </column>
+    <column name="SALES_ORDERS S_UNIT_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sales unit in ISO code</annotation>
+    </column>
+    <column name="SALES_ORDERS CURR_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO code currency</annotation>
+    </column>
+    <column name="SALES_ORDERS PURCH_NO_C" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer purchase order number</annotation>
+    </column>
+    <column name="SALES_ORDERS EXCHG_RATE_V" nullable="false">
+      <datatype name="P9.5" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="9" maxFractionalDigits="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indirectly quoted exchange rate for pricing and statistics</annotation>
+    </column>
+    <column name="SALES_ORDERS MAT_EXT" nullable="false">
+      <datatype name="C40" subType="DATASOURCE_TYPE" type="STRING" maxLength="40"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Long Material Number for MATERIAL Field</annotation>
+    </column>
+    <column name="SALES_ORDERS MAT_GUID" nullable="false">
+      <datatype name="C32" subType="DATASOURCE_TYPE" type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>External GUID for MATERIAL Field</annotation>
+    </column>
+    <column name="SALES_ORDERS MAT_VERS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Version Number for MATERIAL Field</annotation>
+    </column>
+    <column name="SALES_ORDERS CREATION_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date on Which Record Was Created</annotation>
+    </column>
+    <column name="SALES_ORDERS CREATION_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Entry time</annotation>
+    </column>
+    <column name="SALES_ORDERS STATUS_DOC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of the document</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">0</attribute>
+  <attribute name="creatorUserDomain" type="STRING"/>
+  <attribute name="creatorUserName" type="STRING"/>
+  <attribute name="selectionState" type="INTEGER">2</attribute>
+</metadata>

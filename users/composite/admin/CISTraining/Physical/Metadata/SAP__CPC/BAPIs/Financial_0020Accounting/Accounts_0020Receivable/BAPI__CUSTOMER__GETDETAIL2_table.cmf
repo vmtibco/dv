@@ -1,0 +1,1287 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="BAPI_CUSTOMER_GETDETAIL2" path="/users/composite/admin/CISTraining/Physical/Metadata/SAP_CPC/BAPIs/Financial Accounting/Accounts Receivable/BAPI_CUSTOMER_GETDETAIL2" type="TABLE" subtype="1020" changeToken="0" tableType="NONE">
+  <annotation>Person responsible: SAP
+Last changed by: SAP
+Changed on: 2010-07-15
+Released on: 1999-03-22
+
+Use this method to read detailed data for a customer. 
+The following data is retreived: 
+Address data 
+General data 
+A table from bank data 
+Company code-specific data (if you enter a company code) 
+
+
+Export CUSTOMERADDRESS
+Address data of the customer entered. 
+
+Export CUSTOMERCOMPANYDETAIL
+If a company code is entered, company code-specific data is returned in this structure. 
+
+Export CUSTOMERGENERALDETAIL
+General data without address data for the entered customer. 
+
+Export RETURN
+The return code of the function module is returned in this structure. Structure 
+TYPE         Message type: S Success, E Error, W Warning, I Information 
+CODE         Message code 
+MESSAGE      Message text 
+LOG_NO       Application log: protocol number 
+LOG_MSG_NO   Application log: running message number 
+If no error occurs, the return parameter is blank. Otherwise, the corresponding error message has a short text. Import CUSTOMERNO
+Customer number. 
+
+CUSTOMERBANKDETAIL
+Table with bank data for the entered customer. 
+
+</annotation>
+  <columns>
+    <column name="Import COMPANYCODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company code</annotation>
+    </column>
+    <column name="Import CUSTOMERNO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS NAME" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 1</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS NAME_2" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 2</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS NAME_3" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 3</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS NAME_4" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name 4</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS CITY" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS DISTRICT" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>District</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS PO_BOX" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS POBX_PCD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>P.O. Box Postal Code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS POSTL_CODE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Postal Code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS REGION" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Region (State, Province, County)</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS COUNTYCODE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>County Code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS CITY_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City Code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS STREET" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>House number and street</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TELEPHONE" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>First telephone number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS COUNTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country Key</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS COUNTRYISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Country ISO code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS POBX_CTY" nullable="false">
+      <datatype name="C35" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>PO Box city</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS LANGU" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Language Key</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS LANGU_ISO" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>2-Character SAP Language Code</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS SORT_FLD" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Sort field</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS MATCHCODE1" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search term for matchcode search</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS MATCHCODE2" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search Term for Matchcode Search</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS MATCHCODE3" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Search term for matchcode search</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS FORMOFADDR" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Title</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TELEBOX" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telebox number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TELEPHONE2" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Second telephone number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TELETEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Teletex number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TELEX" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Telex number</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS TRANSPZONE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Transportation zone to or from which the goods are delivered</annotation>
+    </column>
+    <column name="Export CUSTOMERADDRESS NIELSEN_ID" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Nielsen ID</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL COMP_CODE" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company Code</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL CLERK" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting clerk</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL HD_OFFICE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Head office account number (in branch accounts)</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL ALT_PAYER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account number of an alternative payer</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL CUVD_CLEAR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Clearing between customer and vendor ?</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL PMNTTRMS" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Terms of Payment Key</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL ACT_AT_CUS" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Our account number at customer</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL CUST_USER" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>User at customer</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL NEXT_PAYEE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Next payee</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL BUYING_GRP" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Buying Group</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL INTERNET" nullable="false">
+      <datatype name="C130" subType="DATASOURCE_TYPE" type="STRING" maxLength="130"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Internet address of partner company clerk</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL FAX" nullable="false">
+      <datatype name="C31" subType="DATASOURCE_TYPE" type="STRING" maxLength="31"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting clerk&apos;s fax number at the customer/vendor</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL PAYMENT_METHODS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>List of the Payment Methods to be Considered</annotation>
+    </column>
+    <column name="Export CUSTOMERCOMPANYDETAIL TEL" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Accounting clerk&apos;s telephone number at business partner</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ACC_1_TIME" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is the account a one-time account?</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ADDRESS" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Address</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ORDR_BLK_G" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central order block for customer</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL EXPR_STAT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Express train station</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TRAIN_STAT" nullable="false">
+      <datatype name="C25" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Train station</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL LOC_NO_1" nullable="false">
+      <datatype name="C7" subType="DATASOURCE_TYPE" type="STRING" maxLength="7"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>International location number  (part 1)</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL LOC_NO_2" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>International location number (Part 2)</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL AUTH_GROUP" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Authorization Group</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL INDUSTRY" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry key</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CHK_DIGIT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Check digit for the international location number</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DATA_LINE" nullable="false">
+      <datatype name="C14" subType="DATASOURCE_TYPE" type="STRING" maxLength="14"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Data communication line no.</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CREAT_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date on which the Record Was Created</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ENTERED_BY" nullable="false">
+      <datatype name="C12" subType="DATASOURCE_TYPE" type="STRING" maxLength="12"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Person who Created the Object</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL UNLOAD_PT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Unloading points exist</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL BILL_BLK_G" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central billing block for customer</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL FISK_ADDR" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account number of the master record with the fiscal address</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL WORK_TIME" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Working Time Calendar</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ALT_PAYER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account number of an alternative payer</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL GROUPKEY" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Group key</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ACCNT_GRP" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Account Group</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CLASSIFIC" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer classification</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL VENDOR_NO" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Account Number of Vendor or Creditor</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DELI_BLK_G" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central delivery block for the customer</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL LOC_CODE" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>City Coordinates</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DEL_FLAG_G" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central Deletion Flag for Master Record</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL REG_MARKET" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Regional Market</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL PSTG_BLK_G" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central posting block</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_NO_1" nullable="false">
+      <datatype name="C16" subType="DATASOURCE_TYPE" type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Number 1</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_NO_2" nullable="false">
+      <datatype name="C11" subType="DATASOURCE_TYPE" type="STRING" maxLength="11"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Number 2</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL EQUAL_TAX" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Business Partner Subject to Equalization Tax?</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SLS_PUR_TX" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Liable for VAT</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL PAYER_DOC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is an alternative payer allowed in document?</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TRADE_ID" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Company ID of trading partner</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL VAT_REG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>VAT Registration Number</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL COMPETITOR" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Competitor</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SLSPARTNER" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Sales partner</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL PROSPECT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Sales prospect</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUSTTYPE_4" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for customer type 4</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DFLT_SP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for default sold-to party</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL LEGALSTAT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Legal status</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_CODE_1" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry Code 1</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_CODE_2" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry code 2</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_CODE_3" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry code 3</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_CODE_4" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry code 4</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_CODE_5" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Industry code 5</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL INITCONTCT" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Initial contact</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ANN_SALES" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency amount in BAPI interfaces</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SALES_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Year For Which Sales are Given</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CURRENCY" nullable="false">
+      <datatype name="C5" subType="DATASOURCE_TYPE" type="STRING" maxLength="5"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency Key</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CURRENCY_ISO" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ISO currency code</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL EMPLOYEES" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Yearly number of employees</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL EMPL_YEAR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Year for which the number of employees is given</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIBUTE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 1</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_2" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 2</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_3" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 3</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_4" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 4</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_5" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 5</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_6" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 6</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_7" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 7</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_8" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 8</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_9" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 9</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ATTRIB_10" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Attribute 10</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SOLE_PROP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Natural Person</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ANN_SALES1" nullable="false">
+      <datatype name="P23.4" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="23" maxFractionalDigits="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Currency amount in BAPI interfaces</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAXJURCODE" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Jurisdiction</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL FY_VARIANT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Fiscal Year Variant</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DLVSCHEDUSE" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Usage Indicator</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL INSPBYCUST" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inspection Carried Out By Customer (No Inspection Lot)</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL INSPAFTDEL" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Inspection for a Delivery Note After Outbound Delivery</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL REF_ACTGR" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference Account Group for One-Time Account (Customer)</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL PLANT" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Plant</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DME_IND" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for Data Medium Exchange</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL INSTR_KEY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Instruction key for data medium exchange</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL DATA_TRANS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of Data Transfer into Subsequent Release</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ASSIGN_HI" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Assignment to Hierarchy</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL PMNT_BLOCK" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Payment Block</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL LABCUSTGRP" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>IS-R Labeling: customer/plant group</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NON_MILIT" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for mainly non-military use</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL MILIT_USE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>ID for mainly military use</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUST_COND_GRP1" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer condition group 1</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUST_COND_GRP2" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer condition group 2</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUST_COND_GRP3" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer condition group 3</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUST_COND_GRP4" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer condition group 4</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CUST_COND_GRP5" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer condition group 5</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL ALTPAYERAC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Alternative payer using account number</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_TYPE" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax type</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_NO_TY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Number Type</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_NO_3" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Number 3</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAX_NO_4" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax Number 4</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NO_ICMS" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer is ICMS-exempt</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NO_IPI" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer is IPI-exempt</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SUBT_GRP" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer group for Substituiçao Tributária calculation</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CFOP_CAT" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer&apos;s CFOP category</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAXLAWICMS" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax law: ICMS</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL TAXLAWIPI" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Tax law: IPI</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL BCW" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for biochemical warfare for legal control</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NUCL_NONP" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for nuclear nonproliferation for legal control</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NATL_SEC" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for national security for legal control</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL MISS_TECH" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator for missile technology for legal control</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL SALES_BLKG" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central sales block for customer</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL URL" nullable="false">
+      <datatype name="C132" subType="DATASOURCE_TYPE" type="STRING" maxLength="132"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Uniform Resource Locator</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL REP_NAME" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Name of Representative</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL BUS_TYPE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of Business</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL IND_TYPE" nullable="false">
+      <datatype name="C30" subType="DATASOURCE_TYPE" type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Type of Industry</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CONF_ST" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Status of Change Authorization (Central)</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CONF_DATE" nullable="false">
+      <datatype name="D8" subType="DATASOURCE_TYPE" type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Date on Which the Changes Were Confirmed</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CONF_TIME" nullable="false">
+      <datatype name="T6" subType="DATASOURCE_TYPE" type="TIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Time of Last Change Confirmation</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL NO_DELETE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Central deletion block for master record</annotation>
+    </column>
+    <column name="Export CUSTOMERGENERALDETAIL CONSUMER" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Consumer</annotation>
+    </column>
+    <column name="Export RETURN TYPE" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message type: S Success, E Error, W Warning, I Info, A Abort</annotation>
+    </column>
+    <column name="Export RETURN ID" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Class</annotation>
+    </column>
+    <column name="Export RETURN NUMBER" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE" nullable="false">
+      <datatype name="C220" subType="DATASOURCE_TYPE" type="STRING" maxLength="220"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Text</annotation>
+    </column>
+    <column name="Export RETURN LOG_NO" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: log number</annotation>
+    </column>
+    <column name="Export RETURN LOG_MSG_NO" nullable="false">
+      <datatype name="C6" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Application log: Internal message serial number</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V1" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V2" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V3" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="Export RETURN MESSAGE_V4" nullable="false">
+      <datatype name="C50" subType="DATASOURCE_TYPE" type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Message Variable</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL CUSTOMER" nullable="false">
+      <datatype name="C10" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Customer Number</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL BANK_CTRY" nullable="false">
+      <datatype name="C3" subType="DATASOURCE_TYPE" type="STRING" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bank country key</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL BANK_KEY" nullable="false">
+      <datatype name="C15" subType="DATASOURCE_TYPE" type="STRING" maxLength="15"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bank Keys</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL BANK_ACCT" nullable="false">
+      <datatype name="C18" subType="DATASOURCE_TYPE" type="STRING" maxLength="18"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bank account number</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL CTRL_KEY" nullable="false">
+      <datatype name="C2" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Bank Control Key</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL PARTNER_BK" nullable="false">
+      <datatype name="C4" subType="DATASOURCE_TYPE" type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Partner Bank Type</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL COLL_AUTH" nullable="false">
+      <datatype name="C1" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Indicator: Is there collection authorization ?</annotation>
+    </column>
+    <column name="CUSTOMERBANKDETAIL BANK_REF" nullable="false">
+      <datatype name="C20" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+      <annotation>Reference specifications for bank details</annotation>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1421883211060</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1421883211060</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1421883211060</attribute>
+</metadata>
