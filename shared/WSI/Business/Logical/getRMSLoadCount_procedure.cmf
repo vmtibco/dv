@@ -1,0 +1,205 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getRMSLoadCount" path="/shared/WSI/Business/Logical/getRMSLoadCount" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="rmsLoadCount" direction="OUT" nullable="true">
+      <datatype name="INTEGER" type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/util/SendEMail" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="from" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="replyTo" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="to" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="cc" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="bcc" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="subject" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="contentType" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="content" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="Content" type="STRING" maxLength="65535"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/INIT_ITEM_ITEM_MASTER" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="PRODUCTID" nullable="false">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="PRODUCTIDEXT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="ITEM_TYPE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="PARENT_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="ITEM_NAME">
+        <datatype type="STRING" maxLength="100"/>
+      </element>
+      <element name="ITEM_MEDIUM_NAME">
+        <datatype type="STRING" maxLength="35"/>
+      </element>
+      <element name="ITEM_SHORT_NAME">
+        <datatype type="STRING" maxLength="20"/>
+      </element>
+      <element name="ITEM_LEVEL_NUMBER">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="ITEM_TRANSACTION_LEVEL_NUM">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="COLLECTION_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="ITEM_RMS_CREATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="ITEM_RMS_UPDATE_DATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="CNCPT_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DEPT_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="CLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="SUBCLASS_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="INVENTORY_COUNT_UOM_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="TAX_CATEGORY_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="IS_INVENTORIED">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_COMPONENT_SELLABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HAS_INFINITE_INVENTORY">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_CONVEYABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HAS_GIFT_WRAP_AVAILABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="ALLOWS_VAS_SETUP">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_SPLIT_ACROSS_DIST_CENTERS">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_FULFILLED_FROM_RETAIL">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="IS_AVAILBL_FOR_DIRECT_SHIP">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HANDLING_SENSITIVITY_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="IS_PERISHABLE">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+      <element name="HANDLING_TEMPERATURE_CODE">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="SHIP_MODE_CODE">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="DC_CARRIER_SERVICE_LEVEL_CDE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DS_CARRIER_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DS_SERVICE_LEVEL_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="DTC_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="13"/>
+      </element>
+      <element name="RTL_WAC">
+        <datatype type="DECIMAL" maxDigits="31" maxFractionalDigits="13"/>
+      </element>
+      <element name="BACK_ORDER_LEAD_DAYS">
+        <datatype type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      </element>
+      <element name="LINKED_TO_DUMMY">
+        <datatype type="STRING" maxLength="4000"/>
+      </element>
+      <element name="REPLACED_BY_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="LABOR_ITEM_ID">
+        <datatype type="STRING" maxLength="25"/>
+      </element>
+      <element name="DUMMY_CLASSIFICATION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="REPLACEMENT_ACTION_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="SHIP_RESTRICTIONS">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="ASSOC_DISC_CATEGORY_CODE">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="IN_HOME_DELIVERY_IND">
+        <datatype type="STRING" maxLength="1"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE getRMSLoadCount
+(
+	OUT	rmsLoadCount	INTEGER
+)
+BEGIN
+DECLARE loadCount	INTEGER;
+
+	SELECT count(*) INTO rmsLoadCount FROM /shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/INIT_ITEM_ITEM_MASTER;
+
+--	CALL /lib/util/SendEMail(NULL, &apos;vmadired@tibco.com&apos;, &apos;vmadired@tibco.com,sdhekane@tibco.com,spendota@tibco.com,nagarwal@tibco.com&apos;, NULL, NULL, &apos;RMS Load Count at &apos; || FORMAT_DATE(CURRENT_TIMESTAMP, &apos;MON dd, hh24:mi:ss&apos;), &apos;TEXT_PLAIN&apos;, &apos;Load Count: &apos; || rmsLoadCount);
+
+	CALL /lib/util/SendEMail(NULL, &apos;vmadired@tibco.com&apos;, &apos;vmadired@tibco.com&apos;, NULL, NULL, &apos;RMS Load Count at &apos; || FORMAT_DATE(CURRENT_TIMESTAMP, &apos;MON dd, hh24:mi:ss&apos;), &apos;TEXT_PLAIN&apos;, &apos;Load Count: &apos; || rmsLoadCount);
+
+END</attribute>
+  <attribute name="creationDate" type="LONG">1533398102383</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533671540962</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533398102383</attribute>
+</metadata>

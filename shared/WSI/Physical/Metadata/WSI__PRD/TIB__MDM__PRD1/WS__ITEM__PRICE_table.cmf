@@ -1,0 +1,153 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="WS_ITEM_PRICE" path="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_PRICE" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="CPRODUCTID" nullable="false">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPRODUCTIDEXT" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCHARGE_TYPE_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFFECTIVESTARTDATE" nullable="true">
+      <datatype name="DATE" extendedName="DATE" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFFECTIVEENDDATE" nullable="true">
+      <datatype name="DATE" extendedName="DATE" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPRICE" nullable="true">
+      <datatype name="NUMBER" extendedName="NUMBER(31,8)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_FINAL_CLEARANCE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFFECTIVESTARTHOURS" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(256)" subType="DATASOURCE_TYPE" type="STRING" maxLength="256"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFFECTIVEENDHOURS" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(256)" subType="DATASOURCE_TYPE" type="STRING" maxLength="256"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_PRICE_LOCKED" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_OVERRIDE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_IMMEDIATE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFF_START_TIMESTAMP" nullable="true">
+      <datatype name="TIMESTAMP(6)" extendedName="TIMESTAMP(6)" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CEFF_END_TIMESTAMP" nullable="true">
+      <datatype name="TIMESTAMP(6)" extendedName="TIMESTAMP(6)" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CAMD_INDICATOR" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCONTAINS" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CMODVERSION" nullable="false">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPRODUCTKEYID" nullable="false">
+      <datatype name="NUMBER" extendedName="NUMBER(19,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="WS_ITEM_PRICE_IDX01" type="OTHER" unique="false">
+      <indexColumn name="CPRODUCTID" sortOrder="ASCENDING"/>
+      <indexColumn name="CCHARGE_TYPE_CODE" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="XPK_WS_32788" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="CPRODUCTKEYID" sortOrder="ASCENDING"/>
+      <indexColumn name="CMODVERSION" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="WS_ITEM_PRICE_IDX99" type="OTHER" unique="true">
+      <indexColumn name="CPRODUCTID" sortOrder="ASCENDING"/>
+      <indexColumn name="CPRODUCTIDEXT" sortOrder="ASCENDING"/>
+      <indexColumn name="CMODVERSION" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="WS_ITEM_PRICE_IDX02" type="OTHER" unique="false">
+      <indexColumn name="SYS_NC00019$" sortOrder="ASCENDING"/>
+      <indexColumn name="SYS_NC00020$" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1533432839877</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="i:0:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:1:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:2:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:3:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907238</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432839877</attribute>
+</metadata>

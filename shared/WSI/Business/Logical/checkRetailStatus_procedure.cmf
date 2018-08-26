@@ -1,0 +1,129 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="checkRetailStatus" path="/shared/WSI/Business/Logical/checkRetailStatus" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="eventID" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="10"/>
+    </parameter>
+    <parameter name="retailStatus" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="30"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/util/SendEMail" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="from" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="replyTo" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="to" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="cc" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="bcc" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="EMailAddress" type="STRING" maxLength="1024"/>
+      </element>
+      <element name="subject" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="contentType" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="content" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="Content" type="STRING" maxLength="65535"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/EVENT" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="ID" nullable="false">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="PARENTID">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="EVENTTYPE">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="OWNERORGANIZATIONID">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="CHANNELORGANIZATIONID">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="PARTNERORGANIZATIONID">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="CONVERSATIONID">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="EVENTDATE">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="EVENTSTATE">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="STATUS">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="EVENTDESCRIPTOR">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="DEPLOYMENTMODE">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="MODMEMBERID" nullable="false">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="MODDATE" nullable="false">
+        <datatype type="DATETIME"/>
+      </element>
+      <element name="MODVERSION" nullable="false">
+        <datatype type="FLOAT"/>
+      </element>
+      <element name="REGISTRATIONORDER">
+        <datatype type="STRING" maxLength="250"/>
+      </element>
+      <element name="PARTITIONKEY">
+        <datatype type="FLOAT"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE checkRetailStatus
+(
+	IN	eventID			VARCHAR(10),
+	OUT	retailStatus	VARCHAR(30)
+)
+BEGIN
+DECLARE loadCount	INTEGER;
+
+	SELECT STATUS INTO retailStatus FROM /shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/EVENT WHERE ID=eventID;
+
+--	CALL /lib/util/SendEMail(NULL, &apos;vmadired@tibco.com&apos;, &apos;vmadired@tibco.com,sdhekane@tibco.com,spendota@tibco.com,nagarwal@tibco.com&apos;, NULL, NULL, &apos;RMS Load Count at &apos; || FORMAT_DATE(CURRENT_TIMESTAMP, &apos;MON dd, hh24:mi:ss&apos;), &apos;TEXT_PLAIN&apos;, &apos;Load Count: &apos; || rmsLoadCount);
+
+	IF (UPPER(retailStatus) != &apos;START&apos;) THEN
+		CALL /lib/util/SendEMail(NULL, &apos;vmadired@tibco.com&apos;, &apos;vmadired@tibco.com&apos;, NULL, NULL, &apos;Status &apos; || FORMAT_DATE(CURRENT_TIMESTAMP, &apos;MON dd, hh24:mi:ss&apos;), &apos;TEXT_PLAIN&apos;, &apos;Status: &apos; || retailStatus);
+	END IF;
+
+END</attribute>
+  <attribute name="creationDate" type="LONG">1533398102383</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="impactLevel" type="INTEGER">0</attribute>
+  <attribute name="impactMessage" type="NULL"/>
+  <attribute name="lastModifiedDate" type="LONG">1533932258914</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533398102383</attribute>
+</metadata>

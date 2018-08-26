@@ -1,0 +1,85 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="loadTimingLogs" path="/shared/WSI/loadTimingLogs" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters></parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Print" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToPrint" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/shared/Common/MDMLogAnalysis/Helper/NetUtils_v2/scpFromRemote" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="host" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="port" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="userId" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="userPassword" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="remotePath" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="localPath" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="success" direction="OUT">
+        <datatype type="BOOLEAN"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE loadTimingLogs()
+BEGIN
+	DECLARE host, userId, userPasswd, remotePath, localPath		VARCHAR(1024);
+	DECLARE retVal												BOOLEAN;
+	SET host = &apos;mdmsac-vdrh002.wsgc.com&apos;;
+	SET userId = &apos;tibdev0&apos;;
+	SET userPasswd = &apos;##T1Bd3v0##&apos;;
+	SET remotePath = &apos;/apps/tibco/tib_install_base/tibsw/2014/8.3.2/mdm/8.3/log/elink.log*&apos;;
+	SET localPath = &apos;c:/temp/logs&apos;;
+	CALL /shared/Common/MDMLogAnalysis/Helper/NetUtils_v2/scpFromRemote(host, null, userId, userPasswd, remotePath, localPath, retVal);
+	IF (retVal) THEN
+		CALL Print(&apos;Success&apos;);
+	ELSE
+		CALL Print(&apos;Failure&apos;);
+	END IF;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1522273732937</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">8/14</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">8/12</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1522273732937</attribute>
+</metadata>

@@ -1,0 +1,392 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="WS_ITEM_MASTER" path="/shared/WSI/Physical/Metadata/WSI_PRD/TIB_MDM_PRD1/WS_ITEM_MASTER" type="TABLE" subtype="DATABASE_TABLE" changeToken="0" tableType="TABLE">
+  <columns>
+    <column name="CPRODUCTID" nullable="false">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_TYPE_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(6)" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPARENT_ITEM_ID" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(25)" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_NAME" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(100)" subType="DATASOURCE_TYPE" type="STRING" maxLength="100"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_MEDIUM_NAME" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(35)" subType="DATASOURCE_TYPE" type="STRING" maxLength="35"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_SHORT_NAME" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_LEVEL_NUMBER" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_TRANSACTION_LEVEL_NUM" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCOLLECTION_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(6)" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_RMS_CREATE_DATE" nullable="true">
+      <datatype name="DATE" extendedName="DATE" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CITEM_RMS_UPDATE_DATE" nullable="true">
+      <datatype name="DATE" extendedName="DATE" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPRODUCTIDEXT" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(255)" subType="DATASOURCE_TYPE" type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCNCPT_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDEPT_CODE" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCLASS_CODE" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CSUBCLASS_CODE" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CINVENTORY_COUNT_UOM_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CTAX_CATEGORY_CODE" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_INVENTORIED" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_COMPONENT_SELLABLE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHAS_INFINITE_INVENTORY" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_CONVEYABLE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(2)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHAS_GIFT_WRAP_AVAILABLE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_SPLIT_ACROSS_DIST_CENTERS" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_FULFILLED_FROM_RETAIL" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_AVAILBL_FOR_DIRECT_SHIP" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(2)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIN_HOME_DELIVERY_IND" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CASSOC_DISC_CATEGORY_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHANDLING_SENSITIVITY_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(6)" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_PERISHABLE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CHANDLING_TEMPERATURE_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(6)" subType="DATASOURCE_TYPE" type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CSHIP_MODE_CODE" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDC_CARRIER_SERVICE_LEVEL_CDE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDS_CARRIER_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDS_SERVICE_LEVEL_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CBACK_ORDER_LEAD_DAYS" nullable="true">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDTC_WAC" nullable="true">
+      <datatype name="NUMBER" extendedName="NUMBER(31,8)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CRTL_WAC" nullable="true">
+      <datatype name="NUMBER" extendedName="NUMBER(31,8)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="31" maxFractionalDigits="8"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDUMMY_CLASSIFICATION_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CLABOR_ITEM_ID" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(25)" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CREPLACED_BY_ITEM_ID" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(25)" subType="DATASOURCE_TYPE" type="STRING" maxLength="25"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CREPLACEMENT_ACTION_CODE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(10)" subType="DATASOURCE_TYPE" type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CECOM_LONG_DESC" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(500)" subType="DATASOURCE_TYPE" type="STRING" maxLength="500"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CSUMMARY_WCM" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CDIMS_MORE_INFO_WCM" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CUSE_CARE_INSTRUCTIONS_WCM" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CINGREDIENTS_LIST_WCM" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIMAGE_TYPE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIMAGE_URL" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CMDM_ATTRB_CMP" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(2)" subType="DATASOURCE_TYPE" type="STRING" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CALLOWS_VAS_SETUP" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CAMD_INDICATOR" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CRMS_UPDATE_TIMESTAMP" nullable="true">
+      <datatype name="TIMESTAMP(6)" extendedName="TIMESTAMP(6)" subType="DATASOURCE_TYPE" type="DATETIME"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CRMS_ADB_SEQUENCE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(20)" subType="DATASOURCE_TYPE" type="STRING" maxLength="20"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CCONTAINS" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(4000)" subType="DATASOURCE_TYPE" type="STRING" maxLength="4000"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CMODVERSION" nullable="false">
+      <datatype name="BIGINT" extendedName="NUMBER(10,0)" subType="DATASOURCE_TYPE" type="INTEGER" minValue="-9999999999" maxValue="9999999999"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CPRODUCTKEYID" nullable="false">
+      <datatype name="NUMBER" extendedName="NUMBER(19,0)" subType="DATASOURCE_TYPE" type="DECIMAL" maxDigits="19" maxFractionalDigits="0"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CIS_BOPIS_ELIGIBLE" nullable="true">
+      <datatype name="VARCHAR2" extendedName="VARCHAR2(1)" subType="DATASOURCE_TYPE" type="STRING" maxLength="1"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes>
+    <index name="WS_ITEM_MASTER_IDX03" type="OTHER" unique="false">
+      <indexColumn name="CREPLACED_BY_ITEM_ID" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="WS_ITEM_MASTER_IDX99" type="OTHER" unique="true">
+      <indexColumn name="CPRODUCTID" sortOrder="ASCENDING"/>
+      <indexColumn name="CPRODUCTIDEXT" sortOrder="ASCENDING"/>
+      <indexColumn name="CMODVERSION" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="WS_ITEM_MASTER_IDX02" type="OTHER" unique="false">
+      <indexColumn name="SYS_NC00058$" sortOrder="ASCENDING"/>
+      <indexColumn name="SYS_NC00059$" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+    <index name="XPK_WS_32486" type="PRIMARY_KEY" unique="true">
+      <indexColumn name="CPRODUCTKEYID" sortOrder="ASCENDING"/>
+      <indexColumn name="CMODVERSION" sortOrder="ASCENDING"/>
+      <attribute name="indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+    </index>
+  </indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1533432839861</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="i:0:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:1:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:2:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="i:3:indexSchema" type="STRING">TIB_MDM_PRD1</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1533432907238</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1533432839861</attribute>
+</metadata>
