@@ -1,0 +1,54 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="AdvancedTraining" path="/services/webservices/AdvancedTraining" type="DATA_SOURCE" subtype="COMPOSITE_WEB_SERVICE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+    <privilege user="anonymous" domain="composite" privileges="READ"/>
+    <privilege group="all" domain="composite" privileges="READ WRITE"/>
+    <privilege group="all" domain="dynamic" privileges="READ"/>
+  </security>
+  <dependency target="/policy/security/system/Http-Basic-Authentication.xml" type="POLICY">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/services/webservices/AdvancedTraining/GetOrder" type="LINK">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="orderId" direction="IN">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="orderid">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="productid">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="quantity">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+          <element name="unitprice">
+            <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+          </element>
+          <element name="status">
+            <datatype type="STRING" maxLength="50"/>
+          </element>
+          <element name="discount">
+            <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;soapPortBinding&quot; timeout=&quot;0&quot; targetNamespace=&quot;http://tempuri.org/&quot; serviceName=&quot;AdvancedTraining&quot; portTypeName=&quot;{http://tempuri.org/}AdvancedTrainingPortType&quot; portName=&quot;AdvancedTrainingPort&quot; policyName=&quot;/policy/security/system/Http-Basic-Authentication.xml&quot; implementationFolder=&quot;/shared/impl/AdvancedTraining&quot; enableMTOM=&quot;false&quot; enableCustomEndpoint=&quot;false&quot; contractStyle=&quot;ABSTRACT&quot; contractFirst=&quot;false&quot; bindingName=&quot;{http://tempuri.org/}AdvancedTrainingBinding&quot; soap12ContextUrlPath=&quot;/soap12&quot; soap11ContextUrlPath=&quot;/soap11&quot; endpointUrlPath=&quot;/AdvancedTraining&quot; enabled=&quot;true&quot; bindingStyles=&quot;WSDL11_SOAP11_HTTP WSDL11_SOAP12_HTTP&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;soapProcedureBinding&quot; usePortPipeline=&quot;false&quot; useOutputEnvelop=&quot;false&quot; useInputEnvelop=&quot;false&quot; timeout=&quot;0&quot; enableSOAPAction=&quot;true&quot; enableMTOM=&quot;false&quot; enableFastInfoset=&quot;false&quot; resourceName=&quot;GetOrder&quot;&gt;&lt;inputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;soapWrapper&quot; partName=&quot;parameters&quot; messageName=&quot;{http://tempuri.org/}GetOrderInput&quot; elementTypeName=&quot;{http://tempuri.org/}WrapperedGetorderType&quot; elementName=&quot;{http://tempuri.org/}WrapperedGetorder&quot;/&gt;&lt;/inputBinding&gt;&lt;outputBinding xsi:type=&quot;soapMessageBinding&quot; parameterStyle=&quot;WRAPPED&quot;&gt;&lt;wrapper xsi:type=&quot;soapWrapper&quot; partName=&quot;parameters&quot; messageName=&quot;{http://tempuri.org/}GetOrderOutput&quot; elementTypeName=&quot;{http://tempuri.org/}WrapperedGetorderResponseType&quot; elementName=&quot;{http://tempuri.org/}WrapperedGetorderResponse&quot;/&gt;&lt;/outputBinding&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;orderId&quot; messageName=&quot;{http://tempuri.org/}GetOrderInput&quot; location=&quot;body&quot; faultName=&quot;orderId&quot; name=&quot;orderId&quot; elementName=&quot;{http://tempuri.org/}GetOrderOrderid&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;soapParameterBinding&quot; useChildParameter=&quot;false&quot; partName=&quot;result&quot; messageName=&quot;{http://tempuri.org/}GetOrderOutput&quot; location=&quot;body&quot; faultName=&quot;result&quot; name=&quot;result&quot; elementName=&quot;{http://tempuri.org/}GetOrderResult&quot; direction=&quot;OUTPUT&quot;&gt;&lt;cursorBinding rowElementTypeName=&quot;{http://tempuri.org/}GetOrderResultOutputRowType&quot; rowElementName=&quot;row&quot; cursorTypeName=&quot;{http://tempuri.org/}GetOrderResultOutputCursorType&quot;&gt;&lt;columnBindings&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;orderid&quot; elementName=&quot;orderid&quot;/&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;productid&quot; elementName=&quot;productid&quot;/&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;quantity&quot; elementName=&quot;quantity&quot;/&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;unitprice&quot; elementName=&quot;unitprice&quot;/&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;status&quot; elementName=&quot;status&quot;/&gt;&lt;columnBinding xsi:type=&quot;soapColumnBinding&quot; name=&quot;discount&quot; elementName=&quot;discount&quot;/&gt;&lt;/columnBindings&gt;&lt;/cursorBinding&gt;&lt;/parameterBinding&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;portBinding xsi:type=&quot;restfulPortBinding&quot; targetNamespace=&quot;http://tempuri.org/&quot; serviceName=&quot;AdvancedTraining&quot; jsonWrappedTable=&quot;true&quot; jsonWrappedCursor=&quot;true&quot; jsonUseProcParamName=&quot;false&quot; jsonPackageName=&quot;&quot; xmlContextUrlPath=&quot;/xml&quot; jsonContextUrlPath=&quot;/json&quot; endpointUrlPath=&quot;/AdvancedTraining&quot; enabled=&quot;true&quot; bindingStyles=&quot;REST_XML REST_JSON&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; operationPathTemplate=&quot;/GetOrder&quot; httpMethod=&quot;GET&quot; resourceName=&quot;GetOrder&quot;&gt;&lt;inputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;BARE&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}GetOrderType&quot; elementName=&quot;{http://tempuri.org/}GetOrder&quot;/&gt;&lt;/inputBinding&gt;&lt;outputBinding xsi:type=&quot;restfulMessageBinding&quot; parameterStyle=&quot;BARE&quot;&gt;&lt;wrapper xsi:type=&quot;restfulWrapper&quot; elementTypeName=&quot;{http://tempuri.org/}GetOrderResponseType&quot; elementName=&quot;{http://tempuri.org/}GetOrderResponse&quot;/&gt;&lt;/outputBinding&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; queryName=&quot;orderId&quot; nulLable=&quot;true&quot; bindingLocation=&quot;query&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; name=&quot;orderId&quot; elementName=&quot;{http://tempuri.org/}GetOrderOrderid&quot; direction=&quot;INPUT&quot;/&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; nulLable=&quot;false&quot; bindingLocation=&quot;entity&quot; typeName=&quot;{http://tempuri.org/}GetOrderResultCursorType&quot; name=&quot;result&quot; elementName=&quot;{http://tempuri.org/}GetOrderResult&quot; direction=&quot;OUTPUT&quot;&gt;&lt;cursorBinding rowElementTypeName=&quot;{http://tempuri.org/}GetOrderResultRowType&quot; rowElementName=&quot;row&quot; cursorTypeName=&quot;{http://tempuri.org/}GetOrderResultCursorType&quot;&gt;&lt;columnBindings&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; name=&quot;orderid&quot; elementName=&quot;orderid&quot;/&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; name=&quot;productid&quot; elementName=&quot;productid&quot;/&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; name=&quot;quantity&quot; elementName=&quot;quantity&quot;/&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}decimal&quot; name=&quot;unitprice&quot; elementName=&quot;unitprice&quot;/&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; name=&quot;status&quot; elementName=&quot;status&quot;/&gt;&lt;columnBinding xsi:type=&quot;restfulColumnBinding&quot; typeName=&quot;{http://www.w3.org/2001/XMLSchema}decimal&quot; name=&quot;discount&quot; elementName=&quot;discount&quot;/&gt;&lt;/columnBindings&gt;&lt;/cursorBinding&gt;&lt;/parameterBinding&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;httpSecurityModel transportSecurity=&quot;ENABLED&quot; authSchemes=&quot;BASIC&quot;/&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1465912077742</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="driverName" type="STRING">COMPOSITE_WEB_SERVICE</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1490234610784</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="name" type="STRING">AdvancedTraining</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1465912077742</attribute>
+  <attribute name="type" type="STRING">CompositeWebService</attribute>
+</metadata>
