@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="decimalformat" path="/users/composite/admin/Test/xsltprocedure/decimalformat" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/decimalformat" referenceType="{/users/composite/admin/Test/xsltprocedure/decimalformat}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/decimalformat}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/decimalformat" referenceType="{/users/composite/admin/Test/xsltprocedure/decimalformat}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/decimalformat}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355984508072</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355984597133</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:csw-xform=&quot;http://www.compositesw.com/2003/xform&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;
+  &lt;xsl:output method=&quot;html&quot; indent=&quot;yes&quot;/&gt;
+  &lt;xsl:decimal-format name=&quot;chinese&quot; decimal-separator=&quot;.&quot; grouping-separator=&quot; &quot; infinity=&quot;infinity&quot; minus-sign=&quot;-&quot; NaN=&quot;NotValue&quot;/&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;style&gt;table{border:black solid 1px; border-collapse:collapse;}td{border:black solid 1px;font-size: 10.5pt; padding:2pt; text-align:right;}&lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;table width=&quot;100%&quot;&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Input expression&lt;/td&gt;
+            &lt;td&gt;Chinense String Format&lt;/td&gt;
+            &lt;td&gt;Chinese Format&lt;/td&gt;
+            &lt;td&gt;Default String style&lt;/td&gt;
+            &lt;td&gt;Default Style&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;xsl:for-each select=&quot;style/format/value&quot;&gt;
+            &lt;tr&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;text()&quot;/&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;../@string&quot;/&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;format-number(text(),../@string,&apos;chinese&apos;)&quot;/&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;../@defaultformat&quot;/&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;format-number(text(),../@defaultformat)&quot;/&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+          &lt;tr&gt;
+            &lt;td&gt;1/0&lt;/td&gt;
+            &lt;td&gt;#.#&lt;/td&gt;
+            &lt;td&gt;
+              &lt;xsl:value-of select=&quot;format-number(1 div 1,&apos;#.#&apos;,&apos;chinese&apos;)&quot;/&gt;
+            &lt;/td&gt;
+            &lt;td&gt;#.#&lt;/td&gt;
+            &lt;td&gt;
+              &lt;xsl:value-of select=&quot;format-number(1 div 1,&apos;#.#&apos;)&quot;/&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</attribute>
+</metadata>

@@ -1,0 +1,72 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="namespacealias" path="/users/composite/admin/Test/xsltprocedure/namespacealias" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/namespacealias" referenceType="{/users/composite/admin/Test/xsltprocedure/namespacealias}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/namespacealias}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/namespacealias" referenceType="{/users/composite/admin/Test/xsltprocedure/namespacealias}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/namespacealias}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355994810329</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355994851107</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;xslt:stylesheet xmlns:xslt=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform_Alias&quot; xmlns:csw-xform=&quot;http://www.compositesw.com/2003/xform&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;
+  &lt;xslt:namespace-alias stylesheet-prefix=&quot;xsl&quot; result-prefix=&quot;xslt&quot;/&gt;
+  &lt;xslt:template match=&quot;/&quot;&gt;
+    &lt;xsl:stylesheet version=&quot;2.0&quot;&gt;
+      &lt;xsl:output method=&quot;{set/@outputmoth}&quot; encoding=&quot;{set/@coding}&quot; indent=&quot;{set/@short}&quot;/&gt;
+      &lt;xsl:template match=&quot;/&quot;&gt;
+        &lt;table border=&quot;1&quot;&gt;
+          &lt;xsl:apply-templates select=&quot;grade/class&quot;/&gt;
+          &lt;xsl:apply-templates select=&quot;grade/class&quot; mode=&quot;statistics&quot;/&gt;
+        &lt;/table&gt;
+      &lt;/xsl:template&gt;
+      &lt;xsl:template match=&quot;class&quot;&gt;
+        &lt;xsl:apply-templates select=&quot;student&quot;/&gt;
+      &lt;/xsl:template&gt;
+      &lt;xsl:template match=&quot;class&quot; mode=&quot;statistics&quot;&gt;
+        &lt;tr&gt;
+          &lt;td&gt;avggrade&lt;/td&gt;
+          &lt;td&gt;
+            &lt;xsl:value-of select=&quot;format-number(sum(student/@language) div count(student),&apos;###.00&apos;)&quot;/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;xsl:value-of select=&quot;format-number(sum(student/@maths) div count(student),&apos;###.00&apos;)&quot;/&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/xsl:template&gt;
+      &lt;xsl:template match=&quot;student&quot;&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;xsl:value-of select=&quot;@studentname&quot;/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;xsl:value-of select=&quot;@language&quot;/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;xsl:value-of select=&quot;@maths&quot;/&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/xsl:template&gt;
+    &lt;/xsl:stylesheet&gt;
+  &lt;/xslt:template&gt;
+&lt;/xslt:stylesheet&gt;
+</attribute>
+</metadata>

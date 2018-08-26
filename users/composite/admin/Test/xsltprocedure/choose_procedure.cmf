@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="choose" path="/users/composite/admin/Test/xsltprocedure/choose" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/choose" referenceType="{/users/composite/admin/Test/xsltprocedure/choose}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/choose}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/choose" referenceType="{/users/composite/admin/Test/xsltprocedure/choose}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/choose}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355911711290</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355970892860</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;h2&gt;My CD Collection&lt;/h2&gt;
+        &lt;table border=&quot;1&quot;&gt;
+          &lt;tr bgcolor=&quot;#9acd32&quot;&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+            &lt;th&gt;Artist&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;xsl:for-each select=&quot;catalog/cd&quot;&gt;
+            &lt;tr&gt;
+              &lt;td&gt;
+                &lt;xsl:value-of select=&quot;title&quot;/&gt;
+              &lt;/td&gt;
+              &lt;xsl:choose&gt;
+                &lt;xsl:when test=&quot;price &amp;gt; 10&quot;&gt;
+                  &lt;td bgcolor=&quot;#ff00ff&quot;&gt;
+                    &lt;xsl:value-of select=&quot;artist&quot;/&gt;
+                  &lt;/td&gt;
+                &lt;/xsl:when&gt;
+                &lt;xsl:otherwise&gt;
+                  &lt;td&gt;
+                    &lt;xsl:value-of select=&quot;artist&quot;/&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;xsl:value-of select=&quot;price&quot;/&gt;
+                  &lt;/td&gt;
+                &lt;/xsl:otherwise&gt;
+              &lt;/xsl:choose&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</attribute>
+</metadata>

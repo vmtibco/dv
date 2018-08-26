@@ -1,0 +1,101 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pTest" path="/users/composite/admin/Test/pTest" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="str1" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="64"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Print" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToPrint" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pTest
+(
+	IN	str1	VARCHAR(64)
+)
+BEGIN
+	CALL PRINT(&apos;Today: &apos; || CURRENT_DATE);
+	CALL PRINT(&apos;DAYOFWEEK: &apos; || DAYOFWEEK(CURRENT_DATE));
+	CALL PRINT(&apos;DAYOFWEEK_ISO: &apos; || DAYOFWEEK_ISO(CURRENT_DATE));
+	CALL PRINT(&apos;DAYS: &apos; || DAYS(CURRENT_DATE));
+	CALL PRINT(&apos;DAYNAME: &apos; || DAYNAME(CURRENT_DATE));
+
+/*
+	DECLARE vec1 VECTOR(ROW(a int, b char));
+	DECLARE vec2 VECTOR(ROW(x int, y char));
+	DECLARE str2 VARCHAR(1024);
+	SET vec1 = VECTOR[(11, &apos;one in vec1&apos;), (12, &apos;two in vec1&apos;)];
+	SET vec2 = VECTOR[(21, &apos;one in vec2&apos;), (22, &apos;two in vec2&apos;)];
+	CALL print(vec1[1].b);
+	CALL print(vec1[2].b);
+	IF vec1 != vec2 THEN
+		CALL print(vec2[1].y);
+	END IF;
+	SET str2 = &apos;Foo: &apos; || NVL(str1, &apos;&apos;);
+	CALL PRINT(str2);
+	update /services/databases/bookstore/&quot;public&quot;/books SET isbn=&apos;1451648538&apos; where CAST(isbn AS VARCHAR)=&apos;1451648537&apos; and CAST(name AS VARCHAR)=&apos;Steve Jobs1&apos;; 
+*/
+--	CALL /lib/util/SendEMail(null, &apos;info@arvasoft.com&apos;, &apos;venkym@yahoo.com&apos;, null, null, &apos;CIS Email&apos;, &apos;TEXT_PLAIN&apos;, &apos;This is a test message&apos;);
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1434829750749</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1524752445137</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">7/8</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/9</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/6</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/10</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">7/7</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Print</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1434829750749</attribute>
+</metadata>

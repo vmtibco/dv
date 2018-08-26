@@ -1,0 +1,61 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="fallback" path="/users/composite/admin/Test/xsltprocedure/fallback" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/fallback" referenceType="{/users/composite/admin/Test/xsltprocedure/fallback}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/fallback}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/fallback" referenceType="{/users/composite/admin/Test/xsltprocedure/fallback}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/fallback}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355994145806</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355994151410</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.1&quot;
+      xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; &gt;
+
+  &lt;xsl:template match=&quot;/&quot;&gt;
+     &lt;HTML&gt;
+     &lt;HEAD&gt;&lt;TITLE&gt;Output Table&lt;/TITLE&gt;&lt;/HEAD&gt;
+     &lt;BODY&gt;
+     &lt;xsl:import-table href=&quot;blah.html&quot; name=&quot;sample&quot;&gt;
+        &lt;xsl:fallback&gt;
+        &lt;p&gt;
+            This version of the parser does not support the creation of a
+            table with the &apos;xsl:import-table&apos; element, so the following 
+            table has been generated using the &apos;fallback&apos; element.
+        &lt;/p&gt;
+          &lt;table border=&apos;2&apos;&gt;
+            &lt;xsl:for-each select=&apos;records/record&apos;&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;xsl:value-of select=&apos;name&apos;/&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;xsl:value-of select=&apos;address&apos;/&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;xsl:value-of select=&apos;phone&apos;/&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/xsl:for-each&gt;
+          &lt;/table&gt;
+        &lt;/xsl:fallback&gt;
+      &lt;/xsl:import-table&gt;
+      &lt;/BODY&gt;
+    &lt;/HTML&gt; 
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</attribute>
+</metadata>

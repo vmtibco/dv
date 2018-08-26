@@ -1,0 +1,462 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="vAcmeProduct" path="/users/composite/admin/Test/Partition/vAcmeProduct" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="OrderID" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ProductID" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="Discount" nullable="true">
+      <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="OrderDate" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CompanyName" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CustomerContactFirstName" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CustomerContactLastName" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="CustomerContactPhone" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ProductName" nullable="true">
+      <datatype namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="32768"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="TransactionID" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DateRequired" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="DatePromised" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="ShipDate" nullable="true">
+      <datatype type="DATE"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SupplierID" nullable="true">
+      <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SupplierName" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SupplierContactName" nullable="true">
+      <datatype type="STRING" maxLength="50"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="SupplierPhoneNumber" nullable="true">
+      <datatype type="STRING" maxLength="30"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/sources/defaultCacheDataSource" type="DATA_SOURCE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/lib/sources/defaultCacheDataSource/ciscache/view62481_0" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/lib/sources/defaultCacheDataSource/ciscache/view62481_1" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/lib/sources/defaultCacheDataSource/ciscache/view62481_2" type="TABLE">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <dependency target="/shared/examples/CompositeView" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="OrderID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="ProductID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="Discount">
+        <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+      <element name="OrderDate">
+        <datatype type="DATE"/>
+      </element>
+      <element name="CompanyName">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="CustomerContactFirstName">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="CustomerContactLastName">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="CustomerContactPhone">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="ProductName">
+        <datatype namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="32768"/>
+      </element>
+      <element name="TransactionID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="DateRequired">
+        <datatype type="DATE"/>
+      </element>
+      <element name="DatePromised">
+        <datatype type="DATE"/>
+      </element>
+      <element name="ShipDate">
+        <datatype type="DATE"/>
+      </element>
+      <element name="SupplierID">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="SupplierName">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="SupplierContactName">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="SupplierPhoneNumber">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    CompositeView.OrderID, 
+    CompositeView.ProductID, 
+    CompositeView.Discount, 
+    CompositeView.OrderDate, 
+    CompositeView.CompanyName, 
+    CompositeView.CustomerContactFirstName, 
+    CompositeView.CustomerContactLastName, 
+    CompositeView.CustomerContactPhone, 
+    CompositeView.ProductName, 
+    CompositeView.TransactionID, 
+    CompositeView.DateRequired, 
+    CompositeView.DatePromised, 
+    CompositeView.ShipDate, 
+    CompositeView.SupplierID, 
+    CompositeView.SupplierName, 
+    CompositeView.SupplierContactName, 
+    CompositeView.SupplierPhoneNumber
+FROM      
+    /shared/examples/CompositeView CompositeView
+WHERE
+    CompositeView.ProductName = &apos;Acme Super Memory&apos;</attribute>
+  <attribute name="cacheBucketMode" type="STRING">AUTO_GEN</attribute>
+  <attribute name="cacheBucketPrefix" type="STRING">view62481_</attribute>
+  <attribute name="cacheBucketSchema" type="STRING">ciscache</attribute>
+  <attribute name="cacheClearRule" type="STRING">MANUAL</attribute>
+  <attribute name="cacheConfigured" type="BOOLEAN">true</attribute>
+  <attribute name="cacheDeltaLoader" type="NULL"/>
+  <attribute name="cacheDropCreateIdx" type="BOOLEAN">true</attribute>
+  <attribute name="cacheEnabled" type="BOOLEAN">true</attribute>
+  <attribute name="cacheIncremental" type="BOOLEAN">false</attribute>
+  <attribute name="cacheLastTracking" type="STRING">/lib/sources/defaultCacheDataSource/ciscache/cstracking</attribute>
+  <attribute name="cacheNumBuckets" type="INTEGER">3</attribute>
+  <attribute name="cachePostRefreshCallback" type="NULL"/>
+  <attribute name="cachePreRefreshCallback" type="NULL"/>
+  <attribute name="cachePullBasedIncremental" type="BOOLEAN">false</attribute>
+  <attribute name="cacheRefreshMode" type="STRING">MANUAL</attribute>
+  <attribute name="cacheSnapshotLoader" type="NULL"/>
+  <attribute name="cacheStorageSource" type="STRING">/lib/sources/defaultCacheDataSource</attribute>
+  <attribute name="cacheStorageTargets" type="MAP">
+    <item>
+      <key type="STRING">result</key>
+      <value type="STRING">/lib/sources/defaultCacheDataSource/ciscache/view62481_0</value>
+    </item>
+    <item>
+      <key type="STRING">result1</key>
+      <value type="STRING">/lib/sources/defaultCacheDataSource/ciscache/view62481_1</value>
+    </item>
+    <item>
+      <key type="STRING">result2</key>
+      <value type="STRING">/lib/sources/defaultCacheDataSource/ciscache/view62481_2</value>
+    </item>
+  </attribute>
+  <attribute name="cacheStorageType" type="STRING">DATA_SOURCE_OTPS</attribute>
+  <attribute name="creationDate" type="LONG">1501126039257</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="impactLevel" type="INTEGER">0</attribute>
+  <attribute name="impactMessage" type="NULL"/>
+  <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="BYTE_ARRAY">EIEJBAAAAAEQUQYBAA0AQwBvAG0AcABvAHMAaQB0AGUAVgBpAGUAdwYCAA0AQwBvAG0AcABvAHMA
+aQB0AGUAVgBpAGUAdwML/////wMKAAB0BwMM/////wsRAAMABgBzAGgAYQByAGUAZAAIAGUAeABh
+AG0AcABsAGUAcwANAEMAbwBtAHAAbwBzAGkAdABlAFYAaQBlAHf//wMFAAAAAAgCEDEGAf//AQIB
+AQYAAQMAAQQAAQUAAwcAAAAACAgQYgYHAAEAPQEFAAgDEEEGAQALAFAAcgBvAGQAdQBjAHQATgBh
+AG0AZQYCAAAGA///BgT//wMK/////wgMEBsGJAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3ADMA
+LgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQYlAA0AYQBuAHkAUwBpAG0AcABs
+AGUAVAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAwADAA
+MQAvAFgATQBMAFMAYwBoAGUAbQBhAxIAAAABBAQAAAAAAACAAAETAf//AwsAAAAA//8IBBBDBgIA
+AAoOEBsGAgAEAEMASABBAFIDEgAAAAEBOwAEBQAAAAAAAAARBAQAAAAAAAAAEQETAf//EAAAABFB
+Y21lIFN1cGVyIE1lbW9yef////8HCQAAAAEAAAAACQoAAAAREEEGAQAHAE8AcgBkAGUAcgBJAEQG
+AgAABgP//wYE//8DCv////8IDBAZAxIAAAABBAf/////gAAAAAQGAAAAAH///////wMLAAAAAP//
+EEEGAQAJAFAAcgBvAGQAdQBjAHQASQBEBgIAAAYD//8GBP//Awr/////CAwQGQMSAAAAAQQH////
+/4AAAAAEBgAAAAB///////8DCwAAAAD//xBBBgEACABEAGkAcwBjAG8AdQBuAHQGAgAABgP//wYE
+//8DCv////8IDBAXAxIAAAABAw4AAAAMAxEAAAACAxAAAAAC//8DCwAAAAD//xBBBgEACQBPAHIA
+ZABlAHIARABhAHQAZQYCAAAGA///BgT//wMK/////wgMEBUDEgAAAAH//wMLAAAAAP//EEEGAQAL
+AEMAbwBtAHAAYQBuAHkATgBhAG0AZQYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAA
+AAAyARMB//8DCwAAAAD//xBBBgEAGABDAHUAcwB0AG8AbQBlAHIAQwBvAG4AdABhAGMAdABGAGkA
+cgBzAHQATgBhAG0AZQYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAAeARMB//8D
+CwAAAAD//xBBBgEAFwBDAHUAcwB0AG8AbQBlAHIAQwBvAG4AdABhAGMAdABMAGEAcwB0AE4AYQBt
+AGUGAgAABgP//wYE//8DCv////8IDBAbAxIAAAABBAQAAAAAAAAAMgETAf//AwsAAAAA//8QQQYB
+ABQAQwB1AHMAdABvAG0AZQByAEMAbwBuAHQAYQBjAHQAUABoAG8AbgBlBgIAAAYD//8GBP//Awr/
+////CAwQGwMSAAAAAQQEAAAAAAAAAB4BEwH//wMLAAAAAP//EEEGAQALAFAAcgBvAGQAdQBjAHQA
+TgBhAG0AZQYCAAAGA///BgT//wMK/////wgMEBsGJAAgAGgAdAB0AHAAOgAvAC8AdwB3AHcALgB3
+ADMALgBvAHIAZwAvADIAMAAwADEALwBYAE0ATABTAGMAaABlAG0AYQYlAA0AYQBuAHkAUwBpAG0A
+cABsAGUAVAB5AHAAZQYoACAAaAB0AHQAcAA6AC8ALwB3AHcAdwAuAHcAMwAuAG8AcgBnAC8AMgAw
+ADAAMQAvAFgATQBMAFMAYwBoAGUAbQBhAxIAAAABBAQAAAAAAACAAAETAf//AwsAAAAA//8QQQYB
+AA0AVAByAGEAbgBzAGEAYwB0AGkAbwBuAEkARAYCAAAGA///BgT//wMK/////wgMEBkDEgAAAAEE
+B/////+AAAAABAYAAAAAf///////AwsAAAAA//8QQQYBAAwARABhAHQAZQBSAGUAcQB1AGkAcgBl
+AGQGAgAABgP//wYE//8DCv////8IDBAVAxIAAAAB//8DCwAAAAD//xBBBgEADABEAGEAdABlAFAA
+cgBvAG0AaQBzAGUAZAYCAAAGA///BgT//wMK/////wgMEBUDEgAAAAH//wMLAAAAAP//EEEGAQAI
+AFMAaABpAHAARABhAHQAZQYCAAAGA///BgT//wMK/////wgMEBUDEgAAAAH//wMLAAAAAP//EEEG
+AQAKAFMAdQBwAHAAbABpAGUAcgBJAEQGAgAABgP//wYE//8DCv////8IDBAZAxIAAAABBAf/////
+gAAAAAQGAAAAAH///////wMLAAAAAP//EEEGAQAMAFMAdQBwAHAAbABpAGUAcgBOAGEAbQBlBgIA
+AAYD//8GBP//Awr/////CAwQGwMSAAAAAQQEAAAAAAAAADIBEwH//wMLAAAAAP//EEEGAQATAFMA
+dQBwAHAAbABpAGUAcgBDAG8AbgB0AGEAYwB0AE4AYQBtAGUGAgAABgP//wYE//8DCv////8IDBAb
+AxIAAAABBAQAAAAAAAAAMgETAf//AwsAAAAA//8QQQYBABMAUwB1AHAAcABsAGkAZQByAFAAaABv
+AG4AZQBOAHUAbQBiAGUAcgYCAAAGA///BgT//wMK/////wgMEBsDEgAAAAEEBAAAAAAAAAAeARMB
+//8DCwAAAAD/////CQYAAAABEIIDCgAAAPEDCwAAARIDDAAAAMgDDQAAAMj//wgDEHEDAQAAAAsD
+AgAAADIJAwAAAiYQdAMGAAAAAP//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAB//8QcgYE/////xBzAwUAAAAA
+//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAA
+AAL//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdAMGAAAAA///EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////
+EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAE//8QcgYE/////xBzAwUA
+AAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQD
+BgAAAAX//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdAMGAAAABv//EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/
+////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0AwYAAAAH//8QcgYE/////xBz
+AwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHQDBgAAAAj//xByBgT/////EHMDBQAAAAD//xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM
+/////xB2BggALwBDAG8AbQBwAG8AcwBpAHQAZQBWAGkAZQB3AC4AUAByAG8AZAB1AGMAdABOAGEA
+bQBlACAAPQAgACcAQQBjAG0AZQAgAFMAdQBwAGUAcgAgAE0AZQBtAG8AcgB5ACf//xB2//8Qdv//
+EHb//xB0AwYAAAAJ//8QcgYE/////xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAAr//xByBgT/////EHMDBQAAAAD//xB1AQcB
+//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAAC///EHIG
+BP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0AwYAAAAM//8QcgYE/////xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK////
+////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAAA3//xByBgT/////EHMDBQAAAAD//xB1
+AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdAMGAAAADv//
+EHIGBP////8QcwMFAAAAAP//EHUBBwH//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2
+//8Qdv//EHb//xB0AwYAAAAP//8QcgYE/////xBzAwUAAAAA//8QdQEHAf//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHQDBgAAABD//xByBgT/////EHMDBQAAAAD/
+/xB1AQcB//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIG
+BP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb/
+/xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb/
+/xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM////
+/xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv//////
+/xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8Q
+dwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8Q
+eAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///
+EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE
+/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//
+EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//
+EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////
+EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////
+EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3
+Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4
+Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8Q
+dQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/
+////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8Q
+dP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Q
+dv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Q
+dv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8Q
+eQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcD
+Cv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgG
+C/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1
+AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP//
+//8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0
+//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2
+//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2
+//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5
+Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK
+////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL
+/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb//xB2//8QdP//EHIGBP////8Qc///EHUB
+BwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb//xB2//8Qdv//EHb//xB0//8QcgYE////
+/xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkGDP////8Qdv//EHb//xB2//8Qdv//EHT/
+/xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr///////8QeQYM/////xB2//8Qdv//EHb/
+/xB2//8QdP//EHIGBP////8Qc///EHUBBwD//xB4Bgv/////EHcDCv///////xB5Bgz/////EHb/
+/xB2//8Qdv//EHb//xB0//8QcgYE/////xBz//8QdQEHAP//EHgGC/////8QdwMK////////EHkG
+DP////8Qdv//EHb//xB2//8Qdv//EHT//xByBgT/////EHP//xB1AQcA//8QeAYL/////xB3Awr/
+//////8QeQYM/////xB2//8Qdv//EHb//xB2////////</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501126039257</attribute>
+  <trigger>
+    <security>
+      <owner user="admin" domain="composite"/>
+    </security>
+    <dependency target="/lib/resource/RefreshResourceCache" type="PROCEDURE">
+      <datatype name="Tree" type="TREE" refId="1"></datatype>
+    </dependency>
+    <dependency target="/users/composite/admin/Test/Partition/vAcmeProduct" type="TABLE">
+      <datatype type="TABLE" refId="1">
+        <element name="OrderID">
+          <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="ProductID">
+          <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="Discount">
+          <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+        </element>
+        <element name="OrderDate">
+          <datatype type="DATE"/>
+        </element>
+        <element name="CompanyName">
+          <datatype type="STRING" maxLength="50"/>
+        </element>
+        <element name="CustomerContactFirstName">
+          <datatype type="STRING" maxLength="30"/>
+        </element>
+        <element name="CustomerContactLastName">
+          <datatype type="STRING" maxLength="50"/>
+        </element>
+        <element name="CustomerContactPhone">
+          <datatype type="STRING" maxLength="30"/>
+        </element>
+        <element name="ProductName">
+          <datatype namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="32768"/>
+        </element>
+        <element name="TransactionID">
+          <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="DateRequired">
+          <datatype type="DATE"/>
+        </element>
+        <element name="DatePromised">
+          <datatype type="DATE"/>
+        </element>
+        <element name="ShipDate">
+          <datatype type="DATE"/>
+        </element>
+        <element name="SupplierID">
+          <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+        </element>
+        <element name="SupplierName">
+          <datatype type="STRING" maxLength="50"/>
+        </element>
+        <element name="SupplierContactName">
+          <datatype type="STRING" maxLength="50"/>
+        </element>
+        <element name="SupplierPhoneNumber">
+          <datatype type="STRING" maxLength="30"/>
+        </element>
+      </datatype>
+    </dependency>
+    <attribute name="actionProperties" type="MAP">
+      <item>
+        <key type="STRING">PATH</key>
+        <value type="STRING">/lib/resource/RefreshResourceCache</value>
+      </item>
+      <item>
+        <key type="STRING">PARAMETERS</key>
+        <value type="STRING">&apos;/users/composite/admin/Test/Partition/vAcmeProduct&apos;,&apos;TABLE&apos;</value>
+      </item>
+    </attribute>
+    <attribute name="actionType" type="STRING">PROCEDURE</attribute>
+    <attribute name="conditionSchedule" type="MAP">
+      <item>
+        <key type="STRING">mode</key>
+        <value type="STRING">CALENDAR</value>
+      </item>
+      <item>
+        <key type="STRING">period</key>
+        <value type="INTEGER">2</value>
+      </item>
+      <item>
+        <key type="STRING">count</key>
+        <value type="INTEGER">1</value>
+      </item>
+      <item>
+        <key type="STRING">startTime</key>
+        <value type="LONG">1501126039000</value>
+      </item>
+      <item>
+        <key type="STRING">interval</key>
+        <value type="INTEGER">0</value>
+      </item>
+      <item>
+        <key type="STRING">endTime</key>
+        <value type="LONG">0</value>
+      </item>
+      <item>
+        <key type="STRING">isCluster</key>
+        <value type="BOOLEAN">false</value>
+      </item>
+    </attribute>
+    <attribute name="conditionType" type="STRING">TIMER</attribute>
+    <attribute name="creationDate" type="LONG">1501126337333</attribute>
+    <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+    <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+    <attribute name="creatorUserName" type="STRING">admin</attribute>
+    <attribute name="enabled" type="BOOLEAN">false</attribute>
+    <attribute name="isChildTrigger" type="BOOLEAN">true</attribute>
+    <attribute name="lastModifiedDate" type="LONG">1533704704040</attribute>
+    <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+    <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+    <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+    <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501126337333</attribute>
+  </trigger>
+</metadata>

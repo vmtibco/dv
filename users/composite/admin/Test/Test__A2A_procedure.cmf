@@ -1,0 +1,256 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="Test_A2A" path="/users/composite/admin/Test/Test_A2A" type="PROCEDURE" subtype="TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="false">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="PersonID" nullable="false">
+          <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="{http://www.w3.org/2001/XMLSchema}integer" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}integer">
+            <schemaDatatype>
+              <datatype name="integer" type="TREE" refId="2"></datatype>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="NTID" nullable="false">
+          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="{http://www.w3.org/2001/XMLSchema}string" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}string">
+            <schemaDatatype>
+              <datatype name="string" type="TREE" refId="3"></datatype>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="EmployeeID" nullable="false">
+          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="{http://www.w3.org/2001/XMLSchema}string" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}string">
+            <schemaDatatype>
+              <reference refId="3"/>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="Postal" nullable="false">
+          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="{http://www.w3.org/2001/XMLSchema}string" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}string">
+            <schemaDatatype>
+              <reference refId="3"/>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="Building" nullable="false">
+          <datatype name="#AnonType_Building" referenceType="#AnonType_Building" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="#AnonType_Building">
+            <schemaDatatype>
+              <datatype name="#AnonType_Building" type="TREE" refId="4"></datatype>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="BuildingCode" nullable="false">
+          <datatype name="#AnonType_BuildingCode" referenceType="#AnonType_BuildingCode" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="#AnonType_BuildingCode">
+            <schemaDatatype>
+              <datatype name="#AnonType_BuildingCode" type="TREE" refId="5"></datatype>
+            </schemaDatatype>
+          </datatype>
+        </element>
+        <element name="Column" nullable="false">
+          <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="{http://www.w3.org/2001/XMLSchema}string" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{http://www.w3.org/2001/XMLSchema}string">
+            <schemaDatatype>
+              <reference refId="3"/>
+            </schemaDatatype>
+          </datatype>
+        </element>
+      </datatype>
+    </parameter>
+    <parameter name="ArrayOfCustomizePerson" direction="IN" nullable="false">
+      <datatype name="ArrayOfCustomizePerson" referenceDefinitionSet="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" referenceType="ArrayOfCustomizePerson" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="ArrayOfCustomizePerson">
+        <schemaDatatype>
+          <datatype name="ArrayOfCustomizePerson" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/CustomizePerson/CustomizePersonDefinitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1497563840561</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1497637068326</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1497563840561</attribute>
+  <attribute name="transformModel" type="BYTE_ARRAY">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
+BgAAAAABAAEALwAAALoQAAAAAA==</attribute>
+  <attribute name="transformSource" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare variable $ArrayOfCustomizePerson external;
+let $nodes := 
+(
+  (
+    for $var1 at $counter0 in $ArrayOfCustomizePerson/CustomizePerson
+    return 
+      if (fn:not($counter0 &lt;= 2147483647 and fn:true()))
+      then ()
+      else 
+        element result
+        {
+          (
+            element PersonID
+            {
+              $var1/PersonID/text()
+            }
+            ,
+            element NTID
+            {
+              $var1/NTID/text()
+            }
+            ,
+            element EmployeeID
+            {
+              $var1/EmployeeID/text()
+            }
+            ,
+            element Postal
+            {
+              $var1/Postal/text()
+            }
+            ,
+            element Building
+            {
+              $var1/Building
+            }
+            ,
+            element BuildingCode
+            {
+              $var1/BuildingCode
+            }
+            ,
+            element Column
+            {
+              $var1/Column/text()
+            }
+          )
+        }
+    ,
+    let $counter := count($ArrayOfCustomizePerson/CustomizePerson)
+    return
+      if ($counter &gt;= 0) then
+      ()
+      else 
+        for $k in (1 to ( 0 - $counter))
+        return
+          element result
+          {
+            (
+              element PersonID
+              {
+              }
+              ,
+              element NTID
+              {
+              }
+              ,
+              element EmployeeID
+              {
+              }
+              ,
+              element Postal
+              {
+              }
+              ,
+              element Building
+              {
+              }
+              ,
+              element BuildingCode
+              {
+              }
+              ,
+              element Column
+              {
+              }
+            )
+          }
+  )
+)
+return
+$nodes</attribute>
+</metadata>

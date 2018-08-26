@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="RECORDS_RAW_V" path="/users/composite/admin/Test/JSON/RethinkDb/RECORDS_RAW_V" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="custodian" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="final" nullable="true">
+      <datatype type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="owner" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="recordId" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="properties" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="proposals" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="updates" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/RethinkDb/RethinkDB/records" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="output" direction="OUT" nullable="unknown">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    custodian,
+	final,
+	owner,
+	recordId,
+	properties,
+	proposals,
+	updates
+FROM
+	JSON_TABLE(cc.&quot;output&quot;, &apos;$&apos;
+		COLUMNS (&quot;custodian&quot; VARCHAR PATH &apos;$.custodian&apos;,
+			&quot;final&quot; VARCHAR(6) PATH &apos;$.final&apos;,
+			&quot;owner&quot; VARCHAR PATH &apos;$.owner&apos;,
+			&quot;recordId&quot; VARCHAR PATH &apos;$.recordId&apos;,
+			&quot;properties&quot; LONGVARCHAR PATH &apos;$.properties&apos;,
+			&quot;proposals&quot; LONGVARCHAR PATH &apos;$.proposals&apos;,
+			&quot;updates&quot; LONGVARCHAR PATH &apos;$.updates&apos;)) JT,
+	/users/composite/admin/Test/JSON/RethinkDb/RethinkDB/records() cc</attribute>
+  <attribute name="creationDate" type="LONG">1521729029322</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521732457692</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521729029322</attribute>
+</metadata>

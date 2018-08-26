@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="V_AGENTS" path="/users/composite/admin/Test/JSON/MMyburgh/helpers/V_AGENTS" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="keyId" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="name" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/MMyburgh/helpers/RethinkDB/agents" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="output" direction="OUT" nullable="unknown">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT
+	keyId, 
+	name
+FROM
+	JSON_TABLE(ag.&quot;output&quot;, &apos;$&apos;
+		COLUMNS (&quot;keyId&quot; VARCHAR PATH &apos;$.key&apos;,
+				 &quot;name&quot; VARCHAR PATH &apos;$.name&apos;)) JT,
+		/users/composite/admin/Test/JSON/MMyburgh/helpers/RethinkDB/agents() ag;</attribute>
+  <attribute name="creationDate" type="LONG">1521762388613</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521768396187</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521762388613</attribute>
+</metadata>

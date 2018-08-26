@@ -1,0 +1,84 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pCustodianProperties" path="/users/composite/admin/Test/JSON/RethinkDb/pCustodianProperties" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="custodianId" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="propsJson" direction="IN" nullable="true">
+      <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+    </parameter>
+    <parameter name="props" direction="OUT" nullable="true">
+      <datatype name="props" type="TABLE" refId="1">
+        <element name="custodianId">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="name">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="reporters">
+          <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="propType">
+          <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+        </element>
+        <element name="propValue">
+          <datatype name="VARCHAR" type="STRING" maxLength="1024"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/RethinkDb/reverseJSON" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="inJson" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="outJson" direction="OUT">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE pCustodianProperties
+(
+	IN	custodianId		VARCHAR,
+	IN	propsJson		LONGVARCHAR,
+	OUT	props	CURSOR (
+		custodianId	VARCHAR,
+		name		VARCHAR,
+		reporters	LONGVARCHAR,
+		propType	VARCHAR(32),
+		propValue	VARCHAR(1024)
+	)
+)
+BEGIN
+	OPEN props FOR
+		SELECT
+			custodianId, 
+		    name,
+			reporters,
+			propType,
+			propValue
+		FROM
+		JSON_TABLE(rj.&quot;outJson&quot;, &apos;$&apos;
+				COLUMNS (&quot;name&quot; VARCHAR PATH &apos;$.name&apos;,
+				&quot;reporters&quot; LONGVARCHAR PATH &apos;$.reporters&apos;,
+				&quot;propType&quot; VARCHAR(32) PATH &apos;$.type&apos;,
+				&quot;propValue&quot; VARCHAR(1024) PATH &apos;$.value&apos;)) JT,
+		/users/composite/admin/Test/JSON/RethinkDb/reverseJSON(propsJson) rj;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1521730367296</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521732434286</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521730367296</attribute>
+</metadata>

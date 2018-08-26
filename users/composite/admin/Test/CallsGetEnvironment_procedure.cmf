@@ -1,0 +1,96 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CallsGetEnvironment" path="/users/composite/admin/Test/CallsGetEnvironment" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters></parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/lib/debug/Log" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="textToLog" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="MessageValue" type="STRING" maxLength="64000"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/lib/util/GetEnvironment" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="variableName" direction="IN">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyName" type="STRING" maxLength="255"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype referenceDefinitionSet="/lib/util/System" referenceType="PropertyValue" type="STRING" maxLength="4096"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE CallsGetEnvironment() 
+BEGIN 
+DECLARE tpath, tname, ttype, tvalue, result VARCHAR(4096); 
+CALL GetEnvironment(&apos;TRIGGER_PATH&apos;, tpath); 
+CALL GetEnvironment(&apos;TRIGGER_EVENT_NAME&apos;, tname); 
+CALL GetEnvironment(&apos;TRIGGER_EVENT_TYPE&apos;, ttype); 
+CALL GetEnvironment(&apos;TRIGGER_EVENT_VALUE&apos;, tvalue); 
+SET result = CASE 
+                WHEN (ttype IS NULL) THEN &apos;NULL&apos; ELSE ttype END || &apos; trigger &apos;||
+			 CASE 
+	             WHEN (tpath IS NULL) THEN &apos;NULL&apos;  ELSE tpath END || &apos;: &apos;||
+			 CASE 
+	             WHEN (tname IS NULL) THEN &apos;NULL&apos; ELSE tname END ||&apos; = &apos;|| 
+			 CASE 
+	             WHEN (tvalue IS NULL) THEN &apos;NULL&apos; ELSE tvalue END; 
+    CALL Log(result); 
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1463979583024</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1523645595332</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="MAP">
+    <item>
+      <key type="STRING">6/4</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>GetEnvironment</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">6/5</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>GetEnvironment</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">10/16</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>debug</item>
+        <item>Log</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">6/6</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>GetEnvironment</item>
+      </value>
+    </item>
+    <item>
+      <key type="STRING">6/7</key>
+      <value type="STRING_ARRAY">
+        <item>lib</item>
+        <item>util</item>
+        <item>GetEnvironment</item>
+      </value>
+    </item>
+  </attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1463979583024</attribute>
+</metadata>

@@ -1,0 +1,218 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="TestXQuery2" path="/users/composite/admin/Test/TestXQuery2" type="PROCEDURE" subtype="-131" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/TestXQuery2" referenceType="{/users/composite/admin/Test/TestXQuery2}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/TestXQuery2}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1501112405781</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1501112415344</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501112405781</attribute>
+  <attribute name="xquery" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace school =  &quot;http://compositesw.com/transform/example/school&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare function local:CLASSES( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES :)
+  let $query := &quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES&quot;
+  let $var2 := composite:executeQuery($query)//result
+  return
+    $var2
+};
+
+declare function local:cast( $CreditNumber)
+{
+  let $result := ($CreditNumber cast as xs:integer)
+  return (
+  $result
+  )
+};
+
+declare function local:CLASS_STUDENTS( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS :)
+  let $query := &quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS&quot;
+  let $var13 := composite:executeQuery($query)//result
+  return
+    $var13
+};
+
+let $nodes := 
+(
+  element school:Classes
+  {
+    let $var2:= local:CLASSES()
+    return
+    (
+      for $var1 at $counter0 in $var2
+      return 
+        if (fn:not($counter0 &lt;= 2147483647 and fn:true()))
+        then ()
+        else 
+          element school:Class
+          {
+            (
+              element school:CourseName
+              {
+                $var1/CourseName/text()
+              }
+              ,
+              element school:CourseDescription
+              {
+                $var1/CourseDescription/text()
+              }
+              ,
+              element school:Department
+              {
+                $var1/Department/text()
+              }
+              ,
+              let $var8 := $var1/CreditNumber/text()
+              let $var7:= local:cast(fn:data($var8))
+              return
+              element school:CreditNumber
+              {
+                $var7
+              }
+              ,
+              element school:Teacher
+              {
+                (
+                  element school:TeacherName
+                  {
+                    $var1/TeacherName/text()
+                  }
+                  ,
+                  element school:TeacherEmail
+                  {
+                    $var1/TeacherEmail/text()
+                  }
+                )
+              }
+              ,
+              let $var13:= local:CLASS_STUDENTS()
+              return
+              (
+                for $var12 at $counter11 in $var13
+                let $pCourseName := $var1/CourseName
+                return 
+                  if (fn:not($counter11 &lt;= 2147483647 and $pCourseName = $var12/CourseName))
+                  then ()
+                  else 
+                    element school:Student
+                    {
+                      (
+                        element school:StudentName
+                        {
+                          $var12/StudentName/text()
+                        }
+                        ,
+                        element school:StudentEmail
+                        {
+                          $var12/StudentEmail/text()
+                        }
+                      )
+                    }
+                ,
+                let $counter := count($var13)
+                return
+                  if ($counter &gt;= 1) then
+                  ()
+                  else 
+                    for $k in (1 to ( 1 - $counter))
+                    return
+                      element school:Student
+                      {
+                        (
+                          element school:StudentName
+                          {
+                          }
+                          ,
+                          element school:StudentEmail
+                          {
+                          }
+                        )
+                      }
+              )
+            )
+          }
+      ,
+      let $counter := count($var2)
+      return
+        if ($counter &gt;= 1) then
+        ()
+        else 
+          for $k in (1 to ( 1 - $counter))
+          return
+            element school:Class
+            {
+              (
+                element school:CourseName
+                {
+                }
+                ,
+                element school:CourseDescription
+                {
+                }
+                ,
+                element school:Department
+                {
+                }
+                ,
+                element school:CreditNumber
+                {
+                }
+                ,
+                element school:Teacher
+                {
+                  (
+                    element school:TeacherName
+                    {
+                    }
+                    ,
+                    element school:TeacherEmail
+                    {
+                    }
+                  )
+                }
+                ,
+                element school:Student
+                {
+                  (
+                    element school:StudentName
+                    {
+                    }
+                    ,
+                    element school:StudentEmail
+                    {
+                    }
+                  )
+                }
+              )
+            }
+    )
+  }
+)
+return
+$nodes</attribute>
+</metadata>

@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getProperties" path="/users/composite/admin/Test/JSON/MMyburgh/helpers/getProperties" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="propsJson" direction="IN" nullable="true">
+      <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+    </parameter>
+    <parameter name="partType" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="partSubType" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="latitude" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+    </parameter>
+    <parameter name="longitude" direction="OUT" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">PROCEDURE getProperties
+(
+	IN	propsJson		LONGVARCHAR,
+	OUT	partType		VARCHAR,
+	OUT	partSubType		VARCHAR,
+	OUT	latitude		VARCHAR(32),
+	OUT	longitude		VARCHAR(32)
+)
+BEGIN
+	IF propsJson != &apos;[]&apos; THEN
+		SET partType = JSONPATH(propsJson, &apos;$.[0].value&apos;);
+		SET partSubType = JSONPATH(propsJson, &apos;$.[1].value&apos;);
+		SET latitude = JSONPATH(propsJson, &apos;$.[3].value.latitude&apos;);
+		SET longitude = JSONPATH(propsJson, &apos;$.[3].value.longitude&apos;);
+	END IF;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1521730367296</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521768395797</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521730367296</attribute>
+</metadata>

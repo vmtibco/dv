@@ -1,0 +1,113 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="pCustodianUpdates" path="/users/composite/admin/Test/JSON/RethinkDb/pCustodianUpdates" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="custodianId" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="updatesJson" direction="IN" nullable="true">
+      <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+    </parameter>
+    <parameter name="props" direction="OUT" nullable="true">
+      <datatype name="props" type="TABLE" refId="1">
+        <element name="custodianId">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="custodians">
+          <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="owners">
+          <datatype name="LONGVARCHAR" type="STRING" maxLength="2147483647"/>
+        </element>
+        <element name="locTs">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="locLati">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="locLong">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="stTs">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="stValue">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="tempTs">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="tempValue">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="typeTs">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="typeValue">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="weightTs">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+        <element name="weightValue">
+          <datatype name="VARCHAR" type="STRING" maxLength="16"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="Script" type="STRING">PROCEDURE pCustodianUpdates
+(
+	IN	custodianId		VARCHAR,
+	IN	updatesJson		LONGVARCHAR,
+	OUT	props	PIPE (
+		custodianId	VARCHAR,
+		custodians	LONGVARCHAR,
+		owners		LONGVARCHAR,
+		locTs		VARCHAR(16),
+		locLati		VARCHAR(16),
+		locLong		VARCHAR(16),
+		stTs		VARCHAR(16),
+		stValue		VARCHAR(16),
+		tempTs		VARCHAR(16),
+		tempValue	VARCHAR(16),
+		typeTs		VARCHAR(16),
+		typeValue	VARCHAR(16),
+		weightTs	VARCHAR(16),
+		weightValue	VARCHAR(16)
+	)
+)
+BEGIN
+	INSERT INTO props(custodianId,custodians,owners,locTs,locLati,locLong,stTs,stValue,tempTs,tempValue,typeTs,typeValue,weightTs,weightValue) VALUES
+	(
+		custodianId,
+		JSONPATH(updatesJson, &apos;$.custodians&apos;),
+		JSONPATH(updatesJson, &apos;$.owners&apos;),
+		CASE JSONPATH(updatesJson, &apos;$.properties.location&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.location[0].timestamp&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.location&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.location[0].value.latitude&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.location&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.location[0].value.longitude&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.subtype&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.subtype[0].timestamp&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.subtype&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.subtype[0].value&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.temperature&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.temperature[0].timestamp&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.temperature&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.temperature[0].value&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.type&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.type[0].timestamp&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.type&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.type[0].value&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.weight&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.weight[0].timestamp&apos;) END,
+		CASE JSONPATH(updatesJson, &apos;$.properties.weight&apos;) WHEN &apos;[]&apos; THEN NULL ELSE JSONPATH(updatesJson, &apos;$.properties.weight[0].value&apos;) END
+	);
+END</attribute>
+  <attribute name="creationDate" type="LONG">1521730367296</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521747824812</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521730367296</attribute>
+</metadata>

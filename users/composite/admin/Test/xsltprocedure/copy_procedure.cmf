@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="copy" path="/users/composite/admin/Test/xsltprocedure/copy" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/copy" referenceType="{/users/composite/admin/Test/xsltprocedure/copy}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/copy}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/copy" referenceType="{/users/composite/admin/Test/xsltprocedure/copy}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/copy}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355984463193</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355992486538</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:csw-xform=&quot;http://www.compositesw.com/2003/xform&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;&gt;
+  &lt;xsl:attribute-set name=&quot;titleproperty&quot;&gt;
+    &lt;xsl:attribute name=&quot;id&quot;&gt;
+      &lt;xsl:value-of select=&quot;@id&quot;/&gt;
+    &lt;/xsl:attribute&gt;
+    &lt;xsl:attribute name=&quot;title&quot;&gt;
+      &lt;xsl:value-of select=&quot;title&quot;/&gt;
+    &lt;/xsl:attribute&gt;
+  &lt;/xsl:attribute-set&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;mybook&gt;
+      &lt;xsl:apply-templates select=&quot;//chapter&quot;/&gt;
+    &lt;/mybook&gt;
+  &lt;/xsl:template&gt;
+  &lt;xsl:template match=&quot;chapter&quot;&gt;
+    &lt;xsl:copy use-attribute-sets=&quot;titleproperty&quot;&gt;
+      &lt;xsl:for-each select=&quot;section&quot;&gt;
+        &lt;sectiontitle&gt;
+          &lt;xsl:value-of select=&quot;title&quot;/&gt;
+        &lt;/sectiontitle&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/xsl:copy&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</attribute>
+</metadata>

@@ -1,0 +1,123 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getRecords" path="/users/composite/admin/Test/JSON/MMyburgh/helpers/getRecords" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="custodian">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="owner">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="record_id">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="partType">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="partSubType">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="latitude">
+          <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+        </element>
+        <element name="longitude">
+          <datatype name="VARCHAR" type="STRING" maxLength="32"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/MMyburgh/helpers/RethinkDB/records" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="output" direction="OUT" nullable="unknown">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test/JSON/MMyburgh/helpers/getAgentOrOwnerName" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="custodianId" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="agents" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="custodianId">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test/JSON/MMyburgh/helpers/getProperties" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="propsJson" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="partType" direction="OUT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="partSubType" direction="OUT">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="latitude" direction="OUT">
+        <datatype type="STRING" maxLength="32"/>
+      </element>
+      <element name="longitude" direction="OUT">
+        <datatype type="STRING" maxLength="32"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE getRecords
+(
+	OUT result PIPE (
+		custodian		VARCHAR,
+		owner			VARCHAR,
+		record_id		VARCHAR,
+		partType		VARCHAR,
+		partSubType		VARCHAR,
+		latitude		VARCHAR(32),
+		longitude		VARCHAR(32)
+	)
+)
+BEGIN
+	DECLARE partType, partSubType, custodian, owner	VARCHAR;
+	DECLARE latitude, longitude		VARCHAR(32);
+	FOR r AS SELECT custodian, owner, record_id, properties
+				FROM
+					JSON_TABLE(cc.&quot;output&quot;, &apos;$&apos;
+								COLUMNS (&quot;custodian&quot; VARCHAR PATH &apos;$.custodian&apos;,
+								&quot;owner&quot; VARCHAR PATH &apos;$.owner&apos;,
+								&quot;record_id&quot; VARCHAR PATH &apos;$.recordId&apos;,
+								&quot;properties&quot; LONGVARCHAR PATH &apos;$.properties&apos;)) JT,
+					/users/composite/admin/Test/JSON/MMyburgh/helpers/RethinkDB/records() cc DO
+		CALL /users/composite/admin/Test/JSON/MMyburgh/helpers/getProperties(r.properties, partType, partSubType, latitude, longitude);
+		FOR rr AS SELECT name FROM /users/composite/admin/Test/JSON/MMyburgh/helpers/getAgentOrOwnerName(r.custodian) DO
+			SET custodian = rr.name;
+		END FOR;
+		FOR rr AS SELECT name FROM /users/composite/admin/Test/JSON/MMyburgh/helpers/getAgentOrOwnerName(r.owner) DO
+			SET owner = rr.name;
+		END FOR;
+		INSERT INTO result(custodian,owner,record_id,partType,partSubType,latitude,longitude) VALUES
+			(custodian,owner,r.record_id,partType,partSubType,latitude,longitude);
+	END FOR;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1521765849244</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521768395890</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521765849244</attribute>
+</metadata>

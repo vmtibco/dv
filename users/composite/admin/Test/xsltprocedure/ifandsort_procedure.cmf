@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="ifandsort" path="/users/composite/admin/Test/xsltprocedure/ifandsort" type="PROCEDURE" subtype="-132" changeToken="0">
+  <annotation/>
+  <parameters>
+    <parameter name="input" direction="IN" nullable="true">
+      <datatype name="input" namespace="/users/composite/admin/Test/xsltprocedure/ifandsort" referenceType="{/users/composite/admin/Test/xsltprocedure/ifandsort}input" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/ifandsort}input">
+        <schemaDatatype>
+          <datatype name="input" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+    <parameter name="output" direction="OUT" nullable="true">
+      <datatype name="output" namespace="/users/composite/admin/Test/xsltprocedure/ifandsort" referenceType="{/users/composite/admin/Test/xsltprocedure/ifandsort}output" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="{/users/composite/admin/Test/xsltprocedure/ifandsort}output">
+        <schemaDatatype>
+          <datatype name="output" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="creationDate" type="LONG">1355980950412</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1355981213561</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="xslt" type="STRING">&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;results&gt;
+          &lt;xsl:for-each select=&quot;catalog/cd&quot;&gt;
+            &lt;xsl:sort select=&quot;artist&quot;/&gt;
+            &lt;xsl:if test=&quot;price &amp;gt; 10&quot;&gt;
+               &lt;result&gt;
+                &lt;TITLE&gt;&lt;xsl:value-of select=&quot;title&quot;/&gt;
+&lt;/TITLE&gt;             
+                &lt;ARTIST&gt;&lt;xsl:value-of select=&quot;artist&quot;/&gt;&lt;/ARTIST&gt;
+                &lt;PRICE&gt;&lt;xsl:value-of select=&quot;price&quot;/&gt;&lt;/PRICE&gt;
+                &lt;/result&gt;
+              
+            &lt;/xsl:if&gt;
+          &lt;/xsl:for-each&gt;
+      &lt;/results&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</attribute>
+</metadata>

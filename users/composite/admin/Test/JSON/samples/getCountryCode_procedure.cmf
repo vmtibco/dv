@@ -1,0 +1,76 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="getCountryCode" path="/users/composite/admin/Test/JSON/samples/getCountryCode" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="inCountryName" direction="IN" nullable="true">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="true">
+      <datatype name="result" type="TABLE" refId="1">
+        <element name="name">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+        <element name="alpha2_code">
+          <datatype name="CHAR" type="STRING" minLength="2" maxLength="2"/>
+        </element>
+        <element name="alpha3_code">
+          <datatype name="CHAR" type="STRING" minLength="3" maxLength="3"/>
+        </element>
+        <element name="countryName">
+          <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+        </element>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/samples/CountryCode_V" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="name">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="alpha2_code">
+        <datatype type="STRING" minLength="2" maxLength="2"/>
+      </element>
+      <element name="alpha3_code">
+        <datatype type="STRING" minLength="3" maxLength="3"/>
+      </element>
+      <element name="countryName">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE getCountryCode(
+	IN	inCountryName	VARCHAR,
+    OUT result			CURSOR 
+	(
+		&quot;name&quot;			VARCHAR,
+		alpha2_code		CHAR(2),
+		alpha3_code		CHAR(3),
+		countryName		VARCHAR
+	)
+)
+BEGIN
+    OPEN result FOR 
+	SELECT 
+    	&quot;name&quot;,
+		alpha2_code,
+		alpha3_code,
+		countryName
+	FROM
+		/users/composite/admin/Test/JSON/samples/CountryCode_V cc WHERE countryName = inCountryName;
+END</attribute>
+  <attribute name="creationDate" type="LONG">1499444433724</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521732514656</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1499444433724</attribute>
+</metadata>

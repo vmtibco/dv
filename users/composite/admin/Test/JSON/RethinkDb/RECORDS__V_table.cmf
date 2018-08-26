@@ -1,0 +1,256 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="RECORDS_V" path="/users/composite/admin/Test/JSON/RethinkDb/RECORDS_V" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="custodian" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="final" nullable="true">
+      <datatype type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="owner" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="recordId" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="name" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="reporters" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="propType" nullable="true">
+      <datatype type="STRING" maxLength="32"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="propValue" nullable="true">
+      <datatype type="STRING" maxLength="1024"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="properties" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="proposals" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="updtCustodians" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="owners" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="locTs" nullable="true">
+      <datatype type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="locLati" nullable="true">
+      <datatype type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="locLong" nullable="true">
+      <datatype type="STRING" maxLength="16"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="updates" nullable="true">
+      <datatype type="STRING" maxLength="2147483647"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/RethinkDb/RECORDS_RAW_V" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="custodian">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="final">
+        <datatype type="STRING" maxLength="6"/>
+      </element>
+      <element name="owner">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="recordId">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="properties">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="proposals">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="updates">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test/JSON/RethinkDb/pCustodianProperties" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="custodianId" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="propsJson" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="props" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="custodianId">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="name">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="reporters">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="propType">
+            <datatype type="STRING" maxLength="32"/>
+          </element>
+          <element name="propValue">
+            <datatype type="STRING" maxLength="1024"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <dependency target="/users/composite/admin/Test/JSON/RethinkDb/pCustodianUpdates" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="custodianId" direction="IN">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="updatesJson" direction="IN">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+      <element name="props" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="custodianId">
+            <datatype type="STRING" maxLength="255"/>
+          </element>
+          <element name="custodians">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="owners">
+            <datatype type="STRING" maxLength="2147483647"/>
+          </element>
+          <element name="locTs">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="locLati">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="locLong">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="stTs">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="stValue">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="tempTs">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="tempValue">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="typeTs">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="typeValue">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="weightTs">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+          <element name="weightValue">
+            <datatype type="STRING" maxLength="16"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    rp.custodian, 
+    rp.final, 
+    rp.owner, 
+    rp.recordId,
+	rp.name,
+	rp.reporters,
+	rp.propType,
+	rp.propValue, 
+    rp.properties, 
+    rp.proposals,
+	ru.custodians AS updtCustodians,
+	ru.owners,
+	ru.locTs,
+	ru.locLati,
+	ru.locLong, 
+    rp.updates
+FROM
+	(      
+    	SELECT rr.*, pcp.* FROM /users/composite/admin/Test/JSON/RethinkDb/RECORDS_RAW_V rr INNER PROCEDURE JOIN
+					 /users/composite/admin/Test/JSON/RethinkDb/pCustodianProperties(rr.custodian, rr.properties) pcp
+		ON rr.custodian = pcp.custodianId 
+	) rp INNER JOIN
+	(
+    	SELECT rr.*, pcu.* FROM /users/composite/admin/Test/JSON/RethinkDb/RECORDS_RAW_V rr INNER PROCEDURE JOIN
+		/users/composite/admin/Test/JSON/RethinkDb/pCustodianUpdates(rr.custodian, rr.updates) pcu
+		ON rr.custodian = pcu.custodianId
+	) ru
+	ON rp.custodian = ru.custodian</attribute>
+  <attribute name="creationDate" type="LONG">1521732056082</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521746501436</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521732056082</attribute>
+</metadata>

@@ -1,0 +1,61 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="preUnionRefresh" path="/users/composite/admin/Test/CacheRefresh/preUnionRefresh" type="PROCEDURE" subtype="SQL_SCRIPT_PROCEDURE" changeToken="0">
+  <parameters></parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/CacheRefresh/refreshCacheAsync" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="cachedResourcePath" direction="IN">
+        <datatype referenceDefinitionSet="/lib/resource/ResourceDefs" referenceType="ResourcePath" type="STRING" maxLength="4096"/>
+      </element>
+      <element name="result" direction="OUT">
+        <datatype type="TABLE" refId="2">
+          <element name="resultCode">
+            <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+          </element>
+        </datatype>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="Script" type="STRING">PROCEDURE preUnionRefresh()
+BEGIN
+    DECLARE c1 CURSOR (resultCode INT);
+    DECLARE c2 CURSOR (resultCode INT);
+    DECLARE c3 CURSOR (resultCode INT);
+    DECLARE c4 CURSOR (resultCode INT);
+    DECLARE resultCode INT;
+
+    -- kicks off all the cache refreshes. 
+    --
+    CALL /users/composite/admin/Test/CacheRefresh/refreshCacheAsync(&apos;/shared/cachedResource1&apos;, c1);
+    CALL /users/composite/admin/Test/CacheRefresh/refreshCacheAsync(&apos;/shared/cachedResource2&apos;, c2);
+    CALL /users/composite/admin/Test/CacheRefresh/refreshCacheAsync(&apos;/shared/cachedResource3&apos;, c3);
+    CALL /users/composite/admin/Test/CacheRefresh/refreshCacheAsync(&apos;/shared/cachedResource4&apos;, c4);
+
+    -- since &quot;refreshCacheAsync&quot; has a PIPE output, the refreshes all kick off asynchronously and execution gets to this
+    -- point without waiting. All the FETCH&apos;s then wait for their respective cursors to return a row, meaning 
+    -- the refresh has completed.
+    --
+    FETCH c1 INTO resultCode;
+    FETCH c2 INTO resultCode;
+    FETCH c3 INTO resultCode;
+    FETCH c4 INTO resultCode;
+
+    -- execution does not get to this point until all the refreshes complete.
+END
+</attribute>
+  <attribute name="creationDate" type="LONG">1524685633017</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1524753101868</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="native_only" type="STRING">false</attribute>
+  <attribute name="references" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1524685633017</attribute>
+</metadata>

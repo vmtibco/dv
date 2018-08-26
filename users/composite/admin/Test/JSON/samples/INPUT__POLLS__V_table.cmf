@@ -1,0 +1,90 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="INPUT_POLLS_V" path="/users/composite/admin/Test/JSON/samples/INPUT_POLLS_V" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="id" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="pollster" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="gop" nullable="true">
+      <datatype type="STRING" minLength="3" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="dem" nullable="true">
+      <datatype type="STRING" minLength="3" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="len" nullable="true">
+      <datatype type="STRING" maxLength="4"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="pday" nullable="true">
+      <datatype type="STRING" maxLength="6"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="pdate" nullable="true">
+      <datatype type="STRING" maxLength="10"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/samples/REST_Elections/input_polls" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="output" direction="OUT" nullable="unknown">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+	id,
+    pollster,
+	gop,
+	dem,
+	len,
+	pday,
+	pdate
+FROM
+	JSON_TABLE(ip.&quot;output&quot;, &apos;$&apos;
+		COLUMNS (&quot;id&quot; VARCHAR PATH &apos;$.id&apos;,
+			&quot;pollster&quot; VARCHAR PATH &apos;$.Pollster&apos;,
+			&quot;gop&quot; CHAR(3) PATH &apos;$.GOP&apos;,
+			&quot;dem&quot; CHAR(3) PATH &apos;$.Dem&apos;,
+			&quot;len&quot; VARCHAR(4) PATH &apos;$.Len&apos;,
+			&quot;pday&quot; VARCHAR(6) PATH &apos;$.Day&apos;,
+			&quot;pdate&quot; VARCHAR (10) PATH &apos;$.Date&apos;
+			)) JT,
+	/users/composite/admin/Test/JSON/samples/REST_Elections/input_polls() ip
+</attribute>
+  <attribute name="creationDate" type="LONG">1521726983793</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521732514719</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521726983793</attribute>
+</metadata>

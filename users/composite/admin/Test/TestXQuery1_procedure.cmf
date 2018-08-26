@@ -1,0 +1,570 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="TestXQuery1" path="/users/composite/admin/Test/TestXQuery1" type="PROCEDURE" subtype="XQUERY_TRANSFORM_PROCEDURE" changeToken="0">
+  <parameters>
+    <parameter name="Classes" direction="OUT" nullable="true">
+      <datatype name="Classes" namespace="http://compositesw.com/transform/example/school" referenceDefinitionSet="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/schoolDefinitions" referenceType="{http://compositesw.com/transform/example/school}Classes" subType="ELEMENT_DECL" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="ELEMENT" componentName="{http://compositesw.com/transform/example/school}Classes">
+        <schemaDatatype>
+          <datatype name="Classes" namespace="http://compositesw.com/transform/example/school" superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="ELEMENT_DECL" anonymous="true" type="TREE" refId="1">
+            <element name="Class" namespace="http://compositesw.com/transform/example/school" maxOccurs="2147483647">
+              <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="2">
+                <element name="CourseName" namespace="http://compositesw.com/transform/example/school">
+                  <datatype name="NCName" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="Name" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="CourseDescription" namespace="http://compositesw.com/transform/example/school">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="Department" namespace="http://compositesw.com/transform/example/school">
+                  <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                </element>
+                <element name="CreditNumber" namespace="http://compositesw.com/transform/example/school">
+                  <datatype name="integer" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="decimal" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+                </element>
+                <element name="Teacher" namespace="http://compositesw.com/transform/example/school">
+                  <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="3">
+                    <element name="TeacherName" namespace="http://compositesw.com/transform/example/school">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="TeacherEmail" namespace="http://compositesw.com/transform/example/school">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+                <element name="Student" namespace="http://compositesw.com/transform/example/school" maxOccurs="2147483647">
+                  <datatype superTypeName="anyType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" subType="COMPLEX_TYPE" type="TREE" refId="4">
+                    <element name="StudentName" namespace="http://compositesw.com/transform/example/school">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                    <element name="StudentEmail" namespace="http://compositesw.com/transform/example/school">
+                      <datatype name="string" namespace="http://www.w3.org/2001/XMLSchema" superTypeName="anySimpleType" superTypeNamespace="http://www.w3.org/2001/XMLSchema" type="STRING" maxLength="2147483647"/>
+                    </element>
+                  </datatype>
+                </element>
+              </datatype>
+            </element>
+          </datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/schoolDefinitions" type="DEFINITION_SET">
+    <datatype name="Tree" type="TREE" refId="1"></datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1501112167448</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">true</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1501112490362</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501112167448</attribute>
+  <attribute name="transformModel" type="NULL"/>
+  <attribute name="xquery" type="STRING">declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &quot;http://compositesw.com/transform/xquery&quot;;
+declare namespace school =  &quot;http://compositesw.com/transform/example/school&quot;;
+declare namespace custom =  &quot;http://compositesw.com/transform/custom&quot;;
+declare namespace xs =  &quot;http://www.w3.org/2001/XMLSchema&quot;;
+declare namespace ext2 =  &quot;http://www.compositesw.com/extensions2&quot;;
+declare namespace sql =  &quot;http://compositesw.com/transform/sql&quot;;
+
+declare function local:CLASSES( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES :)
+  let $query := &quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES&quot;
+  let $var2 := composite:executeQuery($query)//result
+  return
+    $var2
+};
+
+declare function local:cast( $CreditNumber)
+{
+  let $result := ($CreditNumber cast as xs:integer)
+  return (
+  $result
+  )
+};
+
+declare function local:CLASS_STUDENTS( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS :)
+  let $query := &quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS&quot;
+  let $var13 := composite:executeQuery($query)//result
+  return
+    $var13
+};
+
+let $nodes := 
+(
+  element school:Classes
+  {
+    let $var2:= local:CLASSES()
+    return
+    (
+      for $var1 at $counter0 in $var2
+      return 
+        if (fn:not($counter0 &lt;= 2147483647 and fn:true()))
+        then ()
+        else 
+          element school:Class
+          {
+            (
+              element school:CourseName
+              {
+                $var1/CourseName/text()
+              }
+              ,
+              element school:CourseDescription
+              {
+                $var1/CourseDescription/text()
+              }
+              ,
+              element school:Department
+              {
+                $var1/Department/text()
+              }
+              ,
+              let $var8 := $var1/CreditNumber/text()
+              let $var7:= local:cast(fn:data($var8))
+              return
+              element school:CreditNumber
+              {
+                $var7
+              }
+              ,
+              element school:Teacher
+              {
+                (
+                  element school:TeacherName
+                  {
+                    $var1/TeacherName/text()
+                  }
+                  ,
+                  element school:TeacherEmail
+                  {
+                    $var1/TeacherEmail/text()
+                  }
+                )
+              }
+              ,
+              let $var13:= local:CLASS_STUDENTS()
+              return
+              (
+                for $var12 at $counter11 in $var13
+                let $pCourseName := $var1/CourseName
+                return 
+                  if (fn:not($counter11 &lt;= 2147483647 and $pCourseName = $var12/CourseName))
+                  then ()
+                  else 
+                    element school:Student
+                    {
+                      (
+                        element school:StudentName
+                        {
+                          $var12/StudentName/text()
+                        }
+                        ,
+                        element school:StudentEmail
+                        {
+                          $var12/StudentEmail/text()
+                        }
+                      )
+                    }
+                ,
+                let $counter := count($var13)
+                return
+                  if ($counter &gt;= 1) then
+                  ()
+                  else 
+                    for $k in (1 to ( 1 - $counter))
+                    return
+                      element school:Student
+                      {
+                        (
+                          element school:StudentName
+                          {
+                          }
+                          ,
+                          element school:StudentEmail
+                          {
+                          }
+                        )
+                      }
+              )
+            )
+          }
+      ,
+      let $counter := count($var2)
+      return
+        if ($counter &gt;= 1) then
+        ()
+        else 
+          for $k in (1 to ( 1 - $counter))
+          return
+            element school:Class
+            {
+              (
+                element school:CourseName
+                {
+                }
+                ,
+                element school:CourseDescription
+                {
+                }
+                ,
+                element school:Department
+                {
+                }
+                ,
+                element school:CreditNumber
+                {
+                }
+                ,
+                element school:Teacher
+                {
+                  (
+                    element school:TeacherName
+                    {
+                    }
+                    ,
+                    element school:TeacherEmail
+                    {
+                    }
+                  )
+                }
+                ,
+                element school:Student
+                {
+                  (
+                    element school:StudentName
+                    {
+                    }
+                    ,
+                    element school:StudentEmail
+                    {
+                    }
+                  )
+                }
+              )
+            }
+    )
+  }
+)
+return
+$nodes</attribute>
+  <attribute name="xqueryModel" type="STRING">
+&lt;xqueryModel customized=&quot;true&quot; version=&quot;new&quot;&gt;
+  &lt;rootNode&gt;
+    &lt;nodeType&gt;COMPLEX&lt;/nodeType&gt;
+    &lt;element name=&quot;Classes&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+      &lt;datatype name=&quot;Classes&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; referenceDefinitionSet=&quot;/users/composite/admin/CISTraining/Physical/Metadata/File_SchoolXML/schoolDefinitions&quot; referenceType=&quot;{http://compositesw.com/transform/example/school}Classes&quot; subType=&quot;ELEMENT_DECL&quot; type=&quot;XML&quot; contentConstraint=&quot;SEQUENCE&quot; schemaConstraint=&quot;ANY&quot; componentType=&quot;ELEMENT&quot; componentName=&quot;{http://compositesw.com/transform/example/school}Classes&quot;&gt;
+        &lt;schemaDatatype&gt;
+          &lt;datatype name=&quot;Classes&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;ELEMENT_DECL&quot; anonymous=&quot;true&quot; type=&quot;TREE&quot; refId=&quot;1&quot;&gt;
+            &lt;element name=&quot;Class&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; maxOccurs=&quot;2147483647&quot;&gt;
+              &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;2&quot;&gt;
+                &lt;element name=&quot;CourseName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;CourseDescription&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;Department&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;CreditNumber&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;Teacher&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;3&quot;&gt;
+                    &lt;element name=&quot;TeacherName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                      &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                    &lt;/element&gt;
+                    &lt;element name=&quot;TeacherEmail&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                      &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                    &lt;/element&gt;
+                  &lt;/datatype&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;Student&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; maxOccurs=&quot;2147483647&quot;&gt;
+                  &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;4&quot;&gt;
+                    &lt;element name=&quot;StudentName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                      &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                    &lt;/element&gt;
+                    &lt;element name=&quot;StudentEmail&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                      &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                    &lt;/element&gt;
+                  &lt;/datatype&gt;
+                &lt;/element&gt;
+              &lt;/datatype&gt;
+            &lt;/element&gt;
+          &lt;/datatype&gt;
+        &lt;/schemaDatatype&gt;
+      &lt;/datatype&gt;
+    &lt;/element&gt;
+    &lt;sourcePath/&gt;
+    &lt;sourceType/&gt;
+    &lt;sourceSignature/&gt;
+    &lt;sourceAlias/&gt;
+    &lt;sourceJoin/&gt;
+    &lt;sourceFilter&gt;
+      &lt;text/&gt;
+    &lt;/sourceFilter&gt;
+    &lt;sourceSortOrder/&gt;
+    &lt;sourceGroupBy/&gt;
+    &lt;sourceInputs/&gt;
+    &lt;childNodes&gt;
+      &lt;childNode&gt;
+        &lt;nodeType&gt;COMPLEX&lt;/nodeType&gt;
+        &lt;element name=&quot;Class&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; maxOccurs=&quot;2147483647&quot;&gt;
+          &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;1&quot;&gt;
+            &lt;element name=&quot;CourseName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+              &lt;datatype name=&quot;NCName&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;Name&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;CourseDescription&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+              &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;Department&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+              &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;CreditNumber&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+              &lt;datatype name=&quot;integer&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;decimal&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;DECIMAL&quot; maxDigits=&quot;32&quot; maxFractionalDigits=&quot;0&quot;/&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;Teacher&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+              &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;2&quot;&gt;
+                &lt;element name=&quot;TeacherName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;TeacherEmail&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+              &lt;/datatype&gt;
+            &lt;/element&gt;
+            &lt;element name=&quot;Student&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot; maxOccurs=&quot;2147483647&quot;&gt;
+              &lt;datatype superTypeName=&quot;anyType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; subType=&quot;COMPLEX_TYPE&quot; type=&quot;TREE&quot; refId=&quot;3&quot;&gt;
+                &lt;element name=&quot;StudentName&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+                &lt;element name=&quot;StudentEmail&quot; namespace=&quot;http://compositesw.com/transform/example/school&quot;&gt;
+                  &lt;datatype name=&quot;string&quot; namespace=&quot;http://www.w3.org/2001/XMLSchema&quot; superTypeName=&quot;anySimpleType&quot; superTypeNamespace=&quot;http://www.w3.org/2001/XMLSchema&quot; type=&quot;STRING&quot; maxLength=&quot;2147483647&quot;/&gt;
+                &lt;/element&gt;
+              &lt;/datatype&gt;
+            &lt;/element&gt;
+          &lt;/datatype&gt;
+        &lt;/element&gt;
+        &lt;sourcePath/&gt;
+        &lt;sourceType/&gt;
+        &lt;sourceSignature/&gt;
+        &lt;sourceAlias/&gt;
+        &lt;sourceJoin&gt;
+          &lt;joinType&gt;CROSS&lt;/joinType&gt;
+          &lt;joinExpression/&gt;
+        &lt;/sourceJoin&gt;
+        &lt;sourceFilter&gt;
+          &lt;text/&gt;
+        &lt;/sourceFilter&gt;
+        &lt;sourceSortOrder/&gt;
+        &lt;sourceGroupBy/&gt;
+        &lt;sourceInputs/&gt;
+        &lt;childNodes&gt;&lt;/childNodes&gt;
+      &lt;/childNode&gt;
+    &lt;/childNodes&gt;
+  &lt;/rootNode&gt;
+  &lt;inputSignature&gt;
+    &lt;datatype type=&quot;PROCEDURE&quot; refId=&quot;1&quot;&gt;&lt;/datatype&gt;
+  &lt;/inputSignature&gt;
+  &lt;xquery&gt;declare copy-namespaces no-preserve,inherit;
+declare namespace xquery =  &amp;quot;http://compositesw.com/transform/xquery&amp;quot;;
+declare namespace school =  &amp;quot;http://compositesw.com/transform/example/school&amp;quot;;
+declare namespace custom =  &amp;quot;http://compositesw.com/transform/custom&amp;quot;;
+declare namespace xs =  &amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;;
+declare namespace ext2 =  &amp;quot;http://www.compositesw.com/extensions2&amp;quot;;
+declare namespace sql =  &amp;quot;http://compositesw.com/transform/sql&amp;quot;;
+
+declare function local:CLASSES( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES :)
+  let $query := &amp;quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASSES&amp;quot;
+  let $var2 := composite:executeQuery($query)//result
+  return
+    $var2
+};
+
+declare function local:cast( $CreditNumber)
+{
+  let $result := ($CreditNumber cast as xs:integer)
+  return (
+  $result
+  )
+};
+
+declare function local:CLASS_STUDENTS( )
+{
+  (:invoke resource /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS :)
+  let $query := &amp;quot; select * from /users/composite/admin/CISTraining/Physical/Formatting/File_SchoolCSV/CLASS_STUDENTS&amp;quot;
+  let $var13 := composite:executeQuery($query)//result
+  return
+    $var13
+};
+
+let $nodes := 
+(
+  element school:Classes
+  {
+    let $var2:= local:CLASSES()
+    return
+    (
+      for $var1 at $counter0 in $var2
+      return 
+        if (fn:not($counter0 &amp;lt;= 2147483647 and fn:true()))
+        then ()
+        else 
+          element school:Class
+          {
+            (
+              element school:CourseName
+              {
+                $var1/CourseName/text()
+              }
+              ,
+              element school:CourseDescription
+              {
+                $var1/CourseDescription/text()
+              }
+              ,
+              element school:Department
+              {
+                $var1/Department/text()
+              }
+              ,
+              let $var8 := $var1/CreditNumber/text()
+              let $var7:= local:cast(fn:data($var8))
+              return
+              element school:CreditNumber
+              {
+                $var7
+              }
+              ,
+              element school:Teacher
+              {
+                (
+                  element school:TeacherName
+                  {
+                    $var1/TeacherName/text()
+                  }
+                  ,
+                  element school:TeacherEmail
+                  {
+                    $var1/TeacherEmail/text()
+                  }
+                )
+              }
+              ,
+              let $var13:= local:CLASS_STUDENTS()
+              return
+              (
+                for $var12 at $counter11 in $var13
+                let $pCourseName := $var1/CourseName
+                return 
+                  if (fn:not($counter11 &amp;lt;= 2147483647 and $pCourseName = $var12/CourseName))
+                  then ()
+                  else 
+                    element school:Student
+                    {
+                      (
+                        element school:StudentName
+                        {
+                          $var12/StudentName/text()
+                        }
+                        ,
+                        element school:StudentEmail
+                        {
+                          $var12/StudentEmail/text()
+                        }
+                      )
+                    }
+                ,
+                let $counter := count($var13)
+                return
+                  if ($counter &amp;gt;= 1) then
+                  ()
+                  else 
+                    for $k in (1 to ( 1 - $counter))
+                    return
+                      element school:Student
+                      {
+                        (
+                          element school:StudentName
+                          {
+                          }
+                          ,
+                          element school:StudentEmail
+                          {
+                          }
+                        )
+                      }
+              )
+            )
+          }
+      ,
+      let $counter := count($var2)
+      return
+        if ($counter &amp;gt;= 1) then
+        ()
+        else 
+          for $k in (1 to ( 1 - $counter))
+          return
+            element school:Class
+            {
+              (
+                element school:CourseName
+                {
+                }
+                ,
+                element school:CourseDescription
+                {
+                }
+                ,
+                element school:Department
+                {
+                }
+                ,
+                element school:CreditNumber
+                {
+                }
+                ,
+                element school:Teacher
+                {
+                  (
+                    element school:TeacherName
+                    {
+                    }
+                    ,
+                    element school:TeacherEmail
+                    {
+                    }
+                  )
+                }
+                ,
+                element school:Student
+                {
+                  (
+                    element school:StudentName
+                    {
+                    }
+                    ,
+                    element school:StudentEmail
+                    {
+                    }
+                  )
+                }
+              )
+            }
+    )
+  }
+)
+return
+$nodes&lt;/xquery&gt;
+&lt;/xqueryModel&gt;</attribute>
+</metadata>

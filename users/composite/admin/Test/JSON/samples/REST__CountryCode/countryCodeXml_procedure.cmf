@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="countryCodeXml" path="/users/composite/admin/Test/JSON/samples/REST_CountryCode/countryCodeXml" type="PROCEDURE" subtype="OPERATION" changeToken="0">
+  <parameters>
+    <parameter name="countryName" direction="IN" nullable="unknown">
+      <datatype name="VARCHAR" type="STRING" maxLength="255"/>
+    </parameter>
+    <parameter name="result" direction="OUT" nullable="unknown">
+      <datatype name="XML" referenceType="XML" type="XML" contentConstraint="SEQUENCE" schemaConstraint="ANY" componentType="TYPE" componentName="XML">
+        <schemaDatatype>
+          <datatype name="XML" type="TREE" refId="1"></datatype>
+        </schemaDatatype>
+      </datatype>
+    </parameter>
+  </parameters>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <attribute name="bindingModel" type="STRING">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;bindingModel&gt;&lt;portBindings&gt;&lt;portBinding xsi:type=&quot;restfulPortBinding&quot; serviceName=&quot;countryCodeXml&quot; jsonWrappedTable=&quot;true&quot; jsonWrappedCursor=&quot;true&quot; jsonUseProcParamName=&quot;false&quot; enabled=&quot;false&quot; bindingStyles=&quot;&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&lt;operationBindings&gt;&lt;operationBinding xsi:type=&quot;restfulProcedureBinding&quot; operationPathTemplate=&quot;country/search?text={countryName}&quot; httpMethod=&quot;GET&quot; resourceName=&quot;countryCodeXml&quot; requestWrapperQName=&quot;&quot; parameterStyle=&quot;BARE&quot; responseWrapperQName=&quot;&quot;&gt;&lt;parameterBindings&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; parameterFormat=&quot;JSON&quot; nulLable=&quot;false&quot; bindingLocation=&quot;query&quot; name=&quot;countryName&quot; dataType=&quot;VARCHAR&quot; inOut=&quot;IN&quot; maxLength=&quot;255&quot; location=&quot;URL&quot; isUrl=&quot;true&quot;/&gt;&lt;parameterBinding xsi:type=&quot;restfulParameterBinding&quot; xml=&quot;false&quot; parameterFormat=&quot;XML&quot; nulLable=&quot;false&quot; bindingLocation=&quot;entity&quot; name=&quot;result&quot; dataType=&quot;XML&quot; inOut=&quot;OUT&quot; location=&quot;Body&quot; isUrl=&quot;false&quot;/&gt;&lt;/parameterBindings&gt;&lt;/operationBinding&gt;&lt;/operationBindings&gt;&lt;/portBinding&gt;&lt;/portBindings&gt;&lt;/bindingModel&gt;</attribute>
+  <attribute name="creationDate" type="LONG">1501088581447</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="execTimeout" type="LONG">0</attribute>
+  <attribute name="httpLocation" type="STRING">http://services.groupkt.com/country/search?text={countryName}</attribute>
+  <attribute name="httpVerb" type="STRING">GET</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1501088705024</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1501088581447</attribute>
+  <attribute name="timeout" type="LONG">0</attribute>
+</metadata>

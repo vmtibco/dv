@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="CountryCode_V" path="/users/composite/admin/Test/JSON/samples/CountryCode_V" type="TABLE" subtype="SQL_TABLE" changeToken="0" tableType="VIEW">
+  <columns>
+    <column name="name" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="alpha2_code" nullable="true">
+      <datatype type="STRING" minLength="2" maxLength="2"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="alpha3_code" nullable="true">
+      <datatype type="STRING" minLength="3" maxLength="3"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+    <column name="countryName" nullable="true">
+      <datatype type="STRING" maxLength="255"/>
+      <security>
+        <owner user="admin" domain="composite"/>
+      </security>
+    </column>
+  </columns>
+  <indexes></indexes>
+  <foreignKeys></foreignKeys>
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/users/composite/admin/Test/JSON/samples/REST_CountryCode/countryCode" type="PROCEDURE">
+    <datatype type="PROCEDURE" refId="1">
+      <element name="countryName" direction="IN" nullable="unknown">
+        <datatype type="STRING" maxLength="255"/>
+      </element>
+      <element name="output" direction="OUT" nullable="unknown">
+        <datatype type="STRING" maxLength="2147483647"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="SQL" type="STRING">SELECT 
+    &quot;name&quot;,
+	alpha2_code,
+	alpha3_code,
+	{DECLARE countryName VARCHAR} countryName
+FROM
+	JSON_TABLE(cc.&quot;output&quot;, &apos;$.RestResponse.result&apos;
+		COLUMNS (&quot;name&quot; VARCHAR PATH &apos;$.name&apos;,
+			&quot;alpha2_code&quot; CHAR(2) PATH &apos;$.alpha2_code&apos;,
+			&quot;alpha3_code&quot; CHAR(3) PATH &apos;$.alpha3_code&apos;)) JT,
+	/users/composite/admin/Test/JSON/samples/REST_CountryCode/countryCode(countryName) cc
+</attribute>
+  <attribute name="creationDate" type="LONG">1499444317407</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="explicitly.designed" type="BOOLEAN">false</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521732514656</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="model" type="NULL"/>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1499444317407</attribute>
+</metadata>
