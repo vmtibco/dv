@@ -1,0 +1,54 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="ViewSales" path="/services/databases/Demo/Spotfire/Examples/ViewSales" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/examples/ViewSales" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="ProductID">
+        <datatype type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+      </element>
+      <element name="ProductName">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="CategoryID">
+        <datatype type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+      </element>
+      <element name="CategoryName">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="ProductDescription">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="SerialNumber">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="UnitPrice">
+        <datatype type="DECIMAL" maxDigits="32" maxFractionalDigits="6"/>
+      </element>
+      <element name="ReorderLevel">
+        <datatype type="DECIMAL" maxDigits="32" maxFractionalDigits="0"/>
+      </element>
+      <element name="LeadTime">
+        <datatype type="STRING" maxLength="32768"/>
+      </element>
+      <element name="Status">
+        <datatype type="STRING" maxLength="50"/>
+      </element>
+      <element name="Discount">
+        <datatype type="DECIMAL" maxDigits="12" minFractionalDigits="2" maxFractionalDigits="2"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1521919618543</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1521919640855</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1521919618543</attribute>
+  <attribute name="targetPath" type="STRING">/shared/examples/ViewSales</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>
