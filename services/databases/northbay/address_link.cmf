@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<metadata name="address" path="/services/databases/northbay/address" type="LINK" subtype="NONE" changeToken="0" virtual="true">
+  <security>
+    <owner user="admin" domain="composite"/>
+  </security>
+  <dependency target="/shared/northbay/sources/Northbay/tutorial/address" type="TABLE">
+    <datatype type="TABLE" refId="1">
+      <element name="address_id" nullable="false">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="user_id">
+        <datatype type="INTEGER" minValue="-2147483648" maxValue="2147483647"/>
+      </element>
+      <element name="street_address">
+        <datatype type="STRING" maxLength="80"/>
+      </element>
+      <element name="city">
+        <datatype type="STRING" maxLength="30"/>
+      </element>
+      <element name="state">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+      <element name="zip_code">
+        <datatype type="STRING" maxLength="10"/>
+      </element>
+      <element name="country">
+        <datatype type="STRING" maxLength="2"/>
+      </element>
+    </datatype>
+  </dependency>
+  <attribute name="creationDate" type="LONG">1464581600291</attribute>
+  <attribute name="creatorUserDomain" type="STRING">composite</attribute>
+  <attribute name="creatorUserId" type="INTEGER">-1973</attribute>
+  <attribute name="creatorUserName" type="STRING">admin</attribute>
+  <attribute name="lastModifiedDate" type="LONG">1464581600291</attribute>
+  <attribute name="lastModifiedUserDomain" type="STRING">composite</attribute>
+  <attribute name="lastModifiedUserId" type="INTEGER">-1973</attribute>
+  <attribute name="lastModifiedUserName" type="STRING">admin</attribute>
+  <attribute name="resourceModifiedDateOnSourceCISSite" type="LONG">1464581600291</attribute>
+  <attribute name="targetPath" type="STRING">/shared/northbay/sources/Northbay/tutorial/address</attribute>
+  <attribute name="targetType" type="SHORT">2</attribute>
+</metadata>
